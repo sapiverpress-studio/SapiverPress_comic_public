@@ -1,19 +1,58 @@
-﻿{
-    "name":  "Isla",
-    "weeks":  [
-
-              ],
-    "locked_style":  {
-                         "setting":  "home study with books, plants, warm morning light",
-                         "mood":  "calm, exact, quietly amused",
-                         "clothing":  "green hoodie, floral headband, gold hoops"
-                     },
-    "last_updated":  null,
-    "ongoing_threads":  [
-                            "Morning puzzle ritual",
-                            "Small wins before the day starts",
-                            "Yesterday\u0027s grid never solves today\u0027s",
-                            "Returning tomorrow because the puzzle was fair"
-                        ],
-    "character_id":  "isla"
+{
+  "character_id": "isla",
+  "name": "Isla",
+  "weeks": [
+    {
+      "date": "2026-05-26",
+      "weekday": "Tuesday",
+      "product_referenced": {
+        "key": "suite",
+        "name": "Sapiver Press Suite",
+        "url": "https://suite.sapiverpress.co.uk",
+        "natural_reference": "a return visit tomorrow"
+      },
+      "story_note": "Isla returns to her morning ritual with a new Sapiver Press puzzle, noticing a fresh challenge.",
+      "continuation_note": "She makes logical progress and wraps up the session with plans for tomorrow.",
+      "scenes": [
+        {
+          "id": "scene_01",
+          "title": "Back Again",
+          "dialogue": "Another morning, another puzzle.",
+          "caption": "Isla settles in by the window, ready for today's challenge."
+        },
+        {
+          "id": "scene_02",
+          "title": "Different Start",
+          "dialogue": "This one feels different right away.",
+          "caption": "Starting clues hint at a new twist in the day's puzzle."
+        },
+        {
+          "id": "scene_03",
+          "title": "The Pushback",
+          "dialogue": "Hmmm... no guesses yet.",
+          "caption": "Isla hits a thoughtful pause, avoiding hasty moves."
+        },
+        {
+          "id": "scene_04",
+          "title": "The Column",
+          "dialogue": "Ah, this column unlocks everything!",
+          "caption": "A key insight breaks the stalemate."
+        },
+        {
+          "id": "scene_05",
+          "title": "The Follow-Through",
+          "dialogue": "Now the rest falls into place.",
+          "caption": "The grid begins to reveal its secrets."
+        },
+        {
+          "id": "scene_06",
+          "title": "Worth Returning For",
+          "dialogue": "Good progress today. Same time tomorrow?",
+          "caption": "Isla logs off, already looking forward to a return visit tomorrow."
+        }
+      ]
+    }
+  ],
+  "ongoing_threads": [],
+  "last_updated": "2026-05-26"
 }
