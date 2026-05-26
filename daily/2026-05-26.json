@@ -1,0 +1,108 @@
+{
+  "date": "2026-05-26",
+  "weekday": "Tuesday",
+  "character_id": "isla",
+  "character_name": "Isla",
+  "render_mode": "illustrated_comic_panels",
+  "product_referenced": {
+    "key": "suite",
+    "name": "Sapiver Press Suite",
+    "url": "https://suite.sapiverpress.co.uk",
+    "natural_reference": "a return visit tomorrow"
+  },
+  "story_note": "Isla returns to her morning ritual with a new Sapiver Press puzzle, noticing a fresh challenge.",
+  "continuation_note": "She makes logical progress and wraps up the session with plans for tomorrow.",
+  "scenes": [
+    {
+      "id": "scene_01",
+      "title": "Back Again",
+      "beat": "Return after yesterday, new daily puzzle, same habit",
+      "dialogue": "Another morning, another puzzle.",
+      "caption": "Isla settles in by the window, ready for today's challenge.",
+      "image_ref": "isla_01_opening_return.png",
+      "screen_state": "Isla at laptop, plants on desk, window light streaming in."
+    },
+    {
+      "id": "scene_02",
+      "title": "Different Start",
+      "beat": "The first move shows today's puzzle is different",
+      "dialogue": "This one feels different right away.",
+      "caption": "Starting clues hint at a new twist in the day's puzzle.",
+      "image_ref": "isla_02_first_move.png",
+      "screen_state": "Close-up on Isla's focused expression and puzzle grid on laptop."
+    },
+    {
+      "id": "scene_03",
+      "title": "The Pushback",
+      "beat": "A fair stuck moment, no guessing",
+      "dialogue": "Hmmm... no guesses yet.",
+      "caption": "Isla hits a thoughtful pause, avoiding hasty moves.",
+      "image_ref": "isla_03_stuck_moment.png",
+      "screen_state": "Isla tapping her chin, studying the puzzle carefully."
+    },
+    {
+      "id": "scene_04",
+      "title": "The Column",
+      "beat": "The logical breakthrough",
+      "dialogue": "Ah, this column unlocks everything!",
+      "caption": "A key insight breaks the stalemate.",
+      "image_ref": "isla_04_breakthrough.png",
+      "screen_state": "Isla's finger pointing to a highlighted column on the puzzle screen."
+    },
+    {
+      "id": "scene_05",
+      "title": "The Follow-Through",
+      "beat": "The grid begins to open",
+      "dialogue": "Now the rest falls into place.",
+      "caption": "The grid begins to reveal its secrets.",
+      "image_ref": "isla_05_finish.png",
+      "screen_state": "Puzzle screen showing more filled squares, Isla typing confidently."
+    },
+    {
+      "id": "scene_06",
+      "title": "Worth Returning For",
+      "beat": "Completion or honest latest progress, return tomorrow",
+      "dialogue": "Good progress today. Same time tomorrow?",
+      "caption": "Isla logs off, already looking forward to a return visit tomorrow.",
+      "image_ref": "isla_06_tomorrow_set.png",
+      "screen_state": "Isla closing her laptop, a slight smile as sunlight fades."
+    }
+  ],
+  "image_manifest": {
+    "character_id": "isla",
+    "character_name": "Isla",
+    "render_mode": "illustrated_comic_panels",
+    "required_character_files": [
+      "templates/characters/isla/isla_01_opening_return.png",
+      "templates/characters/isla/isla_02_first_move.png",
+      "templates/characters/isla/isla_03_stuck_moment.png",
+      "templates/characters/isla/isla_04_breakthrough.png",
+      "templates/characters/isla/isla_05_finish.png",
+      "templates/characters/isla/isla_06_tomorrow_set.png"
+    ],
+    "text_is_overlay": true,
+    "puzzle_screen_inserted_later": true,
+    "style_rules": [
+      "No giant title banners.",
+      "No masthead inside individual scene art.",
+      "No big URL overlay.",
+      "No blurry outline boxes.",
+      "Sapiver Press logo/title only on merchandise and monitor/browser URL.",
+      "Story text must continue from previous episode, not repeat a fixed template.",
+      "Puzzle screen must be composited from real capture, not invented by image generation.",
+      "The scene should be comic illustration, not photorealism."
+    ],
+    "compositor_rules": [
+      "Character art first.",
+      "Puzzle screen composited second.",
+      "Minimal story text overlaid last.",
+      "No generated puzzle grids.",
+      "No giant title/header/footer.",
+      "No large URL overlay.",
+      "No blurry outline panel.",
+      "Logo only on merch.",
+      "URL only on monitor/browser bar."
+    ]
+  },
+  "history_used_count": 0
+}
