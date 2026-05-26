@@ -51,6 +51,56 @@
           "caption": "Isla logs off, already looking forward to a return visit tomorrow."
         }
       ]
+    },
+    {
+      "date": "2026-05-26",
+      "weekday": "Tuesday",
+      "product_referenced": {
+        "key": "suite",
+        "name": "Sapiver Press Suite",
+        "url": "https://suite.sapiverpress.co.uk",
+        "natural_reference": "a return visit tomorrow"
+      },
+      "story_note": "Isla settles back into her puzzle nook, noticing today's challenge starts on a surprising note.",
+      "continuation_note": "She carefully works through the tricky parts, ending on a solid breakthrough with plans to return tomorrow.",
+      "scenes": [
+        {
+          "id": "scene_01",
+          "title": "Back Again",
+          "dialogue": "Ready for today's puzzle.",
+          "caption": "Morning light streams over Isla's workspace."
+        },
+        {
+          "id": "scene_02",
+          "title": "Different Start",
+          "dialogue": "This clue shifts the whole approach.",
+          "caption": "Fresh twists make the puzzle feel alive."
+        },
+        {
+          "id": "scene_03",
+          "title": "The Pushback",
+          "dialogue": "No quick leaps here.",
+          "caption": "Pausing to think before committing anything."
+        },
+        {
+          "id": "scene_04",
+          "title": "The Column",
+          "dialogue": "This column is the key!",
+          "caption": "A logic breakthrough opens new paths."
+        },
+        {
+          "id": "scene_05",
+          "title": "The Follow-Through",
+          "dialogue": "Now it all clicks together.",
+          "caption": "Pieces falling neatly into place."
+        },
+        {
+          "id": "scene_06",
+          "title": "Worth Returning For",
+          "dialogue": "Steady progress made—back again tomorrow?",
+          "caption": "Isla closes her laptop with a satisfied smile."
+        }
+      ]
     }
   ],
   "ongoing_threads": [],
