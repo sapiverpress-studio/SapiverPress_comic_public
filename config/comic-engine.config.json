@@ -1,66 +1,71 @@
 ﻿{
+    "owner":  "sapiverpress-studio",
+    "publicRepo":  "SapiverPress_comic_public",
+    "privateRepo":  "SapiverPress_comic_private",
+    "timezone":  "Europe/London",
+    "retentionDays":  28,
     "model":  "gpt-4.1-mini",
+    "weekdayCharacters":  {
+                              "1":  {
+                                        "id":  "mike",
+                                        "name":  "Mike",
+                                        "format":  "illustrated_comic_panels",
+                                        "summary":  "Early 20s student, chaotic, phone-first solver."
+                                    },
+                              "2":  {
+                                        "id":  "isla",
+                                        "name":  "Isla",
+                                        "format":  "illustrated_comic_panels",
+                                        "summary":  "Early 30s, structured morning solver, laptop, books, plants, green hoodie, floral headband."
+                                    },
+                              "3":  {
+                                        "id":  "phil",
+                                        "name":  "Phil",
+                                        "format":  "illustrated_comic_panels",
+                                        "summary":  "Late 60s retired teacher, careful solver, cardigan, tea."
+                                    },
+                              "4":  {
+                                        "id":  "gemma",
+                                        "name":  "Gemma \u0026 Dan",
+                                        "format":  "illustrated_comic_panels",
+                                        "summary":  "Gemma is mid-40s, mother of two, full-time job, evening solver. Dan is equal partner."
+                                    },
+                              "5":  {
+                                        "id":  "andy_and_kat",
+                                        "name":  "Andy \u0026 Kat",
+                                        "format":  "phone_text_conversation",
+                                        "summary":  "Brother/sister Friday score dispute. Andy makes excuses. Kat keeps receipts."
+                                    }
+                          },
     "products":  {
                      "suite":  {
+                                   "name":  "Sapiver Press Suite",
+                                   "url":  "https://suite.sapiverpress.co.uk",
                                    "examples":  [
                                                     "today\u0027s online puzzle",
                                                     "a return visit tomorrow",
                                                     "a daily puzzle habit"
-                                                ],
-                                   "url":  "https://suite.sapiverpress.co.uk",
-                                   "name":  "Sapiver Press Suite"
+                                                ]
                                },
                      "etsy":  {
+                                  "name":  "Sapiver Press Etsy",
+                                  "url":  "https://sapiverpress.etsy.com",
                                   "examples":  [
                                                    "a printable pack bought as a small gift",
-                                                   "a puzzle pack mentioned naturally in conversation",
+                                                   "a puzzle pack mentioned naturally",
                                                    "a quiet product reference without turning the story into an advert"
-                                               ],
-                                  "url":  "https://sapiverpress.etsy.com",
-                                  "name":  "Sapiver Press Etsy"
+                                               ]
                               },
                      "kdp":  {
+                                 "name":  "Sapiver Press puzzle books",
+                                 "url":  "https://amazon.co.uk",
                                  "examples":  [
                                                   "a paperback puzzle book on the table",
-                                                  "a family member asking for a printed version",
-                                                  "a book version referenced gently"
-                                              ],
-                                 "url":  "https://amazon.co.uk",
-                                 "name":  "Sapiver Press puzzle books"
+                                                  "a printed version mentioned gently",
+                                                  "a book version kept in the room"
+                                              ]
                              }
                  },
-    "weekdayCharacters":  {
-                              "2":  {
-                                        "summary":  "Early 30s, calm structured morning solver, laptop, books/plants/window light, green hoodie, floral headband.",
-                                        "format":  "illustrated_comic_panels",
-                                        "name":  "Isla",
-                                        "id":  "isla"
-                                    },
-                              "4":  {
-                                        "summary":  "Gemma is mid-40s, mother of two, full-time job, evening sofa solver. Dan is equal partner.",
-                                        "format":  "illustrated_comic_panels",
-                                        "name":  "Gemma \u0026 Dan",
-                                        "id":  "gemma"
-                                    },
-                              "5":  {
-                                        "summary":  "Brother and sister Friday score dispute. Andy makes excuses. Kat is dry, precise, and usually right.",
-                                        "format":  "phone_text_conversation",
-                                        "name":  "Andy \u0026 Kat",
-                                        "id":  "andy_and_kat"
-                                    },
-                              "1":  {
-                                        "summary":  "Early 20s student, chaotic but likeable, phone-first solver, hoodie/headphones/backpack.",
-                                        "format":  "illustrated_comic_panels",
-                                        "name":  "Mike",
-                                        "id":  "mike"
-                                    },
-                              "3":  {
-                                        "summary":  "Late 60s retired teacher, glasses/cardigan/proper tea, careful solver, quietly competitive.",
-                                        "format":  "illustrated_comic_panels",
-                                        "name":  "Phil",
-                                        "id":  "phil"
-                                    }
-                          },
     "styleRules":  [
                        "No giant title banners.",
                        "No masthead inside individual scene art.",
@@ -69,18 +74,6 @@
                        "Sapiver Press logo/title only on merchandise and monitor/browser URL.",
                        "Story text must continue from previous episode, not repeat a fixed template.",
                        "Puzzle screen must be composited from real capture, not invented by image generation.",
-                       "The scene should be comic illustration, not photorealism."
-                   ],
-    "retentionDays":  28,
-    "schedule":  {
-                     "tuesday":  "isla",
-                     "monday":  "mike",
-                     "friday":  "andy_and_kat",
-                     "wednesday":  "phil",
-                     "thursday":  "gemma"
-                 },
-    "owner":  "sapiverpress-studio",
-    "timezone":  "Europe/London",
-    "publicRepo":  "SapiverPress_comic_public",
-    "privateRepo":  "SapiverPress_comic_private"
+                       "Comic illustration, not photorealism."
+                   ]
 }

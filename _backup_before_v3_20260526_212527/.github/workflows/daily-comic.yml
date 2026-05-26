@@ -2,7 +2,9 @@
 
 on:
   schedule:
+    # Daily weekday story at 07:00 UTC
     - cron: "0 7 * * 1-5"
+    # Weekly archive migration every Monday at 06:00 UTC
     - cron: "0 6 * * 1"
   workflow_dispatch:
     inputs:
@@ -23,17 +25,22 @@ jobs:
     name: Generate Daily Story
     runs-on: ubuntu-latest
     if: github.event_name == 'workflow_dispatch' || github.event.schedule == '0 7 * * 1-5'
+
     steps:
       - name: Checkout public repo
         uses: actions/checkout@v4
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "22"
+
       - name: Install dependencies
         run: npm install
+
       - name: Validate project
         run: npm run validate
+
       - name: Run daily generator
         env:
           COMIC_GITHUB_TOKEN: ${{ secrets.COMIC_GITHUB_TOKEN }}
@@ -46,15 +53,19 @@ jobs:
     name: Archive Migration
     runs-on: ubuntu-latest
     if: github.event.schedule == '0 6 * * 1' || github.event.inputs.run_archive == 'true'
+
     steps:
       - name: Checkout public repo
         uses: actions/checkout@v4
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "22"
+
       - name: Install dependencies
         run: npm install
+
       - name: Run archive migration
         env:
           COMIC_GITHUB_TOKEN: ${{ secrets.COMIC_GITHUB_TOKEN }}
