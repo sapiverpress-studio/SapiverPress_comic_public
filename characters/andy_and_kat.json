@@ -1,0 +1,25 @@
+﻿{
+    "disputed_weeks":  [
+
+                       ],
+    "weeks":  [
+
+              ],
+    "current_streak":  {
+                           "leader":  null,
+                           "weeks":  0
+                       },
+    "last_updated":  null,
+    "name":  "Andy \u0026 Kat",
+    "character_id":  "andy_and_kat",
+    "ongoing_threads":  [
+                            "The Friday score dispute",
+                            "Andy explains why this week didn\u0027t count",
+                            "Kat keeps receipts",
+                            "Warm sibling rivalry"
+                        ],
+    "running_score":  {
+                          "kat":  0,
+                          "andy":  0
+                      }
+}

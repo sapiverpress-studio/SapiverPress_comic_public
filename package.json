@@ -1,0 +1,15 @@
+﻿{
+    "version":  "3.0.0",
+    "name":  "sapiverpress-comic-public",
+    "scripts":  {
+                    "daily":  "node scripts/daily-generator.mjs",
+                    "validate":  "node scripts/validate-project.mjs",
+                    "archive":  "node scripts/archive-migration.mjs"
+                },
+    "type":  "module",
+    "dependencies":  {
+                         "@octokit/rest":  "^21.0.2",
+                         "openai":  "^6.0.0"
+                     },
+    "private":  true
+}
