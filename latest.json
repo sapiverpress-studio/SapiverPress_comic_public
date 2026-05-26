@@ -10,62 +10,62 @@
     "url": "https://suite.sapiverpress.co.uk",
     "natural_reference": "a return visit tomorrow"
   },
-  "story_note": "Isla returns to her morning ritual with a new Sapiver Press puzzle, noticing a fresh challenge.",
-  "continuation_note": "She makes logical progress and wraps up the session with plans for tomorrow.",
+  "story_note": "Isla settles back into her puzzle nook, noticing today's challenge starts on a surprising note.",
+  "continuation_note": "She carefully works through the tricky parts, ending on a solid breakthrough with plans to return tomorrow.",
   "scenes": [
     {
       "id": "scene_01",
       "title": "Back Again",
       "beat": "Return after yesterday, new daily puzzle, same habit",
-      "dialogue": "Another morning, another puzzle.",
-      "caption": "Isla settles in by the window, ready for today's challenge.",
+      "dialogue": "Ready for today's puzzle.",
+      "caption": "Morning light streams over Isla's workspace.",
       "image_ref": "isla_01_opening_return.png",
-      "screen_state": "Isla at laptop, plants on desk, window light streaming in."
+      "screen_state": "puzzle_page_loaded"
     },
     {
       "id": "scene_02",
       "title": "Different Start",
       "beat": "The first move shows today's puzzle is different",
-      "dialogue": "This one feels different right away.",
-      "caption": "Starting clues hint at a new twist in the day's puzzle.",
+      "dialogue": "This clue shifts the whole approach.",
+      "caption": "Fresh twists make the puzzle feel alive.",
       "image_ref": "isla_02_first_move.png",
-      "screen_state": "Close-up on Isla's focused expression and puzzle grid on laptop."
+      "screen_state": "initial_clues_highlighted"
     },
     {
       "id": "scene_03",
       "title": "The Pushback",
       "beat": "A fair stuck moment, no guessing",
-      "dialogue": "Hmmm... no guesses yet.",
-      "caption": "Isla hits a thoughtful pause, avoiding hasty moves.",
+      "dialogue": "No quick leaps here.",
+      "caption": "Pausing to think before committing anything.",
       "image_ref": "isla_03_stuck_moment.png",
-      "screen_state": "Isla tapping her chin, studying the puzzle carefully."
+      "screen_state": "grid_with_partial_marks"
     },
     {
       "id": "scene_04",
       "title": "The Column",
       "beat": "The logical breakthrough",
-      "dialogue": "Ah, this column unlocks everything!",
-      "caption": "A key insight breaks the stalemate.",
+      "dialogue": "This column is the key!",
+      "caption": "A logic breakthrough opens new paths.",
       "image_ref": "isla_04_breakthrough.png",
-      "screen_state": "Isla's finger pointing to a highlighted column on the puzzle screen."
+      "screen_state": "column_filled_logically"
     },
     {
       "id": "scene_05",
       "title": "The Follow-Through",
       "beat": "The grid begins to open",
-      "dialogue": "Now the rest falls into place.",
-      "caption": "The grid begins to reveal its secrets.",
+      "dialogue": "Now it all clicks together.",
+      "caption": "Pieces falling neatly into place.",
       "image_ref": "isla_05_finish.png",
-      "screen_state": "Puzzle screen showing more filled squares, Isla typing confidently."
+      "screen_state": "grid_progressing"
     },
     {
       "id": "scene_06",
       "title": "Worth Returning For",
       "beat": "Completion or honest latest progress, return tomorrow",
-      "dialogue": "Good progress today. Same time tomorrow?",
-      "caption": "Isla logs off, already looking forward to a return visit tomorrow.",
+      "dialogue": "Steady progress made—back again tomorrow?",
+      "caption": "Isla closes her laptop with a satisfied smile.",
       "image_ref": "isla_06_tomorrow_set.png",
-      "screen_state": "Isla closing her laptop, a slight smile as sunlight fades."
+      "screen_state": "puzzle_grid_saved"
     }
   ],
   "image_manifest": {
@@ -104,5 +104,5 @@
       "URL only on monitor/browser bar."
     ]
   },
-  "history_used_count": 0
+  "history_used_count": 1
 }
