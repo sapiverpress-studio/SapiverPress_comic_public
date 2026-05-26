@@ -1,4 +1,4 @@
-﻿name: Sapiver Press Daily Comic Engine V3
+name: Sapiver Press Daily Comic Engine V3
 
 on:
   schedule:
@@ -37,6 +37,7 @@ jobs:
       - name: Run daily generator
         env:
           COMIC_GITHUB_TOKEN: ${{ secrets.COMIC_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
@@ -58,4 +59,5 @@ jobs:
       - name: Run archive migration
         env:
           COMIC_GITHUB_TOKEN: ${{ secrets.COMIC_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
         run: npm run archive
