@@ -4,6 +4,7 @@ import path from "path";
 const GRAPH_VERSION = process.env.FB_GRAPH_VERSION || "v24.0";
 const STATE_PATH = process.env.FB_POST_STATE_PATH || "facebook-posts.json";
 const SUITE_URL = process.env.SUITE_URL || "https://suite.sapiverpress.co.uk";
+const ETSY_CATALOG_URL = process.env.ETSY_CATALOG_URL || "https://sapiver-press-etsy-search-catalog.netlify.app/";
 const STRICT = isTruthy(process.env.FB_POST_STRICT || "");
 
 function isTruthy(value) {
@@ -126,13 +127,14 @@ function buildCaption(story, date) {
 
   return [
     `Today's Sapiver Press daily puzzle comic — ${character}`,
+    `Buy gifts and printables at ${ETSY_CATALOG_URL}`,
     humanDate(date),
     "",
     note.trim(),
     "",
-    "Play today's puzzles and games:",
+    "Play along:",
     SUITE_URL,
-    productUrl && productUrl !== SUITE_URL ? `\nFeatured link: ${productUrl}` : ""
+    productUrl && productUrl !== SUITE_URL && productUrl !== ETSY_CATALOG_URL ? `\nFeatured link: ${productUrl}` : ""
   ].filter(Boolean).join("\n");
 }
 
