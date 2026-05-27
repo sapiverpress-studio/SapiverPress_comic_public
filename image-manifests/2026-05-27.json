@@ -1,18 +1,20 @@
 {
-  "character_id": "phil",
-  "character_name": "Phil",
+  "character_id": "isla",
+  "character_name": "Isla",
   "render_mode": "illustrated_comic_panels",
   "required_character_files": [
-    "templates/characters/phil/phil_01_opening_return.png",
-    "templates/characters/phil/phil_02_first_move.png",
-    "templates/characters/phil/phil_03_stuck_moment.png",
-    "templates/characters/phil/phil_04_breakthrough.png",
-    "templates/characters/phil/phil_05_finish.png",
-    "templates/characters/phil/phil_06_tomorrow_set.png"
+    "templates/characters/isla/isla_01_opening_return.png",
+    "templates/characters/isla/isla_02_first_move.png",
+    "templates/characters/isla/isla_03_stuck_moment.png",
+    "templates/characters/isla/isla_04_breakthrough.png",
+    "templates/characters/isla/isla_05_finish.png",
+    "templates/characters/isla/isla_06_tomorrow_set.png"
   ],
   "text_is_overlay": true,
   "puzzle_screen_inserted_later": true,
   "style_rules": [
+    "Isla is the only active daily comic character.",
+    "Puzzle screen must come from a real captured puzzle page.",
     "No giant title banners.",
     "No masthead inside individual scene art.",
     "No big URL overlay.",
