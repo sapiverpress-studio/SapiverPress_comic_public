@@ -651,6 +651,56 @@
           "caption": "Steady progress fuels eager return."
         }
       ]
+    },
+    {
+      "date": "2026-05-27",
+      "weekday": "Wednesday",
+      "product_referenced": {
+        "key": "suite",
+        "name": "Sapiver Press Suite",
+        "url": "https://suite.sapiverpress.co.uk",
+        "natural_reference": "a return visit tomorrow"
+      },
+      "story_note": "Phil returns to the morning puzzle with calm determination, noticing subtle changes in today's clues that require his steady, careful logic.",
+      "continuation_note": "Having unlocked a key column and made steady progress, Phil looks forward to a return visit tomorrow to continue exploring new challenges in the Sapiver Press Suite.",
+      "scenes": [
+        {
+          "id": "scene_01",
+          "title": "Back Again",
+          "dialogue": "Here we go—another fresh puzzle.",
+          "caption": "Phil readies his tea and puzzle."
+        },
+        {
+          "id": "scene_02",
+          "title": "Different Start",
+          "dialogue": "Hmm, that clue twists in an unexpected way.",
+          "caption": "Early signs of today’s unique challenge."
+        },
+        {
+          "id": "scene_03",
+          "title": "The Pushback",
+          "dialogue": "No guesses yet; I need a clear head.",
+          "caption": "Phil pauses, thinking deeply."
+        },
+        {
+          "id": "scene_04",
+          "title": "The Column",
+          "dialogue": "That column’s logic just snapped into place!",
+          "caption": "A breakthrough sharpens his progress."
+        },
+        {
+          "id": "scene_05",
+          "title": "The Follow-Through",
+          "dialogue": "Now the grid is unfolding neatly.",
+          "caption": "Answers slot in with steady clarity."
+        },
+        {
+          "id": "scene_06",
+          "title": "Worth Returning For",
+          "dialogue": "Almost finished—I'll pick this up tomorrow.",
+          "caption": "Steady progress ensures a return visit."
+        }
+      ]
     }
   ],
   "ongoing_threads": [],
