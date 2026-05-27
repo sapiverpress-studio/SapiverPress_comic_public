@@ -54,6 +54,8 @@ jobs:
           node-version: "22"
       - name: Install dependencies
         run: npm install
+      - name: Install Chromium for compositor
+        run: npx playwright install --with-deps chromium
       - name: Validate project
         run: npm run validate
       - name: Run daily generator
@@ -64,6 +66,17 @@ jobs:
           OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
         run: npm run daily
+      - name: Refresh generated story files
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
+      - name: Compose full strip and close-ups
+        env:
+          DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
+          SUITE_URL: "https://suite.sapiverpress.co.uk"
+          COMIC_PUZZLE_URL: ${{ secrets.COMIC_PUZZLE_URL }}
+          COMIC_SCREEN_BOX: ${{ secrets.COMIC_SCREEN_BOX }}
+        run: npm run compose
       - name: Post comic to Facebook
         if: github.event_name == 'schedule' || github.event_name == 'push' || github.event.inputs.post_to_facebook == 'true'
         env:
@@ -71,32 +84,23 @@ jobs:
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
           FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
           META_USER_TOKEN: ${{ secrets.META_USER_TOKEN }}
-          COMIC_POST_IMAGE_URL_TEMPLATE: ${{ secrets.COMIC_POST_IMAGE_URL_TEMPLATE }}
-          COMIC_POST_IMAGE_PATH: ${{ secrets.COMIC_POST_IMAGE_PATH }}
+          COMIC_POST_IMAGE_PATH: "social/{date}.png"
           FORCE_FB_POST: ${{ github.event.inputs.force_facebook_post }}
           SUITE_URL: "https://suite.sapiverpress.co.uk"
           ETSY_CATALOG_URL: "https://sapiver-press-etsy-search-catalog.netlify.app/"
         run: npm run facebook-post
-      - name: Commit Facebook post state
+      - name: Commit social outputs and Facebook state
         if: always()
         run: |
           set -e
           git config user.name "sapiver-comic-bot"
           git config user.email "sapiver-comic-bot@users.noreply.github.com"
-          if [ ! -f facebook-posts.json ]; then
-            echo "No Facebook state file to commit"
-            exit 0
-          fi
-          cp facebook-posts.json /tmp/facebook-posts.json
-          git fetch origin main
-          git reset --hard origin/main
-          cp /tmp/facebook-posts.json facebook-posts.json
-          git add facebook-posts.json
+          git add social facebook-posts.json || true
           if git diff --cached --quiet; then
-            echo "No Facebook state changes"
+            echo "No generated social or Facebook state changes"
             exit 0
           fi
-          git commit -m "Update Facebook posting state"
+          git commit -m "Update daily comic social outputs"
           git push
 
   archive-migration:
