@@ -1,0 +1,140 @@
+{
+  "exclude": [
+    "sapiverpress-puzzle-suite"
+  ],
+  "selection": {
+    "method": "date-seeded",
+    "fallback_policy": "skip-source-if-no-json-or-data",
+    "no_browser_hint_check_guessing": true
+  },
+  "sources": [
+    {
+      "id": "sudoku-x",
+      "name": "Sudoku X",
+      "netlify_project": "sapiver-sudoku-x",
+      "url": "https://sapiver-sudoku-x.netlify.app/",
+      "suite_url": "https://suite.sapiverpress.co.uk/play/sudoku-x/",
+      "type": "sudoku_variant"
+    },
+    {
+      "id": "odds-and-evens",
+      "name": "Odds and Evens Sudoku",
+      "netlify_project": "sapiver-press-odds-and-evens",
+      "url": "https://sapiver-press-odds-and-evens.netlify.app/",
+      "suite_url": "https://suite.sapiverpress.co.uk/play/odds-and-evens/",
+      "type": "sudoku_variant"
+    },
+    {
+      "id": "non-consecutive",
+      "name": "Non-Consecutive Sudoku",
+      "netlify_project": "sapiver-press-non-con",
+      "url": "https://sapiver-press-non-con.netlify.app/",
+      "suite_url": "https://suite.sapiverpress.co.uk/play/non-consecutive/",
+      "type": "sudoku_variant"
+    },
+    {
+      "id": "kropki",
+      "name": "Kropki Sudoku",
+      "netlify_project": "sapiver-press-kropki",
+      "url": "https://sapiver-press-kropki.netlify.app/",
+      "suite_url": "https://suite.sapiverpress.co.uk/play/kropki/",
+      "type": "sudoku_variant"
+    },
+    {
+      "id": "hyper",
+      "name": "Hyper Sudoku",
+      "netlify_project": "sapiver-press-hyper",
+      "url": "https://sapiver-press-hyper.netlify.app/",
+      "suite_url": "https://suite.sapiverpress.co.uk/play/hyper/",
+      "type": "sudoku_variant"
+    },
+    {
+      "id": "anti-king",
+      "name": "Anti-King Sudoku",
+      "netlify_project": "sapiver-press-anti-king",
+      "url": "https://sapiver-press-anti-king.netlify.app/",
+      "suite_url": "https://suite.sapiverpress.co.uk/play/anti-king-sudoku/",
+      "type": "sudoku_variant"
+    },
+    {
+      "id": "xv",
+      "name": "XV Sudoku",
+      "netlify_project": "sapiver-press-xv",
+      "url": "https://sapiver-press-xv.netlify.app/",
+      "suite_url": "https://suite.sapiverpress.co.uk/play/xv/",
+      "type": "sudoku_variant"
+    },
+    {
+      "id": "thermo",
+      "name": "Thermo Sudoku",
+      "netlify_project": "sapiver-press-thermo",
+      "url": "https://sapiver-press-thermo.netlify.app/",
+      "suite_url": "https://suite.sapiverpress.co.uk/play/thermo/",
+      "type": "sudoku_variant"
+    },
+    {
+      "id": "sandwich",
+      "name": "Sandwich Sudoku",
+      "netlify_project": "sapiver-press-sandwich",
+      "url": "https://sapiver-press-sandwich.netlify.app/",
+      "suite_url": "https://suite.sapiverpress.co.uk/play/sandwich/",
+      "type": "sudoku_variant"
+    },
+    {
+      "id": "renban",
+      "name": "Renban Sudoku",
+      "netlify_project": "sapiver-press-renban",
+      "url": "https://sapiver-press-renban.netlify.app/",
+      "suite_url": "https://suite.sapiverpress.co.uk/play/renban/",
+      "type": "sudoku_variant"
+    },
+    {
+      "id": "little-killer",
+      "name": "Little Killer Sudoku",
+      "netlify_project": "sapiver-press-little-killer",
+      "url": "https://sapiver-press-little-killer.netlify.app/",
+      "suite_url": "https://suite.sapiverpress.co.uk/play/little-killer/",
+      "type": "sudoku_variant"
+    },
+    {
+      "id": "killer",
+      "name": "Killer Sudoku",
+      "netlify_project": "sapiver-press-killer",
+      "url": "https://sapiver-press-killer.netlify.app/",
+      "suite_url": "https://suite.sapiverpress.co.uk/play/killer/",
+      "type": "sudoku_variant"
+    },
+    {
+      "id": "german-whisper",
+      "name": "German Whisper Sudoku",
+      "netlify_project": "sapiver-press-german-whisper",
+      "url": "https://sapiver-press-german-whisper.netlify.app/",
+      "suite_url": "https://suite.sapiverpress.co.uk/play/german-whisper/",
+      "type": "sudoku_variant"
+    },
+    {
+      "id": "arrow",
+      "name": "Arrow Sudoku",
+      "netlify_project": "sapiver-press-arrow",
+      "url": "https://sapiver-press-arrow.netlify.app/",
+      "suite_url": "https://suite.sapiverpress.co.uk/play/arrow/",
+      "type": "sudoku_variant"
+    },
+    {
+      "id": "anti-knight",
+      "name": "Anti-Knight Sudoku",
+      "netlify_project": "sapiver-press-anti-knight",
+      "url": "https://sapiver-press-anti-knight.netlify.app/",
+      "suite_url": "https://suite.sapiverpress.co.uk/play/anti-knight/",
+      "type": "sudoku_variant"
+    },
+    {
+      "id": "trigoku",
+      "name": "Trigoku",
+      "netlify_project": "sapiverpress-trigoku",
+      "url": "https://sapiverpress-trigoku.netlify.app/",
+      "suite_url": "https://suite.sapiverpress.co.uk/play/trigoku/",
+      "type": "trigoku"
+    }
+  ]
+}
