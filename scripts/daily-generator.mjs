@@ -1,4 +1,4 @@
-﻿import fs from "fs/promises";
+import fs from "fs/promises";
 import { Octokit } from "@octokit/rest";
 import OpenAI from "openai";
 
@@ -7,6 +7,13 @@ const OWNER = config.owner;
 const PUBLIC_REPO = config.publicRepo;
 const MODEL = process.env.OPENAI_MODEL || config.model || "gpt-4.1-mini";
 const githubToken = process.env.COMIC_GITHUB_TOKEN || process.env.GITHUB_TOKEN;
+
+const ISLA_CHARACTER = {
+  id: "isla",
+  name: "Isla",
+  format: "illustrated_comic_panels",
+  summary: "Early 30s, calm structured morning solver, laptop, books/plants/window light, green hoodie, floral headband. Isla is the only active daily comic character."
+};
 
 if (!githubToken) throw new Error("Missing COMIC_GITHUB_TOKEN or GITHUB_TOKEN.");
 if (!process.env.OPENAI_API_KEY) throw new Error("Missing OPENAI_API_KEY.");
@@ -22,7 +29,7 @@ function londonDateParts() {
     weekday: "long", year: "numeric", month: "2-digit", day: "2-digit"
   }).formatToParts(base);
   const get = (type) => parts.find(p => p.type === type)?.value;
-  return { date: `${get("year")}-${get("month")}-${get("day")}`, weekdayName: get("weekday"), weekdayIndex: base.getUTCDay() };
+  return { date: `${get("year")}-${get("month")}-${get("day")}`, weekdayName: get("weekday") };
 }
 
 function weekNumber(date = new Date()) {
@@ -61,31 +68,21 @@ async function writeJson(repo, path, content, message) {
   });
 }
 
-function sceneSkeleton(characterId) {
-  if (characterId === "andy_and_kat") {
-    return [
-      { id: "scene_01", title: "Friday Check-In", beat: "Kat asks whether Andy has done it yet" },
-      { id: "scene_02", title: "Still On It", beat: "Andy claims he is technically solving" },
-      { id: "scene_03", title: "The Excuse", beat: "Andy gives a reason the score should not count" },
-      { id: "scene_04", title: "Receipts", beat: "Kat produces dry evidence" },
-      { id: "scene_05", title: "Running Score", beat: "The scoreboard is updated" },
-      { id: "scene_06", title: "Same Time Next Friday", beat: "They both pretend they are not invested" }
-    ];
-  }
+function sceneSkeleton() {
   return [
-    { id: "scene_01", title: "Back Again", beat: "Return after yesterday, new daily puzzle, same habit" },
-    { id: "scene_02", title: "Different Start", beat: "The first move shows today's puzzle is different" },
-    { id: "scene_03", title: "The Pushback", beat: "A fair stuck moment, no guessing" },
-    { id: "scene_04", title: "The Column", beat: "The logical breakthrough" },
-    { id: "scene_05", title: "The Follow-Through", beat: "The grid begins to open" },
-    { id: "scene_06", title: "Worth Returning For", beat: "Completion or honest latest progress, return tomorrow" }
+    { id: "scene_01", title: "Opening Grid", beat: "Isla opens today's real puzzle and takes in the starting pattern" },
+    { id: "scene_02", title: "First Moves", beat: "The first safe entries create a foothold" },
+    { id: "scene_03", title: "Stuck Moment", beat: "A fair pause before forcing anything" },
+    { id: "scene_04", title: "Breakthrough", beat: "One clean deduction changes the board" },
+    { id: "scene_05", title: "Nearly There", beat: "The puzzle is mostly filled and the logic is tightening" },
+    { id: "scene_06", title: "Finished", beat: "The solved or latest real progress screen closes the strip" }
   ];
 }
 
-function imageRef(characterId, sceneId) {
+function imageRef(sceneId) {
   const names = { scene_01:"opening_return", scene_02:"first_move", scene_03:"stuck_moment", scene_04:"breakthrough", scene_05:"finish", scene_06:"tomorrow_set" };
   const n = sceneId.replace("scene_", "");
-  return `${characterId}_${n}_${names[sceneId] || "panel"}.png`;
+  return `isla_${n}_${names[sceneId] || "panel"}.png`;
 }
 
 function imageManifest(character, scenes) {
@@ -96,7 +93,11 @@ function imageManifest(character, scenes) {
     required_character_files: scenes.map(s => `templates/characters/${character.id}/${s.image_ref}`),
     text_is_overlay: true,
     puzzle_screen_inserted_later: true,
-    style_rules: config.styleRules,
+    style_rules: [
+      "Isla is the only active daily comic character.",
+      "Puzzle screen must come from a real captured puzzle page.",
+      ...(config.styleRules || [])
+    ],
     compositor_rules: [
       "Character art first.", "Puzzle screen composited second.", "Minimal story text overlaid last.",
       "No generated puzzle grids.", "No giant title/header/footer.", "No large URL overlay.",
@@ -106,14 +107,25 @@ function imageManifest(character, scenes) {
 }
 
 function fallbackStory({ date, weekdayName, character, history, productReference }) {
-  const skeleton = sceneSkeleton(character.id);
-  const scenes = skeleton.map(scene => ({
-    id: scene.id, title: scene.title, beat: scene.beat,
-    dialogue: character.id === "andy_and_kat" ? "That still counts." : "Back again.",
-    caption: character.id === "andy_and_kat" ? "The score was never going to be simple." : "A new day meant a new lock.",
-    image_ref: imageRef(character.id, scene.id), screen_state: scene.id
+  const skeleton = sceneSkeleton();
+  const captions = [
+    "Isla opens today's puzzle with a clean first look.",
+    "The first safe moves start to shape the grid.",
+    "She pauses before guessing would spoil the point.",
+    "One deduction opens the next route through.",
+    "The board begins to give way.",
+    "Tomorrow has already earned its place."
+  ];
+  const scenes = skeleton.map((scene, index) => ({
+    id: scene.id,
+    title: scene.title,
+    beat: scene.beat,
+    dialogue: "Back again.",
+    caption: captions[index],
+    image_ref: imageRef(scene.id),
+    screen_state: scene.id
   }));
-  return { date, weekday: weekdayName, character_id: character.id, character_name: character.name, render_mode: character.format, product_referenced: productReference, story_note: "Fallback story produced because the OpenAI call failed.", scenes, image_manifest: imageManifest(character, scenes), history_used_count: history.weeks?.length || 0 };
+  return { date, weekday: weekdayName, character_id: character.id, character_name: character.name, render_mode: character.format, product_referenced: productReference, story_note: "Fallback Isla story produced because the OpenAI call failed.", scenes, image_manifest: imageManifest(character, scenes), history_used_count: history.weeks?.length || 0 };
 }
 
 function schema() {
@@ -126,17 +138,19 @@ function schema() {
 }
 
 async function generateStory({ date, weekdayName, character, history, productReference }) {
-  const skeleton = sceneSkeleton(character.id);
+  const skeleton = sceneSkeleton();
   const system = [
     "You write Sapiver Press daily comic overlay text.",
     "Return JSON only.",
-    "Continue from recent history; do not repeat the same fixed template text.",
+    "Isla is the only active character, every day of the week.",
+    "Never mention Phil, Mike, Gemma, Dan, Andy, or Kat.",
+    "The screen will show a real captured puzzle at different stages of progress.",
     "Keep each dialogue line short for one speech bubble.",
     "Keep each caption short for one bottom strip.",
     "Do not write masthead text, giant poster copy, URLs, or fake puzzle grids.",
     "The real puzzle screen will be composited later."
   ].join("\n");
-  const payload = { date, weekday: weekdayName, character, recent_history: history.weeks?.slice(-6) || [], ongoing_threads: history.ongoing_threads || [], product_to_reference_naturally: productReference, required_scene_skeleton: skeleton, style_rules: config.styleRules };
+  const payload = { date, weekday: weekdayName, character, recent_history: history.weeks?.slice(-6) || [], ongoing_threads: history.ongoing_threads || [], product_to_reference_naturally: productReference, required_scene_skeleton: skeleton };
   const response = await openai.responses.create({
     model: MODEL,
     input: [{ role: "system", content: system }, { role: "user", content: JSON.stringify(payload, null, 2) }],
@@ -147,29 +161,29 @@ async function generateStory({ date, weekdayName, character, history, productRef
   const scenes = generated.scenes.slice(0, 6).map((scene, i) => {
     const fb = skeleton[i];
     const id = scene.id || fb.id;
-    return { id, title: scene.title || fb.title, beat: fb.beat, dialogue: scene.dialogue || "", caption: scene.caption || "", image_ref: imageRef(character.id, id), screen_state: scene.screen_state || id };
+    return { id, title: scene.title || fb.title, beat: fb.beat, dialogue: scene.dialogue || "", caption: scene.caption || "", image_ref: imageRef(id), screen_state: scene.screen_state || id };
   });
   return { date, weekday: weekdayName, character_id: character.id, character_name: character.name, render_mode: character.format, product_referenced: productReference, story_note: generated.story_note, continuation_note: generated.continuation_note, scenes, image_manifest: imageManifest(character, scenes), history_used_count: history.weeks?.length || 0 };
 }
 
 async function main() {
-  const { date, weekdayName, weekdayIndex } = londonDateParts();
-  const character = config.weekdayCharacters[String(weekdayIndex)];
-  if (!character) { console.log(`No weekday comic scheduled for ${weekdayName}.`); return; }
+  const { date, weekdayName } = londonDateParts();
+  const character = ISLA_CHARACTER;
   const productReference = productReferenceFor(date);
-  console.log(`Generating V3 story for ${date} ${weekdayName}: ${character.name}`);
+  console.log(`Generating V3 Isla story for ${date} ${weekdayName}`);
   console.log(`Model: ${MODEL}`);
-  const historyResult = await readJson(PUBLIC_REPO, `characters/${character.id}.json`, { character_id: character.id, name: character.name, weeks: [], ongoing_threads: [], last_updated: null });
+  const historyResult = await readJson(PUBLIC_REPO, "characters/isla.json", { character_id: "isla", name: "Isla", weeks: [], ongoing_threads: [], last_updated: null });
   const history = historyResult.data;
   let story;
   try { story = await generateStory({ date, weekdayName, character, history, productReference }); }
   catch (error) { console.error("OpenAI generation failed. Writing fallback story."); console.error(error); story = fallbackStory({ date, weekdayName, character, history, productReference }); }
   const historyEntry = { date, weekday: weekdayName, product_referenced: productReference, story_note: story.story_note, continuation_note: story.continuation_note || "", scenes: story.scenes.map(s => ({ id: s.id, title: s.title, dialogue: s.dialogue, caption: s.caption })) };
-  const updatedHistory = { ...history, character_id: character.id, name: character.name, weeks: [...(history.weeks || []), historyEntry], last_updated: date };
-  await writeJson(PUBLIC_REPO, `characters/${character.id}.json`, updatedHistory, `Update ${character.id} history - ${date}`);
-  await writeJson(PUBLIC_REPO, `daily/${date}.json`, story, `Daily comic story - ${date}`);
+  const updatedHistory = { ...history, character_id: "isla", name: "Isla", weeks: [...(history.weeks || []), historyEntry], last_updated: date };
+  await writeJson(PUBLIC_REPO, "characters/isla.json", updatedHistory, `Update isla history - ${date}`);
+  await writeJson(PUBLIC_REPO, `daily/${date}.json`, story, `Daily Isla comic story - ${date}`);
   await writeJson(PUBLIC_REPO, `image-manifests/${date}.json`, story.image_manifest, `Image manifest - ${date}`);
-  await writeJson(PUBLIC_REPO, "latest.json", story, `Latest daily comic story - ${date}`);
-  console.log(`Done. Wrote daily/${date}.json`);
+  await writeJson(PUBLIC_REPO, "latest.json", story, `Latest Isla comic story - ${date}`);
+  console.log(`Done. Wrote daily/${date}.json for Isla`);
 }
+
 main().catch(error => { console.error(error); process.exit(1); });
