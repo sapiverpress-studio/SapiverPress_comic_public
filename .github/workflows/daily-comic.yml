@@ -74,7 +74,6 @@ jobs:
         env:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
           SUITE_URL: "https://suite.sapiverpress.co.uk"
-          COMIC_PUZZLE_URL: ${{ secrets.COMIC_PUZZLE_URL }}
           COMIC_SCREEN_BOX: ${{ secrets.COMIC_SCREEN_BOX }}
         run: npm run compose
       - name: Post comic to Facebook
