@@ -95,6 +95,19 @@ jobs:
           git config user.name "sapiver-comic-bot"
           git config user.email "sapiver-comic-bot@users.noreply.github.com"
           git checkout -- package-lock.json || true
+
+          echo "Changed files before filtering:"
+          git status --porcelain || true
+
+          non_zip_changes=$(git status --porcelain | awk '$2 !~ /^social\/.*\.zip$/ {print $0}')
+          zip_only_changes=$(git status --porcelain | awk '$2 ~ /^social\/.*\.zip$/ {print $2}')
+          if [ -z "$non_zip_changes" ] && [ -n "$zip_only_changes" ]; then
+            echo "Only social ZIP bytes changed. Discarding ZIP-only churn so the folder timestamp does not imply a visual update."
+            for f in $zip_only_changes; do
+              git checkout -- "$f" || true
+            done
+          fi
+
           git add characters/isla.json daily image-manifests latest.json social || true
           if [ -f facebook-posts.json ]; then
             git add facebook-posts.json
