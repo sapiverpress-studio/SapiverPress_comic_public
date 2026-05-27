@@ -6,6 +6,7 @@ import { chromium } from "playwright";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const ROOT = path.resolve(__dirname, "..");
+const PLAY_INDEX_URL = "https://suite.sapiverpress.co.uk/play/";
 
 const EXPECTED_CAPTURE_NAMES = [
   "01_fresh_daily_grid.png",
@@ -28,6 +29,15 @@ function londonToday() {
   return `${values.year}-${values.month}-${values.day}`;
 }
 
+function stableIndex(seed, length) {
+  let hash = 2166136261;
+  for (const char of seed) {
+    hash ^= char.charCodeAt(0);
+    hash = Math.imul(hash, 16777619);
+  }
+  return Math.abs(hash >>> 0) % Math.max(length, 1);
+}
+
 async function exists(filePath) {
   try {
     await fs.access(filePath);
@@ -42,6 +52,96 @@ function fail(message) {
   process.exit(1);
 }
 
+async function waitForPage(page) {
+  try {
+    await page.waitForLoadState("networkidle", { timeout: 15000 });
+  } catch {
+    console.log("Network idle was not reached; continuing after DOM load.");
+  }
+  await page.waitForTimeout(2500);
+}
+
+async function choosePuzzleUrl(page, date) {
+  const forced = (process.env.COMIC_PUZZLE_URL || "").trim();
+  if (forced) {
+    console.log(`Using forced puzzle URL: ${forced}`);
+    return { url: forced, mode: "forced" };
+  }
+
+  console.log(`Discovering puzzle links from ${PLAY_INDEX_URL}`);
+  const response = await page.goto(PLAY_INDEX_URL, { waitUntil: "domcontentloaded", timeout: 45000 });
+  if (!response || !response.ok()) {
+    fail(`Could not load play page: ${response?.status?.() || "no response"}`);
+  }
+  await waitForPage(page);
+
+  const links = await page.evaluate(() => {
+    return [...document.querySelectorAll("a[href]")]
+      .map((a) => ({ href: a.href, text: (a.textContent || "").trim() }))
+      .filter((item) => item.href);
+  });
+
+  const candidates = links
+    .filter((item) => {
+      const href = item.href.toLowerCase();
+      if (href.includes("etsy") || href.includes("amazon") || href.includes("facebook") || href.includes("pinterest")) return false;
+      if (href === "https://suite.sapiverpress.co.uk/" || href === PLAY_INDEX_URL) return false;
+      return href.includes("netlify.app") || href.includes("suite.sapiverpress.co.uk/play/");
+    })
+    .map((item) => item.href)
+    .filter((href, index, arr) => arr.indexOf(href) === index)
+    .sort();
+
+  if (!candidates.length) {
+    console.log("No playable links discovered; falling back to the play page itself.");
+    return { url: PLAY_INDEX_URL, mode: "play-page-fallback", candidates: [] };
+  }
+
+  const index = stableIndex(date, candidates.length);
+  const url = candidates[index];
+  console.log(`Selected puzzle ${index + 1}/${candidates.length}: ${url}`);
+  return { url, mode: "daily-discovered-random", candidates };
+}
+
+async function nudgePuzzle(page, stage) {
+  const viewport = page.viewportSize() || { width: 1280, height: 900 };
+  const points = [
+    [0.50, 0.50], [0.43, 0.47], [0.57, 0.47], [0.43, 0.57], [0.57, 0.57],
+    [0.50, 0.40], [0.50, 0.60], [0.35, 0.50], [0.65, 0.50],
+  ];
+
+  const attempts = Math.max(1, stage * 2);
+  for (let i = 0; i < attempts; i++) {
+    const [px, py] = points[(stage + i) % points.length];
+    const x = Math.round(viewport.width * px);
+    const y = Math.round(viewport.height * py);
+    await page.mouse.click(x, y);
+    await page.keyboard.press(String(((stage + i) % 9) + 1));
+    await page.keyboard.press("Tab").catch(() => {});
+    await page.waitForTimeout(180);
+  }
+
+  const likelyButtons = [
+    "text=/hint/i",
+    "text=/check/i",
+    "text=/new/i",
+    "text=/start/i",
+    "text=/play/i",
+    "button:has-text('Hint')",
+    "button:has-text('Check')",
+  ];
+
+  for (const selector of likelyButtons.slice(0, stage)) {
+    try {
+      const button = page.locator(selector).first();
+      if (await button.isVisible({ timeout: 300 })) {
+        await button.click({ timeout: 500 });
+        await page.waitForTimeout(300);
+      }
+    } catch {}
+  }
+}
+
 const today = londonToday();
 const override = (process.env.DATE_OVERRIDE || "").trim();
 
@@ -50,7 +150,6 @@ if (override && override !== today) {
 }
 
 const date = today;
-const sourceUrl = (process.env.COMIC_PUZZLE_URL || "https://suite.sapiverpress.co.uk").trim();
 const captureDir = path.join(ROOT, "captures", date, "extracted");
 const capturePaths = EXPECTED_CAPTURE_NAMES.map((name) => path.join(captureDir, name));
 
@@ -66,34 +165,35 @@ try {
   browser = await chromium.launch({ headless: true });
   const page = await browser.newPage({ viewport: { width: 1280, height: 900 }, deviceScaleFactor: 1 });
 
-  const response = await page.goto(sourceUrl, { waitUntil: "domcontentloaded", timeout: 45000 });
+  const choice = await choosePuzzleUrl(page, date);
+  const response = await page.goto(choice.url, { waitUntil: "domcontentloaded", timeout: 45000 });
   if (!response) {
-    fail(`No response received from ${sourceUrl}`);
+    fail(`No response received from ${choice.url}`);
   }
   if (!response.ok()) {
-    fail(`Page failed to load: ${response.status()} ${response.statusText()} from ${sourceUrl}`);
+    fail(`Page failed to load: ${response.status()} ${response.statusText()} from ${choice.url}`);
   }
 
-  try {
-    await page.waitForLoadState("networkidle", { timeout: 15000 });
-  } catch {
-    console.log("Network idle was not reached; continuing after DOM load.");
-  }
+  await waitForPage(page);
 
-  await page.waitForTimeout(2500);
-
-  for (const outputPath of capturePaths) {
+  for (let stage = 0; stage < capturePaths.length; stage++) {
+    if (stage > 0) {
+      await nudgePuzzle(page, stage);
+      await page.waitForTimeout(700);
+    }
+    const outputPath = capturePaths[stage];
     await page.screenshot({ path: outputPath, fullPage: false, type: "png" });
     console.log(`Captured ${path.relative(ROOT, outputPath)}`);
-    await page.waitForTimeout(250);
   }
 
   const manifest = {
     date,
-    source_url: sourceUrl,
+    source_url: choice.url,
+    source_mode: choice.mode,
+    playable_candidates: choice.candidates || [],
     created_at: new Date().toISOString(),
     viewport: { width: 1280, height: 900 },
-    note: "Real live page screenshots captured by Playwright Chromium. These are not placeholders or generated fake puzzle grids.",
+    note: "Real live page screenshots captured by Playwright Chromium from a playable puzzle source. Interaction attempts are used to capture different stages when the game supports browser input. No placeholder images or fake puzzle grids are generated.",
     files: EXPECTED_CAPTURE_NAMES,
   };
 
