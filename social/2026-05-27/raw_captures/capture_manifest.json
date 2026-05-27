@@ -2,62 +2,81 @@
   "date": "2026-05-27",
   "source_url": "https://suite.sapiverpress.co.uk/play/trigoku/",
   "source_mode": "trigoku-fixed-for-staged-comic",
-  "stage_method": "hint_check_until_completion_no_next",
-  "created_at": "2026-05-27T12:33:20.276Z",
+  "stage_method": "fixed_hint_check_stages_no_text_completion_guess",
+  "created_at": "2026-05-27T12:49:18.057Z",
   "viewport": {
     "width": 1280,
     "height": 900
   },
+  "distinct_screenshot_count": 6,
   "stage_log": [
     {
       "stage": 1,
       "file": "01_fresh_daily_grid.png",
-      "action": "reset",
-      "hints": 0,
-      "complete": true
+      "label": "fresh_daily_grid",
+      "target_total_hints": 0,
+      "hints_clicked_this_stage": 0,
+      "hints_clicked_total": 0,
+      "check_clicked": false,
+      "screenshot_hash": "42170f73d8118d2e66233ca5bfd0d06e64b58bbf548cc05c4afb7d4362453cb8"
     },
     {
       "stage": 2,
       "file": "02_first_moves.png",
-      "action": "hint_check",
-      "hints": 0,
-      "complete": true
+      "label": "first_moves",
+      "target_total_hints": 3,
+      "hints_clicked_this_stage": 3,
+      "hints_clicked_total": 3,
+      "check_clicked": false,
+      "screenshot_hash": "11b4d90b64a6e8673f80b4360ff828989fdd88450318d7182dc4b826cc31abab"
     },
     {
       "stage": 3,
       "file": "03_stuck_moment.png",
-      "action": "hint_check",
-      "hints": 0,
-      "complete": true
+      "label": "stuck_moment",
+      "target_total_hints": 8,
+      "hints_clicked_this_stage": 5,
+      "hints_clicked_total": 8,
+      "check_clicked": true,
+      "screenshot_hash": "eebbed90947b6f131037f88f13d7cbc189cb0f13926c30b923bfa7834a7dc99f"
     },
     {
       "stage": 4,
       "file": "04_breakthrough.png",
-      "action": "hint_check",
-      "hints": 0,
-      "complete": true
+      "label": "breakthrough",
+      "target_total_hints": 18,
+      "hints_clicked_this_stage": 10,
+      "hints_clicked_total": 18,
+      "check_clicked": true,
+      "screenshot_hash": "39f0928a25ef4f5e175be56fe519998fb636c731418db6318da64e1308616dab"
     },
     {
       "stage": 5,
       "file": "05_nearly_complete.png",
-      "action": "hint_check",
-      "hints": 0,
-      "complete": true
+      "label": "nearly_complete",
+      "target_total_hints": 45,
+      "hints_clicked_this_stage": 27,
+      "hints_clicked_total": 45,
+      "check_clicked": true,
+      "screenshot_hash": "5e00bc1c7bec977cb9ad491fa190f747ac49a78fa18f8aa39fff1507af268975"
     },
     {
       "stage": 6,
       "file": "06_complete_solution.png",
-      "action": "solve_until_complete_then_check",
-      "hints": 0,
-      "complete": true
+      "label": "completion_attempt",
+      "target_total_hints": 140,
+      "hints_clicked_this_stage": 95,
+      "hints_clicked_total": 140,
+      "check_clicked": true,
+      "screenshot_hash": "ac68aed1b1d9c72e0fda27b34709bce2f6eb2e63b86dd4c6f29befd93a210e2a"
     }
   ],
-  "final_signals": {
-    "solved_or_complete_words": true,
-    "hints_used_text": true,
-    "mistakes_text": true,
-    "next_text_present_but_not_clicked": true
+  "final_page_signals": {
+    "contains_hints_used_text": true,
+    "contains_mistakes_text": true,
+    "contains_next_text": true
   },
+  "note": "Real Trigoku screenshots. Stages are created by fixed real Hint/Check clicks. No fake grids. No text-based completion guessing. No Next click before capture.",
   "files": [
     "01_fresh_daily_grid.png",
     "02_first_moves.png",

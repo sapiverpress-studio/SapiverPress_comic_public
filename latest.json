@@ -10,8 +10,8 @@
     "url": "https://suite.sapiverpress.co.uk",
     "natural_reference": "a return visit tomorrow"
   },
-  "story_note": "Isla starts Wednesday with steady focus on today's Sapiver Press Suite challenge.",
-  "continuation_note": "She makes a key deduction that unlocks nearly all answers, finishing strong and eager for a return visit tomorrow.",
+  "story_note": "Isla begins Wednesday with calm focus on her Sapiver Press Suite puzzle.",
+  "continuation_note": "A sharp deduction opens nearly all answers, concluding with a strong finish and anticipation for a return visit tomorrow.",
   "scenes": [
     {
       "id": "scene_01",
@@ -65,7 +65,7 @@
       "dialogue": "Great progress today. Same time tomorrow?",
       "caption": "Closing the puzzle in the morning light, eager for next time.",
       "image_ref": "isla_06_tomorrow_set.png",
-      "screen_state": "complete"
+      "screen_state": "completed"
     }
   ],
   "image_manifest": {
