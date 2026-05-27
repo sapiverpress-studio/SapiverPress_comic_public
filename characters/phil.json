@@ -401,6 +401,56 @@
           "caption": "Progress made, ready to return."
         }
       ]
+    },
+    {
+      "date": "2026-05-27",
+      "weekday": "Wednesday",
+      "product_referenced": {
+        "key": "suite",
+        "name": "Sapiver Press Suite",
+        "url": "https://suite.sapiverpress.co.uk",
+        "natural_reference": "a return visit tomorrow"
+      },
+      "story_note": "Phil embraces another morning puzzle, feeling the familiar calm while sensing today's challenge curves in a new direction.",
+      "continuation_note": "With steady progress made, Phil anticipates a return visit tomorrow to the Sapiver Press Suite for fresh puzzles and quiet satisfaction.",
+      "scenes": [
+        {
+          "id": "scene_01",
+          "title": "Back Again",
+          "dialogue": "Time for another puzzle session.",
+          "caption": "Phil pours his tea, preparing to start."
+        },
+        {
+          "id": "scene_02",
+          "title": "Different Start",
+          "dialogue": "This opening clue feels different today.",
+          "caption": "A new twist emerges early in the puzzle."
+        },
+        {
+          "id": "scene_03",
+          "title": "The Pushback",
+          "dialogue": "No guesses now, I’ll take time to think.",
+          "caption": "Phil pauses, resisting premature moves."
+        },
+        {
+          "id": "scene_04",
+          "title": "The Column",
+          "dialogue": "That column’s logic just clicked!",
+          "caption": "A vital breakthrough lights the way."
+        },
+        {
+          "id": "scene_05",
+          "title": "The Follow-Through",
+          "dialogue": "The grid starts opening up nicely now.",
+          "caption": "Answers fall steadily into place."
+        },
+        {
+          "id": "scene_06",
+          "title": "Worth Returning For",
+          "dialogue": "Almost finished—I'll wrap up tomorrow.",
+          "caption": "Steady progress with plans to return."
+        }
+      ]
     }
   ],
   "ongoing_threads": [],
