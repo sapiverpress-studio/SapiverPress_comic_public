@@ -54,19 +54,69 @@ def load_font(size: int, bold: bool = False):
     return ImageFont.load_default()
 
 
+def cell_to_int(value) -> int:
+    if value is None:
+        return 0
+    if isinstance(value, bool):
+        return int(value)
+    if isinstance(value, (int, float)):
+        return int(value or 0)
+    if isinstance(value, str):
+        value = value.strip()
+        if value in {"", ".", "0", "-", "_"}:
+            return 0
+        if value.isdigit():
+            return int(value)
+    if isinstance(value, dict):
+        for key in ["value", "digit", "number", "n", "answer", "solution", "given"]:
+            if key in value:
+                return cell_to_int(value[key])
+    return 0
+
+
+def flatten_grid(value):
+    if isinstance(value, str):
+        chars = [ch for ch in value if ch.isdigit() or ch in ".-_"]
+        if len(chars) == 81:
+            return [cell_to_int(ch) for ch in chars]
+    if isinstance(value, list):
+        if len(value) == 9 and all(isinstance(row, str) for row in value):
+            chars = []
+            for row in value:
+                row_chars = [ch for ch in row if ch.isdigit() or ch in ".-_"]
+                chars.extend(row_chars)
+            if len(chars) == 81:
+                return [cell_to_int(ch) for ch in chars]
+        if len(value) == 9 and all(isinstance(row, list) for row in value):
+            flat = []
+            for row in value:
+                if len(row) != 9:
+                    return None
+                flat.extend(cell_to_int(x) for x in row)
+            return flat
+        if len(value) == 81:
+            return [cell_to_int(x) for x in value]
+    if isinstance(value, dict):
+        for key in ["cells", "values", "grid", "givens", "puzzle", "start"]:
+            if key in value:
+                flat = flatten_grid(value[key])
+                if flat is not None:
+                    return flat
+    return None
+
+
 def normalize_grid(value, name: str) -> list[list[int]]:
-    if not isinstance(value, list) or len(value) != 9:
-        fail(f"{name} must be a 9x9 list")
-    grid = []
-    for row in value:
-        if not isinstance(row, list) or len(row) != 9:
-            fail(f"{name} must be a 9x9 list")
-        grid.append([int(x or 0) for x in row])
-    return grid
+    flat = flatten_grid(value)
+    if flat is None or len(flat) != 81:
+        got = type(value).__name__
+        if isinstance(value, list):
+            got += f" len={len(value)}"
+        fail(f"{name} must be a 9x9 grid, flat 81-cell list, or 81-char string; got {got}")
+    return [flat[i:i + 9] for i in range(0, 81, 9)]
 
 
 def find_solution(data: dict) -> list[list[int]]:
-    for key in ["solution", "solved", "answer", "answers", "grid_solution"]:
+    for key in ["solution", "solved", "answer", "answers", "grid_solution", "solutionGrid", "solvedGrid"]:
         if key in data:
             return normalize_grid(data[key], key)
     fail("today_trigoku_data.json has givens but no solution/answer grid")
@@ -76,13 +126,15 @@ def load_data() -> dict:
     if not DATA_PATH.exists():
         fail(f"Missing {DATA_PATH.relative_to(ROOT)}")
     data = json.loads(DATA_PATH.read_text(encoding="utf-8"))
-    givens = normalize_grid(data.get("givens"), "givens")
+    givens = normalize_grid(data.get("givens") or data.get("puzzle") or data.get("grid") or data.get("start"), "givens")
     solution = find_solution(data)
     locks = data.get("locks_zero_indexed") or data.get("locks") or []
     lock_set = set()
     for item in locks:
         if isinstance(item, list) and len(item) >= 2:
             lock_set.add((int(item[0]), int(item[1])))
+        elif isinstance(item, dict) and "r" in item and "c" in item:
+            lock_set.add((int(item["r"]), int(item["c"])))
     data["givens"] = givens
     data["solution"] = solution
     data["lock_set"] = lock_set
@@ -100,7 +152,6 @@ def draw_lock(draw: ImageDraw.ImageDraw, x: float, y: float, s: float) -> None:
 
 
 def blanks_from_givens(givens: list[list[int]]) -> list[tuple[int, int]]:
-    # Stable order: centre/logic-looking cells first, then normal row order.
     coords = [(r, c) for r in range(9) for c in range(9) if givens[r][c] == 0]
     return sorted(coords, key=lambda rc: (abs(rc[0] - 4) + abs(rc[1] - 4), rc[0], rc[1]))
 
@@ -134,13 +185,14 @@ def draw_screen(data: dict, stage_index: int) -> Image.Image:
 
     week = str(data.get("week") or "")
     today = str(data.get("today") or data.get("date") or DATE)
-    mode = str(data.get("mode") or "Trigoku Daily Lock")
+    mode = str(data.get("mode") or data.get("source_name") or "Daily Puzzle")
+    display_url = str(data.get("fallback_display_url") or data.get("source_url_used") or "suite.sapiverpress.co.uk/play/")
 
     draw.rounded_rectangle((38, 32, W - 38, 118), radius=24, fill=(237, 241, 247))
-    draw.text((76, 75), "suite.sapiverpress.co.uk/play/trigoku/", font=load_font(42, True), fill=(32, 37, 46), anchor="lm")
+    draw.text((76, 75), display_url.replace("https://", "")[:64], font=load_font(42, True), fill=(32, 37, 46), anchor="lm")
 
     draw.rounded_rectangle((38, 145, W - 38, 262), radius=24, fill=(11, 32, 73))
-    draw.text((76, 190), "TRIGOKU · DAILY LOCK", font=load_font(58, True), fill=(250, 250, 255), anchor="lm")
+    draw.text((76, 190), str(data.get("source_name") or "Sapiver Daily Puzzle").upper()[:32], font=load_font(58, True), fill=(250, 250, 255), anchor="lm")
     subtitle = " · ".join([x for x in [week, today, mode, STAGE_LABELS[stage_index]] if x])
     draw.text((76, 235), subtitle[:95], font=load_font(28, True), fill=(255, 231, 150), anchor="lm")
 
@@ -199,7 +251,7 @@ def draw_screen(data: dict, stage_index: int) -> Image.Image:
         ("Stage", STAGE_LABELS[stage_index]),
         ("Filled", f"{filled}/{len(blanks)} blanks"),
         ("Status", "Complete" if stage_index == 5 else "Playable"),
-        ("Source", "Downloaded JSON"),
+        ("Source", "Downloaded data"),
     ]
     info_y = panel_y + 392
     for i, (label, value) in enumerate(side):
@@ -227,18 +279,20 @@ def main() -> None:
     shutil.copy2(DATA_PATH, SOCIAL_RAW_DIR / "today_trigoku_data.json")
     manifest = {
         "date": DATE,
-        "source_url": data.get("source_url_used") or data.get("fallback_display_url") or "https://suite.sapiverpress.co.uk/play/trigoku/",
+        "source_url": data.get("source_url_used") or data.get("fallback_display_url") or "https://suite.sapiverpress.co.uk/play/",
         "json_date": data.get("date"),
         "week": data.get("week"),
         "today": data.get("today"),
         "mode": data.get("mode"),
-        "stage_method": "json_rendered_from_downloaded_trigoku_data",
-        "note": "Puzzle shots rendered from actual downloaded Trigoku JSON: givens, solution, and locks. No browser gameplay screenshots, no fake grid, no Hint/Check guessing.",
+        "source_id": data.get("source_id"),
+        "source_name": data.get("source_name"),
+        "stage_method": "json_rendered_from_downloaded_puzzle_data",
+        "note": "Puzzle shots rendered from actual downloaded puzzle data: givens/start grid, solution/answer grid, and any lock metadata. No browser gameplay screenshots, no fake grid, no Hint/Check guessing.",
         "files": files,
     }
     (CAPTURE_DIR / "capture_manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
     shutil.copy2(CAPTURE_DIR / "capture_manifest.json", SOCIAL_RAW_DIR / "capture_manifest.json")
-    print("Rendered Trigoku JSON staged captures:")
+    print("Rendered JSON staged captures:")
     for name in files:
         print(f" - {CAPTURE_DIR / name}")
 
