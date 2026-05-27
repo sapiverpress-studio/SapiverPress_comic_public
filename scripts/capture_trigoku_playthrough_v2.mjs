@@ -1,1 +1,1 @@
-import "./capture_trigoku_playthrough_v3.mjs";
+import "./capture_daily_puzzle_data_rendered.mjs";
