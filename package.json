@@ -5,12 +5,15 @@
   "type": "module",
   "scripts": {
     "daily": "node scripts/daily-generator.mjs",
+    "compose": "node scripts/compose-daily-comic.mjs",
     "archive": "node scripts/archive-migration.mjs",
     "validate": "node scripts/validate-project.mjs",
     "facebook-post": "node scripts/facebook-post.mjs"
   },
   "dependencies": {
     "@octokit/rest": "^21.0.2",
-    "openai": "^6.0.0"
+    "openai": "^6.0.0",
+    "playwright": "^1.53.0",
+    "sharp": "^0.34.2"
   }
 }
