@@ -1,102 +1,119 @@
 {
   "date": "2026-05-27",
-  "stage_method": "data_source_probe_failed",
+  "stage_method": "download_probe_failed",
   "attempts": [
     {
       "id": "trigoku",
       "project": "sapiverpress-trigoku",
-      "found": false,
-      "url": null
+      "downloaded": true,
+      "extracted": false,
+      "url": "https://suite.sapiverpress.co.uk/play/trigoku/"
     },
     {
       "id": "sudoku-x",
       "project": "sapiver-sudoku-x",
-      "found": false,
-      "url": null
+      "downloaded": true,
+      "extracted": false,
+      "url": "https://sapiver-sudoku-x.netlify.app/"
     },
     {
       "id": "odds-and-evens",
       "project": "sapiver-press-odds-and-evens",
-      "found": false,
-      "url": null
+      "downloaded": true,
+      "extracted": false,
+      "url": "https://sapiver-press-odds-and-evens.netlify.app/"
     },
     {
       "id": "non-consecutive",
       "project": "sapiver-press-non-con",
-      "found": false,
-      "url": null
+      "downloaded": true,
+      "extracted": false,
+      "url": "https://sapiver-press-non-con.netlify.app/"
     },
     {
       "id": "kropki",
       "project": "sapiver-press-kropki",
-      "found": false,
-      "url": null
+      "downloaded": true,
+      "extracted": false,
+      "url": "https://sapiver-press-kropki.netlify.app/"
     },
     {
       "id": "hyper",
       "project": "sapiver-press-hyper",
-      "found": false,
-      "url": null
+      "downloaded": true,
+      "extracted": false,
+      "url": "https://sapiver-press-hyper.netlify.app/"
     },
     {
       "id": "anti-king",
       "project": "sapiver-press-anti-king",
-      "found": false,
-      "url": null
+      "downloaded": true,
+      "extracted": false,
+      "url": "https://sapiver-press-anti-king.netlify.app/"
     },
     {
       "id": "xv",
       "project": "sapiver-press-xv",
-      "found": false,
-      "url": null
+      "downloaded": true,
+      "extracted": false,
+      "url": "https://sapiver-press-xv.netlify.app/"
     },
     {
       "id": "thermo",
       "project": "sapiver-press-thermo",
-      "found": false,
-      "url": null
+      "downloaded": true,
+      "extracted": false,
+      "url": "https://sapiver-press-thermo.netlify.app/"
     },
     {
       "id": "sandwich",
       "project": "sapiver-press-sandwich",
-      "found": false,
-      "url": null
+      "downloaded": true,
+      "extracted": false,
+      "url": "https://sapiver-press-sandwich.netlify.app/"
     },
     {
       "id": "renban",
       "project": "sapiver-press-renban",
-      "found": false,
-      "url": null
+      "downloaded": true,
+      "extracted": false,
+      "url": "https://sapiver-press-renban.netlify.app/"
     },
     {
       "id": "little-killer",
       "project": "sapiver-press-little-killer",
-      "found": false,
-      "url": null
+      "downloaded": true,
+      "extracted": false,
+      "url": "https://sapiver-press-little-killer.netlify.app/"
     },
     {
       "id": "killer",
       "project": "sapiver-press-killer",
-      "found": false,
-      "url": null
+      "downloaded": true,
+      "extracted": false,
+      "url": "https://sapiver-press-killer.netlify.app/"
     },
     {
       "id": "german-whisper",
       "project": "sapiver-press-german-whisper",
-      "found": false,
-      "url": null
+      "downloaded": true,
+      "extracted": false,
+      "url": "https://sapiver-press-german-whisper.netlify.app/"
     },
     {
       "id": "arrow",
       "project": "sapiver-press-arrow",
-      "found": false,
-      "url": null
+      "downloaded": true,
+      "extracted": false,
+      "url": "https://sapiver-press-arrow.netlify.app/"
     },
     {
       "id": "anti-knight",
       "project": "sapiver-press-anti-knight",
-      "found": false,
-      "url": null
+      "downloaded": true,
+      "extracted": false,
+      "url": "https://sapiver-press-anti-knight.netlify.app/"
     }
-  ]
+  ],
+  "note": "No standalone source produced a downloadable givens+solution JSON. Browser screenshots are intentionally disabled."
 }
