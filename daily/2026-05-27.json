@@ -1,0 +1,108 @@
+{
+  "date": "2026-05-27",
+  "weekday": "Wednesday",
+  "character_id": "phil",
+  "character_name": "Phil",
+  "render_mode": "illustrated_comic_panels",
+  "product_referenced": {
+    "key": "suite",
+    "name": "Sapiver Press Suite",
+    "url": "https://suite.sapiverpress.co.uk",
+    "natural_reference": "a return visit tomorrow"
+  },
+  "story_note": "Phil returns to the daily puzzle with his usual morning ritual, noticing the new challenge immediately.",
+  "continuation_note": "Tomorrow, Phil plans a return visit to the Sapiver Press Suite for fresh puzzles and familiar comfort.",
+  "scenes": [
+    {
+      "id": "scene_01",
+      "title": "Back Again",
+      "beat": "Return after yesterday, new daily puzzle, same habit",
+      "dialogue": "Another day, another puzzle to solve.",
+      "caption": "Phil settles in with his tea and crossword.",
+      "image_ref": "phil_01_opening_return.png",
+      "screen_state": "Phil seated with puzzle visible on screen."
+    },
+    {
+      "id": "scene_02",
+      "title": "Different Start",
+      "beat": "The first move shows today's puzzle is different",
+      "dialogue": "Hmm... today's clues feel trickier.",
+      "caption": "The puzzle begins differently from yesterday.",
+      "image_ref": "phil_02_first_move.png",
+      "screen_state": "Close-up of puzzle grid beginning clues."
+    },
+    {
+      "id": "scene_03",
+      "title": "The Pushback",
+      "beat": "A fair stuck moment, no guessing",
+      "dialogue": "No shortcuts. I need to think this through.",
+      "caption": "Phil faces a thoughtful pause, no guesses yet.",
+      "image_ref": "phil_03_stuck_moment.png",
+      "screen_state": "Phil looking pensive, hand on chin."
+    },
+    {
+      "id": "scene_04",
+      "title": "The Column",
+      "beat": "The logical breakthrough",
+      "dialogue": "Ah! This column finally clicks.",
+      "caption": "A logical breakthrough opens new paths.",
+      "image_ref": "phil_04_breakthrough.png",
+      "screen_state": "Puzzle grid shows a column with several answers filled."
+    },
+    {
+      "id": "scene_05",
+      "title": "The Follow-Through",
+      "beat": "The grid begins to open",
+      "dialogue": "Now the rest unfolds smoothly.",
+      "caption": "Pieces begin falling into place one by one.",
+      "image_ref": "phil_05_finish.png",
+      "screen_state": "Puzzle grid with more completed answers."
+    },
+    {
+      "id": "scene_06",
+      "title": "Worth Returning For",
+      "beat": "Completion or honest latest progress, return tomorrow",
+      "dialogue": "Not done yet, but I'll be back tomorrow.",
+      "caption": "Progress made and anticipation for a return visit.",
+      "image_ref": "phil_06_tomorrow_set.png",
+      "screen_state": "Phil closing the puzzle with a smile."
+    }
+  ],
+  "image_manifest": {
+    "character_id": "phil",
+    "character_name": "Phil",
+    "render_mode": "illustrated_comic_panels",
+    "required_character_files": [
+      "templates/characters/phil/phil_01_opening_return.png",
+      "templates/characters/phil/phil_02_first_move.png",
+      "templates/characters/phil/phil_03_stuck_moment.png",
+      "templates/characters/phil/phil_04_breakthrough.png",
+      "templates/characters/phil/phil_05_finish.png",
+      "templates/characters/phil/phil_06_tomorrow_set.png"
+    ],
+    "text_is_overlay": true,
+    "puzzle_screen_inserted_later": true,
+    "style_rules": [
+      "No giant title banners.",
+      "No masthead inside individual scene art.",
+      "No big URL overlay.",
+      "No blurry outline boxes.",
+      "Sapiver Press logo/title only on merchandise and monitor/browser URL.",
+      "Story text must continue from previous episode, not repeat a fixed template.",
+      "Puzzle screen must be composited from real capture, not invented by image generation.",
+      "The scene should be comic illustration, not photorealism."
+    ],
+    "compositor_rules": [
+      "Character art first.",
+      "Puzzle screen composited second.",
+      "Minimal story text overlaid last.",
+      "No generated puzzle grids.",
+      "No giant title/header/footer.",
+      "No large URL overlay.",
+      "No blurry outline panel.",
+      "Logo only on merch.",
+      "URL only on monitor/browser bar."
+    ]
+  },
+  "history_used_count": 0
+}
