@@ -37,6 +37,11 @@ async function exists(filePath) {
   try { await fs.access(filePath); return true; } catch { return false; }
 }
 
+function runPython(args, label) {
+  const result = spawnSync("python", args, { cwd: ROOT, stdio: "inherit" });
+  if (result.status !== 0) fail(label);
+}
+
 async function tryDownloadFromSource(source, date, captureDir) {
   const urls = [source.url, source.suite_url].filter(Boolean);
   const downloadDir = path.join(captureDir, "downloaded", source.id);
@@ -158,12 +163,8 @@ async function main() {
     fail("No standalone source produced downloadable givens+solution JSON. Refusing browser screenshot fallback.");
   }
 
-  const render = spawnSync("python", ["scripts/render_trigoku_json_states.py"], {
-    cwd: ROOT,
-    env: { ...process.env, DATE_OVERRIDE: date },
-    stdio: "inherit",
-  });
-  if (render.status !== 0) fail("Renderer failed");
+  runPython(["-m", "pip", "install", "-r", "requirements.txt"], "Python requirements install failed");
+  runPython(["scripts/render_trigoku_json_states.py"], "Renderer failed");
 
   const manifestPath = path.join(captureDir, "capture_manifest.json");
   const manifest = JSON.parse(await fs.readFile(manifestPath, "utf8"));
