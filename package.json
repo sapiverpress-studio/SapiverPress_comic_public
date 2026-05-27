@@ -1,15 +1,16 @@
-﻿{
-    "name":  "sapiverpress-comic-public",
-    "version":  "3.0.0",
-    "private":  true,
-    "type":  "module",
-    "scripts":  {
-                    "daily":  "node scripts/daily-generator.mjs",
-                    "archive":  "node scripts/archive-migration.mjs",
-                    "validate":  "node scripts/validate-project.mjs"
-                },
-    "dependencies":  {
-                         "@octokit/rest":  "^21.0.2",
-                         "openai":  "^6.0.0"
-                     }
+{
+  "name": "sapiverpress-comic-public",
+  "version": "3.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "daily": "node scripts/daily-generator.mjs",
+    "archive": "node scripts/archive-migration.mjs",
+    "validate": "node scripts/validate-project.mjs",
+    "facebook-post": "node scripts/facebook-post.mjs"
+  },
+  "dependencies": {
+    "@octokit/rest": "^21.0.2",
+    "openai": "^6.0.0"
+  }
 }
