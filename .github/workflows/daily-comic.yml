@@ -95,7 +95,10 @@ jobs:
           set -e
           git config user.name "sapiver-comic-bot"
           git config user.email "sapiver-comic-bot@users.noreply.github.com"
-          git add social facebook-posts.json || true
+          git add social || true
+          if [ -f facebook-posts.json ]; then
+            git add facebook-posts.json
+          fi
           if git diff --cached --quiet; then
             echo "No generated social or Facebook state changes"
             exit 0
