@@ -1,8 +1,8 @@
 {
   "date": "2026-05-27",
   "weekday": "Wednesday",
-  "character_id": "phil",
-  "character_name": "Phil",
+  "character_id": "isla",
+  "character_name": "Isla",
   "render_mode": "illustrated_comic_panels",
   "product_referenced": {
     "key": "suite",
@@ -10,79 +10,81 @@
     "url": "https://suite.sapiverpress.co.uk",
     "natural_reference": "a return visit tomorrow"
   },
-  "story_note": "Phil welcomes the new puzzle with familiar calm, noting its subtle twists that demand his usual careful logic.",
-  "continuation_note": "With a key breakthrough made, Phil feels the steady rhythm returning and looks forward to continuing his progress in the Sapiver Press Suite tomorrow.",
+  "story_note": "Isla starts her Wednesday with fresh eyes on a new Sapiver Press Suite puzzle, embracing the morning calm.",
+  "continuation_note": "She builds steady progress through careful deduction and pauses thoughtfully before a key breakthrough, ending with satisfaction and plans for a return visit tomorrow.",
   "scenes": [
     {
       "id": "scene_01",
-      "title": "Back Again",
-      "beat": "Return after yesterday, new daily puzzle, same habit",
-      "dialogue": "Another day, another puzzle.",
-      "caption": "Phil prepares his tea and puzzle.",
-      "image_ref": "phil_01_opening_return.png",
-      "screen_state": "puzzle_opened"
+      "title": "Opening Grid",
+      "beat": "Isla opens today's real puzzle and takes in the starting pattern",
+      "dialogue": "Alright, let's see what we have today.",
+      "caption": "Isla studies the blank grid, the start of a new challenge.",
+      "image_ref": "isla_01_opening_return.png",
+      "screen_state": "early puzzle with clues visible, mostly empty cells"
     },
     {
       "id": "scene_02",
-      "title": "Different Start",
-      "beat": "The first move shows today's puzzle is different",
-      "dialogue": "This first clue takes a curious turn.",
-      "caption": "The puzzle begins with an unexpected twist.",
-      "image_ref": "phil_02_first_move.png",
-      "screen_state": "first_clue_highlighted"
+      "title": "First Moves",
+      "beat": "The first safe entries create a foothold",
+      "dialogue": "These first answers give me some ground.",
+      "caption": "Safe entries begin to take shape on the grid.",
+      "image_ref": "isla_02_first_move.png",
+      "screen_state": "several puzzle cells filled correctly"
     },
     {
       "id": "scene_03",
-      "title": "The Pushback",
-      "beat": "A fair stuck moment, no guessing",
-      "dialogue": "I can't guess yet—need to rethink.",
-      "caption": "Phil pauses to reconsider the tricky clues.",
-      "image_ref": "phil_03_stuck_moment.png",
-      "screen_state": "puzzle_paused"
+      "title": "Stuck Moment",
+      "beat": "A fair pause before forcing anything",
+      "dialogue": "Time to pause; no hasty guesses.",
+      "caption": "Isla reflects, avoiding guesses and thinking through logic.",
+      "image_ref": "isla_03_stuck_moment.png",
+      "screen_state": "partial grid with some clues still ambiguous"
     },
     {
       "id": "scene_04",
-      "title": "The Column",
-      "beat": "The logical breakthrough",
-      "dialogue": "That column just fell into place!",
-      "caption": "A crucial breakthrough lights the way.",
-      "image_ref": "phil_04_breakthrough.png",
-      "screen_state": "column_solved"
+      "title": "Breakthrough",
+      "beat": "One clean deduction changes the board",
+      "dialogue": "This deduction opens up everything!",
+      "caption": "A key move unlocks more of the puzzle.",
+      "image_ref": "isla_04_breakthrough.png",
+      "screen_state": "significant new entries filled, puzzle expanding"
     },
     {
       "id": "scene_05",
-      "title": "The Follow-Through",
-      "beat": "The grid begins to open",
-      "dialogue": "Now the rest flows steadily.",
-      "caption": "Answers slot in with growing confidence.",
-      "image_ref": "phil_05_finish.png",
-      "screen_state": "progressing_puzzle"
+      "title": "Nearly There",
+      "beat": "The puzzle is mostly filled and the logic is tightening",
+      "dialogue": "Almost done — it’s coming together.",
+      "caption": "The puzzle nears completion, logic lines tightening.",
+      "image_ref": "isla_05_finish.png",
+      "screen_state": "most cells filled with few remaining clues"
     },
     {
       "id": "scene_06",
-      "title": "Worth Returning For",
-      "beat": "Completion or honest latest progress, return tomorrow",
-      "dialogue": "Almost there; I'll finish tomorrow.",
-      "caption": "Steady progress promises a return visit.",
-      "image_ref": "phil_06_tomorrow_set.png",
-      "screen_state": "midway_puzzle"
+      "title": "Finished",
+      "beat": "The solved or latest real progress screen closes the strip",
+      "dialogue": "Great progress today. Same time tomorrow?",
+      "caption": "Closing the puzzle in the morning light, eager for next time.",
+      "image_ref": "isla_06_tomorrow_set.png",
+      "screen_state": "grid mostly solved with final entries in place"
     }
   ],
   "image_manifest": {
-    "character_id": "phil",
-    "character_name": "Phil",
+    "character_id": "isla",
+    "character_name": "Isla",
     "render_mode": "illustrated_comic_panels",
     "required_character_files": [
-      "templates/characters/phil/phil_01_opening_return.png",
-      "templates/characters/phil/phil_02_first_move.png",
-      "templates/characters/phil/phil_03_stuck_moment.png",
-      "templates/characters/phil/phil_04_breakthrough.png",
-      "templates/characters/phil/phil_05_finish.png",
-      "templates/characters/phil/phil_06_tomorrow_set.png"
+      "templates/characters/isla/isla_01_opening_return.png",
+      "templates/characters/isla/isla_02_first_move.png",
+      "templates/characters/isla/isla_03_stuck_moment.png",
+      "templates/characters/isla/isla_04_breakthrough.png",
+      "templates/characters/isla/isla_05_finish.png",
+      "templates/characters/isla/isla_06_tomorrow_set.png"
     ],
     "text_is_overlay": true,
     "puzzle_screen_inserted_later": true,
     "style_rules": [
+      "Isla is the only active daily comic character.",
+      "Puzzle screen must come from a real captured puzzle page.",
       "No giant title banners.",
       "No masthead inside individual scene art.",
       "No big URL overlay.",
@@ -104,5 +106,5 @@
       "URL only on monitor/browser bar."
     ]
   },
-  "history_used_count": 16
+  "history_used_count": 3
 }
