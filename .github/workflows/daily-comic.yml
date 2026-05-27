@@ -103,6 +103,14 @@ jobs:
             exit 0
           fi
           git commit -m "Update daily comic social outputs"
+          for attempt in 1 2 3; do
+            if git push; then
+              exit 0
+            fi
+            echo "git push failed on attempt ${attempt}; retrying"
+            sleep 8
+            git pull --rebase origin main || true
+          done
           git push
 
   archive-migration:
