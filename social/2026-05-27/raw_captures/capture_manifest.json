@@ -1,32 +1,56 @@
 {
   "date": "2026-05-27",
-  "source_url": "https://suite.sapiverpress.co.uk/play/anti-king-sudoku/",
-  "source_mode": "daily-discovered-playable",
-  "playable_candidates": [
-    "https://sapiver-press-duel.netlify.app/",
-    "https://suite.sapiverpress.co.uk/play/anti-king-sudoku/",
-    "https://suite.sapiverpress.co.uk/play/anti-knight-sudoku/",
-    "https://suite.sapiverpress.co.uk/play/arrow-sudoku/",
-    "https://suite.sapiverpress.co.uk/play/german-whispers-sudoku/",
-    "https://suite.sapiverpress.co.uk/play/hyper-sudoku/",
-    "https://suite.sapiverpress.co.uk/play/killer-sudoku/",
-    "https://suite.sapiverpress.co.uk/play/kropki-sudoku/",
-    "https://suite.sapiverpress.co.uk/play/little-killer-sudoku/",
-    "https://suite.sapiverpress.co.uk/play/non-consecutive-sudoku/",
-    "https://suite.sapiverpress.co.uk/play/odd-even-sudoku/",
-    "https://suite.sapiverpress.co.uk/play/renban-sudoku/",
-    "https://suite.sapiverpress.co.uk/play/sandwich-sudoku/",
-    "https://suite.sapiverpress.co.uk/play/sudoku-x/",
-    "https://suite.sapiverpress.co.uk/play/thermo-sudoku/",
-    "https://suite.sapiverpress.co.uk/play/trigoku/",
-    "https://suite.sapiverpress.co.uk/play/xv-sudoku/"
-  ],
-  "created_at": "2026-05-27T11:12:27.742Z",
+  "source_url": "https://suite.sapiverpress.co.uk/play/trigoku/",
+  "source_mode": "trigoku-fixed-for-staged-comic",
+  "stage_method": "hint_check_playthrough",
+  "created_at": "2026-05-27T11:23:05.344Z",
   "viewport": {
     "width": 1280,
     "height": 900
   },
-  "note": "Real live page screenshots captured by Playwright Chromium from a playable puzzle source. The script focuses the puzzle area before capture and uses app buttons such as Hint/Check when available. No placeholder images or fake puzzle grids are generated.",
+  "stage_log": [
+    {
+      "stage": 1,
+      "file": "01_fresh_daily_grid.png",
+      "action": "reset",
+      "hints": 0
+    },
+    {
+      "stage": 2,
+      "file": "02_first_moves.png",
+      "action": "hint_check",
+      "hints": 1
+    },
+    {
+      "stage": 3,
+      "file": "03_stuck_moment.png",
+      "action": "hint_check",
+      "hints": 3
+    },
+    {
+      "stage": 4,
+      "file": "04_breakthrough.png",
+      "action": "hint_check",
+      "hints": 8
+    },
+    {
+      "stage": 5,
+      "file": "05_nearly_complete.png",
+      "action": "hint_check",
+      "hints": 18
+    },
+    {
+      "stage": 6,
+      "file": "06_complete_solution.png",
+      "action": "hint_check",
+      "hints": 60
+    }
+  ],
+  "final_signals": {
+    "solved_or_complete_words": true,
+    "hints_used_text": true,
+    "mistakes_text": true
+  },
   "files": [
     "01_fresh_daily_grid.png",
     "02_first_moves.png",
