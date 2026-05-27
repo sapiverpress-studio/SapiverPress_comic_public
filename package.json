@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "daily": "node scripts/daily-generator.mjs",
-    "compose": "python scripts/compose_v3_strict_clean.py",
-    "compose:strict": "python scripts/compose_v3_strict_clean.py",
-    "compose:fallback": "python scripts/compose_isla_crisp_grid.py",
+    "compose": "python -m pip install -r requirements.txt && python scripts/compose_v3_strict_clean.py",
+    "compose:strict": "python -m pip install -r requirements.txt && python scripts/compose_v3_strict_clean.py",
+    "compose:fallback": "python -m pip install -r requirements.txt && python scripts/compose_isla_crisp_grid.py",
     "archive": "node scripts/archive-migration.mjs",
     "validate": "node scripts/validate-project.mjs",
     "facebook-post": "node scripts/facebook-post.mjs"
