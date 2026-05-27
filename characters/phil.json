@@ -801,6 +801,56 @@
           "caption": "Steady progress means a return visit awaits."
         }
       ]
+    },
+    {
+      "date": "2026-05-27",
+      "weekday": "Wednesday",
+      "product_referenced": {
+        "key": "suite",
+        "name": "Sapiver Press Suite",
+        "url": "https://suite.sapiverpress.co.uk",
+        "natural_reference": "a return visit tomorrow"
+      },
+      "story_note": "Phil welcomes the new puzzle with familiar calm, noting its subtle twists that demand his usual careful logic.",
+      "continuation_note": "With a key breakthrough made, Phil feels the steady rhythm returning and looks forward to continuing his progress in the Sapiver Press Suite tomorrow.",
+      "scenes": [
+        {
+          "id": "scene_01",
+          "title": "Back Again",
+          "dialogue": "Another day, another puzzle.",
+          "caption": "Phil prepares his tea and puzzle."
+        },
+        {
+          "id": "scene_02",
+          "title": "Different Start",
+          "dialogue": "This first clue takes a curious turn.",
+          "caption": "The puzzle begins with an unexpected twist."
+        },
+        {
+          "id": "scene_03",
+          "title": "The Pushback",
+          "dialogue": "I can't guess yet—need to rethink.",
+          "caption": "Phil pauses to reconsider the tricky clues."
+        },
+        {
+          "id": "scene_04",
+          "title": "The Column",
+          "dialogue": "That column just fell into place!",
+          "caption": "A crucial breakthrough lights the way."
+        },
+        {
+          "id": "scene_05",
+          "title": "The Follow-Through",
+          "dialogue": "Now the rest flows steadily.",
+          "caption": "Answers slot in with growing confidence."
+        },
+        {
+          "id": "scene_06",
+          "title": "Worth Returning For",
+          "dialogue": "Almost there; I'll finish tomorrow.",
+          "caption": "Steady progress promises a return visit."
+        }
+      ]
     }
   ],
   "ongoing_threads": [],
