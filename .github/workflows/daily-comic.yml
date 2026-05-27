@@ -80,9 +80,9 @@ jobs:
         if: github.event_name == 'schedule' || github.event.inputs.post_to_facebook == 'true'
         env:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
-          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
-          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
-          META_USER_TOKEN: ${{ secrets.META_USER_TOKEN }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID || secrets.FACEBOOK_PAGE_ID || secrets.META_PAGE_ID || secrets.PAGE_ID }}
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN || secrets.FACEBOOK_PAGE_TOKEN || secrets.FB_PAGE_ACCESS_TOKEN || secrets.FACEBOOK_PAGE_ACCESS_TOKEN || secrets.PAGE_ACCESS_TOKEN }}
+          META_USER_TOKEN: ${{ secrets.META_USER_TOKEN || secrets.META_ACCESS_TOKEN || secrets.FACEBOOK_USER_TOKEN || secrets.FB_USER_TOKEN || secrets.USER_ACCESS_TOKEN || secrets.FACEBOOK_ACCESS_TOKEN }}
           COMIC_POST_IMAGE_PATH: "social/{date}.png"
           FORCE_FB_POST: ${{ github.event.inputs.force_facebook_post }}
           SUITE_URL: "https://suite.sapiverpress.co.uk"
