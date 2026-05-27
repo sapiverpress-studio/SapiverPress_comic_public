@@ -1,8 +1,8 @@
 {
-  "date": "2026-05-26",
-  "weekday": "Tuesday",
-  "character_id": "isla",
-  "character_name": "Isla",
+  "date": "2026-05-27",
+  "weekday": "Wednesday",
+  "character_id": "phil",
+  "character_name": "Phil",
   "render_mode": "illustrated_comic_panels",
   "product_referenced": {
     "key": "suite",
@@ -10,75 +10,75 @@
     "url": "https://suite.sapiverpress.co.uk",
     "natural_reference": "a return visit tomorrow"
   },
-  "story_note": "Isla settles back into her puzzle nook, noticing today's challenge starts on a surprising note.",
-  "continuation_note": "She carefully works through the tricky parts, ending on a solid breakthrough with plans to return tomorrow.",
+  "story_note": "Phil returns to the daily puzzle with his usual morning ritual, noticing the new challenge immediately.",
+  "continuation_note": "Tomorrow, Phil plans a return visit to the Sapiver Press Suite for fresh puzzles and familiar comfort.",
   "scenes": [
     {
       "id": "scene_01",
       "title": "Back Again",
       "beat": "Return after yesterday, new daily puzzle, same habit",
-      "dialogue": "Ready for today's puzzle.",
-      "caption": "Morning light streams over Isla's workspace.",
-      "image_ref": "isla_01_opening_return.png",
-      "screen_state": "puzzle_page_loaded"
+      "dialogue": "Another day, another puzzle to solve.",
+      "caption": "Phil settles in with his tea and crossword.",
+      "image_ref": "phil_01_opening_return.png",
+      "screen_state": "Phil seated with puzzle visible on screen."
     },
     {
       "id": "scene_02",
       "title": "Different Start",
       "beat": "The first move shows today's puzzle is different",
-      "dialogue": "This clue shifts the whole approach.",
-      "caption": "Fresh twists make the puzzle feel alive.",
-      "image_ref": "isla_02_first_move.png",
-      "screen_state": "initial_clues_highlighted"
+      "dialogue": "Hmm... today's clues feel trickier.",
+      "caption": "The puzzle begins differently from yesterday.",
+      "image_ref": "phil_02_first_move.png",
+      "screen_state": "Close-up of puzzle grid beginning clues."
     },
     {
       "id": "scene_03",
       "title": "The Pushback",
       "beat": "A fair stuck moment, no guessing",
-      "dialogue": "No quick leaps here.",
-      "caption": "Pausing to think before committing anything.",
-      "image_ref": "isla_03_stuck_moment.png",
-      "screen_state": "grid_with_partial_marks"
+      "dialogue": "No shortcuts. I need to think this through.",
+      "caption": "Phil faces a thoughtful pause, no guesses yet.",
+      "image_ref": "phil_03_stuck_moment.png",
+      "screen_state": "Phil looking pensive, hand on chin."
     },
     {
       "id": "scene_04",
       "title": "The Column",
       "beat": "The logical breakthrough",
-      "dialogue": "This column is the key!",
-      "caption": "A logic breakthrough opens new paths.",
-      "image_ref": "isla_04_breakthrough.png",
-      "screen_state": "column_filled_logically"
+      "dialogue": "Ah! This column finally clicks.",
+      "caption": "A logical breakthrough opens new paths.",
+      "image_ref": "phil_04_breakthrough.png",
+      "screen_state": "Puzzle grid shows a column with several answers filled."
     },
     {
       "id": "scene_05",
       "title": "The Follow-Through",
       "beat": "The grid begins to open",
-      "dialogue": "Now it all clicks together.",
-      "caption": "Pieces falling neatly into place.",
-      "image_ref": "isla_05_finish.png",
-      "screen_state": "grid_progressing"
+      "dialogue": "Now the rest unfolds smoothly.",
+      "caption": "Pieces begin falling into place one by one.",
+      "image_ref": "phil_05_finish.png",
+      "screen_state": "Puzzle grid with more completed answers."
     },
     {
       "id": "scene_06",
       "title": "Worth Returning For",
       "beat": "Completion or honest latest progress, return tomorrow",
-      "dialogue": "Steady progress made—back again tomorrow?",
-      "caption": "Isla closes her laptop with a satisfied smile.",
-      "image_ref": "isla_06_tomorrow_set.png",
-      "screen_state": "puzzle_grid_saved"
+      "dialogue": "Not done yet, but I'll be back tomorrow.",
+      "caption": "Progress made and anticipation for a return visit.",
+      "image_ref": "phil_06_tomorrow_set.png",
+      "screen_state": "Phil closing the puzzle with a smile."
     }
   ],
   "image_manifest": {
-    "character_id": "isla",
-    "character_name": "Isla",
+    "character_id": "phil",
+    "character_name": "Phil",
     "render_mode": "illustrated_comic_panels",
     "required_character_files": [
-      "templates/characters/isla/isla_01_opening_return.png",
-      "templates/characters/isla/isla_02_first_move.png",
-      "templates/characters/isla/isla_03_stuck_moment.png",
-      "templates/characters/isla/isla_04_breakthrough.png",
-      "templates/characters/isla/isla_05_finish.png",
-      "templates/characters/isla/isla_06_tomorrow_set.png"
+      "templates/characters/phil/phil_01_opening_return.png",
+      "templates/characters/phil/phil_02_first_move.png",
+      "templates/characters/phil/phil_03_stuck_moment.png",
+      "templates/characters/phil/phil_04_breakthrough.png",
+      "templates/characters/phil/phil_05_finish.png",
+      "templates/characters/phil/phil_06_tomorrow_set.png"
     ],
     "text_is_overlay": true,
     "puzzle_screen_inserted_later": true,
@@ -104,5 +104,5 @@
       "URL only on monitor/browser bar."
     ]
   },
-  "history_used_count": 1
+  "history_used_count": 0
 }
