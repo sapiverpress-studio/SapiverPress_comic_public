@@ -86,60 +86,147 @@ async function choosePuzzleUrl(page, date) {
       const href = item.href.toLowerCase();
       if (href.includes("etsy") || href.includes("amazon") || href.includes("facebook") || href.includes("pinterest")) return false;
       if (href === "https://suite.sapiverpress.co.uk/" || href === PLAY_INDEX_URL) return false;
-      return href.includes("netlify.app") || href.includes("suite.sapiverpress.co.uk/play/");
+      return href.includes("suite.sapiverpress.co.uk/play/") || href.includes("netlify.app");
     })
     .map((item) => item.href)
     .filter((href, index, arr) => arr.indexOf(href) === index)
     .sort();
 
   if (!candidates.length) {
-    console.log("No playable links discovered; falling back to the play page itself.");
-    return { url: PLAY_INDEX_URL, mode: "play-page-fallback", candidates: [] };
+    console.log("No playable links discovered; falling back to Trigoku.");
+    return { url: "https://suite.sapiverpress.co.uk/play/trigoku/", mode: "trigoku-fallback", candidates: [] };
   }
 
   const index = stableIndex(date, candidates.length);
   const url = candidates[index];
   console.log(`Selected puzzle ${index + 1}/${candidates.length}: ${url}`);
-  return { url, mode: "daily-discovered-random", candidates };
+  return { url, mode: "daily-discovered-playable", candidates };
 }
 
-async function nudgePuzzle(page, stage) {
-  const viewport = page.viewportSize() || { width: 1280, height: 900 };
-  const points = [
-    [0.50, 0.50], [0.43, 0.47], [0.57, 0.47], [0.43, 0.57], [0.57, 0.57],
-    [0.50, 0.40], [0.50, 0.60], [0.35, 0.50], [0.65, 0.50],
-  ];
+async function focusPuzzleArea(page) {
+  const target = await page.evaluate(() => {
+    const selectors = [
+      "canvas",
+      "svg",
+      "table",
+      "[role='grid']",
+      "[class*='sudoku']",
+      "[class*='grid']",
+      "[class*='puzzle']",
+      "main",
+      "body",
+    ];
 
-  const attempts = Math.max(1, stage * 2);
-  for (let i = 0; i < attempts; i++) {
-    const [px, py] = points[(stage + i) % points.length];
-    const x = Math.round(viewport.width * px);
-    const y = Math.round(viewport.height * py);
-    await page.mouse.click(x, y);
-    await page.keyboard.press(String(((stage + i) % 9) + 1));
-    await page.keyboard.press("Tab").catch(() => {});
-    await page.waitForTimeout(180);
-  }
-
-  const likelyButtons = [
-    "text=/hint/i",
-    "text=/check/i",
-    "text=/new/i",
-    "text=/start/i",
-    "text=/play/i",
-    "button:has-text('Hint')",
-    "button:has-text('Check')",
-  ];
-
-  for (const selector of likelyButtons.slice(0, stage)) {
-    try {
-      const button = page.locator(selector).first();
-      if (await button.isVisible({ timeout: 300 })) {
-        await button.click({ timeout: 500 });
-        await page.waitForTimeout(300);
+    let best = null;
+    for (const selector of selectors) {
+      const nodes = [...document.querySelectorAll(selector)];
+      for (const node of nodes) {
+        const rect = node.getBoundingClientRect();
+        const area = rect.width * rect.height;
+        if (rect.width < 180 || rect.height < 140) continue;
+        if (!best || area > best.area) {
+          best = { selector, area, top: rect.top, left: rect.left, width: rect.width, height: rect.height };
+        }
       }
-    } catch {}
+      if (best && selector !== "main" && selector !== "body") break;
+    }
+
+    if (best) {
+      const node = document.querySelector(best.selector);
+      if (node) node.scrollIntoView({ block: "center", inline: "center" });
+    }
+    window.scrollBy(0, -60);
+    return best;
+  });
+
+  await page.waitForTimeout(700);
+  console.log(`Focused puzzle area: ${target ? `${target.selector} ${Math.round(target.width)}x${Math.round(target.height)}` : "none"}`);
+  return target;
+}
+
+async function captureFocused(page, outputPath) {
+  await focusPuzzleArea(page);
+
+  const clip = await page.evaluate(() => {
+    const selectors = ["canvas", "svg", "table", "[role='grid']", "[class*='sudoku']", "[class*='grid']", "[class*='puzzle']", "main"];
+    let best = null;
+    for (const selector of selectors) {
+      for (const node of [...document.querySelectorAll(selector)]) {
+        const rect = node.getBoundingClientRect();
+        const area = rect.width * rect.height;
+        if (rect.width < 180 || rect.height < 140) continue;
+        if (!best || area > best.area) {
+          best = { x: rect.left, y: rect.top, width: rect.width, height: rect.height, area, selector };
+        }
+      }
+      if (best && selector !== "main") break;
+    }
+    if (!best) return null;
+
+    const pad = 40;
+    const x = Math.max(0, Math.floor(best.x - pad));
+    const y = Math.max(0, Math.floor(best.y - pad));
+    const maxW = window.innerWidth - x;
+    const maxH = window.innerHeight - y;
+    return {
+      x,
+      y,
+      width: Math.max(240, Math.min(Math.ceil(best.width + pad * 2), maxW)),
+      height: Math.max(220, Math.min(Math.ceil(best.height + pad * 2), maxH)),
+      selector: best.selector,
+    };
+  });
+
+  if (clip && clip.width > 0 && clip.height > 0) {
+    await page.screenshot({ path: outputPath, clip: { x: clip.x, y: clip.y, width: clip.width, height: clip.height }, type: "png" });
+    console.log(`Captured focused ${clip.selector}: ${path.relative(ROOT, outputPath)}`);
+  } else {
+    await page.screenshot({ path: outputPath, fullPage: false, type: "png" });
+    console.log(`Captured viewport fallback: ${path.relative(ROOT, outputPath)}`);
   }
+}
+
+async function progressPuzzle(page, stage) {
+  for (let i = 0; i < stage; i++) {
+    const hintSelectors = [
+      "button:has-text('Hint')",
+      "text=/^Hint$/i",
+      "button:has-text('Check')",
+    ];
+
+    let clicked = false;
+    for (const selector of hintSelectors) {
+      try {
+        const button = page.locator(selector).first();
+        if (await button.isVisible({ timeout: 400 })) {
+          await button.click({ timeout: 800 });
+          clicked = true;
+          await page.waitForTimeout(600);
+          break;
+        }
+      } catch {}
+    }
+
+    if (!clicked) {
+      console.log(`No safe progress button found for stage ${stage}; keeping real current state.`);
+      break;
+    }
+  }
+}
+
+async function copyDebugCaptures(capturePaths, captureDir, date) {
+  const debugDir = path.join(ROOT, "social", date, "raw_captures");
+  await fs.mkdir(debugDir, { recursive: true });
+  for (const capturePath of capturePaths) {
+    if (await exists(capturePath)) {
+      await fs.copyFile(capturePath, path.join(debugDir, path.basename(capturePath)));
+    }
+  }
+  const manifestPath = path.join(captureDir, "capture_manifest.json");
+  if (await exists(manifestPath)) {
+    await fs.copyFile(manifestPath, path.join(debugDir, "capture_manifest.json"));
+  }
+  console.log(`Debug captures copied to ${path.relative(ROOT, debugDir)}`);
 }
 
 const today = londonToday();
@@ -156,6 +243,7 @@ const capturePaths = EXPECTED_CAPTURE_NAMES.map((name) => path.join(captureDir, 
 await fs.mkdir(captureDir, { recursive: true });
 
 if ((await Promise.all(capturePaths.map(exists))).every(Boolean)) {
+  await copyDebugCaptures(capturePaths, captureDir, date);
   console.log(`Capture files already exist for ${date}: ${path.relative(ROOT, captureDir)}`);
   process.exit(0);
 }
@@ -175,15 +263,14 @@ try {
   }
 
   await waitForPage(page);
+  await focusPuzzleArea(page);
 
   for (let stage = 0; stage < capturePaths.length; stage++) {
     if (stage > 0) {
-      await nudgePuzzle(page, stage);
+      await progressPuzzle(page, stage);
       await page.waitForTimeout(700);
     }
-    const outputPath = capturePaths[stage];
-    await page.screenshot({ path: outputPath, fullPage: false, type: "png" });
-    console.log(`Captured ${path.relative(ROOT, outputPath)}`);
+    await captureFocused(page, capturePaths[stage]);
   }
 
   const manifest = {
@@ -193,7 +280,7 @@ try {
     playable_candidates: choice.candidates || [],
     created_at: new Date().toISOString(),
     viewport: { width: 1280, height: 900 },
-    note: "Real live page screenshots captured by Playwright Chromium from a playable puzzle source. Interaction attempts are used to capture different stages when the game supports browser input. No placeholder images or fake puzzle grids are generated.",
+    note: "Real live page screenshots captured by Playwright Chromium from a playable puzzle source. The script focuses the puzzle area before capture and uses app buttons such as Hint/Check when available. No placeholder images or fake puzzle grids are generated.",
     files: EXPECTED_CAPTURE_NAMES,
   };
 
@@ -203,6 +290,7 @@ try {
     "utf8"
   );
 
+  await copyDebugCaptures(capturePaths, captureDir, date);
   console.log(`Today’s live puzzle captures ready: ${path.relative(ROOT, captureDir)}`);
 } catch (error) {
   fail(error?.stack || error?.message || String(error));
