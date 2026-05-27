@@ -25,7 +25,7 @@ on:
       post_to_facebook:
         description: "Try Facebook post after generation"
         required: false
-        default: "true"
+        default: "false"
       force_facebook_post:
         description: "Force Facebook post even if state says already posted"
         required: false
@@ -78,7 +78,7 @@ jobs:
           COMIC_SCREEN_BOX: ${{ secrets.COMIC_SCREEN_BOX }}
         run: npm run compose
       - name: Post comic to Facebook
-        if: github.event_name == 'schedule' || github.event_name == 'push' || github.event.inputs.post_to_facebook == 'true'
+        if: github.event_name == 'schedule' || github.event.inputs.post_to_facebook == 'true'
         env:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
