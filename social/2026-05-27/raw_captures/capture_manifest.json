@@ -1,0 +1,38 @@
+{
+  "date": "2026-05-27",
+  "source_url": "https://suite.sapiverpress.co.uk/play/anti-king-sudoku/",
+  "source_mode": "daily-discovered-playable",
+  "playable_candidates": [
+    "https://sapiver-press-duel.netlify.app/",
+    "https://suite.sapiverpress.co.uk/play/anti-king-sudoku/",
+    "https://suite.sapiverpress.co.uk/play/anti-knight-sudoku/",
+    "https://suite.sapiverpress.co.uk/play/arrow-sudoku/",
+    "https://suite.sapiverpress.co.uk/play/german-whispers-sudoku/",
+    "https://suite.sapiverpress.co.uk/play/hyper-sudoku/",
+    "https://suite.sapiverpress.co.uk/play/killer-sudoku/",
+    "https://suite.sapiverpress.co.uk/play/kropki-sudoku/",
+    "https://suite.sapiverpress.co.uk/play/little-killer-sudoku/",
+    "https://suite.sapiverpress.co.uk/play/non-consecutive-sudoku/",
+    "https://suite.sapiverpress.co.uk/play/odd-even-sudoku/",
+    "https://suite.sapiverpress.co.uk/play/renban-sudoku/",
+    "https://suite.sapiverpress.co.uk/play/sandwich-sudoku/",
+    "https://suite.sapiverpress.co.uk/play/sudoku-x/",
+    "https://suite.sapiverpress.co.uk/play/thermo-sudoku/",
+    "https://suite.sapiverpress.co.uk/play/trigoku/",
+    "https://suite.sapiverpress.co.uk/play/xv-sudoku/"
+  ],
+  "created_at": "2026-05-27T11:07:40.724Z",
+  "viewport": {
+    "width": 1280,
+    "height": 900
+  },
+  "note": "Real live page screenshots captured by Playwright Chromium from a playable puzzle source. The script focuses the puzzle area before capture and uses app buttons such as Hint/Check when available. No placeholder images or fake puzzle grids are generated.",
+  "files": [
+    "01_fresh_daily_grid.png",
+    "02_first_moves.png",
+    "03_stuck_moment.png",
+    "04_breakthrough.png",
+    "05_nearly_complete.png",
+    "06_complete_solution.png"
+  ]
+}
