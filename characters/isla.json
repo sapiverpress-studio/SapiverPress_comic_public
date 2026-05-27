@@ -101,6 +101,56 @@
           "caption": "Isla closes her laptop with a satisfied smile."
         }
       ]
+    },
+    {
+      "date": "2026-05-26",
+      "weekday": "Tuesday",
+      "product_referenced": {
+        "key": "suite",
+        "name": "Sapiver Press Suite",
+        "url": "https://suite.sapiverpress.co.uk",
+        "natural_reference": "a return visit tomorrow"
+      },
+      "story_note": "Isla returns to her familiar puzzle nook, greeted by another fresh Sapiver Press Suite challenge that teases a twist from the start.",
+      "continuation_note": "With care and patience, she unravels the puzzle's subtle logic, making steady strides before deciding to pause and pick it up again tomorrow.",
+      "scenes": [
+        {
+          "id": "scene_01",
+          "title": "Back Again",
+          "dialogue": "Here we go—another puzzle day.",
+          "caption": "Morning sun warms Isla's corner, as her daily ritual begins."
+        },
+        {
+          "id": "scene_02",
+          "title": "Different Start",
+          "dialogue": "This first clue changes everything.",
+          "caption": "A surprising opening sets a new rhythm to today's solving."
+        },
+        {
+          "id": "scene_03",
+          "title": "The Pushback",
+          "dialogue": "No shortcuts this time.",
+          "caption": "She resists guessing, thinking several steps ahead."
+        },
+        {
+          "id": "scene_04",
+          "title": "The Column",
+          "dialogue": "This column reveals the pattern!",
+          "caption": "A critical insight breaks the logjam."
+        },
+        {
+          "id": "scene_05",
+          "title": "The Follow-Through",
+          "dialogue": "Pieces fit together now.",
+          "caption": "The grid unlocks, each step clearer than the last."
+        },
+        {
+          "id": "scene_06",
+          "title": "Worth Returning For",
+          "dialogue": "Progress made. Let's continue tomorrow.",
+          "caption": "Closing her laptop, anticipation already building for a return visit tomorrow."
+        }
+      ]
     }
   ],
   "ongoing_threads": [],
