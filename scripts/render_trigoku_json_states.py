@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import hashlib
 import json
 import os
+import random
 import shutil
 from datetime import datetime
 from pathlib import Path
@@ -130,11 +132,18 @@ def load_data() -> dict:
     solution = find_solution(data)
     locks = data.get("locks_zero_indexed") or data.get("locks") or []
     lock_set = set()
-    for item in locks:
-        if isinstance(item, list) and len(item) >= 2:
-            lock_set.add((int(item[0]), int(item[1])))
-        elif isinstance(item, dict) and "r" in item and "c" in item:
-            lock_set.add((int(item["r"]), int(item["c"])))
+    for key, value in locks.items() if isinstance(locks, dict) else []:
+        try:
+            idx = int(key)
+            lock_set.add((idx // 9, idx % 9))
+        except Exception:
+            pass
+    if isinstance(locks, list):
+        for item in locks:
+            if isinstance(item, list) and len(item) >= 2:
+                lock_set.add((int(item[0]), int(item[1])))
+            elif isinstance(item, dict) and "r" in item and "c" in item:
+                lock_set.add((int(item["r"]), int(item["c"])))
     data["givens"] = givens
     data["solution"] = solution
     data["lock_set"] = lock_set
@@ -151,15 +160,67 @@ def draw_lock(draw: ImageDraw.ImageDraw, x: float, y: float, s: float) -> None:
     draw.arc((x + s * 0.33, y + s * 0.25, x + s * 0.67, y + s * 0.65), 180, 360, fill=colour, width=max(4, int(s * 0.045)))
 
 
-def blanks_from_givens(givens: list[list[int]]) -> list[tuple[int, int]]:
+def stable_seed(data: dict) -> int:
+    payload = {
+        "date": DATE,
+        "source_id": data.get("source_id"),
+        "source_name": data.get("source_name"),
+        "fp": data.get("fp"),
+        "mode": data.get("mode"),
+        "givens": data.get("givens"),
+        "solution": data.get("solution"),
+    }
+    digest = hashlib.sha256(json.dumps(payload, sort_keys=True).encode("utf-8")).hexdigest()
+    return int(digest[:16], 16)
+
+
+def blanks_from_givens(givens: list[list[int]], data: dict) -> list[tuple[int, int]]:
     coords = [(r, c) for r in range(9) for c in range(9) if givens[r][c] == 0]
-    return sorted(coords, key=lambda rc: (abs(rc[0] - 4) + abs(rc[1] - 4), rc[0], rc[1]))
+    rng = random.Random(stable_seed(data))
+
+    # Spread the fill across boxes so the staged images do not grow out from the centre
+    # or sweep left-to-right. This is deterministic per puzzle, but visually varied.
+    boxes: dict[tuple[int, int], list[tuple[int, int]]] = {}
+    for rc in coords:
+        box = (rc[0] // 3, rc[1] // 3)
+        boxes.setdefault(box, []).append(rc)
+
+    for cells in boxes.values():
+        rng.shuffle(cells)
+
+    box_order = list(boxes.keys())
+    rng.shuffle(box_order)
+
+    ordered: list[tuple[int, int]] = []
+    while any(boxes.values()):
+        rng.shuffle(box_order)
+        for box in box_order:
+            cells = boxes.get(box) or []
+            if cells:
+                ordered.append(cells.pop())
+
+    # A final light shuffle inside small windows breaks any residual box rhythm while
+    # keeping broad grid coverage for the early/mid stages.
+    window = 6
+    for start in range(0, len(ordered), window):
+        chunk = ordered[start:start + window]
+        rng.shuffle(chunk)
+        ordered[start:start + window] = chunk
+
+    return ordered
 
 
 def added_for_stage(stage_index: int, blanks: list[tuple[int, int]]) -> set[tuple[int, int]]:
     if not blanks:
         return set()
-    counts = [0, max(1, int(len(blanks) * 0.12)), max(2, int(len(blanks) * 0.30)), max(3, int(len(blanks) * 0.52)), max(4, int(len(blanks) * 0.78)), len(blanks)]
+    counts = [
+        0,
+        max(1, int(len(blanks) * 0.10)),
+        max(2, int(len(blanks) * 0.28)),
+        max(3, int(len(blanks) * 0.50)),
+        max(4, int(len(blanks) * 0.76)),
+        len(blanks),
+    ]
     return set(blanks[:counts[stage_index]])
 
 
@@ -175,7 +236,7 @@ def draw_screen(data: dict, stage_index: int) -> Image.Image:
     givens = data["givens"]
     solution = data["solution"]
     locks = data["lock_set"]
-    blanks = blanks_from_givens(givens)
+    blanks = blanks_from_givens(givens, data)
     added = added_for_stage(stage_index, blanks)
     recent = recent_for_stage(stage_index, blanks)
 
@@ -286,13 +347,13 @@ def main() -> None:
         "mode": data.get("mode"),
         "source_id": data.get("source_id"),
         "source_name": data.get("source_name"),
-        "stage_method": "json_rendered_from_downloaded_puzzle_data",
-        "note": "Puzzle shots rendered from actual downloaded puzzle data: givens/start grid, solution/answer grid, and any lock metadata. No browser gameplay screenshots, no fake grid, no Hint/Check guessing.",
+        "stage_method": "json_rendered_from_downloaded_puzzle_data_seeded_spread",
+        "note": "Puzzle shots rendered from actual downloaded puzzle data. Fill order is deterministic per puzzle, seeded and spread across boxes to avoid artificial centre-out or row-sweep patterns. No browser gameplay screenshots, no fake grid, no Hint/Check guessing.",
         "files": files,
     }
     (CAPTURE_DIR / "capture_manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
     shutil.copy2(CAPTURE_DIR / "capture_manifest.json", SOCIAL_RAW_DIR / "capture_manifest.json")
-    print("Rendered JSON staged captures:")
+    print("Rendered JSON staged captures with seeded spread fill:")
     for name in files:
         print(f" - {CAPTURE_DIR / name}")
 
