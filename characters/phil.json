@@ -101,6 +101,56 @@
           "caption": "Progress made, eager anticipation grows."
         }
       ]
+    },
+    {
+      "date": "2026-05-27",
+      "weekday": "Wednesday",
+      "product_referenced": {
+        "key": "suite",
+        "name": "Sapiver Press Suite",
+        "url": "https://suite.sapiverpress.co.uk",
+        "natural_reference": "a return visit tomorrow"
+      },
+      "story_note": "Phil resumes his morning puzzle ritual, immediately sensing today's challenge is more complex.",
+      "continuation_note": "Encouraged by today's progress, Phil looks forward to a return visit tomorrow for fresh puzzles in the Sapiver Press Suite.",
+      "scenes": [
+        {
+          "id": "scene_01",
+          "title": "Back Again",
+          "dialogue": "Time for another puzzle morning.",
+          "caption": "Phil pours his tea, ready to begin."
+        },
+        {
+          "id": "scene_02",
+          "title": "Different Start",
+          "dialogue": "These clues are definitely trickier today.",
+          "caption": "A puzzling twist appears early on."
+        },
+        {
+          "id": "scene_03",
+          "title": "The Pushback",
+          "dialogue": "No guessing now, must slow down.",
+          "caption": "Phil encounters a thoughtful pause."
+        },
+        {
+          "id": "scene_04",
+          "title": "The Column",
+          "dialogue": "That column finally adds up perfectly!",
+          "caption": "A key logical breakthrough."
+        },
+        {
+          "id": "scene_05",
+          "title": "The Follow-Through",
+          "dialogue": "Everything starts connecting smoothly now.",
+          "caption": "Pieces fall into place methodically."
+        },
+        {
+          "id": "scene_06",
+          "title": "Worth Returning For",
+          "dialogue": "Almost there—I'll tackle the rest tomorrow.",
+          "caption": "Progress made with plans to return."
+        }
+      ]
     }
   ],
   "ongoing_threads": [],
