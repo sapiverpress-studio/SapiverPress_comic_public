@@ -14,9 +14,21 @@ on:
         description: "Run archive migration too"
         required: false
         default: "false"
+      post_to_facebook:
+        description: "Try Facebook post after generation"
+        required: false
+        default: "true"
+      force_facebook_post:
+        description: "Force Facebook post even if state says already posted"
+        required: false
+        default: "false"
 
 permissions:
   contents: write
+
+concurrency:
+  group: sapiver-press-daily-comic
+  cancel-in-progress: false
 
 jobs:
   generate-daily-story:
@@ -26,6 +38,8 @@ jobs:
     steps:
       - name: Checkout public repo
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -42,6 +56,25 @@ jobs:
           OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
         run: npm run daily
+      - name: Post comic to Facebook
+        if: github.event_name == 'schedule' || github.event.inputs.post_to_facebook == 'true'
+        env:
+          DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          META_USER_TOKEN: ${{ secrets.META_USER_TOKEN }}
+          COMIC_POST_IMAGE_URL_TEMPLATE: ${{ secrets.COMIC_POST_IMAGE_URL_TEMPLATE }}
+          COMIC_POST_IMAGE_PATH: ${{ secrets.COMIC_POST_IMAGE_PATH }}
+          FORCE_FB_POST: ${{ github.event.inputs.force_facebook_post }}
+          SUITE_URL: "https://suite.sapiverpress.co.uk"
+        run: npm run facebook-post
+      - name: Commit Facebook post state
+        run: |
+          git config user.name "sapiver-comic-bot"
+          git config user.email "sapiver-comic-bot@users.noreply.github.com"
+          git add facebook-posts.json || true
+          git commit -m "Update Facebook posting state" || echo "No Facebook state changes"
+          git push
 
   archive-migration:
     name: Archive Migration
