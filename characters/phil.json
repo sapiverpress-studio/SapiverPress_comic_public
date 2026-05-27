@@ -551,6 +551,56 @@
           "caption": "Steady progress sets stage for return."
         }
       ]
+    },
+    {
+      "date": "2026-05-27",
+      "weekday": "Wednesday",
+      "product_referenced": {
+        "key": "suite",
+        "name": "Sapiver Press Suite",
+        "url": "https://suite.sapiverpress.co.uk",
+        "natural_reference": "a return visit tomorrow"
+      },
+      "story_note": "Phil begins another morning with the gentle ritual of tea and puzzle, noticing at once the subtle shift in clue style demanding fresh focus.",
+      "continuation_note": "Having unlocked a key column, Phil's momentum builds steadily, and he plans a return visit tomorrow for the puzzle's satisfying conclusion.",
+      "scenes": [
+        {
+          "id": "scene_01",
+          "title": "Back Again",
+          "dialogue": "Another morning, same quiet start.",
+          "caption": "Phil pours tea as he opens the new puzzle."
+        },
+        {
+          "id": "scene_02",
+          "title": "Different Start",
+          "dialogue": "This first clue takes a new turn.",
+          "caption": "A fresh twist sets the tone early."
+        },
+        {
+          "id": "scene_03",
+          "title": "The Pushback",
+          "dialogue": "I need to pause—guessing won't help.",
+          "caption": "Phil reflects carefully on tricky clues."
+        },
+        {
+          "id": "scene_04",
+          "title": "The Column",
+          "dialogue": "That column clicks into place!",
+          "caption": "A breakthrough sharpens the logic."
+        },
+        {
+          "id": "scene_05",
+          "title": "The Follow-Through",
+          "dialogue": "The rest is beginning to flow.",
+          "caption": "Answers slot steadily into the grid."
+        },
+        {
+          "id": "scene_06",
+          "title": "Worth Returning For",
+          "dialogue": "Almost there—I'll finish this tomorrow.",
+          "caption": "Progress made; a return visit awaits."
+        }
+      ]
     }
   ],
   "ongoing_threads": [],
