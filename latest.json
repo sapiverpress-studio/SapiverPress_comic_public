@@ -10,8 +10,8 @@
     "url": "https://suite.sapiverpress.co.uk",
     "natural_reference": "a return visit tomorrow"
   },
-  "story_note": "Isla greets Wednesday's morning puzzle with quiet focus, observing the fresh grid and methodically entering secure answers.",
-  "continuation_note": "After a mindful pause, she unlocks a crucial breakthrough, advancing close to completion and looks forward to a return visit tomorrow.",
+  "story_note": "Isla welcomes Wednesday with focused calm, starting fresh on today's Sapiver Press Suite puzzle.",
+  "continuation_note": "After steady progress and a careful pause, she makes a key deduction that opens up the grid and wraps up the session, ready for a return visit tomorrow.",
   "scenes": [
     {
       "id": "scene_01",
@@ -20,7 +20,7 @@
       "dialogue": "Alright, let's see what we have today.",
       "caption": "Isla studies the blank grid, the start of a new challenge.",
       "image_ref": "isla_01_opening_return.png",
-      "screen_state": "fresh blank puzzle grid"
+      "screen_state": "start"
     },
     {
       "id": "scene_02",
@@ -29,7 +29,7 @@
       "dialogue": "These first answers give me some ground.",
       "caption": "Safe entries begin to take shape on the grid.",
       "image_ref": "isla_02_first_move.png",
-      "screen_state": "puzzle grid with several entries filled in logically"
+      "screen_state": "progress"
     },
     {
       "id": "scene_03",
@@ -38,7 +38,7 @@
       "dialogue": "Time to pause; no hasty guesses.",
       "caption": "Isla reflects, avoiding guesses and thinking through logic.",
       "image_ref": "isla_03_stuck_moment.png",
-      "screen_state": "grid with some partial fills, some blanks, indicating a thoughtful pause"
+      "screen_state": "progress"
     },
     {
       "id": "scene_04",
@@ -47,7 +47,7 @@
       "dialogue": "This deduction opens up everything!",
       "caption": "A key move unlocks more of the puzzle.",
       "image_ref": "isla_04_breakthrough.png",
-      "screen_state": "grid now noticeably more filled after a key deduction"
+      "screen_state": "progress"
     },
     {
       "id": "scene_05",
@@ -56,16 +56,16 @@
       "dialogue": "Almost done — it’s coming together.",
       "caption": "The puzzle nears completion, logic lines tightening.",
       "image_ref": "isla_05_finish.png",
-      "screen_state": "grid mostly filled with few gaps remaining"
+      "screen_state": "nearly_complete"
     },
     {
       "id": "scene_06",
       "title": "Finished",
-      "beat": "The solved or latest real progress screen closes the strip",
+      "beat": "The completed puzzle screen closes the strip",
       "dialogue": "Great progress today. Same time tomorrow?",
       "caption": "Closing the puzzle in the morning light, eager for next time.",
       "image_ref": "isla_06_tomorrow_set.png",
-      "screen_state": "completed or near-completion puzzle grid"
+      "screen_state": "completed"
     }
   ],
   "image_manifest": {
@@ -106,5 +106,5 @@
       "URL only on monitor/browser bar."
     ]
   },
-  "history_used_count": 18
+  "history_used_count": 19
 }
