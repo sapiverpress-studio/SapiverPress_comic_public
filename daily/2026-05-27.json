@@ -10,62 +10,62 @@
     "url": "https://suite.sapiverpress.co.uk",
     "natural_reference": "a return visit tomorrow"
   },
-  "story_note": "Phil begins another morning with the gentle ritual of tea and puzzle, noticing at once the subtle shift in clue style demanding fresh focus.",
-  "continuation_note": "Having unlocked a key column, Phil's momentum builds steadily, and he plans a return visit tomorrow for the puzzle's satisfying conclusion.",
+  "story_note": "Phil enjoys his morning puzzle routine, quickly spotting that today's clues have a fresh twist, requiring solid patience and careful thinking.",
+  "continuation_note": "With a key column solved and steady progress made, Phil plans to return tomorrow for the satisfying conclusion to this puzzle challenge.",
   "scenes": [
     {
       "id": "scene_01",
       "title": "Back Again",
       "beat": "Return after yesterday, new daily puzzle, same habit",
-      "dialogue": "Another morning, same quiet start.",
-      "caption": "Phil pours tea as he opens the new puzzle.",
+      "dialogue": "Morning puzzle ritual resumes.",
+      "caption": "Phil pours his tea and opens the new puzzle.",
       "image_ref": "phil_01_opening_return.png",
-      "screen_state": "puzzle_unfilled"
+      "screen_state": "puzzle unopened"
     },
     {
       "id": "scene_02",
       "title": "Different Start",
       "beat": "The first move shows today's puzzle is different",
-      "dialogue": "This first clue takes a new turn.",
-      "caption": "A fresh twist sets the tone early.",
+      "dialogue": "Today's first clue feels offbeat.",
+      "caption": "A subtle change sets things apart early.",
       "image_ref": "phil_02_first_move.png",
-      "screen_state": "puzzle_hint1"
+      "screen_state": "first clue revealed on puzzle"
     },
     {
       "id": "scene_03",
       "title": "The Pushback",
       "beat": "A fair stuck moment, no guessing",
-      "dialogue": "I need to pause—guessing won't help.",
-      "caption": "Phil reflects carefully on tricky clues.",
+      "dialogue": "No shortcuts—time to think carefully.",
+      "caption": "Phil pauses, resisting guesses.",
       "image_ref": "phil_03_stuck_moment.png",
-      "screen_state": "puzzle_stuck"
+      "screen_state": "partial puzzle grid with some entries"
     },
     {
       "id": "scene_04",
       "title": "The Column",
       "beat": "The logical breakthrough",
-      "dialogue": "That column clicks into place!",
-      "caption": "A breakthrough sharpens the logic.",
+      "dialogue": "This column just clicked perfectly!",
+      "caption": "A crucial breakthrough sharpens progress.",
       "image_ref": "phil_04_breakthrough.png",
-      "screen_state": "puzzle_partial"
+      "screen_state": "puzzle column filled correctly"
     },
     {
       "id": "scene_05",
       "title": "The Follow-Through",
       "beat": "The grid begins to open",
-      "dialogue": "The rest is beginning to flow.",
-      "caption": "Answers slot steadily into the grid.",
+      "dialogue": "Now the answers flow steadily.",
+      "caption": "Pieces slot into place one by one.",
       "image_ref": "phil_05_finish.png",
-      "screen_state": "puzzle_partial_filled"
+      "screen_state": "majority of puzzle filled"
     },
     {
       "id": "scene_06",
       "title": "Worth Returning For",
       "beat": "Completion or honest latest progress, return tomorrow",
-      "dialogue": "Almost there—I'll finish this tomorrow.",
-      "caption": "Progress made; a return visit awaits.",
+      "dialogue": "Almost finished; resuming tomorrow.",
+      "caption": "Steady progress fuels eager return.",
       "image_ref": "phil_06_tomorrow_set.png",
-      "screen_state": "puzzle_incomplete"
+      "screen_state": "puzzle mostly filled, unsolved area highlighted"
     }
   ],
   "image_manifest": {
@@ -104,5 +104,5 @@
       "URL only on monitor/browser bar."
     ]
   },
-  "history_used_count": 11
+  "history_used_count": 12
 }
