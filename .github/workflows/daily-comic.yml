@@ -36,7 +36,7 @@ permissions:
 
 concurrency:
   group: sapiver-press-daily-comic
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   generate-daily-story:
@@ -48,6 +48,10 @@ jobs:
         uses: actions/checkout@v4
         with:
           persist-credentials: true
+      - name: Sync to latest main
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -90,6 +94,7 @@ jobs:
           set -e
           git config user.name "sapiver-comic-bot"
           git config user.email "sapiver-comic-bot@users.noreply.github.com"
+          git checkout -- package-lock.json || true
           git add characters/isla.json daily image-manifests latest.json social || true
           if [ -f facebook-posts.json ]; then
             git add facebook-posts.json
@@ -103,9 +108,9 @@ jobs:
             if git push; then
               exit 0
             fi
-            echo "git push failed on attempt ${attempt}; retrying"
+            echo "git push failed on attempt ${attempt}; rebasing with autostash and retrying"
             sleep 8
-            git pull --rebase origin main || true
+            git pull --rebase --autostash origin main || true
           done
           git push
 
