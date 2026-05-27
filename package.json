@@ -6,8 +6,8 @@
   "scripts": {
     "daily": "node scripts/daily-generator.mjs",
     "capture:today": "node scripts/capture_today_puzzle.mjs",
-    "compose": "npm run capture:today && python -m pip install -r requirements.txt && python scripts/compose_v3_strict_clean.py",
-    "compose:strict": "npm run capture:today && python -m pip install -r requirements.txt && python scripts/compose_v3_strict_clean.py",
+    "compose": "npm run capture:today && python -m pip install -r requirements.txt && python scripts/compose_v3_strict_nocrop.py",
+    "compose:strict": "npm run capture:today && python -m pip install -r requirements.txt && python scripts/compose_v3_strict_nocrop.py",
     "compose:fallback": "python -m pip install -r requirements.txt && python scripts/compose_isla_crisp_grid.py",
     "archive": "node scripts/archive-migration.mjs",
     "validate": "node scripts/validate-project.mjs",
