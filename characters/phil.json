@@ -451,6 +451,56 @@
           "caption": "Steady progress with plans to return."
         }
       ]
+    },
+    {
+      "date": "2026-05-27",
+      "weekday": "Wednesday",
+      "product_referenced": {
+        "key": "suite",
+        "name": "Sapiver Press Suite",
+        "url": "https://suite.sapiverpress.co.uk",
+        "natural_reference": "a return visit tomorrow"
+      },
+      "story_note": "Phil greets a new morning puzzle with his usual calm focus, noting a fresh twist in the clues that demands patience and careful logic.",
+      "continuation_note": "Having made steady progress through careful thought, Phil looks forward to a return visit tomorrow, ready to explore another Sapiver Press Suite challenge.",
+      "scenes": [
+        {
+          "id": "scene_01",
+          "title": "Back Again",
+          "dialogue": "Time to settle in again.",
+          "caption": "Phil pours his tea and opens the fresh puzzle."
+        },
+        {
+          "id": "scene_02",
+          "title": "Different Start",
+          "dialogue": "This puzzle feels subtly different today.",
+          "caption": "A new pattern hints at fresh complexity."
+        },
+        {
+          "id": "scene_03",
+          "title": "The Pushback",
+          "dialogue": "No guesses—it needs more thought.",
+          "caption": "Phil pauses, resisting a quick move."
+        },
+        {
+          "id": "scene_04",
+          "title": "The Column",
+          "dialogue": "That column’s pattern finally clicks!",
+          "caption": "A key breakthrough unlocks the logic."
+        },
+        {
+          "id": "scene_05",
+          "title": "The Follow-Through",
+          "dialogue": "Now the rest flows steadily.",
+          "caption": "Answers fall into place one by one."
+        },
+        {
+          "id": "scene_06",
+          "title": "Worth Returning For",
+          "dialogue": "Almost done—I'll finish tomorrow.",
+          "caption": "Progress made, eager for a return visit."
+        }
+      ]
     }
   ],
   "ongoing_threads": [],
