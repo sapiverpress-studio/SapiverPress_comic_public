@@ -10,62 +10,62 @@
     "url": "https://suite.sapiverpress.co.uk",
     "natural_reference": "a return visit tomorrow"
   },
-  "story_note": "Phil starts another morning puzzle with calm focus, sensing today's clues demand patience and sharp logic.",
-  "continuation_note": "With steady progress made, Phil looks forward to returning tomorrow for fresh challenges at the Sapiver Press Suite.",
+  "story_note": "Phil returns to his morning puzzle, noticing today's clues twist differently and require patience.",
+  "continuation_note": "Having made steady progress, Phil looks forward to a return visit tomorrow with renewed enthusiasm for the next puzzle challenge.",
   "scenes": [
     {
       "id": "scene_01",
       "title": "Back Again",
       "beat": "Return after yesterday, new daily puzzle, same habit",
-      "dialogue": "Time to settle in again.",
-      "caption": "Phil readies his tea, puzzle at hand.",
+      "dialogue": "Another morning, a fresh puzzle awaits.",
+      "caption": "Phil sips tea, ready to start.",
       "image_ref": "phil_01_opening_return.png",
-      "screen_state": "puzzle_closed"
+      "screen_state": "puzzle unopened"
     },
     {
       "id": "scene_02",
       "title": "Different Start",
       "beat": "The first move shows today's puzzle is different",
-      "dialogue": "These clues twist differently today.",
-      "caption": "A fresh challenge unfolds from the start.",
+      "dialogue": "This opening feels unlike before.",
+      "caption": "A twist in the first clue appears.",
       "image_ref": "phil_02_first_move.png",
-      "screen_state": "puzzle_partial"
+      "screen_state": "puzzle partially filled in a few squares"
     },
     {
       "id": "scene_03",
       "title": "The Pushback",
       "beat": "A fair stuck moment, no guessing",
-      "dialogue": "No rushing—better to think carefully.",
-      "caption": "Phil pauses, considering before acting.",
+      "dialogue": "No guesses now, time to pause and think.",
+      "caption": "Phil pauses, mulling over tricky clues.",
       "image_ref": "phil_03_stuck_moment.png",
-      "screen_state": "puzzle_partial"
+      "screen_state": "puzzle with some crossed-out options"
     },
     {
       "id": "scene_04",
       "title": "The Column",
       "beat": "The logical breakthrough",
-      "dialogue": "This column’s pattern just made sense!",
-      "caption": "A key insight brightens the grid.",
+      "dialogue": "At last, this column clicks perfectly!",
+      "caption": "A vital breakthrough unlocks logic.",
       "image_ref": "phil_04_breakthrough.png",
-      "screen_state": "puzzle_progressed"
+      "screen_state": "puzzle column confidently filled"
     },
     {
       "id": "scene_05",
       "title": "The Follow-Through",
       "beat": "The grid begins to open",
-      "dialogue": "Now everything falls into place.",
-      "caption": "The grid fills steadily and surely.",
+      "dialogue": "Now the rest unfolds step by step.",
+      "caption": "Answers start fitting together smoothly.",
       "image_ref": "phil_05_finish.png",
-      "screen_state": "puzzle_progressed"
+      "screen_state": "puzzle grid mostly completed"
     },
     {
       "id": "scene_06",
       "title": "Worth Returning For",
       "beat": "Completion or honest latest progress, return tomorrow",
-      "dialogue": "Almost done; I’ll finish tomorrow.",
-      "caption": "Progress steady, eager for a return visit.",
+      "dialogue": "Almost done; I’ll finish this tomorrow.",
+      "caption": "Progress made, eager for a return visit.",
       "image_ref": "phil_06_tomorrow_set.png",
-      "screen_state": "puzzle_partial"
+      "screen_state": "puzzle partially completed awaiting final answers"
     }
   ],
   "image_manifest": {
@@ -104,5 +104,5 @@
       "URL only on monitor/browser bar."
     ]
   },
-  "history_used_count": 5
+  "history_used_count": 6
 }
