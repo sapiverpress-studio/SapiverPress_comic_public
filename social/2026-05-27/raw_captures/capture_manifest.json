@@ -1,88 +1,102 @@
 {
   "date": "2026-05-27",
-  "source_url": "https://suite.sapiverpress.co.uk/play/trigoku/",
-  "source_mode": "trigoku-fixed-for-staged-comic",
-  "stage_method": "fixed_hint_check_stages_no_text_completion_guess",
-  "created_at": "2026-05-27T13:17:40.590Z",
-  "viewport": {
-    "width": 1280,
-    "height": 900
-  },
-  "distinct_screenshot_count": 6,
-  "stage_log": [
+  "stage_method": "data_source_probe_failed",
+  "attempts": [
     {
-      "stage": 1,
-      "file": "01_fresh_daily_grid.png",
-      "label": "fresh_daily_grid",
-      "target_total_hints": 0,
-      "hints_clicked_this_stage": 0,
-      "hints_clicked_total": 0,
-      "check_clicked": false,
-      "screenshot_hash": "4be0624277dd215405b9300f35fa8a3075b270a52d503e516185ec07373763a3"
+      "id": "trigoku",
+      "project": "sapiverpress-trigoku",
+      "found": false,
+      "url": null
     },
     {
-      "stage": 2,
-      "file": "02_first_moves.png",
-      "label": "first_moves",
-      "target_total_hints": 3,
-      "hints_clicked_this_stage": 3,
-      "hints_clicked_total": 3,
-      "check_clicked": false,
-      "screenshot_hash": "cbd8ab7efcf0c5134b36f501f666a3bf1e5efb1ffc264ff8821f120b300e7d75"
+      "id": "sudoku-x",
+      "project": "sapiver-sudoku-x",
+      "found": false,
+      "url": null
     },
     {
-      "stage": 3,
-      "file": "03_stuck_moment.png",
-      "label": "stuck_moment",
-      "target_total_hints": 8,
-      "hints_clicked_this_stage": 5,
-      "hints_clicked_total": 8,
-      "check_clicked": true,
-      "screenshot_hash": "0d0c5348aa84f3a5bed529b3a384388b6cf61eaf17307ad5e6e312fadf071a31"
+      "id": "odds-and-evens",
+      "project": "sapiver-press-odds-and-evens",
+      "found": false,
+      "url": null
     },
     {
-      "stage": 4,
-      "file": "04_breakthrough.png",
-      "label": "breakthrough",
-      "target_total_hints": 18,
-      "hints_clicked_this_stage": 10,
-      "hints_clicked_total": 18,
-      "check_clicked": true,
-      "screenshot_hash": "177211f1630ec9ee355e6745719e0d17854347e481ea13accb763e203d37c025"
+      "id": "non-consecutive",
+      "project": "sapiver-press-non-con",
+      "found": false,
+      "url": null
     },
     {
-      "stage": 5,
-      "file": "05_nearly_complete.png",
-      "label": "nearly_complete",
-      "target_total_hints": 45,
-      "hints_clicked_this_stage": 27,
-      "hints_clicked_total": 45,
-      "check_clicked": true,
-      "screenshot_hash": "5bf51b61421d8ce3b23a5e801605ff88748be75f348a8a0b20295fc215df395b"
+      "id": "kropki",
+      "project": "sapiver-press-kropki",
+      "found": false,
+      "url": null
     },
     {
-      "stage": 6,
-      "file": "06_complete_solution.png",
-      "label": "completion_attempt",
-      "target_total_hints": 140,
-      "hints_clicked_this_stage": 95,
-      "hints_clicked_total": 140,
-      "check_clicked": true,
-      "screenshot_hash": "0845eb5fdf6fecf8c223d3639329707759dd21ed34b9ef339a46fe61059fbfa3"
+      "id": "hyper",
+      "project": "sapiver-press-hyper",
+      "found": false,
+      "url": null
+    },
+    {
+      "id": "anti-king",
+      "project": "sapiver-press-anti-king",
+      "found": false,
+      "url": null
+    },
+    {
+      "id": "xv",
+      "project": "sapiver-press-xv",
+      "found": false,
+      "url": null
+    },
+    {
+      "id": "thermo",
+      "project": "sapiver-press-thermo",
+      "found": false,
+      "url": null
+    },
+    {
+      "id": "sandwich",
+      "project": "sapiver-press-sandwich",
+      "found": false,
+      "url": null
+    },
+    {
+      "id": "renban",
+      "project": "sapiver-press-renban",
+      "found": false,
+      "url": null
+    },
+    {
+      "id": "little-killer",
+      "project": "sapiver-press-little-killer",
+      "found": false,
+      "url": null
+    },
+    {
+      "id": "killer",
+      "project": "sapiver-press-killer",
+      "found": false,
+      "url": null
+    },
+    {
+      "id": "german-whisper",
+      "project": "sapiver-press-german-whisper",
+      "found": false,
+      "url": null
+    },
+    {
+      "id": "arrow",
+      "project": "sapiver-press-arrow",
+      "found": false,
+      "url": null
+    },
+    {
+      "id": "anti-knight",
+      "project": "sapiver-press-anti-knight",
+      "found": false,
+      "url": null
     }
-  ],
-  "final_page_signals": {
-    "contains_hints_used_text": true,
-    "contains_mistakes_text": true,
-    "contains_next_text": true
-  },
-  "note": "Real Trigoku screenshots. Stages are created by fixed real Hint/Check clicks. No fake grids. No text-based completion guessing. No Next click before capture.",
-  "files": [
-    "01_fresh_daily_grid.png",
-    "02_first_moves.png",
-    "03_stuck_moment.png",
-    "04_breakthrough.png",
-    "05_nearly_complete.png",
-    "06_complete_solution.png"
   ]
 }
