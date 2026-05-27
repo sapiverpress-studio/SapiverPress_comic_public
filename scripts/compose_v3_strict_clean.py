@@ -11,11 +11,12 @@ import os
 import subprocess
 import sys
 import zipfile
+from zlib import crc32
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, PngImagePlugin
 
 ROOT = Path(__file__).resolve().parents[1]
 DATE = os.environ.get("DATE_OVERRIDE") or datetime.now(ZoneInfo("Europe/London")).strftime("%Y-%m-%d")
@@ -255,13 +256,25 @@ def make_social_strip(panel_paths: list[Path], out: Path) -> None:
     for i, img in enumerate(resized):
         strip.paste(img, (margin + (i % 2) * (target_w + gap), margin + (i // 2) * (img.height + gap)))
     out.parent.mkdir(parents=True, exist_ok=True)
-    strip.save(out)
+    pnginfo = PngImagePlugin.PngInfo()
+    pnginfo.add_text("sapiver_press_generated_at", datetime.now(ZoneInfo("Europe/London")).isoformat())
+    pnginfo.add_text("sapiver_press_date", DATE)
+    pnginfo.add_text("sapiver_press_character", CHARACTER)
+    strip.save(out, pnginfo=pnginfo)
 
 
 def write_zip(paths: list[Path], zip_path: Path) -> None:
-    with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as zf:
-        for path in paths:
-            zf.write(path, arcname=path.name)
+    fixed_dt = (2026, 1, 1, 0, 0, 0)
+    with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as zf:
+        for path in sorted(paths, key=lambda p: p.name):
+            data = path.read_bytes()
+            info = zipfile.ZipInfo(filename=path.name, date_time=fixed_dt)
+            info.compress_type = zipfile.ZIP_DEFLATED
+            info.create_system = 3
+            info.external_attr = 0o100644 << 16
+            info.CRC = crc32(data) & 0xFFFFFFFF
+            info.file_size = len(data)
+            zf.writestr(info, data)
 
 
 def main() -> None:
