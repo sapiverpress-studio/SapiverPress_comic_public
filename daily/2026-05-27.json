@@ -10,8 +10,8 @@
     "url": "https://suite.sapiverpress.co.uk",
     "natural_reference": "a return visit tomorrow"
   },
-  "story_note": "Isla welcomes Wednesday with focused calm, starting fresh on today's Sapiver Press Suite puzzle.",
-  "continuation_note": "After steady progress and a careful pause, she makes a key deduction that opens up the grid and wraps up the session, ready for a return visit tomorrow.",
+  "story_note": "Isla begins Wednesday with calm focus, diving into today's Sapiver Press Suite puzzle.",
+  "continuation_note": "She steadily advances, pauses thoughtfully, then makes a pivotal deduction that unlocks the grid, ending on a strong note and planning a return visit tomorrow.",
   "scenes": [
     {
       "id": "scene_01",
@@ -20,7 +20,7 @@
       "dialogue": "Alright, let's see what we have today.",
       "caption": "Isla studies the blank grid, the start of a new challenge.",
       "image_ref": "isla_01_opening_return.png",
-      "screen_state": "start"
+      "screen_state": "starting"
     },
     {
       "id": "scene_02",
@@ -47,7 +47,7 @@
       "dialogue": "This deduction opens up everything!",
       "caption": "A key move unlocks more of the puzzle.",
       "image_ref": "isla_04_breakthrough.png",
-      "screen_state": "progress"
+      "screen_state": "nearly_complete"
     },
     {
       "id": "scene_05",
@@ -106,5 +106,5 @@
       "URL only on monitor/browser bar."
     ]
   },
-  "history_used_count": 19
+  "history_used_count": 4
 }
