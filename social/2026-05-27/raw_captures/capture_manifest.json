@@ -3,7 +3,7 @@
   "source_url": "https://suite.sapiverpress.co.uk/play/trigoku/",
   "source_mode": "trigoku-fixed-for-staged-comic",
   "stage_method": "fixed_hint_check_stages_no_text_completion_guess",
-  "created_at": "2026-05-27T13:13:44.648Z",
+  "created_at": "2026-05-27T13:17:40.590Z",
   "viewport": {
     "width": 1280,
     "height": 900
@@ -18,7 +18,7 @@
       "hints_clicked_this_stage": 0,
       "hints_clicked_total": 0,
       "check_clicked": false,
-      "screenshot_hash": "baebd5b425205f95689d0c7fe80091c67c6d98aad6e952bbbd127a2943b56973"
+      "screenshot_hash": "4be0624277dd215405b9300f35fa8a3075b270a52d503e516185ec07373763a3"
     },
     {
       "stage": 2,
@@ -28,7 +28,7 @@
       "hints_clicked_this_stage": 3,
       "hints_clicked_total": 3,
       "check_clicked": false,
-      "screenshot_hash": "8b5e9ff3b128c03a2ddea43f96f06b70d2c80e5877c055c2d704d60a15eaa8db"
+      "screenshot_hash": "cbd8ab7efcf0c5134b36f501f666a3bf1e5efb1ffc264ff8821f120b300e7d75"
     },
     {
       "stage": 3,
@@ -38,7 +38,7 @@
       "hints_clicked_this_stage": 5,
       "hints_clicked_total": 8,
       "check_clicked": true,
-      "screenshot_hash": "a5d611af77a378a4917dca07161d0f0a38c4101b14a1ec64c312d92dbe8e5044"
+      "screenshot_hash": "0d0c5348aa84f3a5bed529b3a384388b6cf61eaf17307ad5e6e312fadf071a31"
     },
     {
       "stage": 4,
@@ -48,7 +48,7 @@
       "hints_clicked_this_stage": 10,
       "hints_clicked_total": 18,
       "check_clicked": true,
-      "screenshot_hash": "e0873be9497d19d4bb5b3bf2ec5c17e554f7c44a026a9642dfc7b9a96e9839d1"
+      "screenshot_hash": "177211f1630ec9ee355e6745719e0d17854347e481ea13accb763e203d37c025"
     },
     {
       "stage": 5,
@@ -58,7 +58,7 @@
       "hints_clicked_this_stage": 27,
       "hints_clicked_total": 45,
       "check_clicked": true,
-      "screenshot_hash": "d636390b71af7573327925067a09f8f161d2724113d350064a714d7798e33565"
+      "screenshot_hash": "5bf51b61421d8ce3b23a5e801605ff88748be75f348a8a0b20295fc215df395b"
     },
     {
       "stage": 6,
@@ -68,7 +68,7 @@
       "hints_clicked_this_stage": 95,
       "hints_clicked_total": 140,
       "check_clicked": true,
-      "screenshot_hash": "2a42e08650fd28c1ee9486ee11f88d9e6057f34977b0368e410bbb1a92634321"
+      "screenshot_hash": "0845eb5fdf6fecf8c223d3639329707759dd21ed34b9ef339a46fe61059fbfa3"
     }
   ],
   "final_page_signals": {
