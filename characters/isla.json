@@ -651,6 +651,56 @@
           "caption": "Closing the puzzle in the morning light, eager for next time."
         }
       ]
+    },
+    {
+      "date": "2026-05-27",
+      "weekday": "Wednesday",
+      "product_referenced": {
+        "key": "suite",
+        "name": "Sapiver Press Suite",
+        "url": "https://suite.sapiverpress.co.uk",
+        "natural_reference": "a return visit tomorrow"
+      },
+      "story_note": "Isla begins her Wednesday with calm focus, tackling a fresh Sapiver Press Suite puzzle and welcoming the day's challenge.",
+      "continuation_note": "With steady progress and thoughtful pauses, she reaches a key deduction that unlocks the grid and ends the session ready for a return visit tomorrow.",
+      "scenes": [
+        {
+          "id": "scene_01",
+          "title": "Opening Grid",
+          "dialogue": "Alright, let's see what we have today.",
+          "caption": "Isla studies the blank grid, the start of a new challenge."
+        },
+        {
+          "id": "scene_02",
+          "title": "First Moves",
+          "dialogue": "These first answers give me some ground.",
+          "caption": "Safe entries begin to take shape on the grid."
+        },
+        {
+          "id": "scene_03",
+          "title": "Stuck Moment",
+          "dialogue": "Time to pause; no hasty guesses.",
+          "caption": "Isla reflects, avoiding guesses and thinking through logic."
+        },
+        {
+          "id": "scene_04",
+          "title": "Breakthrough",
+          "dialogue": "This deduction opens up everything!",
+          "caption": "A key move unlocks more of the puzzle."
+        },
+        {
+          "id": "scene_05",
+          "title": "Nearly There",
+          "dialogue": "Almost done — it’s coming together.",
+          "caption": "The puzzle nears completion, logic lines tightening."
+        },
+        {
+          "id": "scene_06",
+          "title": "Finished",
+          "dialogue": "Great progress today. Same time tomorrow?",
+          "caption": "Closing the puzzle in the morning light, eager for next time."
+        }
+      ]
     }
   ],
   "ongoing_threads": [],
