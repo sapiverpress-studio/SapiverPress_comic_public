@@ -1,14 +1,58 @@
-﻿{
-    "ongoing_threads":  [
-                            "Proper tea",
-                            "Retired teacher habits",
-                            "No guessing",
-                            "A careful eleven o\u0027clock puzzle break"
-                        ],
-    "weeks":  [
-
-              ],
-    "last_updated":  null,
-    "name":  "Phil",
-    "character_id":  "phil"
+{
+  "character_id": "phil",
+  "name": "Phil",
+  "weeks": [
+    {
+      "date": "2026-05-27",
+      "weekday": "Wednesday",
+      "product_referenced": {
+        "key": "suite",
+        "name": "Sapiver Press Suite",
+        "url": "https://suite.sapiverpress.co.uk",
+        "natural_reference": "a return visit tomorrow"
+      },
+      "story_note": "Phil returns to the daily puzzle with his usual morning ritual, noticing the new challenge immediately.",
+      "continuation_note": "Tomorrow, Phil plans a return visit to the Sapiver Press Suite for fresh puzzles and familiar comfort.",
+      "scenes": [
+        {
+          "id": "scene_01",
+          "title": "Back Again",
+          "dialogue": "Another day, another puzzle to solve.",
+          "caption": "Phil settles in with his tea and crossword."
+        },
+        {
+          "id": "scene_02",
+          "title": "Different Start",
+          "dialogue": "Hmm... today's clues feel trickier.",
+          "caption": "The puzzle begins differently from yesterday."
+        },
+        {
+          "id": "scene_03",
+          "title": "The Pushback",
+          "dialogue": "No shortcuts. I need to think this through.",
+          "caption": "Phil faces a thoughtful pause, no guesses yet."
+        },
+        {
+          "id": "scene_04",
+          "title": "The Column",
+          "dialogue": "Ah! This column finally clicks.",
+          "caption": "A logical breakthrough opens new paths."
+        },
+        {
+          "id": "scene_05",
+          "title": "The Follow-Through",
+          "dialogue": "Now the rest unfolds smoothly.",
+          "caption": "Pieces begin falling into place one by one."
+        },
+        {
+          "id": "scene_06",
+          "title": "Worth Returning For",
+          "dialogue": "Not done yet, but I'll be back tomorrow.",
+          "caption": "Progress made and anticipation for a return visit."
+        }
+      ]
+    }
+  ],
+  "ongoing_threads": [],
+  "last_updated": "2026-05-27"
 }
