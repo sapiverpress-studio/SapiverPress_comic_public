@@ -10,62 +10,62 @@
     "url": "https://suite.sapiverpress.co.uk",
     "natural_reference": "a return visit tomorrow"
   },
-  "story_note": "Isla settles back into her puzzle nook, noticing today's challenge starts on a surprising note.",
-  "continuation_note": "She carefully works through the tricky parts, ending on a solid breakthrough with plans to return tomorrow.",
+  "story_note": "Isla returns to her familiar puzzle nook, greeted by another fresh Sapiver Press Suite challenge that teases a twist from the start.",
+  "continuation_note": "With care and patience, she unravels the puzzle's subtle logic, making steady strides before deciding to pause and pick it up again tomorrow.",
   "scenes": [
     {
       "id": "scene_01",
       "title": "Back Again",
       "beat": "Return after yesterday, new daily puzzle, same habit",
-      "dialogue": "Ready for today's puzzle.",
-      "caption": "Morning light streams over Isla's workspace.",
+      "dialogue": "Here we go—another puzzle day.",
+      "caption": "Morning sun warms Isla's corner, as her daily ritual begins.",
       "image_ref": "isla_01_opening_return.png",
-      "screen_state": "puzzle_page_loaded"
+      "screen_state": "Isla sitting by the window, laptop open, notes and plants around."
     },
     {
       "id": "scene_02",
       "title": "Different Start",
       "beat": "The first move shows today's puzzle is different",
-      "dialogue": "This clue shifts the whole approach.",
-      "caption": "Fresh twists make the puzzle feel alive.",
+      "dialogue": "This first clue changes everything.",
+      "caption": "A surprising opening sets a new rhythm to today's solving.",
       "image_ref": "isla_02_first_move.png",
-      "screen_state": "initial_clues_highlighted"
+      "screen_state": "Close-up on Isla's focused expression, studying the puzzle clues on screen."
     },
     {
       "id": "scene_03",
       "title": "The Pushback",
       "beat": "A fair stuck moment, no guessing",
-      "dialogue": "No quick leaps here.",
-      "caption": "Pausing to think before committing anything.",
+      "dialogue": "No shortcuts this time.",
+      "caption": "She resists guessing, thinking several steps ahead.",
       "image_ref": "isla_03_stuck_moment.png",
-      "screen_state": "grid_with_partial_marks"
+      "screen_state": "Isla leaning back, pondering, hands steepled."
     },
     {
       "id": "scene_04",
       "title": "The Column",
       "beat": "The logical breakthrough",
-      "dialogue": "This column is the key!",
-      "caption": "A logic breakthrough opens new paths.",
+      "dialogue": "This column reveals the pattern!",
+      "caption": "A critical insight breaks the logjam.",
       "image_ref": "isla_04_breakthrough.png",
-      "screen_state": "column_filled_logically"
+      "screen_state": "Isla pointing at the screen with a look of realization."
     },
     {
       "id": "scene_05",
       "title": "The Follow-Through",
       "beat": "The grid begins to open",
-      "dialogue": "Now it all clicks together.",
-      "caption": "Pieces falling neatly into place.",
+      "dialogue": "Pieces fit together now.",
+      "caption": "The grid unlocks, each step clearer than the last.",
       "image_ref": "isla_05_finish.png",
-      "screen_state": "grid_progressing"
+      "screen_state": "Isla typing confidently as the puzzle begins to resolve."
     },
     {
       "id": "scene_06",
       "title": "Worth Returning For",
       "beat": "Completion or honest latest progress, return tomorrow",
-      "dialogue": "Steady progress made—back again tomorrow?",
-      "caption": "Isla closes her laptop with a satisfied smile.",
+      "dialogue": "Progress made. Let's continue tomorrow.",
+      "caption": "Closing her laptop, anticipation already building for a return visit tomorrow.",
       "image_ref": "isla_06_tomorrow_set.png",
-      "screen_state": "puzzle_grid_saved"
+      "screen_state": "Isla closing the laptop, soft smile, plants and morning light around."
     }
   ],
   "image_manifest": {
@@ -104,5 +104,5 @@
       "URL only on monitor/browser bar."
     ]
   },
-  "history_used_count": 1
+  "history_used_count": 2
 }
