@@ -80,6 +80,11 @@ jobs:
           ANTHROPIC_MODEL: "claude-sonnet-4-5-20250929"
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
         run: npm run daily
+      - name: Generate Phase 3 art prompt pack
+        env:
+          DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
+          SUITE_URL: "https://suite.sapiverpress.co.uk"
+        run: npm run art-prompts
       - name: Compose full strip and close-ups
         env:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
@@ -102,7 +107,7 @@ jobs:
           SUITE_URL: "https://suite.sapiverpress.co.uk"
           ETSY_CATALOG_URL: "https://sapiver-press-etsy-search-catalog.netlify.app/"
         run: npm run facebook-post
-      - name: Commit generated story, social outputs and Facebook state
+      - name: Commit generated story, Phase 3 prompts, social outputs and Facebook state
         if: always()
         run: |
           set -e
@@ -122,14 +127,14 @@ jobs:
             done
           fi
 
-          git add characters/isla.json daily image-manifests latest.json social || true
+          git add characters/isla.json daily image-manifests latest.json social art-prompts art-replacements || true
           if [ -f facebook-posts.json ]; then
             git add facebook-posts.json
           fi
           if git diff --cached --quiet; then
-            echo "No generated story, social or Facebook state changes"
+            echo "No generated story, Phase 3 prompt, social or Facebook state changes"
           else
-            git commit -m "Update daily comic story and social outputs"
+            git commit -m "Update daily comic story, prompts and social outputs"
             for attempt in 1 2 3; do
               if git push; then
                 break
