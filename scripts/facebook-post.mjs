@@ -8,6 +8,17 @@ const SUITE_URL = process.env.SUITE_URL || "https://suite.sapiverpress.co.uk";
 const ETSY_CATALOG_URL = process.env.ETSY_CATALOG_URL || "https://sapiver-press-etsy-search-catalog.netlify.app/";
 const STRICT = isTruthy(process.env.FB_POST_STRICT || "");
 
+const EXPECTED_FILES = [
+  "00_start-grid.png",
+  "01_panel-01.png",
+  "02_panel-02.png",
+  "03_panel-03.png",
+  "04_panel-04.png",
+  "05_panel-05.png",
+  "06_panel-06.png",
+  "07_finished-grid.png"
+];
+
 function isTruthy(value) {
   return ["1", "true", "yes", "y", "on"].includes(String(value || "").trim().toLowerCase());
 }
@@ -70,18 +81,6 @@ async function fileExists(filePath) {
   }
 }
 
-function fillTemplate(template, date) {
-  const [yyyy, mm, dd] = date.split("-");
-  return template
-    .replaceAll("{date}", date)
-    .replaceAll("{yyyy}", yyyy)
-    .replaceAll("{year}", yyyy)
-    .replaceAll("{mm}", mm)
-    .replaceAll("{month}", mm)
-    .replaceAll("{dd}", dd)
-    .replaceAll("{day}", dd);
-}
-
 function mimeFor(filePath) {
   const ext = path.extname(filePath).toLowerCase();
   if (ext === ".jpg" || ext === ".jpeg") return "image/jpeg";
@@ -89,37 +88,14 @@ function mimeFor(filePath) {
   return "image/png";
 }
 
-async function findLocalImage(date) {
-  const explicit = process.env.COMIC_POST_IMAGE_PATH;
-  const candidates = [
-    explicit ? fillTemplate(explicit, date) : null,
-    `social/${date}.png`,
-    `social/${date}.jpg`,
-    `comics/${date}.png`,
-    `comics/${date}.jpg`,
-    `daily/${date}.png`,
-    `daily/${date}.jpg`,
-    `output/${date}.png`,
-    `output/${date}.jpg`,
-    `dist/${date}.png`,
-    `dist/${date}.jpg`,
-    "latest.png",
-    "latest.jpg"
-  ].filter(Boolean);
-
-  for (const candidate of candidates) {
-    if (await fileExists(candidate)) return candidate;
-  }
-  return null;
-}
-
 async function makeFacebookSafeImage(filePath) {
   const originalStat = await fs.stat(filePath);
   const outDir = ".facebook-post-cache";
   await fs.mkdir(outDir, { recursive: true });
 
+  const dirSafe = path.dirname(filePath).replaceAll(/[\\/]/g, "_").replaceAll(/[^A-Za-z0-9_.-]/g, "_");
   const baseName = path.basename(filePath, path.extname(filePath));
-  const outPath = path.join(outDir, `${baseName}-fb-safe.jpg`);
+  const outPath = path.join(outDir, `${dirSafe}_${baseName}-fb-safe.jpg`);
 
   try {
     const metadata = await sharp(filePath).metadata();
@@ -137,22 +113,6 @@ async function makeFacebookSafeImage(filePath) {
   } catch (error) {
     console.log(`Could not create Facebook-safe image, using original. Reason: ${error.message}`);
     return filePath;
-  }
-}
-
-async function urlExists(url) {
-  if (isTruthy(process.env.FB_SKIP_IMAGE_CHECK)) return true;
-
-  try {
-    let response = await fetch(url, { method: "HEAD" });
-    if (response.ok) return true;
-    if ([403, 405].includes(response.status)) {
-      response = await fetch(url, { method: "GET", headers: { Range: "bytes=0-32" } });
-      return response.ok || response.status === 206;
-    }
-    return false;
-  } catch {
-    return false;
   }
 }
 
@@ -224,28 +184,81 @@ async function getPageToken() {
   return { pageId, token: null, reason: "Neither META_USER_TOKEN, FB_PAGE_TOKEN nor FB_GENERIC_ACCESS_TOKEN is set" };
 }
 
-async function postPhotoUrl({ pageId, token, imageUrl, caption }) {
-  const endpoint = `https://graph.facebook.com/${GRAPH_VERSION}/${pageId}/photos`;
-  const body = new URLSearchParams({ url: imageUrl, caption, access_token: token });
-  const response = await fetch(endpoint, { method: "POST", body });
-  const data = await response.json();
-  if (!response.ok) throw new Error(`Facebook photo post failed: ${response.status} ${JSON.stringify(data)}`);
-  return data;
+async function loadImageSet(date) {
+  const archiveDir = path.join("social", date);
+  const latestDir = path.join("social", "latest");
+  const manifestPath = path.join(archiveDir, "manifest.json");
+  const fallbackManifestPath = path.join(latestDir, "manifest.json");
+
+  let manifest = await readJson(manifestPath, null);
+  let baseDir = archiveDir;
+
+  if (!manifest) {
+    manifest = await readJson(fallbackManifestPath, null);
+    baseDir = latestDir;
+  }
+
+  const orderedFiles = manifest?.post_order?.length ? manifest.post_order : EXPECTED_FILES;
+  const paths = orderedFiles.map((name) => path.join(baseDir, name));
+  const missing = [];
+
+  for (const filePath of paths) {
+    if (!(await fileExists(filePath))) missing.push(filePath);
+  }
+
+  if (missing.length) {
+    throw new Error(`Missing expected Facebook image set files: ${missing.join(", ")}`);
+  }
+
+  if (paths.length !== 8) {
+    throw new Error(`Expected 8 Facebook images, found ${paths.length}`);
+  }
+
+  return { manifest: manifest || {}, baseDir, paths, orderedFiles };
 }
 
-async function postPhotoFile({ pageId, token, filePath, caption }) {
+async function uploadUnpublishedPhoto({ pageId, token, filePath }) {
   const uploadPath = await makeFacebookSafeImage(filePath);
   const endpoint = `https://graph.facebook.com/${GRAPH_VERSION}/${pageId}/photos`;
   const buffer = await fs.readFile(uploadPath);
   const form = new FormData();
-  form.append("caption", caption);
   form.append("access_token", token);
+  form.append("published", "false");
   form.append("source", new Blob([buffer], { type: mimeFor(uploadPath) }), path.basename(uploadPath));
 
   const response = await fetch(endpoint, { method: "POST", body: form });
   const data = await response.json();
-  if (!response.ok) throw new Error(`Facebook photo upload failed: ${response.status} ${JSON.stringify(data)}`);
+  if (!response.ok) throw new Error(`Facebook unpublished photo upload failed: ${response.status} ${JSON.stringify(data)}`);
+
+  const mediaId = data.id || data.post_id;
+  if (!mediaId) throw new Error(`Facebook upload did not return a media id: ${JSON.stringify(data)}`);
+  return { media_fbid: String(mediaId), response: data, source: filePath, upload_path: uploadPath };
+}
+
+async function createMultiImagePost({ pageId, token, caption, uploaded }) {
+  const endpoint = `https://graph.facebook.com/${GRAPH_VERSION}/${pageId}/feed`;
+  const body = new URLSearchParams();
+  body.set("access_token", token);
+  body.set("message", caption);
+
+  uploaded.forEach((item, index) => {
+    body.set(`attached_media[${index}]`, JSON.stringify({ media_fbid: item.media_fbid }));
+  });
+
+  const response = await fetch(endpoint, { method: "POST", body });
+  const data = await response.json();
+  if (!response.ok) throw new Error(`Facebook multi-image post failed: ${response.status} ${JSON.stringify(data)}`);
   return data;
+}
+
+async function postImageSet({ pageId, token, imagePaths, caption }) {
+  const uploaded = [];
+  for (const filePath of imagePaths) {
+    console.log(`Uploading Facebook carousel image ${uploaded.length + 1}/8: ${filePath}`);
+    uploaded.push(await uploadUnpublishedPhoto({ pageId, token, filePath }));
+  }
+  const feedResponse = await createMultiImagePost({ pageId, token, caption, uploaded });
+  return { feed_response: feedResponse, uploaded };
 }
 
 async function skipOrFail(message) {
@@ -270,34 +283,23 @@ async function main() {
   const { pageId, token, reason } = await getPageToken();
   if (!pageId || !token) return skipOrFail(reason || "Facebook credentials are incomplete.");
 
+  const { manifest, baseDir, paths, orderedFiles } = await loadImageSet(date);
   const caption = buildCaption(story, date);
-  const imageTemplate = process.env.COMIC_POST_IMAGE_URL_TEMPLATE || process.env.COMIC_POST_IMAGE_URL || "";
-  const imageUrl = imageTemplate ? fillTemplate(imageTemplate, date) : "";
-  const localImage = await findLocalImage(date);
-
-  let result;
-  let imageSource;
-
-  if (localImage) {
-    result = await postPhotoFile({ pageId, token, filePath: localImage, caption });
-    imageSource = localImage;
-  } else if (imageUrl) {
-    if (!(await urlExists(imageUrl))) return skipOrFail(`Image URL is not reachable: ${imageUrl}`);
-    result = await postPhotoUrl({ pageId, token, imageUrl, caption });
-    imageSource = imageUrl;
-  } else {
-    return skipOrFail("No comic image found. Set COMIC_POST_IMAGE_URL_TEMPLATE or create social/{date}.png, comics/{date}.png, daily/{date}.png, output/{date}.png, dist/{date}.png, or latest.png.");
-  }
+  const result = await postImageSet({ pageId, token, imagePaths: paths, caption });
 
   state.posts = state.posts || {};
   state.posts[stateKey] = {
     date,
     posted_at: new Date().toISOString(),
-    image_source: imageSource,
-    facebook_response: result
+    image_source: baseDir,
+    image_count: paths.length,
+    files: orderedFiles,
+    manifest_format: manifest.format || "eight_image_daily_set",
+    facebook_response: result.feed_response,
+    uploaded_media: result.uploaded.map((item) => ({ media_fbid: item.media_fbid, source: item.source }))
   };
   await writeJson(STATE_PATH, state);
-  console.log(`Posted Facebook comic for ${date}: ${JSON.stringify(result)}`);
+  console.log(`Posted Facebook 8-image comic set for ${date}: ${JSON.stringify(result.feed_response)}`);
 }
 
 main().catch((error) => {
