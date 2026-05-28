@@ -6,6 +6,7 @@
   "scripts": {
     "daily": "node scripts/daily-generator-local.mjs",
     "capture:today": "node scripts/capture_trigoku_playthrough_v2.mjs",
+    "art-prompts": "node scripts/generate-art-prompt-pack.mjs",
     "compose": "npm run capture:today && python -m pip install -r requirements.txt && python scripts/compose_v3_strict_nocrop.py && python scripts/normalise_social_zip.py",
     "compose:strict": "npm run capture:today && python -m pip install -r requirements.txt && python scripts/compose_v3_strict_nocrop.py && python scripts/normalise_social_zip.py",
     "compose:fallback": "python -m pip install -r requirements.txt && python scripts/compose_isla_crisp_grid.py",
