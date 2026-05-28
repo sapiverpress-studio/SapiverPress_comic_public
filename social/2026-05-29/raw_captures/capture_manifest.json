@@ -1,0 +1,128 @@
+{
+  "date": "2026-05-29",
+  "source_url": "https://sapiver-press-anti-knight.netlify.app/",
+  "json_date": "2026-05-29",
+  "week": null,
+  "today": null,
+  "mode": "Anti-Knight Sudoku",
+  "source_id": "anti-knight",
+  "source_name": "Anti-Knight Sudoku",
+  "stage_method": "standalone_netlify_download_rendered_states",
+  "note": "Selected from standalone Netlify puzzle sources. Downloaded real site data and rendered staged board PNGs. No browser gameplay screenshots.",
+  "files": [
+    "01_fresh_daily_grid.png",
+    "02_first_moves.png",
+    "03_stuck_moment.png",
+    "04_breakthrough.png",
+    "05_nearly_complete.png",
+    "06_complete_solution.png"
+  ],
+  "selected_source": {
+    "id": "anti-knight",
+    "name": "Anti-Knight Sudoku",
+    "netlify_project": "sapiver-press-anti-knight",
+    "url": "https://sapiver-press-anti-knight.netlify.app/",
+    "suite_url": "https://suite.sapiverpress.co.uk/play/anti-knight/",
+    "type": "sudoku_variant"
+  },
+  "source_attempts": [
+    {
+      "id": "odds-and-evens",
+      "project": "sapiver-press-odds-and-evens",
+      "downloaded": true,
+      "extracted": false,
+      "url": "https://sapiver-press-odds-and-evens.netlify.app/"
+    },
+    {
+      "id": "non-consecutive",
+      "project": "sapiver-press-non-con",
+      "downloaded": true,
+      "extracted": false,
+      "url": "https://sapiver-press-non-con.netlify.app/"
+    },
+    {
+      "id": "kropki",
+      "project": "sapiver-press-kropki",
+      "downloaded": true,
+      "extracted": false,
+      "url": "https://sapiver-press-kropki.netlify.app/"
+    },
+    {
+      "id": "hyper",
+      "project": "sapiver-press-hyper",
+      "downloaded": true,
+      "extracted": false,
+      "url": "https://sapiver-press-hyper.netlify.app/"
+    },
+    {
+      "id": "anti-king",
+      "project": "sapiver-press-anti-king",
+      "downloaded": true,
+      "extracted": false,
+      "url": "https://sapiver-press-anti-king.netlify.app/"
+    },
+    {
+      "id": "xv",
+      "project": "sapiver-press-xv",
+      "downloaded": true,
+      "extracted": false,
+      "url": "https://sapiver-press-xv.netlify.app/"
+    },
+    {
+      "id": "thermo",
+      "project": "sapiver-press-thermo",
+      "downloaded": true,
+      "extracted": false,
+      "url": "https://sapiver-press-thermo.netlify.app/"
+    },
+    {
+      "id": "sandwich",
+      "project": "sapiver-press-sandwich",
+      "downloaded": true,
+      "extracted": false,
+      "url": "https://sapiver-press-sandwich.netlify.app/"
+    },
+    {
+      "id": "renban",
+      "project": "sapiver-press-renban",
+      "downloaded": true,
+      "extracted": false,
+      "url": "https://sapiver-press-renban.netlify.app/"
+    },
+    {
+      "id": "little-killer",
+      "project": "sapiver-press-little-killer",
+      "downloaded": true,
+      "extracted": false,
+      "url": "https://sapiver-press-little-killer.netlify.app/"
+    },
+    {
+      "id": "killer",
+      "project": "sapiver-press-killer",
+      "downloaded": true,
+      "extracted": false,
+      "url": "https://sapiver-press-killer.netlify.app/"
+    },
+    {
+      "id": "german-whisper",
+      "project": "sapiver-press-german-whisper",
+      "downloaded": true,
+      "extracted": false,
+      "url": "https://sapiver-press-german-whisper.netlify.app/"
+    },
+    {
+      "id": "arrow",
+      "project": "sapiver-press-arrow",
+      "downloaded": true,
+      "extracted": false,
+      "url": "https://sapiver-press-arrow.netlify.app/"
+    },
+    {
+      "id": "anti-knight",
+      "project": "sapiver-press-anti-knight",
+      "downloaded": true,
+      "extracted": true,
+      "url": "https://sapiver-press-anti-knight.netlify.app/"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "character_id": "isla",
+  "character_name": "Isla",
+  "trigger_word": "ISLA_SP",
+  "render_mode": "illustrated_comic_panels",
+  "required_character_files": [
+    "templates/characters/isla/isla_01_opening_return.png",
+    "templates/characters/isla/isla_02_first_move.png",
+    "templates/characters/isla/isla_03_stuck_moment.png",
+    "templates/characters/isla/isla_04_breakthrough.png",
+    "templates/characters/isla/isla_05_finish.png",
+    "templates/characters/isla/isla_06_tomorrow_set.png"
+  ],
+  "text_is_overlay": true,
+  "puzzle_screen_inserted_later": true,
+  "puzzle_product": "Trigoku Daily Lock",
+  "puzzle_url": "https://suite.sapiverpress.co.uk",
+  "selected_setting": "quiet public library reading table",
+  "image_prompts": [
+    {
+      "scene": "scene_01",
+      "pose_id": "pose_01_back_again",
+      "prompt": "ISLA_SP calm, settled, facing forward with soft morning light, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, front-facing or three-quarter view, Isla's face clearly visible, quiet public library reading table, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures"
+    },
+    {
+      "scene": "scene_02",
+      "pose_id": "pose_02_first_moves",
+      "prompt": "ISLA_SP focused, leaning in slightly, three-quarter view, engaged, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, quiet public library reading table, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures"
+    },
+    {
+      "scene": "scene_03",
+      "pose_id": "pose_03_stuck",
+      "prompt": "ISLA_SP surprised, eyebrows raised slightly, head tilted, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, quiet public library reading table, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures"
+    },
+    {
+      "scene": "scene_04",
+      "pose_id": "pose_04_thinking",
+      "prompt": "ISLA_SP thoughtful, face visible, considering, calm concentration, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, front-facing or three-quarter view, Isla's face clearly visible, quiet public library reading table, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures"
+    },
+    {
+      "scene": "scene_05",
+      "pose_id": "pose_05_coffee",
+      "prompt": "ISLA_SP relaxed, satisfied, gentle smile, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, quiet public library reading table, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures"
+    },
+    {
+      "scene": "scene_06",
+      "pose_id": "pose_06_leaving",
+      "prompt": "ISLA_SP calm, standing, looking forward, peaceful, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, quiet public library reading table, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures"
+    }
+  ],
+  "style_rules": [
+    "Isla is the only active daily comic character.",
+    "Use ISLA_SP trigger word in every image prompt.",
+    "Young Black woman, warm medium brown skin, light freckles on nose and cheeks.",
+    "Natural coily dark hair in high voluminous puff bun.",
+    "Wide floral headband in teal, rust orange, cream, and dusty blue, worn across forehead.",
+    "Medium gold hoop earrings.",
+    "Oversized deep teal hoodie.",
+    "At least 2 of the 6 panels must be front-facing or three-quarter view showing Isla's face clearly.",
+    "Puzzle screen must come from a real captured puzzle page."
+  ],
+  "compositor_rules": [
+    "Character art first.",
+    "Puzzle screen composited second.",
+    "Caption bar text overlaid last.",
+    "No generated puzzle grids.",
+    "No giant title/header/footer.",
+    "No large URL overlay.",
+    "Logo only on merch.",
+    "URL only on monitor/browser bar."
+  ]
+}

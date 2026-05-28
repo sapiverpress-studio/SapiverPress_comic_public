@@ -175,6 +175,31 @@
         "Coffee helps.",
         "Tomorrow, then."
       ]
+    },
+    {
+      "date": "2026-05-29",
+      "weekday": "Friday",
+      "setting": "quiet public library reading table",
+      "puzzle_phase": "late-week",
+      "story_note": "Friday morning in the library—Isla encounters a late-week puzzle that feels surprisingly smooth, almost suspiciously easy, until a single region throws her off rhythm.",
+      "continuation_note": "Unlike Thursday's backtracking struggle or Wednesday's methodical unraveling, today Isla breezes through most of the grid, only to be surprised by one stubborn corner that demands a second look.",
+      "stuck_moment": "surprised, eyebrows raised slightly, head tilted",
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Back again.",
+        "Start small.",
+        "There it is.",
+        "No guessing.",
+        "A clean finish.",
+        "Same time tomorrow."
+      ]
     }
   ],
   "weeks": [
@@ -252,8 +277,33 @@
         "Coffee helps.",
         "Tomorrow, then."
       ]
+    },
+    {
+      "date": "2026-05-29",
+      "weekday": "Friday",
+      "setting": "quiet public library reading table",
+      "puzzle_phase": "late-week",
+      "story_note": "Friday morning in the library—Isla encounters a late-week puzzle that feels surprisingly smooth, almost suspiciously easy, until a single region throws her off rhythm.",
+      "continuation_note": "Unlike Thursday's backtracking struggle or Wednesday's methodical unraveling, today Isla breezes through most of the grid, only to be surprised by one stubborn corner that demands a second look.",
+      "stuck_moment": "surprised, eyebrows raised slightly, head tilted",
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Back again.",
+        "Start small.",
+        "There it is.",
+        "No guessing.",
+        "A clean finish.",
+        "Same time tomorrow."
+      ]
     }
   ],
   "ongoing_threads": [],
-  "last_updated": "2026-05-28"
+  "last_updated": "2026-05-29"
 }
