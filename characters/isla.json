@@ -156,9 +156,9 @@
       "weekday": "Thursday",
       "setting": "bookshop cafe corner",
       "puzzle_phase": "mid-week",
-      "story_note": "Isla finds a cozy spot in a bookshop cafe and works through Thursday's Trigoku, encountering a subtle misdirection that requires patience.",
-      "continuation_note": "Unlike the previous days' thoughtful pauses and logical reflection, today Isla faces a small false trail that forces her to backtrack and reconsider an earlier choice.",
-      "stuck_moment": "uncertain, frowning slightly, hand near chin",
+      "story_note": "Isla takes her puzzle to the bookshop cafe, where the Thursday morning crowd provides a gentle backdrop to a tricky mid-week grid.",
+      "continuation_note": "Unlike the quiet window desk sessions of the past two days, today Isla works in a busier environment and encounters a different kind of stuck moment—briefly second-guessing an entry rather than just pausing to think.",
+      "stuck_moment": "uncertain, frowning slightly, front-facing",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -172,7 +172,7 @@
         "Start small.",
         "Not that one.",
         "There it is.",
-        "Nearly there.",
+        "Coffee helps.",
         "Same time tomorrow."
       ]
     }
@@ -233,9 +233,9 @@
       "weekday": "Thursday",
       "setting": "bookshop cafe corner",
       "puzzle_phase": "mid-week",
-      "story_note": "Isla finds a cozy spot in a bookshop cafe and works through Thursday's Trigoku, encountering a subtle misdirection that requires patience.",
-      "continuation_note": "Unlike the previous days' thoughtful pauses and logical reflection, today Isla faces a small false trail that forces her to backtrack and reconsider an earlier choice.",
-      "stuck_moment": "uncertain, frowning slightly, hand near chin",
+      "story_note": "Isla takes her puzzle to the bookshop cafe, where the Thursday morning crowd provides a gentle backdrop to a tricky mid-week grid.",
+      "continuation_note": "Unlike the quiet window desk sessions of the past two days, today Isla works in a busier environment and encounters a different kind of stuck moment—briefly second-guessing an entry rather than just pausing to think.",
+      "stuck_moment": "uncertain, frowning slightly, front-facing",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -249,7 +249,7 @@
         "Start small.",
         "Not that one.",
         "There it is.",
-        "Nearly there.",
+        "Coffee helps.",
         "Same time tomorrow."
       ]
     }

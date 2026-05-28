@@ -63,7 +63,7 @@
       "output_file": "social/2026-05-28/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "Nearly there.",
+      "caption": "Coffee helps.",
       "scene_id": "scene_05"
     },
     {
@@ -78,5 +78,5 @@
     }
   ],
   "story_source": "daily/2026-05-28.json",
-  "generated_at": "2026-05-28T21:15:30.871Z"
+  "generated_at": "2026-05-28T21:17:30.697Z"
 }

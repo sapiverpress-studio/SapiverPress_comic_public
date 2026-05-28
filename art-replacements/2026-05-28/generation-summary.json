@@ -1,0 +1,76 @@
+{
+  "date": "2026-05-28",
+  "generated_at": "2026-05-28T21:17:30.905Z",
+  "primary_model": "black-forest-labs/FLUX.1-dev",
+  "fallback_model": "stabilityai/stable-diffusion-xl-base-1.0",
+  "lora_repo": "sapiverpress/sapiverpress-isla-lora",
+  "lora_file": "ISLA_SP_1779957190206.safetensors",
+  "trigger_word": "ISLA_SP",
+  "requested_panels": 6,
+  "generated_count": 0,
+  "generated_panels": [],
+  "fallback_template_panels": [
+    {
+      "panel_number": 1,
+      "image_name": "01_panel-01.png",
+      "reason": "not generated"
+    },
+    {
+      "panel_number": 2,
+      "image_name": "02_panel-02.png",
+      "reason": "not generated"
+    },
+    {
+      "panel_number": 3,
+      "image_name": "03_panel-03.png",
+      "reason": "not generated"
+    },
+    {
+      "panel_number": 4,
+      "image_name": "04_panel-04.png",
+      "reason": "not generated"
+    },
+    {
+      "panel_number": 5,
+      "image_name": "05_panel-05.png",
+      "reason": "not generated"
+    },
+    {
+      "panel_number": 6,
+      "image_name": "06_panel-06.png",
+      "reason": "not generated"
+    }
+  ],
+  "errors": [
+    {
+      "panel_number": 1,
+      "image_name": "01_panel-01.png",
+      "error": "fetch failed"
+    },
+    {
+      "panel_number": 2,
+      "image_name": "02_panel-02.png",
+      "error": "fetch failed"
+    },
+    {
+      "panel_number": 3,
+      "image_name": "03_panel-03.png",
+      "error": "fetch failed"
+    },
+    {
+      "panel_number": 4,
+      "image_name": "04_panel-04.png",
+      "error": "fetch failed"
+    },
+    {
+      "panel_number": 5,
+      "image_name": "05_panel-05.png",
+      "error": "fetch failed"
+    },
+    {
+      "panel_number": 6,
+      "image_name": "06_panel-06.png",
+      "error": "fetch failed"
+    }
+  ]
+}
