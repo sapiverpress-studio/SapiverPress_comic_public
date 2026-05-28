@@ -156,9 +156,9 @@
       "weekday": "Thursday",
       "setting": "bookshop cafe corner",
       "puzzle_phase": "mid-week",
-      "story_note": "Isla visits a bookshop cafe on Thursday morning, wrestling with a stubborn mid-week puzzle that requires patience and a second look.",
-      "continuation_note": "Today shifts to a new setting (bookshop cafe) and features a stuck moment rooted in pattern blindness rather than hesitation, with a coffee reset that genuinely helps.",
-      "stuck_moment": "frustrated, squinting, hand at forehead",
+      "story_note": "Isla works through Thursday's puzzle at the bookshop cafe, encountering an unexpected snag that requires a coffee break to reset.",
+      "continuation_note": "Unlike the last two days' thoughtful pauses and logical reflection, today Isla hits a real block that demands a physical break and fresh perspective before solving.",
+      "stuck_moment": "frustrated, brow furrowed, hand on chin",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -173,7 +173,7 @@
         "Not that one.",
         "There it is.",
         "Coffee helps.",
-        "Tomorrow, then."
+        "Same time tomorrow."
       ]
     }
   ],
@@ -233,9 +233,9 @@
       "weekday": "Thursday",
       "setting": "bookshop cafe corner",
       "puzzle_phase": "mid-week",
-      "story_note": "Isla visits a bookshop cafe on Thursday morning, wrestling with a stubborn mid-week puzzle that requires patience and a second look.",
-      "continuation_note": "Today shifts to a new setting (bookshop cafe) and features a stuck moment rooted in pattern blindness rather than hesitation, with a coffee reset that genuinely helps.",
-      "stuck_moment": "frustrated, squinting, hand at forehead",
+      "story_note": "Isla works through Thursday's puzzle at the bookshop cafe, encountering an unexpected snag that requires a coffee break to reset.",
+      "continuation_note": "Unlike the last two days' thoughtful pauses and logical reflection, today Isla hits a real block that demands a physical break and fresh perspective before solving.",
+      "stuck_moment": "frustrated, brow furrowed, hand on chin",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -250,7 +250,7 @@
         "Not that one.",
         "There it is.",
         "Coffee helps.",
-        "Tomorrow, then."
+        "Same time tomorrow."
       ]
     }
   ],
