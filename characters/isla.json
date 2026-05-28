@@ -156,9 +156,9 @@
       "weekday": "Thursday",
       "setting": "bookshop cafe corner",
       "puzzle_phase": "mid-week",
-      "story_note": "Isla finds a corner table at the bookshop cafe and works through Thursday's Trigoku, encountering a tricky middle section that requires stepping back.",
-      "continuation_note": "Today shifts to a public setting with ambient cafe noise, and the stuck moment is a structural confusion rather than a logical pause.",
-      "stuck_moment": "confused, hand on chin, looking at screen with furrowed brow",
+      "story_note": "Isla takes her puzzle to a bookshop cafe, finding a rhythm in a new setting.",
+      "continuation_note": "Unlike the previous two days at the window desk, Isla changes location and encounters a different type of stuck moment—a distraction from ambient noise—shifting the daily texture.",
+      "stuck_moment": "momentarily distracted, glancing sideways, patient",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -173,7 +173,7 @@
         "Not that one.",
         "There it is.",
         "Coffee helps.",
-        "Tomorrow, then."
+        "Same time tomorrow."
       ]
     }
   ],
@@ -233,9 +233,9 @@
       "weekday": "Thursday",
       "setting": "bookshop cafe corner",
       "puzzle_phase": "mid-week",
-      "story_note": "Isla finds a corner table at the bookshop cafe and works through Thursday's Trigoku, encountering a tricky middle section that requires stepping back.",
-      "continuation_note": "Today shifts to a public setting with ambient cafe noise, and the stuck moment is a structural confusion rather than a logical pause.",
-      "stuck_moment": "confused, hand on chin, looking at screen with furrowed brow",
+      "story_note": "Isla takes her puzzle to a bookshop cafe, finding a rhythm in a new setting.",
+      "continuation_note": "Unlike the previous two days at the window desk, Isla changes location and encounters a different type of stuck moment—a distraction from ambient noise—shifting the daily texture.",
+      "stuck_moment": "momentarily distracted, glancing sideways, patient",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -250,7 +250,7 @@
         "Not that one.",
         "There it is.",
         "Coffee helps.",
-        "Tomorrow, then."
+        "Same time tomorrow."
       ]
     }
   ],
