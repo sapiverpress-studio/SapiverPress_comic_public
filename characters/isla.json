@@ -156,9 +156,9 @@
       "weekday": "Thursday",
       "setting": "bookshop cafe corner",
       "puzzle_phase": "mid-week",
-      "story_note": "Isla visits a bookshop cafe corner for Thursday's puzzle, encountering a tricky symmetry that forces her to step back and reconsider her approach.",
-      "continuation_note": "Unlike the past two days at her gothic window desk, today Isla is in a public bookshop cafe, and her stuck moment involves a symmetry trap rather than a simple pause—she actively backtracks instead of just reflecting.",
-      "stuck_moment": "frowning, caught off guard, hand hovering over keyboard",
+      "story_note": "Isla visits the bookshop cafe corner for Thursday's puzzle, encounters an unexpected snag mid-grid, and finds a workaround.",
+      "continuation_note": "Today shifts to a bookshop cafe setting and features a snag in the middle of solving rather than a reflective pause, plus a more tactile reset moment with coffee.",
+      "stuck_moment": "mild frustration, brow slightly furrowed",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -172,8 +172,8 @@
         "Start small.",
         "Not that one.",
         "There it is.",
-        "Nearly there.",
-        "Tomorrow, then."
+        "Coffee helps.",
+        "Same time tomorrow."
       ]
     }
   ],
@@ -233,9 +233,9 @@
       "weekday": "Thursday",
       "setting": "bookshop cafe corner",
       "puzzle_phase": "mid-week",
-      "story_note": "Isla visits a bookshop cafe corner for Thursday's puzzle, encountering a tricky symmetry that forces her to step back and reconsider her approach.",
-      "continuation_note": "Unlike the past two days at her gothic window desk, today Isla is in a public bookshop cafe, and her stuck moment involves a symmetry trap rather than a simple pause—she actively backtracks instead of just reflecting.",
-      "stuck_moment": "frowning, caught off guard, hand hovering over keyboard",
+      "story_note": "Isla visits the bookshop cafe corner for Thursday's puzzle, encounters an unexpected snag mid-grid, and finds a workaround.",
+      "continuation_note": "Today shifts to a bookshop cafe setting and features a snag in the middle of solving rather than a reflective pause, plus a more tactile reset moment with coffee.",
+      "stuck_moment": "mild frustration, brow slightly furrowed",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -249,8 +249,8 @@
         "Start small.",
         "Not that one.",
         "There it is.",
-        "Nearly there.",
-        "Tomorrow, then."
+        "Coffee helps.",
+        "Same time tomorrow."
       ]
     }
   ],
