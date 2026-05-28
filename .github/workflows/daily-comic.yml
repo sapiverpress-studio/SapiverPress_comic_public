@@ -68,6 +68,8 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_MODEL: "claude-sonnet-4-20250514"
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
         run: npm run daily
       - name: Compose full strip and close-ups
