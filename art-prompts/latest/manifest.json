@@ -1,0 +1,75 @@
+{
+  "date": "2026-05-28",
+  "character": "isla",
+  "format": "daily_art_prompt_pack_v1",
+  "purpose": "Generate six replaceable Isla panel artworks while preserving the real puzzle screenshot compositor.",
+  "replacement_dir": "art-replacements/2026-05-28",
+  "prompt_dir": "art-prompts/2026-05-28",
+  "compositor_rule": "If a matching replacement PNG exists, use it. Otherwise use the locked template artwork.",
+  "panel_files": [
+    "01_panel-01.png",
+    "02_panel-02.png",
+    "03_panel-03.png",
+    "04_panel-04.png",
+    "05_panel-05.png",
+    "06_panel-06.png"
+  ],
+  "panels": [
+    {
+      "panel_number": 1,
+      "prompt_file": "art-prompts/2026-05-28/01_panel-01_prompt.txt",
+      "replacement_file": "art-replacements/2026-05-28/01_panel-01.png",
+      "output_file": "social/2026-05-28/01_panel-01.png",
+      "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
+      "caption": "Back again.",
+      "scene_id": "scene_01"
+    },
+    {
+      "panel_number": 2,
+      "prompt_file": "art-prompts/2026-05-28/02_panel-02_prompt.txt",
+      "replacement_file": "art-replacements/2026-05-28/02_panel-02.png",
+      "output_file": "social/2026-05-28/02_panel-02.png",
+      "fallback_template": "templates/characters/isla/isla_02_first_move.png",
+      "caption": "Start small.",
+      "scene_id": "scene_02"
+    },
+    {
+      "panel_number": 3,
+      "prompt_file": "art-prompts/2026-05-28/03_panel-03_prompt.txt",
+      "replacement_file": "art-replacements/2026-05-28/03_panel-03.png",
+      "output_file": "social/2026-05-28/03_panel-03.png",
+      "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
+      "caption": "Not that one.",
+      "scene_id": "scene_03"
+    },
+    {
+      "panel_number": 4,
+      "prompt_file": "art-prompts/2026-05-28/04_panel-04_prompt.txt",
+      "replacement_file": "art-replacements/2026-05-28/04_panel-04.png",
+      "output_file": "social/2026-05-28/04_panel-04.png",
+      "fallback_template": "templates/characters/isla/isla_04_breakthrough.png",
+      "caption": "There it is.",
+      "scene_id": "scene_04"
+    },
+    {
+      "panel_number": 5,
+      "prompt_file": "art-prompts/2026-05-28/05_panel-05_prompt.txt",
+      "replacement_file": "art-replacements/2026-05-28/05_panel-05.png",
+      "output_file": "social/2026-05-28/05_panel-05.png",
+      "fallback_template": "templates/characters/isla/isla_05_finish.png",
+      "caption": "Nearly there.",
+      "scene_id": "scene_05"
+    },
+    {
+      "panel_number": 6,
+      "prompt_file": "art-prompts/2026-05-28/06_panel-06_prompt.txt",
+      "replacement_file": "art-replacements/2026-05-28/06_panel-06.png",
+      "output_file": "social/2026-05-28/06_panel-06.png",
+      "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
+      "caption": "Same time tomorrow.",
+      "scene_id": "scene_06"
+    }
+  ],
+  "story_source": "daily/2026-05-28.json",
+  "generated_at": "2026-05-28T21:01:50.814Z"
+}

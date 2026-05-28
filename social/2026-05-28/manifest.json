@@ -33,13 +33,16 @@
     "Start small.",
     "Not that one.",
     "There it is.",
-    "Coffee helps.",
+    "Nearly there.",
     "Same time tomorrow."
   ],
   "scenes": [
     {
       "scene": "scene_01",
+      "art_source": "template",
+      "art_path": "templates/characters/isla/isla_01_opening_return.png",
       "template": "templates/characters/isla/isla_01_opening_return.png",
+      "replacement": "",
       "capture": "captures/2026-05-28/extracted/01_fresh_daily_grid.png",
       "output": "social/2026-05-28/01_panel-01.png",
       "screen_quad": [
@@ -63,7 +66,10 @@
     },
     {
       "scene": "scene_02",
+      "art_source": "template",
+      "art_path": "templates/characters/isla/isla_02_first_move.png",
       "template": "templates/characters/isla/isla_02_first_move.png",
+      "replacement": "",
       "capture": "captures/2026-05-28/extracted/02_first_moves.png",
       "output": "social/2026-05-28/02_panel-02.png",
       "screen_quad": [
@@ -87,7 +93,10 @@
     },
     {
       "scene": "scene_03",
+      "art_source": "template",
+      "art_path": "templates/characters/isla/isla_03_stuck_moment.png",
       "template": "templates/characters/isla/isla_03_stuck_moment.png",
+      "replacement": "",
       "capture": "captures/2026-05-28/extracted/03_stuck_moment.png",
       "output": "social/2026-05-28/03_panel-03.png",
       "screen_quad": [
@@ -111,7 +120,10 @@
     },
     {
       "scene": "scene_04",
+      "art_source": "template",
+      "art_path": "templates/characters/isla/isla_04_breakthrough.png",
       "template": "templates/characters/isla/isla_04_breakthrough.png",
+      "replacement": "",
       "capture": "captures/2026-05-28/extracted/04_breakthrough.png",
       "output": "social/2026-05-28/04_panel-04.png",
       "screen_quad": [
@@ -135,7 +147,10 @@
     },
     {
       "scene": "scene_05",
+      "art_source": "template",
+      "art_path": "templates/characters/isla/isla_05_finish.png",
       "template": "templates/characters/isla/isla_05_finish.png",
+      "replacement": "",
       "capture": "captures/2026-05-28/extracted/05_nearly_complete.png",
       "output": "social/2026-05-28/05_panel-05.png",
       "screen_quad": [
@@ -159,7 +174,10 @@
     },
     {
       "scene": "scene_06",
+      "art_source": "template",
+      "art_path": "templates/characters/isla/isla_06_tomorrow_set.png",
       "template": "templates/characters/isla/isla_06_tomorrow_set.png",
+      "replacement": "",
       "capture": "captures/2026-05-28/extracted/06_complete_solution.png",
       "output": "social/2026-05-28/06_panel-06.png",
       "screen_quad": [
