@@ -66,6 +66,8 @@ jobs:
           node-version: "22"
       - name: Install dependencies
         run: npm install
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
       - name: Install Chromium for compositor
         run: npx playwright install --with-deps chromium
       - name: Validate project
@@ -103,6 +105,26 @@ jobs:
           SUITE_URL: "https://suite.sapiverpress.co.uk"
           COMIC_SCREEN_BOX: ${{ secrets.COMIC_SCREEN_BOX }}
         run: npm run compose
+      - name: Generate short video script
+        continue-on-error: true
+        env:
+          DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
+          SUITE_URL: "https://suite.sapiverpress.co.uk"
+          ELEVENLABS_VOICE_NAME: "Isla Fletcher"
+        run: npm run short-video-script
+      - name: Generate short video voiceover
+        continue-on-error: true
+        env:
+          DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
+          ISLA_ELEVEN: ${{ secrets.ISLA_ELEVEN }}
+          ELEVENLABS_VOICE_NAME: "Isla Fletcher"
+          ELEVENLABS_MODEL_ID: "eleven_multilingual_v2"
+        run: npm run short-video-voice
+      - name: Build short video MP4
+        continue-on-error: true
+        env:
+          DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
+        run: npm run short-video-build
       - name: Post comic to Facebook
         if: github.event_name == 'schedule' || github.event.inputs.post_to_facebook == 'true'
         continue-on-error: true
@@ -119,7 +141,7 @@ jobs:
           SUITE_URL: "https://suite.sapiverpress.co.uk"
           ETSY_CATALOG_URL: "https://sapiver-press-etsy-search-catalog.netlify.app/"
         run: npm run facebook-post
-      - name: Commit generated story, Phase 3 prompts, social outputs and Facebook state
+      - name: Commit generated story, prompts, social outputs and Facebook state
         if: always()
         run: |
           set -e
@@ -144,9 +166,9 @@ jobs:
             git add facebook-posts.json
           fi
           if git diff --cached --quiet; then
-            echo "No generated story, Phase 3 prompt, social or Facebook state changes"
+            echo "No generated story, prompt, social or Facebook state changes"
           else
-            git commit -m "Update daily comic story, prompts and social outputs"
+            git commit -m "Update daily comic story, prompts, social and video outputs"
             for attempt in 1 2 3; do
               if git push; then
                 break
