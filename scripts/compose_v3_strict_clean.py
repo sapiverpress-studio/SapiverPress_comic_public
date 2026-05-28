@@ -3,6 +3,14 @@
 
 Uses real extracted puzzle captures, exact locked Isla perspective screen quads,
 and clean caption overlays. It refuses to fake puzzle content.
+
+Phase 3 adds optional daily replacement artwork:
+- art-replacements/YYYY-MM-DD/01_panel-01.png ... 06_panel-06.png
+- art-replacements/latest/01_panel-01.png ... 06_panel-06.png
+
+If a replacement panel exists, it is used as the base artwork. If not, the
+locked template art is used. The real puzzle captures are still inserted by
+this compositor; puzzle content is never invented.
 """
 from __future__ import annotations
 
@@ -22,6 +30,8 @@ ROOT = Path(__file__).resolve().parents[1]
 DATE = os.environ.get("DATE_OVERRIDE") or datetime.now(ZoneInfo("Europe/London")).strftime("%Y-%m-%d")
 CHARACTER = os.environ.get("COMIC_CHARACTER", "isla").strip().lower() or "isla"
 TEMPLATE_DIR = ROOT / "templates" / "characters" / CHARACTER
+REPLACEMENT_DIR = ROOT / "art-replacements" / DATE
+LATEST_REPLACEMENT_DIR = ROOT / "art-replacements" / "latest"
 CAPTURE_DIR = ROOT / "captures" / DATE / "extracted"
 OUT_DIR = ROOT / "social" / DATE
 SOCIAL_MAIN = ROOT / "social" / f"{DATE}.png"
@@ -42,6 +52,15 @@ EXPECTED_CAPTURE_NAMES = [
     "04_breakthrough.png",
     "05_nearly_complete.png",
     "06_complete_solution.png",
+]
+
+PANEL_REPLACEMENT_NAMES = [
+    "01_panel-01.png",
+    "02_panel-02.png",
+    "03_panel-03.png",
+    "04_panel-04.png",
+    "05_panel-05.png",
+    "06_panel-06.png",
 ]
 
 DEFAULT_CAPTIONS = [
@@ -91,6 +110,48 @@ def find_template(scene: dict, index: int) -> Path:
         if path.exists():
             return path
     fail(f"Missing Isla template for scene {index + 1} in {TEMPLATE_DIR}")
+
+
+def find_replacement(index: int) -> Path | None:
+    name = PANEL_REPLACEMENT_NAMES[index]
+    candidates = [
+        REPLACEMENT_DIR / name,
+        LATEST_REPLACEMENT_DIR / name,
+    ]
+    for path in candidates:
+        if path.exists() and path.is_file():
+            return path
+    return None
+
+
+def load_base_art(scene: dict, index: int) -> tuple[Image.Image, Path, str]:
+    replacement_path = find_replacement(index)
+    if replacement_path:
+        img = Image.open(replacement_path).convert("RGBA")
+        template_size = Image.open(find_template(scene, index)).size
+        if img.size != template_size:
+            img = fit_to_size(img, template_size)
+        return img, replacement_path, "replacement"
+
+    template_path = find_template(scene, index)
+    return Image.open(template_path).convert("RGBA"), template_path, "template"
+
+
+def fit_to_size(img: Image.Image, size: tuple[int, int]) -> Image.Image:
+    target_w, target_h = size
+    source = img.convert("RGBA")
+    source_ratio = source.width / source.height
+    target_ratio = target_w / target_h
+    if source_ratio > target_ratio:
+        new_h = target_h
+        new_w = int(new_h * source_ratio)
+    else:
+        new_w = target_w
+        new_h = int(new_w / source_ratio)
+    resized = source.resize((new_w, new_h), Image.Resampling.LANCZOS)
+    left = (new_w - target_w) // 2
+    top = (new_h - target_h) // 2
+    return resized.crop((left, top, left + target_w, top + target_h))
 
 
 def map_captures() -> list[Path]:
@@ -211,8 +272,7 @@ def warp_to_quad(screen: Image.Image, template_size: tuple[int, int], quad: list
 def compose_panel(story: dict, scene: dict, index: int, capture: Path) -> tuple[Path, dict]:
     scene_id = f"scene_{index + 1:02d}"
     quad = SCREEN_QUADS[scene_id]
-    template_path = find_template(scene, index)
-    template = Image.open(template_path).convert("RGBA")
+    template, art_path, art_source = load_base_art(scene, index)
     prepared = crop_capture_to_game(capture)
     panel = template.copy()
     panel.alpha_composite(warp_to_quad(prepared, template.size, quad))
@@ -222,7 +282,10 @@ def compose_panel(story: dict, scene: dict, index: int, capture: Path) -> tuple[
     panel.convert("RGB").save(out_path, quality=95)
     return out_path, {
         "scene": scene_id,
-        "template": str(template_path.relative_to(ROOT)),
+        "art_source": art_source,
+        "art_path": str(art_path.relative_to(ROOT)),
+        "template": str(art_path.relative_to(ROOT)) if art_source == "template" else "",
+        "replacement": str(art_path.relative_to(ROOT)) if art_source == "replacement" else "",
         "capture": str(capture.relative_to(ROOT)),
         "output": str(out_path.relative_to(ROOT)),
         "screen_quad": quad,
@@ -302,6 +365,8 @@ def main() -> None:
         "character": CHARACTER,
         "compositor": "compose_v3_strict_clean.py",
         "capture_dir": str(CAPTURE_DIR.relative_to(ROOT)) if CAPTURE_DIR.exists() else str(CAPTURE_DIR),
+        "replacement_dir": str(REPLACEMENT_DIR.relative_to(ROOT)),
+        "latest_replacement_dir": str(LATEST_REPLACEMENT_DIR.relative_to(ROOT)),
         "outputs": [str(p.relative_to(ROOT)) for p in panel_paths],
         "contact_sheet": str(contact.relative_to(ROOT)),
         "social_main": str(SOCIAL_MAIN.relative_to(ROOT)),
