@@ -156,9 +156,9 @@
       "weekday": "Thursday",
       "setting": "bookshop cafe corner",
       "puzzle_phase": "mid-week",
-      "story_note": "Isla finds a Thursday morning puzzle session at the bookshop cafe, working through distraction and a tricky middle section.",
-      "continuation_note": "Different from recent days: a new setting (bookshop cafe), and the stuck moment is external distraction rather than internal logic pause.",
-      "stuck_moment": "distracted, glancing away, mild frustration",
+      "story_note": "Isla visits the bookshop cafe corner on a Thursday morning, encountering a mid-week puzzle that feels trickier than expected, requiring her to slow down and reconsider her approach.",
+      "continuation_note": "Unlike the previous calm, methodical sessions, today Isla faces a puzzle that resists her initial strategy, forcing her to backtrack slightly before finding the right thread to pull.",
+      "stuck_moment": "frowning slightly, hesitant, looking puzzled",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -169,11 +169,11 @@
       ],
       "captions": [
         "Back again.",
-        "One number at a time.",
+        "Start small.",
         "Not that one.",
-        "There it is.",
+        "One number at a time.",
         "Coffee helps.",
-        "Same time tomorrow."
+        "Tomorrow, then."
       ]
     }
   ],
@@ -233,9 +233,9 @@
       "weekday": "Thursday",
       "setting": "bookshop cafe corner",
       "puzzle_phase": "mid-week",
-      "story_note": "Isla finds a Thursday morning puzzle session at the bookshop cafe, working through distraction and a tricky middle section.",
-      "continuation_note": "Different from recent days: a new setting (bookshop cafe), and the stuck moment is external distraction rather than internal logic pause.",
-      "stuck_moment": "distracted, glancing away, mild frustration",
+      "story_note": "Isla visits the bookshop cafe corner on a Thursday morning, encountering a mid-week puzzle that feels trickier than expected, requiring her to slow down and reconsider her approach.",
+      "continuation_note": "Unlike the previous calm, methodical sessions, today Isla faces a puzzle that resists her initial strategy, forcing her to backtrack slightly before finding the right thread to pull.",
+      "stuck_moment": "frowning slightly, hesitant, looking puzzled",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -246,11 +246,11 @@
       ],
       "captions": [
         "Back again.",
-        "One number at a time.",
+        "Start small.",
         "Not that one.",
-        "There it is.",
+        "One number at a time.",
         "Coffee helps.",
-        "Same time tomorrow."
+        "Tomorrow, then."
       ]
     }
   ],

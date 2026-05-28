@@ -33,7 +33,7 @@
       "output_file": "social/2026-05-28/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "One number at a time.",
+      "caption": "Start small.",
       "scene_id": "scene_02"
     },
     {
@@ -53,7 +53,7 @@
       "output_file": "social/2026-05-28/04_panel-04.png",
       "image_name": "04_panel-04.png",
       "fallback_template": "templates/characters/isla/isla_04_breakthrough.png",
-      "caption": "There it is.",
+      "caption": "One number at a time.",
       "scene_id": "scene_04"
     },
     {
@@ -73,10 +73,10 @@
       "output_file": "social/2026-05-28/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "Same time tomorrow.",
+      "caption": "Tomorrow, then.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-05-28.json",
-  "generated_at": "2026-05-28T22:54:23.479Z"
+  "generated_at": "2026-05-28T22:55:59.934Z"
 }
