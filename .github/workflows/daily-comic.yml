@@ -145,7 +145,7 @@ jobs:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
           PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
           PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
-          PINTEREST_BOARD_NAME: "Sapiver Press Daily Puzzles"
+          PINTEREST_BOARD_NAME: "Sapiver Press Comic"
           PINTEREST_IMAGE_NAME: "00_start-grid.png"
           FORCE_PINTEREST_POST: ${{ github.event.inputs.force_pinterest_post }}
           SUITE_URL: "https://suite.sapiverpress.co.uk"
