@@ -1,6 +1,6 @@
 {
   "date": "2026-05-28",
-  "generated_at": "2026-05-28T21:17:30.905Z",
+  "generated_at": "2026-05-28T21:19:49.697Z",
   "primary_model": "black-forest-labs/FLUX.1-dev",
   "fallback_model": "stabilityai/stable-diffusion-xl-base-1.0",
   "lora_repo": "sapiverpress/sapiverpress-isla-lora",
