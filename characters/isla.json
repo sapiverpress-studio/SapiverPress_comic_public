@@ -156,9 +156,9 @@
       "weekday": "Thursday",
       "setting": "bookshop cafe corner",
       "puzzle_phase": "mid-week",
-      "story_note": "Isla takes a break from her usual desk, working through Thursday's puzzle in a bookshop cafe with ambient noise and a warm drink.",
-      "continuation_note": "Unlike recent quiet morning sessions at the window desk, today's puzzle unfolds in a busier public space with distractions, and the stuck moment involves external interruption rather than pure logic hesitation.",
-      "stuck_moment": "momentarily distracted, looking up with mild surprise",
+      "story_note": "Isla settles into a bookshop cafe corner for Thursday's puzzle, encountering a stubborn patch that requires her to step back, refocus with coffee, and find the thread that unlocks the grid.",
+      "continuation_note": "Unlike the last two days at the gothic window desk, today moves to a bookshop cafe setting. The stuck moment involves a stubborn entry rather than reflective pausing or logical avoidance, and Isla actively uses her coffee break as a reset tool.",
+      "stuck_moment": "frustrated concentration, brow furrowed, staring",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -173,7 +173,7 @@
         "Not that one.",
         "There it is.",
         "Coffee helps.",
-        "Same time tomorrow."
+        "Tomorrow, then."
       ]
     }
   ],
@@ -233,9 +233,9 @@
       "weekday": "Thursday",
       "setting": "bookshop cafe corner",
       "puzzle_phase": "mid-week",
-      "story_note": "Isla takes a break from her usual desk, working through Thursday's puzzle in a bookshop cafe with ambient noise and a warm drink.",
-      "continuation_note": "Unlike recent quiet morning sessions at the window desk, today's puzzle unfolds in a busier public space with distractions, and the stuck moment involves external interruption rather than pure logic hesitation.",
-      "stuck_moment": "momentarily distracted, looking up with mild surprise",
+      "story_note": "Isla settles into a bookshop cafe corner for Thursday's puzzle, encountering a stubborn patch that requires her to step back, refocus with coffee, and find the thread that unlocks the grid.",
+      "continuation_note": "Unlike the last two days at the gothic window desk, today moves to a bookshop cafe setting. The stuck moment involves a stubborn entry rather than reflective pausing or logical avoidance, and Isla actively uses her coffee break as a reset tool.",
+      "stuck_moment": "frustrated concentration, brow furrowed, staring",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -250,7 +250,7 @@
         "Not that one.",
         "There it is.",
         "Coffee helps.",
-        "Same time tomorrow."
+        "Tomorrow, then."
       ]
     }
   ],
