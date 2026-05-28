@@ -53,7 +53,7 @@
       "output_file": "social/2026-05-29/04_panel-04.png",
       "image_name": "04_panel-04.png",
       "fallback_template": "templates/characters/isla/isla_04_breakthrough.png",
-      "caption": "One number at a time.",
+      "caption": "That opens it.",
       "scene_id": "scene_04"
     },
     {
@@ -63,7 +63,7 @@
       "output_file": "social/2026-05-29/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "A clean finish.",
+      "caption": "Nearly there.",
       "scene_id": "scene_05"
     },
     {
@@ -73,10 +73,10 @@
       "output_file": "social/2026-05-29/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "Same time tomorrow.",
+      "caption": "A clean finish.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-05-29.json",
-  "generated_at": "2026-05-28T23:29:34.689Z"
+  "generated_at": "2026-05-28T23:32:17.129Z"
 }
