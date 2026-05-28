@@ -8,6 +8,7 @@ const FAL_KEY = process.env.FAL_KEY?.trim() || "";
 const LORA_REPO = process.env.HF_LORA_REPO?.trim() || "sapiverpress/sapiverpress-isla-lora";
 const LORA_FILE = process.env.HF_LORA_FILE?.trim() || "ISLA_SP_1779957190206.safetensors";
 const LORA_URL = process.env.FAL_LORA_URL?.trim() || process.env.HF_LORA_URL?.trim() || `https://huggingface.co/${LORA_REPO}/resolve/main/${LORA_FILE}`;
+const LORA_AUTH_TOKEN = process.env.FAL_LORA_TOKEN?.trim() || HF_TOKEN;
 const TRIGGER = process.env.HF_LORA_TRIGGER?.trim() || "ISLA_SP";
 const FAL_MODEL = process.env.FAL_MODEL?.trim() || "fal-ai/flux-lora";
 const HF_FALLBACK_MODEL = process.env.HF_FALLBACK_MODEL?.trim() || "stabilityai/stable-diffusion-xl-base-1.0";
@@ -92,6 +93,17 @@ async function fetchWithDiagnostics(url, options = {}, timeoutMs = 120000) {
   }
 }
 
+function loraDescriptor() {
+  const descriptor = {
+    path: LORA_URL,
+    scale: LORA_SCALE,
+  };
+  if (LORA_AUTH_TOKEN) {
+    descriptor.token = LORA_AUTH_TOKEN;
+  }
+  return descriptor;
+}
+
 function falInput(prompt, negativePrompt) {
   return {
     prompt,
@@ -101,12 +113,7 @@ function falInput(prompt, negativePrompt) {
     num_images: 1,
     enable_safety_checker: true,
     output_format: "png",
-    loras: [
-      {
-        path: LORA_URL,
-        scale: LORA_SCALE,
-      },
-    ],
+    loras: [loraDescriptor()],
     negative_prompt: negativePrompt,
   };
 }
@@ -177,6 +184,7 @@ async function preflightHf(summary) {
 
 async function requestFalImage(prompt, negativePrompt) {
   if (!FAL_KEY) throw new Error("FAL_KEY missing; cannot call fal-ai/flux-lora directly.");
+  if (!LORA_AUTH_TOKEN) throw new Error("HF_TOKEN or FAL_LORA_TOKEN missing; fal cannot download the private Hugging Face LoRA.");
   const url = `https://fal.run/${FAL_MODEL}`;
   const response = await fetchWithDiagnostics(url, {
     method: "POST",
@@ -284,6 +292,7 @@ async function main() {
     lora_repo: LORA_REPO,
     lora_file: LORA_FILE,
     lora_url: LORA_URL,
+    lora_auth: LORA_AUTH_TOKEN ? "provided" : "missing",
     trigger_word: TRIGGER,
     requested_panels: 6,
     generated_count: 0,
