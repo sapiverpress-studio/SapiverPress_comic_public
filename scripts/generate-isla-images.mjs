@@ -7,7 +7,7 @@ const HF_TOKEN = process.env.HF_TOKEN?.trim() || "";
 const FAL_KEY = process.env.FAL_KEY?.trim() || "";
 const LORA_REPO = process.env.HF_LORA_REPO?.trim() || "sapiverpress/sapiverpress-isla-lora";
 const LORA_FILE = process.env.HF_LORA_FILE?.trim() || "ISLA_SP_1779957190206.safetensors";
-const LORA_URL = process.env.FAL_LORA_URL?.trim() || process.env.HF_LORA_URL?.trim() || `https://huggingface.co/${LORA_REPO}/resolve/main/${LORA_FILE}`;
+const LORA_URL = process.env.FAL_LORA_URL?.trim() || process.env.HF_LORA_URL?.trim() || `https://huggingface.co/${LORA_REPO}/resolve/main/${LORA_FILE}?download=true`;
 const LORA_AUTH_TOKEN = process.env.FAL_LORA_TOKEN?.trim() || HF_TOKEN;
 const TRIGGER = process.env.HF_LORA_TRIGGER?.trim() || "ISLA_SP";
 const FAL_MODEL = process.env.FAL_MODEL?.trim() || "fal-ai/flux-lora";
