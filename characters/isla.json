@@ -156,9 +156,9 @@
       "weekday": "Thursday",
       "setting": "bookshop cafe corner",
       "puzzle_phase": "mid-week",
-      "story_note": "Isla shifts to a quieter bookshop café corner for Thursday's puzzle, finding focus in the change of scene.",
-      "continuation_note": "Unlike recent window-desk sessions, today's challenge unfolds in a cozier setting with a different rhythm—she encounters a frustrating false path mid-solve, rather than a thoughtful pause.",
-      "stuck_moment": "mild frustration, furrowed brow, front-facing",
+      "story_note": "Isla visits a bookshop cafe corner and finds herself distracted mid-puzzle by background noise before refocusing to finish.",
+      "continuation_note": "Unlike the previous two days at the window desk with thoughtful pauses, today Isla is in a public setting and faces external distraction rather than internal hesitation.",
+      "stuck_moment": "distracted, glancing away, slightly annoyed",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -171,9 +171,9 @@
         "Back again.",
         "Start small.",
         "Not that one.",
-        "One number at a time.",
+        "There it is.",
         "Coffee helps.",
-        "Tomorrow, then."
+        "Same time tomorrow."
       ]
     }
   ],
@@ -233,9 +233,9 @@
       "weekday": "Thursday",
       "setting": "bookshop cafe corner",
       "puzzle_phase": "mid-week",
-      "story_note": "Isla shifts to a quieter bookshop café corner for Thursday's puzzle, finding focus in the change of scene.",
-      "continuation_note": "Unlike recent window-desk sessions, today's challenge unfolds in a cozier setting with a different rhythm—she encounters a frustrating false path mid-solve, rather than a thoughtful pause.",
-      "stuck_moment": "mild frustration, furrowed brow, front-facing",
+      "story_note": "Isla visits a bookshop cafe corner and finds herself distracted mid-puzzle by background noise before refocusing to finish.",
+      "continuation_note": "Unlike the previous two days at the window desk with thoughtful pauses, today Isla is in a public setting and faces external distraction rather than internal hesitation.",
+      "stuck_moment": "distracted, glancing away, slightly annoyed",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -248,9 +248,9 @@
         "Back again.",
         "Start small.",
         "Not that one.",
-        "One number at a time.",
+        "There it is.",
         "Coffee helps.",
-        "Tomorrow, then."
+        "Same time tomorrow."
       ]
     }
   ],
