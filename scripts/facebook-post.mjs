@@ -1,5 +1,6 @@
 import fs from "fs/promises";
 import path from "path";
+import sharp from "sharp";
 
 const GRAPH_VERSION = process.env.FB_GRAPH_VERSION || "v24.0";
 const STATE_PATH = process.env.FB_POST_STATE_PATH || "facebook-posts.json";
@@ -112,6 +113,33 @@ async function findLocalImage(date) {
   return null;
 }
 
+async function makeFacebookSafeImage(filePath) {
+  const originalStat = await fs.stat(filePath);
+  const outDir = ".facebook-post-cache";
+  await fs.mkdir(outDir, { recursive: true });
+
+  const baseName = path.basename(filePath, path.extname(filePath));
+  const outPath = path.join(outDir, `${baseName}-fb-safe.jpg`);
+
+  try {
+    const metadata = await sharp(filePath).metadata();
+    await sharp(filePath)
+      .rotate()
+      .resize({ width: 2048, height: 2048, fit: "inside", withoutEnlargement: true })
+      .jpeg({ quality: 82, mozjpeg: true })
+      .toFile(outPath);
+
+    const safeStat = await fs.stat(outPath);
+    console.log(
+      `Prepared Facebook-safe image: ${filePath} (${metadata.width || "?"}x${metadata.height || "?"}, ${originalStat.size} bytes) -> ${outPath} (${safeStat.size} bytes)`
+    );
+    return outPath;
+  } catch (error) {
+    console.log(`Could not create Facebook-safe image, using original. Reason: ${error.message}`);
+    return filePath;
+  }
+}
+
 async function urlExists(url) {
   if (isTruthy(process.env.FB_SKIP_IMAGE_CHECK)) return true;
 
@@ -206,12 +234,13 @@ async function postPhotoUrl({ pageId, token, imageUrl, caption }) {
 }
 
 async function postPhotoFile({ pageId, token, filePath, caption }) {
+  const uploadPath = await makeFacebookSafeImage(filePath);
   const endpoint = `https://graph.facebook.com/${GRAPH_VERSION}/${pageId}/photos`;
-  const buffer = await fs.readFile(filePath);
+  const buffer = await fs.readFile(uploadPath);
   const form = new FormData();
   form.append("caption", caption);
   form.append("access_token", token);
-  form.append("source", new Blob([buffer], { type: mimeFor(filePath) }), path.basename(filePath));
+  form.append("source", new Blob([buffer], { type: mimeFor(uploadPath) }), path.basename(uploadPath));
 
   const response = await fetch(endpoint, { method: "POST", body: form });
   const data = await response.json();
