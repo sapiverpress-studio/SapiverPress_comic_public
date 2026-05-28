@@ -156,9 +156,9 @@
       "weekday": "Thursday",
       "setting": "bookshop cafe corner",
       "puzzle_phase": "mid-week",
-      "story_note": "Isla shifts to a bookshop cafe corner for Thursday's puzzle, encountering an unexpected structural twist that demands careful rebuilding.",
-      "continuation_note": "Unlike yesterday's reflective logic and Tuesday's thoughtful pause, today Isla faces a structural roadblock requiring her to backtrack and rebuild from a clearer foundation.",
-      "stuck_moment": "frustrated concern, furrowed brow, front-facing",
+      "story_note": "Isla visits a bookshop cafe on Thursday morning, wrestling with a stubborn mid-week puzzle that requires patience and a second look.",
+      "continuation_note": "Today shifts to a new setting (bookshop cafe) and features a stuck moment rooted in pattern blindness rather than hesitation, with a coffee reset that genuinely helps.",
+      "stuck_moment": "frustrated, squinting, hand at forehead",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -173,7 +173,7 @@
         "Not that one.",
         "There it is.",
         "Coffee helps.",
-        "Same time tomorrow."
+        "Tomorrow, then."
       ]
     }
   ],
@@ -233,9 +233,9 @@
       "weekday": "Thursday",
       "setting": "bookshop cafe corner",
       "puzzle_phase": "mid-week",
-      "story_note": "Isla shifts to a bookshop cafe corner for Thursday's puzzle, encountering an unexpected structural twist that demands careful rebuilding.",
-      "continuation_note": "Unlike yesterday's reflective logic and Tuesday's thoughtful pause, today Isla faces a structural roadblock requiring her to backtrack and rebuild from a clearer foundation.",
-      "stuck_moment": "frustrated concern, furrowed brow, front-facing",
+      "story_note": "Isla visits a bookshop cafe on Thursday morning, wrestling with a stubborn mid-week puzzle that requires patience and a second look.",
+      "continuation_note": "Today shifts to a new setting (bookshop cafe) and features a stuck moment rooted in pattern blindness rather than hesitation, with a coffee reset that genuinely helps.",
+      "stuck_moment": "frustrated, squinting, hand at forehead",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -250,7 +250,7 @@
         "Not that one.",
         "There it is.",
         "Coffee helps.",
-        "Same time tomorrow."
+        "Tomorrow, then."
       ]
     }
   ],

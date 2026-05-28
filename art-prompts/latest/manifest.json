@@ -73,10 +73,10 @@
       "output_file": "social/2026-05-28/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "Same time tomorrow.",
+      "caption": "Tomorrow, then.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-05-28.json",
-  "generated_at": "2026-05-28T21:25:37.282Z"
+  "generated_at": "2026-05-28T21:31:14.896Z"
 }
