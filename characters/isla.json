@@ -22,7 +22,7 @@
     "Young Black woman",
     "Warm medium brown skin",
     "Light freckles on nose and cheeks",
-    "Natural coily dark hair in high voluminous puff bun",
+    "Natural coily dark hair in a high voluminous puff bun",
     "Wide floral headband in teal, rust orange, cream, and dusty blue, worn across forehead",
     "Medium gold hoop earrings",
     "Oversized deep teal hoodie"
@@ -154,26 +154,26 @@
     {
       "date": "2026-05-28",
       "weekday": "Thursday",
-      "setting": "gothic window desk with cityscape view",
+      "setting": "bookshop cafe corner",
       "puzzle_phase": "mid-week",
-      "story_note": "Isla dives into Thursday's Sapiver Press Suite puzzle with focus, enjoying the fresh grid's challenge.",
-      "continuation_note": "A key deduction opens up the board and she nearly completes it, planning a return visit tomorrow.",
-      "stuck_moment": "Isla halts, avoiding guesses.",
+      "story_note": "Isla returns to the daily Trigoku lock and works through a diagonal that needs one more check.",
+      "continuation_note": "Fallback story varied by date seed: a diagonal that needs one more check.",
+      "stuck_moment": "pausing over a row with two tempting options, thoughtful but not frustrated",
       "pose_order": [
-        "scene_01",
-        "scene_02",
-        "scene_03",
-        "scene_04",
-        "scene_05",
-        "scene_06"
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
       ],
       "captions": [
-        "Isla studies the fresh puzzle grid.",
-        "The beginnings of a foothold form on the grid.",
-        "Isla halts, avoiding guesses.",
-        "A key insight shifts the puzzle's flow.",
-        "Logic tightens as the grid fills up.",
-        "Isla closes the completed puzzle with a smile."
+        "Back again.",
+        "One number at a time.",
+        "Not that one.",
+        "There it is.",
+        "Nearly there.",
+        "Tomorrow, then."
       ]
     }
   ],
@@ -231,26 +231,26 @@
     {
       "date": "2026-05-28",
       "weekday": "Thursday",
-      "setting": "gothic window desk with cityscape view",
+      "setting": "bookshop cafe corner",
       "puzzle_phase": "mid-week",
-      "story_note": "Isla dives into Thursday's Sapiver Press Suite puzzle with focus, enjoying the fresh grid's challenge.",
-      "continuation_note": "A key deduction opens up the board and she nearly completes it, planning a return visit tomorrow.",
-      "stuck_moment": "Isla halts, avoiding guesses.",
+      "story_note": "Isla returns to the daily Trigoku lock and works through a diagonal that needs one more check.",
+      "continuation_note": "Fallback story varied by date seed: a diagonal that needs one more check.",
+      "stuck_moment": "pausing over a row with two tempting options, thoughtful but not frustrated",
       "pose_order": [
-        "scene_01",
-        "scene_02",
-        "scene_03",
-        "scene_04",
-        "scene_05",
-        "scene_06"
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
       ],
       "captions": [
-        "Isla studies the fresh puzzle grid.",
-        "The beginnings of a foothold form on the grid.",
-        "Isla halts, avoiding guesses.",
-        "A key insight shifts the puzzle's flow.",
-        "Logic tightens as the grid fills up.",
-        "Isla closes the completed puzzle with a smile."
+        "Back again.",
+        "One number at a time.",
+        "Not that one.",
+        "There it is.",
+        "Nearly there.",
+        "Tomorrow, then."
       ]
     }
   ],
