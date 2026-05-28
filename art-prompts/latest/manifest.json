@@ -33,7 +33,7 @@
       "output_file": "social/2026-05-28/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "Start small.",
+      "caption": "One number at a time.",
       "scene_id": "scene_02"
     },
     {
@@ -78,5 +78,5 @@
     }
   ],
   "story_source": "daily/2026-05-28.json",
-  "generated_at": "2026-05-28T22:38:22.415Z"
+  "generated_at": "2026-05-28T22:54:23.479Z"
 }

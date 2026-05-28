@@ -156,9 +156,9 @@
       "weekday": "Thursday",
       "setting": "bookshop cafe corner",
       "puzzle_phase": "mid-week",
-      "story_note": "Isla takes her Trigoku session to a bookshop cafe corner, encountering mid-week density and navigating a tight spot with patience.",
-      "continuation_note": "Different setting (bookshop cafe instead of window desk), and the stuck moment involves noticing an error rather than just pausing to avoid guessing.",
-      "stuck_moment": "mild frustration, brow furrowed, looking directly at screen",
+      "story_note": "Isla finds a Thursday morning puzzle session at the bookshop cafe, working through distraction and a tricky middle section.",
+      "continuation_note": "Different from recent days: a new setting (bookshop cafe), and the stuck moment is external distraction rather than internal logic pause.",
+      "stuck_moment": "distracted, glancing away, mild frustration",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -169,7 +169,7 @@
       ],
       "captions": [
         "Back again.",
-        "Start small.",
+        "One number at a time.",
         "Not that one.",
         "There it is.",
         "Coffee helps.",
@@ -233,9 +233,9 @@
       "weekday": "Thursday",
       "setting": "bookshop cafe corner",
       "puzzle_phase": "mid-week",
-      "story_note": "Isla takes her Trigoku session to a bookshop cafe corner, encountering mid-week density and navigating a tight spot with patience.",
-      "continuation_note": "Different setting (bookshop cafe instead of window desk), and the stuck moment involves noticing an error rather than just pausing to avoid guessing.",
-      "stuck_moment": "mild frustration, brow furrowed, looking directly at screen",
+      "story_note": "Isla finds a Thursday morning puzzle session at the bookshop cafe, working through distraction and a tricky middle section.",
+      "continuation_note": "Different from recent days: a new setting (bookshop cafe), and the stuck moment is external distraction rather than internal logic pause.",
+      "stuck_moment": "distracted, glancing away, mild frustration",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -246,7 +246,7 @@
       ],
       "captions": [
         "Back again.",
-        "Start small.",
+        "One number at a time.",
         "Not that one.",
         "There it is.",
         "Coffee helps.",
