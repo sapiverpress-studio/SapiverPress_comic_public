@@ -10,10 +10,21 @@ from zoneinfo import ZoneInfo
 ROOT = Path(__file__).resolve().parents[1]
 DATE = os.environ.get("DATE_OVERRIDE") or datetime.now(ZoneInfo("Europe/London")).strftime("%Y-%m-%d")
 OUT_DIR = ROOT / "social" / DATE
-SOCIAL_MAIN = ROOT / "social" / f"{DATE}.png"
-ZIP_PATH = OUT_DIR / f"isla_v3_STRICT_CLEAN_{DATE}.zip"
+ZIP_PATH = OUT_DIR / f"isla_v3_daily_set_{DATE}.zip"
 
 FIXED_DT = (2026, 1, 1, 0, 0, 0)
+
+EXPECTED_FILES = [
+    "00_start-grid.png",
+    "01_panel-01.png",
+    "02_panel-02.png",
+    "03_panel-03.png",
+    "04_panel-04.png",
+    "05_panel-05.png",
+    "06_panel-06.png",
+    "07_finished-grid.png",
+    "manifest.json",
+]
 
 
 def fail(message: str) -> None:
@@ -21,20 +32,10 @@ def fail(message: str) -> None:
 
 
 def required_paths() -> list[Path]:
-    paths = [
-        OUT_DIR / "01_strict_clean.png",
-        OUT_DIR / "02_strict_clean.png",
-        OUT_DIR / "03_strict_clean.png",
-        OUT_DIR / "04_strict_clean.png",
-        OUT_DIR / "05_strict_clean.png",
-        OUT_DIR / "06_strict_clean.png",
-        OUT_DIR / "contact_sheet_strict_clean.jpg",
-        OUT_DIR / "strict_clean_map.json",
-        SOCIAL_MAIN,
-    ]
+    paths = [OUT_DIR / name for name in EXPECTED_FILES]
     missing = [str(p.relative_to(ROOT)) for p in paths if not p.exists()]
     if missing:
-        fail("Missing expected composed outputs: " + ", ".join(missing))
+        fail("Missing expected eight-image outputs: " + ", ".join(missing))
     return paths
 
 
@@ -43,7 +44,7 @@ def build_zip(paths: list[Path]) -> bytes:
 
     buffer = BytesIO()
     with zipfile.ZipFile(buffer, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as zf:
-        for path in sorted(paths, key=lambda p: p.name):
+        for path in paths:
             data = path.read_bytes()
             info = zipfile.ZipInfo(filename=path.name, date_time=FIXED_DT)
             info.compress_type = zipfile.ZIP_DEFLATED
