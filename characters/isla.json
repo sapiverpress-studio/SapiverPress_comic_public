@@ -181,9 +181,9 @@
       "weekday": "Friday",
       "setting": "quiet public library reading table",
       "puzzle_phase": "late-week",
-      "story_note": "Friday morning in the library—Isla encounters a late-week puzzle that feels surprisingly smooth, almost suspiciously easy, until a single region throws her off rhythm.",
-      "continuation_note": "Unlike Thursday's backtracking struggle or Wednesday's methodical unraveling, today Isla breezes through most of the grid, only to be surprised by one stubborn corner that demands a second look.",
-      "stuck_moment": "surprised, eyebrows raised slightly, head tilted",
+      "story_note": "Friday morning in the library. Isla finds flow early, but a late-grid ambiguity briefly trips her up before she closes cleanly.",
+      "continuation_note": "Unlike Thursday's early resistance and backtracking, today Isla moves smoothly through the opening, only encountering friction near the end—a reversal of recent patterns.",
+      "stuck_moment": "uncertain, hand raised, hesitant expression",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -194,10 +194,10 @@
       ],
       "captions": [
         "Back again.",
-        "Start small.",
         "There it is.",
-        "No guessing.",
-        "A clean finish.",
+        "Not that one.",
+        "One number at a time.",
+        "Nearly there.",
         "Same time tomorrow."
       ]
     }
@@ -283,9 +283,9 @@
       "weekday": "Friday",
       "setting": "quiet public library reading table",
       "puzzle_phase": "late-week",
-      "story_note": "Friday morning in the library—Isla encounters a late-week puzzle that feels surprisingly smooth, almost suspiciously easy, until a single region throws her off rhythm.",
-      "continuation_note": "Unlike Thursday's backtracking struggle or Wednesday's methodical unraveling, today Isla breezes through most of the grid, only to be surprised by one stubborn corner that demands a second look.",
-      "stuck_moment": "surprised, eyebrows raised slightly, head tilted",
+      "story_note": "Friday morning in the library. Isla finds flow early, but a late-grid ambiguity briefly trips her up before she closes cleanly.",
+      "continuation_note": "Unlike Thursday's early resistance and backtracking, today Isla moves smoothly through the opening, only encountering friction near the end—a reversal of recent patterns.",
+      "stuck_moment": "uncertain, hand raised, hesitant expression",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -296,10 +296,10 @@
       ],
       "captions": [
         "Back again.",
-        "Start small.",
         "There it is.",
-        "No guessing.",
-        "A clean finish.",
+        "Not that one.",
+        "One number at a time.",
+        "Nearly there.",
         "Same time tomorrow."
       ]
     }
