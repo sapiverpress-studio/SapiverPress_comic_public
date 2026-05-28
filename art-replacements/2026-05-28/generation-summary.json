@@ -1,6 +1,6 @@
 {
   "date": "2026-05-28",
-  "generated_at": "2026-05-28T22:26:19.802Z",
+  "generated_at": "2026-05-28T22:38:22.624Z",
   "route": "fal-ai/flux-lora-first",
   "fal_model": "fal-ai/flux-lora",
   "hf_fallback_model": "stabilityai/stable-diffusion-xl-base-1.0",
@@ -48,22 +48,22 @@
     {
       "panel_number": 1,
       "image_name": "01_panel-01.png",
-      "error": "Network fetch failed for api-inference.huggingface.co after 41ms: {\"message\":\"fetch failed\",\"name\":\"TypeError\",\"cause_message\":\"getaddrinfo ENOTFOUND api-inference.huggingface.co\",\"cause_code\":\"ENOTFOUND\",\"cause_errno\":-3007,\"cause_syscall\":\"getaddrinfo\",\"cause_hostname\":\"api-inference.huggingface.co\",\"cause_address\":\"\",\"cause_port\":\"\"}"
+      "error": "Network fetch failed for api-inference.huggingface.co after 18ms: {\"message\":\"fetch failed\",\"name\":\"TypeError\",\"cause_message\":\"getaddrinfo ENOTFOUND api-inference.huggingface.co\",\"cause_code\":\"ENOTFOUND\",\"cause_errno\":-3007,\"cause_syscall\":\"getaddrinfo\",\"cause_hostname\":\"api-inference.huggingface.co\",\"cause_address\":\"\",\"cause_port\":\"\"}"
     },
     {
       "panel_number": 2,
       "image_name": "02_panel-02.png",
-      "error": "Network fetch failed for api-inference.huggingface.co after 14ms: {\"message\":\"fetch failed\",\"name\":\"TypeError\",\"cause_message\":\"getaddrinfo ENOTFOUND api-inference.huggingface.co\",\"cause_code\":\"ENOTFOUND\",\"cause_errno\":-3007,\"cause_syscall\":\"getaddrinfo\",\"cause_hostname\":\"api-inference.huggingface.co\",\"cause_address\":\"\",\"cause_port\":\"\"}"
+      "error": "Network fetch failed for api-inference.huggingface.co after 16ms: {\"message\":\"fetch failed\",\"name\":\"TypeError\",\"cause_message\":\"getaddrinfo ENOTFOUND api-inference.huggingface.co\",\"cause_code\":\"ENOTFOUND\",\"cause_errno\":-3007,\"cause_syscall\":\"getaddrinfo\",\"cause_hostname\":\"api-inference.huggingface.co\",\"cause_address\":\"\",\"cause_port\":\"\"}"
     },
     {
       "panel_number": 3,
       "image_name": "03_panel-03.png",
-      "error": "Network fetch failed for api-inference.huggingface.co after 24ms: {\"message\":\"fetch failed\",\"name\":\"TypeError\",\"cause_message\":\"getaddrinfo ENOTFOUND api-inference.huggingface.co\",\"cause_code\":\"ENOTFOUND\",\"cause_errno\":-3007,\"cause_syscall\":\"getaddrinfo\",\"cause_hostname\":\"api-inference.huggingface.co\",\"cause_address\":\"\",\"cause_port\":\"\"}"
+      "error": "Network fetch failed for api-inference.huggingface.co after 11ms: {\"message\":\"fetch failed\",\"name\":\"TypeError\",\"cause_message\":\"getaddrinfo ENOTFOUND api-inference.huggingface.co\",\"cause_code\":\"ENOTFOUND\",\"cause_errno\":-3007,\"cause_syscall\":\"getaddrinfo\",\"cause_hostname\":\"api-inference.huggingface.co\",\"cause_address\":\"\",\"cause_port\":\"\"}"
     },
     {
       "panel_number": 4,
       "image_name": "04_panel-04.png",
-      "error": "Network fetch failed for api-inference.huggingface.co after 21ms: {\"message\":\"fetch failed\",\"name\":\"TypeError\",\"cause_message\":\"getaddrinfo ENOTFOUND api-inference.huggingface.co\",\"cause_code\":\"ENOTFOUND\",\"cause_errno\":-3007,\"cause_syscall\":\"getaddrinfo\",\"cause_hostname\":\"api-inference.huggingface.co\",\"cause_address\":\"\",\"cause_port\":\"\"}"
+      "error": "Network fetch failed for api-inference.huggingface.co after 10ms: {\"message\":\"fetch failed\",\"name\":\"TypeError\",\"cause_message\":\"getaddrinfo ENOTFOUND api-inference.huggingface.co\",\"cause_code\":\"ENOTFOUND\",\"cause_errno\":-3007,\"cause_syscall\":\"getaddrinfo\",\"cause_hostname\":\"api-inference.huggingface.co\",\"cause_address\":\"\",\"cause_port\":\"\"}"
     },
     {
       "panel_number": 5,
@@ -73,7 +73,7 @@
     {
       "panel_number": 6,
       "image_name": "06_panel-06.png",
-      "error": "Network fetch failed for api-inference.huggingface.co after 27ms: {\"message\":\"fetch failed\",\"name\":\"TypeError\",\"cause_message\":\"getaddrinfo ENOTFOUND api-inference.huggingface.co\",\"cause_code\":\"ENOTFOUND\",\"cause_errno\":-3007,\"cause_syscall\":\"getaddrinfo\",\"cause_hostname\":\"api-inference.huggingface.co\",\"cause_address\":\"\",\"cause_port\":\"\"}"
+      "error": "Network fetch failed for api-inference.huggingface.co after 87ms: {\"message\":\"fetch failed\",\"name\":\"TypeError\",\"cause_message\":\"getaddrinfo ENOTFOUND api-inference.huggingface.co\",\"cause_code\":\"ENOTFOUND\",\"cause_errno\":-3007,\"cause_syscall\":\"getaddrinfo\",\"cause_hostname\":\"api-inference.huggingface.co\",\"cause_address\":\"\",\"cause_port\":\"\"}"
     }
   ],
   "preflight": {
@@ -89,7 +89,7 @@
       "status": 200,
       "status_text": "OK",
       "id": "sapiverpress/sapiverpress-isla-lora",
-      "private": true,
+      "private": false,
       "error": ""
     }
   }

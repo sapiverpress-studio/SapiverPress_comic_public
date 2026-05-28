@@ -156,9 +156,9 @@
       "weekday": "Thursday",
       "setting": "bookshop cafe corner",
       "puzzle_phase": "mid-week",
-      "story_note": "Isla visits the bookshop cafe corner on a Thursday morning, encountering an unexpected snag in the puzzle that requires patient reworking.",
-      "continuation_note": "Unlike the previous days' thoughtful pauses, today's stuck moment is a false path that forces Isla to backtrack and rebuild—a different kind of resistance.",
-      "stuck_moment": "frustrated realization, brow furrowed, looking directly at screen",
+      "story_note": "Isla takes her Trigoku session to a bookshop cafe corner, encountering mid-week density and navigating a tight spot with patience.",
+      "continuation_note": "Different setting (bookshop cafe instead of window desk), and the stuck moment involves noticing an error rather than just pausing to avoid guessing.",
+      "stuck_moment": "mild frustration, brow furrowed, looking directly at screen",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -171,7 +171,7 @@
         "Back again.",
         "Start small.",
         "Not that one.",
-        "One number at a time.",
+        "There it is.",
         "Coffee helps.",
         "Same time tomorrow."
       ]
@@ -233,9 +233,9 @@
       "weekday": "Thursday",
       "setting": "bookshop cafe corner",
       "puzzle_phase": "mid-week",
-      "story_note": "Isla visits the bookshop cafe corner on a Thursday morning, encountering an unexpected snag in the puzzle that requires patient reworking.",
-      "continuation_note": "Unlike the previous days' thoughtful pauses, today's stuck moment is a false path that forces Isla to backtrack and rebuild—a different kind of resistance.",
-      "stuck_moment": "frustrated realization, brow furrowed, looking directly at screen",
+      "story_note": "Isla takes her Trigoku session to a bookshop cafe corner, encountering mid-week density and navigating a tight spot with patience.",
+      "continuation_note": "Different setting (bookshop cafe instead of window desk), and the stuck moment involves noticing an error rather than just pausing to avoid guessing.",
+      "stuck_moment": "mild frustration, brow furrowed, looking directly at screen",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -248,7 +248,7 @@
         "Back again.",
         "Start small.",
         "Not that one.",
-        "One number at a time.",
+        "There it is.",
         "Coffee helps.",
         "Same time tomorrow."
       ]
