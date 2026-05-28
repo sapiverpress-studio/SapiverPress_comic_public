@@ -140,18 +140,65 @@ function buildCaption(story, date) {
   ].filter(Boolean).join("\n");
 }
 
-async function derivePageTokenFromUserToken(pageId, userToken, sourceName) {
-  const url = `https://graph.facebook.com/${GRAPH_VERSION}/me/accounts?fields=id,name,access_token&access_token=${encodeURIComponent(userToken)}`;
+async function graphGet(url, label) {
   const response = await fetch(url);
   const data = await response.json();
   if (!response.ok) {
-    throw new Error(`Could not derive Page token from ${sourceName}: ${JSON.stringify(data)}`);
+    throw new Error(`${label}: ${JSON.stringify(data)}`);
   }
+  return data;
+}
+
+async function derivePageTokenViaPageEndpoint(pageId, userToken, sourceName) {
+  const url = `https://graph.facebook.com/${GRAPH_VERSION}/${encodeURIComponent(pageId)}?fields=id,name,access_token&access_token=${encodeURIComponent(userToken)}`;
+  const data = await graphGet(url, `Could not derive Page token from ${sourceName} using /{page-id}`);
+  if (!data?.access_token) {
+    throw new Error(`${sourceName} reached Page endpoint but no Page access_token was returned.`);
+  }
+  console.log(`Derived Facebook Page token from ${sourceName} using /{page-id}?fields=access_token for page ${data.name || pageId}.`);
+  return data.access_token;
+}
+
+async function derivePageTokenViaAccounts(pageId, userToken, sourceName) {
+  const url = `https://graph.facebook.com/${GRAPH_VERSION}/me/accounts?fields=id,name,access_token&access_token=${encodeURIComponent(userToken)}`;
+  const data = await graphGet(url, `Could not derive Page token from ${sourceName} using /me/accounts`);
   const page = (data.data || []).find((item) => String(item.id) === String(pageId));
   if (!page?.access_token) {
-    throw new Error("FB_PAGE_ID was not found in /me/accounts, or no Page token was returned.");
+    throw new Error(`${sourceName}: FB_PAGE_ID was not found in /me/accounts, or no Page token was returned.`);
   }
+  console.log(`Derived Facebook Page token from ${sourceName} using /me/accounts for page ${page.name || pageId}.`);
   return page.access_token;
+}
+
+async function derivePageTokenFromUserToken(pageId, userToken, sourceName) {
+  const errors = [];
+  try {
+    return await derivePageTokenViaPageEndpoint(pageId, userToken, sourceName);
+  } catch (error) {
+    errors.push(error.message);
+  }
+
+  try {
+    return await derivePageTokenViaAccounts(pageId, userToken, sourceName);
+  } catch (error) {
+    errors.push(error.message);
+  }
+
+  throw new Error(errors.join(" | "));
+}
+
+async function resolveTokenCandidate(pageId, token, sourceName, allowDirectPageToken) {
+  try {
+    const pageToken = await derivePageTokenFromUserToken(pageId, token, sourceName);
+    return { pageId, token: pageToken, reason: null, source: `${sourceName}:derived_page_token` };
+  } catch (error) {
+    if (!allowDirectPageToken) {
+      console.log(`${sourceName} could not be exchanged for a Page token. Reason: ${error.message}`);
+      return null;
+    }
+    console.log(`${sourceName} could not be exchanged for a Page token; trying it as an already-derived Page token. Reason: ${error.message}`);
+    return { pageId, token, reason: null, source: `${sourceName}:direct_page_token_fallback` };
+  }
 }
 
 async function getPageToken() {
@@ -164,24 +211,21 @@ async function getPageToken() {
 
   if (!pageId) return { pageId: null, token: null, reason: "FB_PAGE_ID is not set" };
 
-  if (userToken) {
-    const token = await derivePageTokenFromUserToken(pageId, userToken, "META_USER_TOKEN");
-    return { pageId, token, reason: null };
-  }
+  const candidates = [
+    { name: "META_USER_TOKEN", value: userToken, allowDirectPageToken: false },
+    { name: "FB_PAGE_TOKEN", value: pageToken, allowDirectPageToken: true },
+    { name: "FB_GENERIC_ACCESS_TOKEN", value: genericToken, allowDirectPageToken: true }
+  ].filter((item) => item.value);
 
-  if (pageToken) return { pageId, token: pageToken, reason: null };
-
-  if (genericToken) {
-    try {
-      const token = await derivePageTokenFromUserToken(pageId, genericToken, "FB_GENERIC_ACCESS_TOKEN");
-      return { pageId, token, reason: null };
-    } catch (error) {
-      console.log(`FB_GENERIC_ACCESS_TOKEN did not work as a user token; trying it as a direct Page token. Reason: ${error.message}`);
-      return { pageId, token: genericToken, reason: null };
+  for (const candidate of candidates) {
+    const resolved = await resolveTokenCandidate(pageId, candidate.value, candidate.name, candidate.allowDirectPageToken);
+    if (resolved?.token) {
+      console.log(`Using Facebook token source: ${resolved.source}`);
+      return resolved;
     }
   }
 
-  return { pageId, token: null, reason: "Neither META_USER_TOKEN, FB_PAGE_TOKEN nor FB_GENERIC_ACCESS_TOKEN is set" };
+  return { pageId, token: null, reason: "Neither META_USER_TOKEN, FB_PAGE_TOKEN nor FB_GENERIC_ACCESS_TOKEN produced a usable Page token" };
 }
 
 async function loadImageSet(date) {
