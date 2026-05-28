@@ -84,7 +84,17 @@ jobs:
         env:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
           SUITE_URL: "https://suite.sapiverpress.co.uk"
+          HF_LORA_REPO: ${{ secrets.HF_LORA_REPO }}
         run: npm run art-prompts
+      - name: Generate Isla panel images
+        continue-on-error: true
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_LORA_REPO: ${{ secrets.HF_LORA_REPO }}
+          HF_LORA_FILE: "ISLA_SP_1779957190206.safetensors"
+          HF_LORA_TRIGGER: "ISLA_SP"
+          DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
+        run: npm run generate-images
       - name: Compose full strip and close-ups
         env:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
