@@ -23,7 +23,7 @@
       "output_file": "social/2026-05-28/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "Different corner today.",
+      "caption": "Back again.",
       "scene_id": "scene_01"
     },
     {
@@ -33,7 +33,7 @@
       "output_file": "social/2026-05-28/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "One number at a time.",
+      "caption": "Start small.",
       "scene_id": "scene_02"
     },
     {
@@ -53,7 +53,7 @@
       "output_file": "social/2026-05-28/04_panel-04.png",
       "image_name": "04_panel-04.png",
       "fallback_template": "templates/characters/isla/isla_04_breakthrough.png",
-      "caption": "Start small.",
+      "caption": "There it is.",
       "scene_id": "scene_04"
     },
     {
@@ -63,7 +63,7 @@
       "output_file": "social/2026-05-28/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "That opens it.",
+      "caption": "Coffee helps.",
       "scene_id": "scene_05"
     },
     {
@@ -73,10 +73,10 @@
       "output_file": "social/2026-05-28/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "Same time tomorrow.",
+      "caption": "Tomorrow, then.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-05-28.json",
-  "generated_at": "2026-05-28T21:42:14.783Z"
+  "generated_at": "2026-05-28T22:05:55.840Z"
 }
