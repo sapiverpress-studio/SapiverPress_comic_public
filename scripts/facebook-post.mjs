@@ -11,6 +11,20 @@ function isTruthy(value) {
   return ["1", "true", "yes", "y", "on"].includes(String(value || "").trim().toLowerCase());
 }
 
+function hasEnv(name) {
+  return Boolean(process.env[name]?.trim());
+}
+
+function logCredentialStatus() {
+  const status = {
+    FB_PAGE_ID: hasEnv("FB_PAGE_ID"),
+    FB_PAGE_TOKEN: hasEnv("FB_PAGE_TOKEN"),
+    META_USER_TOKEN: hasEnv("META_USER_TOKEN"),
+    FB_GENERIC_ACCESS_TOKEN: hasEnv("FB_GENERIC_ACCESS_TOKEN")
+  };
+  console.log(`Facebook credential check: ${JSON.stringify(status)}`);
+}
+
 function londonDateString() {
   const override = process.env.DATE_OVERRIDE || "";
   const base = override ? new Date(`${override}T12:00:00Z`) : new Date();
@@ -138,24 +152,48 @@ function buildCaption(story, date) {
   ].filter(Boolean).join("\n");
 }
 
+async function derivePageTokenFromUserToken(pageId, userToken, sourceName) {
+  const url = `https://graph.facebook.com/${GRAPH_VERSION}/me/accounts?fields=id,name,access_token&access_token=${encodeURIComponent(userToken)}`;
+  const response = await fetch(url);
+  const data = await response.json();
+  if (!response.ok) {
+    throw new Error(`Could not derive Page token from ${sourceName}: ${JSON.stringify(data)}`);
+  }
+  const page = (data.data || []).find((item) => String(item.id) === String(pageId));
+  if (!page?.access_token) {
+    throw new Error("FB_PAGE_ID was not found in /me/accounts, or no Page token was returned.");
+  }
+  return page.access_token;
+}
+
 async function getPageToken() {
   const pageId = process.env.FB_PAGE_ID?.trim();
   const pageToken = process.env.FB_PAGE_TOKEN?.trim();
   const userToken = process.env.META_USER_TOKEN?.trim();
+  const genericToken = process.env.FB_GENERIC_ACCESS_TOKEN?.trim();
+
+  logCredentialStatus();
 
   if (!pageId) return { pageId: null, token: null, reason: "FB_PAGE_ID is not set" };
+
   if (userToken) {
-    const url = `https://graph.facebook.com/${GRAPH_VERSION}/me/accounts?fields=id,name,access_token&access_token=${encodeURIComponent(userToken)}`;
-    const response = await fetch(url);
-    const data = await response.json();
-    if (!response.ok) throw new Error(`Could not derive Page token from META_USER_TOKEN: ${JSON.stringify(data)}`);
-    const page = (data.data || []).find((item) => String(item.id) === String(pageId));
-    if (!page?.access_token) throw new Error("FB_PAGE_ID was not found in /me/accounts, or no Page token was returned.");
-    return { pageId, token: page.access_token, reason: null };
+    const token = await derivePageTokenFromUserToken(pageId, userToken, "META_USER_TOKEN");
+    return { pageId, token, reason: null };
   }
 
   if (pageToken) return { pageId, token: pageToken, reason: null };
-  return { pageId, token: null, reason: "Neither META_USER_TOKEN nor FB_PAGE_TOKEN is set" };
+
+  if (genericToken) {
+    try {
+      const token = await derivePageTokenFromUserToken(pageId, genericToken, "FB_GENERIC_ACCESS_TOKEN");
+      return { pageId, token, reason: null };
+    } catch (error) {
+      console.log(`FB_GENERIC_ACCESS_TOKEN did not work as a user token; trying it as a direct Page token. Reason: ${error.message}`);
+      return { pageId, token: genericToken, reason: null };
+    }
+  }
+
+  return { pageId, token: null, reason: "Neither META_USER_TOKEN, FB_PAGE_TOKEN nor FB_GENERIC_ACCESS_TOKEN is set" };
 }
 
 async function postPhotoUrl({ pageId, token, imageUrl, caption }) {
