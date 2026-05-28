@@ -156,9 +156,9 @@
       "weekday": "Thursday",
       "setting": "bookshop cafe corner",
       "puzzle_phase": "mid-week",
-      "story_note": "Isla returns to the daily Trigoku lock and works through a diagonal that needs one more check.",
-      "continuation_note": "Fallback story varied by date seed: a diagonal that needs one more check.",
-      "stuck_moment": "pausing over a row with two tempting options, thoughtful but not frustrated",
+      "story_note": "Isla takes her puzzle to a bookshop cafe corner, where ambient noise and a change of scene shift her rhythm.",
+      "continuation_note": "Unlike the last two days at the window desk with thoughtful pauses, today Isla changes location mid-session and her stuck moment involves distraction from the environment rather than pure logic hesitation.",
+      "stuck_moment": "distracted, looking up and to the side, slightly puzzled",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -169,11 +169,11 @@
       ],
       "captions": [
         "Back again.",
-        "One number at a time.",
+        "Start small.",
         "Not that one.",
         "There it is.",
-        "Nearly there.",
-        "Tomorrow, then."
+        "Coffee helps.",
+        "Same time tomorrow."
       ]
     }
   ],
@@ -233,9 +233,9 @@
       "weekday": "Thursday",
       "setting": "bookshop cafe corner",
       "puzzle_phase": "mid-week",
-      "story_note": "Isla returns to the daily Trigoku lock and works through a diagonal that needs one more check.",
-      "continuation_note": "Fallback story varied by date seed: a diagonal that needs one more check.",
-      "stuck_moment": "pausing over a row with two tempting options, thoughtful but not frustrated",
+      "story_note": "Isla takes her puzzle to a bookshop cafe corner, where ambient noise and a change of scene shift her rhythm.",
+      "continuation_note": "Unlike the last two days at the window desk with thoughtful pauses, today Isla changes location mid-session and her stuck moment involves distraction from the environment rather than pure logic hesitation.",
+      "stuck_moment": "distracted, looking up and to the side, slightly puzzled",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -246,11 +246,11 @@
       ],
       "captions": [
         "Back again.",
-        "One number at a time.",
+        "Start small.",
         "Not that one.",
         "There it is.",
-        "Nearly there.",
-        "Tomorrow, then."
+        "Coffee helps.",
+        "Same time tomorrow."
       ]
     }
   ],
