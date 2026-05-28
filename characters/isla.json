@@ -181,9 +181,9 @@
       "weekday": "Friday",
       "setting": "quiet public library reading table",
       "puzzle_phase": "late-week",
-      "story_note": "Friday morning at the library, Isla finds rhythm early and rides it through to a smooth finish.",
-      "continuation_note": "Unlike Thursday's resistance and Wednesday's careful unraveling, today flows easily from the start—no backtracking, just steady momentum and a satisfying completion.",
-      "stuck_moment": "attentive, deliberate, eyes narrowed slightly",
+      "story_note": "Friday morning at the library, Isla finds a late-week puzzle that starts smooth but hits an unexpected wall mid-grid, requiring a sharp shift in her scanning pattern before the solve clicks into place.",
+      "continuation_note": "Unlike Thursday's backtracking confusion or the earlier week's methodical calm, today Isla encounters a sudden logic gap that forces her to abandon her initial scan and re-examine the entire grid from a different angle.",
+      "stuck_moment": "surprised, eyebrows raised, looking directly at screen",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -194,11 +194,11 @@
       ],
       "captions": [
         "Back again.",
+        "Start small.",
+        "Where did it go?",
         "There it is.",
-        "No guessing.",
-        "That opens it.",
         "Nearly there.",
-        "A clean finish."
+        "Same time tomorrow."
       ]
     }
   ],
@@ -283,9 +283,9 @@
       "weekday": "Friday",
       "setting": "quiet public library reading table",
       "puzzle_phase": "late-week",
-      "story_note": "Friday morning at the library, Isla finds rhythm early and rides it through to a smooth finish.",
-      "continuation_note": "Unlike Thursday's resistance and Wednesday's careful unraveling, today flows easily from the start—no backtracking, just steady momentum and a satisfying completion.",
-      "stuck_moment": "attentive, deliberate, eyes narrowed slightly",
+      "story_note": "Friday morning at the library, Isla finds a late-week puzzle that starts smooth but hits an unexpected wall mid-grid, requiring a sharp shift in her scanning pattern before the solve clicks into place.",
+      "continuation_note": "Unlike Thursday's backtracking confusion or the earlier week's methodical calm, today Isla encounters a sudden logic gap that forces her to abandon her initial scan and re-examine the entire grid from a different angle.",
+      "stuck_moment": "surprised, eyebrows raised, looking directly at screen",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -296,11 +296,11 @@
       ],
       "captions": [
         "Back again.",
+        "Start small.",
+        "Where did it go?",
         "There it is.",
-        "No guessing.",
-        "That opens it.",
         "Nearly there.",
-        "A clean finish."
+        "Same time tomorrow."
       ]
     }
   ],
