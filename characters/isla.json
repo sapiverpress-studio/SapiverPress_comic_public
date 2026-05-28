@@ -156,9 +156,9 @@
       "weekday": "Thursday",
       "setting": "bookshop cafe corner",
       "puzzle_phase": "mid-week",
-      "story_note": "Isla takes her puzzle to a bookshop cafe, finding a rhythm in a new setting.",
-      "continuation_note": "Unlike the previous two days at the window desk, Isla changes location and encounters a different type of stuck moment—a distraction from ambient noise—shifting the daily texture.",
-      "stuck_moment": "momentarily distracted, glancing sideways, patient",
+      "story_note": "Isla finds her bookshop corner busy; adapts by working through distractions and finishes the puzzle despite interruptions.",
+      "continuation_note": "Unlike the last two days at the window desk with thoughtful pauses, today she faces external interruptions and completes the puzzle in a shared space.",
+      "stuck_moment": "mildly annoyed, hand hovering, three-quarter view",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -170,10 +170,10 @@
       "captions": [
         "Back again.",
         "Start small.",
-        "Not that one.",
+        "Not now.",
         "There it is.",
-        "Coffee helps.",
-        "Same time tomorrow."
+        "Nearly there.",
+        "Tomorrow, then."
       ]
     }
   ],
@@ -233,9 +233,9 @@
       "weekday": "Thursday",
       "setting": "bookshop cafe corner",
       "puzzle_phase": "mid-week",
-      "story_note": "Isla takes her puzzle to a bookshop cafe, finding a rhythm in a new setting.",
-      "continuation_note": "Unlike the previous two days at the window desk, Isla changes location and encounters a different type of stuck moment—a distraction from ambient noise—shifting the daily texture.",
-      "stuck_moment": "momentarily distracted, glancing sideways, patient",
+      "story_note": "Isla finds her bookshop corner busy; adapts by working through distractions and finishes the puzzle despite interruptions.",
+      "continuation_note": "Unlike the last two days at the window desk with thoughtful pauses, today she faces external interruptions and completes the puzzle in a shared space.",
+      "stuck_moment": "mildly annoyed, hand hovering, three-quarter view",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -247,10 +247,10 @@
       "captions": [
         "Back again.",
         "Start small.",
-        "Not that one.",
+        "Not now.",
         "There it is.",
-        "Coffee helps.",
-        "Same time tomorrow."
+        "Nearly there.",
+        "Tomorrow, then."
       ]
     }
   ],
