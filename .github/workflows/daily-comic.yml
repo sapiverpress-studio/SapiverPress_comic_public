@@ -30,6 +30,14 @@ on:
         description: "Force Facebook post even if state says already posted"
         required: false
         default: "false"
+      post_to_pinterest:
+        description: "Try Pinterest post after generation"
+        required: false
+        default: "false"
+      force_pinterest_post:
+        description: "Force Pinterest post even if state says already posted"
+        required: false
+        default: "false"
 
 permissions:
   contents: write
@@ -69,7 +77,7 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          ANTHROPIC_MODEL: "claude-sonnet-4-20250514"
+          ANTHROPIC_MODEL: "claude-sonnet-4-5-20250929"
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
         run: npm run daily
       - name: Compose full strip and close-ups
@@ -80,6 +88,7 @@ jobs:
         run: npm run compose
       - name: Post comic to Facebook
         if: github.event_name == 'schedule' || github.event.inputs.post_to_facebook == 'true'
+        continue-on-error: true
         env:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID || secrets.FACEBOOK_PAGE_ID || secrets.META_PAGE_ID || secrets.PAGE_ID || secrets.FACEBOOK_ID || secrets.FB_ID }}
@@ -119,9 +128,42 @@ jobs:
           fi
           if git diff --cached --quiet; then
             echo "No generated story, social or Facebook state changes"
+          else
+            git commit -m "Update daily comic story and social outputs"
+            for attempt in 1 2 3; do
+              if git push; then
+                break
+              fi
+              echo "git push failed on attempt ${attempt}; rebasing with autostash and retrying"
+              sleep 8
+              git pull --rebase --autostash origin main || true
+            done
+          fi
+      - name: Post comic to Pinterest
+        if: always() && (github.event_name == 'schedule' || github.event.inputs.post_to_pinterest == 'true')
+        env:
+          DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
+          PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
+          PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
+          PINTEREST_BOARD_NAME: "Sapiver Press Daily Puzzles"
+          PINTEREST_IMAGE_NAME: "00_start-grid.png"
+          FORCE_PINTEREST_POST: ${{ github.event.inputs.force_pinterest_post }}
+          SUITE_URL: "https://suite.sapiverpress.co.uk"
+        run: node scripts/pinterest-post.mjs
+      - name: Commit Pinterest state
+        if: always() && (github.event_name == 'schedule' || github.event.inputs.post_to_pinterest == 'true')
+        run: |
+          set -e
+          git config user.name "sapiver-comic-bot"
+          git config user.email "sapiver-comic-bot@users.noreply.github.com"
+          if [ -f pinterest-posts.json ]; then
+            git add pinterest-posts.json
+          fi
+          if git diff --cached --quiet; then
+            echo "No Pinterest state changes"
             exit 0
           fi
-          git commit -m "Update daily comic story and social outputs"
+          git commit -m "Update Pinterest post state"
           for attempt in 1 2 3; do
             if git push; then
               exit 0
