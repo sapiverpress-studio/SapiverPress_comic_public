@@ -181,9 +181,9 @@
       "weekday": "Friday",
       "setting": "quiet public library reading table",
       "puzzle_phase": "late-week",
-      "story_note": "Friday morning at the library, Isla finds a late-week puzzle that starts smooth but hits an unexpected wall mid-grid, requiring a sharp shift in her scanning pattern before the solve clicks into place.",
-      "continuation_note": "Unlike Thursday's backtracking confusion or the earlier week's methodical calm, today Isla encounters a sudden logic gap that forces her to abandon her initial scan and re-examine the entire grid from a different angle.",
-      "stuck_moment": "surprised, eyebrows raised, looking directly at screen",
+      "story_note": "Friday at the library, Isla finds a late-week puzzle that opens smoothly but tightens unexpectedly halfway through, requiring patience and a second look before the final numbers fall into place.",
+      "continuation_note": "Unlike Thursday's early resistance and backtracking, today's challenge arrives mid-solve—a subtle tightening that requires Isla to slow down and re-examine rather than start over, leading to a quieter, more satisfying finish.",
+      "stuck_moment": "brow furrowed, eyes narrowed, searching expression",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -195,8 +195,8 @@
       "captions": [
         "Back again.",
         "Start small.",
-        "Where did it go?",
         "There it is.",
+        "One number at a time.",
         "Nearly there.",
         "Same time tomorrow."
       ]
@@ -283,9 +283,9 @@
       "weekday": "Friday",
       "setting": "quiet public library reading table",
       "puzzle_phase": "late-week",
-      "story_note": "Friday morning at the library, Isla finds a late-week puzzle that starts smooth but hits an unexpected wall mid-grid, requiring a sharp shift in her scanning pattern before the solve clicks into place.",
-      "continuation_note": "Unlike Thursday's backtracking confusion or the earlier week's methodical calm, today Isla encounters a sudden logic gap that forces her to abandon her initial scan and re-examine the entire grid from a different angle.",
-      "stuck_moment": "surprised, eyebrows raised, looking directly at screen",
+      "story_note": "Friday at the library, Isla finds a late-week puzzle that opens smoothly but tightens unexpectedly halfway through, requiring patience and a second look before the final numbers fall into place.",
+      "continuation_note": "Unlike Thursday's early resistance and backtracking, today's challenge arrives mid-solve—a subtle tightening that requires Isla to slow down and re-examine rather than start over, leading to a quieter, more satisfying finish.",
+      "stuck_moment": "brow furrowed, eyes narrowed, searching expression",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -297,8 +297,8 @@
       "captions": [
         "Back again.",
         "Start small.",
-        "Where did it go?",
         "There it is.",
+        "One number at a time.",
         "Nearly there.",
         "Same time tomorrow."
       ]
