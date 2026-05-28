@@ -1,255 +1,256 @@
 {
   "character_id": "isla",
   "name": "Isla",
-  "weeks": [
+  "posts": "daily",
+  "only_character": true,
+  "product": {
+    "name": "Trigoku Daily Lock",
+    "url": "https://suite.sapiverpress.co.uk",
+    "play_url": "https://suite.sapiverpress.co.uk/play/trigoku/"
+  },
+  "trigger_word": "ISLA_SP",
+  "visual_identity": {
+    "age_read": "young adult",
+    "skin": "warm medium brown skin",
+    "freckles": "light freckles on nose and cheeks",
+    "hair": "natural coily dark hair in high voluminous puff bun",
+    "headband": "wide floral headband — teal, rust orange, cream, dusty blue — worn across forehead",
+    "earrings": "medium gold hoop earrings",
+    "clothing": "oversized deep teal hoodie"
+  },
+  "locked_visual_traits": [
+    "Young Black woman",
+    "Warm medium brown skin",
+    "Light freckles on nose and cheeks",
+    "Natural coily dark hair in high voluminous puff bun",
+    "Wide floral headband in teal, rust orange, cream, and dusty blue, worn across forehead",
+    "Medium gold hoop earrings",
+    "Oversized deep teal hoodie"
+  ],
+  "poses": [
+    {
+      "pose_id": "pose_01_back_again",
+      "title": "Back Again",
+      "purpose": "Isla arrives / opens the grid; calm, returning."
+    },
+    {
+      "pose_id": "pose_02_first_moves",
+      "title": "First Moves",
+      "purpose": "First moves; early engagement."
+    },
+    {
+      "pose_id": "pose_03_stuck",
+      "title": "Resistance",
+      "purpose": "A moment of resistance or hesitation, varied each day."
+    },
+    {
+      "pose_id": "pose_04_thinking",
+      "title": "Thinking It Through",
+      "purpose": "Thinking through it; a shift in approach."
+    },
+    {
+      "pose_id": "pose_05_coffee",
+      "title": "Almost There",
+      "purpose": "Near completion or a short reset moment."
+    },
+    {
+      "pose_id": "pose_06_leaving",
+      "title": "Looking Ahead",
+      "purpose": "Wrapping up and looking ahead."
+    }
+  ],
+  "settings": [
+    "gothic window desk with cityscape view",
+    "quiet public library reading table",
+    "outdoor cafe street table",
+    "co-working desk near a tall window",
+    "train table by the window",
+    "small kitchen table in warm morning light",
+    "bookshop cafe corner",
+    "rainy window nook with plants"
+  ],
+  "brand_props": [
+    "SJ ceramic mug on desk",
+    "open journal",
+    "dark hardcover books",
+    "vintage desk lamp amber glow",
+    "gothic window cityscape view",
+    "ivy bookshelf"
+  ],
+  "caption_bank": [
+    "Back again.",
+    "One number at a time.",
+    "Start small.",
+    "No guessing.",
+    "Not that one.",
+    "There it is.",
+    "Nearly there.",
+    "Coffee helps.",
+    "That opens it.",
+    "Tomorrow, then.",
+    "A clean finish.",
+    "Same time tomorrow."
+  ],
+  "story_rules": [
+    "Isla posts every day, not only Tuesdays.",
+    "Isla is the only character.",
+    "The story is about Isla living her life with a Trigoku Daily Lock subplot; the puzzle is not the main character.",
+    "Keep captions short, understated, real, and non-promotional.",
+    "Avoid repeating the same arc, same stuck moment, or same visual rhythm across recent days.",
+    "At least two panels must be front-facing or three-quarter view showing Isla's face clearly.",
+    "Never invent puzzle content; real puzzle captures are composited later."
+  ],
+  "story_history": [
     {
       "date": "2026-05-26",
       "weekday": "Tuesday",
-      "product_referenced": {
-        "key": "suite",
-        "name": "Sapiver Press Suite",
-        "url": "https://suite.sapiverpress.co.uk",
-        "natural_reference": "a return visit tomorrow"
-      },
+      "setting": "gothic window desk with cityscape view",
+      "puzzle_phase": "early-week",
       "story_note": "Isla returns to her morning ritual with a new Sapiver Press puzzle, noticing a fresh challenge.",
       "continuation_note": "She makes logical progress and wraps up the session with plans for tomorrow.",
-      "scenes": [
-        {
-          "id": "scene_01",
-          "title": "Back Again",
-          "dialogue": "Another morning, another puzzle.",
-          "caption": "Isla settles in by the window, ready for today's challenge."
-        },
-        {
-          "id": "scene_02",
-          "title": "Different Start",
-          "dialogue": "This one feels different right away.",
-          "caption": "Starting clues hint at a new twist in the day's puzzle."
-        },
-        {
-          "id": "scene_03",
-          "title": "The Pushback",
-          "dialogue": "Hmmm... no guesses yet.",
-          "caption": "Isla hits a thoughtful pause, avoiding hasty moves."
-        },
-        {
-          "id": "scene_04",
-          "title": "The Column",
-          "dialogue": "Ah, this column unlocks everything!",
-          "caption": "A key insight breaks the stalemate."
-        },
-        {
-          "id": "scene_05",
-          "title": "The Follow-Through",
-          "dialogue": "Now the rest falls into place.",
-          "caption": "The grid begins to reveal its secrets."
-        },
-        {
-          "id": "scene_06",
-          "title": "Worth Returning For",
-          "dialogue": "Good progress today. Same time tomorrow?",
-          "caption": "Isla logs off, already looking forward to a return visit tomorrow."
-        }
-      ]
-    },
-    {
-      "date": "2026-05-26",
-      "weekday": "Tuesday",
-      "product_referenced": {
-        "key": "suite",
-        "name": "Sapiver Press Suite",
-        "url": "https://suite.sapiverpress.co.uk",
-        "natural_reference": "a return visit tomorrow"
-      },
-      "story_note": "Isla settles back into her puzzle nook, noticing today's challenge starts on a surprising note.",
-      "continuation_note": "She carefully works through the tricky parts, ending on a solid breakthrough with plans to return tomorrow.",
-      "scenes": [
-        {
-          "id": "scene_01",
-          "title": "Back Again",
-          "dialogue": "Ready for today's puzzle.",
-          "caption": "Morning light streams over Isla's workspace."
-        },
-        {
-          "id": "scene_02",
-          "title": "Different Start",
-          "dialogue": "This clue shifts the whole approach.",
-          "caption": "Fresh twists make the puzzle feel alive."
-        },
-        {
-          "id": "scene_03",
-          "title": "The Pushback",
-          "dialogue": "No quick leaps here.",
-          "caption": "Pausing to think before committing anything."
-        },
-        {
-          "id": "scene_04",
-          "title": "The Column",
-          "dialogue": "This column is the key!",
-          "caption": "A logic breakthrough opens new paths."
-        },
-        {
-          "id": "scene_05",
-          "title": "The Follow-Through",
-          "dialogue": "Now it all clicks together.",
-          "caption": "Pieces falling neatly into place."
-        },
-        {
-          "id": "scene_06",
-          "title": "Worth Returning For",
-          "dialogue": "Steady progress made—back again tomorrow?",
-          "caption": "Isla closes her laptop with a satisfied smile."
-        }
-      ]
-    },
-    {
-      "date": "2026-05-26",
-      "weekday": "Tuesday",
-      "product_referenced": {
-        "key": "suite",
-        "name": "Sapiver Press Suite",
-        "url": "https://suite.sapiverpress.co.uk",
-        "natural_reference": "a return visit tomorrow"
-      },
-      "story_note": "Isla returns to her familiar puzzle nook, greeted by another fresh Sapiver Press Suite challenge that teases a twist from the start.",
-      "continuation_note": "With care and patience, she unravels the puzzle's subtle logic, making steady strides before deciding to pause and pick it up again tomorrow.",
-      "scenes": [
-        {
-          "id": "scene_01",
-          "title": "Back Again",
-          "dialogue": "Here we go—another puzzle day.",
-          "caption": "Morning sun warms Isla's corner, as her daily ritual begins."
-        },
-        {
-          "id": "scene_02",
-          "title": "Different Start",
-          "dialogue": "This first clue changes everything.",
-          "caption": "A surprising opening sets a new rhythm to today's solving."
-        },
-        {
-          "id": "scene_03",
-          "title": "The Pushback",
-          "dialogue": "No shortcuts this time.",
-          "caption": "She resists guessing, thinking several steps ahead."
-        },
-        {
-          "id": "scene_04",
-          "title": "The Column",
-          "dialogue": "This column reveals the pattern!",
-          "caption": "A critical insight breaks the logjam."
-        },
-        {
-          "id": "scene_05",
-          "title": "The Follow-Through",
-          "dialogue": "Pieces fit together now.",
-          "caption": "The grid unlocks, each step clearer than the last."
-        },
-        {
-          "id": "scene_06",
-          "title": "Worth Returning For",
-          "dialogue": "Progress made. Let's continue tomorrow.",
-          "caption": "Closing her laptop, anticipation already building for a return visit tomorrow."
-        }
+      "stuck_moment": "Isla hits a thoughtful pause, avoiding hasty moves.",
+      "pose_order": [
+        "scene_01",
+        "scene_02",
+        "scene_03",
+        "scene_04",
+        "scene_05",
+        "scene_06"
+      ],
+      "captions": [
+        "Isla settles in by the window, ready for today's challenge.",
+        "Starting clues hint at a new twist in the day's puzzle.",
+        "Isla hits a thoughtful pause, avoiding hasty moves.",
+        "A key insight breaks the stalemate.",
+        "The grid begins to reveal its secrets.",
+        "Isla logs off, already looking forward to a return visit tomorrow."
       ]
     },
     {
       "date": "2026-05-27",
       "weekday": "Wednesday",
-      "product_referenced": {
-        "key": "suite",
-        "name": "Sapiver Press Suite",
-        "url": "https://suite.sapiverpress.co.uk",
-        "natural_reference": "a return visit tomorrow"
-      },
+      "setting": "gothic window desk with cityscape view",
+      "puzzle_phase": "mid-week",
       "story_note": "Isla tackles Wednesday's Sapiver Press Suite puzzle with calm focus.",
       "continuation_note": "She carefully unravels logic, making steady progress and wrapping up with plans for another session tomorrow.",
-      "scenes": [
-        {
-          "id": "scene_01",
-          "title": "Opening Grid",
-          "dialogue": "Alright, let's see what we have today.",
-          "caption": "Isla studies the blank grid, the start of a new challenge."
-        },
-        {
-          "id": "scene_02",
-          "title": "First Moves",
-          "dialogue": "These first answers give me some ground.",
-          "caption": "Safe entries begin to take shape on the grid."
-        },
-        {
-          "id": "scene_03",
-          "title": "Stuck Moment",
-          "dialogue": "Time to pause; no hasty guesses.",
-          "caption": "Isla reflects, avoiding guesses and thinking through logic."
-        },
-        {
-          "id": "scene_04",
-          "title": "Breakthrough",
-          "dialogue": "This deduction opens up everything!",
-          "caption": "A key move unlocks more of the puzzle."
-        },
-        {
-          "id": "scene_05",
-          "title": "Nearly There",
-          "dialogue": "Almost done — it’s coming together.",
-          "caption": "The puzzle nears completion, logic lines tightening."
-        },
-        {
-          "id": "scene_06",
-          "title": "Finished",
-          "dialogue": "Great progress today. Same time tomorrow?",
-          "caption": "Closing the puzzle in the morning light, eager for next time."
-        }
+      "stuck_moment": "Isla reflects, avoiding guesses and thinking through logic.",
+      "pose_order": [
+        "scene_01",
+        "scene_02",
+        "scene_03",
+        "scene_04",
+        "scene_05",
+        "scene_06"
+      ],
+      "captions": [
+        "Isla studies the blank grid, the start of a new challenge.",
+        "Safe entries begin to take shape on the grid.",
+        "Isla reflects, avoiding guesses and thinking through logic.",
+        "A key move unlocks more of the puzzle.",
+        "The puzzle nears completion, logic lines tightening.",
+        "Closing the puzzle in the morning light, eager for next time."
       ]
     },
     {
       "date": "2026-05-28",
       "weekday": "Thursday",
-      "product_referenced": {
-        "key": "suite",
-        "name": "Sapiver Press Suite",
-        "url": "https://suite.sapiverpress.co.uk",
-        "natural_reference": "a return visit tomorrow"
-      },
+      "setting": "gothic window desk with cityscape view",
+      "puzzle_phase": "mid-week",
       "story_note": "Isla dives into Thursday's Sapiver Press Suite puzzle with focus, enjoying the fresh grid's challenge.",
       "continuation_note": "A key deduction opens up the board and she nearly completes it, planning a return visit tomorrow.",
-      "scenes": [
-        {
-          "id": "scene_01",
-          "title": "Opening Grid",
-          "dialogue": "Let's see today's pattern.",
-          "caption": "Isla studies the fresh puzzle grid."
-        },
-        {
-          "id": "scene_02",
-          "title": "First Moves",
-          "dialogue": "These spots feel safe first.",
-          "caption": "The beginnings of a foothold form on the grid."
-        },
-        {
-          "id": "scene_03",
-          "title": "Stuck Moment",
-          "dialogue": "Time to pause and think.",
-          "caption": "Isla halts, avoiding guesses."
-        },
-        {
-          "id": "scene_04",
-          "title": "Breakthrough",
-          "dialogue": "This deduction changes everything!",
-          "caption": "A key insight shifts the puzzle's flow."
-        },
-        {
-          "id": "scene_05",
-          "title": "Nearly There",
-          "dialogue": "Almost done now.",
-          "caption": "Logic tightens as the grid fills up."
-        },
-        {
-          "id": "scene_06",
-          "title": "Finished",
-          "dialogue": "Good work today. Same time tomorrow?",
-          "caption": "Isla closes the completed puzzle with a smile."
-        }
+      "stuck_moment": "Isla halts, avoiding guesses.",
+      "pose_order": [
+        "scene_01",
+        "scene_02",
+        "scene_03",
+        "scene_04",
+        "scene_05",
+        "scene_06"
+      ],
+      "captions": [
+        "Isla studies the fresh puzzle grid.",
+        "The beginnings of a foothold form on the grid.",
+        "Isla halts, avoiding guesses.",
+        "A key insight shifts the puzzle's flow.",
+        "Logic tightens as the grid fills up.",
+        "Isla closes the completed puzzle with a smile."
+      ]
+    }
+  ],
+  "weeks": [
+    {
+      "date": "2026-05-26",
+      "weekday": "Tuesday",
+      "setting": "gothic window desk with cityscape view",
+      "puzzle_phase": "early-week",
+      "story_note": "Isla returns to her morning ritual with a new Sapiver Press puzzle, noticing a fresh challenge.",
+      "continuation_note": "She makes logical progress and wraps up the session with plans for tomorrow.",
+      "stuck_moment": "Isla hits a thoughtful pause, avoiding hasty moves.",
+      "pose_order": [
+        "scene_01",
+        "scene_02",
+        "scene_03",
+        "scene_04",
+        "scene_05",
+        "scene_06"
+      ],
+      "captions": [
+        "Isla settles in by the window, ready for today's challenge.",
+        "Starting clues hint at a new twist in the day's puzzle.",
+        "Isla hits a thoughtful pause, avoiding hasty moves.",
+        "A key insight breaks the stalemate.",
+        "The grid begins to reveal its secrets.",
+        "Isla logs off, already looking forward to a return visit tomorrow."
+      ]
+    },
+    {
+      "date": "2026-05-27",
+      "weekday": "Wednesday",
+      "setting": "gothic window desk with cityscape view",
+      "puzzle_phase": "mid-week",
+      "story_note": "Isla tackles Wednesday's Sapiver Press Suite puzzle with calm focus.",
+      "continuation_note": "She carefully unravels logic, making steady progress and wrapping up with plans for another session tomorrow.",
+      "stuck_moment": "Isla reflects, avoiding guesses and thinking through logic.",
+      "pose_order": [
+        "scene_01",
+        "scene_02",
+        "scene_03",
+        "scene_04",
+        "scene_05",
+        "scene_06"
+      ],
+      "captions": [
+        "Isla studies the blank grid, the start of a new challenge.",
+        "Safe entries begin to take shape on the grid.",
+        "Isla reflects, avoiding guesses and thinking through logic.",
+        "A key move unlocks more of the puzzle.",
+        "The puzzle nears completion, logic lines tightening.",
+        "Closing the puzzle in the morning light, eager for next time."
+      ]
+    },
+    {
+      "date": "2026-05-28",
+      "weekday": "Thursday",
+      "setting": "gothic window desk with cityscape view",
+      "puzzle_phase": "mid-week",
+      "story_note": "Isla dives into Thursday's Sapiver Press Suite puzzle with focus, enjoying the fresh grid's challenge.",
+      "continuation_note": "A key deduction opens up the board and she nearly completes it, planning a return visit tomorrow.",
+      "stuck_moment": "Isla halts, avoiding guesses.",
+      "pose_order": [
+        "scene_01",
+        "scene_02",
+        "scene_03",
+        "scene_04",
+        "scene_05",
+        "scene_06"
+      ],
+      "captions": [
+        "Isla studies the fresh puzzle grid.",
+        "The beginnings of a foothold form on the grid.",
+        "Isla halts, avoiding guesses.",
+        "A key insight shifts the puzzle's flow.",
+        "Logic tightens as the grid fills up.",
+        "Isla closes the completed puzzle with a smile."
       ]
     }
   ],
