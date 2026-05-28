@@ -201,8 +201,58 @@
           "caption": "Closing the puzzle in the morning light, eager for next time."
         }
       ]
+    },
+    {
+      "date": "2026-05-28",
+      "weekday": "Thursday",
+      "product_referenced": {
+        "key": "suite",
+        "name": "Sapiver Press Suite",
+        "url": "https://suite.sapiverpress.co.uk",
+        "natural_reference": "a return visit tomorrow"
+      },
+      "story_note": "Isla greets Thursday's Sapiver Press Suite puzzle with quiet focus, noticing new starts in the grid.",
+      "continuation_note": "She carefully gathers answers, meets a thoughtful pause, then finds a breakthrough that nearly solves the puzzle, ending with plans for a return visit tomorrow.",
+      "scenes": [
+        {
+          "id": "scene_01",
+          "title": "Opening Grid",
+          "dialogue": "Let's see today's pattern.",
+          "caption": "Isla studies the fresh puzzle grid."
+        },
+        {
+          "id": "scene_02",
+          "title": "First Moves",
+          "dialogue": "These spots feel safe first.",
+          "caption": "The beginnings of a foothold form on the grid."
+        },
+        {
+          "id": "scene_03",
+          "title": "Stuck Moment",
+          "dialogue": "Time to pause and think.",
+          "caption": "Isla halts, avoiding guesses."
+        },
+        {
+          "id": "scene_04",
+          "title": "Breakthrough",
+          "dialogue": "This deduction changes everything!",
+          "caption": "A key insight shifts the puzzle's flow."
+        },
+        {
+          "id": "scene_05",
+          "title": "Nearly There",
+          "dialogue": "Almost done now.",
+          "caption": "Logic tightens as the grid fills up."
+        },
+        {
+          "id": "scene_06",
+          "title": "Finished",
+          "dialogue": "Good work today. Same time tomorrow?",
+          "caption": "Isla closes the completed puzzle with a smile."
+        }
+      ]
     }
   ],
   "ongoing_threads": [],
-  "last_updated": "2026-05-27"
+  "last_updated": "2026-05-28"
 }

@@ -1,0 +1,162 @@
+{
+  "date": "2026-05-28",
+  "character": "isla",
+  "compositor": "compose_v3_strict_clean.py",
+  "capture_dir": "captures/2026-05-28/extracted",
+  "outputs": [
+    "social/2026-05-28/01_strict_clean.png",
+    "social/2026-05-28/02_strict_clean.png",
+    "social/2026-05-28/03_strict_clean.png",
+    "social/2026-05-28/04_strict_clean.png",
+    "social/2026-05-28/05_strict_clean.png",
+    "social/2026-05-28/06_strict_clean.png"
+  ],
+  "contact_sheet": "social/2026-05-28/contact_sheet_strict_clean.jpg",
+  "social_main": "social/2026-05-28.png",
+  "scenes": [
+    {
+      "scene": "scene_01",
+      "template": "templates/characters/isla/isla_01_opening_return.png",
+      "capture": "captures/2026-05-28/extracted/01_fresh_daily_grid.png",
+      "output": "social/2026-05-28/01_strict_clean.png",
+      "screen_quad": [
+        [
+          592,
+          405
+        ],
+        [
+          1018,
+          421
+        ],
+        [
+          982,
+          756
+        ],
+        [
+          571,
+          724
+        ]
+      ]
+    },
+    {
+      "scene": "scene_02",
+      "template": "templates/characters/isla/isla_02_first_move.png",
+      "capture": "captures/2026-05-28/extracted/02_first_moves.png",
+      "output": "social/2026-05-28/02_strict_clean.png",
+      "screen_quad": [
+        [
+          610,
+          458
+        ],
+        [
+          1050,
+          474
+        ],
+        [
+          1026,
+          760
+        ],
+        [
+          588,
+          744
+        ]
+      ]
+    },
+    {
+      "scene": "scene_03",
+      "template": "templates/characters/isla/isla_03_stuck_moment.png",
+      "capture": "captures/2026-05-28/extracted/03_stuck_moment.png",
+      "output": "social/2026-05-28/03_strict_clean.png",
+      "screen_quad": [
+        [
+          548,
+          550
+        ],
+        [
+          955,
+          570
+        ],
+        [
+          928,
+          865
+        ],
+        [
+          520,
+          838
+        ]
+      ]
+    },
+    {
+      "scene": "scene_04",
+      "template": "templates/characters/isla/isla_04_breakthrough.png",
+      "capture": "captures/2026-05-28/extracted/04_breakthrough.png",
+      "output": "social/2026-05-28/04_strict_clean.png",
+      "screen_quad": [
+        [
+          612,
+          404
+        ],
+        [
+          1052,
+          414
+        ],
+        [
+          1025,
+          760
+        ],
+        [
+          580,
+          736
+        ]
+      ]
+    },
+    {
+      "scene": "scene_05",
+      "template": "templates/characters/isla/isla_05_finish.png",
+      "capture": "captures/2026-05-28/extracted/05_nearly_complete.png",
+      "output": "social/2026-05-28/05_strict_clean.png",
+      "screen_quad": [
+        [
+          617,
+          502
+        ],
+        [
+          1036,
+          520
+        ],
+        [
+          1008,
+          860
+        ],
+        [
+          587,
+          837
+        ]
+      ]
+    },
+    {
+      "scene": "scene_06",
+      "template": "templates/characters/isla/isla_06_tomorrow_set.png",
+      "capture": "captures/2026-05-28/extracted/06_complete_solution.png",
+      "output": "social/2026-05-28/06_strict_clean.png",
+      "screen_quad": [
+        [
+          652,
+          707
+        ],
+        [
+          1071,
+          721
+        ],
+        [
+          1040,
+          1010
+        ],
+        [
+          624,
+          952
+        ]
+      ]
+    }
+  ]
+}

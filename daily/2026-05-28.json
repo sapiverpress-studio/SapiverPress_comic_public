@@ -1,0 +1,110 @@
+{
+  "date": "2026-05-28",
+  "weekday": "Thursday",
+  "character_id": "isla",
+  "character_name": "Isla",
+  "render_mode": "illustrated_comic_panels",
+  "product_referenced": {
+    "key": "suite",
+    "name": "Sapiver Press Suite",
+    "url": "https://suite.sapiverpress.co.uk",
+    "natural_reference": "a return visit tomorrow"
+  },
+  "story_note": "Isla greets Thursday's Sapiver Press Suite puzzle with quiet focus, noticing new starts in the grid.",
+  "continuation_note": "She carefully gathers answers, meets a thoughtful pause, then finds a breakthrough that nearly solves the puzzle, ending with plans for a return visit tomorrow.",
+  "scenes": [
+    {
+      "id": "scene_01",
+      "title": "Opening Grid",
+      "beat": "Isla opens today's real puzzle and takes in the starting pattern",
+      "dialogue": "Let's see today's pattern.",
+      "caption": "Isla studies the fresh puzzle grid.",
+      "image_ref": "isla_01_opening_return.png",
+      "screen_state": "start"
+    },
+    {
+      "id": "scene_02",
+      "title": "First Moves",
+      "beat": "The first safe entries create a foothold",
+      "dialogue": "These spots feel safe first.",
+      "caption": "The beginnings of a foothold form on the grid.",
+      "image_ref": "isla_02_first_move.png",
+      "screen_state": "progress"
+    },
+    {
+      "id": "scene_03",
+      "title": "Stuck Moment",
+      "beat": "A fair pause before forcing anything",
+      "dialogue": "Time to pause and think.",
+      "caption": "Isla halts, avoiding guesses.",
+      "image_ref": "isla_03_stuck_moment.png",
+      "screen_state": "progress"
+    },
+    {
+      "id": "scene_04",
+      "title": "Breakthrough",
+      "beat": "One clean deduction changes the board",
+      "dialogue": "This deduction changes everything!",
+      "caption": "A key insight shifts the puzzle's flow.",
+      "image_ref": "isla_04_breakthrough.png",
+      "screen_state": "nearly_complete"
+    },
+    {
+      "id": "scene_05",
+      "title": "Nearly There",
+      "beat": "The puzzle is mostly filled and the logic is tightening",
+      "dialogue": "Almost done now.",
+      "caption": "Logic tightens as the grid fills up.",
+      "image_ref": "isla_05_finish.png",
+      "screen_state": "nearly_complete"
+    },
+    {
+      "id": "scene_06",
+      "title": "Finished",
+      "beat": "The completed puzzle screen closes the strip",
+      "dialogue": "Good work today. Same time tomorrow?",
+      "caption": "Isla closes the completed puzzle with a smile.",
+      "image_ref": "isla_06_tomorrow_set.png",
+      "screen_state": "completed"
+    }
+  ],
+  "image_manifest": {
+    "character_id": "isla",
+    "character_name": "Isla",
+    "render_mode": "illustrated_comic_panels",
+    "required_character_files": [
+      "templates/characters/isla/isla_01_opening_return.png",
+      "templates/characters/isla/isla_02_first_move.png",
+      "templates/characters/isla/isla_03_stuck_moment.png",
+      "templates/characters/isla/isla_04_breakthrough.png",
+      "templates/characters/isla/isla_05_finish.png",
+      "templates/characters/isla/isla_06_tomorrow_set.png"
+    ],
+    "text_is_overlay": true,
+    "puzzle_screen_inserted_later": true,
+    "style_rules": [
+      "Isla is the only active daily comic character.",
+      "Puzzle screen must come from a real captured puzzle page.",
+      "No giant title banners.",
+      "No masthead inside individual scene art.",
+      "No big URL overlay.",
+      "No blurry outline boxes.",
+      "Sapiver Press logo/title only on merchandise and monitor/browser URL.",
+      "Story text must continue from previous episode, not repeat a fixed template.",
+      "Puzzle screen must be composited from real capture, not invented by image generation.",
+      "The scene should be comic illustration, not photorealism."
+    ],
+    "compositor_rules": [
+      "Character art first.",
+      "Puzzle screen composited second.",
+      "Minimal story text overlaid last.",
+      "No generated puzzle grids.",
+      "No giant title/header/footer.",
+      "No large URL overlay.",
+      "No blurry outline panel.",
+      "Logo only on merch.",
+      "URL only on monitor/browser bar."
+    ]
+  },
+  "history_used_count": 4
+}
