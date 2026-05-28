@@ -156,9 +156,9 @@
       "weekday": "Thursday",
       "setting": "bookshop cafe corner",
       "puzzle_phase": "mid-week",
-      "story_note": "Isla visits a bookshop cafe corner on Thursday, encountering a puzzle that resists early progress, requiring a methodical rebuild of strategy.",
-      "continuation_note": "Unlike the past two days of thoughtful pauses at the window desk, today Isla faces a more stubborn early blockage in a new setting, forcing a complete reset before finding her rhythm.",
-      "stuck_moment": "frustrated realization, hand to chin, three-quarter face",
+      "story_note": "Isla finds a cozy spot in a bookshop cafe and works through Thursday's Trigoku, encountering a subtle misdirection that requires patience.",
+      "continuation_note": "Unlike the previous days' thoughtful pauses and logical reflection, today Isla faces a small false trail that forces her to backtrack and reconsider an earlier choice.",
+      "stuck_moment": "uncertain, frowning slightly, hand near chin",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -172,7 +172,7 @@
         "Start small.",
         "Not that one.",
         "There it is.",
-        "Coffee helps.",
+        "Nearly there.",
         "Same time tomorrow."
       ]
     }
@@ -233,9 +233,9 @@
       "weekday": "Thursday",
       "setting": "bookshop cafe corner",
       "puzzle_phase": "mid-week",
-      "story_note": "Isla visits a bookshop cafe corner on Thursday, encountering a puzzle that resists early progress, requiring a methodical rebuild of strategy.",
-      "continuation_note": "Unlike the past two days of thoughtful pauses at the window desk, today Isla faces a more stubborn early blockage in a new setting, forcing a complete reset before finding her rhythm.",
-      "stuck_moment": "frustrated realization, hand to chin, three-quarter face",
+      "story_note": "Isla finds a cozy spot in a bookshop cafe and works through Thursday's Trigoku, encountering a subtle misdirection that requires patience.",
+      "continuation_note": "Unlike the previous days' thoughtful pauses and logical reflection, today Isla faces a small false trail that forces her to backtrack and reconsider an earlier choice.",
+      "stuck_moment": "uncertain, frowning slightly, hand near chin",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -249,7 +249,7 @@
         "Start small.",
         "Not that one.",
         "There it is.",
-        "Coffee helps.",
+        "Nearly there.",
         "Same time tomorrow."
       ]
     }
