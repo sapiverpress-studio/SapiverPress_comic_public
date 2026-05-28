@@ -156,9 +156,9 @@
       "weekday": "Thursday",
       "setting": "bookshop cafe corner",
       "puzzle_phase": "mid-week",
-      "story_note": "Isla finds herself distracted by noise in the bookshop cafe, struggling to regain focus before the puzzle clicks.",
-      "continuation_note": "Unlike the previous calm, thoughtful sessions, today introduces external distraction and a moment of mild frustration before clarity returns.",
-      "stuck_moment": "mild frustration, distracted, eyes glancing away",
+      "story_note": "Isla visits a bookshop cafe corner for Thursday's puzzle, encountering a tricky symmetry that forces her to step back and reconsider her approach.",
+      "continuation_note": "Unlike the past two days at her gothic window desk, today Isla is in a public bookshop cafe, and her stuck moment involves a symmetry trap rather than a simple pause—she actively backtracks instead of just reflecting.",
+      "stuck_moment": "frowning, caught off guard, hand hovering over keyboard",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -172,8 +172,8 @@
         "Start small.",
         "Not that one.",
         "There it is.",
-        "Coffee helps.",
-        "Same time tomorrow."
+        "Nearly there.",
+        "Tomorrow, then."
       ]
     }
   ],
@@ -233,9 +233,9 @@
       "weekday": "Thursday",
       "setting": "bookshop cafe corner",
       "puzzle_phase": "mid-week",
-      "story_note": "Isla finds herself distracted by noise in the bookshop cafe, struggling to regain focus before the puzzle clicks.",
-      "continuation_note": "Unlike the previous calm, thoughtful sessions, today introduces external distraction and a moment of mild frustration before clarity returns.",
-      "stuck_moment": "mild frustration, distracted, eyes glancing away",
+      "story_note": "Isla visits a bookshop cafe corner for Thursday's puzzle, encountering a tricky symmetry that forces her to step back and reconsider her approach.",
+      "continuation_note": "Unlike the past two days at her gothic window desk, today Isla is in a public bookshop cafe, and her stuck moment involves a symmetry trap rather than a simple pause—she actively backtracks instead of just reflecting.",
+      "stuck_moment": "frowning, caught off guard, hand hovering over keyboard",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -249,8 +249,8 @@
         "Start small.",
         "Not that one.",
         "There it is.",
-        "Coffee helps.",
-        "Same time tomorrow."
+        "Nearly there.",
+        "Tomorrow, then."
       ]
     }
   ],
