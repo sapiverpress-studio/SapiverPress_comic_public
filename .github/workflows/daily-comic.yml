@@ -89,10 +89,12 @@ jobs:
       - name: Generate Isla panel images
         continue-on-error: true
         env:
+          FAL_KEY: ${{ secrets.FAL_KEY }}
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           HF_LORA_REPO: ${{ secrets.HF_LORA_REPO }}
           HF_LORA_FILE: "ISLA_SP_1779957190206.safetensors"
           HF_LORA_TRIGGER: "ISLA_SP"
+          FAL_MODEL: "fal-ai/flux-lora"
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
         run: npm run generate-images
       - name: Compose full strip and close-ups
