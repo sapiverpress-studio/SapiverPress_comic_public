@@ -1,0 +1,185 @@
+{
+  "date": "2026-05-28",
+  "character": "isla",
+  "format": "eight_image_daily_set",
+  "montage": false,
+  "files": [
+    "00_start-grid.png",
+    "01_panel-01.png",
+    "02_panel-02.png",
+    "03_panel-03.png",
+    "04_panel-04.png",
+    "05_panel-05.png",
+    "06_panel-06.png",
+    "07_finished-grid.png"
+  ],
+  "post_order": [
+    "00_start-grid.png",
+    "01_panel-01.png",
+    "02_panel-02.png",
+    "03_panel-03.png",
+    "04_panel-04.png",
+    "05_panel-05.png",
+    "06_panel-06.png",
+    "07_finished-grid.png"
+  ],
+  "archive_dir": "social/2026-05-28",
+  "latest_dir": "social/latest",
+  "story_source": "daily/2026-05-28.json",
+  "puzzle_product": "Trigoku Daily Lock",
+  "puzzle_url": "https://suite.sapiverpress.co.uk",
+  "captions": [
+    "Isla studies the fresh puzzle grid.",
+    "The beginnings of a foothold form on the grid.",
+    "Isla halts, avoiding guesses.",
+    "A key insight shifts the puzzle's flow.",
+    "Logic tightens as the grid fills up.",
+    "Isla closes the completed puzzle with a smile."
+  ],
+  "scenes": [
+    {
+      "scene": "scene_01",
+      "template": "templates/characters/isla/isla_01_opening_return.png",
+      "capture": "captures/2026-05-28/extracted/01_fresh_daily_grid.png",
+      "output": "social/2026-05-28/01_panel-01.png",
+      "screen_quad": [
+        [
+          592,
+          405
+        ],
+        [
+          1018,
+          421
+        ],
+        [
+          982,
+          756
+        ],
+        [
+          571,
+          724
+        ]
+      ]
+    },
+    {
+      "scene": "scene_02",
+      "template": "templates/characters/isla/isla_02_first_move.png",
+      "capture": "captures/2026-05-28/extracted/02_first_moves.png",
+      "output": "social/2026-05-28/02_panel-02.png",
+      "screen_quad": [
+        [
+          610,
+          458
+        ],
+        [
+          1050,
+          474
+        ],
+        [
+          1026,
+          760
+        ],
+        [
+          588,
+          744
+        ]
+      ]
+    },
+    {
+      "scene": "scene_03",
+      "template": "templates/characters/isla/isla_03_stuck_moment.png",
+      "capture": "captures/2026-05-28/extracted/03_stuck_moment.png",
+      "output": "social/2026-05-28/03_panel-03.png",
+      "screen_quad": [
+        [
+          548,
+          550
+        ],
+        [
+          955,
+          570
+        ],
+        [
+          928,
+          865
+        ],
+        [
+          520,
+          838
+        ]
+      ]
+    },
+    {
+      "scene": "scene_04",
+      "template": "templates/characters/isla/isla_04_breakthrough.png",
+      "capture": "captures/2026-05-28/extracted/04_breakthrough.png",
+      "output": "social/2026-05-28/04_panel-04.png",
+      "screen_quad": [
+        [
+          612,
+          404
+        ],
+        [
+          1052,
+          414
+        ],
+        [
+          1025,
+          760
+        ],
+        [
+          580,
+          736
+        ]
+      ]
+    },
+    {
+      "scene": "scene_05",
+      "template": "templates/characters/isla/isla_05_finish.png",
+      "capture": "captures/2026-05-28/extracted/05_nearly_complete.png",
+      "output": "social/2026-05-28/05_panel-05.png",
+      "screen_quad": [
+        [
+          617,
+          502
+        ],
+        [
+          1036,
+          520
+        ],
+        [
+          1008,
+          860
+        ],
+        [
+          587,
+          837
+        ]
+      ]
+    },
+    {
+      "scene": "scene_06",
+      "template": "templates/characters/isla/isla_06_tomorrow_set.png",
+      "capture": "captures/2026-05-28/extracted/06_complete_solution.png",
+      "output": "social/2026-05-28/06_panel-06.png",
+      "screen_quad": [
+        [
+          652,
+          707
+        ],
+        [
+          1071,
+          721
+        ],
+        [
+          1040,
+          1010
+        ],
+        [
+          624,
+          952
+        ]
+      ]
+    }
+  ]
+}
