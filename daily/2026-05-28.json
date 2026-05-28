@@ -10,8 +10,8 @@
     "url": "https://suite.sapiverpress.co.uk",
     "natural_reference": "a return visit tomorrow"
   },
-  "story_note": "Isla greets Thursday's Sapiver Press Suite puzzle with quiet focus, noticing new starts in the grid.",
-  "continuation_note": "She carefully gathers answers, meets a thoughtful pause, then finds a breakthrough that nearly solves the puzzle, ending with plans for a return visit tomorrow.",
+  "story_note": "Isla begins Thursday's Sapiver Press Suite puzzle with calm focus, observing the fresh grid pattern.",
+  "continuation_note": "After careful steps and a critical deduction, she nearly completes the puzzle and signs off, planning a return visit tomorrow.",
   "scenes": [
     {
       "id": "scene_01",
@@ -106,5 +106,5 @@
       "URL only on monitor/browser bar."
     ]
   },
-  "history_used_count": 4
+  "history_used_count": 5
 }
