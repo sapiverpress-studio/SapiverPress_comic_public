@@ -181,9 +181,9 @@
       "weekday": "Friday",
       "setting": "quiet public library reading table",
       "puzzle_phase": "late-week",
-      "story_note": "Isla finds a Friday rhythm at the library, moving through a late-week puzzle with quiet satisfaction and minimal friction.",
-      "continuation_note": "Unlike Thursday's resistance and backtracking, today feels smoother—Isla finds her entries without second-guessing, and the stuck moment is briefer, more of a natural pause than a puzzle wall.",
-      "stuck_moment": "momentary pause, eyes narrowed slightly, thoughtful but not frustrated",
+      "story_note": "Friday library session: Isla finds herself distracted by ambient noise, then settles into a smooth finish.",
+      "continuation_note": "Unlike Thursday's puzzle resistance, today's challenge is external—library sounds break her concentration. The stuck moment is environmental rather than logical.",
+      "stuck_moment": "distracted, glancing sideways, mildly annoyed",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -195,8 +195,8 @@
       "captions": [
         "Back again.",
         "Start small.",
+        "Not here.",
         "There it is.",
-        "No guessing.",
         "Nearly there.",
         "Same time tomorrow."
       ]
@@ -283,9 +283,9 @@
       "weekday": "Friday",
       "setting": "quiet public library reading table",
       "puzzle_phase": "late-week",
-      "story_note": "Isla finds a Friday rhythm at the library, moving through a late-week puzzle with quiet satisfaction and minimal friction.",
-      "continuation_note": "Unlike Thursday's resistance and backtracking, today feels smoother—Isla finds her entries without second-guessing, and the stuck moment is briefer, more of a natural pause than a puzzle wall.",
-      "stuck_moment": "momentary pause, eyes narrowed slightly, thoughtful but not frustrated",
+      "story_note": "Friday library session: Isla finds herself distracted by ambient noise, then settles into a smooth finish.",
+      "continuation_note": "Unlike Thursday's puzzle resistance, today's challenge is external—library sounds break her concentration. The stuck moment is environmental rather than logical.",
+      "stuck_moment": "distracted, glancing sideways, mildly annoyed",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -297,8 +297,8 @@
       "captions": [
         "Back again.",
         "Start small.",
+        "Not here.",
         "There it is.",
-        "No guessing.",
         "Nearly there.",
         "Same time tomorrow."
       ]
