@@ -104,32 +104,6 @@
     {
       "date": "2026-05-29",
       "weekday": "Friday",
-      "same_day_attempt": 2,
-      "setting": "quiet public library reading table",
-      "puzzle_phase": "late-week",
-      "story_note": "Isla daily run 2: a different moment in the same day, keeping the Trigoku subplot light.",
-      "continuation_note": "Progression run 2; avoid repeating earlier same-day captions, setting, and image fragments.",
-      "stuck_moment": "pen paused above the page, no guessing",
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
-        "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
-        "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
-        "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
-        "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.",
-        "By the final check, Isla carries the pause forward, not the pressure that tried to hurry her."
-      ]
-    },
-    {
-      "date": "2026-05-29",
-      "weekday": "Friday",
       "same_day_attempt": 3,
       "setting": "gothic window desk with cityscape view",
       "puzzle_phase": "late-week",
@@ -1391,6 +1365,51 @@
         "reason_for_location": "she wants a quiet start before the day gets noisy",
         "life_detail_learned": "Isla protects small morning rituals when she needs steadiness.",
         "thread_to_continue": "quiet morning rituals help her reset",
+        "puzzle_variant_mentioned": "Trigoku",
+        "variant_panel_index": 2,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Trigoku",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 2,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
+        "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
+        "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
+        "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
+        "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.",
+        "By the final check, Isla carries the pause forward, not the pressure that tried to hurry her."
+      ]
+    },
+    {
+      "date": "2026-05-29",
+      "weekday": "Friday",
+      "same_day_attempt": 31,
+      "setting": "bookshop cafe corner",
+      "puzzle_phase": "late-week",
+      "story_note": "Isla spends this entry at the bookshop cafe corner because she has come for one thing but stays for the quiet corner. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Bookshops pull Isla into longer pauses than she planned. Continue the thread: she is drawn to places with books and warm corners.",
+      "stuck_moment": "quiet frown, patient double check",
+      "life_memory_entry": {
+        "date": "2026-05-29",
+        "attempt": 31,
+        "location": "bookshop cafe corner",
+        "reason_for_location": "she has come for one thing but stays for the quiet corner",
+        "life_detail_learned": "Bookshops pull Isla into longer pauses than she planned.",
+        "thread_to_continue": "she is drawn to places with books and warm corners",
         "puzzle_variant_mentioned": "Trigoku",
         "variant_panel_index": 2,
         "uk_calendar_date": null,
@@ -1425,32 +1444,6 @@
     {
       "date": "2026-05-29",
       "weekday": "Friday",
-      "same_day_attempt": 2,
-      "setting": "quiet public library reading table",
-      "puzzle_phase": "late-week",
-      "story_note": "Isla daily run 2: a different moment in the same day, keeping the Trigoku subplot light.",
-      "continuation_note": "Progression run 2; avoid repeating earlier same-day captions, setting, and image fragments.",
-      "stuck_moment": "pen paused above the page, no guessing",
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
-        "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
-        "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
-        "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
-        "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.",
-        "By the final check, Isla carries the pause forward, not the pressure that tried to hurry her."
-      ]
-    },
-    {
-      "date": "2026-05-29",
-      "weekday": "Friday",
       "same_day_attempt": 3,
       "setting": "gothic window desk with cityscape view",
       "puzzle_phase": "late-week",
@@ -2712,6 +2705,51 @@
         "reason_for_location": "she wants a quiet start before the day gets noisy",
         "life_detail_learned": "Isla protects small morning rituals when she needs steadiness.",
         "thread_to_continue": "quiet morning rituals help her reset",
+        "puzzle_variant_mentioned": "Trigoku",
+        "variant_panel_index": 2,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Trigoku",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 2,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
+        "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
+        "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
+        "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
+        "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.",
+        "By the final check, Isla carries the pause forward, not the pressure that tried to hurry her."
+      ]
+    },
+    {
+      "date": "2026-05-29",
+      "weekday": "Friday",
+      "same_day_attempt": 31,
+      "setting": "bookshop cafe corner",
+      "puzzle_phase": "late-week",
+      "story_note": "Isla spends this entry at the bookshop cafe corner because she has come for one thing but stays for the quiet corner. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Bookshops pull Isla into longer pauses than she planned. Continue the thread: she is drawn to places with books and warm corners.",
+      "stuck_moment": "quiet frown, patient double check",
+      "life_memory_entry": {
+        "date": "2026-05-29",
+        "attempt": 31,
+        "location": "bookshop cafe corner",
+        "reason_for_location": "she has come for one thing but stays for the quiet corner",
+        "life_detail_learned": "Bookshops pull Isla into longer pauses than she planned.",
+        "thread_to_continue": "she is drawn to places with books and warm corners",
         "puzzle_variant_mentioned": "Trigoku",
         "variant_panel_index": 2,
         "uk_calendar_date": null,

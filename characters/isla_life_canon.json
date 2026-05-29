@@ -169,6 +169,12 @@
       "attempt": 31,
       "setting": "gothic window desk with cityscape view",
       "reason": "she wants a quiet start before the day gets noisy"
+    },
+    {
+      "date": "2026-05-29",
+      "attempt": 31,
+      "setting": "bookshop cafe corner",
+      "reason": "she has come for one thing but stays for the quiet corner"
     }
   ],
   "variant_memory": [
@@ -307,6 +313,12 @@
     {
       "date": "2026-05-29",
       "attempt": 30,
+      "variant_name": "Trigoku",
+      "panel_index": 2
+    },
+    {
+      "date": "2026-05-29",
+      "attempt": 31,
       "variant_name": "Trigoku",
       "panel_index": 2
     },
@@ -601,6 +613,18 @@
       "reason_for_location": "she wants a quiet start before the day gets noisy",
       "life_detail_learned": "Isla protects small morning rituals when she needs steadiness.",
       "thread_to_continue": "quiet morning rituals help her reset",
+      "puzzle_variant_mentioned": "Trigoku",
+      "variant_panel_index": 2,
+      "uk_calendar_date": null,
+      "uk_calendar_panel_index": null
+    },
+    {
+      "date": "2026-05-29",
+      "attempt": 31,
+      "location": "bookshop cafe corner",
+      "reason_for_location": "she has come for one thing but stays for the quiet corner",
+      "life_detail_learned": "Bookshops pull Isla into longer pauses than she planned.",
+      "thread_to_continue": "she is drawn to places with books and warm corners",
       "puzzle_variant_mentioned": "Trigoku",
       "variant_panel_index": 2,
       "uk_calendar_date": null,
