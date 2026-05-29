@@ -6,37 +6,37 @@
     {
       "id": "intro",
       "image_name": "00_start-grid.png",
-      "text": "Here’s today’s Sapiver Press puzzle comic."
+      "text": "Today finds Isla in co-working desk near a tall window, using the grid as a quiet reset."
     },
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "Rain on glass."
+      "text": "She gives herself one small rule: no rushing the first look."
     },
     {
       "id": "panel_2",
       "image_name": "02_panel-02.png",
-      "text": "Today has its own little rule-set — check the constraint before rushing."
+      "text": "The Trigoku twist changes how she reads the empty spaces."
     },
     {
       "id": "panel_3",
       "image_name": "03_panel-03.png",
-      "text": "Let it sit."
+      "text": "Today has its own little rule-set — check the constraint before rushing."
     },
     {
       "id": "panel_4",
       "image_name": "04_panel-04.png",
-      "text": "Line found."
+      "text": "A pattern starts to appear, but she checks it before trusting it."
     },
     {
       "id": "panel_5",
       "image_name": "05_panel-05.png",
-      "text": "Almost done."
+      "text": "The puzzle becomes part of work days make the puzzle a boundary marker."
     },
     {
       "id": "panel_6",
       "image_name": "06_panel-06.png",
-      "text": "No rush."
+      "text": "By the end, the point is not speed. It is leaving the page clearer than she found it."
     },
     {
       "id": "cta",
@@ -44,6 +44,8 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nRain on glass.\n\nToday has its own little rule-set — check the constraint before rushing.\n\nLet it sit.\n\nLine found.\n\nAlmost done.\n\nNo rush.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-05-29T11:37:09.040Z"
+  "full_text": "Today finds Isla in co-working desk near a tall window, using the grid as a quiet reset.\n\nShe gives herself one small rule: no rushing the first look.\n\nThe Trigoku twist changes how she reads the empty spaces.\n\nToday has its own little rule-set — check the constraint before rushing.\n\nA pattern starts to appear, but she checks it before trusting it.\n\nThe puzzle becomes part of work days make the puzzle a boundary marker.\n\nBy the end, the point is not speed. It is leaving the page clearer than she found it.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-05-29T11:51:57.565Z",
+  "copy_refined": "fallback",
+  "copy_refine_error": "OPENAI_API_KEY missing"
 }

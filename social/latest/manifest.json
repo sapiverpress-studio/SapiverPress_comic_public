@@ -29,12 +29,12 @@
   "puzzle_product": "Trigoku Daily Lock",
   "puzzle_url": "https://suite.sapiverpress.co.uk",
   "captions": [
-    "Rain on glass.",
+    "Between tasks.",
     "Today has its own little rule-set \u2014 check the constraint before rushing.",
-    "Let it sit.",
-    "Line found.",
-    "Almost done.",
-    "No rush."
+    "No shortcut.",
+    "Clean route.",
+    "Nearly done.",
+    "Back to work."
   ],
   "scenes": [
     {
@@ -45,8 +45,25 @@
       "replacement": "art-replacements/2026-05-29/01_panel-01.png",
       "capture": "captures/2026-05-29/extracted/01_fresh_daily_grid.png",
       "output": "social/2026-05-29/01_panel-01.png",
-      "screen_quad": [],
-      "screen_quad_mode": "overlay_skipped_no_screen_detected"
+      "screen_quad": [
+        [
+          752,
+          646
+        ],
+        [
+          1067,
+          666
+        ],
+        [
+          1069,
+          942
+        ],
+        [
+          710,
+          876
+        ]
+      ],
+      "screen_quad_mode": "detected_replacement_screen"
     },
     {
       "scene": "scene_02",
@@ -69,20 +86,20 @@
       "output": "social/2026-05-29/03_panel-03.png",
       "screen_quad": [
         [
-          813,
-          697
+          722,
+          578
         ],
         [
-          1069,
-          722
+          1067,
+          594
         ],
         [
-          1046,
-          960
+          1044,
+          880
         ],
         [
-          792,
-          884
+          685,
+          823
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen"
@@ -97,20 +114,20 @@
       "output": "social/2026-05-29/04_panel-04.png",
       "screen_quad": [
         [
-          770,
-          637
+          727,
+          641
         ],
         [
-          1067,
-          667
+          1068,
+          657
         ],
         [
-          1066,
-          946
+          1045,
+          943
         ],
         [
-          729,
-          870
+          687,
+          887
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen"
@@ -123,25 +140,8 @@
       "replacement": "art-replacements/2026-05-29/05_panel-05.png",
       "capture": "captures/2026-05-29/extracted/05_nearly_complete.png",
       "output": "social/2026-05-29/05_panel-05.png",
-      "screen_quad": [
-        [
-          757,
-          636
-        ],
-        [
-          1064,
-          664
-        ],
-        [
-          1010,
-          929
-        ],
-        [
-          713,
-          861
-        ]
-      ],
-      "screen_quad_mode": "detected_replacement_screen"
+      "screen_quad": [],
+      "screen_quad_mode": "overlay_skipped_no_screen_detected"
     },
     {
       "scene": "scene_06",
@@ -153,20 +153,20 @@
       "output": "social/2026-05-29/06_panel-06.png",
       "screen_quad": [
         [
-          747,
-          672
+          741,
+          583
         ],
         [
           1066,
-          698
+          616
         ],
         [
-          1068,
-          978
+          1063,
+          904
         ],
         [
-          710,
-          914
+          700,
+          827
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen"
