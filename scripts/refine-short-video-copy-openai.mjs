@@ -27,6 +27,14 @@ function site(value) {
   return String(value || "").replace(/^https?:\/\//, "").replace(/\/$/, "");
 }
 
+function variantName(story) {
+  return clean(story?.variant_recap?.variant_name || story?.product_referenced?.name || "Trigoku");
+}
+
+function variantLine(story) {
+  return clean(story?.variant_recap?.line || story?.variant_recap?.short_rule || "Check the constraint before rushing.");
+}
+
 function srtTime(seconds) {
   const ms = Math.round(Math.max(0, seconds) * 1000);
   const hh = Math.floor(ms / 3600000);
@@ -71,19 +79,23 @@ async function copyLatest(src, dst) {
 
 function sourceBrief(story, narration) {
   const scenes = Array.isArray(story?.scenes) ? story.scenes.slice(0, 6) : [];
+  const specificVariantName = variantName(story);
+  const specificVariantLine = variantLine(story);
   return {
     date: story?.date || narration?.date,
     setting: story?.selected_setting || story?.life_memory_entry?.location || "",
     story_note: story?.story_note || "",
     continuation_note: story?.continuation_note || "",
     life_memory_entry: story?.life_memory_entry || null,
+    variant_name: specificVariantName,
+    variant_line: specificVariantLine,
     variant_recap: story?.variant_recap || null,
     uk_calendar_date: story?.uk_calendar_date || null,
     raw_segments: narration?.segments || [],
     scenes: scenes.map((scene, index) => ({
       panel: index + 1,
-      caption: scene.caption || "",
-      dialogue: scene.dialogue || scene.speech_bubble || "",
+      caption: scene.storyboard_caption || scene.caption || "",
+      dialogue: scene.storyboard_dialogue || scene.dialogue || scene.speech_bubble || "",
       description: scene.scene_description || scene.beat || scene.title || "",
       image_fragment: scene.image_prompt_fragment || "",
       setting: scene.setting || "",
@@ -94,22 +106,21 @@ function sourceBrief(story, narration) {
 }
 
 function fallbackRefine(narration, story) {
-  const variant = clean(story?.variant_recap?.variant_name || "today's puzzle");
-  const setting = clean(story?.selected_setting || story?.life_memory_entry?.location || "a quiet corner");
-  const lifeThread = clean(story?.life_memory_entry?.thread_to_continue || story?.continuation_note || "keeping a small routine alive");
-  const rule = clean(story?.variant_recap?.line || "the rule matters before the first move");
+  const variant = variantName(story);
+  const setting = clean(story?.selected_setting || story?.life_memory_entry?.location || "somewhere she nearly rushes past");
+  const rule = variantLine(story);
   const calendar = clean(story?.uk_calendar_date?.name || "");
   const segments = [
-    { id: "intro", image_name: "00_start-grid.png", text: `Today finds Isla in ${setting}, using the grid as a quiet reset.` },
-    { id: "panel_1", image_name: "01_panel-01.png", text: "She gives herself one small rule: no rushing the first look." },
-    { id: "panel_2", image_name: "02_panel-02.png", text: `The ${variant} twist changes how she reads the empty spaces.` },
-    { id: "panel_3", image_name: "03_panel-03.png", text: rule },
-    { id: "panel_4", image_name: "04_panel-04.png", text: "A pattern starts to appear, but she checks it before trusting it." },
-    { id: "panel_5", image_name: "05_panel-05.png", text: calendar ? `${calendar} sits quietly in the background while the grid settles.` : `The puzzle becomes part of ${lifeThread}.` },
-    { id: "panel_6", image_name: "06_panel-06.png", text: "By the end, the point is not speed. It is leaving the page clearer than she found it." },
+    { id: "intro", image_name: "00_start-grid.png", text: `Anti-Knight` === variant ? `Anti-Knight today. Isla clocks it before she opens her notes.` : `${variant} today. Isla checks what sort of trouble it is first.` },
+    { id: "panel_1", image_name: "01_panel-01.png", text: `She is at ${setting}, already half-thinking about the next job.` },
+    { id: "panel_2", image_name: "02_panel-02.png", text: "Then the day starts tugging at her sleeve again." },
+    { id: "panel_3", image_name: "03_panel-03.png", text: "She leaves one message unread. Three minutes will not ruin anything." },
+    { id: "panel_4", image_name: "04_panel-04.png", text: rule },
+    { id: "panel_5", image_name: "05_panel-05.png", text: calendar ? `${calendar} is there too, but not loudly.` : "The move holds, which is annoyingly satisfying." },
+    { id: "panel_6", image_name: "06_panel-06.png", text: "She shuts the laptop before the rush gets the last word." },
     { id: "cta", image_name: "07_finished-grid.png", text: `Play along at ${site(SUITE_URL)}` },
   ];
-  return { ...narration, segments, full_text: segments.map((segment) => segment.text).join("\n\n"), copy_refined: "fallback", generated_at: new Date().toISOString() };
+  return { ...narration, title: `${variant} with Isla`, segments, full_text: segments.map((segment) => segment.text).join("\n\n"), copy_refined: "fallback", generated_at: new Date().toISOString() };
 }
 
 function parseJsonText(text) {
@@ -138,17 +149,17 @@ async function refineWithOpenAI(story, narration) {
         {
           role: "system",
           content: [
-            "You are the story editor for Sapiver Press's Isla daily puzzle video.",
-            "Turn rough panel captions into a coherent micro-story voiceover.",
-            "It must feel like a calm illustrated diary, not random captions and not advertising copy.",
-            "Keep it simple, human, understated, and UK-friendly.",
-            "Use Isla as the subject. The puzzle is a recurring thread, not the whole personality.",
-            "Include at most one brief puzzle rule note if relevant.",
-            "Include UK calendar context only if provided, and make it feel natural.",
+            "You are shaping Isla's short daily comic video script.",
+            "Write the narration as Isla thinking out loud, not as a presenter describing her.",
+            "Use contractions. Use incomplete thoughts. Let it breathe.",
+            "The tone is warm and specific, like a voice note to a friend, not a product ad.",
+            "Name the actual puzzle variant from variant_name. Do not say today's puzzle or the grid.",
+            "Use variant_line for the one puzzle-rule beat. Do not replace it with generic Trigoku wording.",
+            "Do not say: a quiet moment, a small ritual, taking a pause, staying present.",
             "Avoid babble, clichés, fake drama, hashtags, emojis, and repeated phrases.",
             "Return JSON only with: title, caption, segments.",
             "segments must contain exactly 8 objects matching the input image_name order, each with id, image_name, text.",
-            "Each text should be 8 to 18 words. Total voiceover should feel like one continuous short story.",
+            "Each text should be 6 to 16 words. Total voiceover should feel like one continuous short story.",
           ].join(" "),
         },
         {
@@ -179,8 +190,10 @@ async function refineWithOpenAI(story, narration) {
 
   return {
     ...narration,
-    title: clean(parsed.title || narration.title || "Sapiver Press Daily Comic"),
-    caption: clean(parsed.caption || `Today’s Sapiver Press puzzle comic. Play along: ${SUITE_URL}`),
+    title: clean(parsed.title || narration.title || `${variantName(story)} with Isla`),
+    caption: clean(parsed.caption || `Today’s ${variantName(story)} comic. Play along: ${SUITE_URL}`),
+    variant_name: variantName(story),
+    variant_line: variantLine(story),
     segments,
     full_text: segments.map((segment) => segment.text).join("\n\n"),
     copy_refined: "openai",
@@ -213,12 +226,14 @@ async function main() {
 
   await writeJson(narrationFile, refined);
   await writeText(path.join(dir, "script.txt"), `${refined.full_text}\n`);
-  await writeText(path.join(dir, "caption.txt"), `${refined.caption || `Today’s Sapiver Press puzzle comic.\nPlay along: ${SUITE_URL}`}\n`);
+  await writeText(path.join(dir, "caption.txt"), `${refined.caption || `Today’s ${variantName(story)} comic.\nPlay along: ${SUITE_URL}`}\n`);
   await writeText(path.join(dir, "subtitles.srt"), srt(refined.segments));
   await writeJson(path.join(dir, "manifest.json"), {
     date,
     status: "script_ready",
     voice_name: refined.voice_name || "Isla Sterling",
+    variant_name: variantName(story),
+    variant_line: variantLine(story),
     copy_refined: refined.copy_refined,
     copy_model: refined.copy_model || "fallback",
     generated_at: refined.generated_at,
