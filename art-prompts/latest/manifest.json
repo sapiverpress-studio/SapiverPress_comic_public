@@ -1,12 +1,15 @@
 {
   "date": "2026-05-29",
   "character": "isla",
-  "format": "daily_art_prompt_pack_v1",
-  "purpose": "Generate six replaceable Isla panel artworks while preserving the real puzzle screenshot compositor.",
+  "format": "daily_art_prompt_pack_v2_locked_isla_library",
+  "purpose": "Generate six replaceable Isla panel artworks with a locked scene base and per-panel variation only.",
   "replacement_dir": "art-replacements/2026-05-29",
   "prompt_dir": "art-prompts/2026-05-29",
   "prompts_json": "art-prompts/2026-05-29/prompts.json",
   "compositor_rule": "If a matching replacement PNG exists, use it. Otherwise use the locked template artwork.",
+  "locked_prompt_base": "ISLA_SP, young Black woman, warm medium brown skin, light freckles on nose and cheeks, natural coily dark hair in high voluminous puff bun, wide floral teal rust orange cream headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, seated at dark wooden desk, cosy library study, cream ceramic mug on desk, open journal with handwritten notes, stack of dark hardcover books, vintage desk lamp warm amber glow, large gothic window with autumn city view, ivy bookshelf behind her, warm golden hour light, painterly editorial illustration style, cinematic warm amber palette, detailed textures",
+  "locked_screen_target": "open laptop on desk, screen facing away, soft blue glow",
+  "locked_negative_prompt": "phone held to camera, tablet facing camera, screen covering face, floating screen overlay, device obscuring face",
   "panel_files": [
     "01_panel-01.png",
     "02_panel-02.png",
@@ -78,5 +81,5 @@
     }
   ],
   "story_source": "daily/2026-05-29.json",
-  "generated_at": "2026-05-29T00:28:08.407Z"
+  "generated_at": "2026-05-29T04:17:25.071Z"
 }

@@ -11,7 +11,8 @@ Drop finished generated panel artwork into this folder using these exact names:
 
 Rules:
 
-- Keep screens blank/dark and clearly visible.
+- Use the locked Isla library-study scene base for all generated panels.
+- Keep the laptop on the desk with its screen facing away and a soft blue glow.
 - Do not include puzzle content, captions, speech bubbles, page headers, footers, or large Sapiver Press titles.
 - The compositor will insert the real daily puzzle screenshots and captions.
 - If a file is missing, the compositor falls back to the locked template artwork.
