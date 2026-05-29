@@ -35,10 +35,10 @@ async function writeJson(relativePath, data) {
 function locationForSetting(setting = "") {
   const text = setting.toLowerCase();
   if (text.includes("train")) return { location: "train", composition: "train_right_screen" };
+  if (text.includes("bookshop")) return { location: "bookshop", composition: "desk_right_screen" };
   if (text.includes("cafe") || text.includes("café")) return { location: "cafe", composition: "cafe_right_screen" };
   if (text.includes("co-working") || text.includes("coworking") || text.includes("work")) return { location: "coworking", composition: "desk_right_screen" };
   if (text.includes("kitchen") || text.includes("home")) return { location: "home", composition: "desk_right_screen" };
-  if (text.includes("bookshop")) return { location: "bookshop", composition: "desk_right_screen" };
   if (text.includes("rain")) return { location: "rainy_window", composition: "desk_right_screen" };
   if (text.includes("public library")) return { location: "public_library", composition: "desk_right_screen" };
   if (text.includes("library")) return { location: "library_study", composition: "desk_right_screen" };
@@ -91,7 +91,7 @@ async function main() {
   const changedLatest = await patchStory("latest.json");
   const story = await readJson(`daily/${date}.json`, null);
   if (story?.image_manifest) await writeJson(`image-manifests/${date}.json`, story.image_manifest);
-  console.log(`Per-panel location keys applied: daily=${changedDaily ? "yes" : "no"}, latest=${changedLatest ? "yes" : "no"}`);
+  console.log(`Scene location keys applied: daily=${changedDaily ? "yes" : "no"}, latest=${changedLatest ? "yes" : "no"}`);
 }
 
 main().catch((error) => {
