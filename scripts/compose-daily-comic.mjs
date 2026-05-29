@@ -80,8 +80,8 @@ function scaleBox(box, sx, sy) {
 function textLayer(width, height, scene, slot) {
   const s = slot.speech;
   const c = slot.caption;
-  const speechLines = wrap(scene.dialogue, s.max, 3);
-  const captionLines = wrap(scene.caption, c.max, 2);
+  const speechLines = wrap(scene.storyboard_dialogue || scene.dialogue, s.max, 3);
+  const captionLines = wrap(scene.storyboard_caption || scene.caption, c.max, 2);
   const speech = speechLines.map((line, i) => `<tspan x="${s.x + s.w / 2}" y="${s.y + 50 + i * s.size * 0.92}">${esc(line)}</tspan>`).join("");
   const caption = captionLines.map((line, i) => `<tspan x="${c.x + c.w / 2}" y="${c.y + 58 + i * c.size * 0.85}">${esc(line)}</tspan>`).join("");
   return Buffer.from(`<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg"><text font-family="Georgia, serif" font-style="italic" font-size="${s.size}" fill="#111" text-anchor="middle">${speech}</text><text font-family="Georgia, serif" font-style="italic" font-size="${c.size}" fill="#111" text-anchor="middle">${caption}</text></svg>`);
