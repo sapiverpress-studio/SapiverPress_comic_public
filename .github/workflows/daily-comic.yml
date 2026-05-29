@@ -86,6 +86,13 @@ jobs:
           ANTHROPIC_MODEL: "claude-sonnet-4-5-20250929"
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
         run: npm run daily
+      - name: Humanise storyboard with Gemini
+        continue-on-error: true
+        env:
+          DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ secrets.GEMINI_MODEL }}
+        run: node scripts/humanise-storyboard-gemini.mjs
       - name: Generate Phase 3 art prompt pack
         env:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
