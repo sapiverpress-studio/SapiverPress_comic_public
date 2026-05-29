@@ -55,7 +55,7 @@
       "output_file": "social/2026-05-29/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "That opens it.",
+      "caption": "No guessing.",
       "scene_id": "scene_03"
     },
     {
@@ -65,7 +65,7 @@
       "output_file": "social/2026-05-29/04_panel-04.png",
       "image_name": "04_panel-04.png",
       "fallback_template": "templates/characters/isla/isla_04_breakthrough.png",
-      "caption": "No guessing.",
+      "caption": "That opens it.",
       "scene_id": "scene_04"
     },
     {
@@ -90,5 +90,5 @@
     }
   ],
   "story_source": "daily/2026-05-29.json",
-  "generated_at": "2026-05-29T07:21:53.915Z"
+  "generated_at": "2026-05-29T07:26:12.745Z"
 }
