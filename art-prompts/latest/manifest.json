@@ -1,13 +1,13 @@
 {
   "date": "2026-05-29",
   "character": "isla",
-  "format": "daily_art_prompt_pack_v2_locked_isla_library",
-  "purpose": "Generate six replaceable Isla panel artworks with a locked scene base and per-panel variation only.",
+  "format": "daily_art_prompt_pack_v3_locked_isla_base_plus_story_beat",
+  "purpose": "Generate six replaceable Isla panel artworks using the locked scene base plus the panel story beat only.",
   "replacement_dir": "art-replacements/2026-05-29",
   "prompt_dir": "art-prompts/2026-05-29",
   "prompts_json": "art-prompts/2026-05-29/prompts.json",
   "compositor_rule": "If a matching replacement PNG exists, use it. Otherwise use the locked template artwork.",
-  "locked_prompt_base": "ISLA_SP, young Black woman, warm medium brown skin, light freckles on nose and cheeks, natural coily dark hair in high voluminous puff bun, wide floral teal rust orange cream headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, seated at dark wooden desk, cosy library study, cream ceramic mug with SP logo on desk, open journal with handwritten notes, stack of dark hardcover books, vintage desk lamp warm amber glow, large gothic window with autumn city view, ivy bookshelf behind her, open laptop to her right with screen facing away showing solid blue glow, Isla not touching laptop, warm golden hour light, painterly editorial illustration style, cinematic warm amber palette, detailed textures",
+  "locked_prompt_base": "ISLA_SP, young Black woman, warm medium brown skin, light freckles on nose and cheeks, natural coily dark hair in high voluminous puff bun, wide floral teal rust orange cream headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, seated at dark wooden desk, cosy library study, cream ceramic mug on desk, open journal with handwritten notes, stack of dark hardcover books, vintage desk lamp warm amber glow, large gothic window with autumn city view, ivy bookshelf behind her, soft focused smile, chin resting on hand, eyes on laptop screen, warm golden hour light, painterly editorial illustration style, cinematic warm amber palette, detailed textures",
   "locked_screen_target": "open laptop to her right with screen facing away showing solid blue glow, Isla not touching laptop",
   "locked_negative_prompt": "screen obscuring face, device held in front of face, floating overlay, phone pressed to cheek",
   "panel_files": [
@@ -46,7 +46,7 @@
       "output_file": "social/2026-05-29/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "Not that one.",
+      "caption": "No guessing.",
       "scene_id": "scene_03"
     },
     {
@@ -66,7 +66,7 @@
       "output_file": "social/2026-05-29/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "That opens it.",
+      "caption": "Nearly there.",
       "scene_id": "scene_05"
     },
     {
@@ -81,5 +81,5 @@
     }
   ],
   "story_source": "daily/2026-05-29.json",
-  "generated_at": "2026-05-29T05:20:17.640Z"
+  "generated_at": "2026-05-29T05:56:19.732Z"
 }
