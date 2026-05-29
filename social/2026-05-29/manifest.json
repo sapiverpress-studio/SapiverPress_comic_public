@@ -31,10 +31,10 @@
   "captions": [
     "Back again.",
     "Start small.",
-    "Not that one.",
-    "One number at a time.",
     "There it is.",
-    "Same time tomorrow."
+    "One number at a time.",
+    "Nearly there.",
+    "A clean finish."
   ],
   "scenes": [
     {
@@ -47,20 +47,20 @@
       "output": "social/2026-05-29/01_panel-01.png",
       "screen_quad": [
         [
-          769,
-          667
+          775,
+          717
         ],
         [
-          1069,
-          692
+          1065,
+          735
         ],
         [
-          1030,
-          932
+          1029,
+          947
         ],
         [
-          729,
-          870
+          742,
+          898
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen"
@@ -75,20 +75,20 @@
       "output": "social/2026-05-29/02_panel-02.png",
       "screen_quad": [
         [
-          682,
-          649
+          814,
+          662
         ],
         [
-          1026,
-          669
+          1068,
+          677
         ],
         [
-          994,
+          1061,
           911
         ],
         [
-          659,
-          860
+          778,
+          862
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen"
@@ -103,20 +103,20 @@
       "output": "social/2026-05-29/03_panel-03.png",
       "screen_quad": [
         [
-          755,
-          663
+          820,
+          732
         ],
         [
-          1047,
-          681
+          1068,
+          754
         ],
         [
-          1001,
-          911
+          1068,
+          976
         ],
         [
-          714,
-          861
+          781,
+          925
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen"
@@ -131,20 +131,20 @@
       "output": "social/2026-05-29/04_panel-04.png",
       "screen_quad": [
         [
-          703,
-          681
+          788,
+          660
         ],
         [
-          1019,
-          705
+          1068,
+          679
         ],
         [
-          978,
-          950
+          1056,
+          923
         ],
         [
-          667,
-          893
+          755,
+          864
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen"
@@ -159,20 +159,20 @@
       "output": "social/2026-05-29/05_panel-05.png",
       "screen_quad": [
         [
-          736,
-          713
+          764,
+          660
         ],
         [
-          993,
-          737
+          1068,
+          690
         ],
         [
-          950,
-          955
+          1030,
+          932
         ],
         [
-          699,
-          896
+          723,
+          873
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen"
@@ -187,20 +187,20 @@
       "output": "social/2026-05-29/06_panel-06.png",
       "screen_quad": [
         [
-          785,
-          688
+          758,
+          657
         ],
         [
-          1067,
-          710
+          1045,
+          675
         ],
         [
-          1066,
-          947
+          1005,
+          898
         ],
         [
-          748,
-          893
+          726,
+          854
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen"
