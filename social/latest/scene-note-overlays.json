@@ -1,0 +1,67 @@
+{
+  "date": "2026-05-29",
+  "status": "complete",
+  "purpose": "Add controlled readable Sapiver Press scene notes after composition.",
+  "files": [
+    {
+      "file": "01_panel-01.png",
+      "status": "noted",
+      "location_key": "home",
+      "lines": [
+        "SP Notes",
+        "One quiet page",
+        "before the day"
+      ]
+    },
+    {
+      "file": "02_panel-02.png",
+      "status": "noted",
+      "location_key": "train",
+      "lines": [
+        "Travel Note",
+        "Keep the thread",
+        "between stops"
+      ]
+    },
+    {
+      "file": "03_panel-03.png",
+      "status": "noted",
+      "location_key": "cafe",
+      "lines": [
+        "Puzzle Note",
+        "Check the rule",
+        "then move"
+      ]
+    },
+    {
+      "file": "04_panel-04.png",
+      "status": "noted",
+      "location_key": "coworking",
+      "lines": [
+        "Desk Note",
+        "One clear move",
+        "back to work"
+      ]
+    },
+    {
+      "file": "05_panel-05.png",
+      "status": "noted",
+      "location_key": "bookshop",
+      "lines": [
+        "Bookshop Note",
+        "One more page",
+        "Sapiver Press"
+      ]
+    },
+    {
+      "file": "06_panel-06.png",
+      "status": "noted",
+      "location_key": "rainy_window",
+      "lines": [
+        "SP Notes",
+        "Clearer now",
+        "tomorrow waits"
+      ]
+    }
+  ]
+}

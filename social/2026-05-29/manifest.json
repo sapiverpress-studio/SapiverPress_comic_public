@@ -39,9 +39,9 @@
   "storyboard_locations": [
     "small home kitchen table in warm morning light",
     "train table by the window",
-    "gothic window desk with cityscape view",
     "outdoor cafe street table",
     "co-working desk near a tall window",
+    "bookshop cafe corner",
     "rainy window nook with plants"
   ],
   "scenes": [
@@ -53,8 +53,25 @@
       "replacement": "art-replacements/2026-05-29/01_panel-01.png",
       "capture": "captures/2026-05-29/extracted/01_fresh_daily_grid.png",
       "output": "social/2026-05-29/01_panel-01.png",
-      "screen_quad": [],
-      "screen_quad_mode": "overlay_skipped_no_screen_detected",
+      "screen_quad": [
+        [
+          666,
+          579
+        ],
+        [
+          1043,
+          599
+        ],
+        [
+          1004,
+          871
+        ],
+        [
+          630,
+          816
+        ]
+      ],
+      "screen_quad_mode": "detected_replacement_screen",
       "storyboard_text": "One clean look first.\nIsla starts at home, giving herself one quiet minute before the day begins asking for things.",
       "panel_location": "small home kitchen table in warm morning light"
     },
@@ -68,20 +85,20 @@
       "output": "social/2026-05-29/02_panel-02.png",
       "screen_quad": [
         [
-          769,
-          626
+          666,
+          669
         ],
         [
-          1068,
-          659
+          1025,
+          693
         ],
         [
-          1038,
-          912
+          988,
+          948
         ],
         [
-          724,
-          842
+          632,
+          890
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -98,25 +115,25 @@
       "output": "social/2026-05-29/03_panel-03.png",
       "screen_quad": [
         [
-          724,
-          575
+          727,
+          687
         ],
         [
-          1066,
-          599
+          1067,
+          712
         ],
         [
-          1025,
-          851
+          1049,
+          976
         ],
         [
-          690,
-          789
+          691,
+          917
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
       "storyboard_text": "No rushing this one.\nBy midday, she has carried the puzzle into another pocket of borrowed quiet.",
-      "panel_location": "gothic window desk with cityscape view"
+      "panel_location": "outdoor cafe street table"
     },
     {
       "scene": "scene_04",
@@ -128,25 +145,25 @@
       "output": "social/2026-05-29/04_panel-04.png",
       "screen_quad": [
         [
+          774,
+          615
+        ],
+        [
+          1067,
+          637
+        ],
+        [
+          1069,
+          921
+        ],
+        [
           725,
-          687
-        ],
-        [
-          1066,
-          709
-        ],
-        [
-          1066,
-          1025
-        ],
-        [
-          680,
-          951
+          853
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
       "storyboard_text": "Today has its own little rule-set \u2014 check the constraint before rushing.\nTrigoku changes the route through the puzzle, so she checks the constraint before trusting a move.",
-      "panel_location": "outdoor cafe street table"
+      "panel_location": "co-working desk near a tall window"
     },
     {
       "scene": "scene_05",
@@ -158,25 +175,25 @@
       "output": "social/2026-05-29/05_panel-05.png",
       "screen_quad": [
         [
-          706,
-          644
+          727,
+          615
         ],
         [
-          1037,
-          671
+          1067,
+          645
         ],
         [
-          988,
-          941
+          1028,
+          902
         ],
         [
-          668,
-          876
+          688,
+          835
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
       "storyboard_text": "That gives me a path.\nLater, one careful idea holds, and the page starts to feel less noisy than the day around it.",
-      "panel_location": "co-working desk near a tall window"
+      "panel_location": "bookshop cafe corner"
     },
     {
       "scene": "scene_06",
@@ -186,25 +203,8 @@
       "replacement": "art-replacements/2026-05-29/06_panel-06.png",
       "capture": "captures/2026-05-29/extracted/06_complete_solution.png",
       "output": "social/2026-05-29/06_panel-06.png",
-      "screen_quad": [
-        [
-          714,
-          726
-        ],
-        [
-          1030,
-          753
-        ],
-        [
-          980,
-          1008
-        ],
-        [
-          667,
-          948
-        ]
-      ],
-      "screen_quad_mode": "detected_replacement_screen",
+      "screen_quad": [],
+      "screen_quad_mode": "overlay_skipped_no_screen_detected",
       "storyboard_text": "Clearer than before.\nBy the final check, the win is not speed; it is leaving the day a little clearer.",
       "panel_location": "rainy window nook with plants"
     }
