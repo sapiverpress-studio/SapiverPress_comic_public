@@ -93,7 +93,7 @@ jobs:
           FAL_KEY: ${{ secrets.FAL_KEY }}
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           HF_LORA_TRIGGER: "ISLA_SP"
-          FAL_MODEL: "fal-ai/flux-lora"
+          FAL_MODEL: "fal-ai/z-image/turbo/lora"
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
         run: npm run generate-images
       - name: Compose full strip and close-ups
