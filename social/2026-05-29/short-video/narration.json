@@ -1,7 +1,7 @@
 {
   "date": "2026-05-29",
   "title": "Sapiver Press Daily Comic",
-  "voice_name": "Isla Fletcher",
+  "voice_name": "Isla Sterling",
   "segments": [
     {
       "id": "intro",
@@ -11,32 +11,32 @@
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "Kitchen quiet."
+      "text": "Bookshop corner."
     },
     {
       "id": "panel_2",
       "image_name": "02_panel-02.png",
-      "text": "Today has its own little rule-set — check the constraint before rushing."
+      "text": "First mark."
     },
     {
       "id": "panel_3",
       "image_name": "03_panel-03.png",
-      "text": "Think slower."
+      "text": "Pause there."
     },
     {
       "id": "panel_4",
       "image_name": "04_panel-04.png",
-      "text": "There now."
+      "text": "That was it."
     },
     {
       "id": "panel_5",
       "image_name": "05_panel-05.png",
-      "text": "Last checks."
+      "text": "Today has its own little rule-set — check the constraint before rushing."
     },
     {
       "id": "panel_6",
       "image_name": "06_panel-06.png",
-      "text": "Day begins."
+      "text": "One more page."
     },
     {
       "id": "cta",
@@ -44,6 +44,6 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nKitchen quiet.\n\nToday has its own little rule-set — check the constraint before rushing.\n\nThink slower.\n\nThere now.\n\nLast checks.\n\nDay begins.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-05-29T10:57:40.264Z"
+  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nBookshop corner.\n\nFirst mark.\n\nPause there.\n\nThat was it.\n\nToday has its own little rule-set — check the constraint before rushing.\n\nOne more page.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-05-29T11:02:34.690Z"
 }
