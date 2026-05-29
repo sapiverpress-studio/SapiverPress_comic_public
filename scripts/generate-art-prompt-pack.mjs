@@ -5,8 +5,8 @@ const ROOT = process.cwd();
 const CHARACTER = (process.env.COMIC_CHARACTER || "isla").trim().toLowerCase() || "isla";
 const SUITE_URL = process.env.SUITE_URL || "https://suite.sapiverpress.co.uk";
 const LORA_TRIGGER = process.env.HF_LORA_TRIGGER || "ISLA_SP";
-const LORA_REPO = process.env.HF_LORA_REPO || "sapiverpress/sapiverpress-isla-lora";
-const LORA_FILE = process.env.HF_LORA_FILE || "ISLA_SP_1779957190206.safetensors";
+const LORA_REPO = "sapiverpress/sapiverpress-isla-lora";
+const LORA_FILE = "ISLA_SP_1779957190206.safetensors";
 
 const PANEL_FILES = [
   "01_panel-01.png",
@@ -25,6 +25,19 @@ const TEMPLATE_REFS = [
   "isla_05_finish.png",
   "isla_06_tomorrow_set.png",
 ];
+
+const DEFAULT_PANEL_VARIATIONS = [
+  "calm focused expression, looking down toward the open journal, one hand near a pencil, quiet start of the puzzle story",
+  "small curious smile, eyes glancing toward the laptop glow, hand resting beside the mug, noticing the first useful clue",
+  "thoughtful pause, eyebrows slightly raised, gaze angled to the side, fingertips touching the journal edge, stuck moment before guessing",
+  "gentle breakthrough expression, leaning forward slightly, eyes bright, one hand lifted as if an idea has landed",
+  "concentrated satisfaction, looking between journal notes and laptop glow, relaxed shoulders, puzzle nearly solved",
+  "warm satisfied smile, looking back toward the desk, hands settling the journal closed, calm finished-story moment",
+];
+
+function decodeText(value) {
+  return Buffer.from(String(value || ""), "base64").toString("utf8");
+}
 
 function londonDateString() {
   const override = process.env.DATE_OVERRIDE || "";
@@ -50,6 +63,18 @@ async function readJson(filePath, fallback = null) {
   }
 }
 
+async function loadLocks() {
+  const cfg = await readJson(path.join(ROOT, "config", "phase4_locks.json"), null);
+  if (!cfg?.base || !cfg?.screen_target || !cfg?.negative_prompt) {
+    throw new Error("Missing config/phase4_locks.json encoded prompt locks");
+  }
+  return {
+    base: decodeText(cfg.base),
+    screenTarget: decodeText(cfg.screen_target),
+    negativePrompt: decodeText(cfg.negative_prompt),
+  };
+}
+
 async function writeText(filePath, text) {
   await fs.mkdir(path.dirname(filePath), { recursive: true });
   await fs.writeFile(filePath, text, "utf8");
@@ -63,65 +88,28 @@ function clean(value) {
   return String(value || "").replace(/\s+/g, " ").trim();
 }
 
-function characterLock() {
-  return [
-    `LORA TRIGGER: ${LORA_TRIGGER}. Use this exact trigger word for Isla.`,
-    `CANONICAL CHARACTER: ${LORA_TRIGGER}, Isla, young Black woman, warm medium brown skin, light freckles on nose and cheeks, natural coily dark hair in a high voluminous puff bun, wide floral teal/rust/orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie.`,
-    "Keep Isla recognisable across all six images. Vary pose, camera angle, expression, and activity naturally; do not repeat the same composition.",
-  ].join("\n");
-}
-
-function screenLock() {
-  return [
-    "DEVICE RULE: include one laptop, tablet, or monitor with a clear blank/dark screen area facing Isla naturally, not audience-facing unless the perspective makes sense.",
-    "Do not draw puzzle grids, Sudoku/Trigoku numbers, captions, speech bubbles, page headers, footers, or big Sapiver Press titles into the artwork. The real puzzle screenshot and captions are added later by the compositor.",
-    "Sapiver Press branding is allowed only as subtle merch or a tiny environmental detail, never as a poster/header/title.",
-  ].join("\n");
-}
-
-function outputLock(fileName) {
-  return [
-    `OUTPUT FILE: ${fileName}`,
-    "Recommended format: PNG, square or landscape comic-panel illustration, 1024px minimum, clean screen area visible for compositor replacement.",
-    "No baked-in text except tiny incidental environment detail.",
-  ].join("\n");
-}
-
-function buildPrompt({ story, scene, index }) {
-  const setting = clean(scene.setting || story.selected_setting || "modern cosy workspace");
-  const sceneDescription = clean(scene.scene_description || scene.beat || scene.title || "quiet daily puzzle moment");
-  const promptFragment = clean(scene.image_prompt_fragment || "natural focused moment");
-  const viewRule = clean(scene.view_rule || "natural varied camera angle, Isla's face clearly visible");
+function lockedPanelVariation({ scene, index, screenTarget }) {
+  const expression = clean(scene.expression || scene.emotion || scene.mood || "");
+  const gaze = clean(scene.gaze || scene.view_rule || "");
+  const storyBeat = clean(scene.image_prompt_fragment || scene.scene_description || scene.beat || scene.title || scene.caption || DEFAULT_PANEL_VARIATIONS[index]);
   const caption = clean(scene.caption || "");
-
   return [
-    `${LORA_TRIGGER}, Sapiver Press daily comic art, panel ${index + 1} of 6`,
-    "",
-    `SAPIVER PRESS DAILY COMIC ART PROMPT — ${story.date || "unknown date"} — PANEL ${index + 1}/6`,
-    "",
-    characterLock(),
-    "",
-    `SETTING: ${setting}`,
-    `SCENE: ${sceneDescription}`,
-    `MOOD/ACTION: ${promptFragment}`,
-    `CAMERA/VIEW: ${viewRule}`,
-    caption ? `STORY CAPTION FOR CONTEXT ONLY, DO NOT RENDER AS TEXT: ${caption}` : "",
-    "STYLE: warm painterly editorial illustration, cinematic amber palette, detailed but readable, premium lifestyle comic panel, natural depth, coherent environment, no duplicated pose.",
-    "",
-    screenLock(),
-    "",
-    outputLock(PANEL_FILES[index]),
-  ].filter(Boolean).join("\n");
+    DEFAULT_PANEL_VARIATIONS[index],
+    expression ? `expression detail: ${expression}` : "",
+    gaze ? `gaze direction and camera detail: ${gaze}` : "",
+    storyBeat ? `story beat detail: ${storyBeat}` : "",
+    caption ? `panel text context only, do not render as written words: ${caption}` : "",
+    screenTarget,
+    "keep portrait clear, device below eye line, natural desk perspective",
+  ].filter(Boolean).join(", ");
 }
 
-function negativePrompt() {
-  return [
-    "text, words, captions, speech bubble, comic dialogue, page number, footer, header, watermark, large logo, brand title, puzzle grid, sudoku numbers, trigoku numbers, distorted hands, duplicated character, child, low quality, blurry, extra limbs, laptop facing away from user illogically",
-  ].join(", ");
+function buildPrompt({ scene, index, locks }) {
+  return `${locks.base}, ${lockedPanelVariation({ scene, index, screenTarget: locks.screenTarget })}`;
 }
 
 function replacementReadme(date) {
-  return `# Sapiver Press Comic Art Replacement Slots — ${date}\n\nDrop finished generated panel artwork into this folder using these exact names:\n\n${PANEL_FILES.map((name) => `- ${name}`).join("\n")}\n\nRules:\n\n- Keep screens blank/dark and clearly visible.\n- Do not include puzzle content, captions, speech bubbles, page headers, footers, or large Sapiver Press titles.\n- The compositor will insert the real daily puzzle screenshots and captions.\n- If a file is missing, the compositor falls back to the locked template artwork.\n- Starter and finished grid images are still generated from the real captured puzzle state.\n\nPlay URL: ${SUITE_URL}\n`;
+  return `# Sapiver Press Comic Art Replacement Slots — ${date}\n\nDrop finished generated panel artwork into this folder using these exact names:\n\n${PANEL_FILES.map((name) => `- ${name}`).join("\n")}\n\nRules:\n\n- Use the locked Isla library-study scene base for all generated panels.\n- Keep the laptop on the desk with its screen facing away and a soft blue glow.\n- Do not include puzzle content, captions, speech bubbles, page headers, footers, or large Sapiver Press titles.\n- The compositor will insert the real daily puzzle screenshots and captions.\n- If a file is missing, the compositor falls back to the locked template artwork.\n- Starter and finished grid images are still generated from the real captured puzzle state.\n\nPlay URL: ${SUITE_URL}\n`;
 }
 
 async function mirrorFolder(sourceDir, latestDir) {
@@ -135,12 +123,13 @@ async function mirrorFolder(sourceDir, latestDir) {
 }
 
 async function main() {
+  const locks = await loadLocks();
   const date = londonDateString();
   const story = await readJson(path.join(ROOT, "daily", `${date}.json`), await readJson(path.join(ROOT, "latest.json"), null));
   if (!story) throw new Error(`Missing daily/${date}.json and latest.json. Cannot generate art prompt pack.`);
 
   const scenes = [...(story.scenes || [])].slice(0, 6);
-  while (scenes.length < 6) scenes.push({ title: `Panel ${scenes.length + 1}`, caption: "", scene_description: "Daily puzzle moment" });
+  while (scenes.length < 6) scenes.push({ title: `Panel ${scenes.length + 1}`, caption: "", scene_description: DEFAULT_PANEL_VARIATIONS[scenes.length] });
 
   const promptDir = path.join(ROOT, "art-prompts", date);
   const latestPromptDir = path.join(ROOT, "art-prompts", "latest");
@@ -152,7 +141,8 @@ async function main() {
   for (let index = 0; index < 6; index += 1) {
     const scene = scenes[index];
     const promptFile = `${String(index + 1).padStart(2, "0")}_panel-${String(index + 1).padStart(2, "0")}_prompt.txt`;
-    const promptText = buildPrompt({ story, scene, index });
+    const variation = lockedPanelVariation({ scene, index, screenTarget: locks.screenTarget });
+    const promptText = buildPrompt({ scene, index, locks });
     await writeText(path.join(promptDir, promptFile), `${promptText}\n`);
 
     const panel = {
@@ -173,41 +163,45 @@ async function main() {
       replacement_file: panel.replacement_file,
       prompt_file: panel.prompt_file,
       prompt: promptText,
-      negative_prompt: negativePrompt(),
+      negative_prompt: locks.negativePrompt,
       caption: panel.caption,
+      locked_base: locks.base,
+      variation,
     });
   }
 
+  const generatedAt = new Date().toISOString();
   const manifest = {
     date,
     character: CHARACTER,
-    format: "daily_art_prompt_pack_v1",
-    purpose: "Generate six replaceable Isla panel artworks while preserving the real puzzle screenshot compositor.",
+    format: "daily_art_prompt_pack_v2_locked_isla_library",
+    purpose: "Generate six replaceable Isla panel artworks with a locked scene base and per-panel variation only.",
     replacement_dir: `art-replacements/${date}`,
     prompt_dir: `art-prompts/${date}`,
     prompts_json: `art-prompts/${date}/prompts.json`,
     compositor_rule: "If a matching replacement PNG exists, use it. Otherwise use the locked template artwork.",
+    locked_prompt_base: locks.base,
+    locked_screen_target: locks.screenTarget,
+    locked_negative_prompt: locks.negativePrompt,
     panel_files: PANEL_FILES,
     panels,
     story_source: story.date === date ? `daily/${date}.json` : "latest.json",
-    generated_at: new Date().toISOString(),
+    generated_at: generatedAt,
   };
 
   const promptsPayload = {
     date,
     character: CHARACTER,
-    format: "daily_art_prompts_json_v1",
-    lora: {
-      trigger_word: LORA_TRIGGER,
-      repo: LORA_REPO,
-      file: LORA_FILE,
-      base_model: "z_image_turbo",
-    },
+    format: "daily_art_prompts_json_v2_locked_isla_library",
+    lora: { trigger_word: LORA_TRIGGER, repo: LORA_REPO, file: LORA_FILE, base_model: "z_image_turbo" },
+    locked_prompt_base: locks.base,
+    locked_screen_target: locks.screenTarget,
+    locked_negative_prompt: locks.negativePrompt,
     replacement_dir: `art-replacements/${date}`,
     latest_replacement_dir: "art-replacements/latest",
     prompt_dir: `art-prompts/${date}`,
     panels: prompts,
-    generated_at: manifest.generated_at,
+    generated_at: generatedAt,
   };
 
   await writeJson(path.join(promptDir, "manifest.json"), manifest);
@@ -220,7 +214,7 @@ async function main() {
   await fs.mkdir(latestReplacementDir, { recursive: true });
   await fs.copyFile(path.join(replacementDir, "README.md"), path.join(latestReplacementDir, "README.md"));
 
-  console.log(`Daily art prompt pack written: art-prompts/${date}`);
+  console.log(`Daily locked Isla art prompt pack written: art-prompts/${date}`);
   console.log(`Machine-readable prompts written: art-prompts/${date}/prompts.json`);
   console.log(`Replacement slot folder prepared: art-replacements/${date}`);
 }
