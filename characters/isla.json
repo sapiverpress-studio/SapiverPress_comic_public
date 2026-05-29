@@ -181,9 +181,9 @@
       "weekday": "Friday",
       "setting": "quiet public library reading table",
       "puzzle_phase": "late-week",
-      "story_note": "Friday morning in the library: Isla settles into a late-week puzzle that flows more smoothly than yesterday, finding a rhythm that carries her through to a quiet finish.",
-      "continuation_note": "After Thursday's resistant puzzle, today offers steadier ground—Isla doesn't backtrack or frown, but instead finds early traction and rides it all the way through, ending on a note of satisfaction rather than planning ahead.",
-      "stuck_moment": "thoughtful, eyes narrowed slightly, considering",
+      "story_note": "Friday at the library, Isla finds a late-week puzzle that opens smoothly but then tightens unexpectedly, testing her patience before yielding to a methodical rebuild.",
+      "continuation_note": "Unlike Thursday's resistance at the start, today's puzzle feels deceptively easy at first, then locks up mid-grid, requiring Isla to erase and restart from a different angle rather than just slow down.",
+      "stuck_moment": "frustrated, hand on forehead, eyes narrowed",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -195,9 +195,9 @@
       "captions": [
         "Back again.",
         "Start small.",
-        "No guessing.",
+        "Not that one.",
+        "One number at a time.",
         "There it is.",
-        "A clean finish.",
         "Same time tomorrow."
       ]
     }
@@ -283,9 +283,9 @@
       "weekday": "Friday",
       "setting": "quiet public library reading table",
       "puzzle_phase": "late-week",
-      "story_note": "Friday morning in the library: Isla settles into a late-week puzzle that flows more smoothly than yesterday, finding a rhythm that carries her through to a quiet finish.",
-      "continuation_note": "After Thursday's resistant puzzle, today offers steadier ground—Isla doesn't backtrack or frown, but instead finds early traction and rides it all the way through, ending on a note of satisfaction rather than planning ahead.",
-      "stuck_moment": "thoughtful, eyes narrowed slightly, considering",
+      "story_note": "Friday at the library, Isla finds a late-week puzzle that opens smoothly but then tightens unexpectedly, testing her patience before yielding to a methodical rebuild.",
+      "continuation_note": "Unlike Thursday's resistance at the start, today's puzzle feels deceptively easy at first, then locks up mid-grid, requiring Isla to erase and restart from a different angle rather than just slow down.",
+      "stuck_moment": "frustrated, hand on forehead, eyes narrowed",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -297,9 +297,9 @@
       "captions": [
         "Back again.",
         "Start small.",
-        "No guessing.",
+        "Not that one.",
+        "One number at a time.",
         "There it is.",
-        "A clean finish.",
         "Same time tomorrow."
       ]
     }
