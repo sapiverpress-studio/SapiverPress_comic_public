@@ -76,7 +76,7 @@
       "output_file": "social/2026-05-29/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "Nearly there.",
+      "caption": "A clean finish.",
       "scene_id": "scene_05"
     },
     {
@@ -86,10 +86,10 @@
       "output_file": "social/2026-05-29/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "A clean finish.",
+      "caption": "Same time tomorrow.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-05-29.json",
-  "generated_at": "2026-05-29T08:24:31.273Z"
+  "generated_at": "2026-05-29T09:04:11.257Z"
 }

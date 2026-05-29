@@ -181,9 +181,9 @@
       "weekday": "Friday",
       "setting": "quiet public library reading table",
       "puzzle_phase": "late-week",
-      "story_note": "Friday in the library—Isla finds an unexpected rhythm as the week winds down, letting the puzzle unfold without forcing it.",
-      "continuation_note": "Unlike Thursday's backtracking struggle or earlier methodical sessions, today Isla feels lighter, letting the puzzle come to her with less pressure—a Friday ease.",
-      "stuck_moment": "patient, waiting, gazing off to the side",
+      "story_note": "Friday morning in the library: Isla settles into a late-week puzzle that flows more smoothly than yesterday, finding a rhythm that carries her through to a quiet finish.",
+      "continuation_note": "After Thursday's resistant puzzle, today offers steadier ground—Isla doesn't backtrack or frown, but instead finds early traction and rides it all the way through, ending on a note of satisfaction rather than planning ahead.",
+      "stuck_moment": "thoughtful, eyes narrowed slightly, considering",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -197,8 +197,8 @@
         "Start small.",
         "No guessing.",
         "There it is.",
-        "Nearly there.",
-        "A clean finish."
+        "A clean finish.",
+        "Same time tomorrow."
       ]
     }
   ],
@@ -283,9 +283,9 @@
       "weekday": "Friday",
       "setting": "quiet public library reading table",
       "puzzle_phase": "late-week",
-      "story_note": "Friday in the library—Isla finds an unexpected rhythm as the week winds down, letting the puzzle unfold without forcing it.",
-      "continuation_note": "Unlike Thursday's backtracking struggle or earlier methodical sessions, today Isla feels lighter, letting the puzzle come to her with less pressure—a Friday ease.",
-      "stuck_moment": "patient, waiting, gazing off to the side",
+      "story_note": "Friday morning in the library: Isla settles into a late-week puzzle that flows more smoothly than yesterday, finding a rhythm that carries her through to a quiet finish.",
+      "continuation_note": "After Thursday's resistant puzzle, today offers steadier ground—Isla doesn't backtrack or frown, but instead finds early traction and rides it all the way through, ending on a note of satisfaction rather than planning ahead.",
+      "stuck_moment": "thoughtful, eyes narrowed slightly, considering",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -299,8 +299,8 @@
         "Start small.",
         "No guessing.",
         "There it is.",
-        "Nearly there.",
-        "A clean finish."
+        "A clean finish.",
+        "Same time tomorrow."
       ]
     }
   ],
