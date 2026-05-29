@@ -3,7 +3,7 @@ import path from "path";
 
 const ROOT = process.cwd();
 const SUITE_URL = process.env.SUITE_URL || "https://suite.sapiverpress.co.uk";
-const VOICE_NAME = process.env.ELEVENLABS_VOICE_NAME || "Isla Fletcher";
+const VOICE_NAME = process.env.ELEVENLABS_VOICE_NAME || "Isla Sterling";
 
 function dateString() {
   const override = process.env.DATE_OVERRIDE || "";
