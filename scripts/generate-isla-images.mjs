@@ -5,10 +5,9 @@ import sharp from "sharp";
 const ROOT = process.cwd();
 const HF_TOKEN = process.env.HF_TOKEN?.trim() || "";
 const FAL_KEY = process.env.FAL_KEY?.trim() || "";
-const LORA_REPO = process.env.HF_LORA_REPO?.trim() || "sapiverpress/sapiverpress-isla-lora";
+const HF_PREFLIGHT_REPO = "sapiverpress/sapiverpress-isla-lora";
 const LORA_FILE = "ISLA_SP_1779957190206.safetensors";
 const LORA_URL = "https://huggingface.co/sapiverpress/sapiverpress-isla-lora/resolve/main/ISLA_SP_1779957190206.safetensors";
-const LORA_AUTH_TOKEN = process.env.FAL_LORA_TOKEN?.trim() || HF_TOKEN;
 const TRIGGER = process.env.HF_LORA_TRIGGER?.trim() || "ISLA_SP";
 const FAL_MODEL = process.env.FAL_MODEL?.trim() || "fal-ai/flux-lora";
 const HF_FALLBACK_MODEL = process.env.HF_FALLBACK_MODEL?.trim() || "stabilityai/stable-diffusion-xl-base-1.0";
@@ -94,14 +93,10 @@ async function fetchWithDiagnostics(url, options = {}, timeoutMs = 120000) {
 }
 
 function loraDescriptor() {
-  const descriptor = {
+  return {
     path: LORA_URL,
     scale: LORA_SCALE,
   };
-  if (LORA_AUTH_TOKEN) {
-    descriptor.token = LORA_AUTH_TOKEN;
-  }
-  return descriptor;
 }
 
 function falInput(prompt, negativePrompt) {
@@ -162,7 +157,7 @@ async function preflightHf(summary) {
   }
 
   try {
-    const modelResponse = await fetchWithDiagnostics(`https://huggingface.co/api/models/${encodeURIComponent(LORA_REPO).replace(/%2F/g, "/")}`, {
+    const modelResponse = await fetchWithDiagnostics(`https://huggingface.co/api/models/${encodeURIComponent(HF_PREFLIGHT_REPO).replace(/%2F/g, "/")}`, {
       method: "GET",
       headers: { Authorization: `Bearer ${HF_TOKEN}` },
     }, 30000);
@@ -288,10 +283,9 @@ async function main() {
     route: FAL_KEY ? "fal-ai/flux-lora-first" : "hf-fallback-only",
     fal_model: FAL_MODEL,
     hf_fallback_model: HF_FALLBACK_MODEL,
-    lora_repo: LORA_REPO,
     lora_file: LORA_FILE,
-    lora_url: LORA_URL,
-    lora_auth: LORA_AUTH_TOKEN ? "provided" : "missing",
+    lora_url_mode: "hard_coded_public_literal",
+    lora_auth: "not_sent_public_repo",
     trigger_word: TRIGGER,
     requested_panels: 6,
     generated_count: 0,
