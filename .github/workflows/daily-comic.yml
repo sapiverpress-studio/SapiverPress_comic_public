@@ -160,7 +160,7 @@ jobs:
             done
           fi
 
-          git add characters/isla.json daily image-manifests latest.json social art-prompts art-replacements || true
+          git add characters/isla.json characters/isla_life_canon.json daily image-manifests latest.json social art-prompts art-replacements || true
           if [ -f facebook-posts.json ]; then
             git add facebook-posts.json
           fi
