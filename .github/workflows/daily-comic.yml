@@ -38,6 +38,10 @@ on:
         description: "Force Pinterest post even if state says already posted"
         required: false
         default: "false"
+      polish_images_openai:
+        description: "Use OpenAI to polish background signs/books/branding before composition"
+        required: false
+        default: "false"
 
 permissions:
   contents: write
@@ -96,6 +100,14 @@ jobs:
           FAL_MODEL: "fal-ai/z-image/turbo/lora"
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
         run: npm run generate-images
+      - name: Polish generated images with OpenAI
+        continue-on-error: true
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_POLISH_IMAGES: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.polish_images_openai || 'false' }}
+          OPENAI_IMAGE_MODEL: "gpt-image-1"
+          DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
+        run: npm run polish-images
       - name: Compose full strip and close-ups
         env:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
