@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Sapiver Press strict Isla compositor.
 
-Uses real extracted puzzle captures, exact locked Isla perspective screen quads,
+Uses real extracted puzzle captures, detected/generated Isla screen corners,
 and clean caption overlays. It refuses to fake puzzle content.
 
 Phase 3 adds optional daily replacement artwork:
@@ -9,13 +9,14 @@ Phase 3 adds optional daily replacement artwork:
 - art-replacements/latest/01_panel-01.png ... 06_panel-06.png
 
 If a replacement panel exists, it is used as the base artwork. If not, the
-locked template art is used. The real puzzle captures are still inserted by
-this compositor; puzzle content is never invented.
+locked template art is used. The real puzzle captures are still inserted only
+when a screen quad is available; puzzle content is never invented.
 """
 from __future__ import annotations
 
 import json
 import os
+import re
 import subprocess
 import sys
 import zipfile
@@ -269,14 +270,205 @@ def warp_to_quad(screen: Image.Image, template_size: tuple[int, int], quad: list
     return warped
 
 
+def normalise_quad(value) -> list[tuple[int, int]] | None:
+    if isinstance(value, dict) and all(k in value for k in ("x", "y", "w", "h")):
+        x, y, w, h = (int(round(float(value[k]))) for k in ("x", "y", "w", "h"))
+        return [(x, y), (x + w, y), (x + w, y + h), (x, y + h)]
+    if isinstance(value, (list, tuple)) and len(value) == 4:
+        if all(isinstance(p, (list, tuple)) and len(p) >= 2 for p in value):
+            return [(int(round(float(p[0]))), int(round(float(p[1])))) for p in value]
+        if all(isinstance(p, (int, float, str)) for p in value):
+            x, y, w, h = (int(round(float(p))) for p in value)
+            return [(x, y), (x + w, y), (x + w, y + h), (x, y + h)]
+    return None
+
+
+def parse_manual_screen_quad(scene_id: str, image_name: str) -> tuple[list[tuple[int, int]] | None, str]:
+    raw = os.environ.get("COMIC_SCREEN_QUAD") or os.environ.get("COMIC_SCREEN_BOX") or ""
+    if raw.strip():
+        quad = parse_quad_text(raw, scene_id, image_name)
+        if quad:
+            return quad, "manual_env"
+
+    for path in [
+        ROOT / "config" / "screen-corners.json",
+        REPLACEMENT_DIR / "screen-corners.json",
+        LATEST_REPLACEMENT_DIR / "screen-corners.json",
+    ]:
+        if not path.exists():
+            continue
+        try:
+            data = json.loads(path.read_text(encoding="utf-8-sig"))
+        except Exception:
+            continue
+        if isinstance(data, dict):
+            for key in (scene_id, image_name, scene_id.replace("scene_", ""), "default"):
+                if key in data:
+                    quad = normalise_quad(data[key])
+                    if quad:
+                        return quad, f"manual_file:{path.relative_to(ROOT)}"
+            quad = normalise_quad(data)
+            if quad:
+                return quad, f"manual_file:{path.relative_to(ROOT)}"
+    return None, ""
+
+
+def parse_quad_text(raw: str, scene_id: str, image_name: str) -> list[tuple[int, int]] | None:
+    try:
+        data = json.loads(raw)
+        if isinstance(data, dict):
+            for key in (scene_id, image_name, scene_id.replace("scene_", ""), "default"):
+                if key in data:
+                    quad = normalise_quad(data[key])
+                    if quad:
+                        return quad
+            quad = normalise_quad(data)
+            if quad:
+                return quad
+        quad = normalise_quad(data)
+        if quad:
+            return quad
+    except Exception:
+        pass
+
+    numbers = [float(n) for n in re.findall(r"-?\d+(?:\.\d+)?", raw)]
+    if len(numbers) >= 8:
+        return [(int(round(numbers[i])), int(round(numbers[i + 1]))) for i in range(0, 8, 2)]
+    if len(numbers) == 4:
+        x, y, w, h = (int(round(n)) for n in numbers)
+        return [(x, y), (x + w, y), (x + w, y + h), (x, y + h)]
+    return None
+
+
+def connected_components(mask):
+    import numpy as np
+
+    height, width = mask.shape
+    seen = np.zeros(mask.shape, dtype=bool)
+    ys, xs = np.where(mask)
+    for start_y, start_x in zip(ys.tolist(), xs.tolist()):
+        if seen[start_y, start_x]:
+            continue
+        stack = [(start_x, start_y)]
+        seen[start_y, start_x] = True
+        pixels_x = []
+        pixels_y = []
+        while stack:
+            x, y = stack.pop()
+            pixels_x.append(x)
+            pixels_y.append(y)
+            for nx, ny in ((x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)):
+                if 0 <= nx < width and 0 <= ny < height and mask[ny, nx] and not seen[ny, nx]:
+                    seen[ny, nx] = True
+                    stack.append((nx, ny))
+        yield np.array(pixels_x, dtype=float), np.array(pixels_y, dtype=float)
+
+
+def quad_from_component(xs, ys, scale_x: float, scale_y: float, full_size: tuple[int, int]) -> list[tuple[int, int]]:
+    import numpy as np
+
+    sums = xs + ys
+    diffs = xs - ys
+
+    def avg_corner(values, mode):
+        threshold = np.percentile(values, 1.0 if mode == "min" else 99.0)
+        keep = values <= threshold if mode == "min" else values >= threshold
+        return xs[keep].mean() * scale_x, ys[keep].mean() * scale_y
+
+    tl = avg_corner(sums, "min")
+    tr = avg_corner(diffs, "max")
+    br = avg_corner(sums, "max")
+    bl = avg_corner(diffs, "min")
+    quad = [tl, tr, br, bl]
+    cx = sum(x for x, _ in quad) / 4
+    cy = sum(y for _, y in quad) / 4
+    width, height = full_size
+    expanded = []
+    for x, y in quad:
+        ex = cx + (x - cx) * 1.035
+        ey = cy + (y - cy) * 1.035
+        expanded.append((max(0, min(width - 1, int(round(ex)))), max(0, min(height - 1, int(round(ey))))))
+    return expanded
+
+
+def detect_screen_quad(panel: Image.Image) -> list[tuple[int, int]] | None:
+    import numpy as np
+
+    full_w, full_h = panel.size
+    max_dim = 520
+    scale = min(1.0, max_dim / max(full_w, full_h))
+    small = panel.convert("RGB")
+    if scale < 1.0:
+        small = small.resize((int(full_w * scale), int(full_h * scale)), Image.Resampling.BILINEAR)
+    arr = np.asarray(small).astype(np.float32)
+    r, g, b = arr[:, :, 0], arr[:, :, 1], arr[:, :, 2]
+    luma = 0.2126 * r + 0.7152 * g + 0.0722 * b
+    sat = np.maximum.reduce([r, g, b]) - np.minimum.reduce([r, g, b])
+    h, w = luma.shape
+    yy, xx = np.mgrid[0:h, 0:w]
+
+    # Target the plain blue/dark laptop screen generated by the static Isla prompt.
+    mask = (
+        (luma > 8) & (luma < 105) &
+        (b > 24) & (b >= r * 1.03) & (b >= g * 0.82) &
+        (sat > 8) &
+        (yy > h * 0.18) & (yy < h * 0.92) &
+        (xx > w * 0.18) & (xx < w * 0.96)
+    )
+
+    best_score = 0.0
+    best_quad = None
+    for xs, ys in connected_components(mask):
+        area = len(xs)
+        if area < max(120, w * h * 0.0006):
+            continue
+        min_x, max_x = xs.min(), xs.max()
+        min_y, max_y = ys.min(), ys.max()
+        box_w = max_x - min_x + 1
+        box_h = max_y - min_y + 1
+        if box_w < w * 0.08 or box_h < h * 0.045:
+            continue
+        aspect = box_w / max(1, box_h)
+        if not 1.05 <= aspect <= 3.8:
+            continue
+        fill = area / max(1, box_w * box_h)
+        if fill < 0.25:
+            continue
+        centre_x = (min_x + max_x) / (2 * w)
+        centre_y = (min_y + max_y) / (2 * h)
+        score = area * (0.75 + 0.35 * centre_x + 0.2 * centre_y + 0.25 * fill)
+        if score > best_score:
+            best_score = score
+            best_quad = quad_from_component(xs, ys, 1 / scale, 1 / scale, (full_w, full_h))
+
+    return best_quad
+
+
+def resolve_screen_quad(scene_id: str, image_name: str, panel: Image.Image, art_source: str) -> tuple[list[tuple[int, int]] | None, str]:
+    manual_quad, manual_mode = parse_manual_screen_quad(scene_id, image_name)
+    if manual_quad:
+        return manual_quad, manual_mode
+
+    if art_source == "replacement":
+        detected = detect_screen_quad(panel)
+        if detected:
+            return detected, "detected_replacement_screen"
+        return None, "overlay_skipped_no_screen_detected"
+
+    return SCREEN_QUADS[scene_id], "template_locked"
+
+
 def compose_panel(story: dict, scene: dict, index: int, capture: Path) -> tuple[Path, dict]:
     scene_id = f"scene_{index + 1:02d}"
     template, art_path, art_source = load_base_art(scene, index)
-    quad = SCREEN_QUADS[scene_id]
-    prepared = crop_capture_to_game(capture)
     panel = template.copy()
-    panel.alpha_composite(warp_to_quad(prepared, template.size, quad))
-    ImageDraw.Draw(panel, "RGBA").line(quad + [quad[0]], fill=(255, 255, 255, 190), width=3)
+    quad, quad_mode = resolve_screen_quad(scene_id, PANEL_REPLACEMENT_NAMES[index], panel, art_source)
+
+    if quad:
+        prepared = crop_capture_to_game(capture)
+        panel.alpha_composite(warp_to_quad(prepared, template.size, quad))
+        ImageDraw.Draw(panel, "RGBA").line(quad + [quad[0]], fill=(255, 255, 255, 190), width=3)
+
     add_caption(panel, caption_for_scene(story, index))
     out_path = OUT_DIR / f"{index + 1:02d}_strict_clean.png"
     panel.convert("RGB").save(out_path, quality=95)
@@ -288,8 +480,8 @@ def compose_panel(story: dict, scene: dict, index: int, capture: Path) -> tuple[
         "replacement": str(art_path.relative_to(ROOT)) if art_source == "replacement" else "",
         "capture": str(capture.relative_to(ROOT)),
         "output": str(out_path.relative_to(ROOT)),
-        "screen_quad": quad,
-        "screen_quad_mode": "template_locked",
+        "screen_quad": quad or [],
+        "screen_quad_mode": quad_mode,
     }
 
 
