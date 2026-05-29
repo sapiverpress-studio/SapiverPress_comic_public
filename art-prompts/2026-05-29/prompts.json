@@ -21,11 +21,11 @@
       "image_name": "01_panel-01.png",
       "replacement_file": "art-replacements/2026-05-29/01_panel-01.png",
       "prompt_file": "art-prompts/2026-05-29/01_panel-01_prompt.txt",
-      "prompt": "ISLA_SP, young Black woman, warm medium brown skin, light freckles on nose and cheeks, natural coily dark hair in high voluminous puff bun, wide floral teal rust orange cream headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, seated at dark wooden desk, cosy library study, cream ceramic mug on desk, open journal with handwritten notes, stack of dark hardcover books, vintage desk lamp warm amber glow, large gothic window with autumn city view, ivy bookshelf behind her, soft focused smile, chin resting on hand, eyes on laptop screen, warm golden hour light, painterly editorial illustration style, cinematic warm amber palette, detailed textures, calm, settling in, gentle smile",
+      "prompt": "ISLA_SP, young Black woman, warm medium brown skin, light freckles on nose and cheeks, natural coily dark hair in high voluminous puff bun, wide floral teal rust orange cream headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, seated at dark wooden desk, cosy library study, cream ceramic mug on desk, open journal with handwritten notes, stack of dark hardcover books, vintage desk lamp warm amber glow, large gothic window with autumn city view, ivy bookshelf behind her, soft focused smile, chin resting on hand, eyes on laptop screen, warm golden hour light, painterly editorial illustration style, cinematic warm amber palette, detailed textures, calm, settling in, looking down at screen",
       "negative_prompt": "screen obscuring face, device held in front of face, floating overlay, phone pressed to cheek",
       "caption": "Back again.",
       "locked_base": "ISLA_SP, young Black woman, warm medium brown skin, light freckles on nose and cheeks, natural coily dark hair in high voluminous puff bun, wide floral teal rust orange cream headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, seated at dark wooden desk, cosy library study, cream ceramic mug on desk, open journal with handwritten notes, stack of dark hardcover books, vintage desk lamp warm amber glow, large gothic window with autumn city view, ivy bookshelf behind her, soft focused smile, chin resting on hand, eyes on laptop screen, warm golden hour light, painterly editorial illustration style, cinematic warm amber palette, detailed textures",
-      "story_beat": "calm, settling in, gentle smile"
+      "story_beat": "calm, settling in, looking down at screen"
     },
     {
       "panel_number": 2,
@@ -33,11 +33,11 @@
       "image_name": "02_panel-02.png",
       "replacement_file": "art-replacements/2026-05-29/02_panel-02.png",
       "prompt_file": "art-prompts/2026-05-29/02_panel-02_prompt.txt",
-      "prompt": "ISLA_SP, young Black woman, warm medium brown skin, light freckles on nose and cheeks, natural coily dark hair in high voluminous puff bun, wide floral teal rust orange cream headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, seated at dark wooden desk, cosy library study, cream ceramic mug on desk, open journal with handwritten notes, stack of dark hardcover books, vintage desk lamp warm amber glow, large gothic window with autumn city view, ivy bookshelf behind her, soft focused smile, chin resting on hand, eyes on laptop screen, warm golden hour light, painterly editorial illustration style, cinematic warm amber palette, detailed textures, focused, engaged, looking down at work",
+      "prompt": "ISLA_SP, young Black woman, warm medium brown skin, light freckles on nose and cheeks, natural coily dark hair in high voluminous puff bun, wide floral teal rust orange cream headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, seated at dark wooden desk, cosy library study, cream ceramic mug on desk, open journal with handwritten notes, stack of dark hardcover books, vintage desk lamp warm amber glow, large gothic window with autumn city view, ivy bookshelf behind her, soft focused smile, chin resting on hand, eyes on laptop screen, warm golden hour light, painterly editorial illustration style, cinematic warm amber palette, detailed textures, focused, slight smile, engaged with the puzzle",
       "negative_prompt": "screen obscuring face, device held in front of face, floating overlay, phone pressed to cheek",
       "caption": "Start small.",
       "locked_base": "ISLA_SP, young Black woman, warm medium brown skin, light freckles on nose and cheeks, natural coily dark hair in high voluminous puff bun, wide floral teal rust orange cream headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, seated at dark wooden desk, cosy library study, cream ceramic mug on desk, open journal with handwritten notes, stack of dark hardcover books, vintage desk lamp warm amber glow, large gothic window with autumn city view, ivy bookshelf behind her, soft focused smile, chin resting on hand, eyes on laptop screen, warm golden hour light, painterly editorial illustration style, cinematic warm amber palette, detailed textures",
-      "story_beat": "focused, engaged, looking down at work"
+      "story_beat": "focused, slight smile, engaged with the puzzle"
     },
     {
       "panel_number": 3,
@@ -45,11 +45,11 @@
       "image_name": "03_panel-03.png",
       "replacement_file": "art-replacements/2026-05-29/03_panel-03.png",
       "prompt_file": "art-prompts/2026-05-29/03_panel-03_prompt.txt",
-      "prompt": "ISLA_SP, young Black woman, warm medium brown skin, light freckles on nose and cheeks, natural coily dark hair in high voluminous puff bun, wide floral teal rust orange cream headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, seated at dark wooden desk, cosy library study, cream ceramic mug on desk, open journal with handwritten notes, stack of dark hardcover books, vintage desk lamp warm amber glow, large gothic window with autumn city view, ivy bookshelf behind her, soft focused smile, chin resting on hand, eyes on laptop screen, warm golden hour light, painterly editorial illustration style, cinematic warm amber palette, detailed textures, careful, attentive, slight lean forward",
+      "prompt": "ISLA_SP, young Black woman, warm medium brown skin, light freckles on nose and cheeks, natural coily dark hair in high voluminous puff bun, wide floral teal rust orange cream headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, seated at dark wooden desk, cosy library study, cream ceramic mug on desk, open journal with handwritten notes, stack of dark hardcover books, vintage desk lamp warm amber glow, large gothic window with autumn city view, ivy bookshelf behind her, soft focused smile, chin resting on hand, eyes on laptop screen, warm golden hour light, painterly editorial illustration style, cinematic warm amber palette, detailed textures, briefly distracted, eyes lifted, neutral expression",
       "negative_prompt": "screen obscuring face, device held in front of face, floating overlay, phone pressed to cheek",
       "caption": "No guessing.",
       "locked_base": "ISLA_SP, young Black woman, warm medium brown skin, light freckles on nose and cheeks, natural coily dark hair in high voluminous puff bun, wide floral teal rust orange cream headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, seated at dark wooden desk, cosy library study, cream ceramic mug on desk, open journal with handwritten notes, stack of dark hardcover books, vintage desk lamp warm amber glow, large gothic window with autumn city view, ivy bookshelf behind her, soft focused smile, chin resting on hand, eyes on laptop screen, warm golden hour light, painterly editorial illustration style, cinematic warm amber palette, detailed textures",
-      "story_beat": "careful, attentive, slight lean forward"
+      "story_beat": "briefly distracted, eyes lifted, neutral expression"
     },
     {
       "panel_number": 4,
@@ -57,11 +57,11 @@
       "image_name": "04_panel-04.png",
       "replacement_file": "art-replacements/2026-05-29/04_panel-04.png",
       "prompt_file": "art-prompts/2026-05-29/04_panel-04_prompt.txt",
-      "prompt": "ISLA_SP, young Black woman, warm medium brown skin, light freckles on nose and cheeks, natural coily dark hair in high voluminous puff bun, wide floral teal rust orange cream headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, seated at dark wooden desk, cosy library study, cream ceramic mug on desk, open journal with handwritten notes, stack of dark hardcover books, vintage desk lamp warm amber glow, large gothic window with autumn city view, ivy bookshelf behind her, soft focused smile, chin resting on hand, eyes on laptop screen, warm golden hour light, painterly editorial illustration style, cinematic warm amber palette, detailed textures, satisfied, thoughtful, face visible",
+      "prompt": "ISLA_SP, young Black woman, warm medium brown skin, light freckles on nose and cheeks, natural coily dark hair in high voluminous puff bun, wide floral teal rust orange cream headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, seated at dark wooden desk, cosy library study, cream ceramic mug on desk, open journal with handwritten notes, stack of dark hardcover books, vintage desk lamp warm amber glow, large gothic window with autumn city view, ivy bookshelf behind her, soft focused smile, chin resting on hand, eyes on laptop screen, warm golden hour light, painterly editorial illustration style, cinematic warm amber palette, detailed textures, attentive, eyes bright, thinking through the connection",
       "negative_prompt": "screen obscuring face, device held in front of face, floating overlay, phone pressed to cheek",
       "caption": "There it is.",
       "locked_base": "ISLA_SP, young Black woman, warm medium brown skin, light freckles on nose and cheeks, natural coily dark hair in high voluminous puff bun, wide floral teal rust orange cream headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, seated at dark wooden desk, cosy library study, cream ceramic mug on desk, open journal with handwritten notes, stack of dark hardcover books, vintage desk lamp warm amber glow, large gothic window with autumn city view, ivy bookshelf behind her, soft focused smile, chin resting on hand, eyes on laptop screen, warm golden hour light, painterly editorial illustration style, cinematic warm amber palette, detailed textures",
-      "story_beat": "satisfied, thoughtful, face visible"
+      "story_beat": "attentive, eyes bright, thinking through the connection"
     },
     {
       "panel_number": 5,
@@ -69,11 +69,11 @@
       "image_name": "05_panel-05.png",
       "replacement_file": "art-replacements/2026-05-29/05_panel-05.png",
       "prompt_file": "art-prompts/2026-05-29/05_panel-05_prompt.txt",
-      "prompt": "ISLA_SP, young Black woman, warm medium brown skin, light freckles on nose and cheeks, natural coily dark hair in high voluminous puff bun, wide floral teal rust orange cream headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, seated at dark wooden desk, cosy library study, cream ceramic mug on desk, open journal with handwritten notes, stack of dark hardcover books, vintage desk lamp warm amber glow, large gothic window with autumn city view, ivy bookshelf behind her, soft focused smile, chin resting on hand, eyes on laptop screen, warm golden hour light, painterly editorial illustration style, cinematic warm amber palette, detailed textures, relaxed, drinking coffee, content",
+      "prompt": "ISLA_SP, young Black woman, warm medium brown skin, light freckles on nose and cheeks, natural coily dark hair in high voluminous puff bun, wide floral teal rust orange cream headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, seated at dark wooden desk, cosy library study, cream ceramic mug on desk, open journal with handwritten notes, stack of dark hardcover books, vintage desk lamp warm amber glow, large gothic window with autumn city view, ivy bookshelf behind her, soft focused smile, chin resting on hand, eyes on laptop screen, warm golden hour light, painterly editorial illustration style, cinematic warm amber palette, detailed textures, relaxed, satisfied, leaning back slightly",
       "negative_prompt": "screen obscuring face, device held in front of face, floating overlay, phone pressed to cheek",
       "caption": "Nearly there.",
       "locked_base": "ISLA_SP, young Black woman, warm medium brown skin, light freckles on nose and cheeks, natural coily dark hair in high voluminous puff bun, wide floral teal rust orange cream headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, seated at dark wooden desk, cosy library study, cream ceramic mug on desk, open journal with handwritten notes, stack of dark hardcover books, vintage desk lamp warm amber glow, large gothic window with autumn city view, ivy bookshelf behind her, soft focused smile, chin resting on hand, eyes on laptop screen, warm golden hour light, painterly editorial illustration style, cinematic warm amber palette, detailed textures",
-      "story_beat": "relaxed, drinking coffee, content"
+      "story_beat": "relaxed, satisfied, leaning back slightly"
     },
     {
       "panel_number": 6,
@@ -81,12 +81,12 @@
       "image_name": "06_panel-06.png",
       "replacement_file": "art-replacements/2026-05-29/06_panel-06.png",
       "prompt_file": "art-prompts/2026-05-29/06_panel-06_prompt.txt",
-      "prompt": "ISLA_SP, young Black woman, warm medium brown skin, light freckles on nose and cheeks, natural coily dark hair in high voluminous puff bun, wide floral teal rust orange cream headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, seated at dark wooden desk, cosy library study, cream ceramic mug on desk, open journal with handwritten notes, stack of dark hardcover books, vintage desk lamp warm amber glow, large gothic window with autumn city view, ivy bookshelf behind her, soft focused smile, chin resting on hand, eyes on laptop screen, warm golden hour light, painterly editorial illustration style, cinematic warm amber palette, detailed textures, peaceful, gathering things, slight smile",
+      "prompt": "ISLA_SP, young Black woman, warm medium brown skin, light freckles on nose and cheeks, natural coily dark hair in high voluminous puff bun, wide floral teal rust orange cream headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, seated at dark wooden desk, cosy library study, cream ceramic mug on desk, open journal with handwritten notes, stack of dark hardcover books, vintage desk lamp warm amber glow, large gothic window with autumn city view, ivy bookshelf behind her, soft focused smile, chin resting on hand, eyes on laptop screen, warm golden hour light, painterly editorial illustration style, cinematic warm amber palette, detailed textures, standing, calm, looking forward",
       "negative_prompt": "screen obscuring face, device held in front of face, floating overlay, phone pressed to cheek",
       "caption": "A clean finish.",
       "locked_base": "ISLA_SP, young Black woman, warm medium brown skin, light freckles on nose and cheeks, natural coily dark hair in high voluminous puff bun, wide floral teal rust orange cream headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, seated at dark wooden desk, cosy library study, cream ceramic mug on desk, open journal with handwritten notes, stack of dark hardcover books, vintage desk lamp warm amber glow, large gothic window with autumn city view, ivy bookshelf behind her, soft focused smile, chin resting on hand, eyes on laptop screen, warm golden hour light, painterly editorial illustration style, cinematic warm amber palette, detailed textures",
-      "story_beat": "peaceful, gathering things, slight smile"
+      "story_beat": "standing, calm, looking forward"
     }
   ],
-  "generated_at": "2026-05-29T05:56:19.732Z"
+  "generated_at": "2026-05-29T06:01:06.305Z"
 }
