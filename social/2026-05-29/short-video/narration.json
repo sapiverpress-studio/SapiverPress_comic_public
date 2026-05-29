@@ -11,17 +11,17 @@
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "Bookshop corner."
+      "text": "Street noise."
     },
     {
       "id": "panel_2",
       "image_name": "02_panel-02.png",
-      "text": "First mark."
+      "text": "One safe move."
     },
     {
       "id": "panel_3",
       "image_name": "03_panel-03.png",
-      "text": "Pause there."
+      "text": "Wait there."
     },
     {
       "id": "panel_4",
@@ -31,12 +31,12 @@
     {
       "id": "panel_5",
       "image_name": "05_panel-05.png",
-      "text": "Nearly home."
+      "text": "Last sip."
     },
     {
       "id": "panel_6",
       "image_name": "06_panel-06.png",
-      "text": "One more page."
+      "text": "On again."
     },
     {
       "id": "cta",
@@ -44,6 +44,6 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nBookshop corner.\n\nFirst mark.\n\nPause there.\n\nToday has its own little rule-set — check the constraint before rushing.\n\nNearly home.\n\nOne more page.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-05-29T11:25:06.135Z"
+  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nStreet noise.\n\nOne safe move.\n\nWait there.\n\nToday has its own little rule-set — check the constraint before rushing.\n\nLast sip.\n\nOn again.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-05-29T11:28:41.255Z"
 }
