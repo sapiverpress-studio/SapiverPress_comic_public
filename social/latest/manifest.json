@@ -76,10 +76,10 @@
   "storyboard_locations": [
     "small home kitchen table in warm morning light",
     "train table by the window",
+    "small kitchen table in warm morning light",
     "outdoor cafe street table",
     "co-working desk near a tall window",
-    "quiet public library reading table",
-    "bookshop cafe corner"
+    "quiet public library reading table"
   ],
   "scenes": [
     {
@@ -90,25 +90,8 @@
       "replacement": "art-replacements/2026-05-29/01_panel-01.png",
       "capture": "captures/2026-05-29/extracted/01_fresh_daily_grid.png",
       "output": "social/2026-05-29/01_panel-01.png",
-      "screen_quad": [
-        [
-          748,
-          586
-        ],
-        [
-          1067,
-          616
-        ],
-        [
-          1065,
-          884
-        ],
-        [
-          706,
-          806
-        ]
-      ],
-      "screen_quad_mode": "detected_replacement_screen",
+      "screen_quad": [],
+      "screen_quad_mode": "overlay_skipped_no_screen_detected",
       "storyboard_text": "Start before the rush.\nIsla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
       "arc_role": "setup",
       "storyboard_caption": "Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
@@ -123,25 +106,8 @@
       "replacement": "art-replacements/2026-05-29/02_panel-02.png",
       "capture": "captures/2026-05-29/extracted/02_first_moves.png",
       "output": "social/2026-05-29/02_panel-02.png",
-      "screen_quad": [
-        [
-          690,
-          619
-        ],
-        [
-          1044,
-          657
-        ],
-        [
-          984,
-          927
-        ],
-        [
-          638,
-          850
-        ]
-      ],
-      "screen_quad_mode": "detected_replacement_screen",
+      "screen_quad": [],
+      "screen_quad_mode": "overlay_skipped_no_screen_detected",
       "storyboard_text": "Don't chase it.\nThe journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
       "arc_role": "disruption",
       "storyboard_caption": "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
@@ -158,20 +124,20 @@
       "output": "social/2026-05-29/03_panel-03.png",
       "screen_quad": [
         [
-          716,
-          626
+          683,
+          612
         ],
         [
-          1067,
-          651
+          1045,
+          646
         ],
         [
-          1023,
-          916
+          1003,
+          909
         ],
         [
-          678,
-          855
+          646,
+          839
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -179,7 +145,7 @@
       "arc_role": "choice",
       "storyboard_caption": "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
       "storyboard_dialogue": "Three minutes. Properly.",
-      "panel_location": "outdoor cafe street table"
+      "panel_location": "small kitchen table in warm morning light"
     },
     {
       "scene": "scene_04",
@@ -189,30 +155,13 @@
       "replacement": "art-replacements/2026-05-29/04_panel-04.png",
       "capture": "captures/2026-05-29/extracted/04_breakthrough.png",
       "output": "social/2026-05-29/04_panel-04.png",
-      "screen_quad": [
-        [
-          728,
-          584
-        ],
-        [
-          1066,
-          605
-        ],
-        [
-          1068,
-          915
-        ],
-        [
-          693,
-          842
-        ]
-      ],
-      "screen_quad_mode": "detected_replacement_screen",
+      "screen_quad": [],
+      "screen_quad_mode": "overlay_skipped_no_screen_detected",
       "storyboard_text": "Today has its own little rule-set \u2014 check the constraint before rushing.\nTrigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
       "arc_role": "puzzle_moment",
       "storyboard_caption": "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
       "storyboard_dialogue": "Today has its own little rule-set \u2014 check the constraint before rushing.",
-      "panel_location": "co-working desk near a tall window"
+      "panel_location": "outdoor cafe street table"
     },
     {
       "scene": "scene_05",
@@ -224,20 +173,20 @@
       "output": "social/2026-05-29/05_panel-05.png",
       "screen_quad": [
         [
-          731,
-          676
+          718,
+          638
         ],
         [
           1066,
-          695
+          663
         ],
         [
-          1063,
-          1012
+          1045,
+          968
         ],
         [
-          690,
-          939
+          679,
+          889
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -245,7 +194,7 @@
       "arc_role": "consequence",
       "storyboard_caption": "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.",
       "storyboard_dialogue": "That stayed true.",
-      "panel_location": "quiet public library reading table"
+      "panel_location": "co-working desk near a tall window"
     },
     {
       "scene": "scene_06",
@@ -257,20 +206,20 @@
       "output": "social/2026-05-29/06_panel-06.png",
       "screen_quad": [
         [
-          730,
-          679
+          741,
+          604
         ],
         [
-          1046,
-          697
+          1036,
+          624
         ],
         [
-          1006,
-          939
+          995,
+          844
         ],
         [
-          691,
-          891
+          706,
+          787
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -278,7 +227,7 @@
       "arc_role": "resolution",
       "storyboard_caption": "By the final check, Isla carries the pause forward, not the pressure that tried to hurry her.",
       "storyboard_dialogue": "Take the pause with you.",
-      "panel_location": "bookshop cafe corner"
+      "panel_location": "quiet public library reading table"
     }
   ]
 }
