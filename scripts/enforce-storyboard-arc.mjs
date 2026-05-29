@@ -20,7 +20,21 @@ const STORY_FIELDS_USED = [
   "variant_recap",
   "uk_calendar_date",
 ];
-const BAD_PHRASES = ["quiet moment", "clearer than before", "keep the thread", "small anchor", "borrowed quiet", "less noisy", "gentle finish", "quiet satisfaction"];
+const BAD_PHRASES = [
+  "quiet moment",
+  "clearer than before",
+  "keep the thread",
+  "small anchor",
+  "a small anchor",
+  "borrowed quiet",
+  "less noisy",
+  "gentle finish",
+  "quiet satisfaction",
+  "one clean look",
+  "no rushing this one",
+  "that gives me a path",
+  "stay with it",
+];
 const CAUSE = ["because", "so", "then", "when", "after", "before", "if", "but"];
 const TURN = ["decides", "chooses", "realises", "refuses", "learns", "notices", "waits", "pauses", "carries"];
 
@@ -130,8 +144,8 @@ function storyBrief(story, date) {
       title: scene.title,
       beat: scene.beat,
       scene_description: scene.scene_description,
-      caption: scene.caption,
-      dialogue: scene.dialogue || scene.speech_bubble,
+      caption: scene.storyboard_caption || scene.caption,
+      dialogue: scene.storyboard_dialogue || scene.dialogue || scene.speech_bubble,
       image_prompt_fragment: scene.image_prompt_fragment,
       life_beat: scene.life_beat,
       setting: scene.setting || scene.panel_location,
