@@ -7,7 +7,7 @@
     "daily": "node scripts/daily-generator-local.mjs",
     "capture:today": "node scripts/capture_trigoku_playthrough_v2.mjs",
     "art-prompts": "node scripts/generate-art-prompt-pack.mjs",
-    "generate-images": "node scripts/generate-isla-images.mjs",
+    "generate-images": "node scripts/generate-isla-images-floor.mjs",
     "short-video-script": "node scripts/test_phase4_placeholder.mjs",
     "short-video-voice": "node scripts/test_phase4_voice.mjs",
     "short-video-build": "node scripts/test_phase4_video.mjs",
