@@ -31,19 +31,35 @@ async function writeJson(relativePath, data) {
   await fs.writeFile(file, `${JSON.stringify(data, null, 2)}\n`, "utf8");
 }
 
-function storyboardCaption(scene = {}) {
+function variantCaption(scene = {}, story = {}) {
+  const variantName = clean(story?.variant_recap?.variant_name || "");
+  if (!scene.variant_recap_here || !variantName) return "";
+  const current = clean(scene.storyboard_caption || scene.caption || "");
+  if (current && current.toLowerCase().includes(variantName.toLowerCase())) return current;
+  return current || `${variantName} changes this move, so Isla checks the rule before trusting it.`;
+}
+
+function storyboardCaption(scene = {}, story = {}) {
+  if (scene.variant_recap_here) return variantCaption(scene, story) || clean(scene.storyboard_caption || scene.caption || "");
+  if (scene.uk_calendar_recap_here) return clean(scene.storyboard_caption || scene.caption || "");
   return clean(scene.storyboard_caption || scene.caption || "");
 }
 
-function storyboardDialogue(scene = {}) {
+function storyboardDialogue(scene = {}, story = {}) {
+  if (scene.variant_recap_here) {
+    return clean(story?.variant_recap?.line || scene.storyboard_dialogue || scene.dialogue || scene.speech_bubble || "");
+  }
+  if (scene.uk_calendar_recap_here) {
+    return clean(story?.uk_calendar_date?.line || scene.storyboard_dialogue || scene.dialogue || scene.speech_bubble || "");
+  }
   return clean(scene.storyboard_dialogue || scene.dialogue || scene.speech_bubble || "");
 }
 
 function syncScenes(story) {
   const scenes = Array.isArray(story?.scenes) ? story.scenes : [];
   story.scenes = scenes.map((scene) => {
-    const caption = storyboardCaption(scene);
-    const dialogue = storyboardDialogue(scene);
+    const caption = storyboardCaption(scene, story);
+    const dialogue = storyboardDialogue(scene, story);
     return {
       ...scene,
       storyboard_caption: caption,
@@ -70,8 +86,8 @@ function syncImageManifest(story, manifest = {}) {
       scene: scene.id || existing.scene,
       pose_id: scene.pose_id || existing.pose_id,
       prompt: existing.prompt || scene.full_image_prompt || scene.image_prompt_fragment || "",
-      storyboard_caption: storyboardCaption(scene),
-      storyboard_dialogue: storyboardDialogue(scene),
+      storyboard_caption: storyboardCaption(scene, story),
+      storyboard_dialogue: storyboardDialogue(scene, story),
     };
   });
   return manifest;
@@ -82,7 +98,7 @@ function updateHistoryCaptions(characterFile, story) {
   const patchEntry = (entry) => entry?.date === story.date
     ? {
         ...entry,
-        captions: story.scenes?.map((scene) => storyboardCaption(scene)) || entry.captions || [],
+        captions: story.scenes?.map((scene) => storyboardCaption(scene, story)) || entry.captions || [],
       }
     : entry;
 
