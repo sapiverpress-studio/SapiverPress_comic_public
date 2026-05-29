@@ -88,24 +88,19 @@ function clean(value) {
   return String(value || "").replace(/\s+/g, " ").trim();
 }
 
-function lockedPanelVariation({ scene, index, screenTarget }) {
-  const expression = clean(scene.expression || scene.emotion || scene.mood || "");
-  const gaze = clean(scene.gaze || scene.view_rule || "");
-  const storyBeat = clean(scene.image_prompt_fragment || scene.scene_description || scene.beat || scene.title || scene.caption || DEFAULT_PANEL_VARIATIONS[index]);
-  const caption = clean(scene.caption || "");
-  return [
-    DEFAULT_PANEL_VARIATIONS[index],
-    expression ? `expression detail: ${expression}` : "",
-    gaze ? `gaze direction and camera detail: ${gaze}` : "",
-    storyBeat ? `story beat detail: ${storyBeat}` : "",
-    caption ? `panel text context only, do not render as written words: ${caption}` : "",
-    screenTarget,
-    "keep portrait clear, device below eye line, natural desk perspective",
-  ].filter(Boolean).join(", ");
+function panelStoryBeat(scene, index) {
+  return clean(
+    scene.image_prompt_fragment ||
+    scene.scene_description ||
+    scene.beat ||
+    scene.title ||
+    scene.caption ||
+    `story beat ${index + 1}`
+  );
 }
 
 function buildPrompt({ scene, index, locks }) {
-  return `${locks.base}, ${lockedPanelVariation({ scene, index, screenTarget: locks.screenTarget })}`;
+  return `${locks.base}, ${panelStoryBeat(scene, index)}`;
 }
 
 function replacementReadme(date) {
@@ -141,7 +136,7 @@ async function main() {
   for (let index = 0; index < 6; index += 1) {
     const scene = scenes[index];
     const promptFile = `${String(index + 1).padStart(2, "0")}_panel-${String(index + 1).padStart(2, "0")}_prompt.txt`;
-    const variation = lockedPanelVariation({ scene, index, screenTarget: locks.screenTarget });
+    const storyBeat = panelStoryBeat(scene, index);
     const promptText = buildPrompt({ scene, index, locks });
     await writeText(path.join(promptDir, promptFile), `${promptText}\n`);
 
@@ -166,7 +161,7 @@ async function main() {
       negative_prompt: locks.negativePrompt,
       caption: panel.caption,
       locked_base: locks.base,
-      variation,
+      story_beat: storyBeat,
     });
   }
 
@@ -174,8 +169,8 @@ async function main() {
   const manifest = {
     date,
     character: CHARACTER,
-    format: "daily_art_prompt_pack_v2_locked_isla_library",
-    purpose: "Generate six replaceable Isla panel artworks with a locked scene base and per-panel variation only.",
+    format: "daily_art_prompt_pack_v3_locked_isla_base_plus_story_beat",
+    purpose: "Generate six replaceable Isla panel artworks using the locked scene base plus the panel story beat only.",
     replacement_dir: `art-replacements/${date}`,
     prompt_dir: `art-prompts/${date}`,
     prompts_json: `art-prompts/${date}/prompts.json`,
@@ -192,7 +187,7 @@ async function main() {
   const promptsPayload = {
     date,
     character: CHARACTER,
-    format: "daily_art_prompts_json_v2_locked_isla_library",
+    format: "daily_art_prompts_json_v3_locked_isla_base_plus_story_beat",
     lora: { trigger_word: LORA_TRIGGER, repo: LORA_REPO, file: LORA_FILE, base_model: "z_image_turbo" },
     locked_prompt_base: locks.base,
     locked_screen_target: locks.screenTarget,
