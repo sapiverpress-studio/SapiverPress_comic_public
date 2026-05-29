@@ -200,6 +200,32 @@
         "Nearly there.",
         "Same time tomorrow."
       ]
+    },
+    {
+      "date": "2026-05-29",
+      "weekday": "Friday",
+      "same_day_attempt": 2,
+      "setting": "quiet public library reading table",
+      "puzzle_phase": "late-week",
+      "story_note": "Isla daily run 2: a different moment in the same day, keeping the Trigoku subplot light.",
+      "continuation_note": "Progression run 2; avoid repeating earlier same-day captions, setting, and image fragments.",
+      "stuck_moment": "pen paused above the page, no guessing",
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Back at it.",
+        "Small moves.",
+        "Hold that thought.",
+        "There it goes.",
+        "Almost clear.",
+        "Close the page."
+      ]
     }
   ],
   "weeks": [
@@ -302,8 +328,35 @@
         "Nearly there.",
         "Same time tomorrow."
       ]
+    },
+    {
+      "date": "2026-05-29",
+      "weekday": "Friday",
+      "same_day_attempt": 2,
+      "setting": "quiet public library reading table",
+      "puzzle_phase": "late-week",
+      "story_note": "Isla daily run 2: a different moment in the same day, keeping the Trigoku subplot light.",
+      "continuation_note": "Progression run 2; avoid repeating earlier same-day captions, setting, and image fragments.",
+      "stuck_moment": "pen paused above the page, no guessing",
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Back at it.",
+        "Small moves.",
+        "Hold that thought.",
+        "There it goes.",
+        "Almost clear.",
+        "Close the page."
+      ]
     }
   ],
   "ongoing_threads": [],
-  "last_updated": "2026-05-29"
+  "last_updated": "2026-05-29",
+  "same_day_attempts_kept": true
 }

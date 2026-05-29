@@ -29,12 +29,12 @@
   "puzzle_product": "Trigoku Daily Lock",
   "puzzle_url": "https://suite.sapiverpress.co.uk",
   "captions": [
-    "Back again.",
-    "Start small.",
-    "No guessing.",
-    "There it is.",
-    "Nearly there.",
-    "Same time tomorrow."
+    "Back at it.",
+    "Small moves.",
+    "Hold that thought.",
+    "There it goes.",
+    "Almost clear.",
+    "Close the page."
   ],
   "scenes": [
     {
@@ -47,20 +47,20 @@
       "output": "social/2026-05-29/01_panel-01.png",
       "screen_quad": [
         [
-          811,
-          717
+          768,
+          676
         ],
         [
-          1067,
-          734
+          1068,
+          701
         ],
         [
-          1066,
-          982
+          1051,
+          939
         ],
         [
-          763,
-          923
+          732,
+          880
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen"
@@ -75,20 +75,20 @@
       "output": "social/2026-05-29/02_panel-02.png",
       "screen_quad": [
         [
-          756,
-          677
+          720,
+          651
         ],
         [
-          1047,
-          695
+          1045,
+          679
         ],
         [
-          1012,
-          929
+          999,
+          918
         ],
         [
-          725,
-          880
+          677,
+          857
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen"
@@ -103,20 +103,20 @@
       "output": "social/2026-05-29/03_panel-03.png",
       "screen_quad": [
         [
-          780,
-          681
+          787,
+          642
         ],
         [
-          1018,
-          707
+          1069,
+          655
         ],
         [
-          978,
-          904
+          1038,
+          890
         ],
         [
-          746,
-          852
+          752,
+          845
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen"
@@ -131,20 +131,20 @@
       "output": "social/2026-05-29/04_panel-04.png",
       "screen_quad": [
         [
-          756,
-          689
+          767,
+          699
         ],
         [
-          1061,
-          708
+          1062,
+          726
         ],
         [
           1022,
-          940
+          964
         ],
         [
-          723,
-          891
+          737,
+          910
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen"
@@ -157,8 +157,25 @@
       "replacement": "art-replacements/2026-05-29/05_panel-05.png",
       "capture": "captures/2026-05-29/extracted/05_nearly_complete.png",
       "output": "social/2026-05-29/05_panel-05.png",
-      "screen_quad": [],
-      "screen_quad_mode": "overlay_skipped_no_screen_detected"
+      "screen_quad": [
+        [
+          742,
+          602
+        ],
+        [
+          1033,
+          628
+        ],
+        [
+          995,
+          837
+        ],
+        [
+          712,
+          784
+        ]
+      ],
+      "screen_quad_mode": "detected_replacement_screen"
     },
     {
       "scene": "scene_06",
@@ -170,20 +187,20 @@
       "output": "social/2026-05-29/06_panel-06.png",
       "screen_quad": [
         [
-          748,
+          814,
           682
         ],
         [
-          1018,
+          1070,
           705
         ],
         [
-          979,
-          910
+          1034,
+          906
         ],
         [
-          715,
-          858
+          777,
+          856
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen"
