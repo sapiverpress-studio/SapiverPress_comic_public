@@ -37,6 +37,8 @@ EXPORT_FILES = [
     "07_finished-grid.png",
 ]
 
+ARC_KEYS = ["setup", "disruption", "choice", "puzzle_moment", "consequence", "resolution"]
+
 
 def crop_capture_to_game(path: Path) -> Image.Image:
     """Prepare a focused puzzle close-up for screen insertion and standalone export."""
@@ -107,7 +109,6 @@ def add_storyboard_caption(panel: Image.Image, text: str) -> None:
 
     line_h_dialogue = 39
     line_h_caption = 36
-    pad_x = 34
     pad_y = 22
     gap = 10 if dialogue_lines and caption_lines else 0
     box_h = pad_y * 2 + len(dialogue_lines) * line_h_dialogue + gap + len(caption_lines) * line_h_caption
@@ -147,7 +148,6 @@ def clear_old_outputs() -> None:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     LATEST_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Remove old top-level montage for this date: social/YYYY-MM-DD.png
     old_montage = ROOT / "social" / f"{DATE}.png"
     if old_montage.exists():
         old_montage.unlink()
@@ -168,9 +168,32 @@ def clear_old_outputs() -> None:
                 target.unlink()
 
 
+def default_storyboard_arc(story: dict) -> dict:
+    scenes = story.get("scenes") or []
+    return {
+        key: str((scenes[index] if index < len(scenes) else {}).get("storyboard_caption") or (scenes[index] if index < len(scenes) else {}).get("caption") or "")
+        for index, key in enumerate(ARC_KEYS)
+    }
+
+
+def default_storyboard_quality(story: dict) -> dict:
+    quality = story.get("storyboard_quality") or {}
+    return {
+        "location_sequence_only": bool(quality.get("location_sequence_only", False)),
+        "has_cause_effect": bool(quality.get("has_cause_effect", False)),
+        "has_character_turn": bool(quality.get("has_character_turn", False)),
+        "uses_phase2_story": bool(quality.get("uses_phase2_story", bool(story.get("story_note") or story.get("continuation_note") or story.get("life_memory_entry")))),
+        "quality_gate_passed": bool(quality.get("quality_gate_passed", False)),
+        "interchangeable": bool(quality.get("interchangeable", False)),
+        "generic_phrase_hits": quality.get("generic_phrase_hits", []),
+    }
+
+
 def write_manifest(story: dict, rows: list[dict]) -> dict:
     daily_story_path = ROOT / "daily" / f"{DATE}.json"
     story_source = daily_story_path if daily_story_path.exists() else ROOT / "latest.json"
+    storyboard_arc = story.get("storyboard_arc") or default_storyboard_arc(story)
+    storyboard_quality = story.get("storyboard_quality") or default_storyboard_quality(story)
 
     manifest = {
         "date": DATE,
@@ -182,6 +205,13 @@ def write_manifest(story: dict, rows: list[dict]) -> dict:
         "archive_dir": str(OUT_DIR.relative_to(ROOT)),
         "latest_dir": str(LATEST_DIR.relative_to(ROOT)),
         "story_source": str(story_source.relative_to(ROOT)) if story_source.exists() else "",
+        "story_source_used": story.get("story_source_used") or (str(story_source.relative_to(ROOT)) if story_source.exists() else ""),
+        "story_fields_used": story.get("story_fields_used") or [],
+        "storyboard_copy_source": story.get("storyboard_copy_source") or "unknown",
+        "storyboard_copy_model": story.get("storyboard_copy_model") or "unknown",
+        "storyboard_arc_type": story.get("storyboard_arc_type") or "story_driven_not_location_driven",
+        "storyboard_arc": storyboard_arc,
+        "storyboard_quality": storyboard_quality,
         "puzzle_product": "Trigoku Daily Lock",
         "puzzle_url": "https://suite.sapiverpress.co.uk",
         "captions": [caption_for_scene(story, i) for i in range(6)],
@@ -213,7 +243,6 @@ def main() -> None:
     while len(scenes) < 6:
         scenes.append({"id": f"scene_{len(scenes)+1:02d}", "caption": base.DEFAULT_CAPTIONS[len(scenes)]})
 
-    # 00: close-up of the untouched starter grid.
     save_png(crop_capture_to_game(captures[0]), OUT_DIR / EXPORT_FILES[0])
 
     rows: list[dict] = []
@@ -224,14 +253,15 @@ def main() -> None:
         shutil.move(str(panel_path), str(final_path))
         row["output"] = str(final_path.relative_to(ROOT))
         row["storyboard_text"] = caption_for_scene(story, index)
+        row["arc_role"] = scene.get("arc_role") or (ARC_KEYS[index] if index < len(ARC_KEYS) else "")
+        row["storyboard_caption"] = scene.get("storyboard_caption") or scene.get("caption") or ""
+        row["storyboard_dialogue"] = scene.get("storyboard_dialogue") or scene.get("dialogue") or scene.get("speech_bubble") or ""
         row["panel_location"] = scene.get("panel_location") or scene.get("setting") or ""
         rows.append(row)
         intermediate_paths.append(panel_path)
 
-    # 07: close-up of the completed/solution grid.
     save_png(crop_capture_to_game(captures[5]), OUT_DIR / EXPORT_FILES[7])
 
-    # Remove any leftover strict-clean intermediates if present.
     for path in intermediate_paths:
         if path.exists():
             path.unlink()
@@ -241,6 +271,8 @@ def main() -> None:
 
     print(f"Eight-image daily set written: {manifest['archive_dir']}")
     print(f"Latest mirror written: {manifest['latest_dir']}")
+    print(f"Storyboard source: {manifest['storyboard_copy_source']}")
+    print(f"Storyboard arc type: {manifest['storyboard_arc_type']}")
 
 
 if __name__ == "__main__":
