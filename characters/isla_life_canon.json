@@ -109,6 +109,12 @@
       "attempt": 21,
       "setting": "train table by the window",
       "reason": "she is travelling and using the journey as thinking time"
+    },
+    {
+      "date": "2026-05-29",
+      "attempt": 22,
+      "setting": "outdoor cafe street table",
+      "reason": "she is trying not to rush straight into the next errand"
     }
   ],
   "variant_memory": [
@@ -195,6 +201,12 @@
       "attempt": 21,
       "variant_name": "Trigoku",
       "panel_index": 3
+    },
+    {
+      "date": "2026-05-29",
+      "attempt": 22,
+      "variant_name": "Trigoku",
+      "panel_index": 2
     }
   ],
   "life_memory": [
@@ -363,6 +375,18 @@
       "thread_to_continue": "train rides become moving pockets of focus",
       "puzzle_variant_mentioned": "Trigoku",
       "variant_panel_index": 3,
+      "uk_calendar_date": null,
+      "uk_calendar_panel_index": null
+    },
+    {
+      "date": "2026-05-29",
+      "attempt": 22,
+      "location": "outdoor cafe street table",
+      "reason_for_location": "she is trying not to rush straight into the next errand",
+      "life_detail_learned": "Isla sometimes uses a cafe table as a buffer between obligations.",
+      "thread_to_continue": "she is learning to pause before moving on",
+      "puzzle_variant_mentioned": "Trigoku",
+      "variant_panel_index": 2,
       "uk_calendar_date": null,
       "uk_calendar_panel_index": null
     }

@@ -23,10 +23,10 @@
     "page_title": "Trigoku • Daily Lock | Sapiver Press",
     "difficulty_label": null
   },
-  "selected_setting": "train table by the window",
+  "selected_setting": "outdoor cafe street table",
   "story_source": "claude",
-  "story_note": "Isla spends this entry at the train table by the window because she is travelling and using the journey as thinking time. The puzzle stays as a light thread inside the day.",
-  "continuation_note": "Remember: Isla likes journeys because they give her contained thinking time. Continue the thread: train rides become moving pockets of focus.",
+  "story_note": "Isla spends this entry at the outdoor cafe street table because she is trying not to rush straight into the next errand. The puzzle stays as a light thread inside the day.",
+  "continuation_note": "Remember: Isla sometimes uses a cafe table as a buffer between obligations. Continue the thread: she is learning to pause before moving on.",
   "facebook_post_text": "A small Trigoku moment in Isla's day. https://suite.sapiverpress.co.uk",
   "scenes": [
     {
@@ -39,12 +39,12 @@
       "speech_bubble": "One clean look first.",
       "dialogue": "One clean look first.",
       "image_prompt_fragment": "warm morning start, private routine, quiet focus",
-      "full_image_prompt": "ISLA_SP calm, settling in, slight smile, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, front-facing or three-quarter view, Isla's face clearly visible, quiet public library reading table, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
+      "full_image_prompt": "ISLA_SP calm, gentle smile, relaxed, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, front-facing or three-quarter view, Isla's face clearly visible, quiet public library reading table, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
       "setting": "small home kitchen table in warm morning light",
       "view_rule": "front-facing or three-quarter view, Isla's face clearly visible",
       "image_ref": "isla_01_opening_return.png",
       "screen_state": "scene_01",
-      "life_beat": "Isla likes journeys because they give her contained thinking time.",
+      "life_beat": "Isla sometimes uses a cafe table as a buffer between obligations.",
       "variant_recap_here": false,
       "uk_calendar_recap_here": false,
       "panel_location": "small home kitchen table in warm morning light",
@@ -66,13 +66,13 @@
       "speech_bubble": "Keep the thread.",
       "dialogue": "Keep the thread.",
       "image_prompt_fragment": "travel moment, contained thinking time, gentle movement",
-      "full_image_prompt": "ISLA_SP engaged, focused, hopeful expression, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, quiet public library reading table, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
+      "full_image_prompt": "ISLA_SP focused, attentive, engaged, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, quiet public library reading table, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
       "setting": "train table by the window",
       "view_rule": "natural varied camera angle, not a repeated pose",
       "image_ref": "isla_02_first_move.png",
       "screen_state": "scene_02",
-      "life_beat": "Isla likes journeys because they give her contained thinking time.",
-      "variant_recap_here": false,
+      "life_beat": "Isla sometimes uses a cafe table as a buffer between obligations.",
+      "variant_recap_here": true,
       "uk_calendar_recap_here": false,
       "panel_location": "train table by the window",
       "storyboard_caption": "On the move, the grid becomes a small anchor while the rest of the day keeps shifting.",
@@ -93,13 +93,13 @@
       "speech_bubble": "No rushing this one.",
       "dialogue": "No rushing this one.",
       "image_prompt_fragment": "midday pause, diary atmosphere, life outside the puzzle",
-      "full_image_prompt": "ISLA_SP still, patient, eyes scanning, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, quiet public library reading table, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
+      "full_image_prompt": "ISLA_SP thoughtful, slightly tilted head, checking, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, quiet public library reading table, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
       "setting": "outdoor cafe street table",
       "view_rule": "natural varied camera angle, not a repeated pose",
       "image_ref": "isla_03_stuck_moment.png",
       "screen_state": "scene_03",
-      "life_beat": "Isla likes journeys because they give her contained thinking time.",
-      "variant_recap_here": true,
+      "life_beat": "Isla sometimes uses a cafe table as a buffer between obligations.",
+      "variant_recap_here": false,
       "uk_calendar_recap_here": false,
       "panel_location": "outdoor cafe street table",
       "storyboard_caption": "By midday, she has carried the puzzle into another pocket of borrowed quiet.",
@@ -120,12 +120,12 @@
       "speech_bubble": "Today has its own little rule-set — check the constraint before rushing.",
       "dialogue": "Today has its own little rule-set — check the constraint before rushing.",
       "image_prompt_fragment": "brief puzzle rule realisation, careful deduction, calm expression",
-      "full_image_prompt": "ISLA_SP thoughtful, soft realization, relaxed, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, front-facing or three-quarter view, Isla's face clearly visible, quiet public library reading table, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
+      "full_image_prompt": "ISLA_SP confident, clear-eyed, composed, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, front-facing or three-quarter view, Isla's face clearly visible, quiet public library reading table, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
       "setting": "co-working desk near a tall window",
       "view_rule": "front-facing or three-quarter view, Isla's face clearly visible",
       "image_ref": "isla_04_breakthrough.png",
       "screen_state": "scene_04",
-      "life_beat": "Isla likes journeys because they give her contained thinking time.",
+      "life_beat": "Isla sometimes uses a cafe table as a buffer between obligations.",
       "variant_recap_here": false,
       "uk_calendar_recap_here": false,
       "panel_location": "co-working desk near a tall window",
@@ -142,26 +142,26 @@
       "title": "Almost There",
       "beat": "Near completion or a short reset moment.",
       "pose_id": "pose_05_coffee",
-      "scene_description": "bookshop cafe corner. Later, one careful idea holds, and the page starts to feel less noisy than the day around it. late workday pause, small breakthrough, steady concentration",
+      "scene_description": "quiet public library reading table. Later, one careful idea holds, and the page starts to feel less noisy than the day around it. late workday pause, small breakthrough, steady concentration",
       "caption": "Later, one careful idea holds, and the page starts to feel less noisy than the day around it.",
       "speech_bubble": "That gives me a path.",
       "dialogue": "That gives me a path.",
       "image_prompt_fragment": "late workday pause, small breakthrough, steady concentration",
-      "full_image_prompt": "ISLA_SP steady, calm satisfaction, face visible, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, quiet public library reading table, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
-      "setting": "bookshop cafe corner",
+      "full_image_prompt": "ISLA_SP satisfied, gentle, at ease, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, quiet public library reading table, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
+      "setting": "quiet public library reading table",
       "view_rule": "natural varied camera angle, not a repeated pose",
       "image_ref": "isla_05_finish.png",
       "screen_state": "scene_05",
-      "life_beat": "Isla likes journeys because they give her contained thinking time.",
+      "life_beat": "Isla sometimes uses a cafe table as a buffer between obligations.",
       "variant_recap_here": false,
       "uk_calendar_recap_here": false,
-      "panel_location": "bookshop cafe corner",
+      "panel_location": "quiet public library reading table",
       "storyboard_caption": "Later, one careful idea holds, and the page starts to feel less noisy than the day around it.",
       "storyboard_dialogue": "That gives me a path.",
       "storyboard_panel_text": "That gives me a path.\nLater, one careful idea holds, and the page starts to feel less noisy than the day around it.",
-      "location": "bookshop",
+      "location": "public_library",
       "composition": "desk_right_screen",
-      "location_key": "bookshop",
+      "location_key": "public_library",
       "composition_key": "desk_right_screen"
     },
     {
@@ -169,26 +169,26 @@
       "title": "Looking Ahead",
       "beat": "Wrapping up and looking ahead.",
       "pose_id": "pose_06_leaving",
-      "scene_description": "rainy window nook with plants. By the final check, the win is not speed; it is leaving the day a little clearer. end of day reflection, gentle finish, quiet satisfaction",
+      "scene_description": "bookshop cafe corner. By the final check, the win is not speed; it is leaving the day a little clearer. end of day reflection, gentle finish, quiet satisfaction",
       "caption": "By the final check, the win is not speed; it is leaving the day a little clearer.",
       "speech_bubble": "Clearer than before.",
       "dialogue": "Clearer than before.",
       "image_prompt_fragment": "end of day reflection, gentle finish, quiet satisfaction",
-      "full_image_prompt": "ISLA_SP content, gathering belongings, ready to leave, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, quiet public library reading table, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
-      "setting": "rainy window nook with plants",
+      "full_image_prompt": "ISLA_SP content, soft smile, turning away, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, quiet public library reading table, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
+      "setting": "bookshop cafe corner",
       "view_rule": "natural varied camera angle, not a repeated pose",
       "image_ref": "isla_06_tomorrow_set.png",
       "screen_state": "scene_06",
-      "life_beat": "Isla likes journeys because they give her contained thinking time.",
+      "life_beat": "Isla sometimes uses a cafe table as a buffer between obligations.",
       "variant_recap_here": false,
       "uk_calendar_recap_here": false,
-      "panel_location": "rainy window nook with plants",
+      "panel_location": "bookshop cafe corner",
       "storyboard_caption": "By the final check, the win is not speed; it is leaving the day a little clearer.",
       "storyboard_dialogue": "Clearer than before.",
       "storyboard_panel_text": "Clearer than before.\nBy the final check, the win is not speed; it is leaving the day a little clearer.",
-      "location": "rainy_window",
+      "location": "bookshop",
       "composition": "desk_right_screen",
-      "location_key": "rainy_window",
+      "location_key": "bookshop",
       "composition_key": "desk_right_screen"
     }
   ],
@@ -210,37 +210,37 @@
     "puzzle_screen_inserted_later": true,
     "puzzle_product": "Trigoku Daily Lock",
     "puzzle_url": "https://suite.sapiverpress.co.uk",
-    "selected_setting": "train table by the window",
+    "selected_setting": "outdoor cafe street table",
     "image_prompts": [
       {
         "scene": "scene_01",
         "pose_id": "pose_01_back_again",
-        "prompt": "ISLA_SP calm, settling in, slight smile, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, front-facing or three-quarter view, Isla's face clearly visible, quiet public library reading table, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures"
+        "prompt": "ISLA_SP calm, gentle smile, relaxed, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, front-facing or three-quarter view, Isla's face clearly visible, quiet public library reading table, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures"
       },
       {
         "scene": "scene_02",
         "pose_id": "pose_02_first_moves",
-        "prompt": "ISLA_SP engaged, focused, hopeful expression, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, quiet public library reading table, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures"
+        "prompt": "ISLA_SP focused, attentive, engaged, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, quiet public library reading table, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures"
       },
       {
         "scene": "scene_03",
         "pose_id": "pose_03_stuck",
-        "prompt": "ISLA_SP still, patient, eyes scanning, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, quiet public library reading table, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures"
+        "prompt": "ISLA_SP thoughtful, slightly tilted head, checking, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, quiet public library reading table, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures"
       },
       {
         "scene": "scene_04",
         "pose_id": "pose_04_thinking",
-        "prompt": "ISLA_SP thoughtful, soft realization, relaxed, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, front-facing or three-quarter view, Isla's face clearly visible, quiet public library reading table, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures"
+        "prompt": "ISLA_SP confident, clear-eyed, composed, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, front-facing or three-quarter view, Isla's face clearly visible, quiet public library reading table, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures"
       },
       {
         "scene": "scene_05",
         "pose_id": "pose_05_coffee",
-        "prompt": "ISLA_SP steady, calm satisfaction, face visible, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, quiet public library reading table, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures"
+        "prompt": "ISLA_SP satisfied, gentle, at ease, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, quiet public library reading table, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures"
       },
       {
         "scene": "scene_06",
         "pose_id": "pose_06_leaving",
-        "prompt": "ISLA_SP content, gathering belongings, ready to leave, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, quiet public library reading table, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures"
+        "prompt": "ISLA_SP content, soft smile, turning away, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, quiet public library reading table, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures"
       }
     ],
     "style_rules": [
@@ -268,12 +268,12 @@
     "variant_recap": {
       "variant_name": "Trigoku",
       "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
-      "panel_index": 3,
+      "panel_index": 2,
       "line": "Today has its own little rule-set — check the constraint before rushing."
     },
     "uk_calendar_date": null,
-    "location_key": "train",
-    "composition_key": "train_right_screen",
+    "location_key": "cafe",
+    "composition_key": "cafe_right_screen",
     "per_panel_location_keys": true,
     "panel_locations": [
       {
@@ -302,36 +302,36 @@
       },
       {
         "panel": 5,
-        "setting": "bookshop cafe corner",
-        "location_key": "bookshop",
+        "setting": "quiet public library reading table",
+        "location_key": "public_library",
         "composition_key": "desk_right_screen"
       },
       {
         "panel": 6,
-        "setting": "rainy window nook with plants",
-        "location_key": "rainy_window",
+        "setting": "bookshop cafe corner",
+        "location_key": "bookshop",
         "composition_key": "desk_right_screen"
       }
     ]
   },
-  "same_day_attempt": 21,
+  "same_day_attempt": 22,
   "life_canon_used": true,
   "uk_calendar_date": null,
   "variant_recap": {
     "variant_name": "Trigoku",
     "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
-    "panel_index": 3,
+    "panel_index": 2,
     "line": "Today has its own little rule-set — check the constraint before rushing."
   },
   "life_memory_entry": {
     "date": "2026-05-29",
-    "attempt": 21,
-    "location": "train table by the window",
-    "reason_for_location": "she is travelling and using the journey as thinking time",
-    "life_detail_learned": "Isla likes journeys because they give her contained thinking time.",
-    "thread_to_continue": "train rides become moving pockets of focus",
+    "attempt": 22,
+    "location": "outdoor cafe street table",
+    "reason_for_location": "she is trying not to rush straight into the next errand",
+    "life_detail_learned": "Isla sometimes uses a cafe table as a buffer between obligations.",
+    "thread_to_continue": "she is learning to pause before moving on",
     "puzzle_variant_mentioned": "Trigoku",
-    "variant_panel_index": 3,
+    "variant_panel_index": 2,
     "uk_calendar_date": null,
     "uk_calendar_panel_index": null
   },
@@ -345,11 +345,11 @@
     "train table by the window",
     "outdoor cafe street table",
     "co-working desk near a tall window",
-    "bookshop cafe corner",
-    "rainy window nook with plants"
+    "quiet public library reading table",
+    "bookshop cafe corner"
   ],
-  "location_key": "train",
-  "composition_key": "train_right_screen",
+  "location_key": "cafe",
+  "composition_key": "cafe_right_screen",
   "location_key_applied": true,
   "per_panel_location_keys": true
 }

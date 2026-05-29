@@ -18,9 +18,9 @@
       "status": "noted",
       "location_key": "train",
       "lines": [
-        "Travel Note",
-        "Keep the thread",
-        "between stops"
+        "Puzzle Note",
+        "Check the rule",
+        "then move"
       ]
     },
     {
@@ -28,9 +28,9 @@
       "status": "noted",
       "location_key": "cafe",
       "lines": [
-        "Puzzle Note",
-        "Check the rule",
-        "then move"
+        "Cafe Note",
+        "Coffee first",
+        "then the grid"
       ]
     },
     {
@@ -46,17 +46,17 @@
     {
       "file": "05_panel-05.png",
       "status": "noted",
-      "location_key": "bookshop",
+      "location_key": "public_library",
       "lines": [
-        "Bookshop Note",
-        "One more page",
-        "Sapiver Press"
+        "Library Note",
+        "Borrowed quiet",
+        "small proof"
       ]
     },
     {
       "file": "06_panel-06.png",
       "status": "noted",
-      "location_key": "rainy_window",
+      "location_key": "bookshop",
       "lines": [
         "SP Notes",
         "Clearer now",

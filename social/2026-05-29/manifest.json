@@ -41,8 +41,8 @@
     "train table by the window",
     "outdoor cafe street table",
     "co-working desk near a tall window",
-    "bookshop cafe corner",
-    "rainy window nook with plants"
+    "quiet public library reading table",
+    "bookshop cafe corner"
   ],
   "scenes": [
     {
@@ -55,20 +55,20 @@
       "output": "social/2026-05-29/01_panel-01.png",
       "screen_quad": [
         [
-          666,
-          579
+          789,
+          691
         ],
         [
-          1043,
-          599
+          1067,
+          720
         ],
         [
-          1004,
-          871
+          1030,
+          970
         ],
         [
-          630,
-          816
+          736,
+          905
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -85,20 +85,20 @@
       "output": "social/2026-05-29/02_panel-02.png",
       "screen_quad": [
         [
-          666,
-          669
+          695,
+          673
         ],
         [
-          1025,
+          1026,
           693
         ],
         [
-          988,
-          948
+          997,
+          929
         ],
         [
-          632,
-          890
+          665,
+          881
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -113,25 +113,8 @@
       "replacement": "art-replacements/2026-05-29/03_panel-03.png",
       "capture": "captures/2026-05-29/extracted/03_stuck_moment.png",
       "output": "social/2026-05-29/03_panel-03.png",
-      "screen_quad": [
-        [
-          727,
-          687
-        ],
-        [
-          1067,
-          712
-        ],
-        [
-          1049,
-          976
-        ],
-        [
-          691,
-          917
-        ]
-      ],
-      "screen_quad_mode": "detected_replacement_screen",
+      "screen_quad": [],
+      "screen_quad_mode": "overlay_skipped_no_screen_detected",
       "storyboard_text": "No rushing this one.\nBy midday, she has carried the puzzle into another pocket of borrowed quiet.",
       "panel_location": "outdoor cafe street table"
     },
@@ -145,20 +128,20 @@
       "output": "social/2026-05-29/04_panel-04.png",
       "screen_quad": [
         [
-          774,
-          615
+          735,
+          634
+        ],
+        [
+          1066,
+          655
         ],
         [
           1067,
-          637
+          968
         ],
         [
-          1069,
-          921
-        ],
-        [
-          725,
-          853
+          692,
+          895
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -175,25 +158,25 @@
       "output": "social/2026-05-29/05_panel-05.png",
       "screen_quad": [
         [
-          727,
-          615
+          752,
+          683
         ],
         [
-          1067,
-          645
+          1065,
+          722
         ],
         [
-          1028,
-          902
+          1013,
+          966
         ],
         [
-          688,
-          835
+          709,
+          893
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
       "storyboard_text": "That gives me a path.\nLater, one careful idea holds, and the page starts to feel less noisy than the day around it.",
-      "panel_location": "bookshop cafe corner"
+      "panel_location": "quiet public library reading table"
     },
     {
       "scene": "scene_06",
@@ -203,10 +186,27 @@
       "replacement": "art-replacements/2026-05-29/06_panel-06.png",
       "capture": "captures/2026-05-29/extracted/06_complete_solution.png",
       "output": "social/2026-05-29/06_panel-06.png",
-      "screen_quad": [],
-      "screen_quad_mode": "overlay_skipped_no_screen_detected",
+      "screen_quad": [
+        [
+          762,
+          680
+        ],
+        [
+          1067,
+          709
+        ],
+        [
+          1053,
+          977
+        ],
+        [
+          724,
+          901
+        ]
+      ],
+      "screen_quad_mode": "detected_replacement_screen",
       "storyboard_text": "Clearer than before.\nBy the final check, the win is not speed; it is leaving the day a little clearer.",
-      "panel_location": "rainy window nook with plants"
+      "panel_location": "bookshop cafe corner"
     }
   ]
 }

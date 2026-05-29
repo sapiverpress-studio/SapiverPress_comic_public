@@ -1069,6 +1069,51 @@
         "Almost there.",
         "Next stop."
       ]
+    },
+    {
+      "date": "2026-05-29",
+      "weekday": "Friday",
+      "same_day_attempt": 22,
+      "setting": "outdoor cafe street table",
+      "puzzle_phase": "late-week",
+      "story_note": "Isla spends this entry at the outdoor cafe street table because she is trying not to rush straight into the next errand. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Isla sometimes uses a cafe table as a buffer between obligations. Continue the thread: she is learning to pause before moving on.",
+      "stuck_moment": "brief hesitation, coffee nearby",
+      "life_memory_entry": {
+        "date": "2026-05-29",
+        "attempt": 22,
+        "location": "outdoor cafe street table",
+        "reason_for_location": "she is trying not to rush straight into the next errand",
+        "life_detail_learned": "Isla sometimes uses a cafe table as a buffer between obligations.",
+        "thread_to_continue": "she is learning to pause before moving on",
+        "puzzle_variant_mentioned": "Trigoku",
+        "variant_panel_index": 2,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Trigoku",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 2,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Street noise.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Wait there.",
+        "Found it.",
+        "Last sip.",
+        "On again."
+      ]
     }
   ],
   "weeks": [
@@ -2039,6 +2084,51 @@
         "That fits.",
         "Almost there.",
         "Next stop."
+      ]
+    },
+    {
+      "date": "2026-05-29",
+      "weekday": "Friday",
+      "same_day_attempt": 22,
+      "setting": "outdoor cafe street table",
+      "puzzle_phase": "late-week",
+      "story_note": "Isla spends this entry at the outdoor cafe street table because she is trying not to rush straight into the next errand. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Isla sometimes uses a cafe table as a buffer between obligations. Continue the thread: she is learning to pause before moving on.",
+      "stuck_moment": "brief hesitation, coffee nearby",
+      "life_memory_entry": {
+        "date": "2026-05-29",
+        "attempt": 22,
+        "location": "outdoor cafe street table",
+        "reason_for_location": "she is trying not to rush straight into the next errand",
+        "life_detail_learned": "Isla sometimes uses a cafe table as a buffer between obligations.",
+        "thread_to_continue": "she is learning to pause before moving on",
+        "puzzle_variant_mentioned": "Trigoku",
+        "variant_panel_index": 2,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Trigoku",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 2,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Street noise.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Wait there.",
+        "Found it.",
+        "Last sip.",
+        "On again."
       ]
     }
   ],
