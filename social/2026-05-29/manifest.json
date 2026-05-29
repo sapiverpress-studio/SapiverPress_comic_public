@@ -39,10 +39,10 @@
   "storyboard_locations": [
     "small home kitchen table in warm morning light",
     "train table by the window",
-    "rainy window nook with plants",
+    "gothic window desk with cityscape view",
     "outdoor cafe street table",
     "co-working desk near a tall window",
-    "bookshop cafe corner"
+    "rainy window nook with plants"
   ],
   "scenes": [
     {
@@ -53,25 +53,8 @@
       "replacement": "art-replacements/2026-05-29/01_panel-01.png",
       "capture": "captures/2026-05-29/extracted/01_fresh_daily_grid.png",
       "output": "social/2026-05-29/01_panel-01.png",
-      "screen_quad": [
-        [
-          804,
-          644
-        ],
-        [
-          1068,
-          666
-        ],
-        [
-          1070,
-          902
-        ],
-        [
-          773,
-          841
-        ]
-      ],
-      "screen_quad_mode": "detected_replacement_screen",
+      "screen_quad": [],
+      "screen_quad_mode": "overlay_skipped_no_screen_detected",
       "storyboard_text": "One clean look first.\nIsla starts at home, giving herself one quiet minute before the day begins asking for things.",
       "panel_location": "small home kitchen table in warm morning light"
     },
@@ -85,20 +68,20 @@
       "output": "social/2026-05-29/02_panel-02.png",
       "screen_quad": [
         [
-          676,
-          615
+          769,
+          626
         ],
         [
           1068,
-          631
+          659
         ],
         [
-          1040,
-          909
+          1038,
+          912
         ],
         [
-          636,
-          857
+          724,
+          842
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -115,25 +98,25 @@
       "output": "social/2026-05-29/03_panel-03.png",
       "screen_quad": [
         [
-          719,
-          603
+          724,
+          575
         ],
         [
-          1038,
-          627
+          1066,
+          599
         ],
         [
-          993,
-          876
+          1025,
+          851
         ],
         [
-          684,
-          816
+          690,
+          789
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
       "storyboard_text": "No rushing this one.\nBy midday, she has carried the puzzle into another pocket of borrowed quiet.",
-      "panel_location": "rainy window nook with plants"
+      "panel_location": "gothic window desk with cityscape view"
     },
     {
       "scene": "scene_04",
@@ -145,20 +128,20 @@
       "output": "social/2026-05-29/04_panel-04.png",
       "screen_quad": [
         [
-          711,
-          658
+          725,
+          687
         ],
         [
           1066,
-          685
+          709
         ],
         [
-          1045,
-          962
+          1066,
+          1025
         ],
         [
-          678,
-          899
+          680,
+          951
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -173,8 +156,25 @@
       "replacement": "art-replacements/2026-05-29/05_panel-05.png",
       "capture": "captures/2026-05-29/extracted/05_nearly_complete.png",
       "output": "social/2026-05-29/05_panel-05.png",
-      "screen_quad": [],
-      "screen_quad_mode": "overlay_skipped_no_screen_detected",
+      "screen_quad": [
+        [
+          706,
+          644
+        ],
+        [
+          1037,
+          671
+        ],
+        [
+          988,
+          941
+        ],
+        [
+          668,
+          876
+        ]
+      ],
+      "screen_quad_mode": "detected_replacement_screen",
       "storyboard_text": "That gives me a path.\nLater, one careful idea holds, and the page starts to feel less noisy than the day around it.",
       "panel_location": "co-working desk near a tall window"
     },
@@ -188,25 +188,25 @@
       "output": "social/2026-05-29/06_panel-06.png",
       "screen_quad": [
         [
-          772,
-          628
-        ],
-        [
-          1067,
-          668
+          714,
+          726
         ],
         [
           1030,
-          928
+          753
         ],
         [
-          732,
-          843
+          980,
+          1008
+        ],
+        [
+          667,
+          948
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
       "storyboard_text": "Clearer than before.\nBy the final check, the win is not speed; it is leaving the day a little clearer.",
-      "panel_location": "bookshop cafe corner"
+      "panel_location": "rainy window nook with plants"
     }
   ]
 }

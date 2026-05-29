@@ -97,6 +97,12 @@
       "attempt": 19,
       "setting": "rainy window nook with plants",
       "reason": "rain has slowed everything down and she lets it"
+    },
+    {
+      "date": "2026-05-29",
+      "attempt": 20,
+      "setting": "gothic window desk with cityscape view",
+      "reason": "she wants a quiet start before the day gets noisy"
     }
   ],
   "variant_memory": [
@@ -169,6 +175,12 @@
     {
       "date": "2026-05-29",
       "attempt": 19,
+      "variant_name": "Trigoku",
+      "panel_index": 4
+    },
+    {
+      "date": "2026-05-29",
+      "attempt": 20,
       "variant_name": "Trigoku",
       "panel_index": 4
     }
@@ -313,6 +325,18 @@
       "reason_for_location": "rain has slowed everything down and she lets it",
       "life_detail_learned": "Isla does not mind slower days when they give her room to notice things.",
       "thread_to_continue": "rainy days bring out her reflective side",
+      "puzzle_variant_mentioned": "Trigoku",
+      "variant_panel_index": 4,
+      "uk_calendar_date": null,
+      "uk_calendar_panel_index": null
+    },
+    {
+      "date": "2026-05-29",
+      "attempt": 20,
+      "location": "gothic window desk with cityscape view",
+      "reason_for_location": "she wants a quiet start before the day gets noisy",
+      "life_detail_learned": "Isla protects small morning rituals when she needs steadiness.",
+      "thread_to_continue": "quiet morning rituals help her reset",
       "puzzle_variant_mentioned": "Trigoku",
       "variant_panel_index": 4,
       "uk_calendar_date": null,
