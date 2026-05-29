@@ -76,8 +76,8 @@
   "storyboard_locations": [
     "small home kitchen table in warm morning light",
     "train table by the window",
-    "co-working desk near a tall window",
     "outdoor cafe street table",
+    "co-working desk near a tall window",
     "quiet public library reading table",
     "bookshop cafe corner"
   ],
@@ -92,20 +92,20 @@
       "output": "social/2026-05-29/01_panel-01.png",
       "screen_quad": [
         [
-          741,
-          559
+          748,
+          586
         ],
         [
-          1063,
-          590
+          1067,
+          616
         ],
         [
-          1016,
-          848
+          1065,
+          884
         ],
         [
           706,
-          776
+          806
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -123,8 +123,25 @@
       "replacement": "art-replacements/2026-05-29/02_panel-02.png",
       "capture": "captures/2026-05-29/extracted/02_first_moves.png",
       "output": "social/2026-05-29/02_panel-02.png",
-      "screen_quad": [],
-      "screen_quad_mode": "overlay_skipped_no_screen_detected",
+      "screen_quad": [
+        [
+          690,
+          619
+        ],
+        [
+          1044,
+          657
+        ],
+        [
+          984,
+          927
+        ],
+        [
+          638,
+          850
+        ]
+      ],
+      "screen_quad_mode": "detected_replacement_screen",
       "storyboard_text": "Don't chase it.\nThe journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
       "arc_role": "disruption",
       "storyboard_caption": "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
@@ -141,20 +158,20 @@
       "output": "social/2026-05-29/03_panel-03.png",
       "screen_quad": [
         [
-          740,
-          652
+          716,
+          626
         ],
         [
           1067,
-          674
+          651
         ],
         [
-          1069,
-          947
+          1023,
+          916
         ],
         [
-          698,
-          889
+          678,
+          855
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -162,7 +179,7 @@
       "arc_role": "choice",
       "storyboard_caption": "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
       "storyboard_dialogue": "Three minutes. Properly.",
-      "panel_location": "co-working desk near a tall window"
+      "panel_location": "outdoor cafe street table"
     },
     {
       "scene": "scene_04",
@@ -172,13 +189,30 @@
       "replacement": "art-replacements/2026-05-29/04_panel-04.png",
       "capture": "captures/2026-05-29/extracted/04_breakthrough.png",
       "output": "social/2026-05-29/04_panel-04.png",
-      "screen_quad": [],
-      "screen_quad_mode": "overlay_skipped_no_screen_detected",
+      "screen_quad": [
+        [
+          728,
+          584
+        ],
+        [
+          1066,
+          605
+        ],
+        [
+          1068,
+          915
+        ],
+        [
+          693,
+          842
+        ]
+      ],
+      "screen_quad_mode": "detected_replacement_screen",
       "storyboard_text": "Today has its own little rule-set \u2014 check the constraint before rushing.\nTrigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
       "arc_role": "puzzle_moment",
       "storyboard_caption": "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
       "storyboard_dialogue": "Today has its own little rule-set \u2014 check the constraint before rushing.",
-      "panel_location": "outdoor cafe street table"
+      "panel_location": "co-working desk near a tall window"
     },
     {
       "scene": "scene_05",
@@ -190,20 +224,20 @@
       "output": "social/2026-05-29/05_panel-05.png",
       "screen_quad": [
         [
-          663,
-          618
+          731,
+          676
         ],
         [
-          1012,
-          645
+          1066,
+          695
         ],
         [
-          977,
-          910
+          1063,
+          1012
         ],
         [
-          634,
-          848
+          690,
+          939
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -223,20 +257,20 @@
       "output": "social/2026-05-29/06_panel-06.png",
       "screen_quad": [
         [
-          725,
-          589
+          730,
+          679
         ],
         [
-          1068,
-          605
+          1046,
+          697
         ],
         [
-          1037,
-          868
+          1006,
+          939
         ],
         [
-          693,
-          821
+          691,
+          891
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",

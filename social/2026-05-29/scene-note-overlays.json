@@ -26,21 +26,21 @@
     {
       "file": "03_panel-03.png",
       "status": "noted",
-      "location_key": "coworking",
-      "lines": [
-        "Desk Note",
-        "One clear move",
-        "back to work"
-      ]
-    },
-    {
-      "file": "04_panel-04.png",
-      "status": "noted",
       "location_key": "cafe",
       "lines": [
         "Cafe Note",
         "Coffee first",
         "then the grid"
+      ]
+    },
+    {
+      "file": "04_panel-04.png",
+      "status": "noted",
+      "location_key": "coworking",
+      "lines": [
+        "Desk Note",
+        "One clear move",
+        "back to work"
       ]
     },
     {
