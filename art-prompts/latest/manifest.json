@@ -1,14 +1,23 @@
 {
   "date": "2026-05-29",
   "character": "isla",
-  "format": "daily_art_prompt_pack_v3_locked_isla_base_plus_story_beat",
-  "purpose": "Generate six replaceable Isla panel artworks using the locked scene base plus the panel story beat only.",
+  "format": "daily_art_prompt_pack_v4_block_locked_isla",
+  "purpose": "Generate six replaceable Isla panel artworks using appearance lock, composition template, location block, pose block, and optional story beat.",
   "replacement_dir": "art-replacements/2026-05-29",
   "prompt_dir": "art-prompts/2026-05-29",
   "prompts_json": "art-prompts/2026-05-29/prompts.json",
   "compositor_rule": "If a matching replacement PNG exists, use it. Otherwise use the locked template artwork.",
-  "locked_prompt_base": "ISLA_SP, young Black woman, warm medium brown skin, light freckles on nose and cheeks, natural coily dark hair in high voluminous puff bun, wide floral teal rust orange cream headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, seated at dark wooden desk, cosy library study, cream ceramic mug on desk, open journal with handwritten notes, stack of dark hardcover books, vintage desk lamp warm amber glow, large gothic window with autumn city view, ivy bookshelf behind her, soft focused smile, chin resting on hand, eyes on laptop screen, warm golden hour light, painterly editorial illustration style, cinematic warm amber palette, detailed textures",
-  "locked_screen_target": "open laptop to her right with screen facing away showing solid blue glow, Isla not touching laptop",
+  "appearance_lock": "ISLA_SP, young Black woman, warm medium brown skin, light freckles on nose and cheeks, natural coily dark hair in high voluminous puff bun, wide floral teal rust orange cream headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, painterly editorial illustration style, cinematic warm amber palette, detailed textures",
+  "default_composition": "desk_right_screen",
+  "default_location": "library_study",
+  "default_panel_poses": [
+    "opening_focus",
+    "writing",
+    "pause_think",
+    "breakthrough",
+    "check_notes",
+    "finish_close"
+  ],
   "locked_negative_prompt": "screen obscuring face, device held in front of face, floating overlay, phone pressed to cheek",
   "panel_files": [
     "01_panel-01.png",
@@ -36,7 +45,7 @@
       "output_file": "social/2026-05-29/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "Start small.",
+      "caption": "There it is.",
       "scene_id": "scene_02"
     },
     {
@@ -46,7 +55,7 @@
       "output_file": "social/2026-05-29/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "No guessing.",
+      "caption": "That opens it.",
       "scene_id": "scene_03"
     },
     {
@@ -56,7 +65,7 @@
       "output_file": "social/2026-05-29/04_panel-04.png",
       "image_name": "04_panel-04.png",
       "fallback_template": "templates/characters/isla/isla_04_breakthrough.png",
-      "caption": "There it is.",
+      "caption": "No guessing.",
       "scene_id": "scene_04"
     },
     {
@@ -81,5 +90,5 @@
     }
   ],
   "story_source": "daily/2026-05-29.json",
-  "generated_at": "2026-05-29T06:01:06.305Z"
+  "generated_at": "2026-05-29T07:21:53.915Z"
 }

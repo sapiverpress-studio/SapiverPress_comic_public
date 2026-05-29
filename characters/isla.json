@@ -181,9 +181,9 @@
       "weekday": "Friday",
       "setting": "quiet public library reading table",
       "puzzle_phase": "late-week",
-      "story_note": "Friday morning at the library; Isla finds the late-week puzzle surprisingly approachable, moves through it with quiet confidence, and finishes feeling satisfied.",
-      "continuation_note": "Unlike Thursday's hesitation and backtracking, today Isla experiences smooth momentum—the stuck moment is brief distraction rather than logical confusion, and she completes the puzzle with a sense of ease.",
-      "stuck_moment": "momentarily distracted, eyes lifted, gentle pause",
+      "story_note": "Friday morning at the library, Isla finds an unexpectedly smooth puzzle that flows from start to finish without the usual resistance.",
+      "continuation_note": "Unlike Thursday's tricky resistance and Wednesday's careful logic-threading, today's puzzle opens up quickly, giving Isla a rare feeling of momentum and ease.",
+      "stuck_moment": "surprised, pleasantly caught off guard",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -194,9 +194,9 @@
       ],
       "captions": [
         "Back again.",
-        "Start small.",
-        "No guessing.",
         "There it is.",
+        "That opens it.",
+        "No guessing.",
         "Nearly there.",
         "A clean finish."
       ]
@@ -283,9 +283,9 @@
       "weekday": "Friday",
       "setting": "quiet public library reading table",
       "puzzle_phase": "late-week",
-      "story_note": "Friday morning at the library; Isla finds the late-week puzzle surprisingly approachable, moves through it with quiet confidence, and finishes feeling satisfied.",
-      "continuation_note": "Unlike Thursday's hesitation and backtracking, today Isla experiences smooth momentum—the stuck moment is brief distraction rather than logical confusion, and she completes the puzzle with a sense of ease.",
-      "stuck_moment": "momentarily distracted, eyes lifted, gentle pause",
+      "story_note": "Friday morning at the library, Isla finds an unexpectedly smooth puzzle that flows from start to finish without the usual resistance.",
+      "continuation_note": "Unlike Thursday's tricky resistance and Wednesday's careful logic-threading, today's puzzle opens up quickly, giving Isla a rare feeling of momentum and ease.",
+      "stuck_moment": "surprised, pleasantly caught off guard",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -296,9 +296,9 @@
       ],
       "captions": [
         "Back again.",
-        "Start small.",
-        "No guessing.",
         "There it is.",
+        "That opens it.",
+        "No guessing.",
         "Nearly there.",
         "A clean finish."
       ]
