@@ -8,6 +8,7 @@
     "capture:today": "node scripts/capture_trigoku_playthrough_v2.mjs",
     "art-prompts": "node scripts/generate-art-prompt-pack.mjs && node scripts/apply-story-beats.mjs",
     "generate-images": "node scripts/generate-isla-images-floor.mjs",
+    "polish-images": "node scripts/polish-isla-images-openai.mjs",
     "short-video-script": "node scripts/test_phase4_placeholder.mjs",
     "short-video-voice": "node scripts/test_phase4_voice.mjs",
     "short-video-build": "node scripts/build-short-video.mjs",
