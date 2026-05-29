@@ -181,9 +181,9 @@
       "weekday": "Friday",
       "setting": "quiet public library reading table",
       "puzzle_phase": "late-week",
-      "story_note": "Friday morning at the library; Isla finds a rhythm quickly, the late-week puzzle flowing smoothly without the false starts of yesterday.",
-      "continuation_note": "Unlike Thursday's hesitant backtracking, today Isla moves with quiet confidence, the stuck moment is brief distraction rather than puzzle resistance, and the overall tone is lighter heading into the weekend.",
-      "stuck_moment": "momentarily distracted, glancing away, slight pause",
+      "story_note": "Friday at the library, Isla encounters a late-week puzzle that feels almost too smooth at first, but a single cell throws her off rhythm and she has to rebuild her confidence quietly.",
+      "continuation_note": "Unlike Thursday's backtracking struggle, today Isla faces an illusion of ease that collapses suddenly, requiring her to sit with uncertainty and rebuild trust in her own logic rather than strategy.",
+      "stuck_moment": "uncertain, still, eyes narrowed with doubt",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -195,9 +195,9 @@
       "captions": [
         "Back again.",
         "Start small.",
-        "There it is.",
+        "Not that one.",
         "One number at a time.",
-        "Nearly there.",
+        "There it is.",
         "Same time tomorrow."
       ]
     }
@@ -283,9 +283,9 @@
       "weekday": "Friday",
       "setting": "quiet public library reading table",
       "puzzle_phase": "late-week",
-      "story_note": "Friday morning at the library; Isla finds a rhythm quickly, the late-week puzzle flowing smoothly without the false starts of yesterday.",
-      "continuation_note": "Unlike Thursday's hesitant backtracking, today Isla moves with quiet confidence, the stuck moment is brief distraction rather than puzzle resistance, and the overall tone is lighter heading into the weekend.",
-      "stuck_moment": "momentarily distracted, glancing away, slight pause",
+      "story_note": "Friday at the library, Isla encounters a late-week puzzle that feels almost too smooth at first, but a single cell throws her off rhythm and she has to rebuild her confidence quietly.",
+      "continuation_note": "Unlike Thursday's backtracking struggle, today Isla faces an illusion of ease that collapses suddenly, requiring her to sit with uncertainty and rebuild trust in her own logic rather than strategy.",
+      "stuck_moment": "uncertain, still, eyes narrowed with doubt",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -297,9 +297,9 @@
       "captions": [
         "Back again.",
         "Start small.",
-        "There it is.",
+        "Not that one.",
         "One number at a time.",
-        "Nearly there.",
+        "There it is.",
         "Same time tomorrow."
       ]
     }
