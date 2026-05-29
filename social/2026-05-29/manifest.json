@@ -39,10 +39,10 @@
   "storyboard_locations": [
     "small home kitchen table in warm morning light",
     "train table by the window",
-    "bookshop cafe corner",
     "outdoor cafe street table",
     "co-working desk near a tall window",
-    "quiet public library reading table"
+    "quiet public library reading table",
+    "bookshop cafe corner"
   ],
   "scenes": [
     {
@@ -55,20 +55,20 @@
       "output": "social/2026-05-29/01_panel-01.png",
       "screen_quad": [
         [
-          739,
-          626
+          753,
+          637
         ],
         [
-          1066,
-          656
+          1067,
+          667
         ],
         [
-          1047,
-          953
+          1046,
+          929
         ],
         [
-          690,
-          876
+          713,
+          862
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -85,20 +85,20 @@
       "output": "social/2026-05-29/02_panel-02.png",
       "screen_quad": [
         [
-          770,
-          672
+          672,
+          647
         ],
         [
-          1067,
-          694
+          1039,
+          677
         ],
         [
-          1069,
-          985
+          998,
+          944
         ],
         [
-          724,
-          911
+          636,
+          878
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -115,25 +115,25 @@
       "output": "social/2026-05-29/03_panel-03.png",
       "screen_quad": [
         [
-          750,
-          619
+          697,
+          710
         ],
         [
-          1066,
-          650
+          1067,
+          754
         ],
         [
-          1056,
-          932
+          1018,
+          1021
         ],
         [
-          711,
-          854
+          650,
+          946
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
       "storyboard_text": "No rushing this one.\nBy midday, she has carried the puzzle into another pocket of borrowed quiet.",
-      "panel_location": "bookshop cafe corner"
+      "panel_location": "outdoor cafe street table"
     },
     {
       "scene": "scene_04",
@@ -145,25 +145,25 @@
       "output": "social/2026-05-29/04_panel-04.png",
       "screen_quad": [
         [
-          711,
-          630
+          737,
+          659
         ],
         [
-          1065,
-          665
+          1066,
+          685
         ],
         [
-          1047,
-          975
+          1068,
+          961
         ],
         [
-          671,
-          890
+          696,
+          891
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
       "storyboard_text": "Today has its own little rule-set \u2014 check the constraint before rushing.\nTrigoku changes the route through the puzzle, so she checks the constraint before trusting a move.",
-      "panel_location": "outdoor cafe street table"
+      "panel_location": "co-working desk near a tall window"
     },
     {
       "scene": "scene_05",
@@ -175,25 +175,25 @@
       "output": "social/2026-05-29/05_panel-05.png",
       "screen_quad": [
         [
-          728,
-          643
+          734,
+          678
         ],
         [
-          1068,
-          669
+          1067,
+          705
         ],
         [
-          1022,
-          952
+          1029,
+          994
         ],
         [
-          688,
-          884
+          684,
+          923
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
       "storyboard_text": "That gives me a path.\nLater, one careful idea holds, and the page starts to feel less noisy than the day around it.",
-      "panel_location": "co-working desk near a tall window"
+      "panel_location": "quiet public library reading table"
     },
     {
       "scene": "scene_06",
@@ -205,25 +205,25 @@
       "output": "social/2026-05-29/06_panel-06.png",
       "screen_quad": [
         [
-          725,
-          712
+          734,
+          705
         ],
         [
-          1067,
-          736
+          1066,
+          727
         ],
         [
-          1052,
-          989
+          1049,
+          1006
         ],
         [
-          685,
-          926
+          696,
+          938
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
       "storyboard_text": "Clearer than before.\nBy the final check, the win is not speed; it is leaving the day a little clearer.",
-      "panel_location": "quiet public library reading table"
+      "panel_location": "bookshop cafe corner"
     }
   ]
 }
