@@ -36,7 +36,7 @@
       "output_file": "social/2026-05-29/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "Street noise.",
+      "caption": "Rain on glass.",
       "scene_id": "scene_01"
     },
     {
@@ -46,7 +46,7 @@
       "output_file": "social/2026-05-29/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "One safe move.",
+      "caption": "Today has its own little rule-set — check the constraint before rushing.",
       "scene_id": "scene_02"
     },
     {
@@ -56,7 +56,7 @@
       "output_file": "social/2026-05-29/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "Wait there.",
+      "caption": "Let it sit.",
       "scene_id": "scene_03"
     },
     {
@@ -66,7 +66,7 @@
       "output_file": "social/2026-05-29/04_panel-04.png",
       "image_name": "04_panel-04.png",
       "fallback_template": "templates/characters/isla/isla_04_breakthrough.png",
-      "caption": "Today has its own little rule-set — check the constraint before rushing.",
+      "caption": "Line found.",
       "scene_id": "scene_04"
     },
     {
@@ -76,7 +76,7 @@
       "output_file": "social/2026-05-29/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "Last sip.",
+      "caption": "Almost done.",
       "scene_id": "scene_05"
     },
     {
@@ -86,10 +86,10 @@
       "output_file": "social/2026-05-29/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "On again.",
+      "caption": "No rush.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-05-29.json",
-  "generated_at": "2026-05-29T11:27:22.834Z"
+  "generated_at": "2026-05-29T11:35:50.383Z"
 }

@@ -11,32 +11,32 @@
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "Street noise."
+      "text": "Rain on glass."
     },
     {
       "id": "panel_2",
       "image_name": "02_panel-02.png",
-      "text": "One safe move."
+      "text": "Today has its own little rule-set — check the constraint before rushing."
     },
     {
       "id": "panel_3",
       "image_name": "03_panel-03.png",
-      "text": "Wait there."
+      "text": "Let it sit."
     },
     {
       "id": "panel_4",
       "image_name": "04_panel-04.png",
-      "text": "Today has its own little rule-set — check the constraint before rushing."
+      "text": "Line found."
     },
     {
       "id": "panel_5",
       "image_name": "05_panel-05.png",
-      "text": "Last sip."
+      "text": "Almost done."
     },
     {
       "id": "panel_6",
       "image_name": "06_panel-06.png",
-      "text": "On again."
+      "text": "No rush."
     },
     {
       "id": "cta",
@@ -44,6 +44,6 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nStreet noise.\n\nOne safe move.\n\nWait there.\n\nToday has its own little rule-set — check the constraint before rushing.\n\nLast sip.\n\nOn again.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-05-29T11:28:41.255Z"
+  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nRain on glass.\n\nToday has its own little rule-set — check the constraint before rushing.\n\nLet it sit.\n\nLine found.\n\nAlmost done.\n\nNo rush.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-05-29T11:37:09.040Z"
 }

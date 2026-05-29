@@ -8,14 +8,16 @@
     "Isla uses libraries as reset spaces, not just work spaces.",
     "Isla values ordinary domestic quiet as much as beautiful public spaces.",
     "Bookshops pull Isla into longer pauses than she planned.",
-    "Isla sometimes uses a cafe table as a buffer between obligations."
+    "Isla sometimes uses a cafe table as a buffer between obligations.",
+    "Isla does not mind slower days when they give her room to notice things."
   ],
   "active_threads": [
     "protecting small quiet routines",
     "library visits become her backup calm place",
     "home mornings reveal her private routine",
     "she is drawn to places with books and warm corners",
-    "she is learning to pause before moving on"
+    "she is learning to pause before moving on",
+    "rainy days bring out her reflective side"
   ],
   "location_memory": [
     {
@@ -41,6 +43,12 @@
       "attempt": 11,
       "setting": "outdoor cafe street table",
       "reason": "she is trying not to rush straight into the next errand"
+    },
+    {
+      "date": "2026-05-29",
+      "attempt": 12,
+      "setting": "rainy window nook with plants",
+      "reason": "rain has slowed everything down and she lets it"
     }
   ],
   "variant_memory": [
@@ -67,6 +75,12 @@
       "attempt": 11,
       "variant_name": "Trigoku",
       "panel_index": 4
+    },
+    {
+      "date": "2026-05-29",
+      "attempt": 12,
+      "variant_name": "Trigoku",
+      "panel_index": 2
     }
   ],
   "life_memory": [
@@ -115,6 +129,18 @@
       "thread_to_continue": "she is learning to pause before moving on",
       "puzzle_variant_mentioned": "Trigoku",
       "variant_panel_index": 4,
+      "uk_calendar_date": null,
+      "uk_calendar_panel_index": null
+    },
+    {
+      "date": "2026-05-29",
+      "attempt": 12,
+      "location": "rainy window nook with plants",
+      "reason_for_location": "rain has slowed everything down and she lets it",
+      "life_detail_learned": "Isla does not mind slower days when they give her room to notice things.",
+      "thread_to_continue": "rainy days bring out her reflective side",
+      "puzzle_variant_mentioned": "Trigoku",
+      "variant_panel_index": 2,
       "uk_calendar_date": null,
       "uk_calendar_panel_index": null
     }
