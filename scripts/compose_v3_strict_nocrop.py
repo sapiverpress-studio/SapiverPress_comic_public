@@ -16,7 +16,7 @@ from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-from PIL import Image, PngImagePlugin
+from PIL import Image, ImageDraw, PngImagePlugin
 
 import compose_v3_strict_clean as base
 
@@ -48,6 +48,90 @@ def crop_capture_to_game(path: Path) -> Image.Image:
 
 
 base.crop_capture_to_game = crop_capture_to_game
+
+
+def wrap_text_lines(text: str, font, max_width: int, max_lines: int) -> list[str]:
+    words = str(text or "").replace("\n", " ").split()
+    if not words:
+        return []
+    probe = Image.new("RGB", (10, 10))
+    draw = ImageDraw.Draw(probe)
+    lines: list[str] = []
+    current = words[0]
+    for word in words[1:]:
+        test = f"{current} {word}"
+        if draw.textbbox((0, 0), test, font=font)[2] <= max_width:
+            current = test
+        else:
+            lines.append(current)
+            current = word
+            if len(lines) >= max_lines:
+                break
+    if len(lines) < max_lines:
+        lines.append(current)
+    return lines[:max_lines]
+
+
+def scene_text_parts(story: dict, index: int) -> tuple[str, str]:
+    scenes = story.get("scenes") or []
+    if index < len(scenes):
+        scene = scenes[index]
+        dialogue = str(scene.get("storyboard_dialogue") or scene.get("dialogue") or scene.get("speech_bubble") or "").strip()
+        caption = str(scene.get("storyboard_caption") or scene.get("caption") or "").strip()
+        return dialogue, caption or base.DEFAULT_CAPTIONS[index]
+    return "", base.DEFAULT_CAPTIONS[index]
+
+
+def caption_for_scene(story: dict, index: int) -> str:
+    dialogue, caption = scene_text_parts(story, index)
+    return f"{dialogue}\n{caption}" if dialogue else caption
+
+
+def add_storyboard_caption(panel: Image.Image, text: str) -> None:
+    if "\n" in str(text or ""):
+        dialogue, caption = str(text).split("\n", 1)
+    else:
+        dialogue, caption = "", str(text or "")
+
+    dialogue = dialogue.strip()
+    caption = caption.strip()
+    if not dialogue and not caption:
+        return
+
+    draw = ImageDraw.Draw(panel, "RGBA")
+    max_width = panel.width - 170
+    dialogue_font = base.load_font(31, bold=True)
+    caption_font = base.load_font(29)
+    dialogue_lines = wrap_text_lines(dialogue, dialogue_font, max_width, 2) if dialogue else []
+    caption_lines = wrap_text_lines(caption, caption_font, max_width, 3) if caption else []
+
+    line_h_dialogue = 39
+    line_h_caption = 36
+    pad_x = 34
+    pad_y = 22
+    gap = 10 if dialogue_lines and caption_lines else 0
+    box_h = pad_y * 2 + len(dialogue_lines) * line_h_dialogue + gap + len(caption_lines) * line_h_caption
+    x0, y0 = 64, panel.height - box_h - 48
+    x1, y1 = panel.width - 64, panel.height - 48
+
+    draw.rounded_rectangle((x0, y0, x1, y1), radius=24, fill=(255, 255, 255, 226), outline=(21, 32, 54, 190), width=2)
+    y = y0 + pad_y
+
+    if dialogue_lines:
+        for line in dialogue_lines:
+            bbox = draw.textbbox((0, 0), line, font=dialogue_font)
+            draw.text(((panel.width - (bbox[2] - bbox[0])) / 2, y), line, font=dialogue_font, fill=(15, 28, 45, 255))
+            y += line_h_dialogue
+        y += gap
+
+    for line in caption_lines:
+        bbox = draw.textbbox((0, 0), line, font=caption_font)
+        draw.text(((panel.width - (bbox[2] - bbox[0])) / 2, y), line, font=caption_font, fill=(34, 36, 43, 255))
+        y += line_h_caption
+
+
+base.caption_for_scene = caption_for_scene
+base.add_caption = add_storyboard_caption
 
 
 def save_png(img: Image.Image, path: Path) -> None:
@@ -91,7 +175,7 @@ def write_manifest(story: dict, rows: list[dict]) -> dict:
     manifest = {
         "date": DATE,
         "character": CHARACTER,
-        "format": "eight_image_daily_set",
+        "format": "eight_image_daily_set_storyboard_text",
         "montage": False,
         "files": EXPORT_FILES,
         "post_order": EXPORT_FILES,
@@ -100,7 +184,8 @@ def write_manifest(story: dict, rows: list[dict]) -> dict:
         "story_source": str(story_source.relative_to(ROOT)) if story_source.exists() else "",
         "puzzle_product": "Trigoku Daily Lock",
         "puzzle_url": "https://suite.sapiverpress.co.uk",
-        "captions": [base.caption_for_scene(story, i) for i in range(6)],
+        "captions": [caption_for_scene(story, i) for i in range(6)],
+        "storyboard_locations": story.get("storyboard_locations") or [],
         "scenes": rows,
     }
 
@@ -138,6 +223,8 @@ def main() -> None:
         final_path = OUT_DIR / EXPORT_FILES[index + 1]
         shutil.move(str(panel_path), str(final_path))
         row["output"] = str(final_path.relative_to(ROOT))
+        row["storyboard_text"] = caption_for_scene(story, index)
+        row["panel_location"] = scene.get("panel_location") or scene.get("setting") or ""
         rows.append(row)
         intermediate_paths.append(panel_path)
 
