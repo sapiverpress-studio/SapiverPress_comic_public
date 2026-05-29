@@ -26,22 +26,52 @@
   "archive_dir": "social/2026-05-29",
   "latest_dir": "social/latest",
   "story_source": "daily/2026-05-29.json",
+  "story_source_used": "daily/2026-05-29.json",
+  "story_fields_used": [
+    "story_note",
+    "continuation_note",
+    "life_memory_entry",
+    "scenes[].scene_description",
+    "scenes[].beat",
+    "scenes[].caption",
+    "scenes[].dialogue",
+    "scenes[].speech_bubble",
+    "scenes[].image_prompt_fragment",
+    "puzzle_state",
+    "variant_recap",
+    "uk_calendar_date"
+  ],
+  "storyboard_copy_source": "openai",
+  "storyboard_copy_model": "gpt-4o-mini",
+  "storyboard_arc_type": "story_driven_not_location_driven",
+  "storyboard_arc": "Isla navigates her day with the puzzle as a grounding force, cherishing the quiet moments that lead to clarity and satisfaction.",
+  "storyboard_quality": {
+    "location_sequence_only": false,
+    "has_cause_effect": true,
+    "has_character_turn": true,
+    "uses_phase2_story": true,
+    "quality_gate_passed": true,
+    "interchangeable": false,
+    "generic_phrase_hits": [],
+    "cause_effect_link_count": 3,
+    "character_turn_count": 2
+  },
   "puzzle_product": "Trigoku Daily Lock",
   "puzzle_url": "https://suite.sapiverpress.co.uk",
   "captions": [
-    "One clean look first.\nIsla starts at home, giving herself one quiet minute before the day begins asking for things.",
-    "Keep the thread.\nOn the move, the grid becomes a small anchor while the rest of the day keeps shifting.",
-    "No rushing this one.\nBy midday, she has carried the puzzle into another pocket of borrowed quiet.",
-    "Today has its own little rule-set \u2014 check the constraint before rushing.\nTrigoku changes the route through the puzzle, so she checks the constraint before trusting a move.",
-    "That gives me a path.\nLater, one careful idea holds, and the page starts to feel less noisy than the day around it.",
-    "Clearer than before.\nBy the final check, the win is not speed; it is leaving the day a little clearer."
+    "Start before the rush.\nIsla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
+    "Don't chase it.\nThe journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
+    "Three minutes. Properly.\nAt the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
+    "Today has its own little rule-set \u2014 check the constraint before rushing.\nTrigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
+    "That stayed true.\nBecause she waited, the move holds; the errand feels less like a deadline and more like a next step.",
+    "Take the pause with you.\nBy the final check, Isla carries the pause forward: home mornings reveal her private routine."
   ],
   "storyboard_locations": [
     "small home kitchen table in warm morning light",
     "train table by the window",
+    "small kitchen table in warm morning light",
     "outdoor cafe street table",
     "co-working desk near a tall window",
-    "quiet public library reading table",
     "bookshop cafe corner"
   ],
   "scenes": [
@@ -55,24 +85,27 @@
       "output": "social/2026-05-29/01_panel-01.png",
       "screen_quad": [
         [
-          789,
-          691
+          695,
+          667
         ],
         [
-          1067,
-          720
+          1052,
+          698
         ],
         [
-          1030,
-          970
+          1017,
+          965
         ],
         [
-          736,
-          905
+          664,
+          898
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "One clean look first.\nIsla starts at home, giving herself one quiet minute before the day begins asking for things.",
+      "storyboard_text": "Start before the rush.\nIsla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
+      "arc_role": "setup",
+      "storyboard_caption": "Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
+      "storyboard_dialogue": "Start before the rush.",
       "panel_location": "small home kitchen table in warm morning light"
     },
     {
@@ -85,24 +118,27 @@
       "output": "social/2026-05-29/02_panel-02.png",
       "screen_quad": [
         [
-          695,
-          673
+          732,
+          687
         ],
         [
-          1026,
-          693
+          999,
+          717
         ],
         [
-          997,
-          929
+          972,
+          911
         ],
         [
-          665,
-          881
+          711,
+          866
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Keep the thread.\nOn the move, the grid becomes a small anchor while the rest of the day keeps shifting.",
+      "storyboard_text": "Don't chase it.\nThe journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
+      "arc_role": "disruption",
+      "storyboard_caption": "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
+      "storyboard_dialogue": "Don't chase it.",
       "panel_location": "train table by the window"
     },
     {
@@ -113,10 +149,30 @@
       "replacement": "art-replacements/2026-05-29/03_panel-03.png",
       "capture": "captures/2026-05-29/extracted/03_stuck_moment.png",
       "output": "social/2026-05-29/03_panel-03.png",
-      "screen_quad": [],
-      "screen_quad_mode": "overlay_skipped_no_screen_detected",
-      "storyboard_text": "No rushing this one.\nBy midday, she has carried the puzzle into another pocket of borrowed quiet.",
-      "panel_location": "outdoor cafe street table"
+      "screen_quad": [
+        [
+          738,
+          649
+        ],
+        [
+          1066,
+          675
+        ],
+        [
+          1057,
+          964
+        ],
+        [
+          693,
+          890
+        ]
+      ],
+      "screen_quad_mode": "detected_replacement_screen",
+      "storyboard_text": "Three minutes. Properly.\nAt the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
+      "arc_role": "choice",
+      "storyboard_caption": "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
+      "storyboard_dialogue": "Three minutes. Properly.",
+      "panel_location": "small kitchen table in warm morning light"
     },
     {
       "scene": "scene_04",
@@ -126,27 +182,13 @@
       "replacement": "art-replacements/2026-05-29/04_panel-04.png",
       "capture": "captures/2026-05-29/extracted/04_breakthrough.png",
       "output": "social/2026-05-29/04_panel-04.png",
-      "screen_quad": [
-        [
-          735,
-          634
-        ],
-        [
-          1066,
-          655
-        ],
-        [
-          1067,
-          968
-        ],
-        [
-          692,
-          895
-        ]
-      ],
-      "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Today has its own little rule-set \u2014 check the constraint before rushing.\nTrigoku changes the route through the puzzle, so she checks the constraint before trusting a move.",
-      "panel_location": "co-working desk near a tall window"
+      "screen_quad": [],
+      "screen_quad_mode": "overlay_skipped_no_screen_detected",
+      "storyboard_text": "Today has its own little rule-set \u2014 check the constraint before rushing.\nTrigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
+      "arc_role": "puzzle_moment",
+      "storyboard_caption": "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
+      "storyboard_dialogue": "Today has its own little rule-set \u2014 check the constraint before rushing.",
+      "panel_location": "outdoor cafe street table"
     },
     {
       "scene": "scene_05",
@@ -156,27 +198,13 @@
       "replacement": "art-replacements/2026-05-29/05_panel-05.png",
       "capture": "captures/2026-05-29/extracted/05_nearly_complete.png",
       "output": "social/2026-05-29/05_panel-05.png",
-      "screen_quad": [
-        [
-          752,
-          683
-        ],
-        [
-          1065,
-          722
-        ],
-        [
-          1013,
-          966
-        ],
-        [
-          709,
-          893
-        ]
-      ],
-      "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "That gives me a path.\nLater, one careful idea holds, and the page starts to feel less noisy than the day around it.",
-      "panel_location": "quiet public library reading table"
+      "screen_quad": [],
+      "screen_quad_mode": "overlay_skipped_no_screen_detected",
+      "storyboard_text": "That stayed true.\nBecause she waited, the move holds; the errand feels less like a deadline and more like a next step.",
+      "arc_role": "consequence",
+      "storyboard_caption": "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.",
+      "storyboard_dialogue": "That stayed true.",
+      "panel_location": "co-working desk near a tall window"
     },
     {
       "scene": "scene_06",
@@ -188,24 +216,27 @@
       "output": "social/2026-05-29/06_panel-06.png",
       "screen_quad": [
         [
-          762,
-          680
+          713,
+          669
         ],
         [
-          1067,
-          709
+          1026,
+          699
         ],
         [
-          1053,
-          977
+          982,
+          923
         ],
         [
-          724,
-          901
+          676,
+          860
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Clearer than before.\nBy the final check, the win is not speed; it is leaving the day a little clearer.",
+      "storyboard_text": "Take the pause with you.\nBy the final check, Isla carries the pause forward: home mornings reveal her private routine.",
+      "arc_role": "resolution",
+      "storyboard_caption": "By the final check, Isla carries the pause forward: home mornings reveal her private routine.",
+      "storyboard_dialogue": "Take the pause with you.",
       "panel_location": "bookshop cafe corner"
     }
   ]

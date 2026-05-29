@@ -26,6 +26,16 @@
     {
       "file": "03_panel-03.png",
       "status": "noted",
+      "location_key": "home",
+      "lines": [
+        "SP Notes",
+        "One quiet page",
+        "before the day"
+      ]
+    },
+    {
+      "file": "04_panel-04.png",
+      "status": "noted",
       "location_key": "cafe",
       "lines": [
         "Cafe Note",
@@ -34,23 +44,13 @@
       ]
     },
     {
-      "file": "04_panel-04.png",
+      "file": "05_panel-05.png",
       "status": "noted",
       "location_key": "coworking",
       "lines": [
         "Desk Note",
         "One clear move",
         "back to work"
-      ]
-    },
-    {
-      "file": "05_panel-05.png",
-      "status": "noted",
-      "location_key": "public_library",
-      "lines": [
-        "Library Note",
-        "Borrowed quiet",
-        "small proof"
       ]
     },
     {
