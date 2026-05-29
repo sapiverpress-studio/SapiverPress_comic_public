@@ -39,6 +39,12 @@ function decodeText(value) {
   return Buffer.from(String(value || ""), "base64").toString("utf8");
 }
 
+function decodeMap(input = {}) {
+  return Object.fromEntries(
+    Object.entries(input).map(([key, value]) => [key, decodeText(value)])
+  );
+}
+
 function londonDateString() {
   const override = process.env.DATE_OVERRIDE || "";
   if (override && !/^\d{4}-\d{2}-\d{2}$/.test(override)) {
@@ -65,12 +71,20 @@ async function readJson(filePath, fallback = null) {
 
 async function loadLocks() {
   const cfg = await readJson(path.join(ROOT, "config", "phase4_locks.json"), null);
-  if (!cfg?.base || !cfg?.screen_target || !cfg?.negative_prompt) {
-    throw new Error("Missing config/phase4_locks.json encoded prompt locks");
+  if (!cfg?.appearance_lock || !cfg?.negative_prompt) {
+    throw new Error("Missing config/phase4_locks.json block prompt locks");
   }
+
+  const defaultPanelPoses = Array.isArray(cfg.default_panel_poses) ? cfg.default_panel_poses.map(clean).filter(Boolean) : [];
+
   return {
-    base: decodeText(cfg.base),
-    screenTarget: decodeText(cfg.screen_target),
+    appearanceLock: decodeText(cfg.appearance_lock),
+    defaultComposition: clean(cfg.default_composition || "desk_right_screen"),
+    defaultLocation: clean(cfg.default_location || "library_study"),
+    defaultPanelPoses,
+    compositionTemplates: decodeMap(cfg.composition_templates),
+    locationBlocks: decodeMap(cfg.location_blocks),
+    poseBlocks: decodeMap(cfg.pose_blocks),
     negativePrompt: decodeText(cfg.negative_prompt),
   };
 }
@@ -95,16 +109,52 @@ function panelStoryBeat(scene, index) {
     scene.beat ||
     scene.title ||
     scene.caption ||
-    `story beat ${index + 1}`
+    ""
   );
 }
 
+function resolveComposition(scene, locks) {
+  const key = clean(scene.composition || locks.defaultComposition);
+  return {
+    key,
+    text: locks.compositionTemplates[key] || locks.compositionTemplates[locks.defaultComposition] || "",
+  };
+}
+
+function resolveLocation(scene, locks) {
+  const key = clean(scene.location || locks.defaultLocation);
+  return {
+    key,
+    text: locks.locationBlocks[key] || locks.locationBlocks[locks.defaultLocation] || "",
+  };
+}
+
+function resolvePose(scene, index, locks) {
+  const fallbackKey = locks.defaultPanelPoses[index] || locks.defaultPanelPoses[0] || "";
+  const key = clean(scene.pose || fallbackKey);
+  return {
+    key,
+    text: locks.poseBlocks[key] || locks.poseBlocks[fallbackKey] || "",
+  };
+}
+
 function buildPrompt({ scene, index, locks }) {
-  return `${locks.base}, ${panelStoryBeat(scene, index)}`;
+  const composition = resolveComposition(scene, locks);
+  const location = resolveLocation(scene, locks);
+  const pose = resolvePose(scene, index, locks);
+  const beat = panelStoryBeat(scene, index);
+
+  return [
+    locks.appearanceLock,
+    composition.text,
+    location.text,
+    pose.text,
+    beat,
+  ].filter(Boolean).join(", ");
 }
 
 function replacementReadme(date) {
-  return `# Sapiver Press Comic Art Replacement Slots — ${date}\n\nDrop finished generated panel artwork into this folder using these exact names:\n\n${PANEL_FILES.map((name) => `- ${name}`).join("\n")}\n\nRules:\n\n- Use the locked Isla library-study scene base for all generated panels.\n- Keep the laptop on the desk with its screen facing away and a soft blue glow.\n- Do not include puzzle content, captions, speech bubbles, page headers, footers, or large Sapiver Press titles.\n- The compositor will insert the real daily puzzle screenshots and captions.\n- If a file is missing, the compositor falls back to the locked template artwork.\n- Starter and finished grid images are still generated from the real captured puzzle state.\n\nPlay URL: ${SUITE_URL}\n`;
+  return `# Sapiver Press Comic Art Replacement Slots — ${date}\n\nDrop finished generated panel artwork into this folder using these exact names:\n\n${PANEL_FILES.map((name) => `- ${name}`).join("\n")}\n\nRules:\n\n- Use the locked Isla appearance plus the selected composition, location, pose, and optional story beat for all generated panels.\n- Keep the laptop screen clearly visible in the selected composition area for clean puzzle insertion.\n- Do not include puzzle content, captions, speech bubbles, page headers, footers, or large Sapiver Press titles.\n- The compositor will insert the real daily puzzle screenshots and captions.\n- If a file is missing, the compositor falls back to the locked template artwork.\n- Starter and finished grid images are still generated from the real captured puzzle state.\n\nPlay URL: ${SUITE_URL}\n`;
 }
 
 async function mirrorFolder(sourceDir, latestDir) {
@@ -136,6 +186,9 @@ async function main() {
   for (let index = 0; index < 6; index += 1) {
     const scene = scenes[index];
     const promptFile = `${String(index + 1).padStart(2, "0")}_panel-${String(index + 1).padStart(2, "0")}_prompt.txt`;
+    const composition = resolveComposition(scene, locks);
+    const location = resolveLocation(scene, locks);
+    const pose = resolvePose(scene, index, locks);
     const storyBeat = panelStoryBeat(scene, index);
     const promptText = buildPrompt({ scene, index, locks });
     await writeText(path.join(promptDir, promptFile), `${promptText}\n`);
@@ -160,7 +213,13 @@ async function main() {
       prompt: promptText,
       negative_prompt: locks.negativePrompt,
       caption: panel.caption,
-      locked_base: locks.base,
+      appearance_lock: locks.appearanceLock,
+      composition_key: composition.key,
+      composition_text: composition.text,
+      location_key: location.key,
+      location_text: location.text,
+      pose_key: pose.key,
+      pose_text: pose.text,
       story_beat: storyBeat,
     });
   }
@@ -169,14 +228,16 @@ async function main() {
   const manifest = {
     date,
     character: CHARACTER,
-    format: "daily_art_prompt_pack_v3_locked_isla_base_plus_story_beat",
-    purpose: "Generate six replaceable Isla panel artworks using the locked scene base plus the panel story beat only.",
+    format: "daily_art_prompt_pack_v4_block_locked_isla",
+    purpose: "Generate six replaceable Isla panel artworks using appearance lock, composition template, location block, pose block, and optional story beat.",
     replacement_dir: `art-replacements/${date}`,
     prompt_dir: `art-prompts/${date}`,
     prompts_json: `art-prompts/${date}/prompts.json`,
     compositor_rule: "If a matching replacement PNG exists, use it. Otherwise use the locked template artwork.",
-    locked_prompt_base: locks.base,
-    locked_screen_target: locks.screenTarget,
+    appearance_lock: locks.appearanceLock,
+    default_composition: locks.defaultComposition,
+    default_location: locks.defaultLocation,
+    default_panel_poses: locks.defaultPanelPoses,
     locked_negative_prompt: locks.negativePrompt,
     panel_files: PANEL_FILES,
     panels,
@@ -187,10 +248,13 @@ async function main() {
   const promptsPayload = {
     date,
     character: CHARACTER,
-    format: "daily_art_prompts_json_v3_locked_isla_base_plus_story_beat",
+    format: "daily_art_prompt_pack_v4_block_locked_isla",
+    purpose: "Generate six replaceable Isla panel artworks using appearance lock, composition template, location block, pose block, and optional story beat.",
     lora: { trigger_word: LORA_TRIGGER, repo: LORA_REPO, file: LORA_FILE, base_model: "z_image_turbo" },
-    locked_prompt_base: locks.base,
-    locked_screen_target: locks.screenTarget,
+    appearance_lock: locks.appearanceLock,
+    default_composition: locks.defaultComposition,
+    default_location: locks.defaultLocation,
+    default_panel_poses: locks.defaultPanelPoses,
     locked_negative_prompt: locks.negativePrompt,
     replacement_dir: `art-replacements/${date}`,
     latest_replacement_dir: "art-replacements/latest",
@@ -209,7 +273,7 @@ async function main() {
   await fs.mkdir(latestReplacementDir, { recursive: true });
   await fs.copyFile(path.join(replacementDir, "README.md"), path.join(latestReplacementDir, "README.md"));
 
-  console.log(`Daily locked Isla art prompt pack written: art-prompts/${date}`);
+  console.log(`Daily block-locked Isla art prompt pack written: art-prompts/${date}`);
   console.log(`Machine-readable prompts written: art-prompts/${date}/prompts.json`);
   console.log(`Replacement slot folder prepared: art-replacements/${date}`);
 }
