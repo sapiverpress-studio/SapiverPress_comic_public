@@ -11,32 +11,32 @@
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "Bookshop corner."
+      "text": "Between tasks."
     },
     {
       "id": "panel_2",
       "image_name": "02_panel-02.png",
-      "text": "First mark."
+      "text": "Quick start."
     },
     {
       "id": "panel_3",
       "image_name": "03_panel-03.png",
-      "text": "Pause there."
+      "text": "No shortcut."
     },
     {
       "id": "panel_4",
       "image_name": "04_panel-04.png",
-      "text": "That was it."
+      "text": "Today has its own little rule-set — check the constraint before rushing."
     },
     {
       "id": "panel_5",
       "image_name": "05_panel-05.png",
-      "text": "Today has its own little rule-set — check the constraint before rushing."
+      "text": "Nearly done."
     },
     {
       "id": "panel_6",
       "image_name": "06_panel-06.png",
-      "text": "One more page."
+      "text": "Back to work."
     },
     {
       "id": "cta",
@@ -44,6 +44,6 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nBookshop corner.\n\nFirst mark.\n\nPause there.\n\nThat was it.\n\nToday has its own little rule-set — check the constraint before rushing.\n\nOne more page.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-05-29T11:02:34.690Z"
+  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nBetween tasks.\n\nQuick start.\n\nNo shortcut.\n\nToday has its own little rule-set — check the constraint before rushing.\n\nNearly done.\n\nBack to work.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-05-29T11:07:14.772Z"
 }
