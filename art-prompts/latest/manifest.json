@@ -36,7 +36,7 @@
       "output_file": "social/2026-05-29/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
+      "caption": "Isla eyes her upcoming errand but pauses for one quiet, deliberate look at the grid first.",
       "scene_id": "scene_01"
     },
     {
@@ -46,7 +46,7 @@
       "output_file": "social/2026-05-29/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
+      "caption": "As the train slips behind schedule, Isla resists the sudden urge to pack up and rush.",
       "scene_id": "scene_02"
     },
     {
@@ -56,7 +56,7 @@
       "output_file": "social/2026-05-29/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
+      "caption": "Settled at the gothic window desk, Isla ignores a waiting message to claim three quiet minutes.",
       "scene_id": "scene_03"
     },
     {
@@ -66,7 +66,7 @@
       "output_file": "social/2026-05-29/04_panel-04.png",
       "image_name": "04_panel-04.png",
       "fallback_template": "templates/characters/isla/isla_04_breakthrough.png",
-      "caption": "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
+      "caption": "Trigoku easily catches rushed guesses, so she double-checks the constraint before committing to her next move.",
       "scene_id": "scene_04"
     },
     {
@@ -76,7 +76,7 @@
       "output_file": "social/2026-05-29/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.",
+      "caption": "Her patience pays off; the move is solid, and the looming chore suddenly feels totally manageable.",
       "scene_id": "scene_05"
     },
     {
@@ -86,10 +86,10 @@
       "output_file": "social/2026-05-29/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "By the final check, Isla carries the pause forward, not the pressure that tried to hurry her.",
+      "caption": "Packing up, Isla holds onto this calm morning clarity instead of the pressure of the day.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-05-29.json",
-  "generated_at": "2026-05-29T21:52:22.446Z"
+  "generated_at": "2026-05-29T22:21:57.411Z"
 }
