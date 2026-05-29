@@ -107,14 +107,16 @@ jobs:
         env:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
           SUITE_URL: "https://suite.sapiverpress.co.uk"
-          ELEVENLABS_VOICE_NAME: "Isla Fletcher"
+          ELEVENLABS_VOICE_NAME: "Isla Sterling"
+          ELEVENLABS_VOICE_ID: "qSR2T7SqN7Pcd0YpO3Vd"
         run: npm run short-video-script
       - name: Generate short video voiceover
         continue-on-error: true
         env:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
           ISLA_ELEVEN: ${{ secrets.ISLA_ELEVEN }}
-          ELEVENLABS_VOICE_NAME: "Isla Fletcher"
+          ELEVENLABS_VOICE_NAME: "Isla Sterling"
+          ELEVENLABS_VOICE_ID: "qSR2T7SqN7Pcd0YpO3Vd"
           ELEVENLABS_MODEL_ID: "eleven_multilingual_v2"
         run: npm run short-video-voice
       - name: Build short video MP4
@@ -192,39 +194,10 @@ jobs:
           set -e
           git config user.name "sapiver-comic-bot"
           git config user.email "sapiver-comic-bot@users.noreply.github.com"
-          if [ -f pinterest-posts.json ]; then
-            git add pinterest-posts.json
-          fi
+          git add pinterest-posts.json social || true
           if git diff --cached --quiet; then
             echo "No Pinterest state changes"
-            exit 0
+          else
+            git commit -m "Update Pinterest comic post state"
+            git push || true
           fi
-          git commit -m "Update Pinterest post state"
-          for attempt in 1 2 3; do
-            if git push; then
-              exit 0
-            fi
-            echo "git push failed on attempt ${attempt}; rebasing with autostash and retrying"
-            sleep 8
-            git pull --rebase --autostash origin main || true
-          done
-          git push
-
-  archive-migration:
-    name: Archive Migration
-    runs-on: ubuntu-latest
-    if: github.event.schedule == '0 6 * * 1' || github.event.inputs.run_archive == 'true'
-    steps:
-      - name: Checkout public repo
-        uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-      - name: Install dependencies
-        run: npm install
-      - name: Run archive migration
-        env:
-          COMIC_GITHUB_TOKEN: ${{ secrets.COMIC_GITHUB_TOKEN }}
-          GITHUB_TOKEN: ${{ github.token }}
-        run: npm run archive
