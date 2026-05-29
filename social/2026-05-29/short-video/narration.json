@@ -6,7 +6,7 @@
     {
       "id": "intro",
       "image_name": "00_start-grid.png",
-      "text": "Today finds Isla in quiet public library reading table, using the grid as a quiet reset."
+      "text": "Today finds Isla in rainy window nook with plants, using the grid as a quiet reset."
     },
     {
       "id": "panel_1",
@@ -31,7 +31,7 @@
     {
       "id": "panel_5",
       "image_name": "05_panel-05.png",
-      "text": "The puzzle becomes part of library visits become her backup calm place."
+      "text": "The puzzle becomes part of rainy days bring out her reflective side."
     },
     {
       "id": "panel_6",
@@ -44,8 +44,8 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Today finds Isla in quiet public library reading table, using the grid as a quiet reset.\n\nShe gives herself one small rule: no rushing the first look.\n\nThe Trigoku twist changes how she reads the empty spaces.\n\nToday has its own little rule-set — check the constraint before rushing.\n\nA pattern starts to appear, but she checks it before trusting it.\n\nThe puzzle becomes part of library visits become her backup calm place.\n\nBy the end, the point is not speed. It is leaving the page clearer than she found it.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-05-29T13:17:27.019Z",
+  "full_text": "Today finds Isla in rainy window nook with plants, using the grid as a quiet reset.\n\nShe gives herself one small rule: no rushing the first look.\n\nThe Trigoku twist changes how she reads the empty spaces.\n\nToday has its own little rule-set — check the constraint before rushing.\n\nA pattern starts to appear, but she checks it before trusting it.\n\nThe puzzle becomes part of rainy days bring out her reflective side.\n\nBy the end, the point is not speed. It is leaving the page clearer than she found it.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-05-29T13:20:58.667Z",
   "copy_refined": "fallback",
   "copy_refine_error": "OPENAI_API_KEY missing"
 }
