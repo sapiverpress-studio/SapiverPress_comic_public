@@ -1,7 +1,7 @@
 {
   "date": "2026-05-29",
   "character": "isla",
-  "format": "eight_image_daily_set",
+  "format": "eight_image_daily_set_storyboard_text",
   "montage": false,
   "files": [
     "00_start-grid.png",
@@ -29,12 +29,20 @@
   "puzzle_product": "Trigoku Daily Lock",
   "puzzle_url": "https://suite.sapiverpress.co.uk",
   "captions": [
-    "Between tasks.",
-    "Today has its own little rule-set \u2014 check the constraint before rushing.",
-    "No shortcut.",
-    "Clean route.",
-    "Nearly done.",
-    "Back to work."
+    "One clean look first.\nIsla starts at home, giving herself one quiet minute before the day begins asking for things.",
+    "Keep the thread.\nOn the move, the grid becomes a small anchor while the rest of the day keeps shifting.",
+    "No rushing this one.\nBy midday, she has carried the puzzle into another pocket of borrowed quiet.",
+    "Today has its own little rule-set \u2014 check the constraint before rushing.\nTrigoku changes the route through the puzzle, so she checks the constraint before trusting a move.",
+    "That gives me a path.\nLater, one careful idea holds, and the page starts to feel less noisy than the day around it.",
+    "Clearer than before.\nBy the final check, the win is not speed; it is leaving the day a little clearer."
+  ],
+  "storyboard_locations": [
+    "small home kitchen table in warm morning light",
+    "train table by the window",
+    "bookshop cafe corner",
+    "outdoor cafe street table",
+    "co-working desk near a tall window",
+    "quiet public library reading table"
   ],
   "scenes": [
     {
@@ -47,23 +55,25 @@
       "output": "social/2026-05-29/01_panel-01.png",
       "screen_quad": [
         [
-          752,
-          646
+          739,
+          626
         ],
         [
-          1067,
-          666
+          1066,
+          656
         ],
         [
-          1069,
-          942
+          1047,
+          953
         ],
         [
-          710,
+          690,
           876
         ]
       ],
-      "screen_quad_mode": "detected_replacement_screen"
+      "screen_quad_mode": "detected_replacement_screen",
+      "storyboard_text": "One clean look first.\nIsla starts at home, giving herself one quiet minute before the day begins asking for things.",
+      "panel_location": "small home kitchen table in warm morning light"
     },
     {
       "scene": "scene_02",
@@ -73,8 +83,27 @@
       "replacement": "art-replacements/2026-05-29/02_panel-02.png",
       "capture": "captures/2026-05-29/extracted/02_first_moves.png",
       "output": "social/2026-05-29/02_panel-02.png",
-      "screen_quad": [],
-      "screen_quad_mode": "overlay_skipped_no_screen_detected"
+      "screen_quad": [
+        [
+          770,
+          672
+        ],
+        [
+          1067,
+          694
+        ],
+        [
+          1069,
+          985
+        ],
+        [
+          724,
+          911
+        ]
+      ],
+      "screen_quad_mode": "detected_replacement_screen",
+      "storyboard_text": "Keep the thread.\nOn the move, the grid becomes a small anchor while the rest of the day keeps shifting.",
+      "panel_location": "train table by the window"
     },
     {
       "scene": "scene_03",
@@ -86,23 +115,25 @@
       "output": "social/2026-05-29/03_panel-03.png",
       "screen_quad": [
         [
-          722,
-          578
+          750,
+          619
         ],
         [
-          1067,
-          594
+          1066,
+          650
         ],
         [
-          1044,
-          880
+          1056,
+          932
         ],
         [
-          685,
-          823
+          711,
+          854
         ]
       ],
-      "screen_quad_mode": "detected_replacement_screen"
+      "screen_quad_mode": "detected_replacement_screen",
+      "storyboard_text": "No rushing this one.\nBy midday, she has carried the puzzle into another pocket of borrowed quiet.",
+      "panel_location": "bookshop cafe corner"
     },
     {
       "scene": "scene_04",
@@ -114,23 +145,25 @@
       "output": "social/2026-05-29/04_panel-04.png",
       "screen_quad": [
         [
-          727,
-          641
+          711,
+          630
         ],
         [
-          1068,
-          657
+          1065,
+          665
         ],
         [
-          1045,
-          943
+          1047,
+          975
         ],
         [
-          687,
-          887
+          671,
+          890
         ]
       ],
-      "screen_quad_mode": "detected_replacement_screen"
+      "screen_quad_mode": "detected_replacement_screen",
+      "storyboard_text": "Today has its own little rule-set \u2014 check the constraint before rushing.\nTrigoku changes the route through the puzzle, so she checks the constraint before trusting a move.",
+      "panel_location": "outdoor cafe street table"
     },
     {
       "scene": "scene_05",
@@ -140,8 +173,27 @@
       "replacement": "art-replacements/2026-05-29/05_panel-05.png",
       "capture": "captures/2026-05-29/extracted/05_nearly_complete.png",
       "output": "social/2026-05-29/05_panel-05.png",
-      "screen_quad": [],
-      "screen_quad_mode": "overlay_skipped_no_screen_detected"
+      "screen_quad": [
+        [
+          728,
+          643
+        ],
+        [
+          1068,
+          669
+        ],
+        [
+          1022,
+          952
+        ],
+        [
+          688,
+          884
+        ]
+      ],
+      "screen_quad_mode": "detected_replacement_screen",
+      "storyboard_text": "That gives me a path.\nLater, one careful idea holds, and the page starts to feel less noisy than the day around it.",
+      "panel_location": "co-working desk near a tall window"
     },
     {
       "scene": "scene_06",
@@ -153,23 +205,25 @@
       "output": "social/2026-05-29/06_panel-06.png",
       "screen_quad": [
         [
-          741,
-          583
+          725,
+          712
         ],
         [
-          1066,
-          616
+          1067,
+          736
         ],
         [
-          1063,
-          904
+          1052,
+          989
         ],
         [
-          700,
-          827
+          685,
+          926
         ]
       ],
-      "screen_quad_mode": "detected_replacement_screen"
+      "screen_quad_mode": "detected_replacement_screen",
+      "storyboard_text": "Clearer than before.\nBy the final check, the win is not speed; it is leaving the day a little clearer.",
+      "panel_location": "quiet public library reading table"
     }
   ]
 }

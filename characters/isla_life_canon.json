@@ -73,6 +73,12 @@
       "attempt": 15,
       "setting": "train table by the window",
       "reason": "she is travelling and using the journey as thinking time"
+    },
+    {
+      "date": "2026-05-29",
+      "attempt": 16,
+      "setting": "bookshop cafe corner",
+      "reason": "she has come for one thing but stays for the quiet corner"
     }
   ],
   "variant_memory": [
@@ -123,6 +129,12 @@
       "attempt": 15,
       "variant_name": "Trigoku",
       "panel_index": 4
+    },
+    {
+      "date": "2026-05-29",
+      "attempt": 16,
+      "variant_name": "Trigoku",
+      "panel_index": 2
     }
   ],
   "life_memory": [
@@ -219,6 +231,18 @@
       "thread_to_continue": "train rides become moving pockets of focus",
       "puzzle_variant_mentioned": "Trigoku",
       "variant_panel_index": 4,
+      "uk_calendar_date": null,
+      "uk_calendar_panel_index": null
+    },
+    {
+      "date": "2026-05-29",
+      "attempt": 16,
+      "location": "bookshop cafe corner",
+      "reason_for_location": "she has come for one thing but stays for the quiet corner",
+      "life_detail_learned": "Bookshops pull Isla into longer pauses than she planned.",
+      "thread_to_continue": "she is drawn to places with books and warm corners",
+      "puzzle_variant_mentioned": "Trigoku",
+      "variant_panel_index": 2,
       "uk_calendar_date": null,
       "uk_calendar_panel_index": null
     }
