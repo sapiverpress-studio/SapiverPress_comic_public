@@ -6,7 +6,7 @@
   "scripts": {
     "daily": "node scripts/daily-generator-local.mjs",
     "capture:today": "node scripts/capture_trigoku_playthrough_v2.mjs",
-    "art-prompts": "node scripts/generate-art-prompt-pack.mjs",
+    "art-prompts": "node scripts/generate-art-prompt-pack.mjs && node scripts/apply-story-beats.mjs",
     "generate-images": "node scripts/generate-isla-images-floor.mjs",
     "short-video-script": "node -e \"console.log('Short video script generation skipped during Isla image experiment')\"",
     "short-video-voice": "node -e \"console.log('ElevenLabs voice generation skipped during Isla image experiment')\"",
