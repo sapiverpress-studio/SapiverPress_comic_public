@@ -89,12 +89,27 @@ function sourceBrief(story) {
     life_memory_entry: story?.life_memory_entry || null,
     variant_recap: story?.variant_recap || null,
     uk_calendar_date: story?.uk_calendar_date || null,
+    story_fields_used: [
+      "story_note",
+      "continuation_note",
+      "life_memory_entry",
+      "scenes[].storyboard_caption",
+      "scenes[].storyboard_dialogue",
+      "scenes[].scene_description",
+      "scenes[].beat",
+      "scenes[].caption",
+      "scenes[].dialogue",
+      "scenes[].speech_bubble",
+      "scenes[].image_prompt_fragment",
+    ],
     scenes: scenes.map((scene, index) => ({
       panel: index + 1,
       image_name: frameImageName(index),
-      current_caption: scene.caption || "",
-      current_dialogue: scene.dialogue || scene.speech_bubble || "",
+      current_caption: scene.storyboard_caption || scene.caption || "",
+      current_dialogue: scene.storyboard_dialogue || scene.dialogue || scene.speech_bubble || "",
       scene_description: scene.scene_description || scene.beat || scene.title || "",
+      beat: scene.beat || "",
+      title: scene.title || "",
       image_prompt_fragment: scene.image_prompt_fragment || "",
       variant_recap_here: Boolean(scene.variant_recap_here),
       uk_calendar_recap_here: Boolean(scene.uk_calendar_recap_here),
@@ -106,47 +121,46 @@ function sourceBrief(story) {
 function fallbackStoryboard(story) {
   const locations = dayLocationPlan(story);
   const variant = clean(story?.variant_recap?.variant_name || "today's puzzle");
-  const rule = clean(story?.variant_recap?.line || "check the rule before rushing");
+  const rule = clean(story?.variant_recap?.line || "check the constraint before rushing");
   const calendar = clean(story?.uk_calendar_date?.name || "");
   const calendarLine = clean(story?.uk_calendar_date?.line || "");
-  const thread = clean(story?.life_memory_entry?.thread_to_continue || "keeping one small routine alive");
 
   return [
     {
       location: locations[0],
-      caption: `Isla starts at home, giving herself one quiet minute before the day begins asking for things.`,
-      dialogue: "One clean look first.",
-      image_prompt_fragment: "warm morning start, private routine, quiet focus",
+      caption: `Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.`,
+      dialogue: "Start before the rush.",
+      image_prompt_fragment: "setup beat, next errand waiting, controlled morning pause",
     },
     {
       location: locations[1],
-      caption: `On the move, the grid becomes a small anchor while the rest of the day keeps shifting.`,
-      dialogue: "Keep the thread.",
-      image_prompt_fragment: "travel moment, contained thinking time, gentle movement",
+      caption: `The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.`,
+      dialogue: "Don't chase it.",
+      image_prompt_fragment: "travel disruption, laptop nearly closing, tension between delay and calm",
     },
     {
       location: locations[2],
-      caption: calendar ? `${calendar} changes the pace of the day, but Isla keeps the moment understated.` : `By midday, she has carried the puzzle into another pocket of borrowed quiet.`,
-      dialogue: calendarLine || "No rushing this one.",
-      image_prompt_fragment: "midday pause, diary atmosphere, life outside the puzzle",
+      caption: calendar ? `${calendar} changes the day, but Isla chooses one unhurried pause before moving on.` : `At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.`,
+      dialogue: calendarLine || "Three minutes. Properly.",
+      image_prompt_fragment: "decision moment, unread message waiting, deliberate pause",
     },
     {
       location: locations[3],
-      caption: `${variant} changes the route through the puzzle, so she checks the constraint before trusting a move.`,
+      caption: `${variant} will catch a rushed guess, so she checks the constraint before letting the move stand.`,
       dialogue: rule,
-      image_prompt_fragment: "brief puzzle rule realisation, careful deduction, calm expression",
+      image_prompt_fragment: "specific puzzle-rule check, careful deduction, restraint before a move",
     },
     {
       location: locations[4],
-      caption: `Later, one careful idea holds, and the page starts to feel less noisy than the day around it.`,
-      dialogue: "That gives me a path.",
-      image_prompt_fragment: "late workday pause, small breakthrough, steady concentration",
+      caption: `Because she waited, the move holds; the errand feels less like a deadline and more like a next step.`,
+      dialogue: "That stayed true.",
+      image_prompt_fragment: "consequence of patience, small confirmed breakthrough, tension easing",
     },
     {
       location: locations[5],
-      caption: `By the final check, the win is not speed; it is leaving the day a little clearer.`,
-      dialogue: "Clearer than before.",
-      image_prompt_fragment: "end of day reflection, gentle finish, quiet satisfaction",
+      caption: `By the final check, Isla carries the pause forward, not the pressure that tried to hurry her.`,
+      dialogue: "Take the pause with you.",
+      image_prompt_fragment: "resolution beat, calm forward motion after pressure",
     },
   ];
 }
@@ -178,24 +192,24 @@ async function refineWithOpenAI(story) {
           role: "system",
           content: [
             "You are the storyboard editor for Sapiver Press's Isla daily illustrated puzzle diary.",
+            "Preserve the actual daily story material. Do not replace it with a generic location sequence.",
             "Rewrite six panel captions so the six PNGs read as one coherent storyboard, not six isolated captions.",
-            "The six frames should cover a small day arc across LOCATIONS, not one static room unless the brief makes that essential.",
-            "Each frame must include a location from the suggested_day_locations list or a close natural equivalent.",
-            "Each frame needs depth: a narrative caption plus a short natural Isla line.",
-            "This is an illustrated diary with a puzzle subplot. Isla's life, locations, errands, pauses, and mood matter.",
-            "Use life memory, UK calendar context, and puzzle variant where relevant.",
+            "The six frames should cover setup, disruption, choice, puzzle moment, consequence, and resolution.",
+            "Locations should support the story. They should not be the story.",
+            "Each frame needs a narrative caption plus a short natural Isla line.",
+            "Use life memory, UK calendar context, scene descriptions, current storyboard text, and puzzle variant where relevant.",
             "The puzzle rule may appear once, naturally inside the story, not as a dumped instruction card.",
-            "Do not write one-word captions. Do not babble. Do not use hashtags, emoji, sales language, or fake drama.",
+            "Do not write one-word captions. Do not use hashtags, emoji, sales language, or fake drama.",
             "Keep it understated, human, UK-friendly, and suitable as visible panel text.",
             "Return JSON only with: arc_title, board_caption, frames.",
             "frames must contain exactly six objects, each with panel_number, location, caption, dialogue, image_prompt_fragment.",
-            "caption: 12-24 words. dialogue: 3-12 words, in Isla's voice. image_prompt_fragment: visual mood only, no text instructions.",
+            "caption: 12-28 words. dialogue: 3-12 words, in Isla's voice. image_prompt_fragment: visual mood only, no text instructions.",
           ].join(" "),
         },
         {
           role: "user",
           content: JSON.stringify({
-            task: "Create a coherent six-frame, multi-location storyboard copy pass before captions are rendered into images.",
+            task: "Create a coherent six-frame, story-first storyboard copy pass before captions are rendered into images.",
             brief,
           }),
         },
@@ -232,10 +246,12 @@ function applyStoryboard(story, storyboard) {
   story.storyboard_arc_title = storyboard?.arc_title || "Isla's daily page";
   story.storyboard_board_caption = storyboard?.board_caption || "A quiet daily puzzle moment with Isla.";
   story.storyboard_locations = frames.map((frame, index) => clean(frame.location || fallbackFrames[index]?.location || ""));
+  story.story_source_used = story.date ? `daily/${story.date}.json` : "latest.json";
+  story.story_fields_used = sourceBrief(story).story_fields_used;
   story.scenes = (story.scenes || []).slice(0, 6).map((scene, index) => {
     const frame = frames[index] || fallbackFrames[index];
     const dialogue = clean(frame.dialogue || "");
-    const caption = clean(frame.caption || scene.caption || "");
+    const caption = clean(frame.caption || scene.storyboard_caption || scene.caption || "");
     const location = clean(frame.location || fallbackFrames[index]?.location || scene.setting || story.selected_setting || "");
     const visual = clean(frame.image_prompt_fragment || scene.image_prompt_fragment || scene.scene_description || "quiet daily-life puzzle moment");
     return {
@@ -266,10 +282,10 @@ async function main() {
     storyboard = await refineWithOpenAI(story);
   } catch (error) {
     storyboard = {
-      arc_title: "Isla's daily page",
-      board_caption: "A quiet six-frame diary moment built around today's puzzle.",
+      arc_title: "Isla chooses the pause",
+      board_caption: "A story-first six-frame diary moment built around today's puzzle.",
       frames: fallbackStoryboard(story),
-      source: "fallback",
+      source: "fallback_story_driven",
       model: "fallback",
       error: error?.message || String(error),
     };
@@ -281,6 +297,9 @@ async function main() {
   await writeJson("latest.json", story);
   if (story.image_manifest) {
     story.image_manifest.storyboard_copy_refined = true;
+    story.image_manifest.storyboard_copy_source = story.storyboard_copy_source;
+    story.image_manifest.story_source_used = story.story_source_used;
+    story.image_manifest.story_fields_used = story.story_fields_used;
     story.image_manifest.storyboard_arc_title = story.storyboard_arc_title;
     story.image_manifest.storyboard_locations = story.storyboard_locations;
     story.image_manifest.image_prompts = story.scenes.map((scene) => ({
@@ -290,6 +309,8 @@ async function main() {
       prompt: scene.full_image_prompt || scene.image_prompt_fragment || "",
       caption: scene.caption,
       dialogue: scene.dialogue,
+      storyboard_caption: scene.storyboard_caption || scene.caption || "",
+      storyboard_dialogue: scene.storyboard_dialogue || scene.dialogue || scene.speech_bubble || "",
     }));
     await writeJson(`image-manifests/${date}.json`, story.image_manifest);
   }
