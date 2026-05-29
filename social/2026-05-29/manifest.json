@@ -44,7 +44,7 @@
   "storyboard_copy_source": "openai",
   "storyboard_copy_model": "gpt-4o-mini",
   "storyboard_arc_type": "story_driven_not_location_driven",
-  "storyboard_arc": "Isla navigates her day with the puzzle as a grounding force, cherishing the quiet moments that lead to clarity and satisfaction.",
+  "storyboard_arc": "Isla's day unfolds as she navigates through moments of calm and reflection, using her puzzle as a tool for clarity and focus.",
   "storyboard_quality": {
     "location_sequence_only": false,
     "has_cause_effect": true,
@@ -64,15 +64,15 @@
     "Three minutes. Properly.\nAt the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
     "Today has its own little rule-set \u2014 check the constraint before rushing.\nTrigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
     "That stayed true.\nBecause she waited, the move holds; the errand feels less like a deadline and more like a next step.",
-    "Take the pause with you.\nBy the final check, Isla carries the pause forward: home mornings reveal her private routine."
+    "Take the pause with you.\nBy the final check, Isla carries the pause forward: she is drawn to places with books and warm corners."
   ],
   "storyboard_locations": [
     "small home kitchen table in warm morning light",
     "train table by the window",
-    "small kitchen table in warm morning light",
+    "bookshop cafe corner",
     "outdoor cafe street table",
     "co-working desk near a tall window",
-    "bookshop cafe corner"
+    "quiet public library reading table"
   ],
   "scenes": [
     {
@@ -85,20 +85,20 @@
       "output": "social/2026-05-29/01_panel-01.png",
       "screen_quad": [
         [
-          695,
-          667
+          751,
+          666
         ],
         [
-          1052,
-          698
+          1068,
+          695
         ],
         [
-          1017,
-          965
+          1040,
+          954
         ],
         [
-          664,
-          898
+          711,
+          889
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -118,20 +118,20 @@
       "output": "social/2026-05-29/02_panel-02.png",
       "screen_quad": [
         [
-          732,
-          687
+          757,
+          680
         ],
         [
-          999,
-          717
+          1067,
+          706
         ],
         [
-          972,
-          911
+          1067,
+          967
         ],
         [
-          711,
-          866
+          720,
+          902
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -151,20 +151,20 @@
       "output": "social/2026-05-29/03_panel-03.png",
       "screen_quad": [
         [
-          738,
-          649
+          703,
+          645
         ],
         [
-          1066,
-          675
+          1048,
+          669
         ],
         [
-          1057,
-          964
+          1006,
+          926
         ],
         [
-          693,
-          890
+          666,
+          862
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -172,7 +172,7 @@
       "arc_role": "choice",
       "storyboard_caption": "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
       "storyboard_dialogue": "Three minutes. Properly.",
-      "panel_location": "small kitchen table in warm morning light"
+      "panel_location": "bookshop cafe corner"
     },
     {
       "scene": "scene_04",
@@ -182,8 +182,25 @@
       "replacement": "art-replacements/2026-05-29/04_panel-04.png",
       "capture": "captures/2026-05-29/extracted/04_breakthrough.png",
       "output": "social/2026-05-29/04_panel-04.png",
-      "screen_quad": [],
-      "screen_quad_mode": "overlay_skipped_no_screen_detected",
+      "screen_quad": [
+        [
+          738,
+          712
+        ],
+        [
+          1068,
+          736
+        ],
+        [
+          1044,
+          976
+        ],
+        [
+          713,
+          923
+        ]
+      ],
+      "screen_quad_mode": "detected_replacement_screen",
       "storyboard_text": "Today has its own little rule-set \u2014 check the constraint before rushing.\nTrigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
       "arc_role": "puzzle_moment",
       "storyboard_caption": "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
@@ -198,8 +215,25 @@
       "replacement": "art-replacements/2026-05-29/05_panel-05.png",
       "capture": "captures/2026-05-29/extracted/05_nearly_complete.png",
       "output": "social/2026-05-29/05_panel-05.png",
-      "screen_quad": [],
-      "screen_quad_mode": "overlay_skipped_no_screen_detected",
+      "screen_quad": [
+        [
+          725,
+          633
+        ],
+        [
+          1068,
+          654
+        ],
+        [
+          1036,
+          904
+        ],
+        [
+          692,
+          849
+        ]
+      ],
+      "screen_quad_mode": "detected_replacement_screen",
       "storyboard_text": "That stayed true.\nBecause she waited, the move holds; the errand feels less like a deadline and more like a next step.",
       "arc_role": "consequence",
       "storyboard_caption": "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.",
@@ -216,28 +250,28 @@
       "output": "social/2026-05-29/06_panel-06.png",
       "screen_quad": [
         [
-          713,
-          669
+          690,
+          640
         ],
         [
-          1026,
-          699
+          1035,
+          662
         ],
         [
-          982,
-          923
+          991,
+          933
         ],
         [
-          676,
-          860
+          656,
+          870
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Take the pause with you.\nBy the final check, Isla carries the pause forward: home mornings reveal her private routine.",
+      "storyboard_text": "Take the pause with you.\nBy the final check, Isla carries the pause forward: she is drawn to places with books and warm corners.",
       "arc_role": "resolution",
-      "storyboard_caption": "By the final check, Isla carries the pause forward: home mornings reveal her private routine.",
+      "storyboard_caption": "By the final check, Isla carries the pause forward: she is drawn to places with books and warm corners.",
       "storyboard_dialogue": "Take the pause with you.",
-      "panel_location": "bookshop cafe corner"
+      "panel_location": "quiet public library reading table"
     }
   ]
 }

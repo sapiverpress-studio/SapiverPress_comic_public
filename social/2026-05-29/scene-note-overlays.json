@@ -18,19 +18,19 @@
       "status": "noted",
       "location_key": "train",
       "lines": [
-        "Puzzle Note",
-        "Check the rule",
-        "then move"
+        "Travel Note",
+        "Keep the thread",
+        "between stops"
       ]
     },
     {
       "file": "03_panel-03.png",
       "status": "noted",
-      "location_key": "home",
+      "location_key": "bookshop",
       "lines": [
-        "SP Notes",
-        "One quiet page",
-        "before the day"
+        "Bookshop Note",
+        "One more page",
+        "Sapiver Press"
       ]
     },
     {
@@ -48,15 +48,15 @@
       "status": "noted",
       "location_key": "coworking",
       "lines": [
-        "Desk Note",
-        "One clear move",
-        "back to work"
+        "Puzzle Note",
+        "Check the rule",
+        "then move"
       ]
     },
     {
       "file": "06_panel-06.png",
       "status": "noted",
-      "location_key": "bookshop",
+      "location_key": "public_library",
       "lines": [
         "SP Notes",
         "Clearer now",
