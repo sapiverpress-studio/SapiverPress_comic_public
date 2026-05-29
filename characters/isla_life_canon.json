@@ -4,13 +4,43 @@
   "tone": "quiet, observant, warm, understated, true-to-life",
   "known_life_details": [
     "She uses puzzles as a small thinking ritual.",
-    "She notices light, quiet tables, old buildings, notebooks, mugs, and small transitions between tasks."
+    "She notices light, quiet tables, old buildings, notebooks, mugs, and small transitions between tasks.",
+    "Isla uses libraries as reset spaces, not just work spaces."
   ],
   "active_threads": [
-    "protecting small quiet routines"
+    "protecting small quiet routines",
+    "library visits become her backup calm place"
   ],
-  "location_memory": [],
-  "variant_memory": [],
-  "life_memory": [],
-  "last_updated": null
+  "location_memory": [
+    {
+      "date": "2026-05-29",
+      "attempt": 8,
+      "setting": "quiet public library reading table",
+      "reason": "the library gives her a borrowed pocket of quiet"
+    }
+  ],
+  "variant_memory": [
+    {
+      "date": "2026-05-29",
+      "attempt": 8,
+      "variant_name": "Trigoku",
+      "panel_index": 2
+    }
+  ],
+  "life_memory": [
+    {
+      "date": "2026-05-29",
+      "attempt": 8,
+      "location": "quiet public library reading table",
+      "reason_for_location": "the library gives her a borrowed pocket of quiet",
+      "life_detail_learned": "Isla uses libraries as reset spaces, not just work spaces.",
+      "thread_to_continue": "library visits become her backup calm place",
+      "puzzle_variant_mentioned": "Trigoku",
+      "variant_panel_index": 2,
+      "uk_calendar_date": null,
+      "uk_calendar_panel_index": null
+    }
+  ],
+  "last_updated": "2026-05-29",
+  "calendar_memory": []
 }
