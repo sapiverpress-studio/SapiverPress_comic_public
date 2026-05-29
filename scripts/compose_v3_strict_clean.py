@@ -272,13 +272,12 @@ def warp_to_quad(screen: Image.Image, template_size: tuple[int, int], quad: list
 def compose_panel(story: dict, scene: dict, index: int, capture: Path) -> tuple[Path, dict]:
     scene_id = f"scene_{index + 1:02d}"
     template, art_path, art_source = load_base_art(scene, index)
-
+    quad = SCREEN_QUADS[scene_id]
+    prepared = crop_capture_to_game(capture)
     panel = template.copy()
-
-    # Overlay intentionally disabled for now.
-    # Keep generated artwork, captions, naming, manifests, and output flow unchanged.
+    panel.alpha_composite(warp_to_quad(prepared, template.size, quad))
+    ImageDraw.Draw(panel, "RGBA").line(quad + [quad[0]], fill=(255, 255, 255, 190), width=3)
     add_caption(panel, caption_for_scene(story, index))
-
     out_path = OUT_DIR / f"{index + 1:02d}_strict_clean.png"
     panel.convert("RGB").save(out_path, quality=95)
     return out_path, {
@@ -289,8 +288,8 @@ def compose_panel(story: dict, scene: dict, index: int, capture: Path) -> tuple[
         "replacement": str(art_path.relative_to(ROOT)) if art_source == "replacement" else "",
         "capture": str(capture.relative_to(ROOT)),
         "output": str(out_path.relative_to(ROOT)),
-        "screen_quad": [],
-        "screen_quad_mode": "overlay_disabled",
+        "screen_quad": quad,
+        "screen_quad_mode": "template_locked",
     }
 
 
