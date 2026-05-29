@@ -30,19 +30,19 @@
   "puzzle_url": "https://suite.sapiverpress.co.uk",
   "captions": [
     "Back again.",
+    "Start small.",
+    "Not that one.",
     "There it is.",
-    "No guessing.",
-    "That opens it.",
     "Nearly there.",
-    "A clean finish."
+    "Same time tomorrow."
   ],
   "scenes": [
     {
       "scene": "scene_01",
-      "art_source": "template",
-      "art_path": "templates/characters/isla/isla_01_opening_return.png",
-      "template": "templates/characters/isla/isla_01_opening_return.png",
-      "replacement": "",
+      "art_source": "replacement",
+      "art_path": "art-replacements/2026-05-29/01_panel-01.png",
+      "template": "",
+      "replacement": "art-replacements/2026-05-29/01_panel-01.png",
       "capture": "captures/2026-05-29/extracted/01_fresh_daily_grid.png",
       "output": "social/2026-05-29/01_panel-01.png",
       "screen_quad": [
@@ -66,10 +66,10 @@
     },
     {
       "scene": "scene_02",
-      "art_source": "template",
-      "art_path": "templates/characters/isla/isla_02_first_move.png",
-      "template": "templates/characters/isla/isla_02_first_move.png",
-      "replacement": "",
+      "art_source": "replacement",
+      "art_path": "art-replacements/2026-05-29/02_panel-02.png",
+      "template": "",
+      "replacement": "art-replacements/2026-05-29/02_panel-02.png",
       "capture": "captures/2026-05-29/extracted/02_first_moves.png",
       "output": "social/2026-05-29/02_panel-02.png",
       "screen_quad": [
@@ -93,10 +93,10 @@
     },
     {
       "scene": "scene_03",
-      "art_source": "template",
-      "art_path": "templates/characters/isla/isla_03_stuck_moment.png",
-      "template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "replacement": "",
+      "art_source": "replacement",
+      "art_path": "art-replacements/2026-05-29/03_panel-03.png",
+      "template": "",
+      "replacement": "art-replacements/2026-05-29/03_panel-03.png",
       "capture": "captures/2026-05-29/extracted/03_stuck_moment.png",
       "output": "social/2026-05-29/03_panel-03.png",
       "screen_quad": [
@@ -120,10 +120,10 @@
     },
     {
       "scene": "scene_04",
-      "art_source": "template",
-      "art_path": "templates/characters/isla/isla_04_breakthrough.png",
-      "template": "templates/characters/isla/isla_04_breakthrough.png",
-      "replacement": "",
+      "art_source": "replacement",
+      "art_path": "art-replacements/2026-05-29/04_panel-04.png",
+      "template": "",
+      "replacement": "art-replacements/2026-05-29/04_panel-04.png",
       "capture": "captures/2026-05-29/extracted/04_breakthrough.png",
       "output": "social/2026-05-29/04_panel-04.png",
       "screen_quad": [
@@ -147,10 +147,10 @@
     },
     {
       "scene": "scene_05",
-      "art_source": "template",
-      "art_path": "templates/characters/isla/isla_05_finish.png",
-      "template": "templates/characters/isla/isla_05_finish.png",
-      "replacement": "",
+      "art_source": "replacement",
+      "art_path": "art-replacements/2026-05-29/05_panel-05.png",
+      "template": "",
+      "replacement": "art-replacements/2026-05-29/05_panel-05.png",
       "capture": "captures/2026-05-29/extracted/05_nearly_complete.png",
       "output": "social/2026-05-29/05_panel-05.png",
       "screen_quad": [
@@ -174,10 +174,10 @@
     },
     {
       "scene": "scene_06",
-      "art_source": "template",
-      "art_path": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "replacement": "",
+      "art_source": "replacement",
+      "art_path": "art-replacements/2026-05-29/06_panel-06.png",
+      "template": "",
+      "replacement": "art-replacements/2026-05-29/06_panel-06.png",
       "capture": "captures/2026-05-29/extracted/06_complete_solution.png",
       "output": "social/2026-05-29/06_panel-06.png",
       "screen_quad": [

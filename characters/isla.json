@@ -181,9 +181,9 @@
       "weekday": "Friday",
       "setting": "quiet public library reading table",
       "puzzle_phase": "late-week",
-      "story_note": "Isla finds Friday's puzzle at the library surprisingly smooth, flowing through it with quiet satisfaction and a sense of earned ease after the week's challenges.",
-      "continuation_note": "Unlike Thursday's resistance and backtracking, today's puzzle yields gracefully to Isla's logic, giving her a rare moment of confidence and rhythm that feels like a reward for persistence.",
-      "stuck_moment": "thoughtful, calm, looking down at screen, relaxed shoulders",
+      "story_note": "Friday late-week puzzle in a quiet library: Isla finds herself momentarily distracted by the silence and small sounds around her, then refocuses and completes the grid with steady resolve.",
+      "continuation_note": "Unlike Thursday's resistance to her initial strategy, today's stuck moment comes from external distraction rather than puzzle difficulty—a shift in texture. The emotional rhythm is quieter, more observational, less about backtracking and more about regaining c",
+      "stuck_moment": "distracted, eyes lifted, brief pause",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -194,11 +194,11 @@
       ],
       "captions": [
         "Back again.",
+        "Start small.",
+        "Not that one.",
         "There it is.",
-        "No guessing.",
-        "That opens it.",
         "Nearly there.",
-        "A clean finish."
+        "Same time tomorrow."
       ]
     }
   ],
@@ -283,9 +283,9 @@
       "weekday": "Friday",
       "setting": "quiet public library reading table",
       "puzzle_phase": "late-week",
-      "story_note": "Isla finds Friday's puzzle at the library surprisingly smooth, flowing through it with quiet satisfaction and a sense of earned ease after the week's challenges.",
-      "continuation_note": "Unlike Thursday's resistance and backtracking, today's puzzle yields gracefully to Isla's logic, giving her a rare moment of confidence and rhythm that feels like a reward for persistence.",
-      "stuck_moment": "thoughtful, calm, looking down at screen, relaxed shoulders",
+      "story_note": "Friday late-week puzzle in a quiet library: Isla finds herself momentarily distracted by the silence and small sounds around her, then refocuses and completes the grid with steady resolve.",
+      "continuation_note": "Unlike Thursday's resistance to her initial strategy, today's stuck moment comes from external distraction rather than puzzle difficulty—a shift in texture. The emotional rhythm is quieter, more observational, less about backtracking and more about regaining c",
+      "stuck_moment": "distracted, eyes lifted, brief pause",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -296,11 +296,11 @@
       ],
       "captions": [
         "Back again.",
+        "Start small.",
+        "Not that one.",
         "There it is.",
-        "No guessing.",
-        "That opens it.",
         "Nearly there.",
-        "A clean finish."
+        "Same time tomorrow."
       ]
     }
   ],
