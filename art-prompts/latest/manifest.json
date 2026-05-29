@@ -36,7 +36,7 @@
       "output_file": "social/2026-05-29/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "Isla starts the day at gothic window desk with cityscape view, taking one quiet minute before everything else asks for her attention.",
+      "caption": "Isla starts at home, giving herself one quiet minute before the day begins asking for things.",
       "scene_id": "scene_01"
     },
     {
@@ -46,7 +46,7 @@
       "output_file": "social/2026-05-29/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "The grid is not the whole story today; it is just the way she slows the morning down.",
+      "caption": "On the move, the grid becomes a small anchor while the rest of the day keeps shifting.",
       "scene_id": "scene_02"
     },
     {
@@ -56,7 +56,7 @@
       "output_file": "social/2026-05-29/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "A small interruption passes, but Isla keeps the puzzle as a steady line through it.",
+      "caption": "By midday, she has carried the puzzle into another pocket of borrowed quiet.",
       "scene_id": "scene_03"
     },
     {
@@ -76,7 +76,7 @@
       "output_file": "social/2026-05-29/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "Once one careful idea holds, the rest of the page starts to feel less noisy.",
+      "caption": "Later, one careful idea holds, and the page starts to feel less noisy than the day around it.",
       "scene_id": "scene_05"
     },
     {
@@ -91,5 +91,5 @@
     }
   ],
   "story_source": "daily/2026-05-29.json",
-  "generated_at": "2026-05-29T11:56:18.846Z"
+  "generated_at": "2026-05-29T11:58:40.753Z"
 }

@@ -754,6 +754,51 @@
         "Nearly set.",
         "Leave it tidy."
       ]
+    },
+    {
+      "date": "2026-05-29",
+      "weekday": "Friday",
+      "same_day_attempt": 15,
+      "setting": "train table by the window",
+      "puzzle_phase": "late-week",
+      "story_note": "Isla spends this entry at the train table by the window because she is travelling and using the journey as thinking time. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Isla likes journeys because they give her contained thinking time. Continue the thread: train rides become moving pockets of focus.",
+      "stuck_moment": "thoughtful pause with landscape outside",
+      "life_memory_entry": {
+        "date": "2026-05-29",
+        "attempt": 15,
+        "location": "train table by the window",
+        "reason_for_location": "she is travelling and using the journey as thinking time",
+        "life_detail_learned": "Isla likes journeys because they give her contained thinking time.",
+        "thread_to_continue": "train rides become moving pockets of focus",
+        "puzzle_variant_mentioned": "Trigoku",
+        "variant_panel_index": 4,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Trigoku",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 4,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Window seat.",
+        "Track it slowly.",
+        "Not yet.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Almost there.",
+        "Next stop."
+      ]
     }
   ],
   "weeks": [
@@ -1409,6 +1454,51 @@
         "Today has its own little rule-set — check the constraint before rushing.",
         "Nearly set.",
         "Leave it tidy."
+      ]
+    },
+    {
+      "date": "2026-05-29",
+      "weekday": "Friday",
+      "same_day_attempt": 15,
+      "setting": "train table by the window",
+      "puzzle_phase": "late-week",
+      "story_note": "Isla spends this entry at the train table by the window because she is travelling and using the journey as thinking time. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Isla likes journeys because they give her contained thinking time. Continue the thread: train rides become moving pockets of focus.",
+      "stuck_moment": "thoughtful pause with landscape outside",
+      "life_memory_entry": {
+        "date": "2026-05-29",
+        "attempt": 15,
+        "location": "train table by the window",
+        "reason_for_location": "she is travelling and using the journey as thinking time",
+        "life_detail_learned": "Isla likes journeys because they give her contained thinking time.",
+        "thread_to_continue": "train rides become moving pockets of focus",
+        "puzzle_variant_mentioned": "Trigoku",
+        "variant_panel_index": 4,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Trigoku",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 4,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Window seat.",
+        "Track it slowly.",
+        "Not yet.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Almost there.",
+        "Next stop."
       ]
     }
   ],
