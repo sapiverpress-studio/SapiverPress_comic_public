@@ -181,9 +181,9 @@
       "weekday": "Friday",
       "setting": "quiet public library reading table",
       "puzzle_phase": "late-week",
-      "story_note": "Friday morning at the library—Isla finds an unexpected rhythm in the puzzle, leaning into the quiet space around her as the week winds down.",
-      "continuation_note": "Unlike Thursday's resistant puzzle or Wednesday's methodical unraveling, today Isla finds a smooth flow early on, with the stuck moment coming from distraction rather than difficulty.",
-      "stuck_moment": "distracted, looking away, mildly annoyed",
+      "story_note": "Friday at the library, Isla finds herself racing the clock before closing time, pushing through the late-week puzzle with quiet urgency.",
+      "continuation_note": "Unlike Thursday's confusion or Wednesday's methodical pace, today Isla feels time pressure but stays composed, finding momentum in the final stretch rather than stalling.",
+      "stuck_moment": "alert, glancing up briefly, mildly aware of surroundings",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -194,11 +194,11 @@
       ],
       "captions": [
         "Back again.",
-        "That opens it.",
-        "Not that one.",
+        "Start small.",
+        "Not much time.",
         "There it is.",
-        "Nearly there.",
-        "A clean finish."
+        "A clean finish.",
+        "Same time tomorrow."
       ]
     }
   ],
@@ -283,9 +283,9 @@
       "weekday": "Friday",
       "setting": "quiet public library reading table",
       "puzzle_phase": "late-week",
-      "story_note": "Friday morning at the library—Isla finds an unexpected rhythm in the puzzle, leaning into the quiet space around her as the week winds down.",
-      "continuation_note": "Unlike Thursday's resistant puzzle or Wednesday's methodical unraveling, today Isla finds a smooth flow early on, with the stuck moment coming from distraction rather than difficulty.",
-      "stuck_moment": "distracted, looking away, mildly annoyed",
+      "story_note": "Friday at the library, Isla finds herself racing the clock before closing time, pushing through the late-week puzzle with quiet urgency.",
+      "continuation_note": "Unlike Thursday's confusion or Wednesday's methodical pace, today Isla feels time pressure but stays composed, finding momentum in the final stretch rather than stalling.",
+      "stuck_moment": "alert, glancing up briefly, mildly aware of surroundings",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -296,11 +296,11 @@
       ],
       "captions": [
         "Back again.",
-        "That opens it.",
-        "Not that one.",
+        "Start small.",
+        "Not much time.",
         "There it is.",
-        "Nearly there.",
-        "A clean finish."
+        "A clean finish.",
+        "Same time tomorrow."
       ]
     }
   ],
