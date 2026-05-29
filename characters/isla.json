@@ -181,9 +181,9 @@
       "weekday": "Friday",
       "setting": "quiet public library reading table",
       "puzzle_phase": "late-week",
-      "story_note": "Friday morning in a quiet library—Isla finds a rhythm quickly, enjoys the clarity of a late-week puzzle, and finishes with satisfaction.",
-      "continuation_note": "Unlike yesterday's resistance and backtracking, today flows smoothly; Isla's stuck moment is brief and external (a noise distraction), not a puzzle block.",
-      "stuck_moment": "briefly distracted, looking aside, then returning focus",
+      "story_note": "Friday in the library—Isla finds an unexpected rhythm as the week winds down, letting the puzzle unfold without forcing it.",
+      "continuation_note": "Unlike Thursday's backtracking struggle or earlier methodical sessions, today Isla feels lighter, letting the puzzle come to her with less pressure—a Friday ease.",
+      "stuck_moment": "patient, waiting, gazing off to the side",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -194,11 +194,11 @@
       ],
       "captions": [
         "Back again.",
+        "Start small.",
+        "No guessing.",
         "There it is.",
-        "Not that one.",
-        "One number at a time.",
-        "A clean finish.",
-        "Same time tomorrow."
+        "Nearly there.",
+        "A clean finish."
       ]
     }
   ],
@@ -283,9 +283,9 @@
       "weekday": "Friday",
       "setting": "quiet public library reading table",
       "puzzle_phase": "late-week",
-      "story_note": "Friday morning in a quiet library—Isla finds a rhythm quickly, enjoys the clarity of a late-week puzzle, and finishes with satisfaction.",
-      "continuation_note": "Unlike yesterday's resistance and backtracking, today flows smoothly; Isla's stuck moment is brief and external (a noise distraction), not a puzzle block.",
-      "stuck_moment": "briefly distracted, looking aside, then returning focus",
+      "story_note": "Friday in the library—Isla finds an unexpected rhythm as the week winds down, letting the puzzle unfold without forcing it.",
+      "continuation_note": "Unlike Thursday's backtracking struggle or earlier methodical sessions, today Isla feels lighter, letting the puzzle come to her with less pressure—a Friday ease.",
+      "stuck_moment": "patient, waiting, gazing off to the side",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -296,11 +296,11 @@
       ],
       "captions": [
         "Back again.",
+        "Start small.",
+        "No guessing.",
         "There it is.",
-        "Not that one.",
-        "One number at a time.",
-        "A clean finish.",
-        "Same time tomorrow."
+        "Nearly there.",
+        "A clean finish."
       ]
     }
   ],
