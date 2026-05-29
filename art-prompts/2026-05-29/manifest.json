@@ -36,7 +36,7 @@
       "output_file": "social/2026-05-29/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "Between tasks.",
+      "caption": "Isla starts the day at gothic window desk with cityscape view, taking one quiet minute before everything else asks for her attention.",
       "scene_id": "scene_01"
     },
     {
@@ -46,7 +46,7 @@
       "output_file": "social/2026-05-29/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "Today has its own little rule-set — check the constraint before rushing.",
+      "caption": "The grid is not the whole story today; it is just the way she slows the morning down.",
       "scene_id": "scene_02"
     },
     {
@@ -56,7 +56,7 @@
       "output_file": "social/2026-05-29/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "No shortcut.",
+      "caption": "A small interruption passes, but Isla keeps the puzzle as a steady line through it.",
       "scene_id": "scene_03"
     },
     {
@@ -66,7 +66,7 @@
       "output_file": "social/2026-05-29/04_panel-04.png",
       "image_name": "04_panel-04.png",
       "fallback_template": "templates/characters/isla/isla_04_breakthrough.png",
-      "caption": "Clean route.",
+      "caption": "Trigoku changes the route through the puzzle, so she checks the constraint before trusting a move.",
       "scene_id": "scene_04"
     },
     {
@@ -76,7 +76,7 @@
       "output_file": "social/2026-05-29/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "Nearly done.",
+      "caption": "Once one careful idea holds, the rest of the page starts to feel less noisy.",
       "scene_id": "scene_05"
     },
     {
@@ -86,10 +86,10 @@
       "output_file": "social/2026-05-29/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "Back to work.",
+      "caption": "By the final check, the win is not speed; it is leaving the day a little clearer.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-05-29.json",
-  "generated_at": "2026-05-29T11:50:39.643Z"
+  "generated_at": "2026-05-29T11:56:18.846Z"
 }
