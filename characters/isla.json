@@ -181,9 +181,9 @@
       "weekday": "Friday",
       "setting": "quiet public library reading table",
       "puzzle_phase": "late-week",
-      "story_note": "Friday morning at the library; Isla finds an unexpectedly smooth rhythm with today's puzzle, finishing faster than usual and leaving with quiet satisfaction.",
-      "continuation_note": "Unlike Thursday's resistance and earlier thoughtful pauses, today the puzzle clicks into place with less friction—Isla moves through it confidently, almost surprised by how quickly it resolves.",
-      "stuck_moment": "brief uncertainty shifting to recognition, eyes widening slightly",
+      "story_note": "Friday morning in the library, Isla finds the late-week puzzle clicks into place with surprising ease, a smooth finish before the weekend.",
+      "continuation_note": "Unlike Thursday's resistance and backtracking, today the logic flows cleanly from the start, with Isla's stuck moment being more about double-checking than genuine confusion.",
+      "stuck_moment": "careful, methodical, double-checking",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -195,10 +195,10 @@
       "captions": [
         "Back again.",
         "Start small.",
+        "No guessing.",
         "There it is.",
-        "One number at a time.",
         "Nearly there.",
-        "A clean finish."
+        "Same time tomorrow."
       ]
     }
   ],
@@ -283,9 +283,9 @@
       "weekday": "Friday",
       "setting": "quiet public library reading table",
       "puzzle_phase": "late-week",
-      "story_note": "Friday morning at the library; Isla finds an unexpectedly smooth rhythm with today's puzzle, finishing faster than usual and leaving with quiet satisfaction.",
-      "continuation_note": "Unlike Thursday's resistance and earlier thoughtful pauses, today the puzzle clicks into place with less friction—Isla moves through it confidently, almost surprised by how quickly it resolves.",
-      "stuck_moment": "brief uncertainty shifting to recognition, eyes widening slightly",
+      "story_note": "Friday morning in the library, Isla finds the late-week puzzle clicks into place with surprising ease, a smooth finish before the weekend.",
+      "continuation_note": "Unlike Thursday's resistance and backtracking, today the logic flows cleanly from the start, with Isla's stuck moment being more about double-checking than genuine confusion.",
+      "stuck_moment": "careful, methodical, double-checking",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -297,10 +297,10 @@
       "captions": [
         "Back again.",
         "Start small.",
+        "No guessing.",
         "There it is.",
-        "One number at a time.",
         "Nearly there.",
-        "A clean finish."
+        "Same time tomorrow."
       ]
     }
   ],

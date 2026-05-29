@@ -31,10 +31,10 @@
   "captions": [
     "Back again.",
     "Start small.",
+    "No guessing.",
     "There it is.",
-    "One number at a time.",
     "Nearly there.",
-    "A clean finish."
+    "Same time tomorrow."
   ],
   "scenes": [
     {
@@ -47,20 +47,20 @@
       "output": "social/2026-05-29/01_panel-01.png",
       "screen_quad": [
         [
-          775,
+          811,
           717
         ],
         [
-          1065,
-          735
+          1067,
+          734
         ],
         [
-          1029,
-          947
+          1066,
+          982
         ],
         [
-          742,
-          898
+          763,
+          923
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen"
@@ -75,20 +75,20 @@
       "output": "social/2026-05-29/02_panel-02.png",
       "screen_quad": [
         [
-          814,
-          662
-        ],
-        [
-          1068,
+          756,
           677
         ],
         [
-          1061,
-          911
+          1047,
+          695
         ],
         [
-          778,
-          862
+          1012,
+          929
+        ],
+        [
+          725,
+          880
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen"
@@ -103,20 +103,20 @@
       "output": "social/2026-05-29/03_panel-03.png",
       "screen_quad": [
         [
-          820,
-          732
+          780,
+          681
         ],
         [
-          1068,
-          754
+          1018,
+          707
         ],
         [
-          1068,
-          976
+          978,
+          904
         ],
         [
-          781,
-          925
+          746,
+          852
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen"
@@ -131,20 +131,20 @@
       "output": "social/2026-05-29/04_panel-04.png",
       "screen_quad": [
         [
-          788,
-          660
+          756,
+          689
         ],
         [
-          1068,
-          679
+          1061,
+          708
         ],
         [
-          1056,
-          923
+          1022,
+          940
         ],
         [
-          755,
-          864
+          723,
+          891
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen"
@@ -157,25 +157,8 @@
       "replacement": "art-replacements/2026-05-29/05_panel-05.png",
       "capture": "captures/2026-05-29/extracted/05_nearly_complete.png",
       "output": "social/2026-05-29/05_panel-05.png",
-      "screen_quad": [
-        [
-          764,
-          660
-        ],
-        [
-          1068,
-          690
-        ],
-        [
-          1030,
-          932
-        ],
-        [
-          723,
-          873
-        ]
-      ],
-      "screen_quad_mode": "detected_replacement_screen"
+      "screen_quad": [],
+      "screen_quad_mode": "overlay_skipped_no_screen_detected"
     },
     {
       "scene": "scene_06",
@@ -187,20 +170,20 @@
       "output": "social/2026-05-29/06_panel-06.png",
       "screen_quad": [
         [
-          758,
-          657
+          748,
+          682
         ],
         [
-          1045,
-          675
+          1018,
+          705
         ],
         [
-          1005,
-          898
+          979,
+          910
         ],
         [
-          726,
-          854
+          715,
+          858
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen"
