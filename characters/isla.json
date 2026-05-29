@@ -529,6 +529,51 @@
         "Today has its own little rule-set — check the constraint before rushing.",
         "Day begins."
       ]
+    },
+    {
+      "date": "2026-05-29",
+      "weekday": "Friday",
+      "same_day_attempt": 10,
+      "setting": "bookshop cafe corner",
+      "puzzle_phase": "late-week",
+      "story_note": "Isla spends this entry at the bookshop cafe corner because she has come for one thing but stays for the quiet corner. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Bookshops pull Isla into longer pauses than she planned. Continue the thread: she is drawn to places with books and warm corners.",
+      "stuck_moment": "quiet frown, patient double check",
+      "life_memory_entry": {
+        "date": "2026-05-29",
+        "attempt": 10,
+        "location": "bookshop cafe corner",
+        "reason_for_location": "she has come for one thing but stays for the quiet corner",
+        "life_detail_learned": "Bookshops pull Isla into longer pauses than she planned.",
+        "thread_to_continue": "she is drawn to places with books and warm corners",
+        "puzzle_variant_mentioned": "Trigoku",
+        "variant_panel_index": 4,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Trigoku",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 4,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Nearly home.",
+        "One more page."
+      ]
     }
   ],
   "weeks": [
@@ -959,6 +1004,51 @@
         "There now.",
         "Today has its own little rule-set — check the constraint before rushing.",
         "Day begins."
+      ]
+    },
+    {
+      "date": "2026-05-29",
+      "weekday": "Friday",
+      "same_day_attempt": 10,
+      "setting": "bookshop cafe corner",
+      "puzzle_phase": "late-week",
+      "story_note": "Isla spends this entry at the bookshop cafe corner because she has come for one thing but stays for the quiet corner. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Bookshops pull Isla into longer pauses than she planned. Continue the thread: she is drawn to places with books and warm corners.",
+      "stuck_moment": "quiet frown, patient double check",
+      "life_memory_entry": {
+        "date": "2026-05-29",
+        "attempt": 10,
+        "location": "bookshop cafe corner",
+        "reason_for_location": "she has come for one thing but stays for the quiet corner",
+        "life_detail_learned": "Bookshops pull Isla into longer pauses than she planned.",
+        "thread_to_continue": "she is drawn to places with books and warm corners",
+        "puzzle_variant_mentioned": "Trigoku",
+        "variant_panel_index": 4,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Trigoku",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 4,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Nearly home.",
+        "One more page."
       ]
     }
   ],
