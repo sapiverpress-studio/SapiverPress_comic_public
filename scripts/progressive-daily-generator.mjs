@@ -113,6 +113,86 @@ function stableIndex(seed, length) {
   return (hash >>> 0) % Math.max(1, length);
 }
 
+function parseDateParts(date) {
+  const [year, month, day] = String(date).split("-").map((n) => Number(n));
+  return { year, month, day };
+}
+
+function isoDate(date) {
+  return date.toISOString().slice(0, 10);
+}
+
+function utcDate(year, month, day) {
+  return new Date(Date.UTC(year, month - 1, day));
+}
+
+function addDays(date, days) {
+  const copy = new Date(date.getTime());
+  copy.setUTCDate(copy.getUTCDate() + days);
+  return copy;
+}
+
+function easterSunday(year) {
+  const a = year % 19;
+  const b = Math.floor(year / 100);
+  const c = year % 100;
+  const d = Math.floor(b / 4);
+  const e = b % 4;
+  const f = Math.floor((b + 8) / 25);
+  const g = Math.floor((b - f + 1) / 3);
+  const h = (19 * a + b - d - g + 15) % 30;
+  const i = Math.floor(c / 4);
+  const k = c % 4;
+  const l = (32 + 2 * e + 2 * i - h - k) % 7;
+  const m = Math.floor((a + 11 * h + 22 * l) / 451);
+  const month = Math.floor((h + l - 7 * m + 114) / 31);
+  const day = ((h + l - 7 * m + 114) % 31) + 1;
+  return utcDate(year, month, day);
+}
+
+function nthWeekdayOfMonth(year, month, weekday, nth) {
+  const first = utcDate(year, month, 1);
+  const offset = (weekday - first.getUTCDay() + 7) % 7;
+  return utcDate(year, month, 1 + offset + (nth - 1) * 7);
+}
+
+function firstMondayOfMonth(year, month) {
+  return nthWeekdayOfMonth(year, month, 1, 1);
+}
+
+function lastMondayOfMonth(year, month) {
+  const last = utcDate(year, month + 1, 0);
+  const offset = (last.getUTCDay() - 1 + 7) % 7;
+  return addDays(last, -offset);
+}
+
+function significantUkDate(date) {
+  const { year } = parseDateParts(date);
+  const easter = easterSunday(year);
+  const events = [
+    { date: `${year}-01-01`, name: "New Year's Day", caption: "Fresh page.", line: "New Year's Day — a clean page suits her.", memory: "New Year makes Isla notice fresh starts without making big declarations.", thread: "fresh starts stay small and practical" },
+    { date: `${year}-02-14`, name: "Valentine's Day", caption: "Small kindness.", line: "Valentine's Day — she keeps the kindness small and real.", memory: "Isla notices quiet gestures more than big displays.", thread: "small kindness matters more than spectacle" },
+    { date: isoDate(addDays(easter, -47)), name: "Pancake Day", caption: "Before Lent.", line: "Pancake Day — the kitchen feels busier than usual.", memory: "Food-calendar days belong in Isla's domestic background only when they are widely familiar.", thread: "ordinary seasonal rituals can sit behind the puzzle" },
+    { date: isoDate(addDays(easter, -21)), name: "Mothering Sunday", caption: "Call later.", line: "Mothering Sunday — she leaves room for a call later.", memory: "Family days make Isla protect a little space around the puzzle.", thread: "family days appear gently, without taking over" },
+    { date: isoDate(addDays(easter, -2)), name: "Good Friday", caption: "Slower morning.", line: "Good Friday quiet — the morning is allowed to move slowly.", memory: "Bank-holiday quiet makes Isla slow down rather than rush.", thread: "holiday mornings change the pace of her ritual" },
+    { date: isoDate(easter), name: "Easter Sunday", caption: "Easter light.", line: "Easter Sunday — she lets the day start gently.", memory: "Easter makes Isla notice light, quiet, and renewal in a practical way.", thread: "spring holidays soften the tone of the strip" },
+    { date: isoDate(addDays(easter, 1)), name: "Easter Monday", caption: "Bank holiday.", line: "Easter Monday — no need to hurry the first move.", memory: "A bank holiday lets Isla stretch the puzzle ritual a little longer.", thread: "free mornings give her more breathing room" },
+    { date: isoDate(firstMondayOfMonth(year, 5)), name: "Early May bank holiday", caption: "May morning.", line: "May bank holiday — the day feels borrowed before it starts.", memory: "Bank holidays make Isla feel as if she has borrowed time.", thread: "borrowed time is a recurring comfort" },
+    { date: isoDate(lastMondayOfMonth(year, 5)), name: "Spring bank holiday", caption: "Long weekend.", line: "Spring bank holiday — she lets the long weekend stay quiet.", memory: "Long weekends make Isla choose quieter corners.", thread: "long weekends do not have to be loud" },
+    { date: isoDate(nthWeekdayOfMonth(year, 6, 0, 3)), name: "Father's Day", caption: "Check in later.", line: "Father's Day — she saves a moment to check in later.", memory: "Family days make Isla notice the small admin of care.", thread: "family check-ins can sit softly inside the diary" },
+    { date: isoDate(lastMondayOfMonth(year, 8)), name: "Summer bank holiday", caption: "Late summer.", line: "Summer bank holiday — the quiet table feels like a small luxury.", memory: "Late-summer pauses make Isla more reflective.", thread: "summer endings bring a quieter mood" },
+    { date: `${year}-10-31`, name: "Halloween", caption: "Darker windows.", line: "Halloween — the windows feel darker a little earlier.", memory: "Seasonal evenings change the atmosphere around Isla's routine.", thread: "darker evenings shift the mood" },
+    { date: `${year}-11-05`, name: "Bonfire Night", caption: "Firework weather.", line: "Bonfire Night — she keeps the puzzle indoors before the noise starts.", memory: "Loud seasonal nights make Isla seek quiet indoor places.", thread: "quiet inside, noise outside" },
+    { date: `${year}-11-11`, name: "Remembrance Day", caption: "A quiet minute.", line: "Remembrance Day — she lets the quiet minute stay quiet.", memory: "Remembrance dates make Isla's diary more restrained and respectful.", thread: "some calendar days need restraint" },
+    { date: isoDate(nthWeekdayOfMonth(year, 11, 0, 2)), name: "Remembrance Sunday", caption: "Quiet minute.", line: "Remembrance Sunday — she keeps the morning understated.", memory: "Remembrance Sunday brings a more reflective tone.", thread: "some calendar days need restraint" },
+    { date: `${year}-12-24`, name: "Christmas Eve", caption: "Before tomorrow.", line: "Christmas Eve — the house is nearly too busy for quiet.", memory: "Christmas Eve makes Isla guard her small quiet spaces.", thread: "festive days put pressure on quiet routines" },
+    { date: `${year}-12-25`, name: "Christmas Day", caption: "Christmas quiet.", line: "Christmas Day — even the puzzle has to wait its turn.", memory: "Christmas changes the rhythm of Isla's day without erasing her ritual.", thread: "festive days bend the ritual but do not break it" },
+    { date: `${year}-12-26`, name: "Boxing Day", caption: "Boxing Day slow.", line: "Boxing Day — everything moves one step slower.", memory: "Boxing Day makes Isla lean into recovery and quiet.", thread: "post-holiday quiet becomes part of her rhythm" },
+    { date: `${year}-12-31`, name: "New Year's Eve", caption: "Last page.", line: "New Year's Eve — she finishes the page before the year turns.", memory: "Year-end makes Isla reflective, but still practical.", thread: "endings are logged quietly, not dramatically" },
+  ];
+  return events.find((event) => event.date === date) || null;
+}
+
 async function readJson(relativePath, fallback) {
   try {
     return JSON.parse(await fs.readFile(path.join(ROOT, relativePath), "utf8"));
@@ -139,6 +219,7 @@ function defaultLifeCanon() {
     active_threads: ["protecting small quiet routines"],
     location_memory: [],
     variant_memory: [],
+    calendar_memory: [],
     life_memory: [],
     last_updated: null,
   };
@@ -156,6 +237,7 @@ function makeHistoryEntry(story) {
     stuck_moment: story.scenes?.[2]?.image_prompt_fragment || "",
     life_memory_entry: story.life_memory_entry || null,
     variant_recap: story.variant_recap || null,
+    uk_calendar_date: story.uk_calendar_date || null,
     pose_order: story.scenes?.map((s) => s.pose_id) || [],
     captions: story.scenes?.map((s) => s.caption) || [],
   };
@@ -200,9 +282,22 @@ function variantPanelIndex({ date, attempt, canon }) {
   return candidates[offset];
 }
 
+function calendarPanelIndex({ date, attempt, canon, avoidPanel }) {
+  const previous = new Set((canon.calendar_memory || []).slice(-3).map((entry) => Number(entry.panel_index)));
+  const candidates = [0, 1, 2, 3, 4, 5].filter((panel) => panel !== avoidPanel);
+  const offset = stableIndex(`calendar-${date}-${attempt}`, candidates.length);
+  for (let i = 0; i < candidates.length; i += 1) {
+    const panel = candidates[(offset + i) % candidates.length];
+    if (!previous.has(panel)) return panel;
+  }
+  return candidates[offset] ?? 0;
+}
+
 function applyLifeProgression({ story, attempt, canon, lifeBeat }) {
   const variant = detectVariant(story.puzzle_state || {});
+  const calendarEvent = significantUkDate(story.date);
   const panelIndex = variantPanelIndex({ date: story.date, attempt, canon });
+  const calendarIndex = calendarEvent ? calendarPanelIndex({ date: story.date, attempt, canon, avoidPanel: panelIndex }) : -1;
   const captions = lifeBeat.captions;
   const fragments = lifeBeat.fragments;
   const variantLine = variant.line;
@@ -210,9 +305,18 @@ function applyLifeProgression({ story, attempt, canon, lifeBeat }) {
   story.same_day_attempt = attempt;
   story.selected_setting = lifeBeat.setting;
   story.life_canon_used = true;
-  story.story_note = `Isla spends this entry at the ${lifeBeat.setting} because ${lifeBeat.reason}. The puzzle stays as a light thread inside the day.`;
-  story.continuation_note = `Remember: ${lifeBeat.learned} Continue the thread: ${lifeBeat.thread}.`;
-  story.facebook_post_text = `A small ${variant.name} moment in Isla's day. ${SUITE_URL}`;
+  story.uk_calendar_date = calendarEvent ? {
+    name: calendarEvent.name,
+    date: calendarEvent.date,
+    line: calendarEvent.line,
+    caption: calendarEvent.caption,
+    panel_index: calendarIndex + 1,
+  } : null;
+  story.story_note = `Isla spends this entry at the ${lifeBeat.setting} because ${lifeBeat.reason}. ${calendarEvent ? `${calendarEvent.name} colours the day gently. ` : ""}The puzzle stays as a light thread inside the day.`;
+  story.continuation_note = `Remember: ${lifeBeat.learned}${calendarEvent ? ` ${calendarEvent.memory}` : ""} Continue the thread: ${lifeBeat.thread}.`;
+  story.facebook_post_text = calendarEvent
+    ? `${calendarEvent.name} sits quietly inside Isla's puzzle moment. ${SUITE_URL}`
+    : `A small ${variant.name} moment in Isla's day. ${SUITE_URL}`;
   story.variant_recap = {
     variant_name: variant.name,
     short_rule: variantLine,
@@ -222,21 +326,30 @@ function applyLifeProgression({ story, attempt, canon, lifeBeat }) {
 
   story.scenes = (story.scenes || []).map((scene, index) => {
     const isVariantPanel = index === panelIndex;
+    const isCalendarPanel = index === calendarIndex;
     const fragment = fragments[index] || scene.image_prompt_fragment || "quiet daily-life puzzle moment";
-    const caption = isVariantPanel ? variantLine : (captions[index] || scene.caption);
+    const caption = isVariantPanel ? variantLine : isCalendarPanel ? calendarEvent.caption : (captions[index] || scene.caption);
+    const speechLine = isVariantPanel ? variantLine : isCalendarPanel ? calendarEvent.line : clean(scene.speech_bubble || "");
     const sceneLine = isVariantPanel
       ? `${lifeBeat.reason}. Isla notices the ${variant.name} rule in passing: ${variantLine}`
-      : `${lifeBeat.reason}. ${fragment}`;
+      : isCalendarPanel
+        ? `${lifeBeat.reason}. ${calendarEvent.line}`
+        : `${lifeBeat.reason}. ${fragment}`;
     return {
       ...scene,
       caption,
-      speech_bubble: isVariantPanel ? variantLine : clean(scene.speech_bubble || ""),
-      dialogue: isVariantPanel ? variantLine : clean(scene.dialogue || scene.speech_bubble || ""),
-      image_prompt_fragment: isVariantPanel ? `${fragment}, noticing today's ${variant.name} rule naturally` : fragment,
+      speech_bubble: speechLine,
+      dialogue: speechLine || clean(scene.dialogue || scene.speech_bubble || ""),
+      image_prompt_fragment: isVariantPanel
+        ? `${fragment}, noticing today's ${variant.name} rule naturally`
+        : isCalendarPanel
+          ? `${fragment}, ${calendarEvent.name} atmosphere, natural diary moment`
+          : fragment,
       setting: lifeBeat.setting,
       scene_description: clean(sceneLine).slice(0, 260),
       life_beat: lifeBeat.learned,
       variant_recap_here: isVariantPanel,
+      uk_calendar_recap_here: isCalendarPanel,
     };
   });
 
@@ -245,16 +358,19 @@ function applyLifeProgression({ story, attempt, canon, lifeBeat }) {
     attempt,
     location: lifeBeat.setting,
     reason_for_location: lifeBeat.reason,
-    life_detail_learned: lifeBeat.learned,
-    thread_to_continue: lifeBeat.thread,
+    life_detail_learned: calendarEvent ? `${lifeBeat.learned} ${calendarEvent.memory}` : lifeBeat.learned,
+    thread_to_continue: calendarEvent ? `${lifeBeat.thread}; ${calendarEvent.thread}` : lifeBeat.thread,
     puzzle_variant_mentioned: variant.name,
     variant_panel_index: panelIndex + 1,
+    uk_calendar_date: calendarEvent ? calendarEvent.name : null,
+    uk_calendar_panel_index: calendarEvent ? calendarIndex + 1 : null,
   };
 
   if (story.image_manifest) {
     story.image_manifest.selected_setting = lifeBeat.setting;
     story.image_manifest.life_canon_used = true;
     story.image_manifest.variant_recap = story.variant_recap;
+    story.image_manifest.uk_calendar_date = story.uk_calendar_date;
     story.image_manifest.image_prompts = story.scenes.map((scene) => ({
       scene: scene.id,
       pose_id: scene.pose_id,
@@ -284,6 +400,12 @@ function updateLifeCanon({ canon, story }) {
       variant_name: entry.puzzle_variant_mentioned,
       panel_index: entry.variant_panel_index,
     }].slice(-60),
+    calendar_memory: entry.uk_calendar_date ? [...(canon.calendar_memory || []), {
+      date: entry.date,
+      attempt: entry.attempt,
+      name: entry.uk_calendar_date,
+      panel_index: entry.uk_calendar_panel_index,
+    }].slice(-60) : (canon.calendar_memory || []),
     life_memory: [...(canon.life_memory || []), entry].slice(-60),
     last_updated: story.date,
   };
@@ -328,4 +450,5 @@ export async function runProgressiveDailyGeneration() {
   console.log(`Life-canon daily story written for ${date}, same-day attempt ${attempt}`);
   console.log(`Location: ${story.life_memory_entry.location}`);
   console.log(`Variant recap: ${story.variant_recap.variant_name} on panel ${story.variant_recap.panel_index}`);
+  if (story.uk_calendar_date) console.log(`UK calendar date: ${story.uk_calendar_date.name} on panel ${story.uk_calendar_date.panel_index}`);
 }
