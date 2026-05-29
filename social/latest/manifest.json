@@ -30,10 +30,10 @@
   "puzzle_url": "https://suite.sapiverpress.co.uk",
   "captions": [
     "Back again.",
-    "Start small.",
-    "Not here.",
     "There it is.",
-    "Nearly there.",
+    "Not that one.",
+    "One number at a time.",
+    "A clean finish.",
     "Same time tomorrow."
   ],
   "scenes": [
@@ -45,24 +45,8 @@
       "replacement": "art-replacements/2026-05-29/01_panel-01.png",
       "capture": "captures/2026-05-29/extracted/01_fresh_daily_grid.png",
       "output": "social/2026-05-29/01_panel-01.png",
-      "screen_quad": [
-        [
-          592,
-          405
-        ],
-        [
-          1018,
-          421
-        ],
-        [
-          982,
-          756
-        ],
-        [
-          571,
-          724
-        ]
-      ]
+      "screen_quad": [],
+      "screen_quad_mode": "overlay_disabled"
     },
     {
       "scene": "scene_02",
@@ -72,24 +56,8 @@
       "replacement": "art-replacements/2026-05-29/02_panel-02.png",
       "capture": "captures/2026-05-29/extracted/02_first_moves.png",
       "output": "social/2026-05-29/02_panel-02.png",
-      "screen_quad": [
-        [
-          610,
-          458
-        ],
-        [
-          1050,
-          474
-        ],
-        [
-          1026,
-          760
-        ],
-        [
-          588,
-          744
-        ]
-      ]
+      "screen_quad": [],
+      "screen_quad_mode": "overlay_disabled"
     },
     {
       "scene": "scene_03",
@@ -99,24 +67,8 @@
       "replacement": "art-replacements/2026-05-29/03_panel-03.png",
       "capture": "captures/2026-05-29/extracted/03_stuck_moment.png",
       "output": "social/2026-05-29/03_panel-03.png",
-      "screen_quad": [
-        [
-          548,
-          550
-        ],
-        [
-          955,
-          570
-        ],
-        [
-          928,
-          865
-        ],
-        [
-          520,
-          838
-        ]
-      ]
+      "screen_quad": [],
+      "screen_quad_mode": "overlay_disabled"
     },
     {
       "scene": "scene_04",
@@ -126,24 +78,8 @@
       "replacement": "art-replacements/2026-05-29/04_panel-04.png",
       "capture": "captures/2026-05-29/extracted/04_breakthrough.png",
       "output": "social/2026-05-29/04_panel-04.png",
-      "screen_quad": [
-        [
-          612,
-          404
-        ],
-        [
-          1052,
-          414
-        ],
-        [
-          1025,
-          760
-        ],
-        [
-          580,
-          736
-        ]
-      ]
+      "screen_quad": [],
+      "screen_quad_mode": "overlay_disabled"
     },
     {
       "scene": "scene_05",
@@ -153,24 +89,8 @@
       "replacement": "art-replacements/2026-05-29/05_panel-05.png",
       "capture": "captures/2026-05-29/extracted/05_nearly_complete.png",
       "output": "social/2026-05-29/05_panel-05.png",
-      "screen_quad": [
-        [
-          617,
-          502
-        ],
-        [
-          1036,
-          520
-        ],
-        [
-          1008,
-          860
-        ],
-        [
-          587,
-          837
-        ]
-      ]
+      "screen_quad": [],
+      "screen_quad_mode": "overlay_disabled"
     },
     {
       "scene": "scene_06",
@@ -180,24 +100,8 @@
       "replacement": "art-replacements/2026-05-29/06_panel-06.png",
       "capture": "captures/2026-05-29/extracted/06_complete_solution.png",
       "output": "social/2026-05-29/06_panel-06.png",
-      "screen_quad": [
-        [
-          652,
-          707
-        ],
-        [
-          1071,
-          721
-        ],
-        [
-          1040,
-          1010
-        ],
-        [
-          624,
-          952
-        ]
-      ]
+      "screen_quad": [],
+      "screen_quad_mode": "overlay_disabled"
     }
   ]
 }

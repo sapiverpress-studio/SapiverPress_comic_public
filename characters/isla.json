@@ -181,9 +181,9 @@
       "weekday": "Friday",
       "setting": "quiet public library reading table",
       "puzzle_phase": "late-week",
-      "story_note": "Friday library session: Isla finds herself distracted by ambient noise, then settles into a smooth finish.",
-      "continuation_note": "Unlike Thursday's puzzle resistance, today's challenge is external—library sounds break her concentration. The stuck moment is environmental rather than logical.",
-      "stuck_moment": "distracted, glancing sideways, mildly annoyed",
+      "story_note": "Friday morning in a quiet library—Isla finds a rhythm quickly, enjoys the clarity of a late-week puzzle, and finishes with satisfaction.",
+      "continuation_note": "Unlike yesterday's resistance and backtracking, today flows smoothly; Isla's stuck moment is brief and external (a noise distraction), not a puzzle block.",
+      "stuck_moment": "briefly distracted, looking aside, then returning focus",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -194,10 +194,10 @@
       ],
       "captions": [
         "Back again.",
-        "Start small.",
-        "Not here.",
         "There it is.",
-        "Nearly there.",
+        "Not that one.",
+        "One number at a time.",
+        "A clean finish.",
         "Same time tomorrow."
       ]
     }
@@ -283,9 +283,9 @@
       "weekday": "Friday",
       "setting": "quiet public library reading table",
       "puzzle_phase": "late-week",
-      "story_note": "Friday library session: Isla finds herself distracted by ambient noise, then settles into a smooth finish.",
-      "continuation_note": "Unlike Thursday's puzzle resistance, today's challenge is external—library sounds break her concentration. The stuck moment is environmental rather than logical.",
-      "stuck_moment": "distracted, glancing sideways, mildly annoyed",
+      "story_note": "Friday morning in a quiet library—Isla finds a rhythm quickly, enjoys the clarity of a late-week puzzle, and finishes with satisfaction.",
+      "continuation_note": "Unlike yesterday's resistance and backtracking, today flows smoothly; Isla's stuck moment is brief and external (a noise distraction), not a puzzle block.",
+      "stuck_moment": "briefly distracted, looking aside, then returning focus",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -296,10 +296,10 @@
       ],
       "captions": [
         "Back again.",
-        "Start small.",
-        "Not here.",
         "There it is.",
-        "Nearly there.",
+        "Not that one.",
+        "One number at a time.",
+        "A clean finish.",
         "Same time tomorrow."
       ]
     }
