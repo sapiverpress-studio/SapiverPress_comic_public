@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "daily": "node scripts/daily-generator-local.mjs && node scripts/apply-location-keys.mjs && node scripts/refine-storyboard-copy-openai.mjs",
+    "daily": "node scripts/daily-generator-local.mjs && node scripts/refine-storyboard-copy-openai.mjs && node scripts/apply-location-keys.mjs",
     "capture:today": "node scripts/capture_trigoku_playthrough_v2.mjs",
     "art-prompts": "node scripts/generate-art-prompt-pack.mjs && node scripts/apply-story-beats.mjs",
     "generate-images": "node scripts/generate-isla-images-floor.mjs",
