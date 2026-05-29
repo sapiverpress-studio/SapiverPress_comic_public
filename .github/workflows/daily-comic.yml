@@ -53,7 +53,7 @@ jobs:
     if: github.event_name == 'workflow_dispatch' || github.event_name == 'push' || github.event.schedule == '15 7 * * *'
     steps:
       - name: Checkout public repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           persist-credentials: true
       - name: Sync to latest main
@@ -61,7 +61,7 @@ jobs:
           git fetch origin main
           git reset --hard origin/main
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: "22"
       - name: Install dependencies
