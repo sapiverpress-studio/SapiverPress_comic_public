@@ -41,8 +41,8 @@
     "variant_recap",
     "uk_calendar_date"
   ],
-  "storyboard_copy_source": "fallback_after_openai_quality_gate",
-  "storyboard_copy_model": "gpt-4o-mini",
+  "storyboard_copy_source": "fallback_story_driven",
+  "storyboard_copy_model": "fallback",
   "storyboard_arc_type": "story_driven_not_location_driven",
   "storyboard_arc": {
     "setup": "Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
@@ -50,7 +50,7 @@
     "choice": "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
     "puzzle_moment": "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
     "consequence": "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.",
-    "resolution": "By the final check, Isla carries the pause forward: rainy days bring out her reflective side."
+    "resolution": "By the final check, Isla carries the pause forward, not the pressure that tried to hurry her."
   },
   "storyboard_quality": {
     "location_sequence_only": false,
@@ -71,15 +71,15 @@
     "Three minutes. Properly.\nAt the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
     "Today has its own little rule-set \u2014 check the constraint before rushing.\nTrigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
     "That stayed true.\nBecause she waited, the move holds; the errand feels less like a deadline and more like a next step.",
-    "Take the pause with you.\nBy the final check, Isla carries the pause forward: rainy days bring out her reflective side."
+    "Take the pause with you.\nBy the final check, Isla carries the pause forward, not the pressure that tried to hurry her."
   ],
   "storyboard_locations": [
     "small home kitchen table in warm morning light",
     "train table by the window",
-    "rainy window nook with plants",
-    "outdoor cafe street table",
     "co-working desk near a tall window",
-    "gothic window desk with cityscape view"
+    "outdoor cafe street table",
+    "quiet public library reading table",
+    "bookshop cafe corner"
   ],
   "scenes": [
     {
@@ -92,20 +92,20 @@
       "output": "social/2026-05-29/01_panel-01.png",
       "screen_quad": [
         [
-          710,
-          689
+          741,
+          559
         ],
         [
-          1026,
-          727
+          1063,
+          590
         ],
         [
-          987,
-          955
+          1016,
+          848
         ],
         [
-          676,
-          884
+          706,
+          776
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -123,25 +123,8 @@
       "replacement": "art-replacements/2026-05-29/02_panel-02.png",
       "capture": "captures/2026-05-29/extracted/02_first_moves.png",
       "output": "social/2026-05-29/02_panel-02.png",
-      "screen_quad": [
-        [
-          693,
-          591
-        ],
-        [
-          1053,
-          611
-        ],
-        [
-          1017,
-          867
-        ],
-        [
-          662,
-          815
-        ]
-      ],
-      "screen_quad_mode": "detected_replacement_screen",
+      "screen_quad": [],
+      "screen_quad_mode": "overlay_skipped_no_screen_detected",
       "storyboard_text": "Don't chase it.\nThe journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
       "arc_role": "disruption",
       "storyboard_caption": "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
@@ -158,20 +141,20 @@
       "output": "social/2026-05-29/03_panel-03.png",
       "screen_quad": [
         [
-          780,
-          663
+          740,
+          652
         ],
         [
           1067,
-          687
+          674
         ],
         [
-          1070,
-          956
+          1069,
+          947
         ],
         [
-          743,
-          888
+          698,
+          889
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -179,7 +162,7 @@
       "arc_role": "choice",
       "storyboard_caption": "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
       "storyboard_dialogue": "Three minutes. Properly.",
-      "panel_location": "rainy window nook with plants"
+      "panel_location": "co-working desk near a tall window"
     },
     {
       "scene": "scene_04",
@@ -189,25 +172,8 @@
       "replacement": "art-replacements/2026-05-29/04_panel-04.png",
       "capture": "captures/2026-05-29/extracted/04_breakthrough.png",
       "output": "social/2026-05-29/04_panel-04.png",
-      "screen_quad": [
-        [
-          763,
-          579
-        ],
-        [
-          1066,
-          600
-        ],
-        [
-          1068,
-          901
-        ],
-        [
-          715,
-          830
-        ]
-      ],
-      "screen_quad_mode": "detected_replacement_screen",
+      "screen_quad": [],
+      "screen_quad_mode": "overlay_skipped_no_screen_detected",
       "storyboard_text": "Today has its own little rule-set \u2014 check the constraint before rushing.\nTrigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
       "arc_role": "puzzle_moment",
       "storyboard_caption": "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
@@ -224,20 +190,20 @@
       "output": "social/2026-05-29/05_panel-05.png",
       "screen_quad": [
         [
-          739,
-          555
+          663,
+          618
         ],
         [
-          1066,
-          575
+          1012,
+          645
         ],
         [
-          1068,
-          885
+          977,
+          910
         ],
         [
-          701,
-          815
+          634,
+          848
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -245,7 +211,7 @@
       "arc_role": "consequence",
       "storyboard_caption": "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.",
       "storyboard_dialogue": "That stayed true.",
-      "panel_location": "co-working desk near a tall window"
+      "panel_location": "quiet public library reading table"
     },
     {
       "scene": "scene_06",
@@ -257,28 +223,28 @@
       "output": "social/2026-05-29/06_panel-06.png",
       "screen_quad": [
         [
-          719,
-          649
+          725,
+          589
         ],
         [
-          1030,
-          677
+          1068,
+          605
         ],
         [
-          981,
-          919
+          1037,
+          868
         ],
         [
-          676,
-          853
+          693,
+          821
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Take the pause with you.\nBy the final check, Isla carries the pause forward: rainy days bring out her reflective side.",
+      "storyboard_text": "Take the pause with you.\nBy the final check, Isla carries the pause forward, not the pressure that tried to hurry her.",
       "arc_role": "resolution",
-      "storyboard_caption": "By the final check, Isla carries the pause forward: rainy days bring out her reflective side.",
+      "storyboard_caption": "By the final check, Isla carries the pause forward, not the pressure that tried to hurry her.",
       "storyboard_dialogue": "Take the pause with you.",
-      "panel_location": "gothic window desk with cityscape view"
+      "panel_location": "bookshop cafe corner"
     }
   ]
 }

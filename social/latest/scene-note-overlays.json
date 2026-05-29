@@ -18,33 +18,13 @@
       "status": "noted",
       "location_key": "train",
       "lines": [
-        "Travel Note",
-        "Keep the thread",
-        "between stops"
-      ]
-    },
-    {
-      "file": "03_panel-03.png",
-      "status": "noted",
-      "location_key": "rainy_window",
-      "lines": [
-        "Window Note",
-        "Rain outside",
-        "quiet inside"
-      ]
-    },
-    {
-      "file": "04_panel-04.png",
-      "status": "noted",
-      "location_key": "cafe",
-      "lines": [
         "Puzzle Note",
         "Check the rule",
         "then move"
       ]
     },
     {
-      "file": "05_panel-05.png",
+      "file": "03_panel-03.png",
       "status": "noted",
       "location_key": "coworking",
       "lines": [
@@ -54,9 +34,29 @@
       ]
     },
     {
+      "file": "04_panel-04.png",
+      "status": "noted",
+      "location_key": "cafe",
+      "lines": [
+        "Cafe Note",
+        "Coffee first",
+        "then the grid"
+      ]
+    },
+    {
+      "file": "05_panel-05.png",
+      "status": "noted",
+      "location_key": "public_library",
+      "lines": [
+        "Library Note",
+        "Borrowed quiet",
+        "small proof"
+      ]
+    },
+    {
       "file": "06_panel-06.png",
       "status": "noted",
-      "location_key": "library_study",
+      "location_key": "bookshop",
       "lines": [
         "SP Notes",
         "Clearer now",
