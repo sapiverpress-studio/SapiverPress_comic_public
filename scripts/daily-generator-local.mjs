@@ -1,6 +1,6 @@
-import { runLocalDailyGeneration } from "./isla-storyline-engine.mjs";
+import { runProgressiveDailyGeneration } from "./progressive-daily-generator.mjs";
 
-runLocalDailyGeneration().catch((error) => {
+runProgressiveDailyGeneration().catch((error) => {
   console.error(error);
   process.exit(1);
 });
