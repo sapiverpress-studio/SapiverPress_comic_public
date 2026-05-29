@@ -3,7 +3,8 @@ import path from "path";
 
 const ROOT = process.cwd();
 const API_KEY = process.env.ISLA_ELEVEN?.trim() || process.env.ELEVENLABS_API_KEY?.trim() || "";
-const VOICE_NAME = process.env.ELEVENLABS_VOICE_NAME || "Isla Fletcher";
+const VOICE_NAME = process.env.ELEVENLABS_VOICE_NAME || "Isla Sterling";
+const VOICE_ID = process.env.ELEVENLABS_VOICE_ID?.trim() || process.env.ISLA_ELEVEN_VOICE_ID?.trim() || "qSR2T7SqN7Pcd0YpO3Vd";
 const MODEL_ID = process.env.ELEVENLABS_MODEL_ID || "eleven_multilingual_v2";
 
 function dateString() {
@@ -22,6 +23,7 @@ async function writeManifest(file, patch) { const current = await readManifest(f
 async function parseJsonResponse(response) { const text = await response.text(); try { return { json: text ? JSON.parse(text) : null, text }; } catch { return { json: null, text }; } }
 
 async function getVoiceId() {
+  if (VOICE_ID) return VOICE_ID;
   const response = await fetch("https://api.elevenlabs.io/v1/voices", { headers: { "xi-api-key": API_KEY } });
   const body = await parseJsonResponse(response);
   if (!response.ok) throw new Error(`ElevenLabs voices failed ${response.status}: ${body.text.slice(0, 600)}`);
@@ -58,7 +60,7 @@ async function main() {
   await mkdir(dir);
 
   if (!API_KEY) {
-    await writeManifest(manifestFile, { status: "voice_failed", voice_name: VOICE_NAME, error: "ISLA_ELEVEN or ELEVENLABS_API_KEY missing" });
+    await writeManifest(manifestFile, { status: "voice_failed", voice_name: VOICE_NAME, voice_id: VOICE_ID, error: "ISLA_ELEVEN or ELEVENLABS_API_KEY missing" });
     console.log("Voice generation skipped: API key missing");
     return;
   }
@@ -80,7 +82,7 @@ main().catch(async (error) => {
   const date = (() => { try { return dateString(); } catch { return "unknown-date"; } })();
   const dir = path.join(ROOT, "social", date, "short-video");
   await mkdir(dir);
-  await writeManifest(path.join(dir, "manifest.json"), { status: "voice_failed", voice_name: VOICE_NAME, error: error?.message || String(error) });
+  await writeManifest(path.join(dir, "manifest.json"), { status: "voice_failed", voice_name: VOICE_NAME, voice_id: VOICE_ID, error: error?.message || String(error) });
   console.log(`Voice generation failed safely: ${error?.message || error}`);
   process.exit(0);
 });
