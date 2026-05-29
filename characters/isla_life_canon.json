@@ -127,6 +127,12 @@
       "attempt": 24,
       "setting": "bookshop cafe corner",
       "reason": "she has come for one thing but stays for the quiet corner"
+    },
+    {
+      "date": "2026-05-29",
+      "attempt": 25,
+      "setting": "rainy window nook with plants",
+      "reason": "rain has slowed everything down and she lets it"
     }
   ],
   "variant_memory": [
@@ -231,6 +237,12 @@
       "attempt": 24,
       "variant_name": "Trigoku",
       "panel_index": 5
+    },
+    {
+      "date": "2026-05-29",
+      "attempt": 25,
+      "variant_name": "Trigoku",
+      "panel_index": 4
     }
   ],
   "life_memory": [
@@ -435,6 +447,18 @@
       "thread_to_continue": "she is drawn to places with books and warm corners",
       "puzzle_variant_mentioned": "Trigoku",
       "variant_panel_index": 5,
+      "uk_calendar_date": null,
+      "uk_calendar_panel_index": null
+    },
+    {
+      "date": "2026-05-29",
+      "attempt": 25,
+      "location": "rainy window nook with plants",
+      "reason_for_location": "rain has slowed everything down and she lets it",
+      "life_detail_learned": "Isla does not mind slower days when they give her room to notice things.",
+      "thread_to_continue": "rainy days bring out her reflective side",
+      "puzzle_variant_mentioned": "Trigoku",
+      "variant_panel_index": 4,
       "uk_calendar_date": null,
       "uk_calendar_panel_index": null
     }

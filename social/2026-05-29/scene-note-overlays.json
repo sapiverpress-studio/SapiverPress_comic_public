@@ -26,11 +26,11 @@
     {
       "file": "03_panel-03.png",
       "status": "noted",
-      "location_key": "bookshop",
+      "location_key": "rainy_window",
       "lines": [
-        "Bookshop Note",
-        "One more page",
-        "Sapiver Press"
+        "Window Note",
+        "Rain outside",
+        "quiet inside"
       ]
     },
     {
@@ -38,9 +38,9 @@
       "status": "noted",
       "location_key": "cafe",
       "lines": [
-        "Cafe Note",
-        "Coffee first",
-        "then the grid"
+        "Puzzle Note",
+        "Check the rule",
+        "then move"
       ]
     },
     {
@@ -48,15 +48,15 @@
       "status": "noted",
       "location_key": "coworking",
       "lines": [
-        "Puzzle Note",
-        "Check the rule",
-        "then move"
+        "Desk Note",
+        "One clear move",
+        "back to work"
       ]
     },
     {
       "file": "06_panel-06.png",
       "status": "noted",
-      "location_key": "public_library",
+      "location_key": "library_study",
       "lines": [
         "SP Notes",
         "Clearer now",

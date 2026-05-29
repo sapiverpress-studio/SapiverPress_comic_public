@@ -1204,6 +1204,51 @@
         "Today has its own little rule-set — check the constraint before rushing.",
         "One more page."
       ]
+    },
+    {
+      "date": "2026-05-29",
+      "weekday": "Friday",
+      "same_day_attempt": 25,
+      "setting": "rainy window nook with plants",
+      "puzzle_phase": "late-week",
+      "story_note": "Isla spends this entry at the rainy window nook with plants because rain has slowed everything down and she lets it. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Isla does not mind slower days when they give her room to notice things. Continue the thread: rainy days bring out her reflective side.",
+      "stuck_moment": "pen paused while rain falls",
+      "life_memory_entry": {
+        "date": "2026-05-29",
+        "attempt": 25,
+        "location": "rainy window nook with plants",
+        "reason_for_location": "rain has slowed everything down and she lets it",
+        "life_detail_learned": "Isla does not mind slower days when they give her room to notice things.",
+        "thread_to_continue": "rainy days bring out her reflective side",
+        "puzzle_variant_mentioned": "Trigoku",
+        "variant_panel_index": 4,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Trigoku",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 4,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Rain on glass.",
+        "Small move.",
+        "Let it sit.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Almost done.",
+        "No rush."
+      ]
     }
   ],
   "weeks": [
@@ -2309,6 +2354,51 @@
         "That was it.",
         "Today has its own little rule-set — check the constraint before rushing.",
         "One more page."
+      ]
+    },
+    {
+      "date": "2026-05-29",
+      "weekday": "Friday",
+      "same_day_attempt": 25,
+      "setting": "rainy window nook with plants",
+      "puzzle_phase": "late-week",
+      "story_note": "Isla spends this entry at the rainy window nook with plants because rain has slowed everything down and she lets it. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Isla does not mind slower days when they give her room to notice things. Continue the thread: rainy days bring out her reflective side.",
+      "stuck_moment": "pen paused while rain falls",
+      "life_memory_entry": {
+        "date": "2026-05-29",
+        "attempt": 25,
+        "location": "rainy window nook with plants",
+        "reason_for_location": "rain has slowed everything down and she lets it",
+        "life_detail_learned": "Isla does not mind slower days when they give her room to notice things.",
+        "thread_to_continue": "rainy days bring out her reflective side",
+        "puzzle_variant_mentioned": "Trigoku",
+        "variant_panel_index": 4,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Trigoku",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 4,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Rain on glass.",
+        "Small move.",
+        "Let it sit.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Almost done.",
+        "No rush."
       ]
     }
   ],

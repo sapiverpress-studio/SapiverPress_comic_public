@@ -41,10 +41,17 @@
     "variant_recap",
     "uk_calendar_date"
   ],
-  "storyboard_copy_source": "openai",
+  "storyboard_copy_source": "fallback_after_openai_quality_gate",
   "storyboard_copy_model": "gpt-4o-mini",
   "storyboard_arc_type": "story_driven_not_location_driven",
-  "storyboard_arc": "Isla's day unfolds as she navigates through moments of calm and reflection, using her puzzle as a tool for clarity and focus.",
+  "storyboard_arc": {
+    "setup": "Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
+    "disruption": "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
+    "choice": "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
+    "puzzle_moment": "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
+    "consequence": "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.",
+    "resolution": "By the final check, Isla carries the pause forward: rainy days bring out her reflective side."
+  },
   "storyboard_quality": {
     "location_sequence_only": false,
     "has_cause_effect": true,
@@ -64,15 +71,15 @@
     "Three minutes. Properly.\nAt the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
     "Today has its own little rule-set \u2014 check the constraint before rushing.\nTrigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
     "That stayed true.\nBecause she waited, the move holds; the errand feels less like a deadline and more like a next step.",
-    "Take the pause with you.\nBy the final check, Isla carries the pause forward: she is drawn to places with books and warm corners."
+    "Take the pause with you.\nBy the final check, Isla carries the pause forward: rainy days bring out her reflective side."
   ],
   "storyboard_locations": [
     "small home kitchen table in warm morning light",
     "train table by the window",
-    "bookshop cafe corner",
+    "rainy window nook with plants",
     "outdoor cafe street table",
     "co-working desk near a tall window",
-    "quiet public library reading table"
+    "gothic window desk with cityscape view"
   ],
   "scenes": [
     {
@@ -85,20 +92,20 @@
       "output": "social/2026-05-29/01_panel-01.png",
       "screen_quad": [
         [
-          751,
-          666
+          710,
+          689
         ],
         [
-          1068,
-          695
+          1026,
+          727
         ],
         [
-          1040,
-          954
+          987,
+          955
         ],
         [
-          711,
-          889
+          676,
+          884
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -118,20 +125,20 @@
       "output": "social/2026-05-29/02_panel-02.png",
       "screen_quad": [
         [
-          757,
-          680
+          693,
+          591
         ],
         [
-          1067,
-          706
+          1053,
+          611
         ],
         [
-          1067,
-          967
+          1017,
+          867
         ],
         [
-          720,
-          902
+          662,
+          815
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -151,20 +158,20 @@
       "output": "social/2026-05-29/03_panel-03.png",
       "screen_quad": [
         [
-          703,
-          645
+          780,
+          663
         ],
         [
-          1048,
-          669
+          1067,
+          687
         ],
         [
-          1006,
-          926
+          1070,
+          956
         ],
         [
-          666,
-          862
+          743,
+          888
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -172,7 +179,7 @@
       "arc_role": "choice",
       "storyboard_caption": "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
       "storyboard_dialogue": "Three minutes. Properly.",
-      "panel_location": "bookshop cafe corner"
+      "panel_location": "rainy window nook with plants"
     },
     {
       "scene": "scene_04",
@@ -184,20 +191,20 @@
       "output": "social/2026-05-29/04_panel-04.png",
       "screen_quad": [
         [
-          738,
-          712
+          763,
+          579
+        ],
+        [
+          1066,
+          600
         ],
         [
           1068,
-          736
+          901
         ],
         [
-          1044,
-          976
-        ],
-        [
-          713,
-          923
+          715,
+          830
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -217,20 +224,20 @@
       "output": "social/2026-05-29/05_panel-05.png",
       "screen_quad": [
         [
-          725,
-          633
+          739,
+          555
+        ],
+        [
+          1066,
+          575
         ],
         [
           1068,
-          654
+          885
         ],
         [
-          1036,
-          904
-        ],
-        [
-          692,
-          849
+          701,
+          815
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -250,28 +257,28 @@
       "output": "social/2026-05-29/06_panel-06.png",
       "screen_quad": [
         [
-          690,
-          640
+          719,
+          649
         ],
         [
-          1035,
-          662
+          1030,
+          677
         ],
         [
-          991,
-          933
+          981,
+          919
         ],
         [
-          656,
-          870
+          676,
+          853
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Take the pause with you.\nBy the final check, Isla carries the pause forward: she is drawn to places with books and warm corners.",
+      "storyboard_text": "Take the pause with you.\nBy the final check, Isla carries the pause forward: rainy days bring out her reflective side.",
       "arc_role": "resolution",
-      "storyboard_caption": "By the final check, Isla carries the pause forward: she is drawn to places with books and warm corners.",
+      "storyboard_caption": "By the final check, Isla carries the pause forward: rainy days bring out her reflective side.",
       "storyboard_dialogue": "Take the pause with you.",
-      "panel_location": "quiet public library reading table"
+      "panel_location": "gothic window desk with cityscape view"
     }
   ]
 }
