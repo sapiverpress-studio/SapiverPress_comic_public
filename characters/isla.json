@@ -181,9 +181,9 @@
       "weekday": "Friday",
       "setting": "quiet public library reading table",
       "puzzle_phase": "late-week",
-      "story_note": "Friday morning at the library, Isla finds the late-week puzzle surprisingly smooth, enjoying a rare flow state where everything clicks without much resistance.",
-      "continuation_note": "Unlike Thursday's tricky backtracking and Wednesday's careful reflection, today the puzzle unfolds naturally with minimal friction, giving Isla a satisfying end-of-week rhythm.",
-      "stuck_moment": "quick glance up, confident, relaxed",
+      "story_note": "Friday morning at the library—Isla finds an unexpected rhythm in the puzzle, leaning into the quiet space around her as the week winds down.",
+      "continuation_note": "Unlike Thursday's resistant puzzle or Wednesday's methodical unraveling, today Isla finds a smooth flow early on, with the stuck moment coming from distraction rather than difficulty.",
+      "stuck_moment": "distracted, looking away, mildly annoyed",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -194,9 +194,9 @@
       ],
       "captions": [
         "Back again.",
-        "Start small.",
-        "There it is.",
         "That opens it.",
+        "Not that one.",
+        "There it is.",
         "Nearly there.",
         "A clean finish."
       ]
@@ -283,9 +283,9 @@
       "weekday": "Friday",
       "setting": "quiet public library reading table",
       "puzzle_phase": "late-week",
-      "story_note": "Friday morning at the library, Isla finds the late-week puzzle surprisingly smooth, enjoying a rare flow state where everything clicks without much resistance.",
-      "continuation_note": "Unlike Thursday's tricky backtracking and Wednesday's careful reflection, today the puzzle unfolds naturally with minimal friction, giving Isla a satisfying end-of-week rhythm.",
-      "stuck_moment": "quick glance up, confident, relaxed",
+      "story_note": "Friday morning at the library—Isla finds an unexpected rhythm in the puzzle, leaning into the quiet space around her as the week winds down.",
+      "continuation_note": "Unlike Thursday's resistant puzzle or Wednesday's methodical unraveling, today Isla finds a smooth flow early on, with the stuck moment coming from distraction rather than difficulty.",
+      "stuck_moment": "distracted, looking away, mildly annoyed",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -296,9 +296,9 @@
       ],
       "captions": [
         "Back again.",
-        "Start small.",
-        "There it is.",
         "That opens it.",
+        "Not that one.",
+        "There it is.",
         "Nearly there.",
         "A clean finish."
       ]
