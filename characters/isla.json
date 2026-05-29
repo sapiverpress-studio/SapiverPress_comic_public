@@ -181,9 +181,9 @@
       "weekday": "Friday",
       "setting": "quiet public library reading table",
       "puzzle_phase": "late-week",
-      "story_note": "Isla finds a quiet corner in the library on Friday, working through a puzzle that flows easily at first, then surprises her with a subtle trap she almost misses.",
-      "continuation_note": "Unlike Thursday's resistance and Wednesday's methodical logic, today Isla experiences a near-miss—a moment where she almost makes an error but catches herself just in time, shifting the stuck moment from confusion to narrow escape.",
-      "stuck_moment": "alert, catching herself, eyes widening slightly",
+      "story_note": "Friday's library session brings a late-week puzzle that feels deceptively simple at first, then reveals a quiet complexity that makes Isla smile.",
+      "continuation_note": "Unlike Thursday's resistance and backtracking, today Isla encounters a puzzle that seems straightforward but deepens unexpectedly—the stuck moment is internal surprise rather than frustration, and the emotional rhythm is more playful curiosity than careful rec",
+      "stuck_moment": "surprised but amused, eyebrows raised, gentle recognition",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -195,10 +195,10 @@
       "captions": [
         "Back again.",
         "Start small.",
-        "Not that one.",
         "There it is.",
-        "That opens it.",
-        "A clean finish."
+        "One number at a time.",
+        "Nearly there.",
+        "Same time tomorrow."
       ]
     }
   ],
@@ -283,9 +283,9 @@
       "weekday": "Friday",
       "setting": "quiet public library reading table",
       "puzzle_phase": "late-week",
-      "story_note": "Isla finds a quiet corner in the library on Friday, working through a puzzle that flows easily at first, then surprises her with a subtle trap she almost misses.",
-      "continuation_note": "Unlike Thursday's resistance and Wednesday's methodical logic, today Isla experiences a near-miss—a moment where she almost makes an error but catches herself just in time, shifting the stuck moment from confusion to narrow escape.",
-      "stuck_moment": "alert, catching herself, eyes widening slightly",
+      "story_note": "Friday's library session brings a late-week puzzle that feels deceptively simple at first, then reveals a quiet complexity that makes Isla smile.",
+      "continuation_note": "Unlike Thursday's resistance and backtracking, today Isla encounters a puzzle that seems straightforward but deepens unexpectedly—the stuck moment is internal surprise rather than frustration, and the emotional rhythm is more playful curiosity than careful rec",
+      "stuck_moment": "surprised but amused, eyebrows raised, gentle recognition",
       "pose_order": [
         "pose_01_back_again",
         "pose_02_first_moves",
@@ -297,10 +297,10 @@
       "captions": [
         "Back again.",
         "Start small.",
-        "Not that one.",
         "There it is.",
-        "That opens it.",
-        "A clean finish."
+        "One number at a time.",
+        "Nearly there.",
+        "Same time tomorrow."
       ]
     }
   ],
