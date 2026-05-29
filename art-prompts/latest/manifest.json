@@ -7,9 +7,9 @@
   "prompt_dir": "art-prompts/2026-05-29",
   "prompts_json": "art-prompts/2026-05-29/prompts.json",
   "compositor_rule": "If a matching replacement PNG exists, use it. Otherwise use the locked template artwork.",
-  "locked_prompt_base": "ISLA_SP, young Black woman, warm medium brown skin, light freckles on nose and cheeks, natural coily dark hair in high voluminous puff bun, wide floral teal rust orange cream headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, seated at dark wooden desk, cosy library study, cream ceramic mug on desk, open journal with handwritten notes, stack of dark hardcover books, vintage desk lamp warm amber glow, large gothic window with autumn city view, ivy bookshelf behind her, warm golden hour light, painterly editorial illustration style, cinematic warm amber palette, detailed textures",
-  "locked_screen_target": "open laptop on desk, screen facing away, soft blue glow",
-  "locked_negative_prompt": "phone held to camera, tablet facing camera, screen covering face, floating screen overlay, device obscuring face",
+  "locked_prompt_base": "ISLA_SP, young Black woman, warm medium brown skin, light freckles on nose and cheeks, natural coily dark hair in high voluminous puff bun, wide floral teal rust orange cream headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, seated at dark wooden desk, cosy library study, cream ceramic mug with SP logo on desk, open journal with handwritten notes, stack of dark hardcover books, vintage desk lamp warm amber glow, large gothic window with autumn city view, ivy bookshelf behind her, open laptop to her right with screen facing away showing solid blue glow, Isla not touching laptop, warm golden hour light, painterly editorial illustration style, cinematic warm amber palette, detailed textures",
+  "locked_screen_target": "open laptop to her right with screen facing away showing solid blue glow, Isla not touching laptop",
+  "locked_negative_prompt": "screen obscuring face, device held in front of face, floating overlay, phone pressed to cheek",
   "panel_files": [
     "01_panel-01.png",
     "02_panel-02.png",
@@ -36,7 +36,7 @@
       "output_file": "social/2026-05-29/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "Start small.",
+      "caption": "There it is.",
       "scene_id": "scene_02"
     },
     {
@@ -46,7 +46,7 @@
       "output_file": "social/2026-05-29/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "No guessing.",
+      "caption": "One number at a time.",
       "scene_id": "scene_03"
     },
     {
@@ -56,7 +56,7 @@
       "output_file": "social/2026-05-29/04_panel-04.png",
       "image_name": "04_panel-04.png",
       "fallback_template": "templates/characters/isla/isla_04_breakthrough.png",
-      "caption": "There it is.",
+      "caption": "That opens it.",
       "scene_id": "scene_04"
     },
     {
@@ -76,10 +76,10 @@
       "output_file": "social/2026-05-29/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "Same time tomorrow.",
+      "caption": "A clean finish.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-05-29.json",
-  "generated_at": "2026-05-29T04:28:23.455Z"
+  "generated_at": "2026-05-29T05:15:31.980Z"
 }
