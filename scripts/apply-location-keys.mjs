@@ -48,19 +48,38 @@ function locationForSetting(setting = "") {
 async function patchStory(relativePath) {
   const story = await readJson(relativePath, null);
   if (!story) return false;
-  const setting = clean(story.selected_setting || story.life_memory_entry?.location || "");
-  const mapped = locationForSetting(setting);
-  story.location_key = mapped.location;
-  story.composition_key = mapped.composition;
+
+  const fallbackSetting = clean(story.selected_setting || story.life_memory_entry?.location || "");
+  const fallbackMapped = locationForSetting(fallbackSetting);
+  story.location_key = fallbackMapped.location;
+  story.composition_key = fallbackMapped.composition;
   story.location_key_applied = true;
-  story.scenes = (story.scenes || []).map((scene) => ({
-    ...scene,
-    location: scene.location || mapped.location,
-    composition: scene.composition || mapped.composition,
-  }));
+  story.per_panel_location_keys = true;
+
+  story.scenes = (story.scenes || []).map((scene) => {
+    const sceneSetting = clean(scene.panel_location || scene.setting || scene.location_label || fallbackSetting);
+    const mapped = locationForSetting(sceneSetting);
+    return {
+      ...scene,
+      setting: sceneSetting || fallbackSetting,
+      panel_location: sceneSetting || fallbackSetting,
+      location: mapped.location,
+      composition: mapped.composition,
+      location_key: mapped.location,
+      composition_key: mapped.composition,
+    };
+  });
+
   if (story.image_manifest) {
-    story.image_manifest.location_key = mapped.location;
-    story.image_manifest.composition_key = mapped.composition;
+    story.image_manifest.location_key = fallbackMapped.location;
+    story.image_manifest.composition_key = fallbackMapped.composition;
+    story.image_manifest.per_panel_location_keys = true;
+    story.image_manifest.panel_locations = story.scenes.map((scene, index) => ({
+      panel: index + 1,
+      setting: scene.panel_location || scene.setting || fallbackSetting,
+      location_key: scene.location,
+      composition_key: scene.composition,
+    }));
   }
   await writeJson(relativePath, story);
   return true;
@@ -72,7 +91,7 @@ async function main() {
   const changedLatest = await patchStory("latest.json");
   const story = await readJson(`daily/${date}.json`, null);
   if (story?.image_manifest) await writeJson(`image-manifests/${date}.json`, story.image_manifest);
-  console.log(`Location keys applied: daily=${changedDaily ? "yes" : "no"}, latest=${changedLatest ? "yes" : "no"}`);
+  console.log(`Per-panel location keys applied: daily=${changedDaily ? "yes" : "no"}, latest=${changedLatest ? "yes" : "no"}`);
 }
 
 main().catch((error) => {
