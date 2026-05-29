@@ -157,6 +157,12 @@
       "attempt": 29,
       "setting": "quiet public library reading table",
       "reason": "the library gives her a borrowed pocket of quiet"
+    },
+    {
+      "date": "2026-05-29",
+      "attempt": 30,
+      "setting": "outdoor cafe street table",
+      "reason": "she is trying not to rush straight into the next errand"
     }
   ],
   "variant_memory": [
@@ -291,6 +297,12 @@
       "attempt": 29,
       "variant_name": "Trigoku",
       "panel_index": 4
+    },
+    {
+      "date": "2026-05-29",
+      "attempt": 30,
+      "variant_name": "Trigoku",
+      "panel_index": 2
     }
   ],
   "life_memory": [
@@ -555,6 +567,18 @@
       "thread_to_continue": "library visits become her backup calm place",
       "puzzle_variant_mentioned": "Trigoku",
       "variant_panel_index": 4,
+      "uk_calendar_date": null,
+      "uk_calendar_panel_index": null
+    },
+    {
+      "date": "2026-05-29",
+      "attempt": 30,
+      "location": "outdoor cafe street table",
+      "reason_for_location": "she is trying not to rush straight into the next errand",
+      "life_detail_learned": "Isla sometimes uses a cafe table as a buffer between obligations.",
+      "thread_to_continue": "she is learning to pause before moving on",
+      "puzzle_variant_mentioned": "Trigoku",
+      "variant_panel_index": 2,
       "uk_calendar_date": null,
       "uk_calendar_panel_index": null
     }

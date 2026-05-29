@@ -102,31 +102,6 @@
   ],
   "story_history": [
     {
-      "date": "2026-05-28",
-      "weekday": "Thursday",
-      "setting": "bookshop cafe corner",
-      "puzzle_phase": "mid-week",
-      "story_note": "Isla visits the bookshop cafe corner on a Thursday morning, encountering a mid-week puzzle that feels trickier than expected, requiring her to slow down and reconsider her approach.",
-      "continuation_note": "Unlike the previous calm, methodical sessions, today Isla faces a puzzle that resists her initial strategy, forcing her to backtrack slightly before finding the right thread to pull.",
-      "stuck_moment": "frowning slightly, hesitant, looking puzzled",
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "Back again.",
-        "Start small.",
-        "Not that one.",
-        "One number at a time.",
-        "Coffee helps.",
-        "Tomorrow, then."
-      ]
-    },
-    {
       "date": "2026-05-29",
       "weekday": "Friday",
       "setting": "quiet public library reading table",
@@ -1360,6 +1335,51 @@
         "variant_name": "Trigoku",
         "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
         "panel_index": 4,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
+        "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
+        "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
+        "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
+        "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.",
+        "By the final check, Isla carries the pause forward, not the pressure that tried to hurry her."
+      ]
+    },
+    {
+      "date": "2026-05-29",
+      "weekday": "Friday",
+      "same_day_attempt": 30,
+      "setting": "outdoor cafe street table",
+      "puzzle_phase": "late-week",
+      "story_note": "Isla spends this entry at the outdoor cafe street table because she is trying not to rush straight into the next errand. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Isla sometimes uses a cafe table as a buffer between obligations. Continue the thread: she is learning to pause before moving on.",
+      "stuck_moment": "brief hesitation, coffee nearby",
+      "life_memory_entry": {
+        "date": "2026-05-29",
+        "attempt": 30,
+        "location": "outdoor cafe street table",
+        "reason_for_location": "she is trying not to rush straight into the next errand",
+        "life_detail_learned": "Isla sometimes uses a cafe table as a buffer between obligations.",
+        "thread_to_continue": "she is learning to pause before moving on",
+        "puzzle_variant_mentioned": "Trigoku",
+        "variant_panel_index": 2,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Trigoku",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 2,
         "line": "Today has its own little rule-set — check the constraint before rushing."
       },
       "uk_calendar_date": null,
@@ -1383,31 +1403,6 @@
   ],
   "weeks": [
     {
-      "date": "2026-05-28",
-      "weekday": "Thursday",
-      "setting": "bookshop cafe corner",
-      "puzzle_phase": "mid-week",
-      "story_note": "Isla visits the bookshop cafe corner on a Thursday morning, encountering a mid-week puzzle that feels trickier than expected, requiring her to slow down and reconsider her approach.",
-      "continuation_note": "Unlike the previous calm, methodical sessions, today Isla faces a puzzle that resists her initial strategy, forcing her to backtrack slightly before finding the right thread to pull.",
-      "stuck_moment": "frowning slightly, hesitant, looking puzzled",
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "Back again.",
-        "Start small.",
-        "Not that one.",
-        "One number at a time.",
-        "Coffee helps.",
-        "Tomorrow, then."
-      ]
-    },
-    {
       "date": "2026-05-29",
       "weekday": "Friday",
       "setting": "quiet public library reading table",
@@ -2641,6 +2636,51 @@
         "variant_name": "Trigoku",
         "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
         "panel_index": 4,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
+        "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
+        "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
+        "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
+        "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.",
+        "By the final check, Isla carries the pause forward, not the pressure that tried to hurry her."
+      ]
+    },
+    {
+      "date": "2026-05-29",
+      "weekday": "Friday",
+      "same_day_attempt": 30,
+      "setting": "outdoor cafe street table",
+      "puzzle_phase": "late-week",
+      "story_note": "Isla spends this entry at the outdoor cafe street table because she is trying not to rush straight into the next errand. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Isla sometimes uses a cafe table as a buffer between obligations. Continue the thread: she is learning to pause before moving on.",
+      "stuck_moment": "brief hesitation, coffee nearby",
+      "life_memory_entry": {
+        "date": "2026-05-29",
+        "attempt": 30,
+        "location": "outdoor cafe street table",
+        "reason_for_location": "she is trying not to rush straight into the next errand",
+        "life_detail_learned": "Isla sometimes uses a cafe table as a buffer between obligations.",
+        "thread_to_continue": "she is learning to pause before moving on",
+        "puzzle_variant_mentioned": "Trigoku",
+        "variant_panel_index": 2,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Trigoku",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 2,
         "line": "Today has its own little rule-set — check the constraint before rushing."
       },
       "uk_calendar_date": null,
