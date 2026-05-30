@@ -65,7 +65,7 @@
       "output_file": "social/2026-05-30/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "Rain streaks the tall glass while Isla ignores her errands, choosing to open her daily grid instead.",
+      "caption": "Before her endless to-do list steals the morning, Isla opens her puzzle for a steady moment.",
       "scene_id": "scene_01"
     },
     {
@@ -75,7 +75,7 @@
       "output_file": "social/2026-05-30/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "With the morning already running late, she quietly retreats into a cozy corner, choosing calm over hurry.",
+      "caption": "Even as the morning schedule begins to slip, she refuses to let the rush panic her.",
       "scene_id": "scene_02"
     },
     {
@@ -85,7 +85,7 @@
       "output_file": "social/2026-05-30/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "Surrounded by damp green leaves, she flips her phone over to claim a few steady, undisturbed minutes.",
+      "caption": "Taking a deep breath, Isla flips her phone over to claim a few steady, uninterrupted minutes.",
       "scene_id": "scene_03"
     },
     {
@@ -105,7 +105,7 @@
       "output_file": "social/2026-05-30/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "Watching the wet scenery blur past, she smiles as the numbers snap perfectly into place.",
+      "caption": "Taking that extra second pays off, suddenly making her heavy schedule feel much lighter.",
       "scene_id": "scene_05"
     },
     {
@@ -115,10 +115,10 @@
       "output_file": "social/2026-05-30/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "Under a dripping awning, Isla shuts her laptop, feeling completely ready to face whatever comes next.",
+      "caption": "With the final square solved, she shuts her screen, ready to face the world refreshed.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-05-30.json",
-  "generated_at": "2026-05-30T11:49:02.286Z"
+  "generated_at": "2026-05-30T12:16:20.405Z"
 }
