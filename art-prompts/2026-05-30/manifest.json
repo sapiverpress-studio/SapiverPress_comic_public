@@ -65,7 +65,7 @@
       "output_file": "social/2026-05-30/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "Before the morning rush takes over, Isla sneaks in a few minutes with her puzzle grid.",
+      "caption": "Isla glances at her growing to-do list, choosing to open her puzzle grid first.",
       "scene_id": "scene_01"
     },
     {
@@ -75,7 +75,7 @@
       "output_file": "social/2026-05-30/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "Her train is running late, but she welcomes the delay as a cozy pocket of steady focus.",
+      "caption": "As the train slows to an unexpected crawl, Isla stays focused on her puzzle.",
       "scene_id": "scene_02"
     },
     {
@@ -85,7 +85,7 @@
       "output_file": "social/2026-05-30/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "Slipping into a sidewalk cafe, she flips her phone over to claim a few uninterrupted minutes.",
+      "caption": "Sitting outside, she flips her phone face down to enjoy three minutes.",
       "scene_id": "scene_03"
     },
     {
@@ -105,7 +105,7 @@
       "output_file": "social/2026-05-30/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "Taking that extra moment pays off; the solution clicks and her busy day feels manageable again.",
+      "caption": "Her careful check pays off, making the rest of her day feel totally doable.",
       "scene_id": "scene_05"
     },
     {
@@ -115,10 +115,10 @@
       "output_file": "social/2026-05-30/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "With one last glance, she shuts her screen, letting the steady rain wash away any lingering stress.",
+      "caption": "With the final piece in place, Isla quietly shuts her laptop and breathes easy.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-05-30.json",
-  "generated_at": "2026-05-30T13:46:37.765Z"
+  "generated_at": "2026-05-30T13:55:38.663Z"
 }

@@ -48,12 +48,12 @@
   "storyboard_arc_title": "Isla keeps the day from deciding for her",
   "storyboard_arc_type": "story_driven_not_location_driven",
   "storyboard_arc": {
-    "setup": "Before the morning rush takes over, Isla sneaks in a few minutes with her puzzle grid.",
-    "disruption": "Her train is running late, but she welcomes the delay as a cozy pocket of steady focus.",
-    "choice": "Slipping into a sidewalk cafe, she flips her phone over to claim a few uninterrupted minutes.",
+    "setup": "Isla glances at her growing to-do list, choosing to open her puzzle grid first.",
+    "disruption": "As the train slows to an unexpected crawl, Isla stays focused on her puzzle.",
+    "choice": "Sitting outside, she flips her phone face down to enjoy three minutes.",
     "puzzle_moment": "The daily rule changes the move, so Isla checks it before trusting the answer.",
-    "consequence": "Taking that extra moment pays off; the solution clicks and her busy day feels manageable again.",
-    "resolution": "With one last glance, she shuts her screen, letting the steady rain wash away any lingering stress."
+    "consequence": "Her careful check pays off, making the rest of her day feel totally doable.",
+    "resolution": "With the final piece in place, Isla quietly shuts her laptop and breathes easy."
   },
   "storyboard_quality": {
     "location_sequence_only": false,
@@ -118,7 +118,7 @@
   "openai_storyboard_model": "gpt-4o-mini",
   "openai_storyboard_response_shape": null,
   "openai_storyboard_fallback_reason": "OpenAI returned frames but at least one caption/dialogue was empty",
-  "openai_storyboard_checked_at": "2026-05-30T13:46:22.004Z",
+  "openai_storyboard_checked_at": "2026-05-30T13:55:27.521Z",
   "gemini_allowed_fields": [
     "caption",
     "dialogue"
@@ -137,12 +137,12 @@
   "puzzle_product": "Trigoku Daily Lock",
   "puzzle_url": "https://suite.sapiverpress.co.uk",
   "captions": [
-    "Better get this solved before the day gets too loud.\nBefore the morning rush takes over, Isla sneaks in a few minutes with her puzzle grid.",
-    "I don't mind the delay. It actually gives me some extra thinking time.\nHer train is running late, but she welcomes the delay as a cozy pocket of steady focus.",
-    "Just three minutes to think. No notifications allowed.\nSlipping into a sidewalk cafe, she flips her phone over to claim a few uninterrupted minutes.",
+    "Let's get a head start before the house wakes up.\nIsla glances at her growing to-do list, choosing to open her puzzle grid first.",
+    "No point stressing over the delay.\nAs the train slows to an unexpected crawl, Isla stays focused on her puzzle.",
+    "Just three minutes to myself.\nSitting outside, she flips her phone face down to enjoy three minutes.",
     "Check the daily rule before trusting it.\nThe daily rule changes the move, so Isla checks it before trusting the answer.",
-    "There we go. That feels right.\nTaking that extra moment pays off; the solution clicks and her busy day feels manageable again.",
-    "Done. Time to just breathe and enjoy the afternoon.\nWith one last glance, she shuts her screen, letting the steady rain wash away any lingering stress."
+    "Okay, that actually fits perfectly.\nHer careful check pays off, making the rest of her day feel totally doable.",
+    "Time to put this away.\nWith the final piece in place, Isla quietly shuts her laptop and breathes easy."
   ],
   "storyboard_locations": [
     "small home kitchen table in warm morning light",
@@ -163,27 +163,27 @@
       "output": "social/2026-05-30/01_panel-01.png",
       "screen_quad": [
         [
-          688,
-          613
+          687,
+          572
         ],
         [
-          1039,
-          654
+          1061,
+          602
         ],
         [
-          994,
-          912
+          1018,
+          871
         ],
         [
-          653,
-          834
+          650,
+          803
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Better get this solved before the day gets too loud.\nBefore the morning rush takes over, Isla sneaks in a few minutes with her puzzle grid.",
+      "storyboard_text": "Let's get a head start before the house wakes up.\nIsla glances at her growing to-do list, choosing to open her puzzle grid first.",
       "arc_role": "setup",
-      "storyboard_caption": "Before the morning rush takes over, Isla sneaks in a few minutes with her puzzle grid.",
-      "storyboard_dialogue": "Better get this solved before the day gets too loud.",
+      "storyboard_caption": "Isla glances at her growing to-do list, choosing to open her puzzle grid first.",
+      "storyboard_dialogue": "Let's get a head start before the house wakes up.",
       "panel_location": "small home kitchen table in warm morning light"
     },
     {
@@ -196,27 +196,27 @@
       "output": "social/2026-05-30/02_panel-02.png",
       "screen_quad": [
         [
-          678,
-          662
+          641,
+          695
         ],
         [
-          990,
-          682
+          1009,
+          720
         ],
         [
-          955,
-          905
+          973,
+          973
         ],
         [
-          643,
-          854
+          609,
+          910
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "I don't mind the delay. It actually gives me some extra thinking time.\nHer train is running late, but she welcomes the delay as a cozy pocket of steady focus.",
+      "storyboard_text": "No point stressing over the delay.\nAs the train slows to an unexpected crawl, Isla stays focused on her puzzle.",
       "arc_role": "disruption",
-      "storyboard_caption": "Her train is running late, but she welcomes the delay as a cozy pocket of steady focus.",
-      "storyboard_dialogue": "I don't mind the delay. It actually gives me some extra thinking time.",
+      "storyboard_caption": "As the train slows to an unexpected crawl, Isla stays focused on her puzzle.",
+      "storyboard_dialogue": "No point stressing over the delay.",
       "panel_location": "train table by the window"
     },
     {
@@ -229,27 +229,27 @@
       "output": "social/2026-05-30/03_panel-03.png",
       "screen_quad": [
         [
-          675,
-          722
+          635,
+          598
         ],
         [
-          1041,
-          752
+          1004,
+          628
         ],
         [
-          997,
-          1035
+          966,
+          896
         ],
         [
-          639,
-          962
+          603,
+          829
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Just three minutes to think. No notifications allowed.\nSlipping into a sidewalk cafe, she flips her phone over to claim a few uninterrupted minutes.",
+      "storyboard_text": "Just three minutes to myself.\nSitting outside, she flips her phone face down to enjoy three minutes.",
       "arc_role": "choice",
-      "storyboard_caption": "Slipping into a sidewalk cafe, she flips her phone over to claim a few uninterrupted minutes.",
-      "storyboard_dialogue": "Just three minutes to think. No notifications allowed.",
+      "storyboard_caption": "Sitting outside, she flips her phone face down to enjoy three minutes.",
+      "storyboard_dialogue": "Just three minutes to myself.",
       "panel_location": "outdoor cafe street table or rainy window nook"
     },
     {
@@ -262,20 +262,20 @@
       "output": "social/2026-05-30/04_panel-04.png",
       "screen_quad": [
         [
-          672,
-          610
+          641,
+          643
         ],
         [
-          1066,
-          630
+          1024,
+          645
         ],
         [
-          1032,
-          920
+          975,
+          939
         ],
         [
-          643,
-          856
+          590,
+          869
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -295,27 +295,27 @@
       "output": "social/2026-05-30/05_panel-05.png",
       "screen_quad": [
         [
-          708,
-          667
+          645,
+          701
         ],
         [
-          1041,
-          694
+          1014,
+          738
         ],
         [
-          1009,
-          941
+          976,
+          1010
         ],
         [
-          679,
-          879
+          611,
+          939
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "There we go. That feels right.\nTaking that extra moment pays off; the solution clicks and her busy day feels manageable again.",
+      "storyboard_text": "Okay, that actually fits perfectly.\nHer careful check pays off, making the rest of her day feel totally doable.",
       "arc_role": "consequence",
-      "storyboard_caption": "Taking that extra moment pays off; the solution clicks and her busy day feels manageable again.",
-      "storyboard_dialogue": "There we go. That feels right.",
+      "storyboard_caption": "Her careful check pays off, making the rest of her day feel totally doable.",
+      "storyboard_dialogue": "Okay, that actually fits perfectly.",
       "panel_location": "bookshop cafe corner or public library reading table"
     },
     {
@@ -328,27 +328,27 @@
       "output": "social/2026-05-30/06_panel-06.png",
       "screen_quad": [
         [
-          643,
-          671
+          718,
+          642
         ],
         [
-          1010,
-          691
+          1067,
+          674
         ],
         [
-          972,
-          945
+          1032,
+          942
         ],
         [
-          609,
-          889
+          681,
+          873
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Done. Time to just breathe and enjoy the afternoon.\nWith one last glance, she shuts her screen, letting the steady rain wash away any lingering stress.",
+      "storyboard_text": "Time to put this away.\nWith the final piece in place, Isla quietly shuts her laptop and breathes easy.",
       "arc_role": "resolution",
-      "storyboard_caption": "With one last glance, she shuts her screen, letting the steady rain wash away any lingering stress.",
-      "storyboard_dialogue": "Done. Time to just breathe and enjoy the afternoon.",
+      "storyboard_caption": "With the final piece in place, Isla quietly shuts her laptop and breathes easy.",
+      "storyboard_dialogue": "Time to put this away.",
       "panel_location": "rainy window nook with plants"
     }
   ],
