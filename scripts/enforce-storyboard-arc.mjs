@@ -15,25 +15,19 @@ const STORY_FIELDS_USED = [
   "scenes[].caption",
   "scenes[].dialogue",
   "scenes[].speech_bubble",
+  "scenes[].storyboard_caption",
+  "scenes[].storyboard_dialogue",
   "scenes[].image_prompt_fragment",
   "puzzle_state",
   "variant_recap",
   "uk_calendar_date",
 ];
 const BAD_PHRASES = [
-  "quiet moment",
-  "clearer than before",
-  "keep the thread",
-  "small anchor",
-  "a small anchor",
-  "borrowed quiet",
-  "less noisy",
-  "gentle finish",
-  "quiet satisfaction",
-  "one clean look",
-  "no rushing this one",
-  "that gives me a path",
-  "stay with it",
+  "quiet moment", "clearer than before", "keep the thread", "small anchor",
+  "borrowed quiet", "less noisy", "gentle finish", "quiet satisfaction",
+  "one clean look", "no rushing this one", "that gives me a path",
+  "stay with it", "a small anchor", "taking a pause", "small ritual",
+  "quiet reset", "quiet corner", "quiet thread"
 ];
 const CAUSE = ["because", "so", "then", "when", "after", "before", "if", "but"];
 const TURN = ["decides", "chooses", "realises", "refuses", "learns", "notices", "waits", "pauses", "carries"];
@@ -99,14 +93,14 @@ function fallbackFrames(story) {
   const life = story.life_memory_entry || {};
   const variant = clean(story.variant_recap?.variant_name || story.product_referenced?.name || "today's puzzle");
   const rule = clean(story.variant_recap?.line || story.variant_recap?.short_rule || "check the constraint before rushing");
-  const thread = clean(life.thread_to_continue || "she is learning to pause before moving on");
+  const thread = clean(life.thread_to_continue || "she is learning to carry better decisions into the next thing");
   return [
-    { caption: "Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.", dialogue: "Start before the rush.", image_prompt_fragment: "setup beat, next errand waiting, controlled morning pause" },
-    { caption: "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.", dialogue: "Don't chase it.", image_prompt_fragment: "travel disruption, laptop nearly closing, tension between delay and calm" },
-    { caption: "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.", dialogue: "Three minutes. Properly.", image_prompt_fragment: "decision moment, unread message waiting, deliberate pause" },
+    { caption: "Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.", dialogue: "Start before it gets busy.", image_prompt_fragment: "setup beat, next errand waiting, controlled morning start" },
+    { caption: "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.", dialogue: "Don't chase it.", image_prompt_fragment: "travel disruption, laptop nearly closing, tension between delay and focus" },
+    { caption: "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.", dialogue: "Three minutes. Just three.", image_prompt_fragment: "decision moment, unread message waiting, deliberate restraint" },
     { caption: `${variant} will catch a rushed guess, so she checks the constraint before letting the move stand.`, dialogue: rule, image_prompt_fragment: "specific puzzle-rule check, careful deduction, restraint before a move" },
-    { caption: "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.", dialogue: "That stayed true.", image_prompt_fragment: "consequence of patience, small confirmed breakthrough, tension easing" },
-    { caption: `By the final check, Isla carries the pause forward: ${thread}.`, dialogue: "Take the pause with you.", image_prompt_fragment: "resolution beat, calm forward motion after pressure" },
+    { caption: "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.", dialogue: "That one holds.", image_prompt_fragment: "consequence of patience, small confirmed breakthrough, tension easing" },
+    { caption: `By the final check, Isla carries the decision forward: ${thread}.`, dialogue: "Carry that forward.", image_prompt_fragment: "resolution beat, calm forward motion after pressure" },
   ];
 }
 
@@ -160,13 +154,13 @@ async function openAiRewrite(story, date, previousQuality) {
     temperature: 0.45,
     response_format: { type: "json_object" },
     messages: [
-      { role: "system", content: "You are sharpening an Isla daily illustrated puzzle diary. Preserve the Claude/Phase 2 story from daily JSON. Story first, locations second. Return JSON only: {arc_title, board_caption, frames:[six], storyboard_arc}. Six frames must be setup, disruption, choice, puzzle_moment, consequence, resolution. These captions are too generic. Rewrite them so each scene has a specific story event, a cause/effect link to the next scene, and a visible character beat for Isla. No atmospheric-only captions." },
+      { role: "system", content: "You are sharpening an Isla daily illustrated puzzle diary. Preserve the Claude/Phase 2 story from daily JSON. Story first, locations second. Return JSON only: {arc_title, board_caption, frames:[six], storyboard_arc}. Six frames must be setup, disruption, choice, puzzle_moment, consequence, resolution. These captions are too generic. Rewrite them so each scene has a specific story event, a cause/effect link to the next scene, and a visible character beat for Isla. No atmospheric-only captions. Panel 4 must name the specific puzzle variant from variant_recap.variant_name and use variant_recap.line as the dialogue when possible." },
       { role: "user", content: JSON.stringify({ date, previousQuality, brief: storyBrief(story, date) }) },
     ],
   });
   const parsed = JSON.parse(completion.choices?.[0]?.message?.content || "{}");
   return {
-    arc_title: clean(parsed.arc_title || "Isla chooses the pause"),
+    arc_title: clean(parsed.arc_title || "Isla holds the line"),
     board_caption: clean(parsed.board_caption || "A story-driven Isla diary arc built from the daily JSON."),
     frames: normaliseFrames(parsed.frames, story),
     storyboard_arc: parsed.storyboard_arc || null,
@@ -206,8 +200,8 @@ async function main() {
     q = quality(frames, story);
     source = openai ? "fallback_after_openai_quality_gate" : "fallback_story_driven";
     model = openai ? MODEL : "fallback";
-    title = "Isla chooses the pause";
-    board = "A story-driven six-frame arc about Isla resisting the rush and carrying the pause forward.";
+    title = "Isla holds the line";
+    board = "A story-driven six-frame arc about Isla refusing to let the rush decide for her.";
     arc = arcFromFrames(frames);
   }
 
