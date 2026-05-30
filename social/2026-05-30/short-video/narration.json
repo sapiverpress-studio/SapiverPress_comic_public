@@ -1,6 +1,6 @@
 {
   "date": "2026-05-30",
-  "title": "A Quiet Corner at the Bookshop",
+  "title": "Quiet Morning Rituals",
   "voice_name": "Isla Sterling",
   "segments": [
     {
@@ -11,17 +11,17 @@
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "The morning sun hits the table just right, making it the perfect time to plan her steady day."
+      "text": "Isla starts her morning in the steady kitchen, savoring the stillness before the day gets loud."
     },
     {
       "id": "panel_2",
       "image_name": "02_panel-02.png",
-      "text": "Watching the fields blur past the window always helps clear her mind before diving into the daily puzzles."
+      "text": "The steady hum of the train offers a brief moment to plan out her morning routine."
     },
     {
       "id": "panel_3",
       "image_name": "03_panel-03.png",
-      "text": "A quick stop for coffee turns into a longer breath as she gets distracted by her notes."
+      "text": "Sipping her warm coffee, she pauses to reconsider her next step before committing to it."
     },
     {
       "id": "panel_4",
@@ -31,12 +31,12 @@
     {
       "id": "panel_5",
       "image_name": "05_panel-05.png",
-      "text": "The smell of old paper and fresh coffee coaxes her into her favorite corner of the bookshop."
+      "text": "With the constraints cleared up, the pieces of her plan finally start falling into place."
     },
     {
       "id": "panel_6",
       "image_name": "06_panel-06.png",
-      "text": "With the rain drumming softly against the glass, she happily loses herself in the very next chapter."
+      "text": "Finding her rhythm in the steady corner, she feels ready to face whatever comes next."
     },
     {
       "id": "cta",
@@ -44,9 +44,9 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nThe morning sun hits the table just right, making it the perfect time to plan her steady day.\n\nWatching the fields blur past the window always helps clear her mind before diving into the daily puzzles.\n\nA quick stop for coffee turns into a longer breath as she gets distracted by her notes.\n\nCheck the daily rule before trusting it.\n\nThe smell of old paper and fresh coffee coaxes her into her favorite corner of the bookshop.\n\nWith the rain drumming softly against the glass, she happily loses herself in the very next chapter.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-05-30T14:46:53.239Z",
-  "caption": "Isla finds solace in her favorite bookshop cafe corner, where puzzles and peace intertwine.",
+  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nIsla starts her morning in the steady kitchen, savoring the stillness before the day gets loud.\n\nThe steady hum of the train offers a brief moment to plan out her morning routine.\n\nSipping her warm coffee, she pauses to reconsider her next step before committing to it.\n\nCheck the daily rule before trusting it.\n\nWith the constraints cleared up, the pieces of her plan finally start falling into place.\n\nFinding her rhythm in the steady corner, she feels ready to face whatever comes next.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-05-30T14:50:26.566Z",
+  "caption": "Isla finds steadiness in her morning routine before the day begins.",
   "variant_name": "daily rule",
   "variant_line": "Check the daily rule before trusting it.",
   "copy_refined": "openai",

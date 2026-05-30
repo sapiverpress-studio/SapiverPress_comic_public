@@ -65,7 +65,7 @@
       "output_file": "social/2026-05-30/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "The morning sun hits the table just right, making it the perfect time to plan her steady day.",
+      "caption": "Isla starts her morning in the steady kitchen, savoring the stillness before the day gets loud.",
       "scene_id": "scene_01"
     },
     {
@@ -75,7 +75,7 @@
       "output_file": "social/2026-05-30/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "Watching the fields blur past the window always helps clear her mind before diving into the daily puzzles.",
+      "caption": "The steady hum of the train offers a brief moment to plan out her morning routine.",
       "scene_id": "scene_02"
     },
     {
@@ -85,7 +85,7 @@
       "output_file": "social/2026-05-30/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "A quick stop for coffee turns into a longer breath as she gets distracted by her notes.",
+      "caption": "Sipping her warm coffee, she pauses to reconsider her next step before committing to it.",
       "scene_id": "scene_03"
     },
     {
@@ -105,7 +105,7 @@
       "output_file": "social/2026-05-30/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "The smell of old paper and fresh coffee coaxes her into her favorite corner of the bookshop.",
+      "caption": "With the constraints cleared up, the pieces of her plan finally start falling into place.",
       "scene_id": "scene_05"
     },
     {
@@ -115,10 +115,10 @@
       "output_file": "social/2026-05-30/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "With the rain drumming softly against the glass, she happily loses herself in the very next chapter.",
+      "caption": "Finding her rhythm in the steady corner, she feels ready to face whatever comes next.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-05-30.json",
-  "generated_at": "2026-05-30T14:45:59.339Z"
+  "generated_at": "2026-05-30T14:49:36.239Z"
 }
