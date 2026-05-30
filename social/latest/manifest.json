@@ -47,12 +47,12 @@
   "storyboard_copy_model": "fallback",
   "storyboard_arc_type": "story_driven_not_location_driven",
   "storyboard_arc": {
-    "setup": "Isla spots her next errand waiting, but lingers over the grid before the morning rush pulls her away.",
-    "disruption": "As the train slips behind schedule, she almost shuts her screen to rush through the day instead.",
-    "choice": "Drawn to the cozy bookshop cafe, Isla ignores a text and claims a few three minutes for herself.",
+    "setup": "Isla eyes her pending chores but chooses a slow moment with the grid before the day takes over.",
+    "disruption": "As the train falls behind schedule, Isla resists the urge to shut her laptop and panic.",
+    "choice": "Settling at the gothic window desk, she ignores a buzzing notification to claim three three minutes.",
     "puzzle_moment": "The daily rule changes the move, so Isla checks it before trusting the answer.",
-    "consequence": "Because she paused, the solution holds, and the pending errand suddenly feels much less daunting.",
-    "resolution": "Finding a warm corner in the library, she carries this steady focus into the rest of her day."
+    "consequence": "Thanks to her patience, her solution holds and her upcoming tasks suddenly feel completely manageable.",
+    "resolution": "Closing her notebook, Isla walks away with a steady mind rather than the morning's lingering anxiety."
   },
   "storyboard_quality": {
     "location_sequence_only": false,
@@ -75,17 +75,17 @@
   "puzzle_product": "Trigoku Daily Lock",
   "puzzle_url": "https://suite.sapiverpress.co.uk",
   "captions": [
-    "Just a quick look before things get busy.\nIsla spots her next errand waiting, but lingers over the grid before the morning rush pulls her away.",
-    "Check the daily rule before trusting it.\nAs the train slips behind schedule, she almost shuts her screen to rush through the day instead.",
-    "Three minutes to think. Just for me.\nDrawn to the cozy bookshop cafe, Isla ignores a text and claims a few three minutes for herself.",
+    "Just one steady moment before the scramble begins.\nIsla eyes her pending chores but chooses a slow moment with the grid before the day takes over.",
+    "No use in racing a clock I can't control.\nAs the train falls behind schedule, Isla resists the urge to shut her laptop and panic.",
+    "This time is mine. The messages can wait.\nSettling at the gothic window desk, she ignores a buzzing notification to claim three three minutes.",
     "Check the daily rule before trusting it.\nThe daily rule changes the move, so Isla checks it before trusting the answer.",
-    "Patience actually paid off.\nBecause she paused, the solution holds, and the pending errand suddenly feels much less daunting.",
-    "Let's keep this calm feeling going.\nFinding a warm corner in the library, she carries this steady focus into the rest of her day."
+    "Taking my time actually saved me some stress.\nThanks to her patience, her solution holds and her upcoming tasks suddenly feel completely manageable.",
+    "Keep this calm. Don't let the rush back in.\nClosing her notebook, Isla walks away with a steady mind rather than the morning's lingering anxiety."
   ],
   "storyboard_locations": [
     "small home kitchen table in warm morning light",
     "train table by the window",
-    "bookshop cafe corner",
+    "gothic window desk with cityscape view",
     "outdoor cafe street table",
     "co-working desk near a tall window",
     "quiet public library reading table"
@@ -101,27 +101,27 @@
       "output": "social/2026-05-30/01_panel-01.png",
       "screen_quad": [
         [
-          638,
-          628
+          730,
+          674
         ],
         [
-          1027,
-          660
+          1068,
+          699
         ],
         [
-          979,
-          940
+          1038,
+          960
         ],
         [
-          599,
-          866
+          690,
+          894
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Just a quick look before things get busy.\nIsla spots her next errand waiting, but lingers over the grid before the morning rush pulls her away.",
+      "storyboard_text": "Just one steady moment before the scramble begins.\nIsla eyes her pending chores but chooses a slow moment with the grid before the day takes over.",
       "arc_role": "setup",
-      "storyboard_caption": "Isla spots her next errand waiting, but lingers over the grid before the morning rush pulls her away.",
-      "storyboard_dialogue": "Just a quick look before things get busy.",
+      "storyboard_caption": "Isla eyes her pending chores but chooses a slow moment with the grid before the day takes over.",
+      "storyboard_dialogue": "Just one steady moment before the scramble begins.",
       "panel_location": "small home kitchen table in warm morning light"
     },
     {
@@ -132,29 +132,12 @@
       "replacement": "art-replacements/2026-05-30/02_panel-02.png",
       "capture": "captures/2026-05-30/extracted/02_first_moves.png",
       "output": "social/2026-05-30/02_panel-02.png",
-      "screen_quad": [
-        [
-          660,
-          591
-        ],
-        [
-          1049,
-          616
-        ],
-        [
-          1013,
-          875
-        ],
-        [
-          629,
-          815
-        ]
-      ],
-      "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Check the daily rule before trusting it.\nAs the train slips behind schedule, she almost shuts her screen to rush through the day instead.",
+      "screen_quad": [],
+      "screen_quad_mode": "overlay_skipped_no_screen_detected",
+      "storyboard_text": "No use in racing a clock I can't control.\nAs the train falls behind schedule, Isla resists the urge to shut her laptop and panic.",
       "arc_role": "disruption",
-      "storyboard_caption": "As the train slips behind schedule, she almost shuts her screen to rush through the day instead.",
-      "storyboard_dialogue": "Check the daily rule before trusting it.",
+      "storyboard_caption": "As the train falls behind schedule, Isla resists the urge to shut her laptop and panic.",
+      "storyboard_dialogue": "No use in racing a clock I can't control.",
       "panel_location": "train table by the window"
     },
     {
@@ -167,28 +150,28 @@
       "output": "social/2026-05-30/03_panel-03.png",
       "screen_quad": [
         [
-          614,
-          634
+          700,
+          649
         ],
         [
-          984,
-          659
+          1046,
+          674
         ],
         [
-          943,
-          937
+          1011,
+          927
         ],
         [
-          576,
-          873
+          671,
+          866
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Three minutes to think. Just for me.\nDrawn to the cozy bookshop cafe, Isla ignores a text and claims a few three minutes for herself.",
+      "storyboard_text": "This time is mine. The messages can wait.\nSettling at the gothic window desk, she ignores a buzzing notification to claim three three minutes.",
       "arc_role": "choice",
-      "storyboard_caption": "Drawn to the cozy bookshop cafe, Isla ignores a text and claims a few three minutes for herself.",
-      "storyboard_dialogue": "Three minutes to think. Just for me.",
-      "panel_location": "bookshop cafe corner"
+      "storyboard_caption": "Settling at the gothic window desk, she ignores a buzzing notification to claim three three minutes.",
+      "storyboard_dialogue": "This time is mine. The messages can wait.",
+      "panel_location": "gothic window desk with cityscape view"
     },
     {
       "scene": "scene_04",
@@ -200,20 +183,20 @@
       "output": "social/2026-05-30/04_panel-04.png",
       "screen_quad": [
         [
-          691,
-          584
+          703,
+          643
         ],
         [
-          1066,
-          610
+          1067,
+          675
         ],
         [
-          1029,
-          898
+          1020,
+          949
         ],
         [
-          651,
-          824
+          659,
+          877
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -233,27 +216,27 @@
       "output": "social/2026-05-30/05_panel-05.png",
       "screen_quad": [
         [
-          758,
-          632
+          744,
+          644
         ],
         [
-          1066,
-          672
+          1068,
+          665
         ],
         [
-          1051,
-          961
+          1050,
+          928
         ],
         [
-          712,
+          708,
           871
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Patience actually paid off.\nBecause she paused, the solution holds, and the pending errand suddenly feels much less daunting.",
+      "storyboard_text": "Taking my time actually saved me some stress.\nThanks to her patience, her solution holds and her upcoming tasks suddenly feel completely manageable.",
       "arc_role": "consequence",
-      "storyboard_caption": "Because she paused, the solution holds, and the pending errand suddenly feels much less daunting.",
-      "storyboard_dialogue": "Patience actually paid off.",
+      "storyboard_caption": "Thanks to her patience, her solution holds and her upcoming tasks suddenly feel completely manageable.",
+      "storyboard_dialogue": "Taking my time actually saved me some stress.",
       "panel_location": "co-working desk near a tall window"
     },
     {
@@ -266,31 +249,38 @@
       "output": "social/2026-05-30/06_panel-06.png",
       "screen_quad": [
         [
-          693,
-          651
+          680,
+          692
         ],
         [
-          1042,
-          687
+          1055,
+          714
         ],
         [
-          986,
-          969
+          1024,
+          984
         ],
         [
-          645,
-          892
+          650,
+          923
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Let's keep this calm feeling going.\nFinding a warm corner in the library, she carries this steady focus into the rest of her day.",
+      "storyboard_text": "Keep this calm. Don't let the rush back in.\nClosing her notebook, Isla walks away with a steady mind rather than the morning's lingering anxiety.",
       "arc_role": "resolution",
-      "storyboard_caption": "Finding a warm corner in the library, she carries this steady focus into the rest of her day.",
-      "storyboard_dialogue": "Let's keep this calm feeling going.",
+      "storyboard_caption": "Closing her notebook, Isla walks away with a steady mind rather than the morning's lingering anxiety.",
+      "storyboard_dialogue": "Keep this calm. Don't let the rush back in.",
       "panel_location": "quiet public library reading table"
     }
   ],
-  "all_panels_have_screen_overlay": true,
-  "screen_overlay_failures": [],
-  "posting_allowed": true
+  "all_panels_have_screen_overlay": false,
+  "screen_overlay_failures": [
+    {
+      "scene": "scene_02",
+      "output": "social/2026-05-30/02_panel-02.png",
+      "screen_quad_mode": "overlay_skipped_no_screen_detected",
+      "panel_location": "train table by the window"
+    }
+  ],
+  "posting_allowed": false
 }
