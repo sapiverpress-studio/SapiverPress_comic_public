@@ -5,6 +5,7 @@ const ROOT = process.cwd();
 const KEY = process.env.OPENAI_API_KEY?.trim() || "";
 const MODEL = process.env.OPENAI_TEXT_MODEL?.trim() || process.env.OPENAI_MODEL?.trim() || "gpt-4o-mini";
 const ARC = ["setup", "disruption", "choice", "puzzle_moment", "consequence", "resolution"];
+const PUZZLE_INDEX = 3;
 
 function today() {
   return process.env.DATE_OVERRIDE || new Intl.DateTimeFormat("sv-SE", { timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
@@ -20,6 +21,36 @@ function shouldRepair(story) {
   const status = story?.openai_storyboard_status;
   const reason = story?.openai_storyboard_fallback_reason || "";
   return status !== "ok" && /choices|chat completion|expected 6|returned 0 frames/i.test(reason);
+}
+
+function snapshotPuzzleMoment(story) {
+  const scene = story?.scenes?.[PUZZLE_INDEX];
+  if (!scene) return { changed: false, reason: "missing_panel_4" };
+  const caption = clean(scene.storyboard_caption || scene.caption || "");
+  const dialogue = clean(scene.storyboard_dialogue || scene.dialogue || scene.speech_bubble || "");
+  if (!caption || !dialogue) return { changed: false, reason: "incomplete_panel_4_copy" };
+  const snapshot = {
+    ran: true,
+    source_stage: story.storyboard_copy_source || "unknown",
+    caption,
+    dialogue,
+    image_prompt_fragment: clean(scene.image_prompt_fragment || ""),
+    captured_at: new Date().toISOString(),
+  };
+  scene.openai_caption = caption;
+  scene.openai_dialogue = dialogue;
+  scene.caption_before_quality_gate = caption;
+  scene.dialogue_before_quality_gate = dialogue;
+  scene.puzzle_moment_copy_snapshot = snapshot;
+  story.puzzle_moment_copy_snapshot = snapshot;
+  story.image_manifest = story.image_manifest || {};
+  story.image_manifest.puzzle_moment_copy_snapshot = snapshot;
+  if (story.image_manifest.image_prompts?.[PUZZLE_INDEX]) {
+    story.image_manifest.image_prompts[PUZZLE_INDEX].storyboard_caption_before_quality_gate = caption;
+    story.image_manifest.image_prompts[PUZZLE_INDEX].storyboard_dialogue_before_quality_gate = dialogue;
+    story.image_manifest.image_prompts[PUZZLE_INDEX].puzzle_moment_copy_snapshot = snapshot;
+  }
+  return { changed: true, reason: snapshot.source_stage };
 }
 
 function brief(story) {
@@ -107,7 +138,15 @@ function syncManifest(story, manifest = {}) {
   manifest.storyboard_arc_title = story.storyboard_arc_title;
   manifest.storyboard_arc = story.storyboard_arc;
   manifest.storyboard_locations = story.storyboard_locations;
+  manifest.puzzle_moment_copy_snapshot = story.puzzle_moment_copy_snapshot || manifest.puzzle_moment_copy_snapshot || null;
   return manifest;
+}
+
+async function saveStory(date, story) {
+  story.image_manifest = syncManifest(story, story.image_manifest || {});
+  await writeJson(`daily/${date}.json`, story);
+  await writeJson("latest.json", story);
+  await writeJson(`image-manifests/${date}.json`, story.image_manifest);
 }
 
 async function main() {
@@ -115,20 +154,24 @@ async function main() {
   if (!KEY) { console.log("OpenAI wrapper repair skipped: OPENAI_API_KEY missing"); return; }
   let story = await readJson(`daily/${date}.json`, await readJson("latest.json", null));
   if (!story?.scenes?.length) { console.log("OpenAI wrapper repair skipped: no story scenes"); return; }
-  if (!shouldRepair(story)) { console.log(`OpenAI wrapper repair skipped: status=${story.openai_storyboard_status || "unknown"}`); return; }
+  if (!shouldRepair(story)) {
+    const snap = snapshotPuzzleMoment(story);
+    await saveStory(date, story);
+    console.log(`OpenAI wrapper repair skipped: status=${story.openai_storyboard_status || "unknown"}`);
+    console.log(`Puzzle moment pre-gate snapshot: ${snap.changed ? "saved" : "skipped"} (${snap.reason})`);
+    return;
+  }
   try {
     const result = await callOpenAI(story);
     story = apply(story, result);
-    story.image_manifest = syncManifest(story, story.image_manifest || {});
-    await writeJson(`daily/${date}.json`, story);
-    await writeJson("latest.json", story);
-    await writeJson(`image-manifests/${date}.json`, story.image_manifest);
+    const snap = snapshotPuzzleMoment(story);
+    await saveStory(date, story);
     console.log("OpenAI wrapper repair applied: status=ok");
+    console.log(`Puzzle moment pre-gate snapshot: ${snap.changed ? "saved" : "skipped"} (${snap.reason})`);
   } catch (e) {
     story.openai_storyboard_status = "fallback";
     story.openai_storyboard_fallback_reason = `repair failed: ${e?.message || e}`;
-    await writeJson(`daily/${date}.json`, story);
-    await writeJson("latest.json", story);
+    await saveStory(date, story);
     console.log(`OpenAI wrapper repair failed safely: ${e?.message || e}`);
   }
 }
