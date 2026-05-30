@@ -65,7 +65,7 @@
       "output_file": "social/2026-05-30/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "Before her endless to-do list steals the morning, Isla opens her puzzle for a steady moment.",
+      "caption": "Before her long to-do list can take over, Isla opens up the grid to start the day.",
       "scene_id": "scene_01"
     },
     {
@@ -75,7 +75,7 @@
       "output_file": "social/2026-05-30/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "Even as the morning schedule begins to slip, she refuses to let the rush panic her.",
+      "caption": "When her train falls behind schedule, she chooses to focus on the puzzle instead of stressing.",
       "scene_id": "scene_02"
     },
     {
@@ -85,7 +85,7 @@
       "output_file": "social/2026-05-30/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "Taking a deep breath, Isla flips her phone over to claim a few steady, uninterrupted minutes.",
+      "caption": "Sitting quietly at the cafe, she flips her phone over and claims a few silent minutes.",
       "scene_id": "scene_03"
     },
     {
@@ -105,7 +105,7 @@
       "output_file": "social/2026-05-30/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "Taking that extra second pays off, suddenly making her heavy schedule feel much lighter.",
+      "caption": "With the constraint carefully met, her solution locks in and the rest of the day feels easier.",
       "scene_id": "scene_05"
     },
     {
@@ -115,10 +115,10 @@
       "output_file": "social/2026-05-30/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "With the final square solved, she shuts her screen, ready to face the world refreshed.",
+      "caption": "After one final look, she closes her laptop to keep the frantic rushing from creeping back.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-05-30.json",
-  "generated_at": "2026-05-30T12:16:20.405Z"
+  "generated_at": "2026-05-30T12:25:02.002Z"
 }
