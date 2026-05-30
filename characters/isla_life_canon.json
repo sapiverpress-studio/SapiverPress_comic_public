@@ -295,6 +295,12 @@
       "attempt": 20,
       "setting": "small kitchen table in warm morning light",
       "reason": "home is still half-asleep and she has a few minutes to herself"
+    },
+    {
+      "date": "2026-05-30",
+      "attempt": 21,
+      "setting": "quiet public library reading table",
+      "reason": "the library gives her a borrowed pocket of quiet"
     }
   ],
   "variant_memory": [
@@ -567,6 +573,12 @@
       "attempt": 20,
       "variant_name": "Trigoku",
       "panel_index": 2
+    },
+    {
+      "date": "2026-05-30",
+      "attempt": 21,
+      "variant_name": "Trigoku",
+      "panel_index": 5
     }
   ],
   "life_memory": [
@@ -1107,6 +1119,18 @@
       "thread_to_continue": "home mornings reveal her private routine",
       "puzzle_variant_mentioned": "Trigoku",
       "variant_panel_index": 2,
+      "uk_calendar_date": null,
+      "uk_calendar_panel_index": null
+    },
+    {
+      "date": "2026-05-30",
+      "attempt": 21,
+      "location": "quiet public library reading table",
+      "reason_for_location": "the library gives her a borrowed pocket of quiet",
+      "life_detail_learned": "Isla uses libraries as reset spaces, not just work spaces.",
+      "thread_to_continue": "library visits become her backup calm place",
+      "puzzle_variant_mentioned": "Trigoku",
+      "variant_panel_index": 5,
       "uk_calendar_date": null,
       "uk_calendar_panel_index": null
     }
