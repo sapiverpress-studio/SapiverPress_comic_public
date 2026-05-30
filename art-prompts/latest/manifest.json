@@ -65,7 +65,7 @@
       "output_file": "social/2026-05-30/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "Isla glances at her pending errands, choosing instead to focus on the grid before her day accelerates.",
+      "caption": "Isla eyes her growing to-do list, but pauses to give the puzzle one steady look first.",
       "scene_id": "scene_01"
     },
     {
@@ -75,7 +75,7 @@
       "output_file": "social/2026-05-30/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "With her morning schedule slipping, she resists the urge to slam her laptop shut and rush off.",
+      "caption": "As the train falls behind schedule, she resists the urge to close her screen and panic.",
       "scene_id": "scene_02"
     },
     {
@@ -85,7 +85,7 @@
       "output_file": "social/2026-05-30/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "Ignoring the urgent notification, Isla carves out three steady, deliberate minutes for herself in the nook.",
+      "caption": "Ignoring a flashing notification, Isla claims three three minutes for herself at the outdoor table.",
       "scene_id": "scene_03"
     },
     {
@@ -105,7 +105,7 @@
       "output_file": "social/2026-05-30/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "Her patience pays off as the numbers fit perfectly, transforming her looming tasks into simple next steps.",
+      "caption": "Her deliberate pace pays off, turning her mountain of chores into simple, manageable steps.",
       "scene_id": "scene_05"
     },
     {
@@ -115,10 +115,10 @@
       "output_file": "social/2026-05-30/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "With the grid complete, Isla steps outside, keeping this steady morning routine close to her heart.",
+      "caption": "Gathering her things, Isla realizes that keeping these steady morning rituals is how she resets her mind.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-05-30.json",
-  "generated_at": "2026-05-30T09:27:26.919Z"
+  "generated_at": "2026-05-30T10:35:53.447Z"
 }

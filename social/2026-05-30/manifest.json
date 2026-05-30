@@ -48,12 +48,12 @@
   "storyboard_arc_title": "Isla holds the line",
   "storyboard_arc_type": "story_driven_not_location_driven",
   "storyboard_arc": {
-    "setup": "Isla glances at her pending errands, choosing instead to focus on the grid before her day accelerates.",
-    "disruption": "With her morning schedule slipping, she resists the urge to slam her laptop shut and rush off.",
-    "choice": "Ignoring the urgent notification, Isla carves out three steady, deliberate minutes for herself in the nook.",
+    "setup": "Isla eyes her growing to-do list, but pauses to give the puzzle one steady look first.",
+    "disruption": "As the train falls behind schedule, she resists the urge to close her screen and panic.",
+    "choice": "Ignoring a flashing notification, Isla claims three three minutes for herself at the outdoor table.",
     "puzzle_moment": "The daily rule changes the move, so Isla checks it before trusting the answer.",
-    "consequence": "Her patience pays off as the numbers fit perfectly, transforming her looming tasks into simple next steps.",
-    "resolution": "With the grid complete, Isla steps outside, keeping this steady morning routine close to her heart."
+    "consequence": "Her deliberate pace pays off, turning her mountain of chores into simple, manageable steps.",
+    "resolution": "Gathering her things, Isla realizes that keeping these steady morning rituals is how she resets her mind."
   },
   "storyboard_quality": {
     "location_sequence_only": false,
@@ -73,11 +73,11 @@
       "changed": false
     }
   },
-  "openai_storyboard_status": "fallback",
+  "openai_storyboard_status": "ok",
   "openai_storyboard_model": "gpt-4o-mini",
   "openai_storyboard_response_shape": null,
-  "openai_storyboard_fallback_reason": "OpenAI returned 0 frames, expected 6. Response shape: {\"top_level\":\"object\",\"keys\":[\"id\",\"object\",\"created\",\"model\",\"choices\",\"usage\",\"service_tier\",\"system_fingerprint\"],\"nested\":{\"id\":\"string\",\"object\":\"string\",\"created\":\"number\",\"model\":\"string\",\"choices\":\"array:1\",\"usage\":[\"prompt_tokens\",\"completion_tokens\",\"total_tokens\",\"prompt_tokens_details\",\"completion_tokens_details\"],\"service_tier\":\"string\",\"system_fingerprint\":\"string\"}}",
-  "openai_storyboard_checked_at": "2026-05-30T09:27:03.436Z",
+  "openai_storyboard_fallback_reason": null,
+  "openai_storyboard_checked_at": "2026-05-30T10:35:35.601Z",
   "variant_recap": {
     "variant_name": null,
     "variant_detected": false,
@@ -88,20 +88,20 @@
   "puzzle_product": "Trigoku Daily Lock",
   "puzzle_url": "https://suite.sapiverpress.co.uk",
   "captions": [
-    "I'll start this before the rush begins.\nIsla glances at her pending errands, choosing instead to focus on the grid before her day accelerates.",
-    "Take a breath. No point in chasing the clock.\nWith her morning schedule slipping, she resists the urge to slam her laptop shut and rush off.",
-    "Three minutes of steady is all I need.\nIgnoring the urgent notification, Isla carves out three steady, deliberate minutes for herself in the nook.",
+    "Just a quick look before the rush starts.\nIsla eyes her growing to-do list, but pauses to give the puzzle one steady look first.",
+    "No point in stressing over a delayed train.\nAs the train falls behind schedule, she resists the urge to close her screen and panic.",
+    "The world can wait for three minutes.\nIgnoring a flashing notification, Isla claims three three minutes for herself at the outdoor table.",
     "Check the daily rule before trusting it.\nThe daily rule changes the move, so Isla checks it before trusting the answer.",
-    "That feels right. One step at a time.\nHer patience pays off as the numbers fit perfectly, transforming her looming tasks into simple next steps.",
-    "Let's carry this calm into the rest of the day.\nWith the grid complete, Isla steps outside, keeping this steady morning routine close to her heart."
+    "Slow and steady really does work.\nHer deliberate pace pays off, turning her mountain of chores into simple, manageable steps.",
+    "I need to protect this time tomorrow, too.\nGathering her things, Isla realizes that keeping these steady morning rituals is how she resets her mind."
   ],
   "storyboard_locations": [
-    "co-working desk near a tall window",
-    "bookshop cafe corner",
-    "rainy window nook with plants",
     "small home kitchen table in warm morning light",
     "train table by the window",
-    "outdoor cafe street table"
+    "outdoor cafe street table",
+    "co-working desk near a tall window",
+    "bookshop cafe corner",
+    "rainy window nook with plants"
   ],
   "scenes": [
     {
@@ -114,28 +114,28 @@
       "output": "social/2026-05-30/01_panel-01.png",
       "screen_quad": [
         [
-          631,
-          596
+          717,
+          579
         ],
         [
-          970,
-          619
+          1052,
+          603
         ],
         [
-          937,
-          857
+          1014,
+          854
         ],
         [
-          600,
-          802
+          684,
+          794
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "I'll start this before the rush begins.\nIsla glances at her pending errands, choosing instead to focus on the grid before her day accelerates.",
+      "storyboard_text": "Just a quick look before the rush starts.\nIsla eyes her growing to-do list, but pauses to give the puzzle one steady look first.",
       "arc_role": "setup",
-      "storyboard_caption": "Isla glances at her pending errands, choosing instead to focus on the grid before her day accelerates.",
-      "storyboard_dialogue": "I'll start this before the rush begins.",
-      "panel_location": "co-working desk near a tall window"
+      "storyboard_caption": "Isla eyes her growing to-do list, but pauses to give the puzzle one steady look first.",
+      "storyboard_dialogue": "Just a quick look before the rush starts.",
+      "panel_location": "small home kitchen table in warm morning light"
     },
     {
       "scene": "scene_02",
@@ -147,28 +147,28 @@
       "output": "social/2026-05-30/02_panel-02.png",
       "screen_quad": [
         [
-          587,
-          685
+          660,
+          693
         ],
         [
-          986,
-          710
+          994,
+          723
         ],
         [
-          937,
-          993
+          947,
+          971
         ],
         [
-          546,
-          925
+          616,
+          902
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Take a breath. No point in chasing the clock.\nWith her morning schedule slipping, she resists the urge to slam her laptop shut and rush off.",
+      "storyboard_text": "No point in stressing over a delayed train.\nAs the train falls behind schedule, she resists the urge to close her screen and panic.",
       "arc_role": "disruption",
-      "storyboard_caption": "With her morning schedule slipping, she resists the urge to slam her laptop shut and rush off.",
-      "storyboard_dialogue": "Take a breath. No point in chasing the clock.",
-      "panel_location": "bookshop cafe corner"
+      "storyboard_caption": "As the train falls behind schedule, she resists the urge to close her screen and panic.",
+      "storyboard_dialogue": "No point in stressing over a delayed train.",
+      "panel_location": "train table by the window"
     },
     {
       "scene": "scene_03",
@@ -180,28 +180,28 @@
       "output": "social/2026-05-30/03_panel-03.png",
       "screen_quad": [
         [
-          673,
-          702
+          697,
+          685
         ],
         [
-          991,
-          729
+          1062,
+          714
         ],
         [
-          955,
-          973
+          1022,
+          979
         ],
         [
-          641,
-          912
+          658,
+          911
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Three minutes of steady is all I need.\nIgnoring the urgent notification, Isla carves out three steady, deliberate minutes for herself in the nook.",
+      "storyboard_text": "The world can wait for three minutes.\nIgnoring a flashing notification, Isla claims three three minutes for herself at the outdoor table.",
       "arc_role": "choice",
-      "storyboard_caption": "Ignoring the urgent notification, Isla carves out three steady, deliberate minutes for herself in the nook.",
-      "storyboard_dialogue": "Three minutes of steady is all I need.",
-      "panel_location": "rainy window nook with plants"
+      "storyboard_caption": "Ignoring a flashing notification, Isla claims three three minutes for herself at the outdoor table.",
+      "storyboard_dialogue": "The world can wait for three minutes.",
+      "panel_location": "outdoor cafe street table"
     },
     {
       "scene": "scene_04",
@@ -213,20 +213,20 @@
       "output": "social/2026-05-30/04_panel-04.png",
       "screen_quad": [
         [
-          705,
-          559
+          688,
+          678
         ],
         [
           1066,
-          585
+          706
         ],
         [
-          1036,
-          883
+          1031,
+          993
         ],
         [
-          667,
-          807
+          657,
+          915
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -234,7 +234,7 @@
       "arc_role": "puzzle_moment",
       "storyboard_caption": "The daily rule changes the move, so Isla checks it before trusting the answer.",
       "storyboard_dialogue": "Check the daily rule before trusting it.",
-      "panel_location": "small home kitchen table in warm morning light"
+      "panel_location": "co-working desk near a tall window"
     },
     {
       "scene": "scene_05",
@@ -246,28 +246,28 @@
       "output": "social/2026-05-30/05_panel-05.png",
       "screen_quad": [
         [
-          710,
-          666
+          662,
+          660
         ],
         [
-          1066,
-          694
+          1021,
+          691
         ],
         [
-          1023,
-          970
+          978,
+          961
         ],
         [
-          672,
-          902
+          626,
+          895
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "That feels right. One step at a time.\nHer patience pays off as the numbers fit perfectly, transforming her looming tasks into simple next steps.",
+      "storyboard_text": "Slow and steady really does work.\nHer deliberate pace pays off, turning her mountain of chores into simple, manageable steps.",
       "arc_role": "consequence",
-      "storyboard_caption": "Her patience pays off as the numbers fit perfectly, transforming her looming tasks into simple next steps.",
-      "storyboard_dialogue": "That feels right. One step at a time.",
-      "panel_location": "train table by the window"
+      "storyboard_caption": "Her deliberate pace pays off, turning her mountain of chores into simple, manageable steps.",
+      "storyboard_dialogue": "Slow and steady really does work.",
+      "panel_location": "bookshop cafe corner"
     },
     {
       "scene": "scene_06",
@@ -279,28 +279,28 @@
       "output": "social/2026-05-30/06_panel-06.png",
       "screen_quad": [
         [
-          702,
-          681
+          689,
+          642
         ],
         [
-          1067,
-          731
+          1029,
+          679
         ],
         [
-          1024,
-          1003
+          979,
+          939
         ],
         [
-          661,
-          917
+          649,
+          865
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Let's carry this calm into the rest of the day.\nWith the grid complete, Isla steps outside, keeping this steady morning routine close to her heart.",
+      "storyboard_text": "I need to protect this time tomorrow, too.\nGathering her things, Isla realizes that keeping these steady morning rituals is how she resets her mind.",
       "arc_role": "resolution",
-      "storyboard_caption": "With the grid complete, Isla steps outside, keeping this steady morning routine close to her heart.",
-      "storyboard_dialogue": "Let's carry this calm into the rest of the day.",
-      "panel_location": "outdoor cafe street table"
+      "storyboard_caption": "Gathering her things, Isla realizes that keeping these steady morning rituals is how she resets her mind.",
+      "storyboard_dialogue": "I need to protect this time tomorrow, too.",
+      "panel_location": "rainy window nook with plants"
     }
   ],
   "all_panels_have_screen_overlay": true,
