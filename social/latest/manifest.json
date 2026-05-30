@@ -45,15 +45,15 @@
   ],
   "storyboard_copy_source": "openai_repaired+gemini",
   "storyboard_copy_model": "gpt-4o-mini",
-  "storyboard_arc_title": "Isla's Pause",
+  "storyboard_arc_title": "Isla's Puzzle Break",
   "storyboard_arc_type": "story_driven_not_location_driven",
   "storyboard_arc": {
-    "setup": "The faint hum of morning traffic filters through the window as the day begins to wake.",
-    "disruption": "Watching the landscape blur past while trying to find a steady moment to focus.",
-    "choice": "She forces herself to sit still at the busy sidewalk table, ignoring the urge to rush.",
+    "setup": "Isla sneaks in a quick puzzle session at the kitchen table before her workday begins.",
+    "disruption": "She manages to find a steady moment on her commute to focus on the grid.",
+    "choice": "A brief stop for coffee gives her a chance to look over her progress.",
     "puzzle_moment": "The daily rule changes the move, so Isla checks it before trusting the answer.",
-    "consequence": "She slowly finishes her tea, savoring the steady corner before stepping back into the bustle.",
-    "resolution": "Rain starts to tap against the glass as she packs up, feeling a bit more grounded."
+    "consequence": "Tucked away in a steady corner, the final pieces of the puzzle begin aligning.",
+    "resolution": "With the daily challenge wrapped up, she can finally turn her attention to her work."
   },
   "storyboard_quality": {
     "location_sequence_only": true,
@@ -66,7 +66,9 @@
     "cause_effect_link_count": 1,
     "character_turn_count": 1,
     "quality_gate_action": "repaired_in_place",
-    "quality_gate_repair_reasons": [],
+    "quality_gate_repair_reasons": [
+      "protected_puzzle_moment_copy"
+    ],
     "final_lint_passed": true,
     "final_banned_word_hits": [],
     "copy_repetition_lint": {
@@ -85,7 +87,9 @@
     }
   },
   "quality_gate_action": "repaired_in_place",
-  "quality_gate_repair_reasons": [],
+  "quality_gate_repair_reasons": [
+    "protected_puzzle_moment_copy"
+  ],
   "final_copy_sanity": {
     "ran": true,
     "duplicate_words_fixed": [],
@@ -122,7 +126,7 @@
     "frames": "array:6"
   },
   "openai_storyboard_fallback_reason": null,
-  "openai_storyboard_checked_at": "2026-05-30T18:21:08.044Z",
+  "openai_storyboard_checked_at": "2026-05-30T18:42:23.760Z",
   "gemini_allowed_fields": [
     "caption",
     "dialogue"
@@ -141,12 +145,12 @@
   "puzzle_product": "Trigoku Daily Lock",
   "puzzle_url": "https://suite.sapiverpress.co.uk",
   "captions": [
-    "Better get moving before the morning rush really kicks in.\nThe faint hum of morning traffic filters through the window as the day begins to wake.",
-    "Alright, let's see if this is actually the right move.\nWatching the landscape blur past while trying to find a steady moment to focus.",
-    "I'm giving myself three whole minutes right here, just to breathe.\nShe forces herself to sit still at the busy sidewalk table, ignoring the urge to rush.",
+    "Better get this started before my inbox completely blows up.\nIsla sneaks in a quick puzzle session at the kitchen table before her workday begins.",
+    "No point in rushing through this; it'll only lead to mistakes.\nShe manages to find a steady moment on her commute to focus on the grid.",
+    "Wait, hold on a second... that doesn't look quite right.\nA brief stop for coffee gives her a chance to look over her progress.",
     "Check the daily rule before trusting it.\nThe daily rule changes the move, so Isla checks it before trusting the answer.",
-    "Well, look at that. The piece actually fits perfectly after all.\nShe slowly finishes her tea, savoring the steady corner before stepping back into the bustle.",
-    "Okay, I think I'm finally ready to head out now.\nRain starts to tap against the glass as she packs up, feeling a bit more grounded."
+    "Ah, that placement actually makes perfect sense now.\nTucked away in a steady corner, the final pieces of the puzzle begin aligning.",
+    "Alright, that's done. Time to close this and finally get back to work.\nWith the daily challenge wrapped up, she can finally turn her attention to her work."
   ],
   "storyboard_locations": [
     "small home kitchen table in warm morning light",
@@ -167,65 +171,60 @@
       "output": "social/2026-05-30/01_panel-01.png",
       "screen_quad": [
         [
-          666,
-          661
+          659,
+          567
         ],
         [
-          961,
-          687
+          1053,
+          601
         ],
         [
-          919,
-          912
+          1000,
+          900
         ],
         [
-          631,
-          855
+          616,
+          813
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Better get moving before the morning rush really kicks in.\nThe faint hum of morning traffic filters through the window as the day begins to wake.",
+      "storyboard_text": "Better get this started before my inbox completely blows up.\nIsla sneaks in a quick puzzle session at the kitchen table before her workday begins.",
       "arc_role": "setup",
-      "storyboard_caption": "The faint hum of morning traffic filters through the window as the day begins to wake.",
-      "storyboard_dialogue": "Better get moving before the morning rush really kicks in.",
+      "storyboard_caption": "Isla sneaks in a quick puzzle session at the kitchen table before her workday begins.",
+      "storyboard_dialogue": "Better get this started before my inbox completely blows up.",
       "panel_location": "small home kitchen table in warm morning light"
     },
     {
       "scene": "scene_02",
-      "art_source": "template",
-      "art_path": "templates/characters/isla/isla_02_first_move.png",
-      "template": "templates/characters/isla/isla_02_first_move.png",
-      "replacement": "",
+      "art_source": "replacement",
+      "art_path": "art-replacements/2026-05-30/02_panel-02.png",
+      "template": "",
+      "replacement": "art-replacements/2026-05-30/02_panel-02.png",
       "capture": "captures/2026-05-30/extracted/02_first_moves.png",
       "output": "social/2026-05-30/02_panel-02.png",
       "screen_quad": [
         [
-          610,
-          458
+          674,
+          711
         ],
         [
-          1050,
-          474
+          992,
+          727
         ],
         [
-          1026,
-          760
+          951,
+          962
         ],
         [
-          588,
-          744
+          637,
+          906
         ]
       ],
-      "screen_quad_mode": "template_locked",
-      "recovered_from_missing_replacement_screen": true,
-      "failed_replacements": [
-        "art-replacements/2026-05-30/02_panel-02.png",
-        "art-replacements/latest/02_panel-02.png"
-      ],
-      "storyboard_text": "Alright, let's see if this is actually the right move.\nWatching the landscape blur past while trying to find a steady moment to focus.",
+      "screen_quad_mode": "detected_replacement_screen",
+      "storyboard_text": "No point in rushing through this; it'll only lead to mistakes.\nShe manages to find a steady moment on her commute to focus on the grid.",
       "arc_role": "disruption",
-      "storyboard_caption": "Watching the landscape blur past while trying to find a steady moment to focus.",
-      "storyboard_dialogue": "Alright, let's see if this is actually the right move.",
+      "storyboard_caption": "She manages to find a steady moment on her commute to focus on the grid.",
+      "storyboard_dialogue": "No point in rushing through this; it'll only lead to mistakes.",
       "panel_location": "train table by the window"
     },
     {
@@ -238,27 +237,27 @@
       "output": "social/2026-05-30/03_panel-03.png",
       "screen_quad": [
         [
-          344,
-          1085
+          691,
+          596
         ],
         [
-          442,
-          1077
+          1055,
+          625
         ],
         [
-          496,
-          1154
+          1012,
+          889
         ],
         [
-          395,
-          1171
+          657,
+          814
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "I'm giving myself three whole minutes right here, just to breathe.\nShe forces herself to sit still at the busy sidewalk table, ignoring the urge to rush.",
+      "storyboard_text": "Wait, hold on a second... that doesn't look quite right.\nA brief stop for coffee gives her a chance to look over her progress.",
       "arc_role": "choice",
-      "storyboard_caption": "She forces herself to sit still at the busy sidewalk table, ignoring the urge to rush.",
-      "storyboard_dialogue": "I'm giving myself three whole minutes right here, just to breathe.",
+      "storyboard_caption": "A brief stop for coffee gives her a chance to look over her progress.",
+      "storyboard_dialogue": "Wait, hold on a second... that doesn't look quite right.",
       "panel_location": "outdoor cafe street table or rainy window nook"
     },
     {
@@ -271,20 +270,20 @@
       "output": "social/2026-05-30/04_panel-04.png",
       "screen_quad": [
         [
-          674,
-          643
+          670,
+          703
         ],
         [
-          1040,
-          674
+          1026,
+          723
         ],
         [
-          997,
-          970
+          989,
+          974
         ],
         [
-          635,
-          899
+          633,
+          919
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -304,27 +303,27 @@
       "output": "social/2026-05-30/05_panel-05.png",
       "screen_quad": [
         [
-          609,
-          636
+          710,
+          711
         ],
         [
-          984,
-          664
+          1054,
+          734
         ],
         [
-          945,
-          934
+          1015,
+          976
         ],
         [
-          576,
-          874
+          673,
+          921
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Well, look at that. The piece actually fits perfectly after all.\nShe slowly finishes her tea, savoring the steady corner before stepping back into the bustle.",
+      "storyboard_text": "Ah, that placement actually makes perfect sense now.\nTucked away in a steady corner, the final pieces of the puzzle begin aligning.",
       "arc_role": "consequence",
-      "storyboard_caption": "She slowly finishes her tea, savoring the steady corner before stepping back into the bustle.",
-      "storyboard_dialogue": "Well, look at that. The piece actually fits perfectly after all.",
+      "storyboard_caption": "Tucked away in a steady corner, the final pieces of the puzzle begin aligning.",
+      "storyboard_dialogue": "Ah, that placement actually makes perfect sense now.",
       "panel_location": "bookshop cafe corner or public library reading table"
     },
     {
@@ -359,25 +358,16 @@
         "art-replacements/2026-05-30/06_panel-06.png",
         "art-replacements/latest/06_panel-06.png"
       ],
-      "storyboard_text": "Okay, I think I'm finally ready to head out now.\nRain starts to tap against the glass as she packs up, feeling a bit more grounded.",
+      "storyboard_text": "Alright, that's done. Time to close this and finally get back to work.\nWith the daily challenge wrapped up, she can finally turn her attention to her work.",
       "arc_role": "resolution",
-      "storyboard_caption": "Rain starts to tap against the glass as she packs up, feeling a bit more grounded.",
-      "storyboard_dialogue": "Okay, I think I'm finally ready to head out now.",
+      "storyboard_caption": "With the daily challenge wrapped up, she can finally turn her attention to her work.",
+      "storyboard_dialogue": "Alright, that's done. Time to close this and finally get back to work.",
       "panel_location": "rainy window nook with plants"
     }
   ],
   "all_panels_have_screen_overlay": true,
   "screen_overlay_failures": [],
   "screen_overlay_recoveries": [
-    {
-      "scene": "scene_02",
-      "output": "social/2026-05-30/02_panel-02.png",
-      "screen_quad_mode": "template_locked",
-      "failed_replacements": [
-        "art-replacements/2026-05-30/02_panel-02.png",
-        "art-replacements/latest/02_panel-02.png"
-      ]
-    },
     {
       "scene": "scene_06",
       "output": "social/2026-05-30/06_panel-06.png",
