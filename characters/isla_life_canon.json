@@ -319,6 +319,12 @@
       "attempt": 24,
       "setting": "co-working desk near a tall window",
       "reason": "she has work waiting, so the puzzle has to fit into a short gap"
+    },
+    {
+      "date": "2026-05-30",
+      "attempt": 25,
+      "setting": "train table by the window",
+      "reason": "she is travelling and using the journey as thinking time"
     }
   ],
   "variant_memory": [
@@ -613,6 +619,12 @@
     {
       "date": "2026-05-30",
       "attempt": 24,
+      "variant_name": "Trigoku",
+      "panel_index": 2
+    },
+    {
+      "date": "2026-05-30",
+      "attempt": 25,
       "variant_name": "Trigoku",
       "panel_index": 2
     }
@@ -1201,6 +1213,18 @@
       "reason_for_location": "she has work waiting, so the puzzle has to fit into a short gap",
       "life_detail_learned": "Isla often fits her puzzle ritual between work blocks.",
       "thread_to_continue": "work days make the puzzle a boundary marker",
+      "puzzle_variant_mentioned": "Trigoku",
+      "variant_panel_index": 2,
+      "uk_calendar_date": null,
+      "uk_calendar_panel_index": null
+    },
+    {
+      "date": "2026-05-30",
+      "attempt": 25,
+      "location": "train table by the window",
+      "reason_for_location": "she is travelling and using the journey as thinking time",
+      "life_detail_learned": "Isla likes journeys because they give her contained thinking time.",
+      "thread_to_continue": "train rides become moving pockets of focus",
       "puzzle_variant_mentioned": "Trigoku",
       "variant_panel_index": 2,
       "uk_calendar_date": null,
