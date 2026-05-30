@@ -104,51 +104,6 @@
     {
       "date": "2026-05-29",
       "weekday": "Friday",
-      "same_day_attempt": 24,
-      "setting": "bookshop cafe corner",
-      "puzzle_phase": "late-week",
-      "story_note": "Isla spends this entry at the bookshop cafe corner because she has come for one thing but stays for the quiet corner. The puzzle stays as a light thread inside the day.",
-      "continuation_note": "Remember: Bookshops pull Isla into longer pauses than she planned. Continue the thread: she is drawn to places with books and warm corners.",
-      "stuck_moment": "quiet frown, patient double check",
-      "life_memory_entry": {
-        "date": "2026-05-29",
-        "attempt": 24,
-        "location": "bookshop cafe corner",
-        "reason_for_location": "she has come for one thing but stays for the quiet corner",
-        "life_detail_learned": "Bookshops pull Isla into longer pauses than she planned.",
-        "thread_to_continue": "she is drawn to places with books and warm corners",
-        "puzzle_variant_mentioned": "Trigoku",
-        "variant_panel_index": 5,
-        "uk_calendar_date": null,
-        "uk_calendar_panel_index": null
-      },
-      "variant_recap": {
-        "variant_name": "Trigoku",
-        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
-        "panel_index": 5,
-        "line": "Today has its own little rule-set — check the constraint before rushing."
-      },
-      "uk_calendar_date": null,
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
-        "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
-        "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
-        "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
-        "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.",
-        "By the final check, Isla carries the pause forward, not the pressure that tried to hurry her."
-      ]
-    },
-    {
-      "date": "2026-05-29",
-      "weekday": "Friday",
       "same_day_attempt": 25,
       "setting": "rainy window nook with plants",
       "puzzle_phase": "late-week",
@@ -1431,6 +1386,51 @@
         "variant_name": "Trigoku",
         "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
         "panel_index": 5,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Isla sees the errand list waiting, but opens the grid before the day takes over.",
+        "The journey slips behind schedule, and Isla keeps working instead of chasing the clock.",
+        "At the cafe table, she turns the phone face down and gives herself three minutes.",
+        "The daily rule changes the move, so Isla checks it before trusting the answer.",
+        "Because she checked it properly, the move holds and the errands feel manageable again.",
+        "By the final check, Isla closes the laptop before the pressure takes over again."
+      ]
+    },
+    {
+      "date": "2026-05-30",
+      "weekday": "Saturday",
+      "same_day_attempt": 22,
+      "setting": "rainy window nook with plants",
+      "puzzle_phase": "late-week",
+      "story_note": "Isla spends this entry at the rainy window nook with plants because rain has slowed everything down and she lets it. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Isla does not mind slower days when they give her room to notice things. Continue the thread: rainy days bring out her reflective side.",
+      "stuck_moment": "pen paused while rain falls",
+      "life_memory_entry": {
+        "date": "2026-05-30",
+        "attempt": 22,
+        "location": "rainy window nook with plants",
+        "reason_for_location": "rain has slowed everything down and she lets it",
+        "life_detail_learned": "Isla does not mind slower days when they give her room to notice things.",
+        "thread_to_continue": "rainy days bring out her reflective side",
+        "puzzle_variant_mentioned": "Trigoku",
+        "variant_panel_index": 4,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Trigoku",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 4,
         "line": "Today has its own little rule-set — check the constraint before rushing."
       },
       "uk_calendar_date": null,
@@ -1456,51 +1456,6 @@
     {
       "date": "2026-05-29",
       "weekday": "Friday",
-      "same_day_attempt": 24,
-      "setting": "bookshop cafe corner",
-      "puzzle_phase": "late-week",
-      "story_note": "Isla spends this entry at the bookshop cafe corner because she has come for one thing but stays for the quiet corner. The puzzle stays as a light thread inside the day.",
-      "continuation_note": "Remember: Bookshops pull Isla into longer pauses than she planned. Continue the thread: she is drawn to places with books and warm corners.",
-      "stuck_moment": "quiet frown, patient double check",
-      "life_memory_entry": {
-        "date": "2026-05-29",
-        "attempt": 24,
-        "location": "bookshop cafe corner",
-        "reason_for_location": "she has come for one thing but stays for the quiet corner",
-        "life_detail_learned": "Bookshops pull Isla into longer pauses than she planned.",
-        "thread_to_continue": "she is drawn to places with books and warm corners",
-        "puzzle_variant_mentioned": "Trigoku",
-        "variant_panel_index": 5,
-        "uk_calendar_date": null,
-        "uk_calendar_panel_index": null
-      },
-      "variant_recap": {
-        "variant_name": "Trigoku",
-        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
-        "panel_index": 5,
-        "line": "Today has its own little rule-set — check the constraint before rushing."
-      },
-      "uk_calendar_date": null,
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
-        "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
-        "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
-        "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
-        "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.",
-        "By the final check, Isla carries the pause forward, not the pressure that tried to hurry her."
-      ]
-    },
-    {
-      "date": "2026-05-29",
-      "weekday": "Friday",
       "same_day_attempt": 25,
       "setting": "rainy window nook with plants",
       "puzzle_phase": "late-week",
@@ -2783,6 +2738,51 @@
         "variant_name": "Trigoku",
         "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
         "panel_index": 5,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Isla sees the errand list waiting, but opens the grid before the day takes over.",
+        "The journey slips behind schedule, and Isla keeps working instead of chasing the clock.",
+        "At the cafe table, she turns the phone face down and gives herself three minutes.",
+        "The daily rule changes the move, so Isla checks it before trusting the answer.",
+        "Because she checked it properly, the move holds and the errands feel manageable again.",
+        "By the final check, Isla closes the laptop before the pressure takes over again."
+      ]
+    },
+    {
+      "date": "2026-05-30",
+      "weekday": "Saturday",
+      "same_day_attempt": 22,
+      "setting": "rainy window nook with plants",
+      "puzzle_phase": "late-week",
+      "story_note": "Isla spends this entry at the rainy window nook with plants because rain has slowed everything down and she lets it. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Isla does not mind slower days when they give her room to notice things. Continue the thread: rainy days bring out her reflective side.",
+      "stuck_moment": "pen paused while rain falls",
+      "life_memory_entry": {
+        "date": "2026-05-30",
+        "attempt": 22,
+        "location": "rainy window nook with plants",
+        "reason_for_location": "rain has slowed everything down and she lets it",
+        "life_detail_learned": "Isla does not mind slower days when they give her room to notice things.",
+        "thread_to_continue": "rainy days bring out her reflective side",
+        "puzzle_variant_mentioned": "Trigoku",
+        "variant_panel_index": 4,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Trigoku",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 4,
         "line": "Today has its own little rule-set — check the constraint before rushing."
       },
       "uk_calendar_date": null,

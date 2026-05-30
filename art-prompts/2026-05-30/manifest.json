@@ -65,7 +65,7 @@
       "output_file": "social/2026-05-30/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "Before her hectic list of daily chores can take over, Isla steals a steady moment with her grid.",
+      "caption": "Rain taps against the glass as Isla ignores her long to-do list for just five minutes.",
       "scene_id": "scene_01"
     },
     {
@@ -75,7 +75,7 @@
       "output_file": "social/2026-05-30/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "As the train falls behind schedule, she tunes out the delay and stays focused on her puzzle.",
+      "caption": "With the rain slowing everything down, she decides there is no point in rushing her morning.",
       "scene_id": "scene_02"
     },
     {
@@ -85,7 +85,7 @@
       "output_file": "social/2026-05-30/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "Setting her phone face down on the table, she carves out a tiny oasis of pure steady.",
+      "caption": "She flips her phone face down, letting the steady cafe atmosphere take over for a moment.",
       "scene_id": "scene_03"
     },
     {
@@ -105,7 +105,7 @@
       "output_file": "social/2026-05-30/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "With the constraint solved, the solution clicks into place and her mind instantly feels lighter.",
+      "caption": "Safe among the green leaves, she smiles as her slow and steady approach pays off.",
       "scene_id": "scene_05"
     },
     {
@@ -115,10 +115,10 @@
       "output_file": "social/2026-05-30/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "She closes her notebook with a soft sigh, ready to step back into the busy afternoon.",
+      "caption": "With the puzzle solved, Isla shuts her screen and watches the rain wash the world clean.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-05-30.json",
-  "generated_at": "2026-05-30T12:55:07.079Z"
+  "generated_at": "2026-05-30T13:00:00.574Z"
 }
