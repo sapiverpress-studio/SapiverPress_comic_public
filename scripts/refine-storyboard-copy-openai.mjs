@@ -5,19 +5,325 @@ const ROOT = process.cwd();
 const API_KEY = process.env.OPENAI_API_KEY?.trim() || "";
 const MODEL = process.env.OPENAI_TEXT_MODEL?.trim() || process.env.OPENAI_MODEL?.trim() || "gpt-4o-mini";
 
-const DAY_LOCATIONS = ["small home kitchen table in warm morning light", "train table by the window", "quiet public library reading table", "outdoor cafe street table", "co-working desk near a tall window", "bookshop cafe corner", "rainy window nook with plants", "gothic window desk with cityscape view"];
+const DAY_LOCATIONS = [
+  "small home kitchen table in warm morning light",
+  "train table by the window",
+  "outdoor cafe street table",
+  "co-working desk near a tall window",
+  "bookshop cafe corner",
+  "rainy window nook with plants",
+];
 
-function dateString() { const override = process.env.DATE_OVERRIDE || ""; if (override) return override; return new Intl.DateTimeFormat("sv-SE", { timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date()); }
-function clean(value) { return String(value || "").replace(/\s+/g, " ").trim(); }
-function stableIndex(seed, length) { let hash = 2166136261; for (const ch of String(seed || "")) { hash ^= ch.charCodeAt(0); hash = Math.imul(hash, 16777619); } return (hash >>> 0) % Math.max(1, length); }
-function dayLocationPlan(story) { const seed = `${story?.date || ""}-${story?.same_day_attempt || 1}-${story?.life_memory_entry?.location || story?.selected_setting || ""}`; const offset = stableIndex(seed, DAY_LOCATIONS.length); const ordered = []; for (let i = 0; i < DAY_LOCATIONS.length; i += 1) ordered.push(DAY_LOCATIONS[(offset + i) % DAY_LOCATIONS.length]); const anchor = clean(story?.life_memory_entry?.location || story?.selected_setting || ordered[0]); const plan = [ordered.find((x) => x.includes("home")) || ordered[0], ordered.find((x) => x.includes("train")) || ordered[1], anchor, ordered.find((x) => x.includes("cafe") && !x.includes("bookshop")) || ordered[2], ordered.find((x) => x.includes("co-working")) || ordered[3], ordered.find((x) => x.includes("bookshop") || x.includes("window")) || ordered[4]]; return Array.from(new Set(plan.concat(ordered))).slice(0, 6); }
-async function readJson(relativePath, fallback = null) { try { return JSON.parse(await fs.readFile(path.join(ROOT, relativePath), "utf8")); } catch { return fallback; } }
-async function writeJson(relativePath, data) { const out = path.join(ROOT, relativePath); await fs.mkdir(path.dirname(out), { recursive: true }); await fs.writeFile(out, `${JSON.stringify(data, null, 2)}\n`, "utf8"); }
-function frameImageName(index) { const n = String(index + 1).padStart(2, "0"); return `${n}_panel-${n}.png`; }
-function sourceBrief(story) { const scenes = Array.isArray(story?.scenes) ? story.scenes.slice(0, 6) : []; return { date: story?.date, same_day_attempt: story?.same_day_attempt || 1, selected_setting: story?.selected_setting, location_key: story?.location_key, suggested_day_locations: dayLocationPlan(story), story_note: story?.story_note, continuation_note: story?.continuation_note, life_memory_entry: story?.life_memory_entry || null, variant_recap: story?.variant_recap || null, uk_calendar_date: story?.uk_calendar_date || null, story_fields_used: ["story_note", "continuation_note", "life_memory_entry", "scenes[].storyboard_caption", "scenes[].storyboard_dialogue", "scenes[].scene_description", "scenes[].beat", "scenes[].caption", "scenes[].dialogue", "scenes[].speech_bubble", "scenes[].image_prompt_fragment"], scenes: scenes.map((scene, index) => ({ panel: index + 1, image_name: frameImageName(index), current_caption: scene.storyboard_caption || scene.caption || "", current_dialogue: scene.storyboard_dialogue || scene.dialogue || scene.speech_bubble || "", scene_description: scene.scene_description || scene.beat || scene.title || "", beat: scene.beat || "", title: scene.title || "", image_prompt_fragment: scene.image_prompt_fragment || "", variant_recap_here: Boolean(scene.variant_recap_here), uk_calendar_recap_here: Boolean(scene.uk_calendar_recap_here), setting: scene.setting || story?.selected_setting || "" })) }; }
-function fallbackStoryboard(story) { const locations = dayLocationPlan(story); const variant = clean(story?.variant_recap?.variant_name || "today's puzzle"); const rule = clean(story?.variant_recap?.line || "check the constraint before rushing"); const calendar = clean(story?.uk_calendar_date?.name || ""); const calendarLine = clean(story?.uk_calendar_date?.line || ""); return [ { location: locations[0], caption: `Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.`, dialogue: "Start before the rush.", image_prompt_fragment: "setup beat, next errand waiting, controlled morning start" }, { location: locations[1], caption: `The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.`, dialogue: "Don't chase it.", image_prompt_fragment: "travel disruption, laptop nearly closing, tension between delay and focus" }, { location: locations[2], caption: calendar ? `${calendar} changes the day, but Isla chooses one unhurried breath before moving on.` : `At the cafe table, Isla leaves the errand message unread and chooses three kept minutes instead.`, dialogue: calendarLine || "Three minutes. Properly.", image_prompt_fragment: "decision moment, unread message waiting, deliberate restraint" }, { location: locations[3], caption: `${variant} will catch a rushed guess, so she checks the constraint before letting the move stand.`, dialogue: rule, image_prompt_fragment: "specific puzzle-rule check, careful deduction, restraint before a move" }, { location: locations[4], caption: `Because she waited, the move holds; the errand feels less like a deadline and more like a next step.`, dialogue: "That stayed true.", image_prompt_fragment: "consequence of patience, small confirmed breakthrough, tension easing" }, { location: locations[5], caption: `By the final check, Isla carries the decision forward, not the pressure that tried to hurry her.`, dialogue: "Take that with you.", image_prompt_fragment: "resolution beat, calm forward motion after pressure" } ]; }
-function parseJsonText(text) { const trimmed = text.trim(); try { return JSON.parse(trimmed); } catch {} const match = trimmed.match(/```(?:json)?\s*([\s\S]*?)```/i) || trimmed.match(/(\{[\s\S]*\})/); if (match) return JSON.parse(match[1]); throw new Error("OpenAI storyboard response was not valid JSON"); }
-async function refineWithOpenAI(story) { const brief = sourceBrief(story); const response = await fetch("https://api.openai.com/v1/chat/completions", { method: "POST", headers: { Authorization: `Bearer ${API_KEY}`, "Content-Type": "application/json" }, body: JSON.stringify({ model: MODEL, temperature: 0.62, response_format: { type: "json_object" }, messages: [{ role: "system", content: ["You are the storyboard editor for Sapiver Press's Isla daily illustrated puzzle diary.", "Preserve the actual daily story material. Do not replace it with a generic location sequence.", "Write as if Isla actually lived this day: specific, small, and a little imperfect.", "Rewrite six panel captions so the six PNGs read as one coherent storyboard, not six isolated captions.", "The six frames should cover setup, disruption, choice, puzzle moment, consequence, and resolution.", "Locations should support the story. They should not be the story.", "Each frame needs a narrative caption plus a short natural Isla line.", "Dialogue should sound spoken, not caption-like.", "Captions should feel observed, not summarised.", "No sentence should be interchangeable with a sentence from another strip.", "Use life memory, UK calendar context, scene descriptions, current storyboard text, and puzzle variant where relevant.", "The puzzle rule may appear once, naturally inside the story, not as a dumped instruction card.", "Do not use these words: quiet, gentle, pause, thread, anchor, ritual, borrowed, understated.", "Do not write one-word captions. Do not use hashtags, emoji, sales language, or fake drama.", "Return JSON only with: arc_title, board_caption, frames.", "frames must contain exactly six objects, each with panel_number, location, caption, dialogue, image_prompt_fragment.", "caption: 10-20 words, no more. dialogue: 3-10 words, in Isla's voice. image_prompt_fragment: visual mood only, no text instructions."].join(" ") }, { role: "user", content: JSON.stringify({ task: "Create a coherent six-frame, story-first storyboard copy pass before captions are rendered into images.", brief }) }] }) }); const text = await response.text(); if (!response.ok) throw new Error(`OpenAI storyboard refine failed ${response.status}: ${text.slice(0, 900)}`); const parsed = parseJsonText(text); const frames = Array.isArray(parsed.frames) ? parsed.frames : []; if (frames.length !== 6) throw new Error(`OpenAI returned ${frames.length} frames, expected 6`); return { arc_title: clean(parsed.arc_title || "Isla keeps the day from deciding for her"), board_caption: clean(parsed.board_caption || "A daily puzzle moment with Isla."), frames: frames.map((frame, index) => ({ panel_number: index + 1, location: clean(frame.location || dayLocationPlan(story)[index]), caption: clean(frame.caption), dialogue: clean(frame.dialogue), image_prompt_fragment: clean(frame.image_prompt_fragment) })), source: "openai", model: MODEL }; }
-function applyStoryboard(story, storyboard) { const fallbackFrames = fallbackStoryboard(story); const frames = storyboard?.frames?.length === 6 ? storyboard.frames : fallbackFrames; story.storyboard_copy_refined = true; story.storyboard_copy_source = storyboard?.source || "fallback"; story.storyboard_copy_model = storyboard?.model || "fallback"; story.storyboard_arc_title = storyboard?.arc_title || "Isla keeps the day from deciding for her"; story.storyboard_board_caption = storyboard?.board_caption || "A daily puzzle moment with Isla."; story.storyboard_locations = frames.map((frame, index) => clean(frame.location || fallbackFrames[index]?.location || "")); story.story_source_used = story.date ? `daily/${story.date}.json` : "latest.json"; story.story_fields_used = sourceBrief(story).story_fields_used; story.openai_storyboard_status = storyboard?.source === "openai" ? "ok" : "fallback"; story.openai_storyboard_fallback_reason = storyboard?.error || null; story.scenes = (story.scenes || []).slice(0, 6).map((scene, index) => { const frame = frames[index] || fallbackFrames[index]; const dialogue = clean(frame.dialogue || ""); const caption = clean(frame.caption || scene.storyboard_caption || scene.caption || ""); const location = clean(frame.location || fallbackFrames[index]?.location || scene.setting || story.selected_setting || ""); const visual = clean(frame.image_prompt_fragment || scene.image_prompt_fragment || scene.scene_description || "daily-life puzzle moment"); return { ...scene, setting: location, panel_location: location, caption, dialogue, speech_bubble: dialogue, storyboard_caption: caption, storyboard_dialogue: dialogue, storyboard_panel_text: dialogue ? `${dialogue}\n${caption}` : caption, image_prompt_fragment: visual, scene_description: clean(`${location}. ${caption} ${visual}`).slice(0, 340) }; }); return story; }
-async function main() { const date = dateString(); let story = await readJson(`daily/${date}.json`, await readJson("latest.json", null)); if (!story) throw new Error(`Missing daily/${date}.json and latest.json`); let storyboard; try { if (!API_KEY) throw new Error("OPENAI_API_KEY missing"); storyboard = await refineWithOpenAI(story); } catch (error) { storyboard = { arc_title: "Isla keeps the day from deciding for her", board_caption: "A story-first six-frame diary moment built around today's puzzle.", frames: fallbackStoryboard(story), source: "fallback_story_driven", model: "fallback", error: error?.message || String(error) }; console.log(`Storyboard copy used fallback: ${storyboard.error}`); } story = applyStoryboard(story, storyboard); await writeJson(`daily/${date}.json`, story); await writeJson("latest.json", story); if (story.image_manifest) { story.image_manifest.storyboard_copy_refined = true; story.image_manifest.storyboard_copy_source = story.storyboard_copy_source; story.image_manifest.story_source_used = story.story_source_used; story.image_manifest.story_fields_used = story.story_fields_used; story.image_manifest.storyboard_arc_title = story.storyboard_arc_title; story.image_manifest.storyboard_locations = story.storyboard_locations; story.image_manifest.openai_storyboard_status = story.openai_storyboard_status; story.image_manifest.openai_storyboard_fallback_reason = story.openai_storyboard_fallback_reason; story.image_manifest.image_prompts = story.scenes.map((scene) => ({ scene: scene.id, pose_id: scene.pose_id, location: scene.panel_location || scene.setting, prompt: scene.full_image_prompt || scene.image_prompt_fragment || "", caption: scene.caption, dialogue: scene.dialogue, storyboard_caption: scene.storyboard_caption || scene.caption || "", storyboard_dialogue: scene.storyboard_dialogue || scene.dialogue || scene.speech_bubble || "" })); await writeJson(`image-manifests/${date}.json`, story.image_manifest); } console.log(`Storyboard copy refined before image/caption render: ${story.storyboard_copy_source}`); if (story.openai_storyboard_fallback_reason) console.log(`OpenAI storyboard fallback reason: ${story.openai_storyboard_fallback_reason}`); console.log(`Storyboard locations: ${story.storyboard_locations.join(" | ")}`); }
+function dateString() {
+  return process.env.DATE_OVERRIDE || new Intl.DateTimeFormat("sv-SE", {
+    timeZone: "Europe/London",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date());
+}
+
+function clean(value) {
+  return String(value || "").replace(/\s+/g, " ").trim();
+}
+
+function stableIndex(seed, length) {
+  let hash = 2166136261;
+  for (const ch of String(seed || "")) {
+    hash ^= ch.charCodeAt(0);
+    hash = Math.imul(hash, 16777619);
+  }
+  return (hash >>> 0) % Math.max(1, length);
+}
+
+function dayLocationPlan(story) {
+  const seed = `${story?.date || ""}-${story?.same_day_attempt || 1}-${story?.life_memory_entry?.location || story?.selected_setting || ""}`;
+  const offset = stableIndex(seed, DAY_LOCATIONS.length);
+  const ordered = [];
+  for (let i = 0; i < DAY_LOCATIONS.length; i += 1) ordered.push(DAY_LOCATIONS[(offset + i) % DAY_LOCATIONS.length]);
+  return ordered.slice(0, 6);
+}
+
+async function readJson(relativePath, fallback = null) {
+  try {
+    return JSON.parse(await fs.readFile(path.join(ROOT, relativePath), "utf8"));
+  } catch {
+    return fallback;
+  }
+}
+
+async function writeJson(relativePath, data) {
+  const out = path.join(ROOT, relativePath);
+  await fs.mkdir(path.dirname(out), { recursive: true });
+  await fs.writeFile(out, `${JSON.stringify(data, null, 2)}\n`, "utf8");
+}
+
+function frameImageName(index) {
+  const n = String(index + 1).padStart(2, "0");
+  return `${n}_panel-${n}.png`;
+}
+
+function realVariant(story) {
+  const name = clean(story?.variant_recap?.variant_name || "");
+  return name && name.toLowerCase() !== "trigoku" ? name : "";
+}
+
+function sourceBrief(story) {
+  const scenes = Array.isArray(story?.scenes) ? story.scenes.slice(0, 6) : [];
+  return {
+    date: story?.date,
+    same_day_attempt: story?.same_day_attempt || 1,
+    selected_setting: story?.selected_setting,
+    location_key: story?.location_key,
+    suggested_day_locations: dayLocationPlan(story),
+    story_note: story?.story_note,
+    continuation_note: story?.continuation_note,
+    life_memory_entry: story?.life_memory_entry || null,
+    variant_recap: story?.variant_recap || null,
+    real_variant_name: realVariant(story) || null,
+    uk_calendar_date: story?.uk_calendar_date || null,
+    story_fields_used: [
+      "story_note",
+      "continuation_note",
+      "life_memory_entry",
+      "variant_recap",
+      "scenes[].storyboard_caption",
+      "scenes[].storyboard_dialogue",
+      "scenes[].scene_description",
+      "scenes[].beat",
+      "scenes[].caption",
+      "scenes[].dialogue",
+      "scenes[].speech_bubble",
+      "scenes[].image_prompt_fragment",
+    ],
+    scenes: scenes.map((scene, index) => ({
+      panel: index + 1,
+      image_name: frameImageName(index),
+      arc_role: scene.arc_role,
+      current_caption: scene.storyboard_caption || scene.caption || "",
+      current_dialogue: scene.storyboard_dialogue || scene.dialogue || scene.speech_bubble || "",
+      scene_description: scene.scene_description || scene.beat || scene.title || "",
+      beat: scene.beat || "",
+      title: scene.title || "",
+      image_prompt_fragment: scene.image_prompt_fragment || "",
+      variant_recap_here: Boolean(scene.variant_recap_here),
+      uk_calendar_recap_here: Boolean(scene.uk_calendar_recap_here),
+      setting: scene.panel_location || scene.setting || story?.selected_setting || "",
+    })),
+  };
+}
+
+function fallbackStoryboard(story) {
+  const locations = dayLocationPlan(story);
+  const variant = realVariant(story);
+  const puzzleCaption = variant
+    ? `${variant} changes the move, so Isla checks the rule before trusting it.`
+    : "The daily rule changes the move, so Isla checks it before trusting the answer.";
+  const puzzleDialogue = clean(story?.variant_recap?.line || "Check the daily rule before trusting it.");
+  return [
+    { location: locations[0], caption: "Isla sees the errand list waiting, but opens the grid before the day takes over.", dialogue: "Start before it gets busy.", image_prompt_fragment: "setup beat, errand list waiting, laptop opening" },
+    { location: locations[1], caption: "The journey slips behind schedule, and Isla keeps working instead of chasing the clock.", dialogue: "No use racing that clock.", image_prompt_fragment: "travel disruption, train table, laptop braced" },
+    { location: locations[2], caption: "At the cafe table, she turns the phone face down and gives herself three minutes.", dialogue: "Three whole minutes, just for this.", image_prompt_fragment: "decision moment, phone ignored, outdoor cafe table" },
+    { location: locations[3], caption: puzzleCaption, dialogue: puzzleDialogue, image_prompt_fragment: "specific puzzle rule check, active laptop screen, finger near trackpad" },
+    { location: locations[4], caption: "Because she checked it properly, the move holds and the errands feel manageable again.", dialogue: "That one actually holds.", image_prompt_fragment: "confirmed breakthrough, bookshop cafe, notebook and mug" },
+    { location: locations[5], caption: "By the final check, Isla closes the laptop before the pressure takes over again.", dialogue: "Leave it there. Move on.", image_prompt_fragment: "resolution beat, closing laptop, rainy window" },
+  ];
+}
+
+function parseJsonText(text) {
+  const trimmed = text.trim();
+  try { return JSON.parse(trimmed); } catch {}
+  const match = trimmed.match(/```(?:json)?\s*([\s\S]*?)```/i) || trimmed.match(/(\{[\s\S]*\})/);
+  if (match) return JSON.parse(match[1]);
+  throw new Error("OpenAI storyboard response was not valid JSON");
+}
+
+function getByPath(obj, pathText) {
+  return pathText.split(".").reduce((cur, key) => cur?.[key], obj);
+}
+
+function extractFrames(parsed) {
+  const candidates = [
+    parsed?.frames,
+    parsed?.storyboard?.frames,
+    parsed?.storyboard_copy?.frames,
+    parsed?.board?.frames,
+    parsed?.panels,
+    parsed?.scenes,
+    parsed?.storyboard?.panels,
+    parsed?.storyboard?.scenes,
+    parsed?.data?.frames,
+    Array.isArray(parsed) ? parsed : null,
+  ];
+  for (const candidate of candidates) {
+    if (Array.isArray(candidate) && candidate.length) return candidate;
+  }
+  return [];
+}
+
+function responseShape(parsed) {
+  const keys = parsed && typeof parsed === "object" && !Array.isArray(parsed) ? Object.keys(parsed) : [];
+  const nested = {};
+  for (const key of keys) {
+    const value = parsed[key];
+    nested[key] = Array.isArray(value) ? `array:${value.length}` : value && typeof value === "object" ? Object.keys(value) : typeof value;
+  }
+  return { top_level: Array.isArray(parsed) ? "array" : typeof parsed, keys, nested };
+}
+
+function normaliseFrame(frame, index, story) {
+  return {
+    panel_number: Number(frame.panel_number || frame.panel || frame.number || index + 1),
+    location: clean(frame.location || frame.setting || frame.panel_location || dayLocationPlan(story)[index]),
+    caption: clean(frame.caption || frame.storyboard_caption || frame.narrative_caption || frame.copy || frame.text || ""),
+    dialogue: clean(frame.dialogue || frame.storyboard_dialogue || frame.speech_bubble || frame.line || ""),
+    image_prompt_fragment: clean(frame.image_prompt_fragment || frame.visual_prompt || frame.visual || frame.scene_description || ""),
+  };
+}
+
+async function refineWithOpenAI(story) {
+  const brief = sourceBrief(story);
+  const response = await fetch("https://api.openai.com/v1/chat/completions", {
+    method: "POST",
+    headers: { Authorization: `Bearer ${API_KEY}`, "Content-Type": "application/json" },
+    body: JSON.stringify({
+      model: MODEL,
+      temperature: 0.45,
+      response_format: { type: "json_object" },
+      messages: [
+        {
+          role: "system",
+          content: [
+            "You are the storyboard editor for Sapiver Press's Isla daily illustrated puzzle diary.",
+            "Preserve the actual daily story material. Do not replace it with a generic location sequence.",
+            "Return JSON only with this exact top-level shape: {\"arc_title\":string,\"board_caption\":string,\"frames\":[six objects]}.",
+            "Each frame object must contain panel_number, location, caption, dialogue, image_prompt_fragment.",
+            "The six frames must be setup, disruption, choice, puzzle moment, consequence, resolution.",
+            "Locations support the story; they are not the story.",
+            "Dialogue must sound spoken, not caption-like.",
+            "Do not use these words: quiet, gentle, pause, thread, anchor, ritual, borrowed, understated.",
+            "If real_variant_name is null, do not call Trigoku a variant; use daily rule or daily constraint.",
+            "Caption length: 10-20 words. Dialogue length: 3-10 words.",
+          ].join(" "),
+        },
+        { role: "user", content: JSON.stringify({ task: "Create a coherent six-frame, story-first storyboard copy pass.", brief }) },
+      ],
+    }),
+  });
+
+  const text = await response.text();
+  if (!response.ok) throw new Error(`OpenAI storyboard refine failed ${response.status}: ${text.slice(0, 900)}`);
+  const parsed = parseJsonText(text);
+  const rawFrames = extractFrames(parsed);
+  if (rawFrames.length !== 6) {
+    const shape = JSON.stringify(responseShape(parsed)).slice(0, 900);
+    throw new Error(`OpenAI returned ${rawFrames.length} frames, expected 6. Response shape: ${shape}`);
+  }
+  const frames = rawFrames.map((frame, index) => normaliseFrame(frame, index, story));
+  if (frames.some((frame) => !frame.caption || !frame.dialogue)) {
+    throw new Error("OpenAI returned frames but at least one caption/dialogue was empty");
+  }
+  return {
+    arc_title: clean(parsed.arc_title || parsed.storyboard?.arc_title || "Isla keeps the day from deciding for her"),
+    board_caption: clean(parsed.board_caption || parsed.storyboard?.board_caption || "A daily puzzle moment with Isla."),
+    frames,
+    source: "openai",
+    model: MODEL,
+    response_shape: responseShape(parsed),
+  };
+}
+
+function applyStoryboard(story, storyboard) {
+  const fallbackFrames = fallbackStoryboard(story);
+  const frames = storyboard?.frames?.length === 6 ? storyboard.frames : fallbackFrames;
+  story.storyboard_copy_refined = true;
+  story.storyboard_copy_source = storyboard?.source || "fallback";
+  story.storyboard_copy_model = storyboard?.model || "fallback";
+  story.storyboard_arc_title = storyboard?.arc_title || "Isla keeps the day from deciding for her";
+  story.storyboard_board_caption = storyboard?.board_caption || "A daily puzzle moment with Isla.";
+  story.storyboard_locations = frames.map((frame, index) => clean(frame.location || fallbackFrames[index]?.location || ""));
+  story.story_source_used = story.date ? `daily/${story.date}.json` : "latest.json";
+  story.story_fields_used = sourceBrief(story).story_fields_used;
+  story.openai_storyboard_status = storyboard?.source === "openai" ? "ok" : "fallback";
+  story.openai_storyboard_model = MODEL;
+  story.openai_storyboard_response_shape = storyboard?.response_shape || null;
+  story.openai_storyboard_fallback_reason = storyboard?.error || null;
+  story.openai_storyboard_checked_at = new Date().toISOString();
+  story.scenes = (story.scenes || []).slice(0, 6).map((scene, index) => {
+    const frame = frames[index] || fallbackFrames[index];
+    const dialogue = clean(frame.dialogue || "");
+    const caption = clean(frame.caption || scene.storyboard_caption || scene.caption || "");
+    const location = clean(frame.location || fallbackFrames[index]?.location || scene.setting || story.selected_setting || "");
+    const visual = clean(frame.image_prompt_fragment || scene.image_prompt_fragment || scene.scene_description || "daily-life puzzle moment");
+    return {
+      ...scene,
+      setting: location,
+      panel_location: location,
+      caption,
+      dialogue,
+      speech_bubble: dialogue,
+      storyboard_caption: caption,
+      storyboard_dialogue: dialogue,
+      storyboard_panel_text: dialogue ? `${dialogue}\n${caption}` : caption,
+      image_prompt_fragment: visual,
+      scene_description: clean(`${location}. ${caption} ${visual}`).slice(0, 340),
+    };
+  });
+  return story;
+}
+
+async function main() {
+  const date = dateString();
+  let story = await readJson(`daily/${date}.json`, await readJson("latest.json", null));
+  if (!story) throw new Error(`Missing daily/${date}.json and latest.json`);
+
+  let storyboard;
+  try {
+    if (!API_KEY) throw new Error("OPENAI_API_KEY missing");
+    storyboard = await refineWithOpenAI(story);
+  } catch (error) {
+    storyboard = {
+      arc_title: "Isla keeps the day from deciding for her",
+      board_caption: "A story-first six-frame diary moment built around today's puzzle.",
+      frames: fallbackStoryboard(story),
+      source: "fallback_story_driven",
+      model: "fallback",
+      error: error?.message || String(error),
+    };
+    console.log(`Storyboard copy used fallback: ${storyboard.error}`);
+  }
+
+  story = applyStoryboard(story, storyboard);
+  await writeJson(`daily/${date}.json`, story);
+  await writeJson("latest.json", story);
+  if (story.image_manifest) {
+    story.image_manifest.storyboard_copy_refined = true;
+    story.image_manifest.storyboard_copy_source = story.storyboard_copy_source;
+    story.image_manifest.story_source_used = story.story_source_used;
+    story.image_manifest.story_fields_used = story.story_fields_used;
+    story.image_manifest.storyboard_arc_title = story.storyboard_arc_title;
+    story.image_manifest.storyboard_locations = story.storyboard_locations;
+    story.image_manifest.openai_storyboard_status = story.openai_storyboard_status;
+    story.image_manifest.openai_storyboard_model = story.openai_storyboard_model;
+    story.image_manifest.openai_storyboard_response_shape = story.openai_storyboard_response_shape;
+    story.image_manifest.openai_storyboard_fallback_reason = story.openai_storyboard_fallback_reason;
+    story.image_manifest.openai_storyboard_checked_at = story.openai_storyboard_checked_at;
+    story.image_manifest.image_prompts = story.scenes.map((scene) => ({
+      scene: scene.id,
+      pose_id: scene.pose_id,
+      location: scene.panel_location || scene.setting,
+      prompt: scene.full_image_prompt || scene.image_prompt_fragment || "",
+      caption: scene.caption,
+      dialogue: scene.dialogue,
+      storyboard_caption: scene.storyboard_caption || scene.caption || "",
+      storyboard_dialogue: scene.storyboard_dialogue || scene.dialogue || scene.speech_bubble || "",
+    }));
+    await writeJson(`image-manifests/${date}.json`, story.image_manifest);
+  }
+
+  console.log(`Storyboard copy refined before image/caption render: ${story.storyboard_copy_source}`);
+  console.log(`OpenAI storyboard status: ${story.openai_storyboard_status}`);
+  if (story.openai_storyboard_fallback_reason) console.log(`OpenAI storyboard fallback reason: ${story.openai_storyboard_fallback_reason}`);
+}
+
 main().catch((error) => { console.error(error); process.exit(1); });
