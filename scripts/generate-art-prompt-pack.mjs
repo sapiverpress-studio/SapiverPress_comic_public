@@ -26,6 +26,34 @@ const TEMPLATE_REFS = [
   "isla_06_tomorrow_set.png",
 ];
 
+const POSTER_AND_MERCH_QUOTES = [
+  "One page at a time.",
+  "One number at a time.",
+  "One win.",
+  "Focus. Solve. Grow.",
+  "Lead with intention.",
+  "Progress over perfection.",
+  "Small steps. Big impact.",
+  "Purpose. Clarity. Consistency. Impact.",
+  "Ideas. Words. Impact.",
+  "Progress is always working.",
+  "Meeting Notes: Ideas, Action Steps, Next Steps.",
+  "Today’s Plan: Focus, Coffee, Be Kind.",
+];
+
+const ISLA_BOOK_TITLES = [
+  "Logic & Pattern",
+  "Word Wise",
+  "Puzzle Therapy",
+  "The Small Grid Method",
+  "Notes for Later",
+  "Pattern Language",
+  "The Useful Page",
+  "Calm Problems",
+  "Solve the Room",
+  "One Page Wins",
+];
+
 function clean(value) {
   return String(value || "").replace(/\s+/g, " ").trim();
 }
@@ -96,6 +124,35 @@ async function writeJson(filePath, data) {
   await writeText(filePath, `${JSON.stringify(data, null, 2)}\n`);
 }
 
+function stableIndex(seed, length) {
+  let hash = 2166136261;
+  for (const ch of String(seed || "")) {
+    hash ^= ch.charCodeAt(0);
+    hash = Math.imul(hash, 16777619);
+  }
+  return (hash >>> 0) % Math.max(1, length);
+}
+
+function pickFrom(list, seed, count) {
+  const out = [];
+  const offset = stableIndex(seed, list.length);
+  for (let i = 0; i < Math.min(count, list.length); i += 1) out.push(list[(offset + i) % list.length]);
+  return out;
+}
+
+function propTextBlock(scene, index) {
+  const sceneSeed = `${scene?.id || index}-${scene?.panel_location || scene?.setting || ""}-${scene?.caption || ""}`;
+  const quotes = pickFrom(POSTER_AND_MERCH_QUOTES, sceneSeed, 4);
+  const books = pickFrom(ISLA_BOOK_TITLES, `${sceneSeed}-books`, 4);
+  return [
+    "background includes coherent readable Sapiver Press prop text only on natural objects, never as a giant header",
+    `legible poster or cushion quotes: ${quotes.map((q) => `\"${q}\"`).join("; ")}`,
+    `visible book spine titles if books appear: ${books.map((b) => `\"${b}\"`).join("; ")}`,
+    "Sapiver Press logo allowed on mug, notebook, pencil case, cushion, or reception sign only",
+    "text must be clean, correctly spelled, and part of the physical scene",
+  ].join(", ");
+}
+
 function panelStoryBeat(scene) {
   return clean(
     scene.image_prompt_fragment ||
@@ -137,22 +194,24 @@ function promptParts({ scene, index, locks }) {
   const location = resolveLocation(scene, locks);
   const pose = resolvePose(scene, index, locks);
   const storyBeat = locks.staticPromptOnly ? "" : panelStoryBeat(scene);
+  const propText = locks.staticPromptOnly ? "" : propTextBlock(scene, index);
   const prompt = [
     locks.appearanceLock,
     locks.staticPromptOnly ? "" : composition.text,
     locks.staticPromptOnly ? "" : location.text,
     locks.staticPromptOnly ? "" : pose.text,
     storyBeat,
+    propText,
   ].filter(Boolean).join(", ");
 
-  return { composition, location, pose, storyBeat, prompt };
+  return { composition, location, pose, storyBeat, propText, prompt };
 }
 
 function replacementReadme(date, locks) {
   const modeLine = locks.staticPromptOnly
     ? "- STATIC EXPERIMENT MODE: every panel uses the same locked Isla prompt only; story fragments, pose blocks, location blocks, and composition blocks are not appended."
-    : "- Use the locked Isla appearance plus the selected composition, location, pose, and optional story beat for all generated panels.";
-  return `# Sapiver Press Comic Art Replacement Slots — ${date}\n\nDrop finished generated panel artwork into this folder using these exact names:\n\n${PANEL_FILES.map((name) => `- ${name}`).join("\n")}\n\nRules:\n\n${modeLine}\n- Do not include puzzle content, captions, speech bubbles, page headers, footers, or large Sapiver Press titles.\n- The compositor will insert the real daily puzzle screenshots and captions.\n- If a file is missing, the compositor falls back to the locked template artwork.\n- Starter and finished grid images are still generated from the real captured puzzle state.\n\nPlay URL: ${SUITE_URL}\n`;
+    : "- Use the locked Isla appearance plus the selected composition, location, pose, optional story beat, and controlled readable prop text.";
+  return `# Sapiver Press Comic Art Replacement Slots — ${date}\n\nDrop finished generated panel artwork into this folder using these exact names:\n\n${PANEL_FILES.map((name) => `- ${name}`).join("\n")}\n\nRules:\n\n${modeLine}\n- Do not include puzzle content, captions, speech bubbles, page headers, footers, or large Sapiver Press titles.\n- The compositor will insert the real daily puzzle screenshots and captions.\n- Background prop text is allowed only on natural objects such as posters, book spines, cushions, mugs, notebooks, pencil cases, or reception signs.\n- If a file is missing, the compositor falls back to the locked template artwork.\n- Starter and finished grid images are still generated from the real captured puzzle state.\n\nPlay URL: ${SUITE_URL}\n`;
 }
 
 async function mirrorFolder(sourceDir, latestDir) {
@@ -215,6 +274,7 @@ async function main() {
       pose_key: built.pose.key,
       pose_text: built.pose.text,
       story_beat: built.storyBeat,
+      prop_text: built.propText,
       static_prompt_only: locks.staticPromptOnly,
     });
   }
@@ -222,10 +282,10 @@ async function main() {
   const generatedAt = new Date().toISOString();
   const format = locks.staticPromptOnly
     ? "daily_art_prompt_pack_v4_static_isla_experiment"
-    : "daily_art_prompt_pack_v4_block_locked_isla";
+    : "daily_art_prompt_pack_v4_block_locked_isla_readable_props";
   const purpose = locks.staticPromptOnly
-    ? "Generate six replaceable Isla panel artworks using one static locked prompt only, with story, pose, location, and composition fragments disabled."
-    : "Generate six replaceable Isla panel artworks using appearance lock, composition template, location block, pose block, and optional story beat.";
+    ? "Generate six replaceable Isla panel artworks using one static locked prompt only, with story, pose, location, composition, and prop text fragments disabled."
+    : "Generate six replaceable Isla panel artworks using appearance lock, composition template, location block, pose block, optional story beat, and controlled readable prop text.";
 
   const manifest = {
     date,
@@ -242,6 +302,9 @@ async function main() {
     default_panel_poses: locks.defaultPanelPoses,
     static_prompt_only: locks.staticPromptOnly,
     locked_negative_prompt: locks.negativePrompt,
+    readable_prop_text_enabled: !locks.staticPromptOnly,
+    poster_and_merch_quotes: POSTER_AND_MERCH_QUOTES,
+    isla_book_titles: ISLA_BOOK_TITLES,
     panel_files: PANEL_FILES,
     panels,
     story_source: story.date === date ? `daily/${date}.json` : "latest.json",
@@ -260,6 +323,9 @@ async function main() {
     default_panel_poses: locks.defaultPanelPoses,
     static_prompt_only: locks.staticPromptOnly,
     locked_negative_prompt: locks.negativePrompt,
+    readable_prop_text_enabled: !locks.staticPromptOnly,
+    poster_and_merch_quotes: POSTER_AND_MERCH_QUOTES,
+    isla_book_titles: ISLA_BOOK_TITLES,
     replacement_dir: `art-replacements/${date}`,
     latest_replacement_dir: "art-replacements/latest",
     prompt_dir: `art-prompts/${date}`,
@@ -280,6 +346,7 @@ async function main() {
   console.log(`Daily Isla art prompt pack written: art-prompts/${date}`);
   console.log(`Machine-readable prompts written: art-prompts/${date}/prompts.json`);
   console.log(`Static prompt only: ${locks.staticPromptOnly ? "yes" : "no"}`);
+  console.log(`Readable prop text: ${locks.staticPromptOnly ? "disabled" : "enabled"}`);
   console.log(`Replacement slot folder prepared: art-replacements/${date}`);
 }
 
