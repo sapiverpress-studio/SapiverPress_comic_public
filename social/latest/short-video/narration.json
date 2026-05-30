@@ -1,6 +1,6 @@
 {
   "date": "2026-05-30",
-  "title": "Morning Puzzle Routine",
+  "title": "A Rainy Day Reflection",
   "voice_name": "Isla Sterling",
   "segments": [
     {
@@ -11,17 +11,17 @@
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "The kitchen is completely still in the soft morning light, offering a rare moment of peace."
+      "text": "The steady drumming of rain against the windowpane makes the morning feel wonderfully slow and steady."
     },
     {
       "id": "panel_2",
       "image_name": "02_panel-02.png",
-      "text": "Watching the world slide past the train window helps the first few ideas fall into place."
+      "text": "Watching the droplets slide down the glass while making a steady, careful adjustment to the grid."
     },
     {
       "id": "panel_3",
       "image_name": "03_panel-03.png",
-      "text": "A bustling street distracts just enough to make a hasty decision feel like a mistake."
+      "text": "There is no need to rush when the weather is giving me a perfect excuse to breathe."
     },
     {
       "id": "panel_4",
@@ -31,12 +31,12 @@
     {
       "id": "panel_5",
       "image_name": "05_panel-05.png",
-      "text": "Surrounded by the comforting scent of old books, the final pieces of the puzzle align."
+      "text": "Slowly but surely, the pieces are beginning to fall into their proper places amidst the steady."
     },
     {
       "id": "panel_6",
       "image_name": "06_panel-06.png",
-      "text": "With the morning routine finished, the rainy day outside doesn't seem so gloomy anymore."
+      "text": "Surrounded by my favorite plants, I can finally take a breath and enjoy this peaceful, rainy afternoon."
     },
     {
       "id": "cta",
@@ -44,9 +44,9 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nThe kitchen is completely still in the soft morning light, offering a rare moment of peace.\n\nWatching the world slide past the train window helps the first few ideas fall into place.\n\nA bustling street distracts just enough to make a hasty decision feel like a mistake.\n\nCheck the daily rule before trusting it.\n\nSurrounded by the comforting scent of old books, the final pieces of the puzzle align.\n\nWith the morning routine finished, the rainy day outside doesn't seem so gloomy anymore.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-05-30T20:14:16.259Z",
-  "caption": "Isla enjoys a quiet moment at home, piecing together her daily puzzle.",
+  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nThe steady drumming of rain against the windowpane makes the morning feel wonderfully slow and steady.\n\nWatching the droplets slide down the glass while making a steady, careful adjustment to the grid.\n\nThere is no need to rush when the weather is giving me a perfect excuse to breathe.\n\nCheck the daily rule before trusting it.\n\nSlowly but surely, the pieces are beginning to fall into their proper places amidst the steady.\n\nSurrounded by my favorite plants, I can finally take a breath and enjoy this peaceful, rainy afternoon.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-05-30T20:20:07.985Z",
+  "caption": "Embracing the slow moments while solving a puzzle.",
   "variant_name": "daily rule",
   "variant_line": "Check the daily rule before trusting it.",
   "copy_refined": "openai",
