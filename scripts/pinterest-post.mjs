@@ -1,4 +1,5 @@
 import fs from "fs/promises";
+import path from "path";
 
 const API = "https://api.pinterest.com/v5";
 const OWNER = "sapiverpress-studio";
@@ -9,54 +10,31 @@ const STATE_PATH = process.env.PINTEREST_POST_STATE_PATH || "pinterest-posts.jso
 const BOARD_NAME = process.env.PINTEREST_BOARD_NAME || "Sapiver Press Comic";
 const FORCE = ["1", "true", "yes", "y", "on"].includes(String(process.env.FORCE_PINTEREST_POST || "").toLowerCase());
 const REQUIRED_SCOPES = "boards:read boards:write pins:read pins:write";
-
-const EXPECTED_IMAGES = [
-  { number: 1, image_name: "00_start-grid.png", label: "Starter grid", alt: "starter grid" },
-  { number: 2, image_name: "01_panel-01.png", label: "Isla panel 1", alt: "Isla comic panel 1", sceneIndex: 0 },
-  { number: 3, image_name: "02_panel-02.png", label: "Isla panel 2", alt: "Isla comic panel 2", sceneIndex: 1 },
-  { number: 4, image_name: "03_panel-03.png", label: "Isla panel 3", alt: "Isla comic panel 3", sceneIndex: 2 },
-  { number: 5, image_name: "04_panel-04.png", label: "Isla panel 4", alt: "Isla comic panel 4", sceneIndex: 3 },
-  { number: 6, image_name: "05_panel-05.png", label: "Isla panel 5", alt: "Isla comic panel 5", sceneIndex: 4 },
-  { number: 7, image_name: "06_panel-06.png", label: "Isla panel 6", alt: "Isla comic panel 6", sceneIndex: 5 },
-  { number: 8, image_name: "07_finished-grid.png", label: "Finished grid", alt: "finished grid" },
-];
+const COVER_IMAGE_NAME = process.env.PINTEREST_COVER_IMAGE_NAME || "00_start-grid.png";
 
 function londonDateString() {
   const override = process.env.DATE_OVERRIDE || "";
-  if (override && !/^\d{4}-\d{2}-\d{2}$/.test(override)) {
-    throw new Error(`DATE_OVERRIDE must be YYYY-MM-DD. Received: ${override}`);
-  }
+  if (override && !/^\d{4}-\d{2}-\d{2}$/.test(override)) throw new Error(`DATE_OVERRIDE must be YYYY-MM-DD. Received: ${override}`);
   const base = override ? new Date(`${override}T12:00:00Z`) : new Date();
-  const parts = new Intl.DateTimeFormat("en-GB", {
-    timeZone: "Europe/London",
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-  }).formatToParts(base);
+  const parts = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(base);
   const get = (type) => parts.find((p) => p.type === type)?.value;
   return `${get("year")}-${get("month")}-${get("day")}`;
 }
 
 function humanDate(date) {
-  return new Intl.DateTimeFormat("en-GB", {
-    timeZone: "Europe/London",
-    weekday: "long",
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  }).format(new Date(`${date}T12:00:00Z`));
+  return new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/London", weekday: "long", day: "numeric", month: "long", year: "numeric" }).format(new Date(`${date}T12:00:00Z`));
 }
 
 async function readJson(filePath, fallback) {
-  try {
-    return JSON.parse(await fs.readFile(filePath, "utf8"));
-  } catch {
-    return fallback;
-  }
+  try { return JSON.parse(await fs.readFile(filePath, "utf8")); } catch { return fallback; }
 }
 
 async function writeJson(filePath, data) {
   await fs.writeFile(filePath, `${JSON.stringify(data, null, 2)}\n`, "utf8");
+}
+
+async function fileExists(filePath) {
+  try { await fs.access(filePath); return true; } catch { return false; }
 }
 
 function authHeader() {
@@ -84,11 +62,7 @@ async function pinterestFetch(route, options = {}) {
   });
   const text = await response.text();
   let data = null;
-  try {
-    data = text ? JSON.parse(text) : null;
-  } catch {
-    data = { raw: text };
-  }
+  try { data = text ? JSON.parse(text) : null; } catch { data = { raw: text }; }
   if (!response.ok) throw pinterestApiError(response.status, data);
   return data;
 }
@@ -109,9 +83,7 @@ async function listBoards() {
 
 async function getBoard() {
   const explicitBoardId = process.env.PINTEREST_BOARD_ID?.trim();
-  if (explicitBoardId) {
-    return { id: explicitBoardId, name: process.env.PINTEREST_BOARD_NAME || "Configured board" };
-  }
+  if (explicitBoardId) return { id: explicitBoardId, name: process.env.PINTEREST_BOARD_NAME || "Configured board" };
   const boards = await listBoards();
   const existing = boards.find((board) => String(board.name || "").trim().toLowerCase() === BOARD_NAME.toLowerCase());
   if (!existing?.id) {
@@ -121,15 +93,25 @@ async function getBoard() {
   return existing;
 }
 
-function rawGithubImageUrl(date, imageName) {
-  return `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/social/${date}/${encodeURIComponent(imageName)}?v=${encodeURIComponent(date)}`;
+function rawGithubAssetUrl(repoPath, date) {
+  return `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/${repoPath.split("/").map(encodeURIComponent).join("/")}?v=${encodeURIComponent(date)}`;
 }
 
-function delay(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
+function videoFileName(date) {
+  return `sapiver_isla_daily_${date}.mp4`;
 }
 
-async function assertImageReachable(url) {
+function videoPath(date) {
+  return `social/${date}/short-video/${videoFileName(date)}`;
+}
+
+function coverImagePath(date) {
+  return `social/${date}/${COVER_IMAGE_NAME}`;
+}
+
+function delay(ms) { return new Promise((resolve) => setTimeout(resolve, ms)); }
+
+async function assertReachable(url, label) {
   let lastStatus = "not attempted";
   for (let attempt = 1; attempt <= 4; attempt += 1) {
     const response = await fetch(url, { method: "GET", headers: { "user-agent": "SapiverPressPinterestBot/1.0" } });
@@ -137,11 +119,13 @@ async function assertImageReachable(url) {
     if (response.ok) return;
     if (attempt < 4) await delay(2500);
   }
-  throw new Error(`Pinterest image URL is not reachable yet: ${lastStatus} ${url}`);
+  throw new Error(`Pinterest ${label} URL is not reachable yet: ${lastStatus} ${url}`);
 }
 
-function pinTitle(date, imageSpec) {
-  return `${imageSpec.number}/8 — ${imageSpec.label} — ${date}`.slice(0, 100);
+async function readStory(date) {
+  const dailyStory = await readJson(`daily/${date}.json`, null);
+  if (dailyStory) return dailyStory;
+  return readJson("latest.json", null);
 }
 
 function compactDescription(parts) {
@@ -154,128 +138,145 @@ function compactDescription(parts) {
   return `${trimmedBody} ${cta}`.trim().slice(0, 490);
 }
 
-function descriptionFor(story, imageSpec) {
+function videoTitle(date, story) {
+  const title = story?.storyboard_arc_title || story?.arc_title || "Isla daily puzzle comic";
+  return `${title} — ${date}`.slice(0, 100);
+}
+
+function videoDescription(story) {
   const note = story?.story_note || "Isla is back with today's Sapiver Press daily puzzle.";
-  const caption = Number.isInteger(imageSpec.sceneIndex) ? story?.scenes?.[imageSpec.sceneIndex]?.caption : "";
-  return compactDescription([note, caption]);
+  const panel = story?.scenes?.[3]?.caption || story?.storyboard_arc?.puzzle_moment || "Watch today's puzzle moment unfold.";
+  return compactDescription([note, panel]);
 }
 
-function altTextFor(date, imageSpec) {
-  return `Part ${imageSpec.number} of 8 in the Sapiver Press daily comic set for ${humanDate(date)}: ${imageSpec.alt}.`.slice(0, 490);
+function videoAltText(date) {
+  return `Short Sapiver Press daily comic video for ${humanDate(date)}, showing Isla solving today's puzzle from starter grid to finished grid.`.slice(0, 490);
 }
 
-async function createPin({ boardId, date, imageSpec, imageUrl, story }) {
+async function createPinterestMedia() {
+  return pinterestFetch("/media", {
+    method: "POST",
+    body: JSON.stringify({ media_type: "video" }),
+  });
+}
+
+async function uploadVideoToPinterest(uploadInfo, localVideoPath) {
+  const uploadUrl = uploadInfo.upload_url;
+  const mediaId = uploadInfo.media_id || uploadInfo.id;
+  const params = uploadInfo.upload_parameters || {};
+  if (!uploadUrl || !mediaId) throw new Error(`Pinterest media create did not return upload_url/media_id: ${JSON.stringify(uploadInfo)}`);
+
+  const form = new FormData();
+  for (const [key, value] of Object.entries(params)) form.append(key, String(value));
+  const bytes = await fs.readFile(localVideoPath);
+  form.append("file", new Blob([bytes], { type: "video/mp4" }), path.basename(localVideoPath));
+
+  const response = await fetch(uploadUrl, { method: "POST", body: form });
+  const text = await response.text();
+  if (!response.ok) throw new Error(`Pinterest media upload failed ${response.status}: ${text.slice(0, 800)}`);
+  return mediaId;
+}
+
+async function waitForMediaReady(mediaId) {
+  let last = null;
+  for (let attempt = 1; attempt <= 30; attempt += 1) {
+    last = await pinterestFetch(`/media/${encodeURIComponent(mediaId)}`);
+    const status = String(last.status || last.media_status || "").toLowerCase();
+    if (["succeeded", "success", "finished", "ready", "available"].includes(status)) return last;
+    if (["failed", "failure", "error"].includes(status)) throw new Error(`Pinterest media processing failed: ${JSON.stringify(last)}`);
+    await delay(10000);
+  }
+  throw new Error(`Pinterest media processing did not finish in time. Last response: ${JSON.stringify(last)}`);
+}
+
+async function createVideoPin({ boardId, date, mediaId, coverImageUrl, story }) {
   return pinterestFetch("/pins", {
     method: "POST",
     body: JSON.stringify({
       board_id: boardId,
-      title: pinTitle(date, imageSpec),
-      description: descriptionFor(story, imageSpec),
+      title: videoTitle(date, story),
+      description: videoDescription(story),
       link: SUITE_URL,
-      alt_text: altTextFor(date, imageSpec),
-      media_source: { source_type: "image_url", url: imageUrl },
+      alt_text: videoAltText(date),
+      media_source: {
+        source_type: "video_id",
+        media_id: mediaId,
+        cover_image_url: coverImageUrl,
+      },
     }),
   });
 }
 
-async function readStory(date) {
-  const dailyStory = await readJson(`daily/${date}.json`, null);
-  if (dailyStory) return dailyStory;
-  return readJson("latest.json", null);
+function normalizeExistingEntry(entry) {
+  if (!entry) return {};
+  return { ...entry };
 }
 
-function normalizeExistingEntry(date, entry) {
-  if (!entry) return { pins: [] };
-  if (Array.isArray(entry.pins)) {
-    return {
-      ...entry,
-      pins: entry.pins.filter((pin) => pin?.pin_id && pin?.image_name),
-    };
-  }
-  if (entry.pin_id && entry.image_name) {
-    const imageSpec = EXPECTED_IMAGES.find((item) => item.image_name === entry.image_name) || EXPECTED_IMAGES[0];
-    return {
-      ...entry,
-      pin_count: 1,
-      pins: [
-        {
-          pin_id: entry.pin_id,
-          image_name: entry.image_name,
-          image_url: entry.image_url || rawGithubImageUrl(date, entry.image_name),
-          title: pinTitle(date, imageSpec),
-          posted_at: entry.posted_at || new Date().toISOString(),
-        },
-      ],
-    };
-  }
-  return { ...entry, pins: [] };
+function hasRecordedVideo(entry) {
+  return Boolean(entry?.video_pin_id || entry?.pin_id && entry?.media_type === "video");
 }
 
-function buildStateEntry({ existingEntry, board, pins }) {
+function buildStateEntry({ existingEntry, board, pin, mediaId, date, videoUrl, coverImageUrl }) {
   const now = new Date().toISOString();
+  const pinId = pin.id || pin.pin_id;
   return {
+    ...existingEntry,
     board_id: board.id,
     board_name: board.name || BOARD_NAME,
     link: SUITE_URL,
     posted_at: now,
-    pin_count: pins.length,
-    pins,
-    ...(existingEntry?.legacy_note ? { legacy_note: existingEntry.legacy_note } : {}),
+    media_type: "video",
+    video_pin_id: pinId,
+    pin_id: pinId,
+    pinterest_media_id: mediaId,
+    video_name: videoFileName(date),
+    video_url: videoUrl,
+    cover_image_name: COVER_IMAGE_NAME,
+    cover_image_url: coverImageUrl,
+    title: videoTitle(date, null),
   };
 }
 
 async function main() {
   const date = londonDateString();
   const state = await readJson(STATE_PATH, {});
-  const existingEntry = normalizeExistingEntry(date, state[date]);
-  const existingByImage = new Map(existingEntry.pins.map((pin) => [pin.image_name, pin]));
-  const hasCompleteSet = EXPECTED_IMAGES.every((imageSpec) => existingByImage.has(imageSpec.image_name));
+  const existingEntry = normalizeExistingEntry(state[date]);
 
-  if (hasCompleteSet && !FORCE) {
-    console.log(`Pinterest already has 8 recorded pins for ${date}.`);
+  if (hasRecordedVideo(existingEntry) && !FORCE) {
+    console.log(`Pinterest already has a recorded video pin for ${date}: ${existingEntry.video_pin_id || existingEntry.pin_id}`);
     return;
   }
 
   const story = await readStory(date);
-  const images = EXPECTED_IMAGES.map((imageSpec) => ({
-    ...imageSpec,
-    image_url: rawGithubImageUrl(date, imageSpec.image_name),
-  }));
-
-  console.log(`Checking ${images.length} Pinterest image URLs for ${date}.`);
-  for (const image of images) {
-    await assertImageReachable(image.image_url);
+  const localVideoPath = videoPath(date);
+  if (!(await fileExists(localVideoPath))) {
+    throw new Error(`Pinterest video file is missing: ${localVideoPath}. Ensure short-video-build ran before pinterest-post.`);
   }
+
+  const videoUrl = rawGithubAssetUrl(videoPath(date), date);
+  const coverImageUrl = rawGithubAssetUrl(coverImagePath(date), date);
+  console.log(`Checking Pinterest video assets for ${date}.`);
+  await assertReachable(videoUrl, "video");
+  await assertReachable(coverImageUrl, "cover image");
 
   const board = await getBoard();
   if (!board?.id) throw new Error(`Pinterest board did not return an id: ${JSON.stringify(board)}`);
   console.log(`Pinterest board: ${board.name || BOARD_NAME} (${board.id})`);
 
-  const pins = FORCE ? [] : [...existingEntry.pins];
-  const imagesToPost = FORCE ? images : images.filter((image) => !existingByImage.has(image.image_name));
+  console.log(`Creating Pinterest video media upload for ${videoFileName(date)}.`);
+  const uploadInfo = await createPinterestMedia();
+  const mediaId = await uploadVideoToPinterest(uploadInfo, localVideoPath);
+  console.log(`Pinterest media uploaded: ${mediaId}. Waiting for processing.`);
+  await waitForMediaReady(mediaId);
 
-  console.log(`Pinterest pins to post for ${date}: ${imagesToPost.length}/${images.length}`);
-  for (const image of imagesToPost) {
-    console.log(`Posting Pinterest pin ${image.number}/8: ${image.image_name}`);
-    const pin = await createPin({ boardId: board.id, date, imageSpec: image, imageUrl: image.image_url, story });
-    const pinId = pin.id || pin.pin_id;
-    if (!pinId) throw new Error(`Pinterest pin response did not return an id for ${image.image_name}: ${JSON.stringify(pin)}`);
-    pins.push({
-      pin_id: pinId,
-      image_name: image.image_name,
-      image_url: image.image_url,
-      title: pinTitle(date, image),
-      posted_at: new Date().toISOString(),
-    });
-  }
+  console.log(`Posting Pinterest video pin for ${date}.`);
+  const pin = await createVideoPin({ boardId: board.id, date, mediaId, coverImageUrl, story });
+  const pinId = pin.id || pin.pin_id;
+  if (!pinId) throw new Error(`Pinterest video pin response did not return an id: ${JSON.stringify(pin)}`);
 
-  const sortedPins = EXPECTED_IMAGES
-    .map((imageSpec) => pins.find((pin) => pin.image_name === imageSpec.image_name))
-    .filter(Boolean);
-
-  state[date] = buildStateEntry({ existingEntry, board, pins: sortedPins });
+  state[date] = buildStateEntry({ existingEntry, board, pin, mediaId, date, videoUrl, coverImageUrl });
   await writeJson(STATE_PATH, state);
-  console.log(`Pinterest state updated for ${date}: ${sortedPins.length}/8 pins recorded.`);
+  console.log(`Pinterest state updated for ${date}: video pin recorded (${pinId}).`);
 }
 
 main().catch((error) => {
