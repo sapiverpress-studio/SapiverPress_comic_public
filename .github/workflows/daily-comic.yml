@@ -130,6 +130,8 @@ jobs:
         env:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
           SUITE_URL: "https://suite.sapiverpress.co.uk"
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
           ELEVENLABS_VOICE_NAME: "Isla Sterling"
           ELEVENLABS_VOICE_ID: "qSR2T7SqN7Pcd0YpO3Vd"
         run: npm run short-video-script
