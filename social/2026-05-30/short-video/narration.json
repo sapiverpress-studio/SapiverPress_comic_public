@@ -1,6 +1,6 @@
 {
   "date": "2026-05-30",
-  "title": "A Rainy Day Reflection",
+  "title": "Isla's Journey of Focus",
   "voice_name": "Isla Sterling",
   "segments": [
     {
@@ -11,17 +11,17 @@
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "The steady drumming of rain against the windowpane makes the morning feel wonderfully slow and steady."
+      "text": "The early morning sun hits the kitchen table just right, giving her a steady moment to prepare."
     },
     {
       "id": "panel_2",
       "image_name": "02_panel-02.png",
-      "text": "Watching the droplets slide down the glass while making a steady, careful adjustment to the grid."
+      "text": "Watching the world rush past the train window helps her settle into a deep, focused state of mind."
     },
     {
       "id": "panel_3",
       "image_name": "03_panel-03.png",
-      "text": "There is no need to rush when the weather is giving me a perfect excuse to breathe."
+      "text": "Stepping off the train for a quick coffee gives her a perfect chance to rethink her strategy."
     },
     {
       "id": "panel_4",
@@ -31,12 +31,12 @@
     {
       "id": "panel_5",
       "image_name": "05_panel-05.png",
-      "text": "Slowly but surely, the pieces are beginning to fall into their proper places amidst the steady."
+      "text": "Finding a steady nook surrounded by books helps the final pieces of the puzzle fall into place."
     },
     {
       "id": "panel_6",
       "image_name": "06_panel-06.png",
-      "text": "Surrounded by my favorite plants, I can finally take a breath and enjoy this peaceful, rainy afternoon."
+      "text": "With the journey coming to an end, she watches the rain gather on the glass with satisfaction."
     },
     {
       "id": "cta",
@@ -44,9 +44,9 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nThe steady drumming of rain against the windowpane makes the morning feel wonderfully slow and steady.\n\nWatching the droplets slide down the glass while making a steady, careful adjustment to the grid.\n\nThere is no need to rush when the weather is giving me a perfect excuse to breathe.\n\nCheck the daily rule before trusting it.\n\nSlowly but surely, the pieces are beginning to fall into their proper places amidst the steady.\n\nSurrounded by my favorite plants, I can finally take a breath and enjoy this peaceful, rainy afternoon.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-05-30T20:20:07.985Z",
-  "caption": "Embracing the slow moments while solving a puzzle.",
+  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nThe early morning sun hits the kitchen table just right, giving her a steady moment to prepare.\n\nWatching the world rush past the train window helps her settle into a deep, focused state of mind.\n\nStepping off the train for a quick coffee gives her a perfect chance to rethink her strategy.\n\nCheck the daily rule before trusting it.\n\nFinding a steady nook surrounded by books helps the final pieces of the puzzle fall into place.\n\nWith the journey coming to an end, she watches the rain gather on the glass with satisfaction.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-05-30T20:32:47.622Z",
+  "caption": "Join Isla as she navigates her thoughts and puzzles during a train journey.",
   "variant_name": "daily rule",
   "variant_line": "Check the daily rule before trusting it.",
   "copy_refined": "openai",
