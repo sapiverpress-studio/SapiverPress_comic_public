@@ -45,15 +45,15 @@
   ],
   "storyboard_copy_source": "openai_repair+gemini",
   "storyboard_copy_model": "gpt-4o-mini",
-  "storyboard_arc_title": "Isla's Journey of Focus",
+  "storyboard_arc_title": "Isla's Puzzle Day",
   "storyboard_arc_type": "story_driven_not_location_driven",
   "storyboard_arc": {
-    "setup": "Before the daily rush takes over, Isla ignores her to-do list and opens up the grid.",
-    "disruption": "As her train schedule slips, Isla decides to keep working rather than stressing over the delay.",
-    "choice": "Finding a steady corner, she flips her phone screen-down and gives herself just three minutes.",
+    "setup": "With a daunting to-do list looming, Isla slides into her favorite corner to solve the morning grid.",
+    "disruption": "As the rain starts to pour, her schedule slips, but she refuses to rush her morning.",
+    "choice": "Sipping her coffee, she flips her phone over to carve out a steady, three-minute escape.",
     "puzzle_moment": "The daily rule changes the move, so Isla checks it before trusting the answer.",
-    "consequence": "Having verified the rule, her solution holds and the rest of the day feels manageable.",
-    "resolution": "With the final puzzle solved, Isla shuts her laptop before the daily pressure can return."
+    "consequence": "Her patience pays off as the pattern snaps perfectly into place with a satisfying click.",
+    "resolution": "With the grid complete, she shuts her screen, feeling ready to face her actual workspace."
   },
   "storyboard_quality": {
     "location_sequence_only": false,
@@ -116,7 +116,7 @@
   "openai_storyboard_model": "gpt-4o-mini",
   "openai_storyboard_response_shape": null,
   "openai_storyboard_fallback_reason": null,
-  "openai_storyboard_checked_at": "2026-05-30T12:29:04.412Z",
+  "openai_storyboard_checked_at": "2026-05-30T12:34:05.324Z",
   "gemini_allowed_fields": [
     "caption",
     "dialogue"
@@ -135,12 +135,12 @@
   "puzzle_product": "Trigoku Daily Lock",
   "puzzle_url": "https://suite.sapiverpress.co.uk",
   "captions": [
-    "Let's get a head start on this before everything gets too chaotic.\nBefore the daily rush takes over, Isla ignores her to-do list and opens up the grid.",
-    "No need to panic about the schedule. I'll just use this time to keep focusing.\nAs her train schedule slips, Isla decides to keep working rather than stressing over the delay.",
-    "Just three minutes of total focus, right here.\nFinding a steady corner, she flips her phone screen-down and gives herself just three minutes.",
+    "Let's get this done before the morning rush hits.\nWith a daunting to-do list looming, Isla slides into her favorite corner to solve the morning grid.",
+    "No point in stressing over a delayed train.\nAs the rain starts to pour, her schedule slips, but she refuses to rush her morning.",
+    "Just a few minutes to myself before the real work begins.\nSipping her coffee, she flips her phone over to carve out a steady, three-minute escape.",
     "Check the daily rule before trusting it.\nThe daily rule changes the move, so Isla checks it before trusting the answer.",
-    "Perfect. That strategy actually works.\nHaving verified the rule, her solution holds and the rest of the day feels manageable.",
-    "That's enough for now. Time to just enjoy the ride.\nWith the final puzzle solved, Isla shuts her laptop before the daily pressure can return."
+    "Ah, there we go. It actually works now.\nHer patience pays off as the pattern snaps perfectly into place with a satisfying click.",
+    "And that is my cue to finally start the workday.\nWith the grid complete, she shuts her screen, feeling ready to face her actual workspace."
   ],
   "storyboard_locations": [
     "small home kitchen table in warm morning light",
@@ -161,27 +161,27 @@
       "output": "social/2026-05-30/01_panel-01.png",
       "screen_quad": [
         [
-          667,
-          653
+          621,
+          615
         ],
         [
-          1033,
-          680
+          974,
+          642
         ],
         [
-          988,
-          954
+          933,
+          901
         ],
         [
-          628,
-          881
+          586,
+          841
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Let's get a head start on this before everything gets too chaotic.\nBefore the daily rush takes over, Isla ignores her to-do list and opens up the grid.",
+      "storyboard_text": "Let's get this done before the morning rush hits.\nWith a daunting to-do list looming, Isla slides into her favorite corner to solve the morning grid.",
       "arc_role": "setup",
-      "storyboard_caption": "Before the daily rush takes over, Isla ignores her to-do list and opens up the grid.",
-      "storyboard_dialogue": "Let's get a head start on this before everything gets too chaotic.",
+      "storyboard_caption": "With a daunting to-do list looming, Isla slides into her favorite corner to solve the morning grid.",
+      "storyboard_dialogue": "Let's get this done before the morning rush hits.",
       "panel_location": "small home kitchen table in warm morning light"
     },
     {
@@ -194,27 +194,27 @@
       "output": "social/2026-05-30/02_panel-02.png",
       "screen_quad": [
         [
-          612,
-          629
+          597,
+          688
         ],
         [
-          1004,
-          651
+          991,
+          707
         ],
         [
-          974,
-          927
+          953,
+          990
         ],
         [
-          591,
-          867
+          563,
+          934
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "No need to panic about the schedule. I'll just use this time to keep focusing.\nAs her train schedule slips, Isla decides to keep working rather than stressing over the delay.",
+      "storyboard_text": "No point in stressing over a delayed train.\nAs the rain starts to pour, her schedule slips, but she refuses to rush her morning.",
       "arc_role": "disruption",
-      "storyboard_caption": "As her train schedule slips, Isla decides to keep working rather than stressing over the delay.",
-      "storyboard_dialogue": "No need to panic about the schedule. I'll just use this time to keep focusing.",
+      "storyboard_caption": "As the rain starts to pour, her schedule slips, but she refuses to rush her morning.",
+      "storyboard_dialogue": "No point in stressing over a delayed train.",
       "panel_location": "train table by the window"
     },
     {
@@ -227,27 +227,27 @@
       "output": "social/2026-05-30/03_panel-03.png",
       "screen_quad": [
         [
-          662,
-          638
+          730,
+          609
         ],
         [
-          1029,
-          664
+          1068,
+          635
         ],
         [
-          991,
-          926
+          1043,
+          895
         ],
         [
-          631,
-          865
+          696,
+          838
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Just three minutes of total focus, right here.\nFinding a steady corner, she flips her phone screen-down and gives herself just three minutes.",
+      "storyboard_text": "Just a few minutes to myself before the real work begins.\nSipping her coffee, she flips her phone over to carve out a steady, three-minute escape.",
       "arc_role": "choice",
-      "storyboard_caption": "Finding a steady corner, she flips her phone screen-down and gives herself just three minutes.",
-      "storyboard_dialogue": "Just three minutes of total focus, right here.",
+      "storyboard_caption": "Sipping her coffee, she flips her phone over to carve out a steady, three-minute escape.",
+      "storyboard_dialogue": "Just a few minutes to myself before the real work begins.",
       "panel_location": "outdoor cafe street table or rainy window nook"
     },
     {
@@ -260,20 +260,20 @@
       "output": "social/2026-05-30/04_panel-04.png",
       "screen_quad": [
         [
-          638,
-          674
+          685,
+          576
         ],
         [
-          1023,
-          697
+          1067,
+          596
         ],
         [
-          982,
-          980
+          1037,
+          882
         ],
         [
-          604,
-          915
+          646,
+          828
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -293,76 +293,65 @@
       "output": "social/2026-05-30/05_panel-05.png",
       "screen_quad": [
         [
-          661,
-          667
+          654,
+          657
         ],
         [
-          1022,
-          692
+          1067,
+          678
         ],
         [
-          977,
-          962
+          1030,
+          974
         ],
         [
-          619,
-          899
+          616,
+          916
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Perfect. That strategy actually works.\nHaving verified the rule, her solution holds and the rest of the day feels manageable.",
+      "storyboard_text": "Ah, there we go. It actually works now.\nHer patience pays off as the pattern snaps perfectly into place with a satisfying click.",
       "arc_role": "consequence",
-      "storyboard_caption": "Having verified the rule, her solution holds and the rest of the day feels manageable.",
-      "storyboard_dialogue": "Perfect. That strategy actually works.",
+      "storyboard_caption": "Her patience pays off as the pattern snaps perfectly into place with a satisfying click.",
+      "storyboard_dialogue": "Ah, there we go. It actually works now.",
       "panel_location": "bookshop cafe corner or public library reading table"
     },
     {
       "scene": "scene_06",
-      "art_source": "template",
-      "art_path": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "replacement": "",
+      "art_source": "replacement",
+      "art_path": "art-replacements/2026-05-30/06_panel-06.png",
+      "template": "",
+      "replacement": "art-replacements/2026-05-30/06_panel-06.png",
       "capture": "captures/2026-05-30/extracted/06_complete_solution.png",
       "output": "social/2026-05-30/06_panel-06.png",
       "screen_quad": [
         [
-          652,
-          707
+          710,
+          594
         ],
         [
-          1071,
-          721
+          1067,
+          615
         ],
         [
-          1040,
-          1010
+          1036,
+          866
         ],
         [
-          624,
-          952
+          681,
+          812
         ]
       ],
-      "screen_quad_mode": "template_locked",
-      "recovered_from_missing_replacement_screen": true,
-      "failed_replacements": [
-        "art-replacements/2026-05-30/06_panel-06.png",
-        "art-replacements/latest/06_panel-06.png"
-      ],
-      "storyboard_text": "That's enough for now. Time to just enjoy the ride.\nWith the final puzzle solved, Isla shuts her laptop before the daily pressure can return.",
+      "screen_quad_mode": "detected_replacement_screen",
+      "storyboard_text": "And that is my cue to finally start the workday.\nWith the grid complete, she shuts her screen, feeling ready to face her actual workspace.",
       "arc_role": "resolution",
-      "storyboard_caption": "With the final puzzle solved, Isla shuts her laptop before the daily pressure can return.",
-      "storyboard_dialogue": "That's enough for now. Time to just enjoy the ride.",
+      "storyboard_caption": "With the grid complete, she shuts her screen, feeling ready to face her actual workspace.",
+      "storyboard_dialogue": "And that is my cue to finally start the workday.",
       "panel_location": "rainy window nook with plants"
     }
   ],
-  "all_panels_have_screen_overlay": false,
-  "screen_overlay_failures": [
-    {
-      "scene": "scene_06",
-      "output": "social/2026-05-30/06_panel-06.png",
-      "screen_quad_mode": "template_locked",
-      "panel_location": "rainy window nook with plants"
-    }
-  ],
-  "posting_allowed": false
+  "all_panels_have_screen_overlay": true,
+  "screen_overlay_failures": [],
+  "screen_overlay_recoveries": [],
+  "posting_allowed": true
 }
