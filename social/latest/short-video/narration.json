@@ -1,6 +1,6 @@
 {
   "date": "2026-05-30",
-  "title": "Quiet Morning Rituals",
+  "title": "A Rainy Day Reflection",
   "voice_name": "Isla Sterling",
   "segments": [
     {
@@ -11,17 +11,17 @@
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "Isla starts her morning in the steady kitchen, savoring the stillness before the day gets loud."
+      "text": "Raindrops tap softly against the glass, matching the slow, steady rhythm of a lazy morning."
     },
     {
       "id": "panel_2",
       "image_name": "02_panel-02.png",
-      "text": "The steady hum of the train offers a brief moment to plan out her morning routine."
+      "text": "The steady downpour outside seems to blur the edges of the world, slowing everything right down."
     },
     {
       "id": "panel_3",
       "image_name": "03_panel-03.png",
-      "text": "Sipping her warm coffee, she pauses to reconsider her next step before committing to it."
+      "text": "There is no need to rush when the weather itself is telling everyone to take a break."
     },
     {
       "id": "panel_4",
@@ -31,12 +31,12 @@
     {
       "id": "panel_5",
       "image_name": "05_panel-05.png",
-      "text": "With the constraints cleared up, the pieces of her plan finally start falling into place."
+      "text": "With the trickier parts of the puzzle sorted, the rest of the pieces fall into place."
     },
     {
       "id": "panel_6",
       "image_name": "06_panel-06.png",
-      "text": "Finding her rhythm in the steady corner, she feels ready to face whatever comes next."
+      "text": "Watching the rain gather on the leaves outside, she finally feels ready to start her day."
     },
     {
       "id": "cta",
@@ -44,9 +44,9 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nIsla starts her morning in the steady kitchen, savoring the stillness before the day gets loud.\n\nThe steady hum of the train offers a brief moment to plan out her morning routine.\n\nSipping her warm coffee, she pauses to reconsider her next step before committing to it.\n\nCheck the daily rule before trusting it.\n\nWith the constraints cleared up, the pieces of her plan finally start falling into place.\n\nFinding her rhythm in the steady corner, she feels ready to face whatever comes next.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-05-30T14:50:26.566Z",
-  "caption": "Isla finds steadiness in her morning routine before the day begins.",
+  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nRaindrops tap softly against the glass, matching the slow, steady rhythm of a lazy morning.\n\nThe steady downpour outside seems to blur the edges of the world, slowing everything right down.\n\nThere is no need to rush when the weather itself is telling everyone to take a break.\n\nCheck the daily rule before trusting it.\n\nWith the trickier parts of the puzzle sorted, the rest of the pieces fall into place.\n\nWatching the rain gather on the leaves outside, she finally feels ready to start her day.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-05-30T15:28:12.704Z",
+  "caption": "Embracing the slower pace of a rainy day.",
   "variant_name": "daily rule",
   "variant_line": "Check the daily rule before trusting it.",
   "copy_refined": "openai",
