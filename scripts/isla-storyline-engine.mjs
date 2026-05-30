@@ -320,10 +320,15 @@ async function callClaude({ date, weekdayName, characterFile, storyHistory, puzz
     "Return JSON only. No markdown.",
     "Isla is the only character and she posts every day.",
     "The product is Trigoku Daily Lock at suite.sapiverpress.co.uk.",
-    "Do not write promotional ad copy. Keep Isla's voice understated and real.",
+    "Do not write promotional ad copy.",
     "Do not invent puzzle grids or puzzle data; the real puzzle screen is composited later.",
     "Avoid repeating the same arc, stuck-moment type, or emotional rhythm from the previous 3 history entries.",
     "Use the required six beats in order, but vary the moment of resistance and daily texture.",
+    "The puzzle has a daily variant (Anti-Knight, Consecutive, etc.). Use variant_recap.variant_name and variant_recap.line in the puzzle_moment beat. Never call the variant 'Trigoku' — Trigoku is the product.",
+    "Captions must be specific to this day's arc. No caption should be interchangeable with a caption from a different strip.",
+    "Dialogue must sound like something Isla would say out loud — short, direct, in her own voice.",
+    "Banned words and phrases: quiet, understated, gentle, borrowed, anchor, ritual. If you use them, the output will be rejected.",
+    "Captions: 10-18 words maximum. One clause. Show the moment, do not summarise it.",
   ].join("\n");
 
   const payload = {
@@ -336,11 +341,12 @@ async function callClaude({ date, weekdayName, characterFile, storyHistory, puzz
     caption_bank: characterFile.caption_bank || FALLBACK_CAPTIONS,
     selected_setting: setting,
     puzzle_state: puzzleState,
+    variant_recap: puzzleState?.variant_recap || null,
     last_7_story_history: recentSeven,
     last_3_story_history_to_avoid_repeating: recentThree,
     hard_rules: [
       "Each scene_description must be 2 sentences max.",
-      "Each caption must be short, understated, real, and not promotional.",
+      "Each caption must be short, specific, real, and not promotional.",
       "At least two panels must imply front-facing or three-quarter face visibility through image_prompt_fragment.",
       `facebook_post_text must end exactly with ${SUITE_URL}`,
     ],
@@ -445,7 +451,7 @@ function fallbackGenerated(date) {
   const focus = STUCK_FOCI[stableIndex(date, STUCK_FOCI.length)];
   return {
     story_note: `Isla returns to the daily Trigoku lock and works through ${focus}.`,
-    continuation_note: `Fallback story varied by date seed: ${focus}.`,
+    continuation_note: `Fallback story varied by date seed: ${focus}.",
     facebook_post_text: `Back again for today's Trigoku lock. ${SUITE_URL}`,
     beats: sceneSkeleton().map((scene, index) => ({
       scene_description: scene.beat,
@@ -509,7 +515,7 @@ function makeHistoryEntry(story) {
     continuation_note: story.continuation_note || "",
     stuck_moment: story.scenes?.[2]?.image_prompt_fragment || "",
     pose_order: story.scenes?.map((s) => s.pose_id) || [],
-    captions: story.scenes?.map((s) => s.caption) || [],
+    captions: story.scenes?.map((s) => s.storyboard_caption || s.caption) || [],
   };
 }
 
@@ -592,7 +598,7 @@ export async function runLocalDailyGeneration() {
           continuation_note: entry.continuation_note || "",
           stuck_moment: entry.scenes?.[2]?.caption || entry.scenes?.[2]?.dialogue || "",
           pose_order: entry.scenes?.map((scene) => scene.id) || [],
-          captions: entry.scenes?.map((scene) => scene.caption) || [],
+          captions: entry.scenes?.map((scene) => scene.storyboard_caption || scene.caption) || [],
         }))
       : [];
 
