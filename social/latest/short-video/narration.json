@@ -11,7 +11,7 @@
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "She is at bookshop cafe corner, already half-thinking about the next job."
+      "text": "She is at quiet public library reading table, already half-thinking about the next job."
     },
     {
       "id": "panel_2",
@@ -44,8 +44,8 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Trigoku Daily Lock today. Isla checks what sort of trouble it is first.\n\nShe is at bookshop cafe corner, already half-thinking about the next job.\n\nThen the day starts tugging at her sleeve again.\n\nShe leaves one message unread. Three minutes will not ruin anything.\n\nCheck the constraint before rushing.\n\nThe move holds, which is annoyingly satisfying.\n\nShe shuts the laptop before the rush gets the last word.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-05-30T08:08:21.759Z",
+  "full_text": "Trigoku Daily Lock today. Isla checks what sort of trouble it is first.\n\nShe is at quiet public library reading table, already half-thinking about the next job.\n\nThen the day starts tugging at her sleeve again.\n\nShe leaves one message unread. Three minutes will not ruin anything.\n\nCheck the constraint before rushing.\n\nThe move holds, which is annoyingly satisfying.\n\nShe shuts the laptop before the rush gets the last word.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-05-30T09:04:41.374Z",
   "copy_refined": "fallback",
   "copy_refine_error": "OPENAI_API_KEY missing"
 }
