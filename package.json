@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "daily": "node scripts/daily-generator-local.mjs && node scripts/sync-storyboard-fields.mjs after-progressive && node scripts/refine-storyboard-copy-openai.mjs && node scripts/repair-openai-storyboard-wrapper.mjs && node scripts/enforce-storyboard-arc.mjs && node scripts/protect-puzzle-moment-copy.mjs && node scripts/sync-storyboard-fields.mjs after-refine && node scripts/apply-location-keys.mjs",
+    "daily": "node scripts/daily-generator-local.mjs && node scripts/sync-storyboard-fields.mjs after-progressive && node scripts/refine-storyboard-copy-openai.mjs && node scripts/repair-openai-storyboard-wrapper.mjs && node scripts/enforce-storyboard-arc.mjs && node scripts/protect-puzzle-moment-copy.mjs && node scripts/sync-storyboard-fields.mjs after-refine && node scripts/apply-location-keys.mjs && node scripts/normalise-location-or-fields.mjs",
     "capture:today": "node scripts/capture_trigoku_playthrough_v2.mjs",
     "art-prompts": "node scripts/generate-art-prompt-pack.mjs && node scripts/apply-story-beats.mjs",
     "generate-images": "node scripts/generate-isla-images-floor.mjs",
