@@ -10,29 +10,29 @@ const date = override || new Intl.DateTimeFormat("sv-SE", {
   day: "2-digit",
 }).format(new Date());
 
-function readJson(file) {
-  return JSON.parse(fs.readFileSync(file, "utf8"));
-}
+const PANEL_LOCKS = [
+  "PANEL 1 LOCATION LOCK: home kitchen table, kettle, breakfast mug, cupboards or fridge visible, domestic morning light, not office, not library",
+  "PANEL 2 LOCATION LOCK: train carriage interior, train window, seat backs, luggage rack, compact train table, passing landscape outside, not office, not home",
+  "PANEL 3 LOCATION LOCK: outdoor pavement cafe table, street background, shopfronts, cafe awning or railings, daylight outside, phone face down, not indoor desk",
+  "PANEL 4 LOCATION LOCK: co-working workspace, glass partitions, meeting room window, office chair, other desks blurred behind, not home kitchen",
+  "PANEL 5 LOCATION LOCK: bookshop cafe corner, visible book shelves and book spines, display table, stacks of books, warm shop lighting, not garden",
+  "PANEL 6 LOCATION LOCK: rainy window nook, rain streaks on glass, wet street outside, plants on sill, closing laptop ending pose, not office",
+];
 
-function writeJson(file, data) {
-  fs.writeFileSync(file, `${JSON.stringify(data, null, 2)}\n`, "utf8");
-}
+const POSE_LOCKS = [
+  "POSE LOCK: seated opening laptop, one hand on laptop lid, front three-quarter view",
+  "POSE LOCK: bracing laptop on train table, glance toward train window, shoulders angled away from normal desk pose",
+  "POSE LOCK: phone ignored face down, one hand away from phone, cafe table posture",
+  "POSE LOCK: leaning forward for active puzzle check, finger near trackpad, hands clear of screen",
+  "POSE LOCK: holding mug or notebook beside book stack, side angle, relaxed shoulders",
+  "POSE LOCK: packing up or closing laptop, looking away from screen toward rainy window",
+];
 
-function tidy(value) {
-  return String(value || "").replace(/\s+/g, " ").trim();
-}
-
-function sceneStoryBeat(scene) {
-  return tidy(
-    scene.image_prompt_fragment ||
-    scene.scene_description ||
-    scene.storyboard_caption ||
-    scene.caption ||
-    scene.beat ||
-    scene.title ||
-    ""
-  );
-}
+function readJson(file) { return JSON.parse(fs.readFileSync(file, "utf8")); }
+function writeJson(file, data) { fs.writeFileSync(file, `${JSON.stringify(data, null, 2)}\n`, "utf8"); }
+function tidy(value) { return String(value || "").replace(/\s+/g, " ").trim(); }
+function sceneStoryBeat(scene) { return tidy(scene.image_prompt_fragment || scene.scene_description || scene.storyboard_caption || scene.caption || scene.beat || scene.title || ""); }
+function stripPriorLocks(text) { return tidy(text).replace(/PANEL \d LOCATION LOCK:[^,]+(?:,[^,]+){0,8}/gi, "").replace(/POSE LOCK:[^,]+(?:,[^,]+){0,5}/gi, "").replace(/^,\s*/, ""); }
 
 const story = readJson(path.join(root, "daily", `${date}.json`));
 const scenes = Array.isArray(story.scenes) ? story.scenes : [];
@@ -55,13 +55,17 @@ for (const dir of [path.join(root, promptDir, date), path.join(root, promptDir, 
     panel.story_source_used = story.story_source_used || (story.date === date ? `daily/${date}.json` : "latest.json");
     panel.storyboard_copy_source = story.storyboard_copy_source || "unknown";
     panel.storyboard_arc_type = story.storyboard_arc_type || "story_driven_not_location_driven";
-    const current = tidy(panel[promptKey]);
-    panel[promptKey] = beat && !current.includes(beat) ? `${current}, ${beat}` : current;
-    if (panel[promptFileKey]) {
-      fs.writeFileSync(path.join(root, panel[promptFileKey]), `${panel[promptKey]}\n`, "utf8");
-    }
+    panel.panel_scene_lock = PANEL_LOCKS[index] || "";
+    panel.panel_pose_lock = POSE_LOCKS[index] || "";
+    panel.scene_lock_front_loaded = true;
+    const current = stripPriorLocks(panel[promptKey]);
+    const front = [PANEL_LOCKS[index], POSE_LOCKS[index]].filter(Boolean).join(", ");
+    const withBeat = beat && !current.includes(beat) ? `${current}, ${beat}` : current;
+    panel[promptKey] = tidy(`${front}, ${withBeat}`);
+    if (panel[promptFileKey]) fs.writeFileSync(path.join(root, panel[promptFileKey]), `${panel[promptKey]}\n`, "utf8");
   }
   data.story_beat_enabled = true;
+  data.scene_lock_front_loaded = true;
   data.story_source_used = story.story_source_used || (story.date === date ? `daily/${date}.json` : "latest.json");
   data.story_fields_used = story.story_fields_used || [];
   data.storyboard_copy_source = story.storyboard_copy_source || "unknown";
@@ -71,4 +75,4 @@ for (const dir of [path.join(root, promptDir, date), path.join(root, promptDir, 
   writeJson(file, data);
 }
 
-console.log("Story beats and storyboard metadata appended to panel generation text.");
+console.log("Story beats and front-loaded panel scene locks appended to panel generation text.");
