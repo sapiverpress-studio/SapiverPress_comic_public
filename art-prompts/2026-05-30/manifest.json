@@ -65,7 +65,7 @@
       "output_file": "social/2026-05-30/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "The temptation of a steady bookshop corner always manages to lure me in for a quick visit.",
+      "caption": "Isla tries to squeeze in a quick puzzle before her inbox inevitably starts piling up.",
       "scene_id": "scene_01"
     },
     {
@@ -75,7 +75,7 @@
       "output_file": "social/2026-05-30/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "Putting down the very first pen stroke always feels like setting off on a brand new journey.",
+      "caption": "Finding a moment to focus on the board while the train rattles along the tracks.",
       "scene_id": "scene_02"
     },
     {
@@ -85,7 +85,7 @@
       "output_file": "social/2026-05-30/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "It pays to take a slow breath and just appreciate how steady everything feels right now.",
+      "caption": "There are no easy ways out when the pieces require a bit of patience.",
       "scene_id": "scene_03"
     },
     {
@@ -105,7 +105,7 @@
       "output_file": "social/2026-05-30/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "Slowly, the messy pieces of this puzzle are finally starting to fall into their proper places.",
+      "caption": "The final pattern is finally starting to emerge as the last few pieces fall into place.",
       "scene_id": "scene_05"
     },
     {
@@ -115,10 +115,10 @@
       "output_file": "social/2026-05-30/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "Just a single page more before I finally pack up my things and head back outside.",
+      "caption": "With the puzzle solved, she can finally close her notebook and get back to work.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-05-30.json",
-  "generated_at": "2026-05-30T19:36:03.601Z"
+  "generated_at": "2026-05-30T19:54:51.097Z"
 }

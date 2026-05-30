@@ -45,15 +45,15 @@
   ],
   "storyboard_copy_source": "openai_repaired+gemini",
   "storyboard_copy_model": "gpt-4o-mini",
-  "storyboard_arc_title": "Isla's Quiet Corner",
+  "storyboard_arc_title": "Isla's Puzzle Break",
   "storyboard_arc_type": "story_driven_not_location_driven",
   "storyboard_arc": {
-    "setup": "The temptation of a steady bookshop corner always manages to lure me in for a quick visit.",
-    "disruption": "Putting down the very first pen stroke always feels like setting off on a brand new journey.",
-    "choice": "It pays to take a slow breath and just appreciate how steady everything feels right now.",
+    "setup": "Isla tries to squeeze in a quick puzzle before her inbox inevitably starts piling up.",
+    "disruption": "Finding a moment to focus on the board while the train rattles along the tracks.",
+    "choice": "There are no easy ways out when the pieces require a bit of patience.",
     "puzzle_moment": "The daily rule changes the move, so Isla checks it before trusting the answer.",
-    "consequence": "Slowly, the messy pieces of this puzzle are finally starting to fall into their proper places.",
-    "resolution": "Just a single page more before I finally pack up my things and head back outside."
+    "consequence": "The final pattern is finally starting to emerge as the last few pieces fall into place.",
+    "resolution": "With the puzzle solved, she can finally close her notebook and get back to work."
   },
   "storyboard_quality": {
     "location_sequence_only": true,
@@ -126,7 +126,7 @@
     "frames": "array:6"
   },
   "openai_storyboard_fallback_reason": null,
-  "openai_storyboard_checked_at": "2026-05-30T19:35:53.133Z",
+  "openai_storyboard_checked_at": "2026-05-30T19:54:41.337Z",
   "gemini_allowed_fields": [
     "caption",
     "dialogue"
@@ -145,12 +145,12 @@
   "puzzle_product": "Trigoku Daily Lock",
   "puzzle_url": "https://suite.sapiverpress.co.uk",
   "captions": [
-    "I should probably dive into this before the morning rush starts.\nThe temptation of a steady bookshop corner always manages to lure me in for a quick visit.",
-    "Okay, let's see what kind of secrets you're hiding.\nPutting down the very first pen stroke always feels like setting off on a brand new journey.",
-    "I'm giving myself exactly three minutes to just sit here and breathe.\nIt pays to take a slow breath and just appreciate how steady everything feels right now.",
+    "I'd better get a head start on this before the morning rush begins.\nIsla tries to squeeze in a quick puzzle before her inbox inevitably starts piling up.",
+    "No point in stressing over the clock; I'll just take it one step at a time.\nFinding a moment to focus on the board while the train rattles along the tracks.",
+    "Let's see which of these options is going to fall apart first.\nThere are no easy ways out when the pieces require a bit of patience.",
     "Check the daily rule before trusting it.\nThe daily rule changes the move, so Isla checks it before trusting the answer.",
-    "Oh, wow. That connection actually holds up under scrutiny.\nSlowly, the messy pieces of this puzzle are finally starting to fall into their proper places.",
-    "There. I think that's more than good enough for today.\nJust a single page more before I finally pack up my things and head back outside."
+    "There we go, that connection actually seems to hold up.\nThe final pattern is finally starting to emerge as the last few pieces fall into place.",
+    "That's enough of a break for now. Time to get back to the grind.\nWith the puzzle solved, she can finally close her notebook and get back to work."
   ],
   "storyboard_locations": [
     "small home kitchen table in warm morning light",
@@ -171,27 +171,27 @@
       "output": "social/2026-05-30/01_panel-01.png",
       "screen_quad": [
         [
-          660,
-          626
+          689,
+          577
         ],
         [
-          989,
-          648
+          1014,
+          600
         ],
         [
-          958,
-          884
+          979,
+          831
         ],
         [
-          633,
-          835
+          658,
+          778
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "I should probably dive into this before the morning rush starts.\nThe temptation of a steady bookshop corner always manages to lure me in for a quick visit.",
+      "storyboard_text": "I'd better get a head start on this before the morning rush begins.\nIsla tries to squeeze in a quick puzzle before her inbox inevitably starts piling up.",
       "arc_role": "setup",
-      "storyboard_caption": "The temptation of a steady bookshop corner always manages to lure me in for a quick visit.",
-      "storyboard_dialogue": "I should probably dive into this before the morning rush starts.",
+      "storyboard_caption": "Isla tries to squeeze in a quick puzzle before her inbox inevitably starts piling up.",
+      "storyboard_dialogue": "I'd better get a head start on this before the morning rush begins.",
       "panel_location": "small home kitchen table in warm morning light"
     },
     {
@@ -204,27 +204,27 @@
       "output": "social/2026-05-30/02_panel-02.png",
       "screen_quad": [
         [
-          699,
-          668
+          687,
+          619
         ],
         [
-          1035,
-          687
+          1042,
+          637
         ],
         [
-          1008,
-          918
+          1017,
+          878
         ],
         [
-          675,
-          869
+          664,
+          832
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Okay, let's see what kind of secrets you're hiding.\nPutting down the very first pen stroke always feels like setting off on a brand new journey.",
+      "storyboard_text": "No point in stressing over the clock; I'll just take it one step at a time.\nFinding a moment to focus on the board while the train rattles along the tracks.",
       "arc_role": "disruption",
-      "storyboard_caption": "Putting down the very first pen stroke always feels like setting off on a brand new journey.",
-      "storyboard_dialogue": "Okay, let's see what kind of secrets you're hiding.",
+      "storyboard_caption": "Finding a moment to focus on the board while the train rattles along the tracks.",
+      "storyboard_dialogue": "No point in stressing over the clock; I'll just take it one step at a time.",
       "panel_location": "train table by the window"
     },
     {
@@ -237,27 +237,27 @@
       "output": "social/2026-05-30/03_panel-03.png",
       "screen_quad": [
         [
-          729,
-          607
+          676,
+          630
         ],
         [
-          1035,
-          638
+          1066,
+          660
         ],
         [
-          988,
-          880
+          1024,
+          959
         ],
         [
-          690,
-          815
+          636,
+          882
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "I'm giving myself exactly three minutes to just sit here and breathe.\nIt pays to take a slow breath and just appreciate how steady everything feels right now.",
+      "storyboard_text": "Let's see which of these options is going to fall apart first.\nThere are no easy ways out when the pieces require a bit of patience.",
       "arc_role": "choice",
-      "storyboard_caption": "It pays to take a slow breath and just appreciate how steady everything feels right now.",
-      "storyboard_dialogue": "I'm giving myself exactly three minutes to just sit here and breathe.",
+      "storyboard_caption": "There are no easy ways out when the pieces require a bit of patience.",
+      "storyboard_dialogue": "Let's see which of these options is going to fall apart first.",
       "panel_location": "outdoor cafe street table or rainy window nook"
     },
     {
@@ -270,20 +270,20 @@
       "output": "social/2026-05-30/04_panel-04.png",
       "screen_quad": [
         [
-          695,
-          643
+          688,
+          669
         ],
         [
-          1067,
-          666
+          1050,
+          696
         ],
         [
-          1035,
-          951
+          1011,
+          979
         ],
         [
-          652,
-          881
+          653,
+          910
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -303,27 +303,27 @@
       "output": "social/2026-05-30/05_panel-05.png",
       "screen_quad": [
         [
-          616,
-          749
+          649,
+          696
         ],
         [
-          964,
-          782
+          996,
+          722
         ],
         [
-          937,
-          1022
+          962,
+          962
         ],
         [
-          589,
-          961
+          619,
+          907
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Oh, wow. That connection actually holds up under scrutiny.\nSlowly, the messy pieces of this puzzle are finally starting to fall into their proper places.",
+      "storyboard_text": "There we go, that connection actually seems to hold up.\nThe final pattern is finally starting to emerge as the last few pieces fall into place.",
       "arc_role": "consequence",
-      "storyboard_caption": "Slowly, the messy pieces of this puzzle are finally starting to fall into their proper places.",
-      "storyboard_dialogue": "Oh, wow. That connection actually holds up under scrutiny.",
+      "storyboard_caption": "The final pattern is finally starting to emerge as the last few pieces fall into place.",
+      "storyboard_dialogue": "There we go, that connection actually seems to hold up.",
       "panel_location": "bookshop cafe corner or public library reading table"
     },
     {
@@ -336,27 +336,27 @@
       "output": "social/2026-05-30/06_panel-06.png",
       "screen_quad": [
         [
-          699,
-          705
+          740,
+          728
         ],
         [
-          1000,
-          731
+          1044,
+          762
         ],
         [
-          966,
-          952
+          1006,
+          981
         ],
         [
-          668,
-          896
+          705,
+          915
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "There. I think that's more than good enough for today.\nJust a single page more before I finally pack up my things and head back outside.",
+      "storyboard_text": "That's enough of a break for now. Time to get back to the grind.\nWith the puzzle solved, she can finally close her notebook and get back to work.",
       "arc_role": "resolution",
-      "storyboard_caption": "Just a single page more before I finally pack up my things and head back outside.",
-      "storyboard_dialogue": "There. I think that's more than good enough for today.",
+      "storyboard_caption": "With the puzzle solved, she can finally close her notebook and get back to work.",
+      "storyboard_dialogue": "That's enough of a break for now. Time to get back to the grind.",
       "panel_location": "rainy window nook with plants"
     }
   ],
