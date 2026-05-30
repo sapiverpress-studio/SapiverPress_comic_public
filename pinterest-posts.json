@@ -133,7 +133,7 @@
     "board_id": "1038924276479876865",
     "board_name": "Sapiver Press Comic",
     "link": "https://suite.sapiverpress.co.uk",
-    "posted_at": "2026-05-30T09:29:15.667Z",
+    "posted_at": "2026-05-30T20:47:07.207Z",
     "pin_count": 8,
     "pins": [
       {
@@ -192,6 +192,15 @@
         "title": "8/8 — Finished grid — 2026-05-30",
         "posted_at": "2026-05-30T09:29:15.667Z"
       }
-    ]
+    ],
+    "media_type": "video",
+    "video_pin_id": "1038924207808049618",
+    "pin_id": "1038924207808049618",
+    "pinterest_media_id": "3548112252643328320",
+    "video_name": "sapiver_isla_daily_2026-05-30.mp4",
+    "video_url": "https://raw.githubusercontent.com/sapiverpress-studio/SapiverPress_comic_public/main/social/2026-05-30/short-video/sapiver_isla_daily_2026-05-30.mp4?v=2026-05-30",
+    "cover_image_name": "00_start-grid.png",
+    "cover_image_url": "https://raw.githubusercontent.com/sapiverpress-studio/SapiverPress_comic_public/main/social/2026-05-30/00_start-grid.png?v=2026-05-30",
+    "title": "Isla daily puzzle comic — 2026-05-30"
   }
 }
