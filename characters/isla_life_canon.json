@@ -28,12 +28,6 @@
   "location_memory": [
     {
       "date": "2026-05-29",
-      "attempt": 14,
-      "setting": "gothic window desk with cityscape view",
-      "reason": "she wants a quiet start before the day gets noisy"
-    },
-    {
-      "date": "2026-05-29",
       "attempt": 15,
       "setting": "train table by the window",
       "reason": "she is travelling and using the journey as thinking time"
@@ -385,15 +379,15 @@
       "attempt": 31,
       "setting": "bookshop cafe corner",
       "reason": "she has come for one thing but stays for the quiet corner"
+    },
+    {
+      "date": "2026-05-30",
+      "attempt": 31,
+      "setting": "co-working desk near a tall window",
+      "reason": "she has work waiting, so the puzzle has to fit into a short gap"
     }
   ],
   "variant_memory": [
-    {
-      "date": "2026-05-29",
-      "attempt": 14,
-      "variant_name": "Trigoku",
-      "panel_index": 4
-    },
     {
       "date": "2026-05-29",
       "attempt": 15,
@@ -747,21 +741,15 @@
       "attempt": 31,
       "variant_name": "Trigoku",
       "panel_index": 4
+    },
+    {
+      "date": "2026-05-30",
+      "attempt": 31,
+      "variant_name": "Trigoku",
+      "panel_index": 4
     }
   ],
   "life_memory": [
-    {
-      "date": "2026-05-29",
-      "attempt": 14,
-      "location": "gothic window desk with cityscape view",
-      "reason_for_location": "she wants a quiet start before the day gets noisy",
-      "life_detail_learned": "Isla protects small morning rituals when she needs steadiness.",
-      "thread_to_continue": "quiet morning rituals help her reset",
-      "puzzle_variant_mentioned": "Trigoku",
-      "variant_panel_index": 4,
-      "uk_calendar_date": null,
-      "uk_calendar_panel_index": null
-    },
     {
       "date": "2026-05-29",
       "attempt": 15,
@@ -1465,6 +1453,18 @@
       "reason_for_location": "she has come for one thing but stays for the quiet corner",
       "life_detail_learned": "Bookshops pull Isla into longer pauses than she planned.",
       "thread_to_continue": "she is drawn to places with books and warm corners",
+      "puzzle_variant_mentioned": "Trigoku",
+      "variant_panel_index": 4,
+      "uk_calendar_date": null,
+      "uk_calendar_panel_index": null
+    },
+    {
+      "date": "2026-05-30",
+      "attempt": 31,
+      "location": "co-working desk near a tall window",
+      "reason_for_location": "she has work waiting, so the puzzle has to fit into a short gap",
+      "life_detail_learned": "Isla often fits her puzzle ritual between work blocks.",
+      "thread_to_continue": "work days make the puzzle a boundary marker",
       "puzzle_variant_mentioned": "Trigoku",
       "variant_panel_index": 4,
       "uk_calendar_date": null,

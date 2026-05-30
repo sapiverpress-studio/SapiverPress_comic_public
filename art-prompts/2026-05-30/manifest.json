@@ -65,7 +65,7 @@
       "output_file": "social/2026-05-30/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "Isla intended to just pick up one thing, but the cozy bookshop corner lured her in.",
+      "caption": "Before the workday sweeps her away, Isla carves out a brief moment for herself.",
       "scene_id": "scene_01"
     },
     {
@@ -75,7 +75,7 @@
       "output_file": "social/2026-05-30/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "She settles in with her pen, surprised by how quickly the first few numbers fall into place.",
+      "caption": "She opens the puzzle and focuses immediately, eager to make some quick progress.",
       "scene_id": "scene_02"
     },
     {
@@ -85,7 +85,7 @@
       "output_file": "social/2026-05-30/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "Taking a slow breath, she pauses to appreciate the warm sunlight filtering through the bookstore window.",
+      "caption": "A sudden snag in the numbers forces her to halt and reconsider her next move.",
       "scene_id": "scene_03"
     },
     {
@@ -105,7 +105,7 @@
       "output_file": "social/2026-05-30/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "With the tricky part behind her, the final section of the grid slowly begins to lock together.",
+      "caption": "The final few numbers slip smoothly into their correct spots as the puzzle wraps up.",
       "scene_id": "scene_05"
     },
     {
@@ -115,10 +115,10 @@
       "output_file": "social/2026-05-30/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "Although the puzzle is finished, the peaceful atmosphere makes it impossible for her to leave just yet.",
+      "caption": "With the grid successfully solved, she turns her attention back to her waiting work.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-05-30.json",
-  "generated_at": "2026-05-30T20:39:59.116Z"
+  "generated_at": "2026-05-30T20:45:02.582Z"
 }
