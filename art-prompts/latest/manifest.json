@@ -65,7 +65,7 @@
       "output_file": "social/2026-05-30/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "Raindrops tap softly against the glass, matching the slow, steady rhythm of a lazy morning.",
+      "caption": "Isla steals a few moments of absolute stillness at the kitchen table before the day starts.",
       "scene_id": "scene_01"
     },
     {
@@ -75,7 +75,7 @@
       "output_file": "social/2026-05-30/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "The steady downpour outside seems to blur the edges of the world, slowing everything right down.",
+      "caption": "The steady hum of the train helps her focus on taking things one step at a time.",
       "scene_id": "scene_02"
     },
     {
@@ -85,7 +85,7 @@
       "output_file": "social/2026-05-30/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "There is no need to rush when the weather itself is telling everyone to take a break.",
+      "caption": "Sitting outside with her thoughts, she decides not to let the growing pressure get to her.",
       "scene_id": "scene_03"
     },
     {
@@ -105,7 +105,7 @@
       "output_file": "social/2026-05-30/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "With the trickier parts of the puzzle sorted, the rest of the pieces fall into place.",
+      "caption": "Tucked away in a steady corner, the pattern finally begins to make some actual sense.",
       "scene_id": "scene_05"
     },
     {
@@ -115,10 +115,10 @@
       "output_file": "social/2026-05-30/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "Watching the rain gather on the leaves outside, she finally feels ready to start her day.",
+      "caption": "Watching the rain slide down the glass, she feels a comfortable sense of steady satisfaction.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-05-30.json",
-  "generated_at": "2026-05-30T15:27:18.245Z"
+  "generated_at": "2026-05-30T15:30:48.453Z"
 }

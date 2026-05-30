@@ -1,6 +1,6 @@
 {
   "date": "2026-05-30",
-  "title": "A Rainy Day Reflection",
+  "title": "Isla's Quiet Day at the Library",
   "voice_name": "Isla Sterling",
   "segments": [
     {
@@ -11,17 +11,17 @@
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "Raindrops tap softly against the glass, matching the slow, steady rhythm of a lazy morning."
+      "text": "Isla steals a few moments of absolute stillness at the kitchen table before the day starts."
     },
     {
       "id": "panel_2",
       "image_name": "02_panel-02.png",
-      "text": "The steady downpour outside seems to blur the edges of the world, slowing everything right down."
+      "text": "The steady hum of the train helps her focus on taking things one step at a time."
     },
     {
       "id": "panel_3",
       "image_name": "03_panel-03.png",
-      "text": "There is no need to rush when the weather itself is telling everyone to take a break."
+      "text": "Sitting outside with her thoughts, she decides not to let the growing pressure get to her."
     },
     {
       "id": "panel_4",
@@ -31,12 +31,12 @@
     {
       "id": "panel_5",
       "image_name": "05_panel-05.png",
-      "text": "With the trickier parts of the puzzle sorted, the rest of the pieces fall into place."
+      "text": "Tucked away in a steady corner, the pattern finally begins to make some actual sense."
     },
     {
       "id": "panel_6",
       "image_name": "06_panel-06.png",
-      "text": "Watching the rain gather on the leaves outside, she finally feels ready to start her day."
+      "text": "Watching the rain slide down the glass, she feels a comfortable sense of steady satisfaction."
     },
     {
       "id": "cta",
@@ -44,9 +44,9 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nRaindrops tap softly against the glass, matching the slow, steady rhythm of a lazy morning.\n\nThe steady downpour outside seems to blur the edges of the world, slowing everything right down.\n\nThere is no need to rush when the weather itself is telling everyone to take a break.\n\nCheck the daily rule before trusting it.\n\nWith the trickier parts of the puzzle sorted, the rest of the pieces fall into place.\n\nWatching the rain gather on the leaves outside, she finally feels ready to start her day.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-05-30T15:28:12.704Z",
-  "caption": "Embracing the slower pace of a rainy day.",
+  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nIsla steals a few moments of absolute stillness at the kitchen table before the day starts.\n\nThe steady hum of the train helps her focus on taking things one step at a time.\n\nSitting outside with her thoughts, she decides not to let the growing pressure get to her.\n\nCheck the daily rule before trusting it.\n\nTucked away in a steady corner, the pattern finally begins to make some actual sense.\n\nWatching the rain slide down the glass, she feels a comfortable sense of steady satisfaction.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-05-30T15:31:40.887Z",
+  "caption": "Join Isla as she finds calm and clarity in the library.",
   "variant_name": "daily rule",
   "variant_line": "Check the daily rule before trusting it.",
   "copy_refined": "openai",
