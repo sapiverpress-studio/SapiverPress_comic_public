@@ -93,6 +93,10 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ secrets.GEMINI_MODEL }}
         run: node scripts/humanise-storyboard-gemini.mjs
+      - name: Lint final storyboard copy
+        env:
+          DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
+        run: node scripts/lint-final-storyboard-copy.mjs
       - name: Generate Phase 3 art prompt pack
         env:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
