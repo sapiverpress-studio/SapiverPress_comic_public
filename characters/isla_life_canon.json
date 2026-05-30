@@ -187,6 +187,12 @@
       "attempt": 2,
       "setting": "rainy window nook with plants",
       "reason": "rain has slowed everything down and she lets it"
+    },
+    {
+      "date": "2026-05-30",
+      "attempt": 3,
+      "setting": "quiet public library reading table",
+      "reason": "the library gives her a borrowed pocket of quiet"
     }
   ],
   "variant_memory": [
@@ -349,6 +355,12 @@
     {
       "date": "2026-05-30",
       "attempt": 2,
+      "variant_name": "Trigoku",
+      "panel_index": 2
+    },
+    {
+      "date": "2026-05-30",
+      "attempt": 3,
       "variant_name": "Trigoku",
       "panel_index": 2
     }
@@ -673,6 +685,18 @@
       "reason_for_location": "rain has slowed everything down and she lets it",
       "life_detail_learned": "Isla does not mind slower days when they give her room to notice things.",
       "thread_to_continue": "rainy days bring out her reflective side",
+      "puzzle_variant_mentioned": "Trigoku",
+      "variant_panel_index": 2,
+      "uk_calendar_date": null,
+      "uk_calendar_panel_index": null
+    },
+    {
+      "date": "2026-05-30",
+      "attempt": 3,
+      "location": "quiet public library reading table",
+      "reason_for_location": "the library gives her a borrowed pocket of quiet",
+      "life_detail_learned": "Isla uses libraries as reset spaces, not just work spaces.",
+      "thread_to_continue": "library visits become her backup calm place",
       "puzzle_variant_mentioned": "Trigoku",
       "variant_panel_index": 2,
       "uk_calendar_date": null,
