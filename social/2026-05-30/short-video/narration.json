@@ -1,6 +1,6 @@
 {
   "date": "2026-05-30",
-  "title": "Isla's Quiet Day at the Library",
+  "title": "Isla's Morning Pause",
   "voice_name": "Isla Sterling",
   "segments": [
     {
@@ -11,17 +11,17 @@
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "Isla steals a few moments of absolute stillness at the kitchen table before the day starts."
+      "text": "The faint hum of morning traffic filters through the window as the day begins to wake."
     },
     {
       "id": "panel_2",
       "image_name": "02_panel-02.png",
-      "text": "The steady hum of the train helps her focus on taking things one step at a time."
+      "text": "Watching the landscape blur past while trying to find a steady moment to focus."
     },
     {
       "id": "panel_3",
       "image_name": "03_panel-03.png",
-      "text": "Sitting outside with her thoughts, she decides not to let the growing pressure get to her."
+      "text": "She forces herself to sit still at the busy sidewalk table, ignoring the urge to rush."
     },
     {
       "id": "panel_4",
@@ -31,12 +31,12 @@
     {
       "id": "panel_5",
       "image_name": "05_panel-05.png",
-      "text": "Tucked away in a steady corner, the pattern finally begins to make some actual sense."
+      "text": "She slowly finishes her tea, savoring the steady corner before stepping back into the bustle."
     },
     {
       "id": "panel_6",
       "image_name": "06_panel-06.png",
-      "text": "Watching the rain slide down the glass, she feels a comfortable sense of steady satisfaction."
+      "text": "Rain starts to tap against the glass as she packs up, feeling a bit more grounded."
     },
     {
       "id": "cta",
@@ -44,9 +44,9 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nIsla steals a few moments of absolute stillness at the kitchen table before the day starts.\n\nThe steady hum of the train helps her focus on taking things one step at a time.\n\nSitting outside with her thoughts, she decides not to let the growing pressure get to her.\n\nCheck the daily rule before trusting it.\n\nTucked away in a steady corner, the pattern finally begins to make some actual sense.\n\nWatching the rain slide down the glass, she feels a comfortable sense of steady satisfaction.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-05-30T15:31:40.887Z",
-  "caption": "Join Isla as she finds calm and clarity in the library.",
+  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nThe faint hum of morning traffic filters through the window as the day begins to wake.\n\nWatching the landscape blur past while trying to find a steady moment to focus.\n\nShe forces herself to sit still at the busy sidewalk table, ignoring the urge to rush.\n\nCheck the daily rule before trusting it.\n\nShe slowly finishes her tea, savoring the steady corner before stepping back into the bustle.\n\nRain starts to tap against the glass as she packs up, feeling a bit more grounded.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-05-30T18:22:03.808Z",
+  "caption": "Finding balance between obligations and moments of stillness.",
   "variant_name": "daily rule",
   "variant_line": "Check the daily rule before trusting it.",
   "copy_refined": "openai",

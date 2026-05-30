@@ -65,7 +65,7 @@
       "output_file": "social/2026-05-30/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "Isla steals a few moments of absolute stillness at the kitchen table before the day starts.",
+      "caption": "The faint hum of morning traffic filters through the window as the day begins to wake.",
       "scene_id": "scene_01"
     },
     {
@@ -75,7 +75,7 @@
       "output_file": "social/2026-05-30/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "The steady hum of the train helps her focus on taking things one step at a time.",
+      "caption": "Watching the landscape blur past while trying to find a steady moment to focus.",
       "scene_id": "scene_02"
     },
     {
@@ -85,7 +85,7 @@
       "output_file": "social/2026-05-30/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "Sitting outside with her thoughts, she decides not to let the growing pressure get to her.",
+      "caption": "She forces herself to sit still at the busy sidewalk table, ignoring the urge to rush.",
       "scene_id": "scene_03"
     },
     {
@@ -105,7 +105,7 @@
       "output_file": "social/2026-05-30/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "Tucked away in a steady corner, the pattern finally begins to make some actual sense.",
+      "caption": "She slowly finishes her tea, savoring the steady corner before stepping back into the bustle.",
       "scene_id": "scene_05"
     },
     {
@@ -115,10 +115,10 @@
       "output_file": "social/2026-05-30/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "Watching the rain slide down the glass, she feels a comfortable sense of steady satisfaction.",
+      "caption": "Rain starts to tap against the glass as she packs up, feeling a bit more grounded.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-05-30.json",
-  "generated_at": "2026-05-30T15:30:48.453Z"
+  "generated_at": "2026-05-30T18:21:17.647Z"
 }
