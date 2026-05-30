@@ -65,7 +65,7 @@
       "output_file": "social/2026-05-30/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "Isla spots her morning chores waiting, but she steals a steady moment with the grid first.",
+      "caption": "Isla sees her next task waiting, but pauses for a quick look at the grid first.",
       "scene_id": "scene_01"
     },
     {
@@ -75,7 +75,7 @@
       "output_file": "social/2026-05-30/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "As her train slips behind schedule, Isla resists the sudden urge to panic-close her laptop.",
+      "caption": "Her schedule slips a bit, and she almost slams her laptop shut to rush out.",
       "scene_id": "scene_02"
     },
     {
@@ -85,7 +85,7 @@
       "output_file": "social/2026-05-30/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "Ignoring a buzzing chore alert at the cafe, Isla chooses three peaceful minutes of pure focus.",
+      "caption": "Ignoring her unread messages, Isla chooses to take three three minutes to breathe and focus.",
       "scene_id": "scene_03"
     },
     {
@@ -105,7 +105,7 @@
       "output_file": "social/2026-05-30/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "Her patience pays off; the puzzle clicks, and her chores suddenly feel much less daunting.",
+      "caption": "Taking her time pays off, turning the next errand into a steady transition instead of a rush.",
       "scene_id": "scene_05"
     },
     {
@@ -115,10 +115,10 @@
       "output_file": "social/2026-05-30/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "With the grid complete, Isla realizes these library escapes are her perfect backup calm spaces.",
+      "caption": "Sitting outside, Isla realizes the power of a breath and carries that lesson forward today.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-05-30.json",
-  "generated_at": "2026-05-30T09:03:57.075Z"
+  "generated_at": "2026-05-30T09:23:21.391Z"
 }
