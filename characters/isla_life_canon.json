@@ -307,6 +307,12 @@
       "attempt": 22,
       "setting": "rainy window nook with plants",
       "reason": "rain has slowed everything down and she lets it"
+    },
+    {
+      "date": "2026-05-30",
+      "attempt": 23,
+      "setting": "outdoor cafe street table",
+      "reason": "she is trying not to rush straight into the next errand"
     }
   ],
   "variant_memory": [
@@ -589,6 +595,12 @@
     {
       "date": "2026-05-30",
       "attempt": 22,
+      "variant_name": "Trigoku",
+      "panel_index": 4
+    },
+    {
+      "date": "2026-05-30",
+      "attempt": 23,
       "variant_name": "Trigoku",
       "panel_index": 4
     }
@@ -1153,6 +1165,18 @@
       "reason_for_location": "rain has slowed everything down and she lets it",
       "life_detail_learned": "Isla does not mind slower days when they give her room to notice things.",
       "thread_to_continue": "rainy days bring out her reflective side",
+      "puzzle_variant_mentioned": "Trigoku",
+      "variant_panel_index": 4,
+      "uk_calendar_date": null,
+      "uk_calendar_panel_index": null
+    },
+    {
+      "date": "2026-05-30",
+      "attempt": 23,
+      "location": "outdoor cafe street table",
+      "reason_for_location": "she is trying not to rush straight into the next errand",
+      "life_detail_learned": "Isla sometimes uses a cafe table as a buffer between obligations.",
+      "thread_to_continue": "she is learning to pause before moving on",
       "puzzle_variant_mentioned": "Trigoku",
       "variant_panel_index": 4,
       "uk_calendar_date": null,
