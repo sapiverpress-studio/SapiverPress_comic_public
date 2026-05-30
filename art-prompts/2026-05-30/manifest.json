@@ -65,7 +65,7 @@
       "output_file": "social/2026-05-30/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "The early morning sun hits the kitchen table just right, giving her a steady moment to prepare.",
+      "caption": "Isla intended to just pick up one thing, but the cozy bookshop corner lured her in.",
       "scene_id": "scene_01"
     },
     {
@@ -75,7 +75,7 @@
       "output_file": "social/2026-05-30/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "Watching the world rush past the train window helps her settle into a deep, focused state of mind.",
+      "caption": "She settles in with her pen, surprised by how quickly the first few numbers fall into place.",
       "scene_id": "scene_02"
     },
     {
@@ -85,7 +85,7 @@
       "output_file": "social/2026-05-30/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "Stepping off the train for a quick coffee gives her a perfect chance to rethink her strategy.",
+      "caption": "Taking a slow breath, she pauses to appreciate the warm sunlight filtering through the bookstore window.",
       "scene_id": "scene_03"
     },
     {
@@ -105,7 +105,7 @@
       "output_file": "social/2026-05-30/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "Finding a steady nook surrounded by books helps the final pieces of the puzzle fall into place.",
+      "caption": "With the tricky part behind her, the final section of the grid slowly begins to lock together.",
       "scene_id": "scene_05"
     },
     {
@@ -115,10 +115,10 @@
       "output_file": "social/2026-05-30/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "With the journey coming to an end, she watches the rain gather on the glass with satisfaction.",
+      "caption": "Although the puzzle is finished, the peaceful atmosphere makes it impossible for her to leave just yet.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-05-30.json",
-  "generated_at": "2026-05-30T20:32:00.667Z"
+  "generated_at": "2026-05-30T20:39:59.116Z"
 }

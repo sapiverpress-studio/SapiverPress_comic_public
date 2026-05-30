@@ -104,51 +104,6 @@
     {
       "date": "2026-05-30",
       "weekday": "Saturday",
-      "same_day_attempt": 11,
-      "setting": "outdoor cafe street table",
-      "puzzle_phase": "late-week",
-      "story_note": "Isla spends this entry at the outdoor cafe street table because she is trying not to rush straight into the next errand. The puzzle stays as a light thread inside the day.",
-      "continuation_note": "Remember: Isla sometimes uses a cafe table as a buffer between obligations. Continue the thread: she is learning to pause before moving on.",
-      "stuck_moment": "brief hesitation, coffee nearby",
-      "life_memory_entry": {
-        "date": "2026-05-30",
-        "attempt": 11,
-        "location": "outdoor cafe street table",
-        "reason_for_location": "she is trying not to rush straight into the next errand",
-        "life_detail_learned": "Isla sometimes uses a cafe table as a buffer between obligations.",
-        "thread_to_continue": "she is learning to pause before moving on",
-        "puzzle_variant_mentioned": "Trigoku",
-        "variant_panel_index": 2,
-        "uk_calendar_date": null,
-        "uk_calendar_panel_index": null
-      },
-      "variant_recap": {
-        "variant_name": "Trigoku",
-        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
-        "panel_index": 2,
-        "line": "Today has its own little rule-set — check the constraint before rushing."
-      },
-      "uk_calendar_date": null,
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
-      ]
-    },
-    {
-      "date": "2026-05-30",
-      "weekday": "Saturday",
       "same_day_attempt": 12,
       "setting": "small kitchen table in warm morning light",
       "puzzle_phase": "late-week",
@@ -183,12 +138,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -228,12 +183,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -273,12 +228,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -318,12 +273,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -363,12 +318,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -408,12 +363,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -453,12 +408,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -498,12 +453,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -543,12 +498,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -588,12 +543,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -633,12 +588,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -678,12 +633,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -723,12 +678,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -768,12 +723,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -813,12 +768,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -858,12 +813,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -903,12 +858,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -948,12 +903,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -993,12 +948,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -1038,12 +993,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -1083,12 +1038,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -1128,12 +1083,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -1173,12 +1128,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -1218,12 +1173,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -1263,12 +1218,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -1308,12 +1263,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -1353,12 +1308,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -1398,12 +1353,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -1443,12 +1398,57 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
+      ]
+    },
+    {
+      "date": "2026-05-30",
+      "weekday": "Saturday",
+      "same_day_attempt": 31,
+      "setting": "bookshop cafe corner",
+      "puzzle_phase": "late-week",
+      "story_note": "Isla spends this entry at the bookshop cafe corner because she has come for one thing but stays for the quiet corner. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Bookshops pull Isla into longer pauses than she planned. Continue the thread: she is drawn to places with books and warm corners.",
+      "stuck_moment": "quiet frown, patient double check",
+      "life_memory_entry": {
+        "date": "2026-05-30",
+        "attempt": 31,
+        "location": "bookshop cafe corner",
+        "reason_for_location": "she has come for one thing but stays for the quiet corner",
+        "life_detail_learned": "Bookshops pull Isla into longer pauses than she planned.",
+        "thread_to_continue": "she is drawn to places with books and warm corners",
+        "puzzle_variant_mentioned": "Trigoku",
+        "variant_panel_index": 4,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Trigoku",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 4,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     }
   ],
@@ -1456,51 +1456,6 @@
     {
       "date": "2026-05-30",
       "weekday": "Saturday",
-      "same_day_attempt": 11,
-      "setting": "outdoor cafe street table",
-      "puzzle_phase": "late-week",
-      "story_note": "Isla spends this entry at the outdoor cafe street table because she is trying not to rush straight into the next errand. The puzzle stays as a light thread inside the day.",
-      "continuation_note": "Remember: Isla sometimes uses a cafe table as a buffer between obligations. Continue the thread: she is learning to pause before moving on.",
-      "stuck_moment": "brief hesitation, coffee nearby",
-      "life_memory_entry": {
-        "date": "2026-05-30",
-        "attempt": 11,
-        "location": "outdoor cafe street table",
-        "reason_for_location": "she is trying not to rush straight into the next errand",
-        "life_detail_learned": "Isla sometimes uses a cafe table as a buffer between obligations.",
-        "thread_to_continue": "she is learning to pause before moving on",
-        "puzzle_variant_mentioned": "Trigoku",
-        "variant_panel_index": 2,
-        "uk_calendar_date": null,
-        "uk_calendar_panel_index": null
-      },
-      "variant_recap": {
-        "variant_name": "Trigoku",
-        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
-        "panel_index": 2,
-        "line": "Today has its own little rule-set — check the constraint before rushing."
-      },
-      "uk_calendar_date": null,
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
-      ]
-    },
-    {
-      "date": "2026-05-30",
-      "weekday": "Saturday",
       "same_day_attempt": 12,
       "setting": "small kitchen table in warm morning light",
       "puzzle_phase": "late-week",
@@ -1535,12 +1490,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -1580,12 +1535,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -1625,12 +1580,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -1670,12 +1625,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -1715,12 +1670,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -1760,12 +1715,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -1805,12 +1760,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -1850,12 +1805,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -1895,12 +1850,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -1940,12 +1895,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -1985,12 +1940,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -2030,12 +1985,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -2075,12 +2030,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -2120,12 +2075,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -2165,12 +2120,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -2210,12 +2165,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -2255,12 +2210,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -2300,12 +2255,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -2345,12 +2300,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -2390,12 +2345,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -2435,12 +2390,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -2480,12 +2435,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -2525,12 +2480,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -2570,12 +2525,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -2615,12 +2570,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -2660,12 +2615,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -2705,12 +2660,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -2750,12 +2705,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -2795,12 +2750,57 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Window seat.",
-        "Track it slowly.",
-        "Not yet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Almost there.",
-        "Next stop."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
+      ]
+    },
+    {
+      "date": "2026-05-30",
+      "weekday": "Saturday",
+      "same_day_attempt": 31,
+      "setting": "bookshop cafe corner",
+      "puzzle_phase": "late-week",
+      "story_note": "Isla spends this entry at the bookshop cafe corner because she has come for one thing but stays for the quiet corner. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Bookshops pull Isla into longer pauses than she planned. Continue the thread: she is drawn to places with books and warm corners.",
+      "stuck_moment": "quiet frown, patient double check",
+      "life_memory_entry": {
+        "date": "2026-05-30",
+        "attempt": 31,
+        "location": "bookshop cafe corner",
+        "reason_for_location": "she has come for one thing but stays for the quiet corner",
+        "life_detail_learned": "Bookshops pull Isla into longer pauses than she planned.",
+        "thread_to_continue": "she is drawn to places with books and warm corners",
+        "puzzle_variant_mentioned": "Trigoku",
+        "variant_panel_index": 4,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Trigoku",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 4,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     }
   ],

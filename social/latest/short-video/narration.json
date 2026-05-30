@@ -1,6 +1,6 @@
 {
   "date": "2026-05-30",
-  "title": "Isla's Journey of Focus",
+  "title": "Isla's Bookshop Escape",
   "voice_name": "Isla Sterling",
   "segments": [
     {
@@ -11,17 +11,17 @@
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "The early morning sun hits the kitchen table just right, giving her a steady moment to prepare."
+      "text": "Isla intended to just pick up one thing, but the cozy bookshop corner lured her in."
     },
     {
       "id": "panel_2",
       "image_name": "02_panel-02.png",
-      "text": "Watching the world rush past the train window helps her settle into a deep, focused state of mind."
+      "text": "She settles in with her pen, surprised by how quickly the first few numbers fall into place."
     },
     {
       "id": "panel_3",
       "image_name": "03_panel-03.png",
-      "text": "Stepping off the train for a quick coffee gives her a perfect chance to rethink her strategy."
+      "text": "Taking a slow breath, she pauses to appreciate the warm sunlight filtering through the bookstore window."
     },
     {
       "id": "panel_4",
@@ -31,12 +31,12 @@
     {
       "id": "panel_5",
       "image_name": "05_panel-05.png",
-      "text": "Finding a steady nook surrounded by books helps the final pieces of the puzzle fall into place."
+      "text": "With the tricky part behind her, the final section of the grid slowly begins to lock together."
     },
     {
       "id": "panel_6",
       "image_name": "06_panel-06.png",
-      "text": "With the journey coming to an end, she watches the rain gather on the glass with satisfaction."
+      "text": "Although the puzzle is finished, the peaceful atmosphere makes it impossible for her to leave just yet."
     },
     {
       "id": "cta",
@@ -44,9 +44,9 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nThe early morning sun hits the kitchen table just right, giving her a steady moment to prepare.\n\nWatching the world rush past the train window helps her settle into a deep, focused state of mind.\n\nStepping off the train for a quick coffee gives her a perfect chance to rethink her strategy.\n\nCheck the daily rule before trusting it.\n\nFinding a steady nook surrounded by books helps the final pieces of the puzzle fall into place.\n\nWith the journey coming to an end, she watches the rain gather on the glass with satisfaction.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-05-30T20:32:47.622Z",
-  "caption": "Join Isla as she navigates her thoughts and puzzles during a train journey.",
+  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nIsla intended to just pick up one thing, but the cozy bookshop corner lured her in.\n\nShe settles in with her pen, surprised by how quickly the first few numbers fall into place.\n\nTaking a slow breath, she pauses to appreciate the warm sunlight filtering through the bookstore window.\n\nCheck the daily rule before trusting it.\n\nWith the tricky part behind her, the final section of the grid slowly begins to lock together.\n\nAlthough the puzzle is finished, the peaceful atmosphere makes it impossible for her to leave just yet.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-05-30T20:40:45.077Z",
+  "caption": "A cozy day spent in a bookshop corner, where puzzles and peace intertwine.",
   "variant_name": "daily rule",
   "variant_line": "Check the daily rule before trusting it.",
   "copy_refined": "openai",

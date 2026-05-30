@@ -45,15 +45,15 @@
   ],
   "storyboard_copy_source": "openai_repaired+gemini",
   "storyboard_copy_model": "gpt-4o-mini",
-  "storyboard_arc_title": "Isla's Journey of Thought",
+  "storyboard_arc_title": "Quiet Corners and Puzzles",
   "storyboard_arc_type": "story_driven_not_location_driven",
   "storyboard_arc": {
-    "setup": "The early morning sun hits the kitchen table just right, giving her a steady moment to prepare.",
-    "disruption": "Watching the world rush past the train window helps her settle into a deep, focused state of mind.",
-    "choice": "Stepping off the train for a quick coffee gives her a perfect chance to rethink her strategy.",
+    "setup": "Isla intended to just pick up one thing, but the cozy bookshop corner lured her in.",
+    "disruption": "She settles in with her pen, surprised by how quickly the first few numbers fall into place.",
+    "choice": "Taking a slow breath, she pauses to appreciate the warm sunlight filtering through the bookstore window.",
     "puzzle_moment": "The daily rule changes the move, so Isla checks it before trusting the answer.",
-    "consequence": "Finding a steady nook surrounded by books helps the final pieces of the puzzle fall into place.",
-    "resolution": "With the journey coming to an end, she watches the rain gather on the glass with satisfaction."
+    "consequence": "With the tricky part behind her, the final section of the grid slowly begins to lock together.",
+    "resolution": "Although the puzzle is finished, the peaceful atmosphere makes it impossible for her to leave just yet."
   },
   "storyboard_quality": {
     "location_sequence_only": true,
@@ -126,7 +126,7 @@
     "frames": "array:6"
   },
   "openai_storyboard_fallback_reason": null,
-  "openai_storyboard_checked_at": "2026-05-30T20:31:45.870Z",
+  "openai_storyboard_checked_at": "2026-05-30T20:39:47.668Z",
   "gemini_allowed_fields": [
     "caption",
     "dialogue"
@@ -145,12 +145,12 @@
   "puzzle_product": "Trigoku Daily Lock",
   "puzzle_url": "https://suite.sapiverpress.co.uk",
   "captions": [
-    "Let's get a head start on this before the morning rush catches up with me.\nThe early morning sun hits the kitchen table just right, giving her a steady moment to prepare.",
-    "If I put the two over here, then the five should fit perfectly right next to it.\nWatching the world rush past the train window helps her settle into a deep, focused state of mind.",
-    "I've got exactly three minutes until my next connection, so let's make this count.\nStepping off the train for a quick coffee gives her a perfect chance to rethink her strategy.",
+    "Let's get a quick start on this puzzle before the morning rush begins.\nIsla intended to just pick up one thing, but the cozy bookshop corner lured her in.",
+    "Wow, I didn't expect to find the first clue quite that quickly.\nShe settles in with her pen, surprised by how quickly the first few numbers fall into place.",
+    "Just a few minutes to myself in this steady spot is exactly what I needed.\nTaking a slow breath, she pauses to appreciate the warm sunlight filtering through the bookstore window.",
     "Check the daily rule before trusting it.\nThe daily rule changes the move, so Isla checks it before trusting the answer.",
-    "Well, would you look at that? This combination actually holds together perfectly.\nFinding a steady nook surrounded by books helps the final pieces of the puzzle fall into place.",
-    "That's a wrap for today. Time to pack up and get ready for Monday.\nWith the journey coming to an end, she watches the rain gather on the glass with satisfaction."
+    "There we go, that number fits perfectly and unlocks the rest of it.\nWith the tricky part behind her, the final section of the grid slowly begins to lock together.",
+    "I think I'll just linger here for a bit longer and enjoy this steady corner.\nAlthough the puzzle is finished, the peaceful atmosphere makes it impossible for her to leave just yet."
   ],
   "storyboard_locations": [
     "small home kitchen table in warm morning light",
@@ -171,27 +171,27 @@
       "output": "social/2026-05-30/01_panel-01.png",
       "screen_quad": [
         [
-          660,
-          635
+          640,
+          618
         ],
         [
-          1021,
-          657
+          1009,
+          647
         ],
         [
-          987,
-          929
+          971,
+          917
         ],
         [
-          633,
-          869
+          609,
+          850
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Let's get a head start on this before the morning rush catches up with me.\nThe early morning sun hits the kitchen table just right, giving her a steady moment to prepare.",
+      "storyboard_text": "Let's get a quick start on this puzzle before the morning rush begins.\nIsla intended to just pick up one thing, but the cozy bookshop corner lured her in.",
       "arc_role": "setup",
-      "storyboard_caption": "The early morning sun hits the kitchen table just right, giving her a steady moment to prepare.",
-      "storyboard_dialogue": "Let's get a head start on this before the morning rush catches up with me.",
+      "storyboard_caption": "Isla intended to just pick up one thing, but the cozy bookshop corner lured her in.",
+      "storyboard_dialogue": "Let's get a quick start on this puzzle before the morning rush begins.",
       "panel_location": "small home kitchen table in warm morning light"
     },
     {
@@ -226,10 +226,10 @@
         "art-replacements/2026-05-30/02_panel-02.png",
         "art-replacements/latest/02_panel-02.png"
       ],
-      "storyboard_text": "If I put the two over here, then the five should fit perfectly right next to it.\nWatching the world rush past the train window helps her settle into a deep, focused state of mind.",
+      "storyboard_text": "Wow, I didn't expect to find the first clue quite that quickly.\nShe settles in with her pen, surprised by how quickly the first few numbers fall into place.",
       "arc_role": "disruption",
-      "storyboard_caption": "Watching the world rush past the train window helps her settle into a deep, focused state of mind.",
-      "storyboard_dialogue": "If I put the two over here, then the five should fit perfectly right next to it.",
+      "storyboard_caption": "She settles in with her pen, surprised by how quickly the first few numbers fall into place.",
+      "storyboard_dialogue": "Wow, I didn't expect to find the first clue quite that quickly.",
       "panel_location": "train table by the window"
     },
     {
@@ -242,27 +242,27 @@
       "output": "social/2026-05-30/03_panel-03.png",
       "screen_quad": [
         [
-          665,
-          628
+          691,
+          626
         ],
         [
-          1039,
-          657
+          1066,
+          659
         ],
         [
-          995,
-          937
+          1018,
+          955
         ],
         [
-          625,
-          866
+          645,
+          878
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "I've got exactly three minutes until my next connection, so let's make this count.\nStepping off the train for a quick coffee gives her a perfect chance to rethink her strategy.",
+      "storyboard_text": "Just a few minutes to myself in this steady spot is exactly what I needed.\nTaking a slow breath, she pauses to appreciate the warm sunlight filtering through the bookstore window.",
       "arc_role": "choice",
-      "storyboard_caption": "Stepping off the train for a quick coffee gives her a perfect chance to rethink her strategy.",
-      "storyboard_dialogue": "I've got exactly three minutes until my next connection, so let's make this count.",
+      "storyboard_caption": "Taking a slow breath, she pauses to appreciate the warm sunlight filtering through the bookstore window.",
+      "storyboard_dialogue": "Just a few minutes to myself in this steady spot is exactly what I needed.",
       "panel_location": "outdoor cafe street table"
     },
     {
@@ -275,20 +275,20 @@
       "output": "social/2026-05-30/04_panel-04.png",
       "screen_quad": [
         [
-          705,
-          660
+          647,
+          631
         ],
         [
-          1067,
-          683
+          1070,
+          653
         ],
         [
-          1029,
-          962
+          1028,
+          1008
         ],
         [
-          667,
-          895
+          598,
+          926
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -308,27 +308,27 @@
       "output": "social/2026-05-30/05_panel-05.png",
       "screen_quad": [
         [
-          710,
-          751
+          683,
+          645
         ],
         [
-          1043,
-          782
+          1048,
+          675
         ],
         [
-          1009,
-          1017
+          1003,
+          947
         ],
         [
-          676,
-          959
+          643,
+          877
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Well, would you look at that? This combination actually holds together perfectly.\nFinding a steady nook surrounded by books helps the final pieces of the puzzle fall into place.",
+      "storyboard_text": "There we go, that number fits perfectly and unlocks the rest of it.\nWith the tricky part behind her, the final section of the grid slowly begins to lock together.",
       "arc_role": "consequence",
-      "storyboard_caption": "Finding a steady nook surrounded by books helps the final pieces of the puzzle fall into place.",
-      "storyboard_dialogue": "Well, would you look at that? This combination actually holds together perfectly.",
+      "storyboard_caption": "With the tricky part behind her, the final section of the grid slowly begins to lock together.",
+      "storyboard_dialogue": "There we go, that number fits perfectly and unlocks the rest of it.",
       "panel_location": "bookshop cafe corner"
     },
     {
@@ -341,27 +341,27 @@
       "output": "social/2026-05-30/06_panel-06.png",
       "screen_quad": [
         [
-          642,
-          666
+          605,
+          736
         ],
         [
-          1011,
-          701
+          978,
+          761
         ],
         [
-          976,
-          949
+          938,
+          1025
         ],
         [
-          610,
-          884
+          565,
+          959
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "That's a wrap for today. Time to pack up and get ready for Monday.\nWith the journey coming to an end, she watches the rain gather on the glass with satisfaction.",
+      "storyboard_text": "I think I'll just linger here for a bit longer and enjoy this steady corner.\nAlthough the puzzle is finished, the peaceful atmosphere makes it impossible for her to leave just yet.",
       "arc_role": "resolution",
-      "storyboard_caption": "With the journey coming to an end, she watches the rain gather on the glass with satisfaction.",
-      "storyboard_dialogue": "That's a wrap for today. Time to pack up and get ready for Monday.",
+      "storyboard_caption": "Although the puzzle is finished, the peaceful atmosphere makes it impossible for her to leave just yet.",
+      "storyboard_dialogue": "I think I'll just linger here for a bit longer and enjoy this steady corner.",
       "panel_location": "rainy window nook with plants"
     }
   ],
@@ -382,10 +382,10 @@
   "puzzle_moment_copy_snapshot": {
     "ran": true,
     "source_stage": "openai",
-    "caption": "Today has its own little rule-set — check the constraint before rushing.",
+    "caption": "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
     "dialogue": "Trigoku first. Check the constraint.",
-    "image_prompt_fragment": "small solution moment on train, noticing today's Trigoku rule naturally",
-    "captured_at": "2026-05-30T20:31:45.964Z"
+    "image_prompt_fragment": "face brightening with a clean deduction, noticing today's Trigoku rule naturally",
+    "captured_at": "2026-05-30T20:39:47.762Z"
   },
   "puzzle_moment_copy_protection": {
     "ran": true,
