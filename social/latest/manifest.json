@@ -45,26 +45,26 @@
   ],
   "storyboard_copy_source": "openai_repaired+gemini",
   "storyboard_copy_model": "gpt-4o-mini",
-  "storyboard_arc_title": "Isla's Puzzle Break",
+  "storyboard_arc_title": "Isla's Morning Routine",
   "storyboard_arc_type": "story_driven_not_location_driven",
   "storyboard_arc": {
-    "setup": "Isla tries to squeeze in a quick puzzle before her inbox inevitably starts piling up.",
-    "disruption": "Finding a moment to focus on the board while the train rattles along the tracks.",
-    "choice": "There are no easy ways out when the pieces require a bit of patience.",
+    "setup": "The kitchen is completely still in the soft morning light, offering a rare moment of peace.",
+    "disruption": "Watching the world slide past the train window helps the first few ideas fall into place.",
+    "choice": "A bustling street distracts just enough to make a hasty decision feel like a mistake.",
     "puzzle_moment": "The daily rule changes the move, so Isla checks it before trusting the answer.",
-    "consequence": "The final pattern is finally starting to emerge as the last few pieces fall into place.",
-    "resolution": "With the puzzle solved, she can finally close her notebook and get back to work."
+    "consequence": "Surrounded by the comforting scent of old books, the final pieces of the puzzle align.",
+    "resolution": "With the morning routine finished, the rainy day outside doesn't seem so gloomy anymore."
   },
   "storyboard_quality": {
-    "location_sequence_only": true,
-    "has_cause_effect": false,
+    "location_sequence_only": false,
+    "has_cause_effect": true,
     "has_character_turn": true,
     "uses_phase2_story": true,
     "quality_gate_passed": false,
     "interchangeable": false,
     "generic_phrase_hits": [],
-    "cause_effect_link_count": 1,
-    "character_turn_count": 1,
+    "cause_effect_link_count": 2,
+    "character_turn_count": 2,
     "quality_gate_action": "repaired_in_place",
     "quality_gate_repair_reasons": [
       "protected_puzzle_moment_copy"
@@ -126,7 +126,7 @@
     "frames": "array:6"
   },
   "openai_storyboard_fallback_reason": null,
-  "openai_storyboard_checked_at": "2026-05-30T19:54:41.337Z",
+  "openai_storyboard_checked_at": "2026-05-30T20:13:16.508Z",
   "gemini_allowed_fields": [
     "caption",
     "dialogue"
@@ -145,19 +145,19 @@
   "puzzle_product": "Trigoku Daily Lock",
   "puzzle_url": "https://suite.sapiverpress.co.uk",
   "captions": [
-    "I'd better get a head start on this before the morning rush begins.\nIsla tries to squeeze in a quick puzzle before her inbox inevitably starts piling up.",
-    "No point in stressing over the clock; I'll just take it one step at a time.\nFinding a moment to focus on the board while the train rattles along the tracks.",
-    "Let's see which of these options is going to fall apart first.\nThere are no easy ways out when the pieces require a bit of patience.",
+    "I'd better get a head start on this before the rest of the house wakes up.\nThe kitchen is completely still in the soft morning light, offering a rare moment of peace.",
+    "So far, so good. This is actually coming together quite nicely.\nWatching the world slide past the train window helps the first few ideas fall into place.",
+    "Hold on a second... that's not quite right, is it?\nA bustling street distracts just enough to make a hasty decision feel like a mistake.",
     "Check the daily rule before trusting it.\nThe daily rule changes the move, so Isla checks it before trusting the answer.",
-    "There we go, that connection actually seems to hold up.\nThe final pattern is finally starting to emerge as the last few pieces fall into place.",
-    "That's enough of a break for now. Time to get back to the grind.\nWith the puzzle solved, she can finally close her notebook and get back to work."
+    "There we go. That connection actually holds up under scrutiny.\nSurrounded by the comforting scent of old books, the final pieces of the puzzle align.",
+    "That's enough for now. I'll get back to it first thing tomorrow.\nWith the morning routine finished, the rainy day outside doesn't seem so gloomy anymore."
   ],
   "storyboard_locations": [
     "small home kitchen table in warm morning light",
     "train table by the window",
-    "outdoor cafe street table or rainy window nook",
+    "outdoor cafe street table",
     "co-working desk near a tall window",
-    "bookshop cafe corner or public library reading table",
+    "bookshop cafe corner",
     "rainy window nook with plants"
   ],
   "scenes": [
@@ -171,27 +171,27 @@
       "output": "social/2026-05-30/01_panel-01.png",
       "screen_quad": [
         [
-          689,
-          577
-        ],
-        [
-          1014,
+          602,
           600
         ],
         [
-          979,
-          831
+          991,
+          621
         ],
         [
-          658,
-          778
+          953,
+          901
+        ],
+        [
+          564,
+          845
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "I'd better get a head start on this before the morning rush begins.\nIsla tries to squeeze in a quick puzzle before her inbox inevitably starts piling up.",
+      "storyboard_text": "I'd better get a head start on this before the rest of the house wakes up.\nThe kitchen is completely still in the soft morning light, offering a rare moment of peace.",
       "arc_role": "setup",
-      "storyboard_caption": "Isla tries to squeeze in a quick puzzle before her inbox inevitably starts piling up.",
-      "storyboard_dialogue": "I'd better get a head start on this before the morning rush begins.",
+      "storyboard_caption": "The kitchen is completely still in the soft morning light, offering a rare moment of peace.",
+      "storyboard_dialogue": "I'd better get a head start on this before the rest of the house wakes up.",
       "panel_location": "small home kitchen table in warm morning light"
     },
     {
@@ -204,27 +204,27 @@
       "output": "social/2026-05-30/02_panel-02.png",
       "screen_quad": [
         [
-          687,
-          619
+          693,
+          692
         ],
         [
-          1042,
-          637
+          1050,
+          714
         ],
         [
-          1017,
-          878
+          1015,
+          970
         ],
         [
-          664,
-          832
+          657,
+          909
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "No point in stressing over the clock; I'll just take it one step at a time.\nFinding a moment to focus on the board while the train rattles along the tracks.",
+      "storyboard_text": "So far, so good. This is actually coming together quite nicely.\nWatching the world slide past the train window helps the first few ideas fall into place.",
       "arc_role": "disruption",
-      "storyboard_caption": "Finding a moment to focus on the board while the train rattles along the tracks.",
-      "storyboard_dialogue": "No point in stressing over the clock; I'll just take it one step at a time.",
+      "storyboard_caption": "Watching the world slide past the train window helps the first few ideas fall into place.",
+      "storyboard_dialogue": "So far, so good. This is actually coming together quite nicely.",
       "panel_location": "train table by the window"
     },
     {
@@ -237,28 +237,28 @@
       "output": "social/2026-05-30/03_panel-03.png",
       "screen_quad": [
         [
-          676,
-          630
+          570,
+          626
         ],
         [
-          1066,
-          660
+          935,
+          649
         ],
         [
-          1024,
-          959
+          899,
+          916
         ],
         [
-          636,
-          882
+          538,
+          856
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Let's see which of these options is going to fall apart first.\nThere are no easy ways out when the pieces require a bit of patience.",
+      "storyboard_text": "Hold on a second... that's not quite right, is it?\nA bustling street distracts just enough to make a hasty decision feel like a mistake.",
       "arc_role": "choice",
-      "storyboard_caption": "There are no easy ways out when the pieces require a bit of patience.",
-      "storyboard_dialogue": "Let's see which of these options is going to fall apart first.",
-      "panel_location": "outdoor cafe street table or rainy window nook"
+      "storyboard_caption": "A bustling street distracts just enough to make a hasty decision feel like a mistake.",
+      "storyboard_dialogue": "Hold on a second... that's not quite right, is it?",
+      "panel_location": "outdoor cafe street table"
     },
     {
       "scene": "scene_04",
@@ -270,20 +270,20 @@
       "output": "social/2026-05-30/04_panel-04.png",
       "screen_quad": [
         [
-          688,
-          669
+          668,
+          649
         ],
         [
-          1050,
-          696
+          1044,
+          678
         ],
         [
-          1011,
-          979
+          990,
+          964
         ],
         [
-          653,
-          910
+          620,
+          888
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -303,28 +303,28 @@
       "output": "social/2026-05-30/05_panel-05.png",
       "screen_quad": [
         [
-          649,
-          696
+          673,
+          725
         ],
         [
-          996,
-          722
+          999,
+          755
         ],
         [
           962,
-          962
+          991
         ],
         [
-          619,
-          907
+          639,
+          932
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "There we go, that connection actually seems to hold up.\nThe final pattern is finally starting to emerge as the last few pieces fall into place.",
+      "storyboard_text": "There we go. That connection actually holds up under scrutiny.\nSurrounded by the comforting scent of old books, the final pieces of the puzzle align.",
       "arc_role": "consequence",
-      "storyboard_caption": "The final pattern is finally starting to emerge as the last few pieces fall into place.",
-      "storyboard_dialogue": "There we go, that connection actually seems to hold up.",
-      "panel_location": "bookshop cafe corner or public library reading table"
+      "storyboard_caption": "Surrounded by the comforting scent of old books, the final pieces of the puzzle align.",
+      "storyboard_dialogue": "There we go. That connection actually holds up under scrutiny.",
+      "panel_location": "bookshop cafe corner"
     },
     {
       "scene": "scene_06",
@@ -336,32 +336,50 @@
       "output": "social/2026-05-30/06_panel-06.png",
       "screen_quad": [
         [
-          740,
-          728
+          578,
+          727
         ],
         [
-          1044,
-          762
+          953,
+          755
         ],
         [
-          1006,
-          981
+          920,
+          1008
         ],
         [
-          705,
-          915
+          546,
+          947
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "That's enough of a break for now. Time to get back to the grind.\nWith the puzzle solved, she can finally close her notebook and get back to work.",
+      "storyboard_text": "That's enough for now. I'll get back to it first thing tomorrow.\nWith the morning routine finished, the rainy day outside doesn't seem so gloomy anymore.",
       "arc_role": "resolution",
-      "storyboard_caption": "With the puzzle solved, she can finally close her notebook and get back to work.",
-      "storyboard_dialogue": "That's enough of a break for now. Time to get back to the grind.",
+      "storyboard_caption": "With the morning routine finished, the rainy day outside doesn't seem so gloomy anymore.",
+      "storyboard_dialogue": "That's enough for now. I'll get back to it first thing tomorrow.",
       "panel_location": "rainy window nook with plants"
     }
   ],
   "all_panels_have_screen_overlay": true,
   "screen_overlay_failures": [],
   "screen_overlay_recoveries": [],
-  "posting_allowed": true
+  "posting_allowed": true,
+  "puzzle_moment_copy_snapshot": {
+    "ran": true,
+    "source_stage": "openai",
+    "caption": "Today has its own little rule-set — check the constraint before rushing.",
+    "dialogue": "Today has its own little rule-set — check the constraint before rushing.",
+    "image_prompt_fragment": "gentle nod, pattern opens, noticing today's Trigoku rule naturally",
+    "captured_at": "2026-05-30T20:13:16.584Z"
+  },
+  "puzzle_moment_copy_protection": {
+    "ran": true,
+    "changed": true,
+    "source": "snapshot:openai"
+  },
+  "location_or_normalised": {
+    "ran": true,
+    "changed": true,
+    "fields_changed": 6
+  }
 }
