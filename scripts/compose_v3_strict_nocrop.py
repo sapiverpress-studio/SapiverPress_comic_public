@@ -186,6 +186,9 @@ def default_storyboard_quality(story: dict) -> dict:
         "quality_gate_passed": bool(quality.get("quality_gate_passed", False)),
         "interchangeable": bool(quality.get("interchangeable", False)),
         "generic_phrase_hits": quality.get("generic_phrase_hits", []),
+        "final_lint_passed": bool(quality.get("final_lint_passed", False)),
+        "final_banned_word_hits": quality.get("final_banned_word_hits", []),
+        "copy_repetition_lint": quality.get("copy_repetition_lint", {}),
     }
 
 
@@ -209,9 +212,16 @@ def write_manifest(story: dict, rows: list[dict]) -> dict:
         "story_fields_used": story.get("story_fields_used") or [],
         "storyboard_copy_source": story.get("storyboard_copy_source") or "unknown",
         "storyboard_copy_model": story.get("storyboard_copy_model") or "unknown",
+        "storyboard_arc_title": story.get("storyboard_arc_title") or "",
         "storyboard_arc_type": story.get("storyboard_arc_type") or "story_driven_not_location_driven",
         "storyboard_arc": storyboard_arc,
         "storyboard_quality": storyboard_quality,
+        "openai_storyboard_status": story.get("openai_storyboard_status"),
+        "openai_storyboard_model": story.get("openai_storyboard_model"),
+        "openai_storyboard_response_shape": story.get("openai_storyboard_response_shape"),
+        "openai_storyboard_fallback_reason": story.get("openai_storyboard_fallback_reason"),
+        "openai_storyboard_checked_at": story.get("openai_storyboard_checked_at"),
+        "variant_recap": story.get("variant_recap") or {},
         "puzzle_product": "Trigoku Daily Lock",
         "puzzle_url": "https://suite.sapiverpress.co.uk",
         "captions": [caption_for_scene(story, i) for i in range(6)],
@@ -228,6 +238,29 @@ def mirror_latest() -> None:
     LATEST_DIR.mkdir(parents=True, exist_ok=True)
     for name in EXPORT_FILES + ["manifest.json"]:
         shutil.copy2(OUT_DIR / name, LATEST_DIR / name)
+
+
+def compose_panel_with_template_recovery(story: dict, scene: dict, index: int, capture: Path) -> tuple[Path, dict]:
+    panel_path, row = base.compose_panel(story, scene, index, capture)
+    if row.get("screen_quad_mode") != "overlay_skipped_no_screen_detected" or row.get("art_source") != "replacement":
+        return panel_path, row
+
+    replacement_path = ROOT / row.get("art_path", "")
+    disabled_path = replacement_path.with_suffix(replacement_path.suffix + ".screenfail")
+    print(f"Replacement screen missing for scene_{index + 1:02d}; recomposing from locked template")
+
+    if replacement_path.exists():
+        if disabled_path.exists():
+            disabled_path.unlink()
+        replacement_path.rename(disabled_path)
+    try:
+        recovered_path, recovered_row = base.compose_panel(story, scene, index, capture)
+        recovered_row["recovered_from_missing_replacement_screen"] = True
+        recovered_row["failed_replacement"] = str(replacement_path.relative_to(ROOT)) if replacement_path.exists() or disabled_path.exists() else row.get("art_path", "")
+        return recovered_path, recovered_row
+    finally:
+        if disabled_path.exists():
+            disabled_path.rename(replacement_path)
 
 
 def main() -> None:
@@ -248,7 +281,7 @@ def main() -> None:
     rows: list[dict] = []
     intermediate_paths: list[Path] = []
     for index, scene in enumerate(scenes[:6]):
-        panel_path, row = base.compose_panel(story, scene, index, captures[index])
+        panel_path, row = compose_panel_with_template_recovery(story, scene, index, captures[index])
         final_path = OUT_DIR / EXPORT_FILES[index + 1]
         shutil.move(str(panel_path), str(final_path))
         row["output"] = str(final_path.relative_to(ROOT))
