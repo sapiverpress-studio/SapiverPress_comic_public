@@ -65,7 +65,7 @@
       "output_file": "social/2026-05-30/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "With a daunting to-do list looming, Isla slides into her favorite corner to solve the morning grid.",
+      "caption": "Before the busy day officially starts, Isla ignores her growing to-do list and opens the grid.",
       "scene_id": "scene_01"
     },
     {
@@ -75,7 +75,7 @@
       "output_file": "social/2026-05-30/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "As the rain starts to pour, her schedule slips, but she refuses to rush her morning.",
+      "caption": "As the train falls behind schedule, Isla focuses on her puzzle instead of watching the clock.",
       "scene_id": "scene_02"
     },
     {
@@ -85,7 +85,7 @@
       "output_file": "social/2026-05-30/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "Sipping her coffee, she flips her phone over to carve out a steady, three-minute escape.",
+      "caption": "Sipping her coffee, Isla flips her phone over to claim a few three minutes for herself.",
       "scene_id": "scene_03"
     },
     {
@@ -105,7 +105,7 @@
       "output_file": "social/2026-05-30/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "Her patience pays off as the pattern snaps perfectly into place with a satisfying click.",
+      "caption": "With the correct constraint applied, her solution clicks into place and the day feels lighter.",
       "scene_id": "scene_05"
     },
     {
@@ -115,10 +115,10 @@
       "output_file": "social/2026-05-30/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "With the grid complete, she shuts her screen, feeling ready to face her actual workspace.",
+      "caption": "With one last satisfying glance, Isla shuts her laptop before the afternoon rush begins.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-05-30.json",
-  "generated_at": "2026-05-30T12:34:18.404Z"
+  "generated_at": "2026-05-30T12:38:04.462Z"
 }

@@ -15,39 +15,39 @@
   "puzzle_screen_inserted_later": true,
   "puzzle_product": "Trigoku Daily Lock",
   "puzzle_url": "https://suite.sapiverpress.co.uk",
-  "selected_setting": "co-working desk near a tall window",
+  "selected_setting": "small kitchen table in warm morning light",
   "image_prompts": [
     {
       "scene": "scene_01",
       "pose_id": "pose_01_back_again",
-      "prompt": "ISLA_SP relaxed, settling in, face visible, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, front-facing or three-quarter view, Isla's face clearly visible, rainy window nook with plants, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
-      "storyboard_caption": "With a daunting to-do list looming, Isla slides into her favorite corner to solve the morning grid.",
-      "storyboard_dialogue": "Let's get this done before the morning rush hits.",
-      "caption": "With a daunting to-do list looming, Isla slides into her favorite corner to solve the morning grid.",
-      "dialogue": "Let's get this done before the morning rush hits."
+      "prompt": "ISLA_SP calm arrival, rain-lit face, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, front-facing or three-quarter view, Isla's face clearly visible, rainy window nook with plants, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
+      "storyboard_caption": "Before the busy day officially starts, Isla ignores her growing to-do list and opens the grid.",
+      "storyboard_dialogue": "Just a quick start before the world wakes up.",
+      "caption": "Before the busy day officially starts, Isla ignores her growing to-do list and opens the grid.",
+      "dialogue": "Just a quick start before the world wakes up."
     },
     {
       "scene": "scene_02",
       "pose_id": "pose_02_first_moves",
-      "prompt": "ISLA_SP focused, leaning forward slightly, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, rainy window nook with plants, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
-      "storyboard_caption": "As the rain starts to pour, her schedule slips, but she refuses to rush her morning.",
+      "prompt": "ISLA_SP focused, early engagement, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, rainy window nook with plants, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
+      "storyboard_caption": "As the train falls behind schedule, Isla focuses on her puzzle instead of watching the clock.",
       "storyboard_dialogue": "No point in stressing over a delayed train.",
-      "caption": "As the rain starts to pour, her schedule slips, but she refuses to rush her morning.",
+      "caption": "As the train falls behind schedule, Isla focuses on her puzzle instead of watching the clock.",
       "dialogue": "No point in stressing over a delayed train."
     },
     {
       "scene": "scene_03",
       "pose_id": "pose_03_stuck",
-      "prompt": "ISLA_SP frowning, correcting herself, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, rainy window nook with plants, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
-      "storyboard_caption": "Sipping her coffee, she flips her phone over to carve out a steady, three-minute escape.",
-      "storyboard_dialogue": "Just a few minutes to myself before the real work begins.",
-      "caption": "Sipping her coffee, she flips her phone over to carve out a steady, three-minute escape.",
-      "dialogue": "Just a few minutes to myself before the real work begins."
+      "prompt": "ISLA_SP distracted, rain-watching, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, rainy window nook with plants, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
+      "storyboard_caption": "Sipping her coffee, Isla flips her phone over to claim a few three minutes for herself.",
+      "storyboard_dialogue": "Three minutes all to myself.",
+      "caption": "Sipping her coffee, Isla flips her phone over to claim a few three minutes for herself.",
+      "dialogue": "Three minutes all to myself."
     },
     {
       "scene": "scene_04",
       "pose_id": "pose_04_thinking",
-      "prompt": "ISLA_SP thoughtful, eyes on screen, face three-quarter view, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, front-facing or three-quarter view, Isla's face clearly visible, rainy window nook with plants, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
+      "prompt": "ISLA_SP refocused, thinking through, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, front-facing or three-quarter view, Isla's face clearly visible, rainy window nook with plants, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
       "storyboard_caption": "The daily rule changes the move, so Isla checks it before trusting the answer.",
       "storyboard_dialogue": "Check the daily rule before trusting it.",
       "caption": "The daily rule changes the move, so Isla checks it before trusting the answer.",
@@ -56,20 +56,20 @@
     {
       "scene": "scene_05",
       "pose_id": "pose_05_coffee",
-      "prompt": "ISLA_SP calm, mug in hand, glancing at window, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, rainy window nook with plants, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
-      "storyboard_caption": "Her patience pays off as the pattern snaps perfectly into place with a satisfying click.",
-      "storyboard_dialogue": "Ah, there we go. It actually works now.",
-      "caption": "Her patience pays off as the pattern snaps perfectly into place with a satisfying click.",
-      "dialogue": "Ah, there we go. It actually works now."
+      "prompt": "ISLA_SP near completion, coffee in hand, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, rainy window nook with plants, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
+      "storyboard_caption": "With the correct constraint applied, her solution clicks into place and the day feels lighter.",
+      "storyboard_dialogue": "There we go. That actually works.",
+      "caption": "With the correct constraint applied, her solution clicks into place and the day feels lighter.",
+      "dialogue": "There we go. That actually works."
     },
     {
       "scene": "scene_06",
       "pose_id": "pose_06_leaving",
-      "prompt": "ISLA_SP content, looking out at rain, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, rainy window nook with plants, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
-      "storyboard_caption": "With the grid complete, she shuts her screen, feeling ready to face her actual workspace.",
-      "storyboard_dialogue": "And that is my cue to finally start the workday.",
-      "caption": "With the grid complete, she shuts her screen, feeling ready to face her actual workspace.",
-      "dialogue": "And that is my cue to finally start the workday."
+      "prompt": "ISLA_SP satisfied, rain-lit departure, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, rainy window nook with plants, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
+      "storyboard_caption": "With one last satisfying glance, Isla shuts her laptop before the afternoon rush begins.",
+      "storyboard_dialogue": "Time to close it up and get moving.",
+      "caption": "With one last satisfying glance, Isla shuts her laptop before the afternoon rush begins.",
+      "dialogue": "Time to close it up and get moving."
     }
   ],
   "style_rules": [
@@ -122,12 +122,12 @@
   "storyboard_copy_source": "openai_repair+gemini",
   "storyboard_arc_type": "story_driven_not_location_driven",
   "storyboard_arc": {
-    "setup": "With a daunting to-do list looming, Isla slides into her favorite corner to solve the morning grid.",
-    "disruption": "As the rain starts to pour, her schedule slips, but she refuses to rush her morning.",
-    "choice": "Sipping her coffee, she flips her phone over to carve out a steady, three-minute escape.",
+    "setup": "Before the busy day officially starts, Isla ignores her growing to-do list and opens the grid.",
+    "disruption": "As the train falls behind schedule, Isla focuses on her puzzle instead of watching the clock.",
+    "choice": "Sipping her coffee, Isla flips her phone over to claim a few three minutes for herself.",
     "puzzle_moment": "The daily rule changes the move, so Isla checks it before trusting the answer.",
-    "consequence": "Her patience pays off as the pattern snaps perfectly into place with a satisfying click.",
-    "resolution": "With the grid complete, she shuts her screen, feeling ready to face her actual workspace."
+    "consequence": "With the correct constraint applied, her solution clicks into place and the day feels lighter.",
+    "resolution": "With one last satisfying glance, Isla shuts her laptop before the afternoon rush begins."
   },
   "storyboard_quality": {
     "location_sequence_only": false,
@@ -161,8 +161,8 @@
   "openai_storyboard_status": "ok",
   "openai_storyboard_model": "gpt-4o-mini",
   "openai_storyboard_fallback_reason": null,
-  "openai_storyboard_checked_at": "2026-05-30T12:34:05.324Z",
-  "storyboard_arc_title": "Isla's Puzzle Day",
+  "openai_storyboard_checked_at": "2026-05-30T12:37:48.588Z",
+  "storyboard_arc_title": "Isla's Morning Routine",
   "storyboard_locations": [
     "small home kitchen table in warm morning light",
     "train table by the window",
@@ -171,44 +171,44 @@
     "bookshop cafe corner or public library reading table",
     "rainy window nook with plants"
   ],
-  "location_key": "coworking",
+  "location_key": "home",
   "composition_key": "desk_right_screen",
   "per_panel_location_keys": true,
   "panel_locations": [
     {
       "panel": 1,
-      "setting": "bookshop cafe corner",
-      "location_key": "bookshop",
-      "composition_key": "desk_right_screen"
-    },
-    {
-      "panel": 2,
-      "setting": "rainy window nook with plants",
-      "location_key": "rainy_window",
-      "composition_key": "desk_right_screen"
-    },
-    {
-      "panel": 3,
       "setting": "small home kitchen table in warm morning light",
       "location_key": "home",
       "composition_key": "desk_right_screen"
     },
     {
-      "panel": 4,
+      "panel": 2,
       "setting": "train table by the window",
       "location_key": "train",
       "composition_key": "train_right_screen"
     },
     {
-      "panel": 5,
+      "panel": 3,
       "setting": "outdoor cafe street table",
       "location_key": "cafe",
       "composition_key": "cafe_right_screen"
     },
     {
-      "panel": 6,
+      "panel": 4,
       "setting": "co-working desk near a tall window",
       "location_key": "coworking",
+      "composition_key": "desk_right_screen"
+    },
+    {
+      "panel": 5,
+      "setting": "bookshop cafe corner",
+      "location_key": "bookshop",
+      "composition_key": "desk_right_screen"
+    },
+    {
+      "panel": 6,
+      "setting": "rainy window nook with plants",
+      "location_key": "rainy_window",
       "composition_key": "desk_right_screen"
     }
   ],
