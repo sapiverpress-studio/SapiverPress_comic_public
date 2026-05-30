@@ -63,7 +63,7 @@
       "output_file": "social/2026-05-30/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "Isla sees her to-do list piling up, but she pauses for a quick glance at the morning grid.",
+      "caption": "A busy day waits, but Isla chooses a slow start, letting her eyes linger on the Trigoku grid.",
       "scene_id": "scene_01"
     },
     {
@@ -73,7 +73,7 @@
       "output_file": "social/2026-05-30/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "Her train gets delayed, tempting her to shut her laptop and panic about the lost time.",
+      "caption": "As the train slips off schedule, she resists the urge to rush and watches the rain instead.",
       "scene_id": "scene_02"
     },
     {
@@ -83,7 +83,7 @@
       "output_file": "social/2026-05-30/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "At her sunny co-working desk, Isla ignores a work notification to claim three quiet, unhurried minutes.",
+      "caption": "Tucked among the wet leaves, she ignores a buzzing message and claims a few quiet, reflective minutes.",
       "scene_id": "scene_03"
     },
     {
@@ -93,7 +93,7 @@
       "output_file": "social/2026-05-30/04_panel-04.png",
       "image_name": "04_panel-04.png",
       "fallback_template": "templates/characters/isla/isla_04_breakthrough.png",
-      "caption": "Since Trigoku easily punishes rushed mistakes, she double-checks the grid constraints before committing to her next move.",
+      "caption": "Under the cafe awning, she checks the Trigoku constraint carefully, knowing the grid won't forgive a hasty guess.",
       "scene_id": "scene_04"
     },
     {
@@ -103,7 +103,7 @@
       "output_file": "social/2026-05-30/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "Taking that extra moment pays off; her next task suddenly feels manageable rather than incredibly stressful.",
+      "caption": "Her patient pause pays off; the puzzle clicks, and the upcoming task suddenly feels much lighter.",
       "scene_id": "scene_05"
     },
     {
@@ -113,10 +113,10 @@
       "output_file": "social/2026-05-30/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "Wrapping up, Isla holds onto this calm focus instead of letting the daily rush take back over.",
+      "caption": "Gathering her things, Isla carries the rainy day's gentle rhythm forward instead of the usual rush.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-05-30.json",
-  "generated_at": "2026-05-30T04:09:20.693Z"
+  "generated_at": "2026-05-30T04:12:53.922Z"
 }
