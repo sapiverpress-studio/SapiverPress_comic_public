@@ -6,6 +6,7 @@ const ARC = ["setup", "disruption", "choice", "puzzle_moment", "consequence", "r
 const FLOW = ["home", "train", "cafe_or_window", "coworking", "bookshop_or_library", "rainy_window"];
 const BANNED_WORDS = ["quiet", "gentle", "pause", "thread", "anchor", "ritual", "borrowed", "understated"];
 const WATCH_TERMS = ["kept", "calm", "focus", "rush", "moment", "careful", "peace"];
+const MALFORMED_PHRASES = ["a few three minutes", "few three minutes", "a couple three minutes", "three few minutes", "couple of three minutes"];
 const REPLACEMENTS = [
   [/\bquiet, reflective minutes\b/gi, "three minutes she actually keeps"],
   [/\bquiet minutes\b/gi, "three minutes"],
@@ -24,6 +25,13 @@ const REPLACEMENTS = [
   [/\bTrigoku penalizes any rushed guesses, so she carefully checks the shape boundaries near the tall window\./gi, "The daily rule changes the move, so Isla checks it before trusting the answer."],
   [/\bTrigoku penalizes\b/gi, "The daily rule changes"],
   [/\bToday has its own little rule-set\s*—\s*check the constraint before rushing\.?/gi, "Check the daily rule before trusting it."],
+  [/\bclaim a few three minutes for herself\b/gi, "claim three minutes for herself"],
+  [/\bclaims a few three minutes for herself\b/gi, "claims three minutes for herself"],
+  [/\ba few three minutes\b/gi, "three minutes"],
+  [/\bfew three minutes\b/gi, "three minutes"],
+  [/\ba couple three minutes\b/gi, "three minutes"],
+  [/\bthree few minutes\b/gi, "three minutes"],
+  [/\bcouple of three minutes\b/gi, "three minutes"],
   [/\bkept journey\b/gi, "journey"],
   [/\bkept bookshop\b/gi, "bookshop corner"],
   [/\bkept moment\b/gi, "minute"],
@@ -41,6 +49,7 @@ function realVariantName(story) { const name = clean(story?.variant_recap?.varia
 function realVariantLine(story) { const line = clean(story?.variant_recap?.line || story?.variant_recap?.short_rule || story?.image_manifest?.variant_recap?.line || story?.image_manifest?.variant_recap?.short_rule || ""); return line && !/little rule-set|check the constraint before rushing/i.test(line) ? line : ""; }
 function normaliseVariant(story) { const vName = realVariantName(story); if (!vName) { story.variant_recap = { variant_name: null, variant_detected: false, line: null, short_rule: null, panel_index: 4 }; } else { story.variant_recap = { ...(story.variant_recap || {}), variant_name: vName, variant_detected: true, line: realVariantLine(story) || story.variant_recap?.line || null, panel_index: 4 }; } story.image_manifest = story.image_manifest || {}; story.image_manifest.variant_recap = story.variant_recap; story.variant_copy_mode = vName ? "exact_variant" : "neutral_daily_rule"; story.variant_detection_unresolved = !vName; return story; }
 function bannedHits(text) { const lower = clean(text).toLowerCase(); return BANNED_WORDS.filter((word) => new RegExp(`\\b${word}\\b`, "i").test(lower)); }
+function malformedHits(text) { const lower = clean(text).toLowerCase(); return MALFORMED_PHRASES.filter((phrase) => lower.includes(phrase)); }
 function sanitise(text) { let out = clean(text); for (const [pattern, replacement] of REPLACEMENTS) out = out.replace(pattern, replacement); out = out.replace(/\b(\w+)\s+\1\b/gi, "$1"); return clean(out); }
 function isPuzzleRuleText(text) { return /check (the )?(daily rule|constraint|variant rule)|rule changes the move|before trusting it|before trusting the answer/i.test(clean(text)); }
 function fallbackDialogue(index) { return ["Just one look before the inbox.", "No use racing that clock.", "Three minutes. Just this.", "Check the daily rule before trusting it.", "That one actually holds.", "A clean break. Then work."][index] || "Keep going."; }
@@ -61,9 +70,25 @@ async function main() {
   if (!story?.scenes?.length) { console.log("Final storyboard lint skipped: missing story scenes"); return; }
   story = normaliseVariant(story);
   const duplicateWordsFixed = [];
+  const malformedPhrasesFixed = [];
   const adCopyRewrites = [];
   const before = (story.scenes || []).map((scene) => `${scene.storyboard_dialogue || scene.dialogue || ""}\n${scene.storyboard_caption || scene.caption || ""}`).join("\n");
-  story.scenes = story.scenes.slice(0, 6).map((scene, index) => { const next = { ...scene }; const capBefore = next.storyboard_caption || next.caption || ""; const diaBefore = next.storyboard_dialogue || next.dialogue || next.speech_bubble || ""; next.storyboard_caption = sanitise(capBefore); next.caption = next.storyboard_caption; next.storyboard_dialogue = sanitise(diaBefore); next.dialogue = next.storyboard_dialogue; next.speech_bubble = next.storyboard_dialogue; if (/\b(\w+)\s+\1\b/i.test(`${capBefore} ${diaBefore}`)) duplicateWordsFixed.push(`panel_${index + 1}`); enforceVariant(next, story, index); const ad = fixAdCopy(next, index); adCopyRewrites.push(...ad.rewrites); return { ...ad.scene, storyboard_panel_text: ad.scene.storyboard_dialogue ? `${ad.scene.storyboard_dialogue}\n${ad.scene.storyboard_caption}` : ad.scene.storyboard_caption }; });
+  story.scenes = story.scenes.slice(0, 6).map((scene, index) => {
+    const next = { ...scene };
+    const capBefore = next.storyboard_caption || next.caption || "";
+    const diaBefore = next.storyboard_dialogue || next.dialogue || next.speech_bubble || "";
+    for (const hit of malformedHits(`${capBefore} ${diaBefore}`)) malformedPhrasesFixed.push(`panel_${index + 1}:${hit}`);
+    next.storyboard_caption = sanitise(capBefore);
+    next.caption = next.storyboard_caption;
+    next.storyboard_dialogue = sanitise(diaBefore);
+    next.dialogue = next.storyboard_dialogue;
+    next.speech_bubble = next.storyboard_dialogue;
+    if (/\b(\w+)\s+\1\b/i.test(`${capBefore} ${diaBefore}`)) duplicateWordsFixed.push(`panel_${index + 1}`);
+    enforceVariant(next, story, index);
+    const ad = fixAdCopy(next, index);
+    adCopyRewrites.push(...ad.rewrites);
+    return { ...ad.scene, storyboard_panel_text: ad.scene.storyboard_dialogue ? `${ad.scene.storyboard_dialogue}\n${ad.scene.storyboard_caption}` : ad.scene.storyboard_caption };
+  });
   const dup = fixDuplicateDialogue(story.scenes); story.scenes = dup.scenes;
   const repetition = reduceRepeatedTerms(story.scenes); story.scenes = repetition.scenes.map((scene) => ({ ...scene, storyboard_panel_text: scene.storyboard_dialogue ? `${scene.storyboard_dialogue}\n${scene.storyboard_caption}` : scene.storyboard_caption }));
   story = enforceLocationFlow(story);
@@ -71,7 +96,7 @@ async function main() {
   story.storyboard_arc = Object.fromEntries(ARC.map((key, index) => [key, story.scenes[index]?.storyboard_caption || ""]));
   story.storyboard_arc_title = story.storyboard_arc_title || "Isla keeps the morning hers";
   story.copy_repetition_lint = { ran: true, repeated_terms: repetition.repeated, changed: repetition.changed };
-  story.final_copy_sanity = { ran: true, duplicate_words_fixed: duplicateWordsFixed, duplicate_dialogue_fixed: dup.changed, puzzle_rule_dialogue_only_panel_4: puzzleRuleOnlyPanel4, ad_copy_rewrites: adCopyRewrites, passed: puzzleRuleOnlyPanel4 && !dup.changed === false ? true : puzzleRuleOnlyPanel4 };
+  story.final_copy_sanity = { ran: true, duplicate_words_fixed: duplicateWordsFixed, malformed_phrases_fixed: malformedPhrasesFixed, duplicate_dialogue_fixed: dup.changed, puzzle_rule_dialogue_only_panel_4: puzzleRuleOnlyPanel4, ad_copy_rewrites: adCopyRewrites, passed: puzzleRuleOnlyPanel4 };
   story.storyboard_quality = buildQuality(story.scenes, story.storyboard_quality || {}, repetition, story.final_copy_sanity);
   story.final_storyboard_lint = { ran: true, changed: before !== story.scenes.map((scene) => `${scene.storyboard_dialogue || ""}\n${scene.storyboard_caption || ""}`).join("\n"), banned_words: BANNED_WORDS, variant_name_available: Boolean(realVariantName(story)) };
   story.post_ready_contract = buildPostReadyContract(story);
@@ -79,6 +104,7 @@ async function main() {
   await writeJson(`daily/${date}.json`, story); await writeJson("latest.json", story); await writeJson(`image-manifests/${date}.json`, story.image_manifest);
   console.log(`Final storyboard lint: ${story.storyboard_quality.final_lint_passed ? "passed" : "failed"}`);
   console.log(`Final copy sanity: ${story.final_copy_sanity.passed ? "passed" : "failed"}`);
+  console.log(`Malformed phrases fixed: ${malformedPhrasesFixed.length ? malformedPhrasesFixed.join(", ") : "none"}`);
   console.log(`Location flow validated: ${story.location_flow_validated ? "yes" : "no"}`);
 }
 main().catch((e) => { console.error(e); process.exit(1); });
