@@ -65,7 +65,7 @@
       "output_file": "social/2026-05-30/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "Isla sneaks in a quick puzzle session at the kitchen table before her workday begins.",
+      "caption": "The early morning sun creeps across the kitchen table, offering a rare moment of absolute steady.",
       "scene_id": "scene_01"
     },
     {
@@ -75,7 +75,7 @@
       "output_file": "social/2026-05-30/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "She manages to find a steady moment on her commute to focus on the grid.",
+      "caption": "A soft start to the day begins with a pencil sliding gently over the paper.",
       "scene_id": "scene_02"
     },
     {
@@ -85,7 +85,7 @@
       "output_file": "social/2026-05-30/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "A brief stop for coffee gives her a chance to look over her progress.",
+      "caption": "Slowing down her racing thoughts feels like a deliberate choice, worth protecting even for just five minutes.",
       "scene_id": "scene_03"
     },
     {
@@ -105,7 +105,7 @@
       "output_file": "social/2026-05-30/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "Tucked away in a steady corner, the final pieces of the puzzle begin aligning.",
+      "caption": "Double-checking the numbers under the cozy bookstore lights helps settle any lingering doubts she had.",
       "scene_id": "scene_05"
     },
     {
@@ -115,10 +115,10 @@
       "output_file": "social/2026-05-30/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "With the daily challenge wrapped up, she can finally turn her attention to her work.",
+      "caption": "With the puzzle finally solved, the rest of her daily routine can begin in earnest.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-05-30.json",
-  "generated_at": "2026-05-30T18:42:36.183Z"
+  "generated_at": "2026-05-30T19:04:22.472Z"
 }

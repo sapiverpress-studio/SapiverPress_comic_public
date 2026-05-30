@@ -1,6 +1,6 @@
 {
   "date": "2026-05-30",
-  "title": "Isla's Puzzle Break",
+  "title": "Morning Puzzle Routine",
   "voice_name": "Isla Sterling",
   "segments": [
     {
@@ -11,17 +11,17 @@
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "Isla sneaks in a quick puzzle session at the kitchen table before her workday begins."
+      "text": "The early morning sun creeps across the kitchen table, offering a rare moment of absolute steady."
     },
     {
       "id": "panel_2",
       "image_name": "02_panel-02.png",
-      "text": "She manages to find a steady moment on her commute to focus on the grid."
+      "text": "A soft start to the day begins with a pencil sliding gently over the paper."
     },
     {
       "id": "panel_3",
       "image_name": "03_panel-03.png",
-      "text": "A brief stop for coffee gives her a chance to look over her progress."
+      "text": "Slowing down her racing thoughts feels like a deliberate choice, worth protecting even for just five minutes."
     },
     {
       "id": "panel_4",
@@ -31,12 +31,12 @@
     {
       "id": "panel_5",
       "image_name": "05_panel-05.png",
-      "text": "Tucked away in a steady corner, the final pieces of the puzzle begin aligning."
+      "text": "Double-checking the numbers under the cozy bookstore lights helps settle any lingering doubts she had."
     },
     {
       "id": "panel_6",
       "image_name": "06_panel-06.png",
-      "text": "With the daily challenge wrapped up, she can finally turn her attention to her work."
+      "text": "With the puzzle finally solved, the rest of her daily routine can begin in earnest."
     },
     {
       "id": "cta",
@@ -44,9 +44,9 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nIsla sneaks in a quick puzzle session at the kitchen table before her workday begins.\n\nShe manages to find a steady moment on her commute to focus on the grid.\n\nA brief stop for coffee gives her a chance to look over her progress.\n\nCheck the daily rule before trusting it.\n\nTucked away in a steady corner, the final pieces of the puzzle begin aligning.\n\nWith the daily challenge wrapped up, she can finally turn her attention to her work.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-05-30T18:43:29.506Z",
-  "caption": "A quick puzzle session between work tasks.",
+  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nThe early morning sun creeps across the kitchen table, offering a rare moment of absolute steady.\n\nA soft start to the day begins with a pencil sliding gently over the paper.\n\nSlowing down her racing thoughts feels like a deliberate choice, worth protecting even for just five minutes.\n\nCheck the daily rule before trusting it.\n\nDouble-checking the numbers under the cozy bookstore lights helps settle any lingering doubts she had.\n\nWith the puzzle finally solved, the rest of her daily routine can begin in earnest.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-05-30T19:05:09.653Z",
+  "caption": "Isla cherishes her quiet moments at home as she solves today's puzzle.",
   "variant_name": "daily rule",
   "variant_line": "Check the daily rule before trusting it.",
   "copy_refined": "openai",
