@@ -1,17 +1,17 @@
 {
   "date": "2026-05-30",
-  "title": "Trigoku with Isla",
+  "title": "Trigoku Daily Lock with Isla",
   "voice_name": "Isla Sterling",
   "segments": [
     {
       "id": "intro",
       "image_name": "00_start-grid.png",
-      "text": "Trigoku today. Isla checks what sort of trouble it is first."
+      "text": "Trigoku Daily Lock today. Isla checks what sort of trouble it is first."
     },
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "She is at train table by the window, already half-thinking about the next job."
+      "text": "She is at small kitchen table in warm morning light, already half-thinking about the next job."
     },
     {
       "id": "panel_2",
@@ -26,7 +26,7 @@
     {
       "id": "panel_4",
       "image_name": "04_panel-04.png",
-      "text": "Today has its own little rule-set — check the constraint before rushing."
+      "text": "Check the constraint before rushing."
     },
     {
       "id": "panel_5",
@@ -44,8 +44,8 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Trigoku today. Isla checks what sort of trouble it is first.\n\nShe is at train table by the window, already half-thinking about the next job.\n\nThen the day starts tugging at her sleeve again.\n\nShe leaves one message unread. Three minutes will not ruin anything.\n\nToday has its own little rule-set — check the constraint before rushing.\n\nThe move holds, which is annoyingly satisfying.\n\nShe shuts the laptop before the rush gets the last word.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-05-30T07:50:19.413Z",
+  "full_text": "Trigoku Daily Lock today. Isla checks what sort of trouble it is first.\n\nShe is at small kitchen table in warm morning light, already half-thinking about the next job.\n\nThen the day starts tugging at her sleeve again.\n\nShe leaves one message unread. Three minutes will not ruin anything.\n\nCheck the constraint before rushing.\n\nThe move holds, which is annoyingly satisfying.\n\nShe shuts the laptop before the rush gets the last word.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-05-30T08:05:16.892Z",
   "copy_refined": "fallback",
   "copy_refine_error": "OPENAI_API_KEY missing"
 }

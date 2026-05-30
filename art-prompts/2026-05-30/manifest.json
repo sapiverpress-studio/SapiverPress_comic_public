@@ -1,8 +1,8 @@
 {
   "date": "2026-05-30",
   "character": "isla",
-  "format": "daily_art_prompt_pack_v4_block_locked_isla_readable_props",
-  "purpose": "Generate six replaceable Isla panel artworks using appearance lock, composition template, location block, pose block, optional story beat, and controlled readable prop text.",
+  "format": "daily_art_prompt_pack_v5_hard_location_pose_screen_readable_props",
+  "purpose": "Generate six replaceable Isla panel artworks using appearance lock, hard location markers, varied pose/body-language markers, mandatory screen area, optional story beat, and readable prop text.",
   "replacement_dir": "art-replacements/2026-05-30",
   "prompt_dir": "art-prompts/2026-05-30",
   "prompts_json": "art-prompts/2026-05-30/prompts.json",
@@ -21,6 +21,8 @@
   "static_prompt_only": false,
   "locked_negative_prompt": "screen obscuring face, device held in front of face, floating overlay, phone pressed to cheek",
   "readable_prop_text_enabled": true,
+  "hard_location_markers_enabled": true,
+  "mandatory_screen_enabled": true,
   "poster_and_merch_quotes": [
     "One page at a time.",
     "One number at a time.",
@@ -63,7 +65,7 @@
       "output_file": "social/2026-05-30/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "Isla spots her morning errands waiting, but steals one kept moment for the grid first.",
+      "caption": "Warm morning light hits the kitchen table as Isla steals a steady moment with her grid.",
       "scene_id": "scene_01"
     },
     {
@@ -73,7 +75,7 @@
       "output_file": "social/2026-05-30/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "As the train slips off schedule, she uses the kept journey as a moving pocket of focus.",
+      "caption": "The train slows down, threatening her schedule, but she resists the urge to panic.",
       "scene_id": "scene_02"
     },
     {
@@ -83,7 +85,7 @@
       "output_file": "social/2026-05-30/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "At a busy street table, Isla ignores her inbox and claims three minutes of peace instead.",
+      "caption": "At the sunlit kitchen table, she ignores a buzzing phone to claim three peaceful minutes.",
       "scene_id": "scene_03"
     },
     {
@@ -93,7 +95,7 @@
       "output_file": "social/2026-05-30/04_panel-04.png",
       "image_name": "04_panel-04.png",
       "fallback_template": "templates/characters/isla/isla_04_breakthrough.png",
-      "caption": "Trigoku penalizes any rushed guesses, so she carefully checks the shape boundaries near the tall window.",
+      "caption": "The daily rule changes the move, so Isla checks it before trusting the answer.",
       "scene_id": "scene_04"
     },
     {
@@ -103,7 +105,7 @@
       "output_file": "social/2026-05-30/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "Tucked away in a kept bookshop, her careful move holds and the remaining errands feel manageable.",
+      "caption": "Her deliberate pace pays off at the desk; the looming chore suddenly feels manageable.",
       "scene_id": "scene_05"
     },
     {
@@ -113,10 +115,10 @@
       "output_file": "social/2026-05-30/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "Watching the rain outside, Isla finishes her grid, carrying forward only her focus, not the rush.",
+      "caption": "In the library's hush, Isla closes her notebook, carrying this steady calm forward.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-05-30.json",
-  "generated_at": "2026-05-30T07:49:37.025Z"
+  "generated_at": "2026-05-30T08:04:31.085Z"
 }
