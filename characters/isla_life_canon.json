@@ -253,6 +253,12 @@
       "attempt": 13,
       "setting": "gothic window desk with cityscape view",
       "reason": "she wants a quiet start before the day gets noisy"
+    },
+    {
+      "date": "2026-05-30",
+      "attempt": 14,
+      "setting": "co-working desk near a tall window",
+      "reason": "she has work waiting, so the puzzle has to fit into a short gap"
     }
   ],
   "variant_memory": [
@@ -483,6 +489,12 @@
       "attempt": 13,
       "variant_name": "Trigoku",
       "panel_index": 4
+    },
+    {
+      "date": "2026-05-30",
+      "attempt": 14,
+      "variant_name": "Trigoku",
+      "panel_index": 2
     }
   ],
   "life_memory": [
@@ -939,6 +951,18 @@
       "thread_to_continue": "quiet morning rituals help her reset",
       "puzzle_variant_mentioned": "Trigoku",
       "variant_panel_index": 4,
+      "uk_calendar_date": null,
+      "uk_calendar_panel_index": null
+    },
+    {
+      "date": "2026-05-30",
+      "attempt": 14,
+      "location": "co-working desk near a tall window",
+      "reason_for_location": "she has work waiting, so the puzzle has to fit into a short gap",
+      "life_detail_learned": "Isla often fits her puzzle ritual between work blocks.",
+      "thread_to_continue": "work days make the puzzle a boundary marker",
+      "puzzle_variant_mentioned": "Trigoku",
+      "variant_panel_index": 2,
       "uk_calendar_date": null,
       "uk_calendar_panel_index": null
     }
