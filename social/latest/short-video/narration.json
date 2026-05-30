@@ -1,6 +1,6 @@
 {
   "date": "2026-05-30",
-  "title": "Quiet Morning Rituals",
+  "title": "Isla's Journey of Focus",
   "voice_name": "Isla Sterling",
   "segments": [
     {
@@ -11,17 +11,17 @@
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "The early morning sunlight spills across the kitchen table, offering a few precious moments of absolute silence."
+      "text": "Nothing beats a steady window seat when you need some space to clear your head."
     },
     {
       "id": "panel_2",
       "image_name": "02_panel-02.png",
-      "text": "Watching the city blur past outside, she opens her notebook to jot down the first thoughts of the day."
+      "text": "The steady click of the tracks makes it surprisingly easy to focus on one thing."
     },
     {
       "id": "panel_3",
       "image_name": "03_panel-03.png",
-      "text": "Taking a slow sip of her coffee, she carefully reviews her notes to make sure nothing was missed."
+      "text": "There is no need to rush when the scenery is shifting so beautifully outside."
     },
     {
       "id": "panel_4",
@@ -31,12 +31,12 @@
     {
       "id": "panel_5",
       "image_name": "05_panel-05.png",
-      "text": "Surrounded by the comforting smell of old books, the pieces of her plan are finally coming together."
+      "text": "With each passing station, the pieces of the puzzle are finally starting to align."
     },
     {
       "id": "panel_6",
       "image_name": "06_panel-06.png",
-      "text": "With everything neatly organized, she watches the rain tap against the glass, feeling completely ready for whatever comes next."
+      "text": "As the train slows down, the steady satisfaction of a solved problem settles in."
     },
     {
       "id": "cta",
@@ -44,9 +44,9 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nThe early morning sunlight spills across the kitchen table, offering a few precious moments of absolute silence.\n\nWatching the city blur past outside, she opens her notebook to jot down the first thoughts of the day.\n\nTaking a slow sip of her coffee, she carefully reviews her notes to make sure nothing was missed.\n\nCheck the daily rule before trusting it.\n\nSurrounded by the comforting smell of old books, the pieces of her plan are finally coming together.\n\nWith everything neatly organized, she watches the rain tap against the glass, feeling completely ready for whatever comes next.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-05-30T19:10:08.572Z",
-  "caption": "Join Isla as she navigates her morning routine, finding steadiness in small rituals.",
+  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nNothing beats a steady window seat when you need some space to clear your head.\n\nThe steady click of the tracks makes it surprisingly easy to focus on one thing.\n\nThere is no need to rush when the scenery is shifting so beautifully outside.\n\nCheck the daily rule before trusting it.\n\nWith each passing station, the pieces of the puzzle are finally starting to align.\n\nAs the train slows down, the steady satisfaction of a solved problem settles in.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-05-30T19:28:39.869Z",
+  "caption": "Join Isla as she finds clarity during her train ride.",
   "variant_name": "daily rule",
   "variant_line": "Check the daily rule before trusting it.",
   "copy_refined": "openai",

@@ -379,6 +379,12 @@
       "attempt": 31,
       "setting": "gothic window desk with cityscape view",
       "reason": "she wants a quiet start before the day gets noisy"
+    },
+    {
+      "date": "2026-05-30",
+      "attempt": 31,
+      "setting": "train table by the window",
+      "reason": "she is travelling and using the journey as thinking time"
     }
   ],
   "variant_memory": [
@@ -709,6 +715,12 @@
     {
       "date": "2026-05-30",
       "attempt": 30,
+      "variant_name": "Trigoku",
+      "panel_index": 4
+    },
+    {
+      "date": "2026-05-30",
+      "attempt": 31,
       "variant_name": "Trigoku",
       "panel_index": 4
     },
@@ -1441,6 +1453,18 @@
       "reason_for_location": "she wants a quiet start before the day gets noisy",
       "life_detail_learned": "Isla protects small morning rituals when she needs steadiness.",
       "thread_to_continue": "quiet morning rituals help her reset",
+      "puzzle_variant_mentioned": "Trigoku",
+      "variant_panel_index": 4,
+      "uk_calendar_date": null,
+      "uk_calendar_panel_index": null
+    },
+    {
+      "date": "2026-05-30",
+      "attempt": 31,
+      "location": "train table by the window",
+      "reason_for_location": "she is travelling and using the journey as thinking time",
+      "life_detail_learned": "Isla likes journeys because they give her contained thinking time.",
+      "thread_to_continue": "train rides become moving pockets of focus",
       "puzzle_variant_mentioned": "Trigoku",
       "variant_panel_index": 4,
       "uk_calendar_date": null,
