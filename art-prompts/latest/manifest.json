@@ -65,7 +65,7 @@
       "output_file": "social/2026-05-30/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "Isla glimpses a pending work notification but chooses to focus on the grid for just a moment.",
+      "caption": "Rain streaks the tall glass while Isla ignores her errands, choosing to open her daily grid instead.",
       "scene_id": "scene_01"
     },
     {
@@ -75,7 +75,7 @@
       "output_file": "social/2026-05-30/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "The day is already running late, tempting her to slam the laptop shut and rush off.",
+      "caption": "With the morning already running late, she quietly retreats into a cozy corner, choosing calm over hurry.",
       "scene_id": "scene_02"
     },
     {
@@ -85,7 +85,7 @@
       "output_file": "social/2026-05-30/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "Ignoring her buzzing phone, Isla claims three three minutes for herself by the rain-streaked window.",
+      "caption": "Surrounded by damp green leaves, she flips her phone over to claim a few steady, undisturbed minutes.",
       "scene_id": "scene_03"
     },
     {
@@ -105,7 +105,7 @@
       "output_file": "social/2026-05-30/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "Taking her time pays off, transforming the next task from a stressful deadline into a simple step.",
+      "caption": "Watching the wet scenery blur past, she smiles as the numbers snap perfectly into place.",
       "scene_id": "scene_05"
     },
     {
@@ -115,10 +115,10 @@
       "output_file": "social/2026-05-30/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "With the grid complete, Isla realizes busy work days make the puzzle a necessary boundary marker.",
+      "caption": "Under a dripping awning, Isla shuts her laptop, feeling completely ready to face whatever comes next.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-05-30.json",
-  "generated_at": "2026-05-30T11:11:14.479Z"
+  "generated_at": "2026-05-30T11:49:02.286Z"
 }

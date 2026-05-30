@@ -43,17 +43,17 @@
     "variant_recap",
     "uk_calendar_date"
   ],
-  "storyboard_copy_source": "fallback_after_openai_quality_gate+gemini",
+  "storyboard_copy_source": "openai_repair+gemini",
   "storyboard_copy_model": "gpt-4o-mini",
-  "storyboard_arc_title": "Isla holds the line",
+  "storyboard_arc_title": "Isla's Reflective Rainy Day",
   "storyboard_arc_type": "story_driven_not_location_driven",
   "storyboard_arc": {
-    "setup": "Isla glimpses a pending work notification but chooses to focus on the grid for just a moment.",
-    "disruption": "The day is already running late, tempting her to slam the laptop shut and rush off.",
-    "choice": "Ignoring her buzzing phone, Isla claims three three minutes for herself by the rain-streaked window.",
+    "setup": "Rain streaks the tall glass while Isla ignores her errands, choosing to open her daily grid instead.",
+    "disruption": "With the morning already running late, she quietly retreats into a cozy corner, choosing calm over hurry.",
+    "choice": "Surrounded by damp green leaves, she flips her phone over to claim a few steady, undisturbed minutes.",
     "puzzle_moment": "The daily rule changes the move, so Isla checks it before trusting the answer.",
-    "consequence": "Taking her time pays off, transforming the next task from a stressful deadline into a simple step.",
-    "resolution": "With the grid complete, Isla realizes busy work days make the puzzle a necessary boundary marker."
+    "consequence": "Watching the wet scenery blur past, she smiles as the numbers snap perfectly into place.",
+    "resolution": "Under a dripping awning, Isla shuts her laptop, feeling completely ready to face whatever comes next."
   },
   "storyboard_quality": {
     "location_sequence_only": false,
@@ -63,8 +63,10 @@
     "quality_gate_passed": true,
     "interchangeable": false,
     "generic_phrase_hits": [],
-    "cause_effect_link_count": 3,
-    "character_turn_count": 2,
+    "cause_effect_link_count": 4,
+    "character_turn_count": 1,
+    "quality_gate_action": "passed",
+    "quality_gate_repair_reasons": [],
     "final_lint_passed": true,
     "final_banned_word_hits": [],
     "copy_repetition_lint": {
@@ -77,7 +79,7 @@
   "openai_storyboard_model": "gpt-4o-mini",
   "openai_storyboard_response_shape": null,
   "openai_storyboard_fallback_reason": null,
-  "openai_storyboard_checked_at": "2026-05-30T11:10:51.264Z",
+  "openai_storyboard_checked_at": "2026-05-30T11:48:53.294Z",
   "variant_recap": {
     "variant_name": null,
     "variant_detected": false,
@@ -88,12 +90,12 @@
   "puzzle_product": "Trigoku Daily Lock",
   "puzzle_url": "https://suite.sapiverpress.co.uk",
   "captions": [
-    "Just one quick look before the emails start flooding in.\nIsla glimpses a pending work notification but chooses to focus on the grid for just a moment.",
-    "Check the daily rule before trusting it.\nThe day is already running late, tempting her to slam the laptop shut and rush off.",
-    "The rest of the world can honestly wait for three minutes.\nIgnoring her buzzing phone, Isla claims three three minutes for herself by the rain-streaked window.",
+    "Let's get this done before the rush starts.\nRain streaks the tall glass while Isla ignores her errands, choosing to open her daily grid instead.",
+    "Check the daily rule before trusting it.\nWith the morning already running late, she quietly retreats into a cozy corner, choosing calm over hurry.",
+    "Three whole minutes, completely to myself.\nSurrounded by damp green leaves, she flips her phone over to claim a few steady, undisturbed minutes.",
     "Check the daily rule before trusting it.\nThe daily rule changes the move, so Isla checks it before trusting the answer.",
-    "There we go, that fits perfectly.\nTaking her time pays off, transforming the next task from a stressful deadline into a simple step.",
-    "A clean break before the real work begins.\nWith the grid complete, Isla realizes busy work days make the puzzle a necessary boundary marker."
+    "Perfect. That one actually works.\nWatching the wet scenery blur past, she smiles as the numbers snap perfectly into place.",
+    "Time to leave it be and head out.\nUnder a dripping awning, Isla shuts her laptop, feeling completely ready to face whatever comes next."
   ],
   "storyboard_locations": [
     "co-working desk near a tall window",
@@ -114,27 +116,27 @@
       "output": "social/2026-05-30/01_panel-01.png",
       "screen_quad": [
         [
-          688,
-          647
+          648,
+          588
         ],
         [
-          1042,
-          674
+          1003,
+          614
         ],
         [
-          1002,
-          951
+          966,
+          875
         ],
         [
-          651,
-          885
+          615,
+          817
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Just one quick look before the emails start flooding in.\nIsla glimpses a pending work notification but chooses to focus on the grid for just a moment.",
+      "storyboard_text": "Let's get this done before the rush starts.\nRain streaks the tall glass while Isla ignores her errands, choosing to open her daily grid instead.",
       "arc_role": "setup",
-      "storyboard_caption": "Isla glimpses a pending work notification but chooses to focus on the grid for just a moment.",
-      "storyboard_dialogue": "Just one quick look before the emails start flooding in.",
+      "storyboard_caption": "Rain streaks the tall glass while Isla ignores her errands, choosing to open her daily grid instead.",
+      "storyboard_dialogue": "Let's get this done before the rush starts.",
       "panel_location": "co-working desk near a tall window"
     },
     {
@@ -147,26 +149,26 @@
       "output": "social/2026-05-30/02_panel-02.png",
       "screen_quad": [
         [
-          613,
-          598
+          624,
+          658
         ],
         [
-          974,
-          629
+          986,
+          684
         ],
         [
-          941,
-          894
+          951,
+          937
         ],
         [
-          584,
-          831
+          592,
+          876
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Check the daily rule before trusting it.\nThe day is already running late, tempting her to slam the laptop shut and rush off.",
+      "storyboard_text": "Check the daily rule before trusting it.\nWith the morning already running late, she quietly retreats into a cozy corner, choosing calm over hurry.",
       "arc_role": "disruption",
-      "storyboard_caption": "The day is already running late, tempting her to slam the laptop shut and rush off.",
+      "storyboard_caption": "With the morning already running late, she quietly retreats into a cozy corner, choosing calm over hurry.",
       "storyboard_dialogue": "Check the daily rule before trusting it.",
       "panel_location": "bookshop cafe corner"
     },
@@ -180,27 +182,27 @@
       "output": "social/2026-05-30/03_panel-03.png",
       "screen_quad": [
         [
-          650,
-          577
+          684,
+          639
         ],
         [
-          1019,
-          605
+          1067,
+          670
         ],
         [
-          973,
-          877
+          1033,
+          947
         ],
         [
-          610,
-          811
+          647,
+          886
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "The rest of the world can honestly wait for three minutes.\nIgnoring her buzzing phone, Isla claims three three minutes for herself by the rain-streaked window.",
+      "storyboard_text": "Three whole minutes, completely to myself.\nSurrounded by damp green leaves, she flips her phone over to claim a few steady, undisturbed minutes.",
       "arc_role": "choice",
-      "storyboard_caption": "Ignoring her buzzing phone, Isla claims three three minutes for herself by the rain-streaked window.",
-      "storyboard_dialogue": "The rest of the world can honestly wait for three minutes.",
+      "storyboard_caption": "Surrounded by damp green leaves, she flips her phone over to claim a few steady, undisturbed minutes.",
+      "storyboard_dialogue": "Three whole minutes, completely to myself.",
       "panel_location": "rainy window nook with plants"
     },
     {
@@ -213,20 +215,20 @@
       "output": "social/2026-05-30/04_panel-04.png",
       "screen_quad": [
         [
-          649,
-          558
+          667,
+          605
         ],
         [
-          1065,
-          592
+          1042,
+          636
         ],
         [
-          1032,
-          915
+          992,
+          921
         ],
         [
-          610,
-          828
+          621,
+          848
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -246,27 +248,27 @@
       "output": "social/2026-05-30/05_panel-05.png",
       "screen_quad": [
         [
-          689,
-          650
+          638,
+          670
         ],
         [
-          1040,
-          666
+          970,
+          686
         ],
         [
-          1007,
-          915
+          941,
+          916
         ],
         [
-          661,
-          865
+          611,
+          874
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "There we go, that fits perfectly.\nTaking her time pays off, transforming the next task from a stressful deadline into a simple step.",
+      "storyboard_text": "Perfect. That one actually works.\nWatching the wet scenery blur past, she smiles as the numbers snap perfectly into place.",
       "arc_role": "consequence",
-      "storyboard_caption": "Taking her time pays off, transforming the next task from a stressful deadline into a simple step.",
-      "storyboard_dialogue": "There we go, that fits perfectly.",
+      "storyboard_caption": "Watching the wet scenery blur past, she smiles as the numbers snap perfectly into place.",
+      "storyboard_dialogue": "Perfect. That one actually works.",
       "panel_location": "train table by the window"
     },
     {
@@ -279,27 +281,27 @@
       "output": "social/2026-05-30/06_panel-06.png",
       "screen_quad": [
         [
-          626,
-          733
+          711,
+          640
         ],
         [
-          958,
-          754
+          1066,
+          678
         ],
         [
-          918,
-          1008
-        ],
-        [
-          589,
+          1031,
           951
+        ],
+        [
+          674,
+          876
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "A clean break before the real work begins.\nWith the grid complete, Isla realizes busy work days make the puzzle a necessary boundary marker.",
+      "storyboard_text": "Time to leave it be and head out.\nUnder a dripping awning, Isla shuts her laptop, feeling completely ready to face whatever comes next.",
       "arc_role": "resolution",
-      "storyboard_caption": "With the grid complete, Isla realizes busy work days make the puzzle a necessary boundary marker.",
-      "storyboard_dialogue": "A clean break before the real work begins.",
+      "storyboard_caption": "Under a dripping awning, Isla shuts her laptop, feeling completely ready to face whatever comes next.",
+      "storyboard_dialogue": "Time to leave it be and head out.",
       "panel_location": "outdoor cafe street table"
     }
   ],
