@@ -40,16 +40,37 @@ function useful(text) {
   return t && !isGenericPuzzleLine(t);
 }
 
+function candidateFromSnapshot(story) {
+  const scene = story?.scenes?.[PANEL_INDEX] || {};
+  const sources = [
+    story?.puzzle_moment_copy_snapshot,
+    scene?.puzzle_moment_copy_snapshot,
+    story?.image_manifest?.puzzle_moment_copy_snapshot,
+    story?.image_manifest?.image_prompts?.[PANEL_INDEX]?.puzzle_moment_copy_snapshot,
+  ];
+  for (const snapshot of sources) {
+    const caption = clean(snapshot?.caption || "");
+    const dialogue = clean(snapshot?.dialogue || "");
+    if (useful(caption) && useful(dialogue)) {
+      return { caption, dialogue, source: `snapshot:${clean(snapshot.source_stage || "unknown")}` };
+    }
+  }
+  return null;
+}
+
 function getCandidate(story) {
+  const snapshotCandidate = candidateFromSnapshot(story);
+  if (snapshotCandidate) return snapshotCandidate;
+
   const scene = story?.scenes?.[PANEL_INDEX] || {};
   const caption = clean(scene.openai_caption || scene.original_caption || scene.caption_before_quality_gate || scene.storyboard_caption_source || "");
   const dialogue = clean(scene.openai_dialogue || scene.original_dialogue || scene.dialogue_before_quality_gate || scene.storyboard_dialogue_source || "");
   if (useful(caption) && useful(dialogue)) return { caption, dialogue, source: "stored_source_fields" };
 
   const manifestPrompt = story?.image_manifest?.image_prompts?.[PANEL_INDEX] || {};
-  const mCaption = clean(manifestPrompt.storyboard_caption || manifestPrompt.caption || "");
-  const mDialogue = clean(manifestPrompt.storyboard_dialogue || manifestPrompt.dialogue || "");
-  if (useful(mCaption) && useful(mDialogue)) return { caption: mCaption, dialogue: mDialogue, source: "image_manifest_prompt" };
+  const mCaption = clean(manifestPrompt.storyboard_caption_before_quality_gate || manifestPrompt.storyboard_caption || manifestPrompt.caption || "");
+  const mDialogue = clean(manifestPrompt.storyboard_dialogue_before_quality_gate || manifestPrompt.storyboard_dialogue || manifestPrompt.dialogue || "");
+  if (useful(mCaption) && useful(mDialogue)) return { caption: mCaption, dialogue: mDialogue, source: "image_manifest_copy_fields" };
 
   return null;
 }
@@ -61,7 +82,10 @@ function applyProtection(story) {
   const currentCaption = clean(scene.storyboard_caption || scene.caption || "");
   const currentDialogue = clean(scene.storyboard_dialogue || scene.dialogue || scene.speech_bubble || "");
   const overwritten = isGenericPuzzleLine(currentCaption) || isGenericPuzzleLine(currentDialogue);
-  if (!overwritten) return { changed: false, reason: "panel_4_not_generic" };
+  if (!overwritten) {
+    story.puzzle_moment_copy_protection = { ran: true, changed: false, reason: "panel_4_not_generic" };
+    return { changed: false, reason: "panel_4_not_generic" };
+  }
 
   const candidate = getCandidate(story);
   if (!candidate) {
@@ -107,6 +131,7 @@ async function main() {
   const result = applyProtection(story);
   story.image_manifest = story.image_manifest || {};
   story.image_manifest.puzzle_moment_copy_protection = story.puzzle_moment_copy_protection || { ran: true, changed: false, reason: result.reason };
+  story.image_manifest.puzzle_moment_copy_snapshot = story.puzzle_moment_copy_snapshot || story.image_manifest.puzzle_moment_copy_snapshot || null;
   story.image_manifest.storyboard_arc = story.storyboard_arc || story.image_manifest.storyboard_arc || {};
   if (story.image_manifest.image_prompts?.[PANEL_INDEX]) {
     story.image_manifest.image_prompts[PANEL_INDEX].caption = story.scenes[PANEL_INDEX].caption;
