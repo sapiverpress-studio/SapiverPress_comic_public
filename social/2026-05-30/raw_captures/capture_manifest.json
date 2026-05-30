@@ -1,0 +1,37 @@
+{
+  "date": "2026-05-30",
+  "source_url": "https://suite.sapiverpress.co.uk/play/trigoku/",
+  "json_date": "2026-05-30",
+  "week": null,
+  "today": null,
+  "mode": "col",
+  "source_id": "trigoku",
+  "source_name": "Trigoku",
+  "stage_method": "standalone_netlify_download_rendered_states",
+  "note": "Selected from standalone Netlify puzzle sources. Downloaded real site data and rendered staged board PNGs. No browser gameplay screenshots.",
+  "files": [
+    "01_fresh_daily_grid.png",
+    "02_first_moves.png",
+    "03_stuck_moment.png",
+    "04_breakthrough.png",
+    "05_nearly_complete.png",
+    "06_complete_solution.png"
+  ],
+  "selected_source": {
+    "id": "trigoku",
+    "name": "Trigoku",
+    "netlify_project": "sapiverpress-trigoku",
+    "url": "https://sapiverpress-trigoku.netlify.app/",
+    "suite_url": "https://suite.sapiverpress.co.uk/play/trigoku/",
+    "type": "trigoku"
+  },
+  "source_attempts": [
+    {
+      "id": "trigoku",
+      "project": "sapiverpress-trigoku",
+      "downloaded": true,
+      "extracted": true,
+      "url": "https://suite.sapiverpress.co.uk/play/trigoku/"
+    }
+  ]
+}

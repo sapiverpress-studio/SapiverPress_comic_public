@@ -175,6 +175,12 @@
       "attempt": 31,
       "setting": "bookshop cafe corner",
       "reason": "she has come for one thing but stays for the quiet corner"
+    },
+    {
+      "date": "2026-05-30",
+      "attempt": 1,
+      "setting": "co-working desk near a tall window",
+      "reason": "she has work waiting, so the puzzle has to fit into a short gap"
     }
   ],
   "variant_memory": [
@@ -327,6 +333,12 @@
       "attempt": 31,
       "variant_name": "Trigoku",
       "panel_index": 2
+    },
+    {
+      "date": "2026-05-30",
+      "attempt": 1,
+      "variant_name": "Trigoku",
+      "panel_index": 4
     }
   ],
   "life_memory": [
@@ -629,8 +641,20 @@
       "variant_panel_index": 2,
       "uk_calendar_date": null,
       "uk_calendar_panel_index": null
+    },
+    {
+      "date": "2026-05-30",
+      "attempt": 1,
+      "location": "co-working desk near a tall window",
+      "reason_for_location": "she has work waiting, so the puzzle has to fit into a short gap",
+      "life_detail_learned": "Isla often fits her puzzle ritual between work blocks.",
+      "thread_to_continue": "work days make the puzzle a boundary marker",
+      "puzzle_variant_mentioned": "Trigoku",
+      "variant_panel_index": 4,
+      "uk_calendar_date": null,
+      "uk_calendar_panel_index": null
     }
   ],
-  "last_updated": "2026-05-29",
+  "last_updated": "2026-05-30",
   "calendar_memory": []
 }
