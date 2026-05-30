@@ -104,51 +104,6 @@
     {
       "date": "2026-05-29",
       "weekday": "Friday",
-      "same_day_attempt": 11,
-      "setting": "outdoor cafe street table",
-      "puzzle_phase": "late-week",
-      "story_note": "Isla spends this entry at the outdoor cafe street table because she is trying not to rush straight into the next errand. The puzzle stays as a light thread inside the day.",
-      "continuation_note": "Remember: Isla sometimes uses a cafe table as a buffer between obligations. Continue the thread: she is learning to pause before moving on.",
-      "stuck_moment": "brief hesitation, coffee nearby",
-      "life_memory_entry": {
-        "date": "2026-05-29",
-        "attempt": 11,
-        "location": "outdoor cafe street table",
-        "reason_for_location": "she is trying not to rush straight into the next errand",
-        "life_detail_learned": "Isla sometimes uses a cafe table as a buffer between obligations.",
-        "thread_to_continue": "she is learning to pause before moving on",
-        "puzzle_variant_mentioned": "Trigoku",
-        "variant_panel_index": 4,
-        "uk_calendar_date": null,
-        "uk_calendar_panel_index": null
-      },
-      "variant_recap": {
-        "variant_name": "Trigoku",
-        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
-        "panel_index": 4,
-        "line": "Today has its own little rule-set — check the constraint before rushing."
-      },
-      "uk_calendar_date": null,
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
-        "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
-        "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
-        "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
-        "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.",
-        "By the final check, Isla carries the pause forward, not the pressure that tried to hurry her."
-      ]
-    },
-    {
-      "date": "2026-05-29",
-      "weekday": "Friday",
       "same_day_attempt": 12,
       "setting": "rainy window nook with plants",
       "puzzle_phase": "late-week",
@@ -1130,10 +1085,10 @@
       "captions": [
         "Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
         "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
-        "At the cafe table, Isla leaves the errand message unread and chooses three kept minutes instead.",
+        "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
         "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
         "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.",
-        "By the final check, Isla carries the decision forward, not the pressure that tried to hurry her."
+        "By the final check, Isla carries the decision forward: rainy days bring out her reflective side."
       ]
     },
     {
@@ -1175,10 +1130,10 @@
       "captions": [
         "Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
         "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
-        "At the cafe table, Isla leaves the errand message unread and chooses three kept minutes instead.",
+        "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
         "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
         "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.",
-        "By the final check, Isla carries the decision forward, not the pressure that tried to hurry her."
+        "By the final check, Isla carries the decision forward: rainy days bring out her reflective side."
       ]
     },
     {
@@ -1220,10 +1175,10 @@
       "captions": [
         "Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
         "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
-        "At the cafe table, Isla leaves the errand message unread and chooses three kept minutes instead.",
+        "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
         "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
         "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.",
-        "By the final check, Isla carries the decision forward, not the pressure that tried to hurry her."
+        "By the final check, Isla carries the decision forward: rainy days bring out her reflective side."
       ]
     },
     {
@@ -1265,10 +1220,10 @@
       "captions": [
         "Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
         "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
-        "At the cafe table, Isla leaves the errand message unread and chooses three kept minutes instead.",
+        "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
         "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
         "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.",
-        "By the final check, Isla carries the decision forward, not the pressure that tried to hurry her."
+        "By the final check, Isla carries the decision forward: rainy days bring out her reflective side."
       ]
     },
     {
@@ -1310,10 +1265,10 @@
       "captions": [
         "Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
         "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
-        "At the cafe table, Isla leaves the errand message unread and chooses three kept minutes instead.",
+        "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
         "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
         "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.",
-        "By the final check, Isla carries the decision forward, not the pressure that tried to hurry her."
+        "By the final check, Isla carries the decision forward: rainy days bring out her reflective side."
       ]
     },
     {
@@ -1355,10 +1310,10 @@
       "captions": [
         "Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
         "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
-        "At the cafe table, Isla leaves the errand message unread and chooses three kept minutes instead.",
+        "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
         "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
         "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.",
-        "By the final check, Isla carries the decision forward, not the pressure that tried to hurry her."
+        "By the final check, Isla carries the decision forward: rainy days bring out her reflective side."
       ]
     },
     {
@@ -1400,10 +1355,10 @@
       "captions": [
         "Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
         "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
-        "At the cafe table, Isla leaves the errand message unread and chooses three kept minutes instead.",
+        "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
         "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
         "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.",
-        "By the final check, Isla carries the decision forward, not the pressure that tried to hurry her."
+        "By the final check, Isla carries the decision forward: rainy days bring out her reflective side."
       ]
     },
     {
@@ -1445,10 +1400,55 @@
       "captions": [
         "Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
         "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
-        "At the cafe table, Isla leaves the errand message unread and chooses three kept minutes instead.",
+        "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
         "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
         "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.",
-        "By the final check, Isla carries the decision forward, not the pressure that tried to hurry her."
+        "By the final check, Isla carries the decision forward: rainy days bring out her reflective side."
+      ]
+    },
+    {
+      "date": "2026-05-30",
+      "weekday": "Saturday",
+      "same_day_attempt": 9,
+      "setting": "rainy window nook with plants",
+      "puzzle_phase": "late-week",
+      "story_note": "Isla spends this entry at the rainy window nook with plants because rain has slowed everything down and she lets it. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Isla does not mind slower days when they give her room to notice things. Continue the thread: rainy days bring out her reflective side.",
+      "stuck_moment": "pen paused while rain falls",
+      "life_memory_entry": {
+        "date": "2026-05-30",
+        "attempt": 9,
+        "location": "rainy window nook with plants",
+        "reason_for_location": "rain has slowed everything down and she lets it",
+        "life_detail_learned": "Isla does not mind slower days when they give her room to notice things.",
+        "thread_to_continue": "rainy days bring out her reflective side",
+        "puzzle_variant_mentioned": "Trigoku",
+        "variant_panel_index": 4,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Trigoku",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 4,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
+        "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
+        "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
+        "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
+        "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.",
+        "By the final check, Isla carries the decision forward: rainy days bring out her reflective side."
       ]
     }
   ],
@@ -1456,51 +1456,6 @@
     {
       "date": "2026-05-29",
       "weekday": "Friday",
-      "same_day_attempt": 11,
-      "setting": "outdoor cafe street table",
-      "puzzle_phase": "late-week",
-      "story_note": "Isla spends this entry at the outdoor cafe street table because she is trying not to rush straight into the next errand. The puzzle stays as a light thread inside the day.",
-      "continuation_note": "Remember: Isla sometimes uses a cafe table as a buffer between obligations. Continue the thread: she is learning to pause before moving on.",
-      "stuck_moment": "brief hesitation, coffee nearby",
-      "life_memory_entry": {
-        "date": "2026-05-29",
-        "attempt": 11,
-        "location": "outdoor cafe street table",
-        "reason_for_location": "she is trying not to rush straight into the next errand",
-        "life_detail_learned": "Isla sometimes uses a cafe table as a buffer between obligations.",
-        "thread_to_continue": "she is learning to pause before moving on",
-        "puzzle_variant_mentioned": "Trigoku",
-        "variant_panel_index": 4,
-        "uk_calendar_date": null,
-        "uk_calendar_panel_index": null
-      },
-      "variant_recap": {
-        "variant_name": "Trigoku",
-        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
-        "panel_index": 4,
-        "line": "Today has its own little rule-set — check the constraint before rushing."
-      },
-      "uk_calendar_date": null,
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
-        "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
-        "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
-        "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
-        "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.",
-        "By the final check, Isla carries the pause forward, not the pressure that tried to hurry her."
-      ]
-    },
-    {
-      "date": "2026-05-29",
-      "weekday": "Friday",
       "same_day_attempt": 12,
       "setting": "rainy window nook with plants",
       "puzzle_phase": "late-week",
@@ -2482,10 +2437,10 @@
       "captions": [
         "Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
         "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
-        "At the cafe table, Isla leaves the errand message unread and chooses three kept minutes instead.",
+        "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
         "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
         "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.",
-        "By the final check, Isla carries the decision forward, not the pressure that tried to hurry her."
+        "By the final check, Isla carries the decision forward: rainy days bring out her reflective side."
       ]
     },
     {
@@ -2527,10 +2482,10 @@
       "captions": [
         "Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
         "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
-        "At the cafe table, Isla leaves the errand message unread and chooses three kept minutes instead.",
+        "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
         "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
         "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.",
-        "By the final check, Isla carries the decision forward, not the pressure that tried to hurry her."
+        "By the final check, Isla carries the decision forward: rainy days bring out her reflective side."
       ]
     },
     {
@@ -2572,10 +2527,10 @@
       "captions": [
         "Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
         "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
-        "At the cafe table, Isla leaves the errand message unread and chooses three kept minutes instead.",
+        "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
         "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
         "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.",
-        "By the final check, Isla carries the decision forward, not the pressure that tried to hurry her."
+        "By the final check, Isla carries the decision forward: rainy days bring out her reflective side."
       ]
     },
     {
@@ -2617,10 +2572,10 @@
       "captions": [
         "Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
         "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
-        "At the cafe table, Isla leaves the errand message unread and chooses three kept minutes instead.",
+        "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
         "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
         "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.",
-        "By the final check, Isla carries the decision forward, not the pressure that tried to hurry her."
+        "By the final check, Isla carries the decision forward: rainy days bring out her reflective side."
       ]
     },
     {
@@ -2662,10 +2617,10 @@
       "captions": [
         "Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
         "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
-        "At the cafe table, Isla leaves the errand message unread and chooses three kept minutes instead.",
+        "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
         "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
         "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.",
-        "By the final check, Isla carries the decision forward, not the pressure that tried to hurry her."
+        "By the final check, Isla carries the decision forward: rainy days bring out her reflective side."
       ]
     },
     {
@@ -2707,10 +2662,10 @@
       "captions": [
         "Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
         "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
-        "At the cafe table, Isla leaves the errand message unread and chooses three kept minutes instead.",
+        "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
         "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
         "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.",
-        "By the final check, Isla carries the decision forward, not the pressure that tried to hurry her."
+        "By the final check, Isla carries the decision forward: rainy days bring out her reflective side."
       ]
     },
     {
@@ -2752,10 +2707,10 @@
       "captions": [
         "Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
         "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
-        "At the cafe table, Isla leaves the errand message unread and chooses three kept minutes instead.",
+        "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
         "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
         "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.",
-        "By the final check, Isla carries the decision forward, not the pressure that tried to hurry her."
+        "By the final check, Isla carries the decision forward: rainy days bring out her reflective side."
       ]
     },
     {
@@ -2797,10 +2752,55 @@
       "captions": [
         "Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
         "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
-        "At the cafe table, Isla leaves the errand message unread and chooses three kept minutes instead.",
+        "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
         "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
         "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.",
-        "By the final check, Isla carries the decision forward, not the pressure that tried to hurry her."
+        "By the final check, Isla carries the decision forward: rainy days bring out her reflective side."
+      ]
+    },
+    {
+      "date": "2026-05-30",
+      "weekday": "Saturday",
+      "same_day_attempt": 9,
+      "setting": "rainy window nook with plants",
+      "puzzle_phase": "late-week",
+      "story_note": "Isla spends this entry at the rainy window nook with plants because rain has slowed everything down and she lets it. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Isla does not mind slower days when they give her room to notice things. Continue the thread: rainy days bring out her reflective side.",
+      "stuck_moment": "pen paused while rain falls",
+      "life_memory_entry": {
+        "date": "2026-05-30",
+        "attempt": 9,
+        "location": "rainy window nook with plants",
+        "reason_for_location": "rain has slowed everything down and she lets it",
+        "life_detail_learned": "Isla does not mind slower days when they give her room to notice things.",
+        "thread_to_continue": "rainy days bring out her reflective side",
+        "puzzle_variant_mentioned": "Trigoku",
+        "variant_panel_index": 4,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Trigoku",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 4,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Isla spots the next errand waiting, but gives the grid one careful look before the day starts pulling.",
+        "The journey slips off schedule, and for a second she nearly closes the laptop to chase the clock.",
+        "At the cafe table, Isla leaves the errand message unread and chooses three unhurried minutes instead.",
+        "Trigoku will catch a rushed guess, so she checks the constraint before letting the move stand.",
+        "Because she waited, the move holds; the errand feels less like a deadline and more like a next step.",
+        "By the final check, Isla carries the decision forward: rainy days bring out her reflective side."
       ]
     }
   ],
