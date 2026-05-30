@@ -331,6 +331,12 @@
       "attempt": 26,
       "setting": "small kitchen table in warm morning light",
       "reason": "home is still half-asleep and she has a few minutes to herself"
+    },
+    {
+      "date": "2026-05-30",
+      "attempt": 27,
+      "setting": "bookshop cafe corner",
+      "reason": "she has come for one thing but stays for the quiet corner"
     }
   ],
   "variant_memory": [
@@ -637,6 +643,12 @@
     {
       "date": "2026-05-30",
       "attempt": 26,
+      "variant_name": "Trigoku",
+      "panel_index": 4
+    },
+    {
+      "date": "2026-05-30",
+      "attempt": 27,
       "variant_name": "Trigoku",
       "panel_index": 4
     }
@@ -1249,6 +1261,18 @@
       "reason_for_location": "home is still half-asleep and she has a few minutes to herself",
       "life_detail_learned": "Isla values ordinary domestic quiet as much as beautiful public spaces.",
       "thread_to_continue": "home mornings reveal her private routine",
+      "puzzle_variant_mentioned": "Trigoku",
+      "variant_panel_index": 4,
+      "uk_calendar_date": null,
+      "uk_calendar_panel_index": null
+    },
+    {
+      "date": "2026-05-30",
+      "attempt": 27,
+      "location": "bookshop cafe corner",
+      "reason_for_location": "she has come for one thing but stays for the quiet corner",
+      "life_detail_learned": "Bookshops pull Isla into longer pauses than she planned.",
+      "thread_to_continue": "she is drawn to places with books and warm corners",
       "puzzle_variant_mentioned": "Trigoku",
       "variant_panel_index": 4,
       "uk_calendar_date": null,

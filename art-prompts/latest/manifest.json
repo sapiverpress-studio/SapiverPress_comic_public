@@ -65,7 +65,7 @@
       "output_file": "social/2026-05-30/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "Isla glances at her growing to-do list, choosing to open her puzzle grid first.",
+      "caption": "The morning sun hits the table just right, making it the perfect time to plan her steady day.",
       "scene_id": "scene_01"
     },
     {
@@ -75,7 +75,7 @@
       "output_file": "social/2026-05-30/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "As the train slows to an unexpected crawl, Isla stays focused on her puzzle.",
+      "caption": "Watching the fields blur past the window always helps clear her mind before diving into the daily puzzles.",
       "scene_id": "scene_02"
     },
     {
@@ -85,7 +85,7 @@
       "output_file": "social/2026-05-30/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "Sitting outside, she flips her phone face down to enjoy three minutes.",
+      "caption": "A quick stop for coffee turns into a longer breath as she gets distracted by her notes.",
       "scene_id": "scene_03"
     },
     {
@@ -105,7 +105,7 @@
       "output_file": "social/2026-05-30/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "Her careful check pays off, making the rest of her day feel totally doable.",
+      "caption": "The smell of old paper and fresh coffee coaxes her into her favorite corner of the bookshop.",
       "scene_id": "scene_05"
     },
     {
@@ -115,10 +115,10 @@
       "output_file": "social/2026-05-30/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "With the final piece in place, Isla quietly shuts her laptop and breathes easy.",
+      "caption": "With the rain drumming softly against the glass, she happily loses herself in the very next chapter.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-05-30.json",
-  "generated_at": "2026-05-30T13:55:38.663Z"
+  "generated_at": "2026-05-30T14:45:59.339Z"
 }

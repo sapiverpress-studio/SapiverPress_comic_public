@@ -1,42 +1,42 @@
 {
   "date": "2026-05-30",
-  "title": "Trigoku Daily Lock with Isla",
+  "title": "A Quiet Corner at the Bookshop",
   "voice_name": "Isla Sterling",
   "segments": [
     {
       "id": "intro",
       "image_name": "00_start-grid.png",
-      "text": "Trigoku Daily Lock today. Isla checks what sort of trouble it is first."
+      "text": "Here’s today’s Sapiver Press puzzle comic."
     },
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "She is at small kitchen table in warm morning light, already half-thinking about the next job."
+      "text": "The morning sun hits the table just right, making it the perfect time to plan her steady day."
     },
     {
       "id": "panel_2",
       "image_name": "02_panel-02.png",
-      "text": "Then the day starts tugging at her sleeve again."
+      "text": "Watching the fields blur past the window always helps clear her mind before diving into the daily puzzles."
     },
     {
       "id": "panel_3",
       "image_name": "03_panel-03.png",
-      "text": "She leaves one message unread. Three minutes will not ruin anything."
+      "text": "A quick stop for coffee turns into a longer breath as she gets distracted by her notes."
     },
     {
       "id": "panel_4",
       "image_name": "04_panel-04.png",
-      "text": "Check the constraint before rushing."
+      "text": "Check the daily rule before trusting it."
     },
     {
       "id": "panel_5",
       "image_name": "05_panel-05.png",
-      "text": "The move holds, which is annoyingly satisfying."
+      "text": "The smell of old paper and fresh coffee coaxes her into her favorite corner of the bookshop."
     },
     {
       "id": "panel_6",
       "image_name": "06_panel-06.png",
-      "text": "She shuts the laptop before the rush gets the last word."
+      "text": "With the rain drumming softly against the glass, she happily loses herself in the very next chapter."
     },
     {
       "id": "cta",
@@ -44,8 +44,16 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Trigoku Daily Lock today. Isla checks what sort of trouble it is first.\n\nShe is at small kitchen table in warm morning light, already half-thinking about the next job.\n\nThen the day starts tugging at her sleeve again.\n\nShe leaves one message unread. Three minutes will not ruin anything.\n\nCheck the constraint before rushing.\n\nThe move holds, which is annoyingly satisfying.\n\nShe shuts the laptop before the rush gets the last word.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-05-30T13:56:21.983Z",
-  "copy_refined": "fallback",
-  "copy_refine_error": "OpenAI returned 0 segments, expected 8"
+  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nThe morning sun hits the table just right, making it the perfect time to plan her steady day.\n\nWatching the fields blur past the window always helps clear her mind before diving into the daily puzzles.\n\nA quick stop for coffee turns into a longer breath as she gets distracted by her notes.\n\nCheck the daily rule before trusting it.\n\nThe smell of old paper and fresh coffee coaxes her into her favorite corner of the bookshop.\n\nWith the rain drumming softly against the glass, she happily loses herself in the very next chapter.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-05-30T14:46:53.239Z",
+  "caption": "Isla finds solace in her favorite bookshop cafe corner, where puzzles and peace intertwine.",
+  "variant_name": "daily rule",
+  "variant_line": "Check the daily rule before trusting it.",
+  "copy_refined": "openai",
+  "copy_model": "gpt-4o-mini",
+  "openai_response_shape": {
+    "title": "string",
+    "caption": "string",
+    "segments": "array:8"
+  }
 }

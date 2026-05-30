@@ -43,29 +43,29 @@
     "variant_recap",
     "uk_calendar_date"
   ],
-  "storyboard_copy_source": "fallback_story_driven+gemini",
-  "storyboard_copy_model": "fallback",
-  "storyboard_arc_title": "Isla keeps the day from deciding for her",
+  "storyboard_copy_source": "openai_repaired+gemini",
+  "storyboard_copy_model": "gpt-4o-mini",
+  "storyboard_arc_title": "Isla's Quiet Corner",
   "storyboard_arc_type": "story_driven_not_location_driven",
   "storyboard_arc": {
-    "setup": "Isla glances at her growing to-do list, choosing to open her puzzle grid first.",
-    "disruption": "As the train slows to an unexpected crawl, Isla stays focused on her puzzle.",
-    "choice": "Sitting outside, she flips her phone face down to enjoy three minutes.",
+    "setup": "The morning sun hits the table just right, making it the perfect time to plan her steady day.",
+    "disruption": "Watching the fields blur past the window always helps clear her mind before diving into the daily puzzles.",
+    "choice": "A quick stop for coffee turns into a longer breath as she gets distracted by her notes.",
     "puzzle_moment": "The daily rule changes the move, so Isla checks it before trusting the answer.",
-    "consequence": "Her careful check pays off, making the rest of her day feel totally doable.",
-    "resolution": "With the final piece in place, Isla quietly shuts her laptop and breathes easy."
+    "consequence": "The smell of old paper and fresh coffee coaxes her into her favorite corner of the bookshop.",
+    "resolution": "With the rain drumming softly against the glass, she happily loses herself in the very next chapter."
   },
   "storyboard_quality": {
-    "location_sequence_only": false,
-    "has_cause_effect": true,
+    "location_sequence_only": true,
+    "has_cause_effect": false,
     "has_character_turn": true,
     "uses_phase2_story": true,
-    "quality_gate_passed": true,
+    "quality_gate_passed": false,
     "interchangeable": false,
     "generic_phrase_hits": [],
-    "cause_effect_link_count": 4,
+    "cause_effect_link_count": 1,
     "character_turn_count": 1,
-    "quality_gate_action": "passed",
+    "quality_gate_action": "repaired_in_place",
     "quality_gate_repair_reasons": [],
     "final_lint_passed": true,
     "final_banned_word_hits": [],
@@ -84,7 +84,7 @@
       "passed": true
     }
   },
-  "quality_gate_action": "passed",
+  "quality_gate_action": "repaired_in_place",
   "quality_gate_repair_reasons": [],
   "final_copy_sanity": {
     "ran": true,
@@ -105,8 +105,8 @@
     "rainy_window"
   ],
   "post_ready_contract": {
-    "openai_ok": false,
-    "quality_gate_action": "passed",
+    "openai_ok": true,
+    "quality_gate_action": "repaired_in_place",
     "gemini_preserved_locations": true,
     "final_copy_sanity_passed": true,
     "location_flow_validated": true,
@@ -114,11 +114,15 @@
     "variant_copy_mode": "neutral_daily_rule",
     "posting_allowed": true
   },
-  "openai_storyboard_status": "fallback",
+  "openai_storyboard_status": "ok",
   "openai_storyboard_model": "gpt-4o-mini",
-  "openai_storyboard_response_shape": null,
-  "openai_storyboard_fallback_reason": "OpenAI returned frames but at least one caption/dialogue was empty",
-  "openai_storyboard_checked_at": "2026-05-30T13:55:27.521Z",
+  "openai_storyboard_response_shape": {
+    "arc_title": "string",
+    "board_caption": "string",
+    "frames": "array:6"
+  },
+  "openai_storyboard_fallback_reason": null,
+  "openai_storyboard_checked_at": "2026-05-30T14:45:48.340Z",
   "gemini_allowed_fields": [
     "caption",
     "dialogue"
@@ -137,12 +141,12 @@
   "puzzle_product": "Trigoku Daily Lock",
   "puzzle_url": "https://suite.sapiverpress.co.uk",
   "captions": [
-    "Let's get a head start before the house wakes up.\nIsla glances at her growing to-do list, choosing to open her puzzle grid first.",
-    "No point stressing over the delay.\nAs the train slows to an unexpected crawl, Isla stays focused on her puzzle.",
-    "Just three minutes to myself.\nSitting outside, she flips her phone face down to enjoy three minutes.",
+    "Better get a move on before the morning rush starts.\nThe morning sun hits the table just right, making it the perfect time to plan her steady day.",
+    "There's really no point in trying to race against the clock today.\nWatching the fields blur past the window always helps clear her mind before diving into the daily puzzles.",
+    "Wait a second, which of these paths was I actually supposed to take?\nA quick stop for coffee turns into a longer breath as she gets distracted by her notes.",
     "Check the daily rule before trusting it.\nThe daily rule changes the move, so Isla checks it before trusting the answer.",
-    "Okay, that actually fits perfectly.\nHer careful check pays off, making the rest of her day feel totally doable.",
-    "Time to put this away.\nWith the final piece in place, Isla quietly shuts her laptop and breathes easy."
+    "Oh, perfect. That solution actually holds up under pressure.\nThe smell of old paper and fresh coffee coaxes her into her favorite corner of the bookshop.",
+    "I think I'll just leave things here for now and finally move on.\nWith the rain drumming softly against the glass, she happily loses herself in the very next chapter."
   ],
   "storyboard_locations": [
     "small home kitchen table in warm morning light",
@@ -163,27 +167,27 @@
       "output": "social/2026-05-30/01_panel-01.png",
       "screen_quad": [
         [
-          687,
-          572
+          735,
+          655
         ],
         [
-          1061,
-          602
+          1066,
+          682
         ],
         [
-          1018,
-          871
+          1048,
+          953
         ],
         [
-          650,
-          803
+          702,
+          889
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Let's get a head start before the house wakes up.\nIsla glances at her growing to-do list, choosing to open her puzzle grid first.",
+      "storyboard_text": "Better get a move on before the morning rush starts.\nThe morning sun hits the table just right, making it the perfect time to plan her steady day.",
       "arc_role": "setup",
-      "storyboard_caption": "Isla glances at her growing to-do list, choosing to open her puzzle grid first.",
-      "storyboard_dialogue": "Let's get a head start before the house wakes up.",
+      "storyboard_caption": "The morning sun hits the table just right, making it the perfect time to plan her steady day.",
+      "storyboard_dialogue": "Better get a move on before the morning rush starts.",
       "panel_location": "small home kitchen table in warm morning light"
     },
     {
@@ -196,27 +200,27 @@
       "output": "social/2026-05-30/02_panel-02.png",
       "screen_quad": [
         [
-          641,
-          695
+          575,
+          722
         ],
         [
-          1009,
-          720
+          966,
+          741
         ],
         [
-          973,
-          973
+          935,
+          994
         ],
         [
-          609,
-          910
+          538,
+          941
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "No point stressing over the delay.\nAs the train slows to an unexpected crawl, Isla stays focused on her puzzle.",
+      "storyboard_text": "There's really no point in trying to race against the clock today.\nWatching the fields blur past the window always helps clear her mind before diving into the daily puzzles.",
       "arc_role": "disruption",
-      "storyboard_caption": "As the train slows to an unexpected crawl, Isla stays focused on her puzzle.",
-      "storyboard_dialogue": "No point stressing over the delay.",
+      "storyboard_caption": "Watching the fields blur past the window always helps clear her mind before diving into the daily puzzles.",
+      "storyboard_dialogue": "There's really no point in trying to race against the clock today.",
       "panel_location": "train table by the window"
     },
     {
@@ -229,27 +233,27 @@
       "output": "social/2026-05-30/03_panel-03.png",
       "screen_quad": [
         [
-          635,
-          598
+          700,
+          639
+        ],
+        [
+          1041,
+          675
         ],
         [
           1004,
-          628
+          929
         ],
         [
-          966,
-          896
-        ],
-        [
-          603,
-          829
+          666,
+          858
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Just three minutes to myself.\nSitting outside, she flips her phone face down to enjoy three minutes.",
+      "storyboard_text": "Wait a second, which of these paths was I actually supposed to take?\nA quick stop for coffee turns into a longer breath as she gets distracted by her notes.",
       "arc_role": "choice",
-      "storyboard_caption": "Sitting outside, she flips her phone face down to enjoy three minutes.",
-      "storyboard_dialogue": "Just three minutes to myself.",
+      "storyboard_caption": "A quick stop for coffee turns into a longer breath as she gets distracted by her notes.",
+      "storyboard_dialogue": "Wait a second, which of these paths was I actually supposed to take?",
       "panel_location": "outdoor cafe street table or rainy window nook"
     },
     {
@@ -262,20 +266,20 @@
       "output": "social/2026-05-30/04_panel-04.png",
       "screen_quad": [
         [
-          641,
-          643
+          644,
+          578
         ],
         [
-          1024,
-          645
+          1065,
+          598
         ],
         [
-          975,
-          939
+          1055,
+          937
         ],
         [
-          590,
-          869
+          602,
+          866
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -287,35 +291,40 @@
     },
     {
       "scene": "scene_05",
-      "art_source": "replacement",
-      "art_path": "art-replacements/2026-05-30/05_panel-05.png",
-      "template": "",
-      "replacement": "art-replacements/2026-05-30/05_panel-05.png",
+      "art_source": "template",
+      "art_path": "templates/characters/isla/isla_05_finish.png",
+      "template": "templates/characters/isla/isla_05_finish.png",
+      "replacement": "",
       "capture": "captures/2026-05-30/extracted/05_nearly_complete.png",
       "output": "social/2026-05-30/05_panel-05.png",
       "screen_quad": [
         [
-          645,
-          701
+          617,
+          502
         ],
         [
-          1014,
-          738
+          1036,
+          520
         ],
         [
-          976,
-          1010
+          1008,
+          860
         ],
         [
-          611,
-          939
+          587,
+          837
         ]
       ],
-      "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Okay, that actually fits perfectly.\nHer careful check pays off, making the rest of her day feel totally doable.",
+      "screen_quad_mode": "template_locked",
+      "recovered_from_missing_replacement_screen": true,
+      "failed_replacements": [
+        "art-replacements/2026-05-30/05_panel-05.png",
+        "art-replacements/latest/05_panel-05.png"
+      ],
+      "storyboard_text": "Oh, perfect. That solution actually holds up under pressure.\nThe smell of old paper and fresh coffee coaxes her into her favorite corner of the bookshop.",
       "arc_role": "consequence",
-      "storyboard_caption": "Her careful check pays off, making the rest of her day feel totally doable.",
-      "storyboard_dialogue": "Okay, that actually fits perfectly.",
+      "storyboard_caption": "The smell of old paper and fresh coffee coaxes her into her favorite corner of the bookshop.",
+      "storyboard_dialogue": "Oh, perfect. That solution actually holds up under pressure.",
       "panel_location": "bookshop cafe corner or public library reading table"
     },
     {
@@ -328,32 +337,42 @@
       "output": "social/2026-05-30/06_panel-06.png",
       "screen_quad": [
         [
-          718,
-          642
+          752,
+          678
         ],
         [
-          1067,
-          674
+          1063,
+          705
         ],
         [
-          1032,
-          942
+          1025,
+          929
         ],
         [
-          681,
-          873
+          722,
+          872
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Time to put this away.\nWith the final piece in place, Isla quietly shuts her laptop and breathes easy.",
+      "storyboard_text": "I think I'll just leave things here for now and finally move on.\nWith the rain drumming softly against the glass, she happily loses herself in the very next chapter.",
       "arc_role": "resolution",
-      "storyboard_caption": "With the final piece in place, Isla quietly shuts her laptop and breathes easy.",
-      "storyboard_dialogue": "Time to put this away.",
+      "storyboard_caption": "With the rain drumming softly against the glass, she happily loses herself in the very next chapter.",
+      "storyboard_dialogue": "I think I'll just leave things here for now and finally move on.",
       "panel_location": "rainy window nook with plants"
     }
   ],
   "all_panels_have_screen_overlay": true,
   "screen_overlay_failures": [],
-  "screen_overlay_recoveries": [],
+  "screen_overlay_recoveries": [
+    {
+      "scene": "scene_05",
+      "output": "social/2026-05-30/05_panel-05.png",
+      "screen_quad_mode": "template_locked",
+      "failed_replacements": [
+        "art-replacements/2026-05-30/05_panel-05.png",
+        "art-replacements/latest/05_panel-05.png"
+      ]
+    }
+  ],
   "posting_allowed": true
 }
