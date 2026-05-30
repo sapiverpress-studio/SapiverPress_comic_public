@@ -12,9 +12,9 @@
     "short-video-script": "node scripts/test_phase4_placeholder.mjs && node scripts/refine-short-video-copy-openai.mjs",
     "short-video-voice": "node scripts/test_phase4_voice.mjs",
     "short-video-build": "node scripts/build-short-video.mjs",
-    "compose": "npm run capture:today && python -m pip install -r requirements.txt && python scripts/compose_v3_strict_nocrop.py && python scripts/normalise_social_zip.py",
-    "compose:strict": "npm run capture:today && python -m pip install -r requirements.txt && python scripts/compose_v3_strict_nocrop.py && python scripts/normalise_social_zip.py",
-    "compose:fallback": "python -m pip install -r requirements.txt && python scripts/compose_isla_crisp_grid.py",
+    "compose": "npm run capture:today && python -m pip install -r requirements.txt && python scripts/compose_v3_strict_nocrop.py && python scripts/normalise_social_zip.py && node scripts/validate-screen-overlays.mjs",
+    "compose:strict": "npm run capture:today && python -m pip install -r requirements.txt && python scripts/compose_v3_strict_nocrop.py && python scripts/normalise_social_zip.py && node scripts/validate-screen-overlays.mjs",
+    "compose:fallback": "python -m pip install -r requirements.txt && python scripts/compose_isla_crisp_grid.py && node scripts/validate-screen-overlays.mjs",
     "archive": "node scripts/archive-migration.mjs",
     "validate": "node scripts/validate-project.mjs",
     "facebook-post": "node scripts/facebook-post.mjs"
