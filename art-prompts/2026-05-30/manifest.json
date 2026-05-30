@@ -65,7 +65,7 @@
       "output_file": "social/2026-05-30/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "Nothing beats a steady window seat when you need some space to clear your head.",
+      "caption": "The temptation of a steady bookshop corner always manages to lure me in for a quick visit.",
       "scene_id": "scene_01"
     },
     {
@@ -75,7 +75,7 @@
       "output_file": "social/2026-05-30/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "The steady click of the tracks makes it surprisingly easy to focus on one thing.",
+      "caption": "Putting down the very first pen stroke always feels like setting off on a brand new journey.",
       "scene_id": "scene_02"
     },
     {
@@ -85,7 +85,7 @@
       "output_file": "social/2026-05-30/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "There is no need to rush when the scenery is shifting so beautifully outside.",
+      "caption": "It pays to take a slow breath and just appreciate how steady everything feels right now.",
       "scene_id": "scene_03"
     },
     {
@@ -105,7 +105,7 @@
       "output_file": "social/2026-05-30/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "With each passing station, the pieces of the puzzle are finally starting to align.",
+      "caption": "Slowly, the messy pieces of this puzzle are finally starting to fall into their proper places.",
       "scene_id": "scene_05"
     },
     {
@@ -115,10 +115,10 @@
       "output_file": "social/2026-05-30/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "As the train slows down, the steady satisfaction of a solved problem settles in.",
+      "caption": "Just a single page more before I finally pack up my things and head back outside.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-05-30.json",
-  "generated_at": "2026-05-30T19:27:54.392Z"
+  "generated_at": "2026-05-30T19:36:03.601Z"
 }
