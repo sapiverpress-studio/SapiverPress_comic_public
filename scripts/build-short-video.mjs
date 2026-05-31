@@ -3,6 +3,8 @@ import path from "path";
 import { spawnSync } from "child_process";
 
 const ROOT = process.cwd();
+const DEFAULT_FRAME_SECONDS = 3;
+const AUDIO_TAIL_PAD_SECONDS = Number(process.env.SHORT_VIDEO_AUDIO_TAIL_PAD_SECONDS || "1.2");
 
 function dateString() {
   const override = process.env.DATE_OVERRIDE || "";
@@ -59,6 +61,30 @@ function runFfmpeg(args, label) {
   }
 }
 
+function probeDurationSeconds(file) {
+  if (!file) return 0;
+  const result = spawnSync("ffprobe", [
+    "-v", "error",
+    "-show_entries", "format=duration",
+    "-of", "default=noprint_wrappers=1:nokey=1",
+    file,
+  ], {
+    cwd: ROOT,
+    encoding: "utf8",
+  });
+  if (result.status !== 0) return 0;
+  const value = Number(String(result.stdout || "").trim());
+  return Number.isFinite(value) && value > 0 ? value : 0;
+}
+
+function durationForFrames(frameCount, audioDuration) {
+  if (!frameCount) return DEFAULT_FRAME_SECONDS;
+  if (!audioDuration) return DEFAULT_FRAME_SECONDS;
+  const requiredTotal = audioDuration + AUDIO_TAIL_PAD_SECONDS;
+  const requiredPerFrame = requiredTotal / frameCount;
+  return Math.max(DEFAULT_FRAME_SECONDS, Math.ceil(requiredPerFrame * 100) / 100);
+}
+
 async function main() {
   const date = dateString();
   const socialDir = path.join(ROOT, "social", date);
@@ -94,20 +120,28 @@ async function main() {
     return;
   }
 
-  const concatFile = path.join(videoDir, "frames.txt");
-  const lines = [];
-  for (const frame of framePaths) {
-    lines.push(`file '${frame.replace(/'/g, "'\\''")}'`);
-    lines.push("duration 3");
-  }
-  lines.push(`file '${framePaths[framePaths.length - 1].replace(/'/g, "'\\''")}'`);
-  await fs.writeFile(concatFile, `${lines.join("\n")}\n`, "utf8");
-
   const silentVideo = path.join(videoDir, "silent.mp4");
   const finalVideo = path.join(videoDir, `sapiver_isla_daily_${date}.mp4`);
   const latestVideo = path.join(latestVideoDir, `sapiver_isla_daily_${date}.mp4`);
   const audioPath = path.join(videoDir, "voiceover.mp3");
   const latestAudioPath = path.join(latestVideoDir, "voiceover.mp3");
+  const audioAvailable = await exists(audioPath);
+  const fallbackAudioAvailable = await exists(latestAudioPath);
+  const chosenAudio = audioAvailable ? audioPath : fallbackAudioAvailable ? latestAudioPath : "";
+  const audioDurationSeconds = chosenAudio ? probeDurationSeconds(chosenAudio) : 0;
+  const frameDurationSeconds = durationForFrames(framePaths.length, audioDurationSeconds);
+  const silentDurationSeconds = frameDurationSeconds * framePaths.length;
+
+  const concatFile = path.join(videoDir, "frames.txt");
+  const lines = [];
+  for (const frame of framePaths) {
+    lines.push(`file '${frame.replace(/'/g, "'\\''")}'`);
+    lines.push(`duration ${frameDurationSeconds.toFixed(2)}`);
+  }
+  lines.push(`file '${framePaths[framePaths.length - 1].replace(/'/g, "'\\''")}'`);
+  await fs.writeFile(concatFile, `${lines.join("\n")}\n`, "utf8");
+
+  console.log(`Short video timing: frames=${framePaths.length}, frame_duration=${frameDurationSeconds.toFixed(2)}s, silent_duration≈${silentDurationSeconds.toFixed(2)}s, audio_duration=${audioDurationSeconds.toFixed(2)}s`);
 
   runFfmpeg([
     "-f", "concat",
@@ -119,14 +153,11 @@ async function main() {
     silentVideo,
   ], "silent video render");
 
-  const audioAvailable = await exists(audioPath);
-  const fallbackAudioAvailable = await exists(latestAudioPath);
-  const chosenAudio = audioAvailable ? audioPath : fallbackAudioAvailable ? latestAudioPath : "";
-
   if (chosenAudio) {
     runFfmpeg([
       "-i", silentVideo,
       "-i", chosenAudio,
+      "-filter:a", `apad=pad_dur=${AUDIO_TAIL_PAD_SECONDS}`,
       "-c:v", "copy",
       "-c:a", "aac",
       "-b:a", "128k",
@@ -149,7 +180,11 @@ async function main() {
     status: "video_ready",
     video_file: `social/${date}/short-video/sapiver_isla_daily_${date}.mp4`,
     audio_used: Boolean(chosenAudio),
+    audio_duration_seconds: Number(audioDurationSeconds.toFixed(2)),
+    audio_tail_pad_seconds: AUDIO_TAIL_PAD_SECONDS,
     frame_count: framePaths.length,
+    frame_duration_seconds: Number(frameDurationSeconds.toFixed(2)),
+    estimated_silent_duration_seconds: Number(silentDurationSeconds.toFixed(2)),
     generated_at: new Date().toISOString(),
   });
   await copyIfExists(manifestFile, path.join(latestVideoDir, "manifest.json"));
