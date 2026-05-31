@@ -164,6 +164,61 @@
           "source": "social/2026-05-30/07_finished-grid.png"
         }
       ]
+    },
+    "facebook:2026-05-31": {
+      "date": "2026-05-31",
+      "posted_at": "2026-05-31T10:00:50.262Z",
+      "image_source": "social/2026-05-31",
+      "image_count": 8,
+      "files": [
+        "00_start-grid.png",
+        "01_panel-01.png",
+        "02_panel-02.png",
+        "03_panel-03.png",
+        "04_panel-04.png",
+        "05_panel-05.png",
+        "06_panel-06.png",
+        "07_finished-grid.png"
+      ],
+      "manifest_format": "eight_image_daily_set_storyboard_text",
+      "facebook_response": {
+        "id": "997877693401171_122127682983198448",
+        "post_supports_client_mutation_id": true
+      },
+      "uploaded_media": [
+        {
+          "media_fbid": "122127682587198448",
+          "source": "social/2026-05-31/00_start-grid.png"
+        },
+        {
+          "media_fbid": "122127682635198448",
+          "source": "social/2026-05-31/01_panel-01.png"
+        },
+        {
+          "media_fbid": "122127682683198448",
+          "source": "social/2026-05-31/02_panel-02.png"
+        },
+        {
+          "media_fbid": "122127682731198448",
+          "source": "social/2026-05-31/03_panel-03.png"
+        },
+        {
+          "media_fbid": "122127682779198448",
+          "source": "social/2026-05-31/04_panel-04.png"
+        },
+        {
+          "media_fbid": "122127682833198448",
+          "source": "social/2026-05-31/05_panel-05.png"
+        },
+        {
+          "media_fbid": "122127682881198448",
+          "source": "social/2026-05-31/06_panel-06.png"
+        },
+        {
+          "media_fbid": "122127682923198448",
+          "source": "social/2026-05-31/07_finished-grid.png"
+        }
+      ]
     }
   }
 }

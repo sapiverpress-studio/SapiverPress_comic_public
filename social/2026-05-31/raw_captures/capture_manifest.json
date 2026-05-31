@@ -1,0 +1,51 @@
+{
+  "date": "2026-05-31",
+  "source_url": "https://sapiver-press-anti-knight.netlify.app/",
+  "json_date": "2026-05-31",
+  "week": null,
+  "today": null,
+  "mode": "Anti-Knight Sudoku",
+  "source_id": "anti-knight",
+  "source_name": "Anti-Knight Sudoku",
+  "stage_method": "standalone_netlify_download_rendered_states",
+  "note": "Selected from standalone Netlify puzzle sources. Downloaded real site data and rendered staged board PNGs. No browser gameplay screenshots.",
+  "files": [
+    "01_fresh_daily_grid.png",
+    "02_first_moves.png",
+    "03_stuck_moment.png",
+    "04_breakthrough.png",
+    "05_nearly_complete.png",
+    "06_complete_solution.png"
+  ],
+  "selected_source": {
+    "id": "anti-knight",
+    "name": "Anti-Knight Sudoku",
+    "netlify_project": "sapiver-press-anti-knight",
+    "url": "https://sapiver-press-anti-knight.netlify.app/",
+    "suite_url": "https://suite.sapiverpress.co.uk/play/anti-knight/",
+    "type": "sudoku_variant"
+  },
+  "source_attempts": [
+    {
+      "id": "german-whisper",
+      "project": "sapiver-press-german-whisper",
+      "downloaded": true,
+      "extracted": false,
+      "url": "https://sapiver-press-german-whisper.netlify.app/"
+    },
+    {
+      "id": "arrow",
+      "project": "sapiver-press-arrow",
+      "downloaded": true,
+      "extracted": false,
+      "url": "https://sapiver-press-arrow.netlify.app/"
+    },
+    {
+      "id": "anti-knight",
+      "project": "sapiver-press-anti-knight",
+      "downloaded": true,
+      "extracted": true,
+      "url": "https://sapiver-press-anti-knight.netlify.app/"
+    }
+  ]
+}
