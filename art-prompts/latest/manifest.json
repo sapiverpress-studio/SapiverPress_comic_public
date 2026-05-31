@@ -11,15 +11,15 @@
   "default_composition": "desk_right_screen",
   "default_location": "library_study",
   "default_panel_poses": [
-    "static_base",
-    "static_base",
-    "static_base",
-    "static_base",
-    "static_base",
-    "static_base"
+    "open_laptop",
+    "typing_trackpad",
+    "thinking_back",
+    "window_reset",
+    "return_to_screen",
+    "finish_close"
   ],
   "static_prompt_only": false,
-  "locked_negative_prompt": "screen obscuring face, device held in front of face, floating overlay, phone pressed to cheek",
+  "locked_negative_prompt": "screen obscuring face, device held in front of face, floating overlay, phone pressed to cheek, jigsaw puzzle pieces, physical puzzle pieces, scattered puzzle pieces, board game pieces, toy blocks, loose tiles, crossword pieces, extra mugs, multiple coffee cups, duplicate cups, extra laptop, extra tablet, extra screens, distorted laptop screen, unreadable screen, content drawn on laptop screen, sudoku drawn by model, puzzle grid drawn by model, numbers drawn by model, duplicate hands, extra fingers, extra arms, cloned face, repeated identical pose, hand-on-chin repeated, same pose as previous panel, same camera angle every panel, low quality, blurry",
   "readable_prop_text_enabled": true,
   "hard_location_markers_enabled": true,
   "mandatory_screen_enabled": true,
@@ -65,7 +65,7 @@
       "output_file": "social/2026-05-31/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "Finding a rare pocket of morning silence before the rest of the world starts waking up.",
+      "caption": "A steady morning begins with warm light spilling over a half-empty coffee mug and open pages.",
       "scene_id": "scene_01"
     },
     {
@@ -75,7 +75,7 @@
       "output_file": "social/2026-05-31/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "The train clatters along, but inside this window seat, the focus remains entirely steady.",
+      "caption": "The steady rhythm of the train provides a soothing background as the landscape rushes past.",
       "scene_id": "scene_02"
     },
     {
@@ -85,7 +85,7 @@
       "output_file": "social/2026-05-31/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "Sipping tea amidst the street noise, holding onto that fragile sense of inner peace.",
+      "caption": "Taking a moment to breathe in the fresh air at a busy sidewalk table.",
       "scene_id": "scene_03"
     },
     {
@@ -105,7 +105,7 @@
       "output_file": "social/2026-05-31/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "Surrounded by rows of old books, the mental clutter finally begins to drift away.",
+      "caption": "Hidden away in the cozy bookshop corner, the temptation to stay forever is far too strong.",
       "scene_id": "scene_05"
     },
     {
@@ -115,10 +115,10 @@
       "output_file": "social/2026-05-31/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "Watching the rain slide down the glass, feeling completely ready to face the day.",
+      "caption": "Raindrops tap gently against the glass as the steady afternoon slowly winds down to its end.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-05-31.json",
-  "generated_at": "2026-05-31T19:01:05.936Z"
+  "generated_at": "2026-05-31T21:42:43.369Z"
 }

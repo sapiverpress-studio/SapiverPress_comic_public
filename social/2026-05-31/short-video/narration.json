@@ -1,6 +1,6 @@
 {
   "date": "2026-05-31",
-  "title": "A Quiet Day at the Library",
+  "title": "A Quiet Day at the Bookshop Cafe",
   "voice_name": "Isla Sterling",
   "segments": [
     {
@@ -11,17 +11,17 @@
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "Finding a rare pocket of morning silence before the rest of the world starts waking up."
+      "text": "A steady morning begins with warm light spilling over a half-empty coffee mug and open pages."
     },
     {
       "id": "panel_2",
       "image_name": "02_panel-02.png",
-      "text": "The train clatters along, but inside this window seat, the focus remains entirely steady."
+      "text": "The steady rhythm of the train provides a soothing background as the landscape rushes past."
     },
     {
       "id": "panel_3",
       "image_name": "03_panel-03.png",
-      "text": "Sipping tea amidst the street noise, holding onto that fragile sense of inner peace."
+      "text": "Taking a moment to breathe in the fresh air at a busy sidewalk table."
     },
     {
       "id": "panel_4",
@@ -31,12 +31,12 @@
     {
       "id": "panel_5",
       "image_name": "05_panel-05.png",
-      "text": "Surrounded by rows of old books, the mental clutter finally begins to drift away."
+      "text": "Hidden away in the cozy bookshop corner, the temptation to stay forever is far too strong."
     },
     {
       "id": "panel_6",
       "image_name": "06_panel-06.png",
-      "text": "Watching the rain slide down the glass, feeling completely ready to face the day."
+      "text": "Raindrops tap gently against the glass as the steady afternoon slowly winds down to its end."
     },
     {
       "id": "cta",
@@ -44,9 +44,9 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nFinding a rare pocket of morning silence before the rest of the world starts waking up.\n\nThe train clatters along, but inside this window seat, the focus remains entirely steady.\n\nSipping tea amidst the street noise, holding onto that fragile sense of inner peace.\n\nCheck the daily rule before trusting it.\n\nSurrounded by rows of old books, the mental clutter finally begins to drift away.\n\nWatching the rain slide down the glass, feeling completely ready to face the day.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-05-31T19:03:29.986Z",
-  "caption": "Isla finds solace in the library, where puzzles and peace intertwine.",
+  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nA steady morning begins with warm light spilling over a half-empty coffee mug and open pages.\n\nThe steady rhythm of the train provides a soothing background as the landscape rushes past.\n\nTaking a moment to breathe in the fresh air at a busy sidewalk table.\n\nCheck the daily rule before trusting it.\n\nHidden away in the cozy bookshop corner, the temptation to stay forever is far too strong.\n\nRaindrops tap gently against the glass as the steady afternoon slowly winds down to its end.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-05-31T21:43:35.230Z",
+  "caption": "Isla finds solace in the cozy corners of her favorite bookshop.",
   "variant_name": "daily rule",
   "variant_line": "Check the daily rule before trusting it.",
   "copy_refined": "openai",

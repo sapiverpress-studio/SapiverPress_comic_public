@@ -104,51 +104,6 @@
     {
       "date": "2026-05-30",
       "weekday": "Saturday",
-      "same_day_attempt": 16,
-      "setting": "quiet public library reading table",
-      "puzzle_phase": "late-week",
-      "story_note": "Isla spends this entry at the quiet public library reading table because the library gives her a borrowed pocket of quiet. The puzzle stays as a light thread inside the day.",
-      "continuation_note": "Remember: Isla uses libraries as reset spaces, not just work spaces. Continue the thread: library visits become her backup calm place.",
-      "stuck_moment": "patient pause at a shared table",
-      "life_memory_entry": {
-        "date": "2026-05-30",
-        "attempt": 16,
-        "location": "quiet public library reading table",
-        "reason_for_location": "the library gives her a borrowed pocket of quiet",
-        "life_detail_learned": "Isla uses libraries as reset spaces, not just work spaces.",
-        "thread_to_continue": "library visits become her backup calm place",
-        "puzzle_variant_mentioned": "Trigoku",
-        "variant_panel_index": 4,
-        "uk_calendar_date": null,
-        "uk_calendar_panel_index": null
-      },
-      "variant_recap": {
-        "variant_name": "Trigoku",
-        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
-        "panel_index": 4,
-        "line": "Today has its own little rule-set — check the constraint before rushing."
-      },
-      "uk_calendar_date": null,
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "Between tasks.",
-        "Quick start.",
-        "No shortcut.",
-        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
-        "Nearly done.",
-        "Back to work."
-      ]
-    },
-    {
-      "date": "2026-05-30",
-      "weekday": "Saturday",
       "same_day_attempt": 17,
       "setting": "outdoor cafe street table",
       "puzzle_phase": "late-week",
@@ -1353,12 +1308,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Hold the line.",
-        "There it is.",
-        "Almost clear.",
-        "Back outside."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -1398,12 +1353,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Hold the line.",
-        "There it is.",
-        "Almost clear.",
-        "Back outside."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -1443,12 +1398,57 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Hold the line.",
-        "There it is.",
-        "Almost clear.",
-        "Back outside."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "weekday": "Sunday",
+      "same_day_attempt": 4,
+      "setting": "bookshop cafe corner",
+      "puzzle_phase": "late-week",
+      "story_note": "Isla spends this entry at the bookshop cafe corner because she has come for one thing but stays for the quiet corner. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Bookshops pull Isla into longer pauses than she planned. Continue the thread: she is drawn to places with books and warm corners.",
+      "stuck_moment": "quiet frown, patient double check",
+      "life_memory_entry": {
+        "date": "2026-05-31",
+        "attempt": 4,
+        "location": "bookshop cafe corner",
+        "reason_for_location": "she has come for one thing but stays for the quiet corner",
+        "life_detail_learned": "Bookshops pull Isla into longer pauses than she planned.",
+        "thread_to_continue": "she is drawn to places with books and warm corners",
+        "puzzle_variant_mentioned": "Trigoku",
+        "variant_panel_index": 4,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Trigoku",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 4,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     }
   ],
@@ -1456,51 +1456,6 @@
     {
       "date": "2026-05-30",
       "weekday": "Saturday",
-      "same_day_attempt": 16,
-      "setting": "quiet public library reading table",
-      "puzzle_phase": "late-week",
-      "story_note": "Isla spends this entry at the quiet public library reading table because the library gives her a borrowed pocket of quiet. The puzzle stays as a light thread inside the day.",
-      "continuation_note": "Remember: Isla uses libraries as reset spaces, not just work spaces. Continue the thread: library visits become her backup calm place.",
-      "stuck_moment": "patient pause at a shared table",
-      "life_memory_entry": {
-        "date": "2026-05-30",
-        "attempt": 16,
-        "location": "quiet public library reading table",
-        "reason_for_location": "the library gives her a borrowed pocket of quiet",
-        "life_detail_learned": "Isla uses libraries as reset spaces, not just work spaces.",
-        "thread_to_continue": "library visits become her backup calm place",
-        "puzzle_variant_mentioned": "Trigoku",
-        "variant_panel_index": 4,
-        "uk_calendar_date": null,
-        "uk_calendar_panel_index": null
-      },
-      "variant_recap": {
-        "variant_name": "Trigoku",
-        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
-        "panel_index": 4,
-        "line": "Today has its own little rule-set — check the constraint before rushing."
-      },
-      "uk_calendar_date": null,
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "Between tasks.",
-        "Quick start.",
-        "No shortcut.",
-        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
-        "Nearly done.",
-        "Back to work."
-      ]
-    },
-    {
-      "date": "2026-05-30",
-      "weekday": "Saturday",
       "same_day_attempt": 17,
       "setting": "outdoor cafe street table",
       "puzzle_phase": "late-week",
@@ -2705,12 +2660,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Hold the line.",
-        "There it is.",
-        "Almost clear.",
-        "Back outside."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -2750,12 +2705,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Hold the line.",
-        "There it is.",
-        "Almost clear.",
-        "Back outside."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -2795,12 +2750,57 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Hold the line.",
-        "There it is.",
-        "Almost clear.",
-        "Back outside."
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "weekday": "Sunday",
+      "same_day_attempt": 4,
+      "setting": "bookshop cafe corner",
+      "puzzle_phase": "late-week",
+      "story_note": "Isla spends this entry at the bookshop cafe corner because she has come for one thing but stays for the quiet corner. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Bookshops pull Isla into longer pauses than she planned. Continue the thread: she is drawn to places with books and warm corners.",
+      "stuck_moment": "quiet frown, patient double check",
+      "life_memory_entry": {
+        "date": "2026-05-31",
+        "attempt": 4,
+        "location": "bookshop cafe corner",
+        "reason_for_location": "she has come for one thing but stays for the quiet corner",
+        "life_detail_learned": "Bookshops pull Isla into longer pauses than she planned.",
+        "thread_to_continue": "she is drawn to places with books and warm corners",
+        "puzzle_variant_mentioned": "Trigoku",
+        "variant_panel_index": 4,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Trigoku",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 4,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Bookshop corner.",
+        "First mark.",
+        "Pause there.",
+        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+        "Nearly home.",
+        "One more page."
       ]
     }
   ],
