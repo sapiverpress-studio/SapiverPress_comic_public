@@ -5,6 +5,8 @@ import { spawnSync } from "child_process";
 const ROOT = process.cwd();
 const DEFAULT_FRAME_SECONDS = 3;
 const AUDIO_TAIL_PAD_SECONDS = Number(process.env.SHORT_VIDEO_AUDIO_TAIL_PAD_SECONDS || "1.2");
+const SUITE_URL = process.env.SUITE_URL || "https://suite.sapiverpress.co.uk";
+const ETSY_URL = process.env.ETSY_URL || "https://sapiverpress.etsy.com?coupon=SAVE20";
 
 function dateString() {
   const override = process.env.DATE_OVERRIDE || "";
@@ -17,6 +19,16 @@ function dateString() {
   }).formatToParts(base);
   const get = (type) => parts.find((p) => p.type === type)?.value;
   return `${get("year")}-${get("month")}-${get("day")}`;
+}
+
+function humanDate(date) {
+  return new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Europe/London",
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }).format(new Date(`${date}T12:00:00Z`));
 }
 
 async function mkdir(dir) {
@@ -43,6 +55,11 @@ async function readJson(file, fallback = null) {
 async function writeJson(file, data) {
   await mkdir(path.dirname(file));
   await fs.writeFile(file, `${JSON.stringify(data, null, 2)}\n`, "utf8");
+}
+
+async function writeText(file, text) {
+  await mkdir(path.dirname(file));
+  await fs.writeFile(file, `${text.trim()}\n`, "utf8");
 }
 
 async function copyIfExists(src, dst) {
@@ -85,6 +102,53 @@ function durationForFrames(frameCount, audioDuration) {
   return Math.max(DEFAULT_FRAME_SECONDS, Math.ceil(requiredPerFrame * 100) / 100);
 }
 
+function clean(value) {
+  return String(value || "").replace(/\s+/g, " ").trim();
+}
+
+function variantName(story) {
+  return clean(story?.required_puzzle_copy?.variant_name || story?.variant_recap?.variant_name || "Trigoku") || "Trigoku";
+}
+
+function pickHook(story, narration) {
+  const title = clean(story?.storyboard_arc_title || narration?.title || "Isla's daily puzzle break");
+  const panel = clean(story?.scenes?.[3]?.storyboard_caption || story?.storyboard_arc?.puzzle_moment || "one careful grid check changes the day");
+  if (title && panel) return `${title}: ${panel}`;
+  return title || panel || "Isla takes three minutes for today's puzzle.";
+}
+
+function buildTikTokPost({ date, story, narration, videoFile }) {
+  const hook = pickHook(story, narration).replace(/\.$/, "");
+  const puzzle = variantName(story);
+  const line = clean(story?.scenes?.[3]?.storyboard_dialogue || story?.required_puzzle_copy?.required_dialogue_panel_4 || "Can you spot the move before Isla does?");
+  const hashtags = [
+    "#SapiverPress",
+    "#IslaDaily",
+    "#PuzzleTok",
+    "#SudokuTok",
+    puzzle.toLowerCase().includes("trigoku") ? "#Trigoku" : "#LogicPuzzle",
+    "#DailyPuzzle",
+    "#BrainTraining",
+    "#CozyGaming",
+    "#StudyTok",
+    "#BookTok",
+    "#FYP",
+  ];
+  return [
+    `${hook}`,
+    "",
+    `${line}`,
+    "",
+    `Play along: ${SUITE_URL}`,
+    `Printables & gifts: ${ETSY_URL}`,
+    "",
+    `Video file: ${videoFile}`,
+    `Date: ${humanDate(date)}`,
+    "",
+    hashtags.join(" "),
+  ].join("\n");
+}
+
 async function main() {
   const date = dateString();
   const socialDir = path.join(ROOT, "social", date);
@@ -95,6 +159,7 @@ async function main() {
   await mkdir(videoDir);
 
   const narration = await readJson(path.join(videoDir, "narration.json"), await readJson(path.join(latestVideoDir, "narration.json"), null));
+  const story = await readJson(path.join(ROOT, "daily", `${date}.json`), await readJson(path.join(ROOT, "latest.json"), null));
   const imageNames = narration?.segments?.map((segment) => segment.image_name).filter(Boolean) || [
     "00_start-grid.png",
     "01_panel-01.png",
@@ -169,16 +234,30 @@ async function main() {
     await fs.copyFile(silentVideo, finalVideo);
   }
 
+  const videoFile = `sapiver_isla_daily_${date}.mp4`;
+  const tiktokPost = buildTikTokPost({ date, story, narration, videoFile });
+  await writeText(path.join(videoDir, "tiktok-post.txt"), tiktokPost);
+  await writeJson(path.join(videoDir, "tiktok-post.json"), {
+    date,
+    platform: "tiktok",
+    video_file: videoFile,
+    post_text: tiktokPost,
+    generated_at: new Date().toISOString(),
+  });
+
   await copyIfExists(finalVideo, latestVideo);
   await copyIfExists(path.join(videoDir, "script.txt"), path.join(latestVideoDir, "script.txt"));
   await copyIfExists(path.join(videoDir, "caption.txt"), path.join(latestVideoDir, "caption.txt"));
   await copyIfExists(path.join(videoDir, "subtitles.srt"), path.join(latestVideoDir, "subtitles.srt"));
   await copyIfExists(path.join(videoDir, "narration.json"), path.join(latestVideoDir, "narration.json"));
+  await copyIfExists(path.join(videoDir, "tiktok-post.txt"), path.join(latestVideoDir, "tiktok-post.txt"));
+  await copyIfExists(path.join(videoDir, "tiktok-post.json"), path.join(latestVideoDir, "tiktok-post.json"));
 
   await writeJson(manifestFile, {
     date,
     status: "video_ready",
     video_file: `social/${date}/short-video/sapiver_isla_daily_${date}.mp4`,
+    tiktok_post_file: `social/${date}/short-video/tiktok-post.txt`,
     audio_used: Boolean(chosenAudio),
     audio_duration_seconds: Number(audioDurationSeconds.toFixed(2)),
     audio_tail_pad_seconds: AUDIO_TAIL_PAD_SECONDS,
@@ -190,6 +269,7 @@ async function main() {
   await copyIfExists(manifestFile, path.join(latestVideoDir, "manifest.json"));
 
   console.log(`Short video written: social/${date}/short-video/sapiver_isla_daily_${date}.mp4`);
+  console.log("TikTok post written: social/" + date + "/short-video/tiktok-post.txt");
 }
 
 main().catch(async (error) => {
