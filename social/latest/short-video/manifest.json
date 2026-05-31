@@ -3,6 +3,10 @@
   "status": "video_ready",
   "video_file": "social/2026-05-31/short-video/sapiver_isla_daily_2026-05-31.mp4",
   "audio_used": true,
+  "audio_duration_seconds": 37.2,
+  "audio_tail_pad_seconds": 1.2,
   "frame_count": 8,
-  "generated_at": "2026-05-31T10:00:29.285Z"
+  "frame_duration_seconds": 4.8,
+  "estimated_silent_duration_seconds": 38.4,
+  "generated_at": "2026-05-31T16:38:10.555Z"
 }

@@ -1,6 +1,6 @@
 {
   "date": "2026-05-31",
-  "title": "Morning Rituals and Puzzles",
+  "title": "Morning Moments with Isla",
   "voice_name": "Isla Sterling",
   "segments": [
     {
@@ -11,32 +11,32 @@
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "The early morning light hits the table just right, offering a steady moment of absolute calm."
+      "text": "The morning sun spills across the table as the rest of the house sleeps."
     },
     {
       "id": "panel_2",
       "image_name": "02_panel-02.png",
-      "text": "Watching the landscape blur past the window always helps to clear the mind for what lies ahead."
+      "text": "Settling into the steady rhythm of the train as the early landscape rolls past."
     },
     {
       "id": "panel_3",
       "image_name": "03_panel-03.png",
-      "text": "A quick breath with a warm cup provides the perfect opportunity to review the next step."
+      "text": "Watching the street wake up slowly over a warm, comforting cup of coffee."
     },
     {
       "id": "panel_4",
       "image_name": "04_panel-04.png",
-      "text": "Check the daily rule before trusting it."
+      "text": "The daily rule changes the move, so Isla checks it before trusting the answer."
     },
     {
       "id": "panel_5",
       "image_name": "05_panel-05.png",
-      "text": "Surrounded by the comforting smell of old paper, the final pieces of the puzzle begin aligning."
+      "text": "Taking a moment to double-check the final details before the busy world intrudes."
     },
     {
       "id": "panel_6",
       "image_name": "06_panel-06.png",
-      "text": "With everything neatly sorted, the steady patter of rain brings a satisfying sense of complete closure."
+      "text": "Watching the rain stream down the glass while keeping warm and completely at peace."
     },
     {
       "id": "cta",
@@ -44,9 +44,9 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nThe early morning light hits the table just right, offering a steady moment of absolute calm.\n\nWatching the landscape blur past the window always helps to clear the mind for what lies ahead.\n\nA quick breath with a warm cup provides the perfect opportunity to review the next step.\n\nCheck the daily rule before trusting it.\n\nSurrounded by the comforting smell of old paper, the final pieces of the puzzle begin aligning.\n\nWith everything neatly sorted, the steady patter of rain brings a satisfying sense of complete closure.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-05-31T10:00:13.220Z",
-  "caption": "Isla finds peace in her morning routine before the day begins.",
+  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nThe morning sun spills across the table as the rest of the house sleeps.\n\nSettling into the steady rhythm of the train as the early landscape rolls past.\n\nWatching the street wake up slowly over a warm, comforting cup of coffee.\n\nThe daily rule changes the move, so Isla checks it before trusting the answer.\n\nTaking a moment to double-check the final details before the busy world intrudes.\n\nWatching the rain stream down the glass while keeping warm and completely at peace.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-05-31T16:37:50.516Z",
+  "caption": "A quiet morning routine before the world wakes up.",
   "variant_name": "daily rule",
   "variant_line": "Check the daily rule before trusting it.",
   "copy_refined": "openai",
