@@ -1,6 +1,6 @@
 {
   "date": "2026-05-31",
-  "title": "Morning Moments with Isla",
+  "title": "A Quiet Day at the Library",
   "voice_name": "Isla Sterling",
   "segments": [
     {
@@ -11,32 +11,32 @@
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "The morning sun spills across the table as the rest of the house sleeps."
+      "text": "Finding a rare pocket of morning silence before the rest of the world starts waking up."
     },
     {
       "id": "panel_2",
       "image_name": "02_panel-02.png",
-      "text": "Settling into the steady rhythm of the train as the early landscape rolls past."
+      "text": "The train clatters along, but inside this window seat, the focus remains entirely steady."
     },
     {
       "id": "panel_3",
       "image_name": "03_panel-03.png",
-      "text": "Watching the street wake up slowly over a warm, comforting cup of coffee."
+      "text": "Sipping tea amidst the street noise, holding onto that fragile sense of inner peace."
     },
     {
       "id": "panel_4",
       "image_name": "04_panel-04.png",
-      "text": "The daily rule changes the move, so Isla checks it before trusting the answer."
+      "text": "Check the daily rule before trusting it."
     },
     {
       "id": "panel_5",
       "image_name": "05_panel-05.png",
-      "text": "Taking a moment to double-check the final details before the busy world intrudes."
+      "text": "Surrounded by rows of old books, the mental clutter finally begins to drift away."
     },
     {
       "id": "panel_6",
       "image_name": "06_panel-06.png",
-      "text": "Watching the rain stream down the glass while keeping warm and completely at peace."
+      "text": "Watching the rain slide down the glass, feeling completely ready to face the day."
     },
     {
       "id": "cta",
@@ -44,9 +44,9 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nThe morning sun spills across the table as the rest of the house sleeps.\n\nSettling into the steady rhythm of the train as the early landscape rolls past.\n\nWatching the street wake up slowly over a warm, comforting cup of coffee.\n\nThe daily rule changes the move, so Isla checks it before trusting the answer.\n\nTaking a moment to double-check the final details before the busy world intrudes.\n\nWatching the rain stream down the glass while keeping warm and completely at peace.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-05-31T16:37:50.516Z",
-  "caption": "A quiet morning routine before the world wakes up.",
+  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nFinding a rare pocket of morning silence before the rest of the world starts waking up.\n\nThe train clatters along, but inside this window seat, the focus remains entirely steady.\n\nSipping tea amidst the street noise, holding onto that fragile sense of inner peace.\n\nCheck the daily rule before trusting it.\n\nSurrounded by rows of old books, the mental clutter finally begins to drift away.\n\nWatching the rain slide down the glass, feeling completely ready to face the day.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-05-31T19:03:29.986Z",
+  "caption": "Isla finds solace in the library, where puzzles and peace intertwine.",
   "variant_name": "daily rule",
   "variant_line": "Check the daily rule before trusting it.",
   "copy_refined": "openai",
