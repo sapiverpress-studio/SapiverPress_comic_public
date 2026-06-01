@@ -4,10 +4,10 @@
   "video_file": "social/2026-06-01/short-video/sapiver_isla_daily_2026-06-01.mp4",
   "tiktok_post_file": "social/2026-06-01/short-video/tiktok-post.txt",
   "audio_used": true,
-  "audio_duration_seconds": 46.21,
+  "audio_duration_seconds": 40.57,
   "audio_tail_pad_seconds": 1.2,
   "frame_count": 8,
-  "frame_duration_seconds": 5.93,
-  "estimated_silent_duration_seconds": 47.44,
-  "generated_at": "2026-06-01T14:14:26.588Z"
+  "frame_duration_seconds": 5.23,
+  "estimated_silent_duration_seconds": 41.84,
+  "generated_at": "2026-06-01T15:43:06.657Z"
 }
