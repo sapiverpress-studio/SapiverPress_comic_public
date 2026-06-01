@@ -28,12 +28,6 @@
   "location_memory": [
     {
       "date": "2026-05-29",
-      "attempt": 29,
-      "setting": "quiet public library reading table",
-      "reason": "the library gives her a borrowed pocket of quiet"
-    },
-    {
-      "date": "2026-05-29",
       "attempt": 30,
       "setting": "outdoor cafe street table",
       "reason": "she is trying not to rush straight into the next errand"
@@ -385,15 +379,15 @@
       "attempt": 10,
       "setting": "co-working desk near a tall window",
       "reason": "she has work waiting, so the puzzle has to fit into a short gap"
+    },
+    {
+      "date": "2026-06-01",
+      "attempt": 11,
+      "setting": "bookshop cafe corner",
+      "reason": "she has come for one thing but stays for the quiet corner"
     }
   ],
   "variant_memory": [
-    {
-      "date": "2026-05-29",
-      "attempt": 29,
-      "variant_name": "Trigoku",
-      "panel_index": 4
-    },
     {
       "date": "2026-05-29",
       "attempt": 30,
@@ -747,21 +741,15 @@
       "attempt": 10,
       "variant_name": "Anti-Knight",
       "panel_index": 4
+    },
+    {
+      "date": "2026-06-01",
+      "attempt": 11,
+      "variant_name": "Anti-Knight",
+      "panel_index": 3
     }
   ],
   "life_memory": [
-    {
-      "date": "2026-05-29",
-      "attempt": 29,
-      "location": "quiet public library reading table",
-      "reason_for_location": "the library gives her a borrowed pocket of quiet",
-      "life_detail_learned": "Isla uses libraries as reset spaces, not just work spaces.",
-      "thread_to_continue": "library visits become her backup calm place",
-      "puzzle_variant_mentioned": "Trigoku",
-      "variant_panel_index": 4,
-      "uk_calendar_date": null,
-      "uk_calendar_panel_index": null
-    },
     {
       "date": "2026-05-29",
       "attempt": 30,
@@ -1467,6 +1455,18 @@
       "thread_to_continue": "work days make the puzzle a boundary marker",
       "puzzle_variant_mentioned": "Anti-Knight",
       "variant_panel_index": 4,
+      "uk_calendar_date": null,
+      "uk_calendar_panel_index": null
+    },
+    {
+      "date": "2026-06-01",
+      "attempt": 11,
+      "location": "bookshop cafe corner",
+      "reason_for_location": "she has come for one thing but stays for the quiet corner",
+      "life_detail_learned": "Bookshops pull Isla into longer pauses than she planned.",
+      "thread_to_continue": "she is drawn to places with books and warm corners",
+      "puzzle_variant_mentioned": "Anti-Knight",
+      "variant_panel_index": 3,
       "uk_calendar_date": null,
       "uk_calendar_panel_index": null
     }

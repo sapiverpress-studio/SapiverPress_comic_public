@@ -45,15 +45,15 @@
   ],
   "storyboard_copy_source": "openai_repaired+gemini",
   "storyboard_copy_model": "gpt-4o-mini",
-  "storyboard_arc_title": "Reflections on a Rainy Day",
+  "storyboard_arc_title": "Quiet Corners and Puzzles",
   "storyboard_arc_type": "story_driven_not_location_driven",
   "storyboard_arc": {
-    "setup": "Rain streaks the glass, turning the busy world outside into a soft, steady blur of green and grey.",
-    "disruption": "Even the bookstore feels peaceful, giving her space to slowly flip through the pages without any rush.",
-    "choice": "She pauses to let her thoughts drift, watching the steam rise lazily from her warm mug.",
-    "puzzle_moment": "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-    "consequence": "As the warm evening light fills the kitchen, the pieces of the day finally start coming together.",
-    "resolution": "It is nice to simply exist in the steady moments without worrying about what comes next."
+    "setup": "Isla plans to slip into the steady bookstore corner before the morning rush truly begins.",
+    "disruption": "She makes her first mark on the grid while waiting for the morning train to arrive.",
+    "choice": "The soothing rhythm of the tracks helps her focus on the trickier sections of the grid.",
+    "puzzle_moment": "A warm cup of tea beside her makes the tricky Anti-Knight rule feel much more manageable.",
+    "consequence": "The afternoon light pours over her desk as she successfully places another tricky set of digits.",
+    "resolution": "Surrounded by leafy plants and the sound of soft rain, she reluctantly closes her puzzle book."
   },
   "storyboard_quality": {
     "location_sequence_only": true,
@@ -122,7 +122,7 @@
     "frames": "array:6"
   },
   "openai_storyboard_fallback_reason": null,
-  "openai_storyboard_checked_at": "2026-06-01T15:41:55.521Z",
+  "openai_storyboard_checked_at": "2026-06-01T15:51:22.566Z",
   "gemini_allowed_fields": [
     "caption",
     "dialogue"
@@ -138,15 +138,26 @@
   },
   "variant_copy_mode": "exact_variant",
   "variant_detection_unresolved": false,
+  "supporting_life_trigger": {
+    "enabled": false,
+    "reason": "cadence_skip"
+  },
+  "supporting_cast_policy": {
+    "isla_only_main_character": true,
+    "overlay_only": true,
+    "no_extra_faces": true,
+    "must_affect_story": true
+  },
+  "supporting_life_trigger_story_locked": false,
   "puzzle_product": "Trigoku Daily Lock",
   "puzzle_url": "https://suite.sapiverpress.co.uk",
   "captions": [
-    "I think I'll just sit here and let the morning take its time today.\nRain streaks the glass, turning the busy world outside into a soft, steady blur of green and grey.",
-    "There is absolutely no point in rushing when the day is this steady.\nEven the bookstore feels peaceful, giving her space to slowly flip through the pages without any rush.",
-    "I completely lost my train of thought, but honestly, I don't even mind.\nShe pauses to let her thoughts drift, watching the steam rise lazily from her warm mug.",
-    "Anti-Knight today — knight moves block matching numbers.\nAnti-Knight changes the move, so Isla checks the rule before trusting it.",
-    "There we go. That one actually makes sense now.\nAs the warm evening light fills the kitchen, the pieces of the day finally start coming together.",
-    "I'll just leave it there for tonight and enjoy the rest of the evening.\nIt is nice to simply exist in the steady moments without worrying about what comes next."
+    "Let's get a head start before the streets get too crowded.\nIsla plans to slip into the steady bookstore corner before the morning rush truly begins.",
+    "No point in rushing when the train is going to be late anyway.\nShe makes her first mark on the grid while waiting for the morning train to arrive.",
+    "This corner of the page is starting to look a bit messy.\nThe soothing rhythm of the tracks helps her focus on the trickier sections of the grid.",
+    "Anti-Knight today — knight moves block matching numbers.\nA warm cup of tea beside her makes the tricky Anti-Knight rule feel much more manageable.",
+    "There we go, that number actually fits perfectly now.\nThe afternoon light pours over her desk as she successfully places another tricky set of digits.",
+    "I should probably stop here and head home before the rain gets worse.\nSurrounded by leafy plants and the sound of soft rain, she reluctantly closes her puzzle book."
   ],
   "storyboard_locations": [
     "small home kitchen table in warm morning light",
@@ -159,73 +170,73 @@
   "scenes": [
     {
       "scene": "scene_01",
-      "art_source": "template",
-      "art_path": "templates/characters/isla/isla_01_opening_return.png",
-      "template": "templates/characters/isla/isla_01_opening_return.png",
-      "replacement": "",
+      "art_source": "replacement",
+      "art_path": "art-replacements/2026-06-01/01_panel-01.png",
+      "template": "",
+      "replacement": "art-replacements/2026-06-01/01_panel-01.png",
       "capture": "captures/2026-06-01/extracted/01_fresh_daily_grid.png",
       "output": "social/2026-06-01/01_panel-01.png",
       "screen_quad": [
         [
-          592,
-          405
+          724,
+          592
         ],
         [
-          1018,
-          421
+          1066,
+          626
         ],
         [
-          982,
-          756
+          1043,
+          917
         ],
         [
-          571,
-          724
+          687,
+          835
+        ]
+      ],
+      "screen_quad_mode": "detected_replacement_screen",
+      "storyboard_text": "Let's get a head start before the streets get too crowded.\nIsla plans to slip into the steady bookstore corner before the morning rush truly begins.",
+      "arc_role": "setup",
+      "storyboard_caption": "Isla plans to slip into the steady bookstore corner before the morning rush truly begins.",
+      "storyboard_dialogue": "Let's get a head start before the streets get too crowded.",
+      "panel_location": "small home kitchen table in warm morning light"
+    },
+    {
+      "scene": "scene_02",
+      "art_source": "template",
+      "art_path": "templates/characters/isla/isla_02_first_move.png",
+      "template": "templates/characters/isla/isla_02_first_move.png",
+      "replacement": "",
+      "capture": "captures/2026-06-01/extracted/02_first_moves.png",
+      "output": "social/2026-06-01/02_panel-02.png",
+      "screen_quad": [
+        [
+          610,
+          458
+        ],
+        [
+          1050,
+          474
+        ],
+        [
+          1026,
+          760
+        ],
+        [
+          588,
+          744
         ]
       ],
       "screen_quad_mode": "template_locked",
       "recovered_from_missing_replacement_screen": true,
       "failed_replacements": [
-        "art-replacements/2026-06-01/01_panel-01.png",
-        "art-replacements/latest/01_panel-01.png"
+        "art-replacements/2026-06-01/02_panel-02.png",
+        "art-replacements/latest/02_panel-02.png"
       ],
-      "storyboard_text": "I think I'll just sit here and let the morning take its time today.\nRain streaks the glass, turning the busy world outside into a soft, steady blur of green and grey.",
-      "arc_role": "setup",
-      "storyboard_caption": "Rain streaks the glass, turning the busy world outside into a soft, steady blur of green and grey.",
-      "storyboard_dialogue": "I think I'll just sit here and let the morning take its time today.",
-      "panel_location": "small home kitchen table in warm morning light"
-    },
-    {
-      "scene": "scene_02",
-      "art_source": "replacement",
-      "art_path": "art-replacements/2026-06-01/02_panel-02.png",
-      "template": "",
-      "replacement": "art-replacements/2026-06-01/02_panel-02.png",
-      "capture": "captures/2026-06-01/extracted/02_first_moves.png",
-      "output": "social/2026-06-01/02_panel-02.png",
-      "screen_quad": [
-        [
-          668,
-          637
-        ],
-        [
-          1051,
-          660
-        ],
-        [
-          1021,
-          915
-        ],
-        [
-          639,
-          855
-        ]
-      ],
-      "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "There is absolutely no point in rushing when the day is this steady.\nEven the bookstore feels peaceful, giving her space to slowly flip through the pages without any rush.",
+      "storyboard_text": "No point in rushing when the train is going to be late anyway.\nShe makes her first mark on the grid while waiting for the morning train to arrive.",
       "arc_role": "disruption",
-      "storyboard_caption": "Even the bookstore feels peaceful, giving her space to slowly flip through the pages without any rush.",
-      "storyboard_dialogue": "There is absolutely no point in rushing when the day is this steady.",
+      "storyboard_caption": "She makes her first mark on the grid while waiting for the morning train to arrive.",
+      "storyboard_dialogue": "No point in rushing when the train is going to be late anyway.",
       "panel_location": "train table by the window"
     },
     {
@@ -238,59 +249,64 @@
       "output": "social/2026-06-01/03_panel-03.png",
       "screen_quad": [
         [
-          680,
-          614
+          721,
+          601
         ],
         [
-          1044,
-          647
+          1067,
+          637
         ],
         [
-          990,
-          942
+          1057,
+          898
         ],
         [
-          637,
-          861
+          684,
+          820
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "I completely lost my train of thought, but honestly, I don't even mind.\nShe pauses to let her thoughts drift, watching the steam rise lazily from her warm mug.",
+      "storyboard_text": "This corner of the page is starting to look a bit messy.\nThe soothing rhythm of the tracks helps her focus on the trickier sections of the grid.",
       "arc_role": "choice",
-      "storyboard_caption": "She pauses to let her thoughts drift, watching the steam rise lazily from her warm mug.",
-      "storyboard_dialogue": "I completely lost my train of thought, but honestly, I don't even mind.",
+      "storyboard_caption": "The soothing rhythm of the tracks helps her focus on the trickier sections of the grid.",
+      "storyboard_dialogue": "This corner of the page is starting to look a bit messy.",
       "panel_location": "outdoor cafe street table"
     },
     {
       "scene": "scene_04",
-      "art_source": "replacement",
-      "art_path": "art-replacements/2026-06-01/04_panel-04.png",
-      "template": "",
-      "replacement": "art-replacements/2026-06-01/04_panel-04.png",
+      "art_source": "template",
+      "art_path": "templates/characters/isla/isla_04_breakthrough.png",
+      "template": "templates/characters/isla/isla_04_breakthrough.png",
+      "replacement": "",
       "capture": "captures/2026-06-01/extracted/04_breakthrough.png",
       "output": "social/2026-06-01/04_panel-04.png",
       "screen_quad": [
         [
-          727,
-          670
+          612,
+          404
         ],
         [
-          1067,
-          700
+          1052,
+          414
         ],
         [
-          1061,
-          987
+          1025,
+          760
         ],
         [
-          685,
-          903
+          580,
+          736
         ]
       ],
-      "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Anti-Knight today — knight moves block matching numbers.\nAnti-Knight changes the move, so Isla checks the rule before trusting it.",
+      "screen_quad_mode": "template_locked",
+      "recovered_from_missing_replacement_screen": true,
+      "failed_replacements": [
+        "art-replacements/2026-06-01/04_panel-04.png",
+        "art-replacements/latest/04_panel-04.png"
+      ],
+      "storyboard_text": "Anti-Knight today — knight moves block matching numbers.\nA warm cup of tea beside her makes the tricky Anti-Knight rule feel much more manageable.",
       "arc_role": "puzzle_moment",
-      "storyboard_caption": "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+      "storyboard_caption": "A warm cup of tea beside her makes the tricky Anti-Knight rule feel much more manageable.",
       "storyboard_dialogue": "Anti-Knight today — knight moves block matching numbers.",
       "panel_location": "co-working desk near a tall window"
     },
@@ -304,27 +320,27 @@
       "output": "social/2026-06-01/05_panel-05.png",
       "screen_quad": [
         [
-          599,
-          639
+          676,
+          591
         ],
         [
-          1011,
-          667
+          1057,
+          615
         ],
         [
-          969,
-          954
+          1014,
+          897
         ],
         [
-          561,
-          889
+          636,
+          836
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "There we go. That one actually makes sense now.\nAs the warm evening light fills the kitchen, the pieces of the day finally start coming together.",
+      "storyboard_text": "There we go, that number actually fits perfectly now.\nThe afternoon light pours over her desk as she successfully places another tricky set of digits.",
       "arc_role": "consequence",
-      "storyboard_caption": "As the warm evening light fills the kitchen, the pieces of the day finally start coming together.",
-      "storyboard_dialogue": "There we go. That one actually makes sense now.",
+      "storyboard_caption": "The afternoon light pours over her desk as she successfully places another tricky set of digits.",
+      "storyboard_dialogue": "There we go, that number actually fits perfectly now.",
       "panel_location": "bookshop cafe corner"
     },
     {
@@ -337,27 +353,27 @@
       "output": "social/2026-06-01/06_panel-06.png",
       "screen_quad": [
         [
-          786,
-          689
+          656,
+          647
         ],
         [
-          1067,
-          722
+          1060,
+          676
         ],
         [
-          1069,
-          983
+          1025,
+          966
         ],
         [
-          748,
-          912
+          624,
+          903
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "I'll just leave it there for tonight and enjoy the rest of the evening.\nIt is nice to simply exist in the steady moments without worrying about what comes next.",
+      "storyboard_text": "I should probably stop here and head home before the rain gets worse.\nSurrounded by leafy plants and the sound of soft rain, she reluctantly closes her puzzle book.",
       "arc_role": "resolution",
-      "storyboard_caption": "It is nice to simply exist in the steady moments without worrying about what comes next.",
-      "storyboard_dialogue": "I'll just leave it there for tonight and enjoy the rest of the evening.",
+      "storyboard_caption": "Surrounded by leafy plants and the sound of soft rain, she reluctantly closes her puzzle book.",
+      "storyboard_dialogue": "I should probably stop here and head home before the rain gets worse.",
       "panel_location": "rainy window nook with plants"
     }
   ],
@@ -365,12 +381,21 @@
   "screen_overlay_failures": [],
   "screen_overlay_recoveries": [
     {
-      "scene": "scene_01",
-      "output": "social/2026-06-01/01_panel-01.png",
+      "scene": "scene_02",
+      "output": "social/2026-06-01/02_panel-02.png",
       "screen_quad_mode": "template_locked",
       "failed_replacements": [
-        "art-replacements/2026-06-01/01_panel-01.png",
-        "art-replacements/latest/01_panel-01.png"
+        "art-replacements/2026-06-01/02_panel-02.png",
+        "art-replacements/latest/02_panel-02.png"
+      ]
+    },
+    {
+      "scene": "scene_04",
+      "output": "social/2026-06-01/04_panel-04.png",
+      "screen_quad_mode": "template_locked",
+      "failed_replacements": [
+        "art-replacements/2026-06-01/04_panel-04.png",
+        "art-replacements/latest/04_panel-04.png"
       ]
     }
   ],
@@ -378,10 +403,10 @@
   "puzzle_moment_copy_snapshot": {
     "ran": true,
     "source_stage": "openai",
-    "caption": "Anti-Knight today — knight moves block matching numbers.",
+    "caption": "That was it.",
     "dialogue": "Anti-Knight today — knight moves block matching numbers.",
-    "image_prompt_fragment": "quiet breakthrough, thoughtful smile, noticing today's Anti-Knight rule naturally",
-    "captured_at": "2026-06-01T15:41:55.613Z"
+    "image_prompt_fragment": "face brightening with a clean deduction",
+    "captured_at": "2026-06-01T15:51:22.641Z"
   },
   "puzzle_moment_copy_protection": {
     "ran": true,

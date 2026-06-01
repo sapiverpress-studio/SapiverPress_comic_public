@@ -105,51 +105,6 @@
     {
       "date": "2026-05-30",
       "weekday": "Saturday",
-      "same_day_attempt": 27,
-      "setting": "bookshop cafe corner",
-      "puzzle_phase": "late-week",
-      "story_note": "Isla spends this entry at the bookshop cafe corner because she has come for one thing but stays for the quiet corner. The puzzle stays as a light thread inside the day.",
-      "continuation_note": "Remember: Bookshops pull Isla into longer pauses than she planned. Continue the thread: she is drawn to places with books and warm corners.",
-      "stuck_moment": "quiet frown, patient double check",
-      "life_memory_entry": {
-        "date": "2026-05-30",
-        "attempt": 27,
-        "location": "bookshop cafe corner",
-        "reason_for_location": "she has come for one thing but stays for the quiet corner",
-        "life_detail_learned": "Bookshops pull Isla into longer pauses than she planned.",
-        "thread_to_continue": "she is drawn to places with books and warm corners",
-        "puzzle_variant_mentioned": "Trigoku",
-        "variant_panel_index": 4,
-        "uk_calendar_date": null,
-        "uk_calendar_panel_index": null
-      },
-      "variant_recap": {
-        "variant_name": "Trigoku",
-        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
-        "panel_index": 4,
-        "line": "Today has its own little rule-set — check the constraint before rushing."
-      },
-      "uk_calendar_date": null,
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "Between tasks.",
-        "Quick start.",
-        "No shortcut.",
-        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
-        "Nearly done.",
-        "Back to work."
-      ]
-    },
-    {
-      "date": "2026-05-30",
-      "weekday": "Saturday",
       "same_day_attempt": 28,
       "setting": "gothic window desk with cityscape view",
       "puzzle_phase": "late-week",
@@ -1039,12 +994,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Between tasks.",
-        "Quick start.",
-        "No shortcut.",
+        "Bookshop corner.",
+        "First mark.",
         "Anti-Knight today — knight moves block matching numbers.",
-        "Nearly done.",
-        "Back to work."
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -1084,12 +1039,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Between tasks.",
-        "Quick start.",
-        "No shortcut.",
+        "Bookshop corner.",
+        "First mark.",
         "Anti-Knight today — knight moves block matching numbers.",
-        "Nearly done.",
-        "Back to work."
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -1129,12 +1084,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Between tasks.",
-        "Quick start.",
-        "No shortcut.",
+        "Bookshop corner.",
+        "First mark.",
         "Anti-Knight today — knight moves block matching numbers.",
-        "Nearly done.",
-        "Back to work."
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -1174,12 +1129,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Between tasks.",
-        "Quick start.",
-        "No shortcut.",
+        "Bookshop corner.",
+        "First mark.",
         "Anti-Knight today — knight moves block matching numbers.",
-        "Nearly done.",
-        "Back to work."
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -1219,12 +1174,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Between tasks.",
-        "Quick start.",
-        "No shortcut.",
+        "Bookshop corner.",
+        "First mark.",
         "Anti-Knight today — knight moves block matching numbers.",
-        "Nearly done.",
-        "Back to work."
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -1264,12 +1219,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Between tasks.",
-        "Quick start.",
-        "No shortcut.",
+        "Bookshop corner.",
+        "First mark.",
         "Anti-Knight today — knight moves block matching numbers.",
-        "Nearly done.",
-        "Back to work."
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -1309,12 +1264,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Between tasks.",
-        "Quick start.",
-        "No shortcut.",
+        "Bookshop corner.",
+        "First mark.",
         "Anti-Knight today — knight moves block matching numbers.",
-        "Nearly done.",
-        "Back to work."
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -1354,12 +1309,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Between tasks.",
-        "Quick start.",
-        "No shortcut.",
+        "Bookshop corner.",
+        "First mark.",
         "Anti-Knight today — knight moves block matching numbers.",
-        "Nearly done.",
-        "Back to work."
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -1399,12 +1354,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Between tasks.",
-        "Quick start.",
-        "No shortcut.",
+        "Bookshop corner.",
+        "First mark.",
         "Anti-Knight today — knight moves block matching numbers.",
-        "Nearly done.",
-        "Back to work."
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -1444,12 +1399,57 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Between tasks.",
-        "Quick start.",
-        "No shortcut.",
+        "Bookshop corner.",
+        "First mark.",
         "Anti-Knight today — knight moves block matching numbers.",
-        "Nearly done.",
-        "Back to work."
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Nearly home.",
+        "One more page."
+      ]
+    },
+    {
+      "date": "2026-06-01",
+      "weekday": "Monday",
+      "same_day_attempt": 11,
+      "setting": "bookshop cafe corner",
+      "puzzle_phase": "early-week",
+      "story_note": "Isla spends this entry at the bookshop cafe corner because she has come for one thing but stays for the quiet corner. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Bookshops pull Isla into longer pauses than she planned. Continue the thread: she is drawn to places with books and warm corners.",
+      "stuck_moment": "quiet frown, patient double check, noticing today's Anti-Knight rule naturally",
+      "life_memory_entry": {
+        "date": "2026-06-01",
+        "attempt": 11,
+        "location": "bookshop cafe corner",
+        "reason_for_location": "she has come for one thing but stays for the quiet corner",
+        "life_detail_learned": "Bookshops pull Isla into longer pauses than she planned.",
+        "thread_to_continue": "she is drawn to places with books and warm corners",
+        "puzzle_variant_mentioned": "Anti-Knight",
+        "variant_panel_index": 3,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Anti-Knight",
+        "short_rule": "Anti-Knight today — knight moves block matching numbers.",
+        "panel_index": 3,
+        "line": "Anti-Knight today — knight moves block matching numbers."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Bookshop corner.",
+        "First mark.",
+        "Anti-Knight today — knight moves block matching numbers.",
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Nearly home.",
+        "One more page."
       ]
     }
   ],
@@ -1457,51 +1457,6 @@
     {
       "date": "2026-05-30",
       "weekday": "Saturday",
-      "same_day_attempt": 27,
-      "setting": "bookshop cafe corner",
-      "puzzle_phase": "late-week",
-      "story_note": "Isla spends this entry at the bookshop cafe corner because she has come for one thing but stays for the quiet corner. The puzzle stays as a light thread inside the day.",
-      "continuation_note": "Remember: Bookshops pull Isla into longer pauses than she planned. Continue the thread: she is drawn to places with books and warm corners.",
-      "stuck_moment": "quiet frown, patient double check",
-      "life_memory_entry": {
-        "date": "2026-05-30",
-        "attempt": 27,
-        "location": "bookshop cafe corner",
-        "reason_for_location": "she has come for one thing but stays for the quiet corner",
-        "life_detail_learned": "Bookshops pull Isla into longer pauses than she planned.",
-        "thread_to_continue": "she is drawn to places with books and warm corners",
-        "puzzle_variant_mentioned": "Trigoku",
-        "variant_panel_index": 4,
-        "uk_calendar_date": null,
-        "uk_calendar_panel_index": null
-      },
-      "variant_recap": {
-        "variant_name": "Trigoku",
-        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
-        "panel_index": 4,
-        "line": "Today has its own little rule-set — check the constraint before rushing."
-      },
-      "uk_calendar_date": null,
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "Between tasks.",
-        "Quick start.",
-        "No shortcut.",
-        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
-        "Nearly done.",
-        "Back to work."
-      ]
-    },
-    {
-      "date": "2026-05-30",
-      "weekday": "Saturday",
       "same_day_attempt": 28,
       "setting": "gothic window desk with cityscape view",
       "puzzle_phase": "late-week",
@@ -2391,12 +2346,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Between tasks.",
-        "Quick start.",
-        "No shortcut.",
+        "Bookshop corner.",
+        "First mark.",
         "Anti-Knight today — knight moves block matching numbers.",
-        "Nearly done.",
-        "Back to work."
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -2436,12 +2391,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Between tasks.",
-        "Quick start.",
-        "No shortcut.",
+        "Bookshop corner.",
+        "First mark.",
         "Anti-Knight today — knight moves block matching numbers.",
-        "Nearly done.",
-        "Back to work."
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -2481,12 +2436,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Between tasks.",
-        "Quick start.",
-        "No shortcut.",
+        "Bookshop corner.",
+        "First mark.",
         "Anti-Knight today — knight moves block matching numbers.",
-        "Nearly done.",
-        "Back to work."
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -2526,12 +2481,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Between tasks.",
-        "Quick start.",
-        "No shortcut.",
+        "Bookshop corner.",
+        "First mark.",
         "Anti-Knight today — knight moves block matching numbers.",
-        "Nearly done.",
-        "Back to work."
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -2571,12 +2526,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Between tasks.",
-        "Quick start.",
-        "No shortcut.",
+        "Bookshop corner.",
+        "First mark.",
         "Anti-Knight today — knight moves block matching numbers.",
-        "Nearly done.",
-        "Back to work."
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -2616,12 +2571,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Between tasks.",
-        "Quick start.",
-        "No shortcut.",
+        "Bookshop corner.",
+        "First mark.",
         "Anti-Knight today — knight moves block matching numbers.",
-        "Nearly done.",
-        "Back to work."
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -2661,12 +2616,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Between tasks.",
-        "Quick start.",
-        "No shortcut.",
+        "Bookshop corner.",
+        "First mark.",
         "Anti-Knight today — knight moves block matching numbers.",
-        "Nearly done.",
-        "Back to work."
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -2706,12 +2661,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Between tasks.",
-        "Quick start.",
-        "No shortcut.",
+        "Bookshop corner.",
+        "First mark.",
         "Anti-Knight today — knight moves block matching numbers.",
-        "Nearly done.",
-        "Back to work."
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -2751,12 +2706,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Between tasks.",
-        "Quick start.",
-        "No shortcut.",
+        "Bookshop corner.",
+        "First mark.",
         "Anti-Knight today — knight moves block matching numbers.",
-        "Nearly done.",
-        "Back to work."
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Nearly home.",
+        "One more page."
       ]
     },
     {
@@ -2796,12 +2751,57 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Between tasks.",
-        "Quick start.",
-        "No shortcut.",
+        "Bookshop corner.",
+        "First mark.",
         "Anti-Knight today — knight moves block matching numbers.",
-        "Nearly done.",
-        "Back to work."
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Nearly home.",
+        "One more page."
+      ]
+    },
+    {
+      "date": "2026-06-01",
+      "weekday": "Monday",
+      "same_day_attempt": 11,
+      "setting": "bookshop cafe corner",
+      "puzzle_phase": "early-week",
+      "story_note": "Isla spends this entry at the bookshop cafe corner because she has come for one thing but stays for the quiet corner. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Bookshops pull Isla into longer pauses than she planned. Continue the thread: she is drawn to places with books and warm corners.",
+      "stuck_moment": "quiet frown, patient double check, noticing today's Anti-Knight rule naturally",
+      "life_memory_entry": {
+        "date": "2026-06-01",
+        "attempt": 11,
+        "location": "bookshop cafe corner",
+        "reason_for_location": "she has come for one thing but stays for the quiet corner",
+        "life_detail_learned": "Bookshops pull Isla into longer pauses than she planned.",
+        "thread_to_continue": "she is drawn to places with books and warm corners",
+        "puzzle_variant_mentioned": "Anti-Knight",
+        "variant_panel_index": 3,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Anti-Knight",
+        "short_rule": "Anti-Knight today — knight moves block matching numbers.",
+        "panel_index": 3,
+        "line": "Anti-Knight today — knight moves block matching numbers."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Bookshop corner.",
+        "First mark.",
+        "Anti-Knight today — knight moves block matching numbers.",
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Nearly home.",
+        "One more page."
       ]
     }
   ],

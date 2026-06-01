@@ -1,6 +1,6 @@
 {
   "date": "2026-06-01",
-  "title": "A Rainy Day Reflection",
+  "title": "Isla's Quiet Corner",
   "voice_name": "Isla Sterling",
   "segments": [
     {
@@ -11,32 +11,32 @@
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "Rain streaks the glass, turning the busy world outside into a soft, steady blur of green and grey."
+      "text": "Isla plans to slip into the steady bookstore corner before the morning rush truly begins."
     },
     {
       "id": "panel_2",
       "image_name": "02_panel-02.png",
-      "text": "Even the bookstore feels peaceful, giving her space to slowly flip through the pages without any rush."
+      "text": "She makes her first mark on the grid while waiting for the morning train to arrive."
     },
     {
       "id": "panel_3",
       "image_name": "03_panel-03.png",
-      "text": "She pauses to let her thoughts drift, watching the steam rise lazily from her warm mug."
+      "text": "The soothing rhythm of the tracks helps her focus on the trickier sections of the grid."
     },
     {
       "id": "panel_4",
       "image_name": "04_panel-04.png",
-      "text": "Anti-Knight today — knight moves block matching numbers."
+      "text": "A warm cup of tea beside her makes the tricky Anti-Knight rule feel much more manageable."
     },
     {
       "id": "panel_5",
       "image_name": "05_panel-05.png",
-      "text": "As the warm evening light fills the kitchen, the pieces of the day finally start coming together."
+      "text": "The afternoon light pours over her desk as she successfully places another tricky set of digits."
     },
     {
       "id": "panel_6",
       "image_name": "06_panel-06.png",
-      "text": "It is nice to simply exist in the steady moments without worrying about what comes next."
+      "text": "Surrounded by leafy plants and the sound of soft rain, she reluctantly closes her puzzle book."
     },
     {
       "id": "cta",
@@ -44,9 +44,9 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nRain streaks the glass, turning the busy world outside into a soft, steady blur of green and grey.\n\nEven the bookstore feels peaceful, giving her space to slowly flip through the pages without any rush.\n\nShe pauses to let her thoughts drift, watching the steam rise lazily from her warm mug.\n\nAnti-Knight today — knight moves block matching numbers.\n\nAs the warm evening light fills the kitchen, the pieces of the day finally start coming together.\n\nIt is nice to simply exist in the steady moments without worrying about what comes next.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-06-01T15:42:45.516Z",
-  "caption": "Embracing the calm of a rainy day, Isla finds joy in the slow moments.",
+  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nIsla plans to slip into the steady bookstore corner before the morning rush truly begins.\n\nShe makes her first mark on the grid while waiting for the morning train to arrive.\n\nThe soothing rhythm of the tracks helps her focus on the trickier sections of the grid.\n\nA warm cup of tea beside her makes the tricky Anti-Knight rule feel much more manageable.\n\nThe afternoon light pours over her desk as she successfully places another tricky set of digits.\n\nSurrounded by leafy plants and the sound of soft rain, she reluctantly closes her puzzle book.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-06-01T15:52:15.892Z",
+  "caption": "Join Isla as she finds solace in a bookshop cafe while tackling today's puzzle.",
   "variant_name": "Anti-Knight",
   "variant_line": "Anti-Knight today — knight moves block matching numbers.",
   "copy_refined": "openai",
