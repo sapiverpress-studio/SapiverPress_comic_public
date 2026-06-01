@@ -28,12 +28,6 @@
   "location_memory": [
     {
       "date": "2026-05-29",
-      "attempt": 24,
-      "setting": "bookshop cafe corner",
-      "reason": "she has come for one thing but stays for the quiet corner"
-    },
-    {
-      "date": "2026-05-29",
       "attempt": 25,
       "setting": "rainy window nook with plants",
       "reason": "rain has slowed everything down and she lets it"
@@ -385,17 +379,17 @@
       "attempt": 5,
       "setting": "co-working desk near a tall window",
       "reason": "she has work waiting, so the puzzle has to fit into a short gap"
+    },
+    {
+      "date": "2026-06-01",
+      "attempt": 6,
+      "setting": "quiet public library reading table",
+      "reason": "the library gives her a borrowed pocket of quiet"
     }
   ],
   "variant_memory": [
     {
       "date": "2026-05-29",
-      "attempt": 24,
-      "variant_name": "Trigoku",
-      "panel_index": 5
-    },
-    {
-      "date": "2026-05-29",
       "attempt": 25,
       "variant_name": "Trigoku",
       "panel_index": 4
@@ -747,23 +741,17 @@
       "attempt": 5,
       "variant_name": "Trigoku",
       "panel_index": 4
+    },
+    {
+      "date": "2026-06-01",
+      "attempt": 6,
+      "variant_name": "Trigoku",
+      "panel_index": 2
     }
   ],
   "life_memory": [
     {
       "date": "2026-05-29",
-      "attempt": 24,
-      "location": "bookshop cafe corner",
-      "reason_for_location": "she has come for one thing but stays for the quiet corner",
-      "life_detail_learned": "Bookshops pull Isla into longer pauses than she planned.",
-      "thread_to_continue": "she is drawn to places with books and warm corners",
-      "puzzle_variant_mentioned": "Trigoku",
-      "variant_panel_index": 5,
-      "uk_calendar_date": null,
-      "uk_calendar_panel_index": null
-    },
-    {
-      "date": "2026-05-29",
       "attempt": 25,
       "location": "rainy window nook with plants",
       "reason_for_location": "rain has slowed everything down and she lets it",
@@ -1467,6 +1455,18 @@
       "thread_to_continue": "work days make the puzzle a boundary marker",
       "puzzle_variant_mentioned": "Trigoku",
       "variant_panel_index": 4,
+      "uk_calendar_date": null,
+      "uk_calendar_panel_index": null
+    },
+    {
+      "date": "2026-06-01",
+      "attempt": 6,
+      "location": "quiet public library reading table",
+      "reason_for_location": "the library gives her a borrowed pocket of quiet",
+      "life_detail_learned": "Isla uses libraries as reset spaces, not just work spaces.",
+      "thread_to_continue": "library visits become her backup calm place",
+      "puzzle_variant_mentioned": "Trigoku",
+      "variant_panel_index": 2,
       "uk_calendar_date": null,
       "uk_calendar_panel_index": null
     }
