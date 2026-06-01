@@ -1,6 +1,6 @@
 {
   "date": "2026-06-01",
-  "title": "Quiet Morning Rituals",
+  "title": "Isla's Puzzle Break",
   "voice_name": "Isla Sterling",
   "segments": [
     {
@@ -11,17 +11,17 @@
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "Stepping into the steady kitchen before the world wakes up is always the best way to reset."
+      "text": "Isla grabs a quick moment to herself at the kitchen table before the workday truly begins."
     },
     {
       "id": "panel_2",
       "image_name": "02_panel-02.png",
-      "text": "Watching the landscape blur outside the train window helps clear away the lingering clutter in my mind."
+      "text": "A brief breath in the lobby helps her clear her head before tackling the next big project."
     },
     {
       "id": "panel_3",
       "image_name": "03_panel-03.png",
-      "text": "A quick breath with some fresh coffee gives me a chance to double check my plan."
+      "text": "Settling down by the tall window, she realizes there are absolutely no shortcuts to this solution."
     },
     {
       "id": "panel_4",
@@ -31,12 +31,12 @@
     {
       "id": "panel_5",
       "image_name": "05_panel-05.png",
-      "text": "Finding a cozy spot surrounded by old books makes everything feel like it is falling into place."
+      "text": "The train ride home gives her just enough uninterrupted time to wrap up the very last step."
     },
     {
       "id": "panel_6",
       "image_name": "06_panel-06.png",
-      "text": "Stepping away with a clean workspace is the best way to keep my mind completely at peace."
+      "text": "With the grid finally complete, she can comfortably leave it behind and focus on other things."
     },
     {
       "id": "cta",
@@ -44,9 +44,9 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nStepping into the steady kitchen before the world wakes up is always the best way to reset.\n\nWatching the landscape blur outside the train window helps clear away the lingering clutter in my mind.\n\nA quick breath with some fresh coffee gives me a chance to double check my plan.\n\nCheck the daily rule before trusting it.\n\nFinding a cozy spot surrounded by old books makes everything feel like it is falling into place.\n\nStepping away with a clean workspace is the best way to keep my mind completely at peace.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-06-01T13:30:21.131Z",
-  "caption": "Isla finds peace in her morning routine before the day begins.",
+  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nIsla grabs a quick moment to herself at the kitchen table before the workday truly begins.\n\nA brief breath in the lobby helps her clear her head before tackling the next big project.\n\nSettling down by the tall window, she realizes there are absolutely no shortcuts to this solution.\n\nCheck the daily rule before trusting it.\n\nThe train ride home gives her just enough uninterrupted time to wrap up the very last step.\n\nWith the grid finally complete, she can comfortably leave it behind and focus on other things.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-06-01T13:34:03.194Z",
+  "caption": "Join Isla as she navigates her workday with a quick puzzle ritual.",
   "variant_name": "daily rule",
   "variant_line": "Check the daily rule before trusting it.",
   "copy_refined": "openai",

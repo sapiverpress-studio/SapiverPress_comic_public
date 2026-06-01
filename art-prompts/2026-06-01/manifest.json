@@ -65,7 +65,7 @@
       "output_file": "social/2026-06-01/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "Stepping into the steady kitchen before the world wakes up is always the best way to reset.",
+      "caption": "Isla grabs a quick moment to herself at the kitchen table before the workday truly begins.",
       "scene_id": "scene_01"
     },
     {
@@ -75,7 +75,7 @@
       "output_file": "social/2026-06-01/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "Watching the landscape blur outside the train window helps clear away the lingering clutter in my mind.",
+      "caption": "A brief breath in the lobby helps her clear her head before tackling the next big project.",
       "scene_id": "scene_02"
     },
     {
@@ -85,7 +85,7 @@
       "output_file": "social/2026-06-01/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "A quick breath with some fresh coffee gives me a chance to double check my plan.",
+      "caption": "Settling down by the tall window, she realizes there are absolutely no shortcuts to this solution.",
       "scene_id": "scene_03"
     },
     {
@@ -105,7 +105,7 @@
       "output_file": "social/2026-06-01/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "Finding a cozy spot surrounded by old books makes everything feel like it is falling into place.",
+      "caption": "The train ride home gives her just enough uninterrupted time to wrap up the very last step.",
       "scene_id": "scene_05"
     },
     {
@@ -115,10 +115,10 @@
       "output_file": "social/2026-06-01/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "Stepping away with a clean workspace is the best way to keep my mind completely at peace.",
+      "caption": "With the grid finally complete, she can comfortably leave it behind and focus on other things.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-06-01.json",
-  "generated_at": "2026-06-01T13:28:43.487Z"
+  "generated_at": "2026-06-01T13:32:31.200Z"
 }
