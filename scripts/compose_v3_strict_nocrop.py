@@ -121,6 +121,53 @@ base.caption_for_scene = caption_for_scene
 base.add_caption = add_storyboard_caption
 
 
+def trigger_for_panel(story: dict, index: int) -> dict | None:
+    trigger = story.get("supporting_life_trigger") or {}
+    if not trigger.get("enabled"):
+        return None
+    try:
+        panel_number = int(trigger.get("panel") or 0)
+    except Exception:
+        panel_number = 0
+    if panel_number != index + 1:
+        return None
+    sender = str(trigger.get("sender") or "").strip()
+    message = str(trigger.get("message") or "").strip()
+    if not sender or not message:
+        return None
+    return trigger
+
+
+def add_supporting_life_overlay(panel: Image.Image, trigger: dict | None) -> bool:
+    if not trigger:
+        return False
+    draw = ImageDraw.Draw(panel, "RGBA")
+    sender = str(trigger.get("sender") or "").strip()[:28]
+    message = str(trigger.get("message") or "").strip()[:60]
+    style = str(trigger.get("overlay_style") or "phone_notification")
+    title_font = base.load_font(26, bold=True)
+    body_font = base.load_font(24)
+    max_width = 430
+    body_lines = wrap_text_lines(message, body_font, max_width - 58, 2)
+    line_h = 30
+    box_h = 82 + max(0, len(body_lines) - 1) * line_h
+    x1 = panel.width - 58
+    y0 = 56
+    x0 = x1 - max_width
+    y1 = y0 + box_h
+    fill = (246, 248, 252, 232) if style != "calendar_notification" else (245, 249, 255, 236)
+    outline = (56, 70, 98, 170) if style != "calendar_notification" else (54, 91, 150, 180)
+    draw.rounded_rectangle((x0, y0, x1, y1), radius=24, fill=fill, outline=outline, width=2)
+    dot_fill = (28, 112, 216, 230) if style == "calendar_notification" else (46, 54, 70, 220)
+    draw.ellipse((x0 + 20, y0 + 23, x0 + 42, y0 + 45), fill=dot_fill)
+    draw.text((x0 + 56, y0 + 16), sender, font=title_font, fill=(19, 27, 42, 255))
+    y = y0 + 48
+    for line in body_lines:
+        draw.text((x0 + 56, y), line, font=body_font, fill=(42, 47, 58, 255))
+        y += line_h
+    return True
+
+
 def save_png(img: Image.Image, path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     pnginfo = PngImagePlugin.PngInfo()
@@ -207,6 +254,9 @@ def write_manifest(story: dict, rows: list[dict]) -> dict:
         "variant_recap": story.get("variant_recap") or {},
         "variant_copy_mode": story.get("variant_copy_mode"),
         "variant_detection_unresolved": story.get("variant_detection_unresolved"),
+        "supporting_life_trigger": story.get("supporting_life_trigger") or {},
+        "supporting_cast_policy": story.get("supporting_cast_policy") or {},
+        "supporting_life_trigger_story_locked": story.get("supporting_life_trigger_story_locked", False),
         "puzzle_product": "Trigoku Daily Lock",
         "puzzle_url": "https://suite.sapiverpress.co.uk",
         "captions": [caption_for_scene(story, i) for i in range(6)],
@@ -282,6 +332,12 @@ def main() -> None:
     intermediate_paths: list[Path] = []
     for index, scene in enumerate(scenes[:6]):
         panel_path, row = compose_panel_with_template_recovery(story, scene, index, captures[index])
+        trigger = trigger_for_panel(story, index)
+        if trigger:
+            panel_img = Image.open(panel_path).convert("RGB")
+            row["supporting_life_overlay_drawn"] = add_supporting_life_overlay(panel_img, trigger)
+            row["supporting_life_trigger"] = trigger
+            save_png(panel_img, panel_path)
         final_path = OUT_DIR / EXPORT_FILES[index + 1]
         shutil.move(str(panel_path), str(final_path))
         row["output"] = str(final_path.relative_to(ROOT))
