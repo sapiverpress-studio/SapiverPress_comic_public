@@ -45,28 +45,29 @@
   ],
   "storyboard_copy_source": "openai_repaired+gemini",
   "storyboard_copy_model": "gpt-4o-mini",
-  "storyboard_arc_title": "Reflections in the Rain",
+  "storyboard_arc_title": "Isla's Journey of Thought",
   "storyboard_arc_type": "story_driven_not_location_driven",
   "storyboard_arc": {
-    "setup": "The soft patter of rain against the glass makes the morning feel wonderfully slow and steady.",
-    "disruption": "Watching the drops slide down the window pane helps her find a comfortable, steady rhythm.",
-    "choice": "Taking a moment to appreciate the damp air gives her space to clear her head.",
+    "setup": "The early morning light turns the kitchen table into a steady launchpad for the journey ahead.",
+    "disruption": "Finding a window seat on the train turns the commute into a perfect, moving pocket of focus.",
+    "choice": "Watching the world rush past the cafe street table makes her breath and reconsider her next move.",
     "puzzle_moment": "The daily rule changes the move, so Isla checks it before trusting the answer.",
-    "consequence": "Step by step, the pieces of the puzzle begin falling naturally into their proper places.",
-    "resolution": "Surrounded by her steady green plants, she finally lets herself settle into the cozy afternoon."
+    "consequence": "Tucked away in a steady bookshop corner, the solution is finally beginning to take proper shape.",
+    "resolution": "As rain streaks the window glass, she closes her notebook with a steady sense of satisfaction."
   },
   "storyboard_quality": {
-    "location_sequence_only": true,
-    "has_cause_effect": false,
+    "location_sequence_only": false,
+    "has_cause_effect": true,
     "has_character_turn": true,
     "uses_phase2_story": true,
     "quality_gate_passed": false,
     "interchangeable": false,
     "generic_phrase_hits": [],
-    "cause_effect_link_count": 1,
+    "cause_effect_link_count": 2,
     "character_turn_count": 1,
     "quality_gate_action": "repaired_in_place",
     "quality_gate_repair_reasons": [
+      "moved_puzzle_rule_dialogue_from_panel_2",
       "protected_puzzle_moment_copy"
     ],
     "final_lint_passed": true,
@@ -88,6 +89,7 @@
   },
   "quality_gate_action": "repaired_in_place",
   "quality_gate_repair_reasons": [
+    "moved_puzzle_rule_dialogue_from_panel_2",
     "protected_puzzle_moment_copy"
   ],
   "final_copy_sanity": {
@@ -126,7 +128,7 @@
     "frames": "array:6"
   },
   "openai_storyboard_fallback_reason": null,
-  "openai_storyboard_checked_at": "2026-06-01T13:03:01.140Z",
+  "openai_storyboard_checked_at": "2026-06-01T13:15:10.915Z",
   "gemini_allowed_fields": [
     "caption",
     "dialogue"
@@ -145,12 +147,12 @@
   "puzzle_product": "Trigoku Daily Lock",
   "puzzle_url": "https://suite.sapiverpress.co.uk",
   "captions": [
-    "No need to rush into things today. Let's just ease into the morning.\nThe soft patter of rain against the glass makes the morning feel wonderfully slow and steady.",
-    "There's really no point in trying to race the clock today.\nWatching the drops slide down the window pane helps her find a comfortable, steady rhythm.",
-    "Wait, where did I leave off? Let me think for a second.\nTaking a moment to appreciate the damp air gives her space to clear her head.",
+    "I should get a move on before the morning rush starts.\nThe early morning light turns the kitchen table into a steady launchpad for the journey ahead.",
+    "There's nothing quite like a long train ride to finally clear my head.\nFinding a window seat on the train turns the commute into a perfect, moving pocket of focus.",
+    "Wait, let's hold on a second. I need to think this through.\nWatching the world rush past the cafe street table makes her breath and reconsider her next move.",
     "Check the daily rule before trusting it.\nThe daily rule changes the move, so Isla checks it before trusting the answer.",
-    "Oh, perfect. That connection actually holds up under pressure.\nStep by step, the pieces of the puzzle begin falling naturally into their proper places.",
-    "I'll just leave it right there and let my mind wander.\nSurrounded by her steady green plants, she finally lets herself settle into the cozy afternoon."
+    "Oh, look at that. It actually holds up when you look closely.\nTucked away in a steady bookshop corner, the solution is finally beginning to take proper shape.",
+    "That's enough for now. Time to pack up and head to the next stop.\nAs rain streaks the window glass, she closes her notebook with a steady sense of satisfaction."
   ],
   "storyboard_locations": [
     "small home kitchen table in warm morning light",
@@ -163,73 +165,73 @@
   "scenes": [
     {
       "scene": "scene_01",
-      "art_source": "replacement",
-      "art_path": "art-replacements/2026-06-01/01_panel-01.png",
-      "template": "",
-      "replacement": "art-replacements/2026-06-01/01_panel-01.png",
+      "art_source": "template",
+      "art_path": "templates/characters/isla/isla_01_opening_return.png",
+      "template": "templates/characters/isla/isla_01_opening_return.png",
+      "replacement": "",
       "capture": "captures/2026-06-01/extracted/01_fresh_daily_grid.png",
       "output": "social/2026-06-01/01_panel-01.png",
       "screen_quad": [
         [
-          713,
-          641
+          592,
+          405
         ],
         [
-          1067,
-          668
+          1018,
+          421
         ],
         [
-          1036,
-          944
+          982,
+          756
         ],
         [
-          672,
-          873
-        ]
-      ],
-      "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "No need to rush into things today. Let's just ease into the morning.\nThe soft patter of rain against the glass makes the morning feel wonderfully slow and steady.",
-      "arc_role": "setup",
-      "storyboard_caption": "The soft patter of rain against the glass makes the morning feel wonderfully slow and steady.",
-      "storyboard_dialogue": "No need to rush into things today. Let's just ease into the morning.",
-      "panel_location": "small home kitchen table in warm morning light"
-    },
-    {
-      "scene": "scene_02",
-      "art_source": "template",
-      "art_path": "templates/characters/isla/isla_02_first_move.png",
-      "template": "templates/characters/isla/isla_02_first_move.png",
-      "replacement": "",
-      "capture": "captures/2026-06-01/extracted/02_first_moves.png",
-      "output": "social/2026-06-01/02_panel-02.png",
-      "screen_quad": [
-        [
-          610,
-          458
-        ],
-        [
-          1050,
-          474
-        ],
-        [
-          1026,
-          760
-        ],
-        [
-          588,
-          744
+          571,
+          724
         ]
       ],
       "screen_quad_mode": "template_locked",
       "recovered_from_missing_replacement_screen": true,
       "failed_replacements": [
-        "art-replacements/2026-06-01/02_panel-02.png",
-        "art-replacements/latest/02_panel-02.png"
+        "art-replacements/2026-06-01/01_panel-01.png",
+        "art-replacements/latest/01_panel-01.png"
       ],
-      "storyboard_text": "There's really no point in trying to race the clock today.\nWatching the drops slide down the window pane helps her find a comfortable, steady rhythm.",
+      "storyboard_text": "I should get a move on before the morning rush starts.\nThe early morning light turns the kitchen table into a steady launchpad for the journey ahead.",
+      "arc_role": "setup",
+      "storyboard_caption": "The early morning light turns the kitchen table into a steady launchpad for the journey ahead.",
+      "storyboard_dialogue": "I should get a move on before the morning rush starts.",
+      "panel_location": "small home kitchen table in warm morning light"
+    },
+    {
+      "scene": "scene_02",
+      "art_source": "replacement",
+      "art_path": "art-replacements/2026-06-01/02_panel-02.png",
+      "template": "",
+      "replacement": "art-replacements/2026-06-01/02_panel-02.png",
+      "capture": "captures/2026-06-01/extracted/02_first_moves.png",
+      "output": "social/2026-06-01/02_panel-02.png",
+      "screen_quad": [
+        [
+          677,
+          673
+        ],
+        [
+          1032,
+          689
+        ],
+        [
+          999,
+          947
+        ],
+        [
+          647,
+          894
+        ]
+      ],
+      "screen_quad_mode": "detected_replacement_screen",
+      "storyboard_text": "There's nothing quite like a long train ride to finally clear my head.\nFinding a window seat on the train turns the commute into a perfect, moving pocket of focus.",
       "arc_role": "disruption",
-      "storyboard_caption": "Watching the drops slide down the window pane helps her find a comfortable, steady rhythm.",
-      "storyboard_dialogue": "There's really no point in trying to race the clock today.",
+      "storyboard_caption": "Finding a window seat on the train turns the commute into a perfect, moving pocket of focus.",
+      "storyboard_dialogue": "There's nothing quite like a long train ride to finally clear my head.",
       "panel_location": "train table by the window"
     },
     {
@@ -242,27 +244,27 @@
       "output": "social/2026-06-01/03_panel-03.png",
       "screen_quad": [
         [
-          651,
-          668
+          597,
+          612
         ],
         [
-          1048,
-          699
+          1014,
+          636
         ],
         [
-          993,
-          996
+          983,
+          911
         ],
         [
-          604,
-          921
+          561,
+          855
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Wait, where did I leave off? Let me think for a second.\nTaking a moment to appreciate the damp air gives her space to clear her head.",
+      "storyboard_text": "Wait, let's hold on a second. I need to think this through.\nWatching the world rush past the cafe street table makes her breath and reconsider her next move.",
       "arc_role": "choice",
-      "storyboard_caption": "Taking a moment to appreciate the damp air gives her space to clear her head.",
-      "storyboard_dialogue": "Wait, where did I leave off? Let me think for a second.",
+      "storyboard_caption": "Watching the world rush past the cafe street table makes her breath and reconsider her next move.",
+      "storyboard_dialogue": "Wait, let's hold on a second. I need to think this through.",
       "panel_location": "outdoor cafe street table"
     },
     {
@@ -275,20 +277,20 @@
       "output": "social/2026-06-01/04_panel-04.png",
       "screen_quad": [
         [
-          685,
-          678
+          650,
+          662
         ],
         [
-          1066,
-          708
+          1069,
+          685
         ],
         [
-          1031,
-          1010
+          1070,
+          994
         ],
         [
-          639,
-          926
+          616,
+          930
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -308,27 +310,27 @@
       "output": "social/2026-06-01/05_panel-05.png",
       "screen_quad": [
         [
-          671,
-          685
+          641,
+          618
         ],
         [
-          1001,
-          710
+          1011,
+          643
         ],
         [
-          961,
-          949
+          982,
+          917
         ],
         [
-          633,
-          892
+          607,
+          858
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "Oh, perfect. That connection actually holds up under pressure.\nStep by step, the pieces of the puzzle begin falling naturally into their proper places.",
+      "storyboard_text": "Oh, look at that. It actually holds up when you look closely.\nTucked away in a steady bookshop corner, the solution is finally beginning to take proper shape.",
       "arc_role": "consequence",
-      "storyboard_caption": "Step by step, the pieces of the puzzle begin falling naturally into their proper places.",
-      "storyboard_dialogue": "Oh, perfect. That connection actually holds up under pressure.",
+      "storyboard_caption": "Tucked away in a steady bookshop corner, the solution is finally beginning to take proper shape.",
+      "storyboard_dialogue": "Oh, look at that. It actually holds up when you look closely.",
       "panel_location": "bookshop cafe corner"
     },
     {
@@ -341,27 +343,27 @@
       "output": "social/2026-06-01/06_panel-06.png",
       "screen_quad": [
         [
-          749,
-          706
+          620,
+          718
         ],
         [
-          1066,
-          736
+          991,
+          743
         ],
         [
-          1063,
-          1000
+          961,
+          986
         ],
         [
-          712,
-          934
+          591,
+          932
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
-      "storyboard_text": "I'll just leave it right there and let my mind wander.\nSurrounded by her steady green plants, she finally lets herself settle into the cozy afternoon.",
+      "storyboard_text": "That's enough for now. Time to pack up and head to the next stop.\nAs rain streaks the window glass, she closes her notebook with a steady sense of satisfaction.",
       "arc_role": "resolution",
-      "storyboard_caption": "Surrounded by her steady green plants, she finally lets herself settle into the cozy afternoon.",
-      "storyboard_dialogue": "I'll just leave it right there and let my mind wander.",
+      "storyboard_caption": "As rain streaks the window glass, she closes her notebook with a steady sense of satisfaction.",
+      "storyboard_dialogue": "That's enough for now. Time to pack up and head to the next stop.",
       "panel_location": "rainy window nook with plants"
     }
   ],
@@ -369,12 +371,12 @@
   "screen_overlay_failures": [],
   "screen_overlay_recoveries": [
     {
-      "scene": "scene_02",
-      "output": "social/2026-06-01/02_panel-02.png",
+      "scene": "scene_01",
+      "output": "social/2026-06-01/01_panel-01.png",
       "screen_quad_mode": "template_locked",
       "failed_replacements": [
-        "art-replacements/2026-06-01/02_panel-02.png",
-        "art-replacements/latest/02_panel-02.png"
+        "art-replacements/2026-06-01/01_panel-01.png",
+        "art-replacements/latest/01_panel-01.png"
       ]
     }
   ],
@@ -382,10 +384,10 @@
   "puzzle_moment_copy_snapshot": {
     "ran": true,
     "source_stage": "openai",
-    "caption": "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
+    "caption": "That fits.",
     "dialogue": "Trigoku first. Check the constraint.",
-    "image_prompt_fragment": "quiet breakthrough, thoughtful smile, noticing today's Trigoku rule naturally",
-    "captured_at": "2026-06-01T13:03:01.230Z"
+    "image_prompt_fragment": "small solution moment on train",
+    "captured_at": "2026-06-01T13:15:11.006Z"
   },
   "puzzle_moment_copy_protection": {
     "ran": true,

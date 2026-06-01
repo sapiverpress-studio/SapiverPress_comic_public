@@ -1,6 +1,6 @@
 {
   "date": "2026-06-01",
-  "title": "A Rainy Day Reflection",
+  "title": "Isla's Journey of Thought",
   "voice_name": "Isla Sterling",
   "segments": [
     {
@@ -11,17 +11,17 @@
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "The soft patter of rain against the glass makes the morning feel wonderfully slow and steady."
+      "text": "The early morning light turns the kitchen table into a steady launchpad for the journey ahead."
     },
     {
       "id": "panel_2",
       "image_name": "02_panel-02.png",
-      "text": "Watching the drops slide down the window pane helps her find a comfortable, steady rhythm."
+      "text": "Finding a window seat on the train turns the commute into a perfect, moving pocket of focus."
     },
     {
       "id": "panel_3",
       "image_name": "03_panel-03.png",
-      "text": "Taking a moment to appreciate the damp air gives her space to clear her head."
+      "text": "Watching the world rush past the cafe street table makes her breath and reconsider her next move."
     },
     {
       "id": "panel_4",
@@ -31,12 +31,12 @@
     {
       "id": "panel_5",
       "image_name": "05_panel-05.png",
-      "text": "Step by step, the pieces of the puzzle begin falling naturally into their proper places."
+      "text": "Tucked away in a steady bookshop corner, the solution is finally beginning to take proper shape."
     },
     {
       "id": "panel_6",
       "image_name": "06_panel-06.png",
-      "text": "Surrounded by her steady green plants, she finally lets herself settle into the cozy afternoon."
+      "text": "As rain streaks the window glass, she closes her notebook with a steady sense of satisfaction."
     },
     {
       "id": "cta",
@@ -44,9 +44,9 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nThe soft patter of rain against the glass makes the morning feel wonderfully slow and steady.\n\nWatching the drops slide down the window pane helps her find a comfortable, steady rhythm.\n\nTaking a moment to appreciate the damp air gives her space to clear her head.\n\nCheck the daily rule before trusting it.\n\nStep by step, the pieces of the puzzle begin falling naturally into their proper places.\n\nSurrounded by her steady green plants, she finally lets herself settle into the cozy afternoon.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-06-01T13:05:22.738Z",
-  "caption": "Embracing the slow pace of a rainy day.",
+  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nThe early morning light turns the kitchen table into a steady launchpad for the journey ahead.\n\nFinding a window seat on the train turns the commute into a perfect, moving pocket of focus.\n\nWatching the world rush past the cafe street table makes her breath and reconsider her next move.\n\nCheck the daily rule before trusting it.\n\nTucked away in a steady bookshop corner, the solution is finally beginning to take proper shape.\n\nAs rain streaks the window glass, she closes her notebook with a steady sense of satisfaction.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-06-01T13:16:53.887Z",
+  "caption": "Join Isla as she navigates her thoughts during a train ride, finding clarity amidst the chaos.",
   "variant_name": "daily rule",
   "variant_line": "Check the daily rule before trusting it.",
   "copy_refined": "openai",

@@ -104,51 +104,6 @@
     {
       "date": "2026-05-30",
       "weekday": "Saturday",
-      "same_day_attempt": 18,
-      "setting": "train table by the window",
-      "puzzle_phase": "late-week",
-      "story_note": "Isla spends this entry at the train table by the window because she is travelling and using the journey as thinking time. The puzzle stays as a light thread inside the day.",
-      "continuation_note": "Remember: Isla likes journeys because they give her contained thinking time. Continue the thread: train rides become moving pockets of focus.",
-      "stuck_moment": "thoughtful pause with landscape outside",
-      "life_memory_entry": {
-        "date": "2026-05-30",
-        "attempt": 18,
-        "location": "train table by the window",
-        "reason_for_location": "she is travelling and using the journey as thinking time",
-        "life_detail_learned": "Isla likes journeys because they give her contained thinking time.",
-        "thread_to_continue": "train rides become moving pockets of focus",
-        "puzzle_variant_mentioned": "Trigoku",
-        "variant_panel_index": 2,
-        "uk_calendar_date": null,
-        "uk_calendar_panel_index": null
-      },
-      "variant_recap": {
-        "variant_name": "Trigoku",
-        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
-        "panel_index": 2,
-        "line": "Today has its own little rule-set — check the constraint before rushing."
-      },
-      "uk_calendar_date": null,
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "Between tasks.",
-        "Quick start.",
-        "No shortcut.",
-        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
-        "Nearly done.",
-        "Back to work."
-      ]
-    },
-    {
-      "date": "2026-05-30",
-      "weekday": "Saturday",
       "same_day_attempt": 19,
       "setting": "co-working desk near a tall window",
       "puzzle_phase": "late-week",
@@ -1443,12 +1398,57 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Rain on glass.",
-        "Small move.",
-        "Let it sit.",
-        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
-        "Almost done.",
-        "No rush."
+        "Window seat.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Not yet.",
+        "That fits.",
+        "Almost there.",
+        "Next stop."
+      ]
+    },
+    {
+      "date": "2026-06-01",
+      "weekday": "Monday",
+      "same_day_attempt": 2,
+      "setting": "train table by the window",
+      "puzzle_phase": "early-week",
+      "story_note": "Isla spends this entry at the train table by the window because she is travelling and using the journey as thinking time. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Isla likes journeys because they give her contained thinking time. Continue the thread: train rides become moving pockets of focus.",
+      "stuck_moment": "thoughtful pause with landscape outside",
+      "life_memory_entry": {
+        "date": "2026-06-01",
+        "attempt": 2,
+        "location": "train table by the window",
+        "reason_for_location": "she is travelling and using the journey as thinking time",
+        "life_detail_learned": "Isla likes journeys because they give her contained thinking time.",
+        "thread_to_continue": "train rides become moving pockets of focus",
+        "puzzle_variant_mentioned": "Trigoku",
+        "variant_panel_index": 2,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Trigoku",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 2,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Window seat.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Not yet.",
+        "That fits.",
+        "Almost there.",
+        "Next stop."
       ]
     }
   ],
@@ -1456,51 +1456,6 @@
     {
       "date": "2026-05-30",
       "weekday": "Saturday",
-      "same_day_attempt": 18,
-      "setting": "train table by the window",
-      "puzzle_phase": "late-week",
-      "story_note": "Isla spends this entry at the train table by the window because she is travelling and using the journey as thinking time. The puzzle stays as a light thread inside the day.",
-      "continuation_note": "Remember: Isla likes journeys because they give her contained thinking time. Continue the thread: train rides become moving pockets of focus.",
-      "stuck_moment": "thoughtful pause with landscape outside",
-      "life_memory_entry": {
-        "date": "2026-05-30",
-        "attempt": 18,
-        "location": "train table by the window",
-        "reason_for_location": "she is travelling and using the journey as thinking time",
-        "life_detail_learned": "Isla likes journeys because they give her contained thinking time.",
-        "thread_to_continue": "train rides become moving pockets of focus",
-        "puzzle_variant_mentioned": "Trigoku",
-        "variant_panel_index": 2,
-        "uk_calendar_date": null,
-        "uk_calendar_panel_index": null
-      },
-      "variant_recap": {
-        "variant_name": "Trigoku",
-        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
-        "panel_index": 2,
-        "line": "Today has its own little rule-set — check the constraint before rushing."
-      },
-      "uk_calendar_date": null,
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "Between tasks.",
-        "Quick start.",
-        "No shortcut.",
-        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
-        "Nearly done.",
-        "Back to work."
-      ]
-    },
-    {
-      "date": "2026-05-30",
-      "weekday": "Saturday",
       "same_day_attempt": 19,
       "setting": "co-working desk near a tall window",
       "puzzle_phase": "late-week",
@@ -2795,12 +2750,57 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Rain on glass.",
-        "Small move.",
-        "Let it sit.",
-        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
-        "Almost done.",
-        "No rush."
+        "Window seat.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Not yet.",
+        "That fits.",
+        "Almost there.",
+        "Next stop."
+      ]
+    },
+    {
+      "date": "2026-06-01",
+      "weekday": "Monday",
+      "same_day_attempt": 2,
+      "setting": "train table by the window",
+      "puzzle_phase": "early-week",
+      "story_note": "Isla spends this entry at the train table by the window because she is travelling and using the journey as thinking time. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Isla likes journeys because they give her contained thinking time. Continue the thread: train rides become moving pockets of focus.",
+      "stuck_moment": "thoughtful pause with landscape outside",
+      "life_memory_entry": {
+        "date": "2026-06-01",
+        "attempt": 2,
+        "location": "train table by the window",
+        "reason_for_location": "she is travelling and using the journey as thinking time",
+        "life_detail_learned": "Isla likes journeys because they give her contained thinking time.",
+        "thread_to_continue": "train rides become moving pockets of focus",
+        "puzzle_variant_mentioned": "Trigoku",
+        "variant_panel_index": 2,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Trigoku",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 2,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Window seat.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Not yet.",
+        "That fits.",
+        "Almost there.",
+        "Next stop."
       ]
     }
   ],

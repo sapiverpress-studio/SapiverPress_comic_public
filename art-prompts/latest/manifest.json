@@ -65,7 +65,7 @@
       "output_file": "social/2026-06-01/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "The soft patter of rain against the glass makes the morning feel wonderfully slow and steady.",
+      "caption": "The early morning light turns the kitchen table into a steady launchpad for the journey ahead.",
       "scene_id": "scene_01"
     },
     {
@@ -75,7 +75,7 @@
       "output_file": "social/2026-06-01/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "Watching the drops slide down the window pane helps her find a comfortable, steady rhythm.",
+      "caption": "Finding a window seat on the train turns the commute into a perfect, moving pocket of focus.",
       "scene_id": "scene_02"
     },
     {
@@ -85,7 +85,7 @@
       "output_file": "social/2026-06-01/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "Taking a moment to appreciate the damp air gives her space to clear her head.",
+      "caption": "Watching the world rush past the cafe street table makes her breath and reconsider her next move.",
       "scene_id": "scene_03"
     },
     {
@@ -105,7 +105,7 @@
       "output_file": "social/2026-06-01/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "Step by step, the pieces of the puzzle begin falling naturally into their proper places.",
+      "caption": "Tucked away in a steady bookshop corner, the solution is finally beginning to take proper shape.",
       "scene_id": "scene_05"
     },
     {
@@ -115,10 +115,10 @@
       "output_file": "social/2026-06-01/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "Surrounded by her steady green plants, she finally lets herself settle into the cozy afternoon.",
+      "caption": "As rain streaks the window glass, she closes her notebook with a steady sense of satisfaction.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-06-01.json",
-  "generated_at": "2026-06-01T13:03:11.483Z"
+  "generated_at": "2026-06-01T13:15:26.626Z"
 }
