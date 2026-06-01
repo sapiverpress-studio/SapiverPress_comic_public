@@ -76,6 +76,10 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Validate project
         run: npm run validate
+      - name: Capture today's puzzle before story generation
+        env:
+          DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
+        run: npm run capture:today
       - name: Run daily generator
         env:
           COMIC_GITHUB_TOKEN: ${{ secrets.COMIC_GITHUB_TOKEN }}
@@ -203,7 +207,7 @@ jobs:
             done
           fi
 
-          git add characters/isla.json characters/isla_life_canon.json daily image-manifests latest.json social art-prompts art-replacements || true
+          git add characters/isla.json characters/isla_life_canon.json daily image-manifests latest.json social art-prompts art-replacements captures || true
           if [ -f facebook-posts.json ]; then
             git add facebook-posts.json
           fi
