@@ -65,7 +65,7 @@
       "output_file": "social/2026-06-01/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "A steady kitchen table offers a brief moment of peace before the day begins.",
+      "caption": "The house is still asleep, bathed in the soft, warm glow of the early morning sun.",
       "scene_id": "scene_01"
     },
     {
@@ -75,7 +75,7 @@
       "output_file": "social/2026-06-01/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "Watching the world blur past the window provides its own kind of soothing rhythm.",
+      "caption": "She enjoys a rare moment of total stillness at the kitchen table before her busy day begins.",
       "scene_id": "scene_02"
     },
     {
@@ -85,7 +85,7 @@
       "output_file": "social/2026-06-01/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "Taking a moment to breathe and resist the urge to rush into things too quickly.",
+      "caption": "Taking her time, Isla lets her mind drift peacefully over the grid while the coffee brews.",
       "scene_id": "scene_03"
     },
     {
@@ -95,7 +95,7 @@
       "output_file": "social/2026-06-01/04_panel-04.png",
       "image_name": "04_panel-04.png",
       "fallback_template": "templates/characters/isla/isla_04_breakthrough.png",
-      "caption": "The daily rule changes the move, so Isla checks it before trusting the answer.",
+      "caption": "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
       "scene_id": "scene_04"
     },
     {
@@ -105,7 +105,7 @@
       "output_file": "social/2026-06-01/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "The steady hum of the bookstore cafe makes it easy to find some focus.",
+      "caption": "A few quick, final glances confirm that her steady morning strategy is completely solid and correct.",
       "scene_id": "scene_05"
     },
     {
@@ -115,10 +115,10 @@
       "output_file": "social/2026-06-01/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "Stepping back outside into the cool rain, feeling a sense of steady accomplishment.",
+      "caption": "With her mind clear and ready, Isla finally steps out to face the bustling day ahead.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-06-01.json",
-  "generated_at": "2026-06-01T13:36:41.549Z"
+  "generated_at": "2026-06-01T13:40:46.553Z"
 }

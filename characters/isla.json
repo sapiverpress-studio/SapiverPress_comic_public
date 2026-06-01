@@ -104,51 +104,6 @@
     {
       "date": "2026-05-30",
       "weekday": "Saturday",
-      "same_day_attempt": 23,
-      "setting": "outdoor cafe street table",
-      "puzzle_phase": "late-week",
-      "story_note": "Isla spends this entry at the outdoor cafe street table because she is trying not to rush straight into the next errand. The puzzle stays as a light thread inside the day.",
-      "continuation_note": "Remember: Isla sometimes uses a cafe table as a buffer between obligations. Continue the thread: she is learning to pause before moving on.",
-      "stuck_moment": "brief hesitation, coffee nearby",
-      "life_memory_entry": {
-        "date": "2026-05-30",
-        "attempt": 23,
-        "location": "outdoor cafe street table",
-        "reason_for_location": "she is trying not to rush straight into the next errand",
-        "life_detail_learned": "Isla sometimes uses a cafe table as a buffer between obligations.",
-        "thread_to_continue": "she is learning to pause before moving on",
-        "puzzle_variant_mentioned": "Trigoku",
-        "variant_panel_index": 4,
-        "uk_calendar_date": null,
-        "uk_calendar_panel_index": null
-      },
-      "variant_recap": {
-        "variant_name": "Trigoku",
-        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
-        "panel_index": 4,
-        "line": "Today has its own little rule-set — check the constraint before rushing."
-      },
-      "uk_calendar_date": null,
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "Between tasks.",
-        "Quick start.",
-        "No shortcut.",
-        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
-        "Nearly done.",
-        "Back to work."
-      ]
-    },
-    {
-      "date": "2026-05-30",
-      "weekday": "Saturday",
       "same_day_attempt": 24,
       "setting": "co-working desk near a tall window",
       "puzzle_phase": "late-week",
@@ -1218,12 +1173,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Hold the line.",
-        "There it is.",
-        "Almost clear.",
-        "Back outside."
+        "Kitchen quiet.",
+        "Anti-Knight today — knight moves block matching numbers.",
+        "Think slower.",
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Last checks.",
+        "Day begins."
       ]
     },
     {
@@ -1263,12 +1218,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Hold the line.",
-        "There it is.",
-        "Almost clear.",
-        "Back outside."
+        "Kitchen quiet.",
+        "Anti-Knight today — knight moves block matching numbers.",
+        "Think slower.",
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Last checks.",
+        "Day begins."
       ]
     },
     {
@@ -1308,12 +1263,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Hold the line.",
-        "There it is.",
-        "Almost clear.",
-        "Back outside."
+        "Kitchen quiet.",
+        "Anti-Knight today — knight moves block matching numbers.",
+        "Think slower.",
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Last checks.",
+        "Day begins."
       ]
     },
     {
@@ -1353,12 +1308,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Hold the line.",
-        "There it is.",
-        "Almost clear.",
-        "Back outside."
+        "Kitchen quiet.",
+        "Anti-Knight today — knight moves block matching numbers.",
+        "Think slower.",
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Last checks.",
+        "Day begins."
       ]
     },
     {
@@ -1398,12 +1353,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Hold the line.",
-        "There it is.",
-        "Almost clear.",
-        "Back outside."
+        "Kitchen quiet.",
+        "Anti-Knight today — knight moves block matching numbers.",
+        "Think slower.",
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Last checks.",
+        "Day begins."
       ]
     },
     {
@@ -1443,12 +1398,57 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Hold the line.",
-        "There it is.",
-        "Almost clear.",
-        "Back outside."
+        "Kitchen quiet.",
+        "Anti-Knight today — knight moves block matching numbers.",
+        "Think slower.",
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Last checks.",
+        "Day begins."
+      ]
+    },
+    {
+      "date": "2026-06-01",
+      "weekday": "Monday",
+      "same_day_attempt": 7,
+      "setting": "small kitchen table in warm morning light",
+      "puzzle_phase": "early-week",
+      "story_note": "Isla spends this entry at the small kitchen table in warm morning light because home is still half-asleep and she has a few minutes to herself. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Isla values ordinary domestic quiet as much as beautiful public spaces. Continue the thread: home mornings reveal her private routine.",
+      "stuck_moment": "breathing space, thoughtful hesitation",
+      "life_memory_entry": {
+        "date": "2026-06-01",
+        "attempt": 7,
+        "location": "small kitchen table in warm morning light",
+        "reason_for_location": "home is still half-asleep and she has a few minutes to herself",
+        "life_detail_learned": "Isla values ordinary domestic quiet as much as beautiful public spaces.",
+        "thread_to_continue": "home mornings reveal her private routine",
+        "puzzle_variant_mentioned": "Anti-Knight",
+        "variant_panel_index": 2,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Anti-Knight",
+        "short_rule": "Anti-Knight today — knight moves block matching numbers.",
+        "panel_index": 2,
+        "line": "Anti-Knight today — knight moves block matching numbers."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Kitchen quiet.",
+        "Anti-Knight today — knight moves block matching numbers.",
+        "Think slower.",
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Last checks.",
+        "Day begins."
       ]
     }
   ],
@@ -1456,51 +1456,6 @@
     {
       "date": "2026-05-30",
       "weekday": "Saturday",
-      "same_day_attempt": 23,
-      "setting": "outdoor cafe street table",
-      "puzzle_phase": "late-week",
-      "story_note": "Isla spends this entry at the outdoor cafe street table because she is trying not to rush straight into the next errand. The puzzle stays as a light thread inside the day.",
-      "continuation_note": "Remember: Isla sometimes uses a cafe table as a buffer between obligations. Continue the thread: she is learning to pause before moving on.",
-      "stuck_moment": "brief hesitation, coffee nearby",
-      "life_memory_entry": {
-        "date": "2026-05-30",
-        "attempt": 23,
-        "location": "outdoor cafe street table",
-        "reason_for_location": "she is trying not to rush straight into the next errand",
-        "life_detail_learned": "Isla sometimes uses a cafe table as a buffer between obligations.",
-        "thread_to_continue": "she is learning to pause before moving on",
-        "puzzle_variant_mentioned": "Trigoku",
-        "variant_panel_index": 4,
-        "uk_calendar_date": null,
-        "uk_calendar_panel_index": null
-      },
-      "variant_recap": {
-        "variant_name": "Trigoku",
-        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
-        "panel_index": 4,
-        "line": "Today has its own little rule-set — check the constraint before rushing."
-      },
-      "uk_calendar_date": null,
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "Between tasks.",
-        "Quick start.",
-        "No shortcut.",
-        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
-        "Nearly done.",
-        "Back to work."
-      ]
-    },
-    {
-      "date": "2026-05-30",
-      "weekday": "Saturday",
       "same_day_attempt": 24,
       "setting": "co-working desk near a tall window",
       "puzzle_phase": "late-week",
@@ -2570,12 +2525,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Hold the line.",
-        "There it is.",
-        "Almost clear.",
-        "Back outside."
+        "Kitchen quiet.",
+        "Anti-Knight today — knight moves block matching numbers.",
+        "Think slower.",
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Last checks.",
+        "Day begins."
       ]
     },
     {
@@ -2615,12 +2570,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Hold the line.",
-        "There it is.",
-        "Almost clear.",
-        "Back outside."
+        "Kitchen quiet.",
+        "Anti-Knight today — knight moves block matching numbers.",
+        "Think slower.",
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Last checks.",
+        "Day begins."
       ]
     },
     {
@@ -2660,12 +2615,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Hold the line.",
-        "There it is.",
-        "Almost clear.",
-        "Back outside."
+        "Kitchen quiet.",
+        "Anti-Knight today — knight moves block matching numbers.",
+        "Think slower.",
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Last checks.",
+        "Day begins."
       ]
     },
     {
@@ -2705,12 +2660,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Hold the line.",
-        "There it is.",
-        "Almost clear.",
-        "Back outside."
+        "Kitchen quiet.",
+        "Anti-Knight today — knight moves block matching numbers.",
+        "Think slower.",
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Last checks.",
+        "Day begins."
       ]
     },
     {
@@ -2750,12 +2705,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Hold the line.",
-        "There it is.",
-        "Almost clear.",
-        "Back outside."
+        "Kitchen quiet.",
+        "Anti-Knight today — knight moves block matching numbers.",
+        "Think slower.",
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Last checks.",
+        "Day begins."
       ]
     },
     {
@@ -2795,12 +2750,57 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Today has its own little rule-set — check the constraint before rushing.",
-        "Hold the line.",
-        "There it is.",
-        "Almost clear.",
-        "Back outside."
+        "Kitchen quiet.",
+        "Anti-Knight today — knight moves block matching numbers.",
+        "Think slower.",
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Last checks.",
+        "Day begins."
+      ]
+    },
+    {
+      "date": "2026-06-01",
+      "weekday": "Monday",
+      "same_day_attempt": 7,
+      "setting": "small kitchen table in warm morning light",
+      "puzzle_phase": "early-week",
+      "story_note": "Isla spends this entry at the small kitchen table in warm morning light because home is still half-asleep and she has a few minutes to herself. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Isla values ordinary domestic quiet as much as beautiful public spaces. Continue the thread: home mornings reveal her private routine.",
+      "stuck_moment": "breathing space, thoughtful hesitation",
+      "life_memory_entry": {
+        "date": "2026-06-01",
+        "attempt": 7,
+        "location": "small kitchen table in warm morning light",
+        "reason_for_location": "home is still half-asleep and she has a few minutes to herself",
+        "life_detail_learned": "Isla values ordinary domestic quiet as much as beautiful public spaces.",
+        "thread_to_continue": "home mornings reveal her private routine",
+        "puzzle_variant_mentioned": "Anti-Knight",
+        "variant_panel_index": 2,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Anti-Knight",
+        "short_rule": "Anti-Knight today — knight moves block matching numbers.",
+        "panel_index": 2,
+        "line": "Anti-Knight today — knight moves block matching numbers."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Kitchen quiet.",
+        "Anti-Knight today — knight moves block matching numbers.",
+        "Think slower.",
+        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+        "Last checks.",
+        "Day begins."
       ]
     }
   ],

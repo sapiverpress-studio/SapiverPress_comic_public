@@ -1,6 +1,6 @@
 {
   "date": "2026-06-01",
-  "title": "Isla's Puzzle Break",
+  "title": "Morning Puzzle Routine",
   "voice_name": "Isla Sterling",
   "segments": [
     {
@@ -11,32 +11,32 @@
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "Isla grabs a quick moment to herself at the kitchen table before the workday truly begins."
+      "text": "The house is still asleep, bathed in the soft, warm glow of the early morning sun."
     },
     {
       "id": "panel_2",
       "image_name": "02_panel-02.png",
-      "text": "A brief breath in the lobby helps her clear her head before tackling the next big project."
+      "text": "She enjoys a rare moment of total stillness at the kitchen table before her busy day begins."
     },
     {
       "id": "panel_3",
       "image_name": "03_panel-03.png",
-      "text": "Settling down by the tall window, she realizes there are absolutely no shortcuts to this solution."
+      "text": "Taking her time, Isla lets her mind drift peacefully over the grid while the coffee brews."
     },
     {
       "id": "panel_4",
       "image_name": "04_panel-04.png",
-      "text": "Check the daily rule before trusting it."
+      "text": "Anti-Knight today — knight moves block matching numbers."
     },
     {
       "id": "panel_5",
       "image_name": "05_panel-05.png",
-      "text": "The train ride home gives her just enough uninterrupted time to wrap up the very last step."
+      "text": "A few quick, final glances confirm that her steady morning strategy is completely solid and correct."
     },
     {
       "id": "panel_6",
       "image_name": "06_panel-06.png",
-      "text": "With the grid finally complete, she can comfortably leave it behind and focus on other things."
+      "text": "With her mind clear and ready, Isla finally steps out to face the bustling day ahead."
     },
     {
       "id": "cta",
@@ -44,11 +44,11 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nIsla grabs a quick moment to herself at the kitchen table before the workday truly begins.\n\nA brief breath in the lobby helps her clear her head before tackling the next big project.\n\nSettling down by the tall window, she realizes there are absolutely no shortcuts to this solution.\n\nCheck the daily rule before trusting it.\n\nThe train ride home gives her just enough uninterrupted time to wrap up the very last step.\n\nWith the grid finally complete, she can comfortably leave it behind and focus on other things.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-06-01T13:34:03.194Z",
-  "caption": "Join Isla as she navigates her workday with a quick puzzle ritual.",
-  "variant_name": "daily rule",
-  "variant_line": "Check the daily rule before trusting it.",
+  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nThe house is still asleep, bathed in the soft, warm glow of the early morning sun.\n\nShe enjoys a rare moment of total stillness at the kitchen table before her busy day begins.\n\nTaking her time, Isla lets her mind drift peacefully over the grid while the coffee brews.\n\nAnti-Knight today — knight moves block matching numbers.\n\nA few quick, final glances confirm that her steady morning strategy is completely solid and correct.\n\nWith her mind clear and ready, Isla finally steps out to face the bustling day ahead.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-06-01T13:41:25.515Z",
+  "caption": "Isla enjoys a quiet morning at home, savoring her puzzle before the day begins.",
+  "variant_name": "Anti-Knight",
+  "variant_line": "Anti-Knight today — knight moves block matching numbers.",
   "copy_refined": "openai",
   "copy_model": "gpt-4o-mini",
   "openai_response_shape": {
