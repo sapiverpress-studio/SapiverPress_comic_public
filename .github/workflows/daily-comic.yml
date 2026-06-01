@@ -42,6 +42,10 @@ on:
         description: "Use OpenAI to polish background signs/books/branding before composition"
         required: false
         default: "false"
+      supporting_life_trigger:
+        description: "Supporting-life trigger mode: auto, force, or off"
+        required: false
+        default: "auto"
 
 permissions:
   contents: write
@@ -89,6 +93,7 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           ANTHROPIC_MODEL: "claude-sonnet-4-5-20250929"
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
+          SUPPORTING_LIFE_TRIGGER: ${{ github.event.inputs.supporting_life_trigger }}
         run: npm run daily
       - name: Humanise storyboard with Gemini
         continue-on-error: true
