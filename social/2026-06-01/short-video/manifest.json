@@ -1,13 +1,15 @@
 {
   "date": "2026-06-01",
-  "status": "video_ready",
-  "video_file": "social/2026-06-01/short-video/sapiver_isla_daily_2026-06-01.mp4",
-  "tiktok_post_file": "social/2026-06-01/short-video/tiktok-post.txt",
-  "audio_used": true,
-  "audio_duration_seconds": 37.98,
-  "audio_tail_pad_seconds": 1.2,
-  "frame_count": 8,
-  "frame_duration_seconds": 4.9,
-  "estimated_silent_duration_seconds": 39.2,
-  "generated_at": "2026-06-01T13:17:14.214Z"
+  "status": "script_ready",
+  "voice_name": "Isla Sterling",
+  "variant_name": "daily rule",
+  "variant_line": "Check the daily rule before trusting it.",
+  "copy_refined": "openai",
+  "copy_model": "gpt-4o-mini",
+  "generated_at": "2026-06-01T13:30:21.131Z",
+  "openai_response_shape": {
+    "title": "string",
+    "caption": "string",
+    "segments": "array:8"
+  }
 }

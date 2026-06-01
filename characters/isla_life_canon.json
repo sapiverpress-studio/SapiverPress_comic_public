@@ -28,12 +28,6 @@
   "location_memory": [
     {
       "date": "2026-05-29",
-      "attempt": 22,
-      "setting": "outdoor cafe street table",
-      "reason": "she is trying not to rush straight into the next errand"
-    },
-    {
-      "date": "2026-05-29",
       "attempt": 23,
       "setting": "small kitchen table in warm morning light",
       "reason": "home is still half-asleep and she has a few minutes to herself"
@@ -385,17 +379,17 @@
       "attempt": 3,
       "setting": "outdoor cafe street table",
       "reason": "she is trying not to rush straight into the next errand"
+    },
+    {
+      "date": "2026-06-01",
+      "attempt": 4,
+      "setting": "gothic window desk with cityscape view",
+      "reason": "she wants a quiet start before the day gets noisy"
     }
   ],
   "variant_memory": [
     {
       "date": "2026-05-29",
-      "attempt": 22,
-      "variant_name": "Trigoku",
-      "panel_index": 2
-    },
-    {
-      "date": "2026-05-29",
       "attempt": 23,
       "variant_name": "Trigoku",
       "panel_index": 2
@@ -747,23 +741,17 @@
       "attempt": 3,
       "variant_name": "Trigoku",
       "panel_index": 2
+    },
+    {
+      "date": "2026-06-01",
+      "attempt": 4,
+      "variant_name": "Trigoku",
+      "panel_index": 4
     }
   ],
   "life_memory": [
     {
       "date": "2026-05-29",
-      "attempt": 22,
-      "location": "outdoor cafe street table",
-      "reason_for_location": "she is trying not to rush straight into the next errand",
-      "life_detail_learned": "Isla sometimes uses a cafe table as a buffer between obligations.",
-      "thread_to_continue": "she is learning to pause before moving on",
-      "puzzle_variant_mentioned": "Trigoku",
-      "variant_panel_index": 2,
-      "uk_calendar_date": null,
-      "uk_calendar_panel_index": null
-    },
-    {
-      "date": "2026-05-29",
       "attempt": 23,
       "location": "small kitchen table in warm morning light",
       "reason_for_location": "home is still half-asleep and she has a few minutes to herself",
@@ -1467,6 +1455,18 @@
       "thread_to_continue": "she is learning to pause before moving on",
       "puzzle_variant_mentioned": "Trigoku",
       "variant_panel_index": 2,
+      "uk_calendar_date": null,
+      "uk_calendar_panel_index": null
+    },
+    {
+      "date": "2026-06-01",
+      "attempt": 4,
+      "location": "gothic window desk with cityscape view",
+      "reason_for_location": "she wants a quiet start before the day gets noisy",
+      "life_detail_learned": "Isla protects small morning rituals when she needs steadiness.",
+      "thread_to_continue": "quiet morning rituals help her reset",
+      "puzzle_variant_mentioned": "Trigoku",
+      "variant_panel_index": 4,
       "uk_calendar_date": null,
       "uk_calendar_panel_index": null
     }

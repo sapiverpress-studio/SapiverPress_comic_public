@@ -1,6 +1,6 @@
 {
   "date": "2026-06-01",
-  "title": "Isla's Journey of Thought",
+  "title": "Quiet Morning Rituals",
   "voice_name": "Isla Sterling",
   "segments": [
     {
@@ -11,17 +11,17 @@
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "The early morning light turns the kitchen table into a steady launchpad for the journey ahead."
+      "text": "Stepping into the steady kitchen before the world wakes up is always the best way to reset."
     },
     {
       "id": "panel_2",
       "image_name": "02_panel-02.png",
-      "text": "Finding a window seat on the train turns the commute into a perfect, moving pocket of focus."
+      "text": "Watching the landscape blur outside the train window helps clear away the lingering clutter in my mind."
     },
     {
       "id": "panel_3",
       "image_name": "03_panel-03.png",
-      "text": "Watching the world rush past the cafe street table makes her breath and reconsider her next move."
+      "text": "A quick breath with some fresh coffee gives me a chance to double check my plan."
     },
     {
       "id": "panel_4",
@@ -31,12 +31,12 @@
     {
       "id": "panel_5",
       "image_name": "05_panel-05.png",
-      "text": "Tucked away in a steady bookshop corner, the solution is finally beginning to take proper shape."
+      "text": "Finding a cozy spot surrounded by old books makes everything feel like it is falling into place."
     },
     {
       "id": "panel_6",
       "image_name": "06_panel-06.png",
-      "text": "As rain streaks the window glass, she closes her notebook with a steady sense of satisfaction."
+      "text": "Stepping away with a clean workspace is the best way to keep my mind completely at peace."
     },
     {
       "id": "cta",
@@ -44,9 +44,9 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nThe early morning light turns the kitchen table into a steady launchpad for the journey ahead.\n\nFinding a window seat on the train turns the commute into a perfect, moving pocket of focus.\n\nWatching the world rush past the cafe street table makes her breath and reconsider her next move.\n\nCheck the daily rule before trusting it.\n\nTucked away in a steady bookshop corner, the solution is finally beginning to take proper shape.\n\nAs rain streaks the window glass, she closes her notebook with a steady sense of satisfaction.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-06-01T13:16:53.887Z",
-  "caption": "Join Isla as she navigates her thoughts during a train ride, finding clarity amidst the chaos.",
+  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nStepping into the steady kitchen before the world wakes up is always the best way to reset.\n\nWatching the landscape blur outside the train window helps clear away the lingering clutter in my mind.\n\nA quick breath with some fresh coffee gives me a chance to double check my plan.\n\nCheck the daily rule before trusting it.\n\nFinding a cozy spot surrounded by old books makes everything feel like it is falling into place.\n\nStepping away with a clean workspace is the best way to keep my mind completely at peace.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-06-01T13:30:21.131Z",
+  "caption": "Isla finds peace in her morning routine before the day begins.",
   "variant_name": "daily rule",
   "variant_line": "Check the daily rule before trusting it.",
   "copy_refined": "openai",

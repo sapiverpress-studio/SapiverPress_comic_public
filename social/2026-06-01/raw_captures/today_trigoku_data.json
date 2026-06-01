@@ -255,8 +255,38 @@
   "source_id": "anti-knight",
   "source_name": "Anti-Knight Sudoku",
   "source_project": "sapiver-press-anti-knight",
+  "source_type": "sudoku_variant",
   "source_url_used": "https://sapiver-press-anti-knight.netlify.app/",
   "fallback_display_url": "https://suite.sapiverpress.co.uk/play/anti-knight/",
   "mode": "Anti-Knight Sudoku",
-  "date": "2026-06-01"
+  "date": "2026-06-01",
+  "source_selection": {
+    "method": "date_seeded_with_recent_cooldown",
+    "recent_source_ids": [
+      "anti-knight",
+      "anti-knight",
+      "trigoku",
+      "anti-knight",
+      "anti-knight",
+      "trigoku"
+    ],
+    "order": [
+      "thermo",
+      "sandwich",
+      "renban",
+      "little-killer",
+      "killer",
+      "german-whisper",
+      "arrow",
+      "sudoku-x",
+      "odds-and-evens",
+      "non-consecutive",
+      "kropki",
+      "hyper",
+      "anti-king",
+      "xv",
+      "anti-knight",
+      "trigoku"
+    ]
+  }
 }
