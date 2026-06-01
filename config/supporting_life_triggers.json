@@ -1,0 +1,55 @@
+{
+  "cadence": {
+    "method": "date_seeded",
+    "default_use_rate_percent": 60,
+    "force_env": "SUPPORTING_LIFE_TRIGGER"
+  },
+  "policy": {
+    "isla_only_main_character": true,
+    "overlay_only": true,
+    "no_extra_faces": true,
+    "must_affect_story": true
+  },
+  "triggers": [
+    {
+      "id": "family_weather",
+      "type": "family_text",
+      "sender": "Family",
+      "message": "Weather reminder",
+      "panel": 2,
+      "arc_shift": "The message changes the order of the morning. Isla keeps the puzzle short, then handles the outside errand properly."
+    },
+    {
+      "id": "family_check_in",
+      "type": "family_text",
+      "sender": "Family",
+      "message": "Check-in message",
+      "panel": 2,
+      "arc_shift": "The message softens the pressure. Isla stops trying to be quick and chooses one careful move instead."
+    },
+    {
+      "id": "work_ping",
+      "type": "work_message",
+      "sender": "Work",
+      "message": "Work question",
+      "panel": 3,
+      "arc_shift": "The work message interrupts the puzzle. Isla has to choose between reacting instantly and finishing one checked move first."
+    },
+    {
+      "id": "calendar_timer",
+      "type": "calendar_reminder",
+      "sender": "Calendar",
+      "message": "Calendar reminder",
+      "panel": 4,
+      "arc_shift": "The reminder turns the puzzle into a boundary: one proof, then back to the day without dragging the mistake forward."
+    },
+    {
+      "id": "cafe_timer",
+      "type": "cafe_note",
+      "sender": "Cafe",
+      "message": "Cafe timing note",
+      "panel": 5,
+      "arc_shift": "The cafe cue gives the scene a real deadline. Isla finishes cleanly instead of stretching the moment too long."
+    }
+  ]
+}
