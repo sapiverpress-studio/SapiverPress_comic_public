@@ -28,12 +28,6 @@
   "location_memory": [
     {
       "date": "2026-05-29",
-      "attempt": 30,
-      "setting": "outdoor cafe street table",
-      "reason": "she is trying not to rush straight into the next errand"
-    },
-    {
-      "date": "2026-05-29",
       "attempt": 31,
       "setting": "gothic window desk with cityscape view",
       "reason": "she wants a quiet start before the day gets noisy"
@@ -385,15 +379,15 @@
       "attempt": 11,
       "setting": "bookshop cafe corner",
       "reason": "she has come for one thing but stays for the quiet corner"
+    },
+    {
+      "date": "2026-06-01",
+      "attempt": 12,
+      "setting": "small kitchen table in warm morning light",
+      "reason": "home is still half-asleep and she has a few minutes to herself"
     }
   ],
   "variant_memory": [
-    {
-      "date": "2026-05-29",
-      "attempt": 30,
-      "variant_name": "Trigoku",
-      "panel_index": 2
-    },
     {
       "date": "2026-05-29",
       "attempt": 31,
@@ -747,21 +741,15 @@
       "attempt": 11,
       "variant_name": "Anti-Knight",
       "panel_index": 3
+    },
+    {
+      "date": "2026-06-01",
+      "attempt": 12,
+      "variant_name": "Anti-Knight",
+      "panel_index": 2
     }
   ],
   "life_memory": [
-    {
-      "date": "2026-05-29",
-      "attempt": 30,
-      "location": "outdoor cafe street table",
-      "reason_for_location": "she is trying not to rush straight into the next errand",
-      "life_detail_learned": "Isla sometimes uses a cafe table as a buffer between obligations.",
-      "thread_to_continue": "she is learning to pause before moving on",
-      "puzzle_variant_mentioned": "Trigoku",
-      "variant_panel_index": 2,
-      "uk_calendar_date": null,
-      "uk_calendar_panel_index": null
-    },
     {
       "date": "2026-05-29",
       "attempt": 31,
@@ -1467,6 +1455,18 @@
       "thread_to_continue": "she is drawn to places with books and warm corners",
       "puzzle_variant_mentioned": "Anti-Knight",
       "variant_panel_index": 3,
+      "uk_calendar_date": null,
+      "uk_calendar_panel_index": null
+    },
+    {
+      "date": "2026-06-01",
+      "attempt": 12,
+      "location": "small kitchen table in warm morning light",
+      "reason_for_location": "home is still half-asleep and she has a few minutes to herself",
+      "life_detail_learned": "Isla values ordinary domestic quiet as much as beautiful public spaces.",
+      "thread_to_continue": "home mornings reveal her private routine",
+      "puzzle_variant_mentioned": "Anti-Knight",
+      "variant_panel_index": 2,
       "uk_calendar_date": null,
       "uk_calendar_panel_index": null
     }

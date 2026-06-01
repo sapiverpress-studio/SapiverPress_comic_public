@@ -1,6 +1,6 @@
 {
   "date": "2026-06-01",
-  "title": "Isla's Quiet Corner",
+  "title": "Morning Puzzle Routine",
   "voice_name": "Isla Sterling",
   "segments": [
     {
@@ -11,32 +11,32 @@
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "Isla plans to slip into the steady bookstore corner before the morning rush truly begins."
+      "text": "The house is still half-asleep, bathed in a warm morning light that feels incredibly peaceful."
     },
     {
       "id": "panel_2",
       "image_name": "02_panel-02.png",
-      "text": "She makes her first mark on the grid while waiting for the morning train to arrive."
+      "text": "A familiar grid lies open on the table, waiting for the first careful stroke of her pen."
     },
     {
       "id": "panel_3",
       "image_name": "03_panel-03.png",
-      "text": "The soothing rhythm of the tracks helps her focus on the trickier sections of the grid."
+      "text": "Looking out at the passing scenery helps clear her mind as she ponders her next move."
     },
     {
       "id": "panel_4",
       "image_name": "04_panel-04.png",
-      "text": "A warm cup of tea beside her makes the tricky Anti-Knight rule feel much more manageable."
+      "text": "Anti-Knight today — knight moves block matching numbers."
     },
     {
       "id": "panel_5",
       "image_name": "05_panel-05.png",
-      "text": "The afternoon light pours over her desk as she successfully places another tricky set of digits."
+      "text": "The sunlight streams through the tall window as she reviews her progress with a satisfied smile."
     },
     {
       "id": "panel_6",
       "image_name": "06_panel-06.png",
-      "text": "Surrounded by leafy plants and the sound of soft rain, she reluctantly closes her puzzle book."
+      "text": "Watching the rain outside, she feels ready to step out and embrace whatever the day brings."
     },
     {
       "id": "cta",
@@ -44,9 +44,9 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nIsla plans to slip into the steady bookstore corner before the morning rush truly begins.\n\nShe makes her first mark on the grid while waiting for the morning train to arrive.\n\nThe soothing rhythm of the tracks helps her focus on the trickier sections of the grid.\n\nA warm cup of tea beside her makes the tricky Anti-Knight rule feel much more manageable.\n\nThe afternoon light pours over her desk as she successfully places another tricky set of digits.\n\nSurrounded by leafy plants and the sound of soft rain, she reluctantly closes her puzzle book.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-06-01T15:52:15.892Z",
-  "caption": "Join Isla as she finds solace in a bookshop cafe while tackling today's puzzle.",
+  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nThe house is still half-asleep, bathed in a warm morning light that feels incredibly peaceful.\n\nA familiar grid lies open on the table, waiting for the first careful stroke of her pen.\n\nLooking out at the passing scenery helps clear her mind as she ponders her next move.\n\nAnti-Knight today — knight moves block matching numbers.\n\nThe sunlight streams through the tall window as she reviews her progress with a satisfied smile.\n\nWatching the rain outside, she feels ready to step out and embrace whatever the day brings.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-06-01T20:12:48.420Z",
+  "caption": "Isla enjoys a quiet morning at home, diving into her daily puzzle.",
   "variant_name": "Anti-Knight",
   "variant_line": "Anti-Knight today — knight moves block matching numbers.",
   "copy_refined": "openai",
