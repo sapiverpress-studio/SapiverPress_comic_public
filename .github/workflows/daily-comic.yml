@@ -148,7 +148,25 @@ jobs:
         continue-on-error: true
         env:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
+          SUITE_URL: "https://suite.sapiverpress.co.uk"
+          ETSY_URL: "https://sapiverpress.etsy.com?coupon=SAVE20"
         run: npm run short-video-build
+      - name: Upload daily video and TikTok copy
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sapiver-isla-daily-video-${{ github.run_number }}
+          path: |
+            social/*/short-video/*.mp4
+            social/*/short-video/tiktok-post.txt
+            social/*/short-video/tiktok-post.json
+            social/*/short-video/script.txt
+            social/*/short-video/caption.txt
+            social/*/short-video/narration.json
+            social/*/short-video/manifest.json
+          if-no-files-found: warn
+          retention-days: 30
+          compression-level: 0
       - name: Post comic to Facebook
         if: github.event_name == 'schedule' || github.event.inputs.post_to_facebook == 'true'
         continue-on-error: true
