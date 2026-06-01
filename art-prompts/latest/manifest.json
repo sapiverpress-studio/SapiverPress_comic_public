@@ -65,7 +65,7 @@
       "output_file": "social/2026-06-01/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "The house is still asleep, bathed in the soft, warm glow of the early morning sun.",
+      "caption": "The morning traffic hums outside the window, urging Isla to hurry before the day gets too crowded.",
       "scene_id": "scene_01"
     },
     {
@@ -75,7 +75,7 @@
       "output_file": "social/2026-06-01/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "She enjoys a rare moment of total stillness at the kitchen table before her busy day begins.",
+      "caption": "Finding a steady corner, Isla decides to slow her pace down instead of rushing her decisions today.",
       "scene_id": "scene_02"
     },
     {
@@ -85,7 +85,7 @@
       "output_file": "social/2026-06-01/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "Taking her time, Isla lets her mind drift peacefully over the grid while the coffee brews.",
+      "caption": "She forces herself to sit still for a moment, resisting the urge to jump to the next task.",
       "scene_id": "scene_03"
     },
     {
@@ -105,7 +105,7 @@
       "output_file": "social/2026-06-01/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "A few quick, final glances confirm that her steady morning strategy is completely solid and correct.",
+      "caption": "Sipping her lukewarm tea at a tiny corner table, she finally feels the tension leave her shoulders.",
       "scene_id": "scene_05"
     },
     {
@@ -115,10 +115,10 @@
       "output_file": "social/2026-06-01/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "With her mind clear and ready, Isla finally steps out to face the bustling day ahead.",
+      "caption": "Back home, she reminds herself that pausing between errands is a habit worth keeping for the future.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-06-01.json",
-  "generated_at": "2026-06-01T13:40:46.553Z"
+  "generated_at": "2026-06-01T14:13:23.564Z"
 }

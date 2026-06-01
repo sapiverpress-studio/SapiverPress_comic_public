@@ -1,6 +1,6 @@
 {
   "date": "2026-06-01",
-  "title": "Morning Puzzle Routine",
+  "title": "Isla's Day of Pausing",
   "voice_name": "Isla Sterling",
   "segments": [
     {
@@ -11,17 +11,17 @@
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "The house is still asleep, bathed in the soft, warm glow of the early morning sun."
+      "text": "The morning traffic hums outside the window, urging Isla to hurry before the day gets too crowded."
     },
     {
       "id": "panel_2",
       "image_name": "02_panel-02.png",
-      "text": "She enjoys a rare moment of total stillness at the kitchen table before her busy day begins."
+      "text": "Finding a steady corner, Isla decides to slow her pace down instead of rushing her decisions today."
     },
     {
       "id": "panel_3",
       "image_name": "03_panel-03.png",
-      "text": "Taking her time, Isla lets her mind drift peacefully over the grid while the coffee brews."
+      "text": "She forces herself to sit still for a moment, resisting the urge to jump to the next task."
     },
     {
       "id": "panel_4",
@@ -31,12 +31,12 @@
     {
       "id": "panel_5",
       "image_name": "05_panel-05.png",
-      "text": "A few quick, final glances confirm that her steady morning strategy is completely solid and correct."
+      "text": "Sipping her lukewarm tea at a tiny corner table, she finally feels the tension leave her shoulders."
     },
     {
       "id": "panel_6",
       "image_name": "06_panel-06.png",
-      "text": "With her mind clear and ready, Isla finally steps out to face the bustling day ahead."
+      "text": "Back home, she reminds herself that pausing between errands is a habit worth keeping for the future."
     },
     {
       "id": "cta",
@@ -44,9 +44,9 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nThe house is still asleep, bathed in the soft, warm glow of the early morning sun.\n\nShe enjoys a rare moment of total stillness at the kitchen table before her busy day begins.\n\nTaking her time, Isla lets her mind drift peacefully over the grid while the coffee brews.\n\nAnti-Knight today — knight moves block matching numbers.\n\nA few quick, final glances confirm that her steady morning strategy is completely solid and correct.\n\nWith her mind clear and ready, Isla finally steps out to face the bustling day ahead.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-06-01T13:41:25.515Z",
-  "caption": "Isla enjoys a quiet morning at home, savoring her puzzle before the day begins.",
+  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nThe morning traffic hums outside the window, urging Isla to hurry before the day gets too crowded.\n\nFinding a steady corner, Isla decides to slow her pace down instead of rushing her decisions today.\n\nShe forces herself to sit still for a moment, resisting the urge to jump to the next task.\n\nAnti-Knight today — knight moves block matching numbers.\n\nSipping her lukewarm tea at a tiny corner table, she finally feels the tension leave her shoulders.\n\nBack home, she reminds herself that pausing between errands is a habit worth keeping for the future.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-06-01T14:14:02.878Z",
+  "caption": "Join Isla as she learns to take a moment before moving on.",
   "variant_name": "Anti-Knight",
   "variant_line": "Anti-Knight today — knight moves block matching numbers.",
   "copy_refined": "openai",

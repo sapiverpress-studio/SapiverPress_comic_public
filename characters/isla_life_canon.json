@@ -28,12 +28,6 @@
   "location_memory": [
     {
       "date": "2026-05-29",
-      "attempt": 26,
-      "setting": "co-working desk near a tall window",
-      "reason": "she has work waiting, so the puzzle has to fit into a short gap"
-    },
-    {
-      "date": "2026-05-29",
       "attempt": 27,
       "setting": "train table by the window",
       "reason": "she is travelling and using the journey as thinking time"
@@ -385,15 +379,15 @@
       "attempt": 7,
       "setting": "small kitchen table in warm morning light",
       "reason": "home is still half-asleep and she has a few minutes to herself"
+    },
+    {
+      "date": "2026-06-01",
+      "attempt": 8,
+      "setting": "outdoor cafe street table",
+      "reason": "she is trying not to rush straight into the next errand"
     }
   ],
   "variant_memory": [
-    {
-      "date": "2026-05-29",
-      "attempt": 26,
-      "variant_name": "Trigoku",
-      "panel_index": 2
-    },
     {
       "date": "2026-05-29",
       "attempt": 27,
@@ -747,21 +741,15 @@
       "attempt": 7,
       "variant_name": "Anti-Knight",
       "panel_index": 2
+    },
+    {
+      "date": "2026-06-01",
+      "attempt": 8,
+      "variant_name": "Anti-Knight",
+      "panel_index": 4
     }
   ],
   "life_memory": [
-    {
-      "date": "2026-05-29",
-      "attempt": 26,
-      "location": "co-working desk near a tall window",
-      "reason_for_location": "she has work waiting, so the puzzle has to fit into a short gap",
-      "life_detail_learned": "Isla often fits her puzzle ritual between work blocks.",
-      "thread_to_continue": "work days make the puzzle a boundary marker",
-      "puzzle_variant_mentioned": "Trigoku",
-      "variant_panel_index": 2,
-      "uk_calendar_date": null,
-      "uk_calendar_panel_index": null
-    },
     {
       "date": "2026-05-29",
       "attempt": 27,
@@ -1467,6 +1455,18 @@
       "thread_to_continue": "home mornings reveal her private routine",
       "puzzle_variant_mentioned": "Anti-Knight",
       "variant_panel_index": 2,
+      "uk_calendar_date": null,
+      "uk_calendar_panel_index": null
+    },
+    {
+      "date": "2026-06-01",
+      "attempt": 8,
+      "location": "outdoor cafe street table",
+      "reason_for_location": "she is trying not to rush straight into the next errand",
+      "life_detail_learned": "Isla sometimes uses a cafe table as a buffer between obligations.",
+      "thread_to_continue": "she is learning to pause before moving on",
+      "puzzle_variant_mentioned": "Anti-Knight",
+      "variant_panel_index": 4,
       "uk_calendar_date": null,
       "uk_calendar_panel_index": null
     }
