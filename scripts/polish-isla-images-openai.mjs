@@ -16,6 +16,29 @@ const PANEL_FILES = [
   "06_panel-06.png",
 ];
 
+const POSTER_QUOTES = [
+  "Small steps. Big impact.",
+  "Progress over perfection.",
+  "One page at a time.",
+  "Focus. Solve. Grow.",
+  "Lead with intention.",
+  "One win at a time.",
+  "Puzzle Therapy",
+  "Logic & Pattern",
+  "Word Wise",
+];
+
+const BOOK_TITLES = [
+  "Word Wise",
+  "Logic & Pattern",
+  "Puzzle Therapy",
+  "The Focus Habit",
+  "Daily Clarity",
+  "One Page at a Time",
+  "Small Wins Journal",
+  "Notes for Better Days",
+];
+
 function londonDateString() {
   const override = process.env.DATE_OVERRIDE || "";
   if (override) return override;
@@ -32,20 +55,11 @@ function clean(value) {
 }
 
 async function exists(file) {
-  try {
-    await fs.access(file);
-    return true;
-  } catch {
-    return false;
-  }
+  try { await fs.access(file); return true; } catch { return false; }
 }
 
 async function readJson(file, fallback = null) {
-  try {
-    return JSON.parse(await fs.readFile(file, "utf8"));
-  } catch {
-    return fallback;
-  }
+  try { return JSON.parse(await fs.readFile(file, "utf8")); } catch { return fallback; }
 }
 
 async function writeJson(file, data) {
@@ -60,28 +74,45 @@ async function copyIfExists(src, dst) {
   return true;
 }
 
+function rotatePack(items, panelNumber, count = 4) {
+  const out = [];
+  const start = (panelNumber * 3) % items.length;
+  for (let i = 0; i < count; i += 1) out.push(items[(start + i) % items.length]);
+  return out;
+}
+
 function detailPrompt({ story, scene, panelNumber }) {
-  const setting = clean(scene?.setting || story?.selected_setting || "daily life desk scene");
-  const caption = clean(scene?.caption || scene?.speech_bubble || scene?.dialogue || "");
-  const variant = clean(story?.variant_recap?.variant_name || "today's puzzle");
+  const setting = clean(scene?.panel_location || scene?.setting || story?.selected_setting || "daily life scene");
+  const action = clean(scene?.panel_action || scene?.scene_description || "specific daily action");
+  const pose = clean(scene?.panel_pose_family || "varied pose");
+  const screen = clean(scene?.panel_screen_state || "active_puzzle");
+  const caption = clean(scene?.storyboard_caption || scene?.caption || scene?.speech_bubble || scene?.dialogue || "");
+  const variant = clean(story?.variant_recap?.variant_name || story?.required_puzzle_copy?.variant_name || "today's puzzle");
   const calendar = clean(story?.uk_calendar_date?.name || "");
   const lifeNote = clean(story?.life_memory_entry?.life_detail_learned || story?.story_note || "");
+  const posterPack = rotatePack(POSTER_QUOTES, panelNumber, 5).join("; ");
+  const bookPack = rotatePack(BOOK_TITLES, panelNumber, 5).join("; ");
 
   return [
-    `Polish this ${CHARACTER} panel with tiny coherent environmental text details only.`,
-    "Preserve Isla exactly: same face, hair, skin tone, headband, earrings, hoodie, body shape, pose, expression, lighting, style, camera angle, desk layout, laptop position, and overall true-to-life oil-painting/editorial illustration feel.",
-    "Do not redraw Isla. Do not make her more cartoon-like. Do not change her age, features, hairstyle, clothing, hands, or pose.",
+    `Polish this ${CHARACTER} panel by improving only tiny coherent environmental text details and subtle merch/book/poster text.`,
+    "Preserve Isla exactly: same face, hair, skin tone, headband, earrings, hoodie, body shape, pose, expression, lighting, style, camera angle, laptop position, and overall painterly editorial feel.",
+    "Do not redraw Isla. Do not change her age, features, hairstyle, clothing, hands, body pose, or scene action.",
     "Do not add speech bubbles, page headers, social captions, borders, footers, or large promotional text.",
-    "Do not alter the laptop screen area, because a real puzzle screenshot will be composited there later. Keep the screen usable for overlay.",
-    "Only replace garbled background writing on wall signs, notebooks, cards, book spines, or mugs with short believable details.",
-    "Add subtle Sapiver Press branding only where natural: tiny SP monogram on mug/notebook/bookplate, or a small neat 'Sapiver Press Notes' label. No big advert.",
-    "Add a few readable handwritten notebook/open-book lines that feel like Isla's diary notes or small observations. Keep them short and plausible.",
-    `Panel ${panelNumber} context: ${caption || "quiet diary moment"}.`,
-    `Location context: ${setting}.`,
+    "Do not alter the laptop screen area. If the screen state says no_puzzle or closed_device, keep the device blank/closed and do not add any grid.",
+    "Only replace garbled background writing on posters, wall signs, notebooks, cards, cushions, book spines, bags, mugs, or merch with short believable readable text.",
+    "Restore the high-quality coherent text style: posters, cushions, notebooks, mugs and book spines should have legible phrases where natural, not nonsense scribbles.",
+    "Use only a few readable details, not clutter. Leave many surfaces plain.",
+    "Subtle Sapiver Press branding is allowed only where natural: tiny SP monogram, Sapiver Press Notes, or small bookplate. No big advert.",
+    `Poster/merch quote options: ${posterPack}.`,
+    `Book spine/title options: ${bookPack}.`,
+    `Panel ${panelNumber} location: ${setting}.`,
+    `Panel ${panelNumber} action: ${action}.`,
+    `Panel ${panelNumber} pose family: ${pose}.`,
+    `Panel ${panelNumber} screen state: ${screen}.`,
+    caption ? `Panel caption context: ${caption}.` : "",
     `Puzzle context: ${variant}.`,
     calendar ? `UK calendar context: ${calendar}.` : "",
     lifeNote ? `Isla life context: ${lifeNote}.` : "",
-    "Suggested tiny text fragments may include: 'one quiet page', 'SP notes', 'today's grid', 'coffee first', 'no rushing', 'call later', 'small proof', 'Sapiver Press'.",
     "Final image should still look like the same original panel, just with coherent background text and subtle branding instead of nonsense marks.",
   ].filter(Boolean).join("\n");
 }
@@ -104,34 +135,23 @@ async function callOpenAIImageEdit({ imagePath, prompt }) {
 
   const text = await response.text();
   let body;
-  try {
-    body = text ? JSON.parse(text) : null;
-  } catch {
-    body = null;
-  }
+  try { body = text ? JSON.parse(text) : null; } catch { body = null; }
 
-  if (!response.ok) {
-    throw new Error(`OpenAI image edit failed ${response.status}: ${text.slice(0, 900)}`);
-  }
-
+  if (!response.ok) throw new Error(`OpenAI image edit failed ${response.status}: ${text.slice(0, 900)}`);
   const b64 = body?.data?.[0]?.b64_json;
   if (b64) return Buffer.from(b64, "base64");
-
   const url = body?.data?.[0]?.url;
   if (url) {
     const imageResponse = await fetch(url);
     if (!imageResponse.ok) throw new Error(`OpenAI image URL download failed ${imageResponse.status}`);
     return Buffer.from(await imageResponse.arrayBuffer());
   }
-
   throw new Error("OpenAI image edit returned no b64_json or url image data");
 }
 
 async function mirrorLatest(dateDir, latestDir, summary) {
   await fs.mkdir(latestDir, { recursive: true });
-  for (const name of PANEL_FILES) {
-    await copyIfExists(path.join(dateDir, name), path.join(latestDir, name));
-  }
+  for (const name of PANEL_FILES) await copyIfExists(path.join(dateDir, name), path.join(latestDir, name));
   await writeJson(path.join(latestDir, "openai-polish-summary.json"), summary);
 }
 
@@ -148,7 +168,9 @@ async function main() {
     enabled: ENABLED,
     model: MODEL,
     status: "not_started",
-    purpose: "Polish only background signs/books/mugs/notebooks with coherent Sapiver Press and diary details while preserving Isla and screen composition.",
+    purpose: "Polish coherent readable poster/book/merch text while preserving Isla, action, pose, scene truth and screen state.",
+    poster_quotes: POSTER_QUOTES,
+    book_titles: BOOK_TITLES,
     panels: [],
     generated_at: new Date().toISOString(),
   };
@@ -176,7 +198,7 @@ async function main() {
     const imagePath = path.join(dateDir, name);
     const backupPath = path.join(backupDir, name);
     const scene = story?.scenes?.[i] || {};
-    const row = { panel_number: i + 1, image_name: name, status: "pending" };
+    const row = { panel_number: i + 1, image_name: name, status: "pending", panel_screen_state: scene.panel_screen_state || "" };
 
     if (!(await exists(imagePath))) {
       row.status = "missing_source";
@@ -193,13 +215,12 @@ async function main() {
       row.status = "polished";
       row.backup_file = path.relative(ROOT, backupPath).replaceAll(path.sep, "/");
       row.output_file = path.relative(ROOT, imagePath).replaceAll(path.sep, "/");
-      row.prompt_summary = "background text, subtle Sapiver Press marks, and diary notes only; preserve Isla and screen";
+      row.prompt_summary = "coherent readable prop text only; preserve Isla, action, pose and screen state";
     } catch (error) {
       row.status = "failed_kept_original";
       row.error = error?.message || String(error);
       if (await exists(backupPath)) await fs.copyFile(backupPath, imagePath);
     }
-
     summary.panels.push(row);
   }
 
