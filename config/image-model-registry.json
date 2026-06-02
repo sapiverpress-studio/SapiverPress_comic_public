@@ -20,7 +20,7 @@
         "Supporting people are only notifications, messages, receipts, calendar reminders, voice-over, or off-screen references"
       ],
       "fal_model": "fal-ai/z-image/turbo/lora",
-      "hf_lora_repo": "sapiverpress/sapiverpress-isla-lora",
+      "hf_lora_repo": "sapiverpress/Isla_v2",
       "lora_file": "Isla_v2_1780410778059.safetensors",
       "trigger_word": "Isla_v2",
       "lora_scale": 1,
@@ -42,7 +42,7 @@
         "Neil is a visible in-scene person, not just a message, receipt, or off-screen reference"
       ],
       "fal_model": "fal-ai/z-image/turbo/lora",
-      "hf_lora_repo": "sapiverpress/sapiverpress-isla-lora",
+      "hf_lora_repo": "sapiverpress/Isla_v2",
       "lora_file": "ADD_ISLA_NEIL_MODEL_FILE_HERE.safetensors",
       "trigger_word": "ADD_ISLA_NEIL_TRIGGER_HERE",
       "lora_scale": 1,
