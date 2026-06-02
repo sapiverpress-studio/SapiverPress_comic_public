@@ -45,15 +45,15 @@
   ],
   "storyboard_copy_source": "openai_repaired+gemini",
   "storyboard_copy_model": "gpt-4o-mini",
-  "storyboard_arc_title": "Quiet Corners and Puzzles",
+  "storyboard_arc_title": "Isla's Quiet Morning Ritual",
   "storyboard_arc_type": "story_driven_not_location_driven",
   "storyboard_arc": {
-    "setup": "Isla starts her steady morning at the kitchen table, already planning her favorite bookshop escape.",
-    "disruption": "The train ride offers a brief window of focus, a perfect transition before the day begins.",
-    "choice": "A quick stop at the outdoor cafe brings a rare moment of absolute peace under the sun.",
+    "setup": "Isla treasures these three minutes in the warm morning light before the rest of the city wakes.",
+    "disruption": "A sudden ping from her phone interrupts the silence, bringing a brief distraction to her morning routine.",
+    "choice": "She decides to give the grid one quick proof to set a firm boundary for her morning.",
     "puzzle_moment": "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-    "consequence": "Just as she settles into the bookshop cafe, a sudden calendar reminder flashes on her screen.",
-    "resolution": "Leaving the puzzle behind, she sets out her mug for tomorrow, ready for a fresh start."
+    "consequence": "With the logic verified, Isla feels the steady satisfaction of solving the grid without dragging doubts forward.",
+    "resolution": "The morning reset is complete, leaving her mind clear and ready to face whatever comes next."
   },
   "storyboard_quality": {
     "location_sequence_only": false,
@@ -125,7 +125,7 @@
     "frames": "array:6"
   },
   "openai_storyboard_fallback_reason": null,
-  "openai_storyboard_checked_at": "2026-06-02T06:17:09.732Z",
+  "openai_storyboard_checked_at": "2026-06-02T06:25:03.568Z",
   "gemini_allowed_fields": [
     "caption",
     "dialogue"
@@ -162,12 +162,12 @@
   "puzzle_product": "Trigoku Daily Lock",
   "puzzle_url": "https://suite.sapiverpress.co.uk",
   "captions": [
-    "Let's get a quick start on this grid before the world wakes up.\nIsla starts her steady morning at the kitchen table, already planning her favorite bookshop escape.",
-    "This path seems clear enough, at least for the first few placements.\nThe train ride offers a brief window of focus, a perfect transition before the day begins.",
-    "I can spare just a few minutes here to enjoy this warmth.\nA quick stop at the outdoor cafe brings a rare moment of absolute peace under the sun.",
+    "Just a few peaceful moments to myself before the noise of the day starts.\nIsla treasures these three minutes in the warm morning light before the rest of the city wakes.",
+    "Oh, there's the calendar reminder. I should probably take a look at this puzzle now.\nA sudden ping from her phone interrupts the silence, bringing a brief distraction to her morning routine.",
+    "I'll give myself exactly three minutes for this, then it's straight back to my day.\nShe decides to give the grid one quick proof to set a firm boundary for her morning.",
     "Anti-Knight today — knight moves block matching numbers.\nAnti-Knight changes the move, so Isla checks the rule before trusting it.",
-    "There's the reminder. That's my cue to stop overthinking and close the app.\nJust as she settles into the bookshop cafe, a sudden calendar reminder flashes on her screen.",
-    "One final look, and then I'm setting this down for the night.\nLeaving the puzzle behind, she sets out her mug for tomorrow, ready for a fresh start."
+    "There we go. That connection actually holds up under pressure.\nWith the logic verified, Isla feels the steady satisfaction of solving the grid without dragging doubts forward.",
+    "Time to put this away. It's done, and I can move on.\nThe morning reset is complete, leaving her mind clear and ready to face whatever comes next."
   ],
   "storyboard_locations": [
     "small home kitchen table in warm morning light",
@@ -190,10 +190,10 @@
       "screen_quad_mode": "overlay_skipped_screen_state_no_puzzle",
       "panel_screen_state": "no_puzzle",
       "screen_state_overlay_allowed": false,
-      "storyboard_text": "Let's get a quick start on this grid before the world wakes up.\nIsla starts her steady morning at the kitchen table, already planning her favorite bookshop escape.",
+      "storyboard_text": "Just a few peaceful moments to myself before the noise of the day starts.\nIsla treasures these three minutes in the warm morning light before the rest of the city wakes.",
       "arc_role": "setup",
-      "storyboard_caption": "Isla starts her steady morning at the kitchen table, already planning her favorite bookshop escape.",
-      "storyboard_dialogue": "Let's get a quick start on this grid before the world wakes up.",
+      "storyboard_caption": "Isla treasures these three minutes in the warm morning light before the rest of the city wakes.",
+      "storyboard_dialogue": "Just a few peaceful moments to myself before the noise of the day starts.",
       "panel_location": "small home kitchen table in warm morning light"
     },
     {
@@ -205,13 +205,13 @@
       "capture": "captures/2026-06-02/extracted/02_first_moves.png",
       "output": "social/2026-06-02/02_panel-02.png",
       "screen_quad": [],
-      "screen_quad_mode": "overlay_skipped_screen_state_closed_device",
-      "panel_screen_state": "closed_device",
+      "screen_quad_mode": "overlay_skipped_screen_state_no_puzzle",
+      "panel_screen_state": "no_puzzle",
       "screen_state_overlay_allowed": false,
-      "storyboard_text": "This path seems clear enough, at least for the first few placements.\nThe train ride offers a brief window of focus, a perfect transition before the day begins.",
+      "storyboard_text": "Oh, there's the calendar reminder. I should probably take a look at this puzzle now.\nA sudden ping from her phone interrupts the silence, bringing a brief distraction to her morning routine.",
       "arc_role": "disruption",
-      "storyboard_caption": "The train ride offers a brief window of focus, a perfect transition before the day begins.",
-      "storyboard_dialogue": "This path seems clear enough, at least for the first few placements.",
+      "storyboard_caption": "A sudden ping from her phone interrupts the silence, bringing a brief distraction to her morning routine.",
+      "storyboard_dialogue": "Oh, there's the calendar reminder. I should probably take a look at this puzzle now.",
       "panel_location": "train table by the window"
     },
     {
@@ -224,29 +224,29 @@
       "output": "social/2026-06-02/03_panel-03.png",
       "screen_quad": [
         [
-          640,
-          625
-        ],
-        [
-          1056,
-          654
+          622,
+          620
         ],
         [
           1020,
-          970
+          640
         ],
         [
-          605,
-          901
+          979,
+          924
+        ],
+        [
+          587,
+          858
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
       "panel_screen_state": "first_moves",
       "screen_state_overlay_allowed": true,
-      "storyboard_text": "I can spare just a few minutes here to enjoy this warmth.\nA quick stop at the outdoor cafe brings a rare moment of absolute peace under the sun.",
+      "storyboard_text": "I'll give myself exactly three minutes for this, then it's straight back to my day.\nShe decides to give the grid one quick proof to set a firm boundary for her morning.",
       "arc_role": "choice",
-      "storyboard_caption": "A quick stop at the outdoor cafe brings a rare moment of absolute peace under the sun.",
-      "storyboard_dialogue": "I can spare just a few minutes here to enjoy this warmth.",
+      "storyboard_caption": "She decides to give the grid one quick proof to set a firm boundary for her morning.",
+      "storyboard_dialogue": "I'll give myself exactly three minutes for this, then it's straight back to my day.",
       "panel_location": "outdoor cafe street table"
     },
     {
@@ -259,20 +259,20 @@
       "output": "social/2026-06-02/04_panel-04.png",
       "screen_quad": [
         [
-          716,
-          607
+          696,
+          563
         ],
         [
-          1066,
-          630
+          1071,
+          593
         ],
         [
-          1068,
-          938
+          1050,
+          912
         ],
         [
-          674,
-          864
+          643,
+          823
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -305,29 +305,29 @@
       "output": "social/2026-06-02/05_panel-05.png",
       "screen_quad": [
         [
-          690,
-          748
+          720,
+          660
         ],
         [
-          1022,
-          769
+          1065,
+          691
         ],
         [
-          992,
-          1009
+          1062,
+          987
         ],
         [
-          666,
-          956
+          679,
+          908
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
       "panel_screen_state": "progress_pause",
       "screen_state_overlay_allowed": true,
-      "storyboard_text": "There's the reminder. That's my cue to stop overthinking and close the app.\nJust as she settles into the bookshop cafe, a sudden calendar reminder flashes on her screen.",
+      "storyboard_text": "There we go. That connection actually holds up under pressure.\nWith the logic verified, Isla feels the steady satisfaction of solving the grid without dragging doubts forward.",
       "arc_role": "consequence",
-      "storyboard_caption": "Just as she settles into the bookshop cafe, a sudden calendar reminder flashes on her screen.",
-      "storyboard_dialogue": "There's the reminder. That's my cue to stop overthinking and close the app.",
+      "storyboard_caption": "With the logic verified, Isla feels the steady satisfaction of solving the grid without dragging doubts forward.",
+      "storyboard_dialogue": "There we go. That connection actually holds up under pressure.",
       "panel_location": "bookshop cafe corner"
     },
     {
@@ -340,29 +340,29 @@
       "output": "social/2026-06-02/06_panel-06.png",
       "screen_quad": [
         [
-          653,
-          661
+          687,
+          706
+        ],
+        [
+          1066,
+          731
         ],
         [
           1047,
-          688
+          1007
         ],
         [
-          1011,
-          973
-        ],
-        [
-          622,
-          905
+          658,
+          950
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
       "panel_screen_state": "finished_or_closing",
       "screen_state_overlay_allowed": true,
-      "storyboard_text": "One final look, and then I'm setting this down for the night.\nLeaving the puzzle behind, she sets out her mug for tomorrow, ready for a fresh start.",
+      "storyboard_text": "Time to put this away. It's done, and I can move on.\nThe morning reset is complete, leaving her mind clear and ready to face whatever comes next.",
       "arc_role": "resolution",
-      "storyboard_caption": "Leaving the puzzle behind, she sets out her mug for tomorrow, ready for a fresh start.",
-      "storyboard_dialogue": "One final look, and then I'm setting this down for the night.",
+      "storyboard_caption": "The morning reset is complete, leaving her mind clear and ready to face whatever comes next.",
+      "storyboard_dialogue": "Time to put this away. It's done, and I can move on.",
       "panel_location": "rainy window nook with plants"
     }
   ],
@@ -377,7 +377,7 @@
     {
       "scene": "scene_02",
       "output": "social/2026-06-02/02_panel-02.png",
-      "screen_quad_mode": "overlay_skipped_screen_state_closed_device",
+      "screen_quad_mode": "overlay_skipped_screen_state_no_puzzle",
       "panel_location": "train table by the window"
     }
   ],
