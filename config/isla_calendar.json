@@ -1,6 +1,6 @@
 {
-  "version": 2,
-  "purpose": "One-year repeating 365-anchor story calendar for Isla. Every calendar date has a predetermined daily-life anchor generated from coherent monthly arcs, weekly rhythms, and recurring sub-character threads. Major events layer on top; they do not replace the daily canon.",
+  "version": 3,
+  "purpose": "One-year repeating 365-anchor story calendar for Isla. Every calendar date has a predetermined daily-life anchor generated from coherent monthly arcs, weekly rhythms, UK working-life rules, public holidays, annual leave, recurring sub-character threads, and major anchors. Major events layer on top; they do not replace the daily canon.",
   "rules": {
     "repeat_yearly": true,
     "daily_anchor_count": 365,
@@ -13,7 +13,73 @@
     "no_visible_extra_characters_by_default": true,
     "daily_anchor_required_before_story": true,
     "major_events_overlay_daily_anchor": true,
+    "working_life_required_before_story": true,
+    "bank_holidays_override_workdays": true,
+    "annual_leave_overrides_workdays": true,
+    "christmas_and_easter_have_long_buildups": true,
     "leap_year_policy": "02-29 reuses 02-28 daily anchor unless explicitly added later"
+  },
+  "work_life": {
+    "country_context": "England and Wales, UK",
+    "working_pattern": {
+      "works": true,
+      "workdays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "weekend_days": ["Saturday", "Sunday"],
+      "normal_start": "09:00",
+      "normal_finish": "17:30",
+      "commute_mode": "train, walking, or working from a shared desk depending on the day",
+      "role_summary": "Isla works a normal UK office/creative-admin week. Work creates meetings, deadlines, replies, packed lunches, travel windows, and reasons the puzzle must fit around life rather than replace it.",
+      "work_story_rule": "On workdays the daily anchor should usually be short and practical: work meeting with a named contact in a named channel/location, document check, deadline, commute, or lunch break. The story decides the detail later."
+    },
+    "annual_leave": {
+      "allowance_days": 20,
+      "rule": "Annual leave is pre-planned, separate from bank holidays. Leave days can create prep, travel, reset, or family context but should not become full stories by themselves.",
+      "planned_2026": [
+        { "date": "2026-04-07", "title": "Easter leave", "reason": "extend Easter break", "sub_character": "Isla", "engagement_channel": "calendar_note" },
+        { "date": "2026-04-08", "title": "Easter leave", "reason": "extend Easter break", "sub_character": "Isla", "engagement_channel": "calendar_note" },
+        { "date": "2026-04-09", "title": "Easter leave", "reason": "extend Easter break", "sub_character": "Isla", "engagement_channel": "calendar_note" },
+        { "date": "2026-04-10", "title": "Easter leave", "reason": "extend Easter break", "sub_character": "Maya", "engagement_channel": "phone_message" },
+        { "date": "2026-05-26", "title": "Spring leave", "reason": "use the short week after spring bank holiday", "sub_character": "Mum", "engagement_channel": "phone_message" },
+        { "date": "2026-05-27", "title": "Spring leave", "reason": "use the short week after spring bank holiday", "sub_character": "Mum", "engagement_channel": "phone_message" },
+        { "date": "2026-06-15", "title": "Post-travel leave", "reason": "recover after the night away", "sub_character": "Maya", "engagement_channel": "phone_message" },
+        { "date": "2026-06-16", "title": "Post-travel leave", "reason": "sort bag, notes, and travel receipts", "sub_character": "Isla", "engagement_channel": "self_note" },
+        { "date": "2026-08-24", "title": "Late summer leave", "reason": "summer week off before the August bank holiday", "sub_character": "Maya", "engagement_channel": "phone_message" },
+        { "date": "2026-08-25", "title": "Late summer leave", "reason": "summer week off before the August bank holiday", "sub_character": "Maya", "engagement_channel": "phone_message" },
+        { "date": "2026-08-26", "title": "Late summer leave", "reason": "summer week off before the August bank holiday", "sub_character": "Theo", "engagement_channel": "local_message" },
+        { "date": "2026-08-27", "title": "Late summer leave", "reason": "summer week off before the August bank holiday", "sub_character": "Theo", "engagement_channel": "local_message" },
+        { "date": "2026-08-28", "title": "Late summer leave", "reason": "summer week off before the August bank holiday", "sub_character": "Isla", "engagement_channel": "self_note" },
+        { "date": "2026-10-29", "title": "Autumn long weekend leave", "reason": "library and room reset long weekend", "sub_character": "Lena", "engagement_channel": "library_notice" },
+        { "date": "2026-10-30", "title": "Autumn long weekend leave", "reason": "library and room reset long weekend", "sub_character": "Isla", "engagement_channel": "self_note" },
+        { "date": "2026-12-21", "title": "Christmas leave", "reason": "start Christmas break", "sub_character": "Mum", "engagement_channel": "phone_message" },
+        { "date": "2026-12-22", "title": "Christmas leave", "reason": "Christmas errands and calls", "sub_character": "Mum", "engagement_channel": "phone_message" },
+        { "date": "2026-12-23", "title": "Christmas leave", "reason": "Christmas preparation", "sub_character": "Maya", "engagement_channel": "phone_message" },
+        { "date": "2026-12-24", "title": "Christmas Eve leave", "reason": "finish work-free Christmas preparation", "sub_character": "Mum", "engagement_channel": "phone_message" },
+        { "date": "2026-12-29", "title": "Christmas leave", "reason": "slow return after Christmas", "sub_character": "Isla", "engagement_channel": "self_note" }
+      ]
+    },
+    "public_holidays_2026": [
+      { "date": "2026-01-01", "title": "New Year’s Day", "type": "bank_holiday", "story_hint": "No work. Isla starts the year with a small reset instead of a normal workday." },
+      { "date": "2026-04-03", "title": "Good Friday", "type": "bank_holiday", "story_hint": "No work. Easter has already been in the background for days, so the puzzle fits into a slower morning." },
+      { "date": "2026-04-06", "title": "Easter Monday", "type": "bank_holiday", "story_hint": "No work. Isla is coming out of the Easter weekend and choosing what to carry into the short week." },
+      { "date": "2026-05-04", "title": "Early May bank holiday", "type": "bank_holiday", "story_hint": "No work. May starts with a practical outdoor or family-shaped day." },
+      { "date": "2026-05-25", "title": "Spring bank holiday", "type": "bank_holiday", "story_hint": "No work. The long weekend changes the route and makes Tuesday feel like the real start." },
+      { "date": "2026-08-31", "title": "Summer bank holiday", "type": "bank_holiday", "story_hint": "No work. The end of summer break gives the day a reset-before-September feeling." },
+      { "date": "2026-12-25", "title": "Christmas Day", "type": "bank_holiday", "story_hint": "No work. Christmas has been building all month; the puzzle can be tiny, private, and secondary." },
+      { "date": "2026-12-28", "title": "Boxing Day substitute", "type": "bank_holiday", "story_hint": "No work. The substitute day keeps the Christmas aftermath alive before any return-to-work thinking." }
+    ],
+    "seasonal_buildups_2026": [
+      { "id": "easter_build", "label": "Easter buildup", "start": "2026-03-20", "end": "2026-04-06", "event_date": "2026-04-03", "sub_character": "Mum", "engagement_channel": "phone_message", "story_hint": "Easter should be visible in plans, leave, errands, or family messages well before Good Friday." },
+      { "id": "may_bank_holidays", "label": "May bank holiday stretch", "start": "2026-04-27", "end": "2026-05-25", "event_date": "2026-05-04", "sub_character": "Mum", "engagement_channel": "phone_message", "story_hint": "May has public holidays and short weeks, so work and family plans should keep shifting around them." },
+      { "id": "summer_bank_holiday", "label": "Summer bank holiday buildup", "start": "2026-08-10", "end": "2026-08-31", "event_date": "2026-08-31", "sub_character": "Maya", "engagement_channel": "phone_message", "story_hint": "The end-of-summer bank holiday should be mentioned before the final weekend, not only on the day." },
+      { "id": "christmas_build", "label": "Christmas buildup", "start": "2026-12-01", "end": "2026-12-28", "event_date": "2026-12-25", "sub_character": "Mum", "engagement_channel": "phone_message", "story_hint": "Christmas should be in the background from early December through leave, calls, errands, cards, travel, gifts, and work wind-down." }
+    ],
+    "recurring_work_anchors": {
+      "Monday": ["team planning meeting with Nora in Teams", "check the weekly file with Nora before lunch", "Monday work queue review at the shared desk"],
+      "Tuesday": ["supplier reply with Ravi in email", "admin catch-up before the commute", "print quote check with Ravi"],
+      "Wednesday": ["midweek review meeting with Nora", "library lunch-hour note check with Lena", "document tidy-up before the afternoon call"],
+      "Thursday": ["client check-in with Nora in Teams", "deadline note from Nora", "proofing block before the end of the day"],
+      "Friday": ["Friday wrap-up with Nora", "handover note before logging off", "reply to Maya after work"]
+    }
   },
   "event_types": {
     "birthday": { "default_overlay_style": "phone_notification", "preferred_flows": ["home_kitchen_day", "mailing_errand_day", "bookshop_weekend_day"] },
@@ -24,7 +90,10 @@
     "creative": { "default_overlay_style": "calendar_notification", "preferred_flows": ["library_day", "bookshop_weekend_day", "home_kitchen_day"] },
     "errand": { "default_overlay_style": "phone_notification", "preferred_flows": ["mailing_errand_day", "library_day", "home_kitchen_day"] },
     "work": { "default_overlay_style": "calendar_notification", "preferred_flows": ["work_pressure_day", "library_day", "commute_day"] },
-    "friendship": { "default_overlay_style": "phone_notification", "preferred_flows": ["weekend_no_work_day", "bookshop_weekend_day", "home_kitchen_day"] }
+    "friendship": { "default_overlay_style": "phone_notification", "preferred_flows": ["weekend_no_work_day", "bookshop_weekend_day", "home_kitchen_day"] },
+    "bank_holiday": { "default_overlay_style": "calendar_notification", "preferred_flows": ["weekend_no_work_day", "home_kitchen_day", "morning_walk_dog_day"] },
+    "annual_leave": { "default_overlay_style": "calendar_notification", "preferred_flows": ["weekend_no_work_day", "bedroom_reset_day", "commute_day"] },
+    "seasonal_buildup": { "default_overlay_style": "phone_notification", "preferred_flows": ["home_kitchen_day", "mailing_errand_day", "work_pressure_day"] }
   },
   "sub_characters": {
     "Mum": { "role": "family", "allowed_surface": "phone message, missed call, calendar note", "voice": "practical and warm" },
@@ -33,41 +102,42 @@
     "Lena": { "role": "library thread", "allowed_surface": "library reminder, reservation email, due-date slip", "voice": "calm and specific" },
     "Nora": { "role": "work/client thread", "allowed_surface": "calendar invite or work message", "voice": "deadline-focused" },
     "Theo": { "role": "neighbour/outdoor thread", "allowed_surface": "doorstep note, dog-walk message, local reminder", "voice": "casual and time-based" },
+    "Calendar": { "role": "system reminder", "allowed_surface": "calendar notification", "voice": "short and factual" },
     "Isla": { "role": "self-note", "allowed_surface": "calendar note, notebook line, phone reminder", "voice": "plain and decisive" }
   },
   "year_arc": {
     "title": "Isla builds a steadier year one small commitment at a time.",
-    "rule": "Every day has a concrete life reason before the puzzle appears. The puzzle responds to the day; it is never the whole story.",
+    "rule": "Every day has a concrete life reason before the puzzle appears. Work, leave, bank holidays, sub-character threads, and seasonal commitments come first; the puzzle responds to the day and is never the whole story.",
     "quarter_arcs": [
-      { "months": [1, 2, 3], "theme": "rebuild routine and make space" },
-      { "months": [4, 5, 6], "theme": "move outside, reconnect, prepare for travel" },
-      { "months": [7, 8, 9], "theme": "turn notes into useful output and keep promises" },
-      { "months": [10, 11, 12], "theme": "gather ideas, reset the room, close the year properly" }
+      { "months": [1, 2, 3], "theme": "rebuild routine and make space around work" },
+      { "months": [4, 5, 6], "theme": "balance work, Easter, May bank holidays, outside time, and travel" },
+      { "months": [7, 8, 9], "theme": "turn notes into useful output and use summer leave well" },
+      { "months": [10, 11, 12], "theme": "gather ideas, reset the room, wind work down, and close Christmas properly" }
     ]
   },
   "daily_anchor_blueprint": {
     "weekday_rhythm": {
-      "Monday": { "type": "work", "title_stub": "Week plan", "reminder_sender": "Isla", "reminder_message": "Choose the first task", "story_move": "Isla decides what gets done before the week starts making decisions for her.", "preferred_panel": 1, "preferred_flows": ["home_kitchen_day", "work_pressure_day"] },
-      "Tuesday": { "type": "errand", "title_stub": "Small errand", "reminder_sender": "Calendar", "reminder_message": "Fit the errand in", "story_move": "A small errand changes the route and gives the puzzle a narrow window.", "preferred_panel": 2, "preferred_flows": ["mailing_errand_day", "commute_day"] },
-      "Wednesday": { "type": "creative", "title_stub": "Midweek note", "reminder_sender": "Isla", "reminder_message": "Keep one useful note", "story_move": "Isla keeps one useful thought instead of collecting another half-finished idea.", "preferred_panel": 3, "preferred_flows": ["library_day", "home_kitchen_day"] },
+      "Monday": { "type": "work", "title_stub": "Week plan", "reminder_sender": "Isla", "reminder_message": "Choose the first task", "story_move": "Isla starts with work, a meeting, or a weekly file before the puzzle gets a narrow slot.", "preferred_panel": 1, "preferred_flows": ["home_kitchen_day", "work_pressure_day"] },
+      "Tuesday": { "type": "work", "title_stub": "Work errand", "reminder_sender": "Calendar", "reminder_message": "Fit the work errand in", "story_move": "A work errand or admin task changes the route and gives the puzzle a narrow window.", "preferred_panel": 2, "preferred_flows": ["mailing_errand_day", "commute_day"] },
+      "Wednesday": { "type": "work", "title_stub": "Midweek check", "reminder_sender": "Isla", "reminder_message": "Keep one useful note", "story_move": "Isla handles a midweek work check and keeps one useful thought instead of collecting another half-finished idea.", "preferred_panel": 3, "preferred_flows": ["library_day", "work_pressure_day"] },
       "Thursday": { "type": "work", "title_stub": "Work boundary", "reminder_sender": "Nora", "reminder_message": "Can you check this later?", "story_move": "A work message tests whether Isla can answer properly without giving away the whole day.", "preferred_panel": 2, "preferred_flows": ["work_pressure_day", "library_day"] },
-      "Friday": { "type": "friendship", "title_stub": "Reply properly", "reminder_sender": "Maya", "reminder_message": "You free later?", "story_move": "Isla chooses a proper reply instead of leaving the message hanging.", "preferred_panel": 2, "preferred_flows": ["weekend_no_work_day", "bookshop_weekend_day"] },
+      "Friday": { "type": "work", "title_stub": "Wrap-up and reply", "reminder_sender": "Nora", "reminder_message": "Wrap-up before you log off", "story_move": "Isla closes the work week properly before replying to anything social.", "preferred_panel": 2, "preferred_flows": ["work_pressure_day", "weekend_no_work_day"] },
       "Saturday": { "type": "personal_reset", "title_stub": "Outside first", "reminder_sender": "Theo", "reminder_message": "Walk before it gets busy?", "story_move": "The day starts with movement, so the puzzle has to fit around real life rather than replace it.", "preferred_panel": 1, "preferred_flows": ["morning_walk_dog_day", "bookshop_weekend_day"] },
       "Sunday": { "type": "personal_reset", "title_stub": "Reset before Monday", "reminder_sender": "Isla", "reminder_message": "Clear one thing", "story_move": "Isla resets one visible thing so Monday starts with less friction.", "preferred_panel": 1, "preferred_flows": ["bedroom_reset_day", "home_kitchen_day"] }
     },
     "monthly_arcs": {
-      "01": { "name": "January routine rebuild", "daily_focus": "protecting a workable morning routine", "visual_motifs": ["home entry table", "planner", "keys", "winter light"], "sub_character_bias": ["Mum", "Isla", "Nora"] },
-      "02": { "name": "February library and admin", "daily_focus": "returning borrowed things and closing small loops", "visual_motifs": ["library slip", "book stack", "receipt", "bag by the door"], "sub_character_bias": ["Lena", "Ravi", "Isla"] },
-      "03": { "name": "March appointment pressure", "daily_focus": "leaving on time and not letting appointments eat the day", "visual_motifs": ["calendar invite", "coat", "station sign", "waiting room note"], "sub_character_bias": ["Nora", "Mum", "Isla"] },
-      "04": { "name": "April outdoor reset", "daily_focus": "starting outside before screens take over", "visual_motifs": ["walking shoes", "park bench", "light jacket", "phone reminder"], "sub_character_bias": ["Theo", "Maya", "Isla"] },
-      "05": { "name": "May family and bank-holiday texture", "daily_focus": "keeping personal time even when plans move around", "visual_motifs": ["tote bag", "family message", "train platform", "shop receipt"], "sub_character_bias": ["Mum", "Maya", "Ravi"] },
-      "06": { "name": "June travel preparation", "daily_focus": "packing, leaving, and using unfamiliar tables well", "visual_motifs": ["overnight bag", "charger", "ticket", "hotel key"], "sub_character_bias": ["Isla", "Maya", "Ravi"] },
-      "07": { "name": "July creative print review", "daily_focus": "turning scattered notes into something usable", "visual_motifs": ["marked pages", "print notes", "library table", "folder"], "sub_character_bias": ["Lena", "Nora", "Isla"] },
-      "08": { "name": "August errands and fulfilment", "daily_focus": "sending things, collecting things, and making routes count", "visual_motifs": ["parcel", "envelope", "counter receipt", "tote bag"], "sub_character_bias": ["Ravi", "Maya", "Isla"] },
-      "09": { "name": "September friendship and follow-through", "daily_focus": "replying, remembering, and not letting people become background tasks", "visual_motifs": ["birthday reminder", "message thread", "photo notification", "bookshop table"], "sub_character_bias": ["Maya", "Mum", "Isla"] },
-      "10": { "name": "October library ideas", "daily_focus": "using the library as a place where ideas get sorted", "visual_motifs": ["library notes", "book list", "raincoat", "reading lamp"], "sub_character_bias": ["Lena", "Theo", "Isla"] },
-      "11": { "name": "November room reset", "daily_focus": "making the room less noisy before the day begins", "visual_motifs": ["laundry chair", "clear desk", "bag hook", "winter window"], "sub_character_bias": ["Isla", "Mum", "Nora"] },
-      "12": { "name": "December family and year close", "daily_focus": "answering properly and closing the year without rushing", "visual_motifs": ["family call", "gift list", "train timetable", "closed notebook"], "sub_character_bias": ["Mum", "Maya", "Isla"] }
+      "01": { "name": "January routine rebuild", "daily_focus": "protecting a workable morning routine around normal work", "visual_motifs": ["home entry table", "planner", "keys", "winter light"], "sub_character_bias": ["Mum", "Isla", "Nora"] },
+      "02": { "name": "February library and admin", "daily_focus": "returning borrowed things and closing small loops between work blocks", "visual_motifs": ["library slip", "book stack", "receipt", "bag by the door"], "sub_character_bias": ["Lena", "Ravi", "Isla"] },
+      "03": { "name": "March appointment pressure", "daily_focus": "leaving on time and not letting appointments or meetings eat the day", "visual_motifs": ["calendar invite", "coat", "station sign", "waiting room note"], "sub_character_bias": ["Nora", "Mum", "Isla"] },
+      "04": { "name": "April Easter and outdoor reset", "daily_focus": "balancing Easter, leave, work catch-up, and starting outside before screens take over", "visual_motifs": ["walking shoes", "park bench", "light jacket", "phone reminder"], "sub_character_bias": ["Theo", "Maya", "Mum"] },
+      "05": { "name": "May bank holidays and short weeks", "daily_focus": "keeping personal time while work shifts around public holidays and family plans", "visual_motifs": ["tote bag", "family message", "train platform", "shop receipt"], "sub_character_bias": ["Mum", "Maya", "Nora"] },
+      "06": { "name": "June work and travel preparation", "daily_focus": "packing, leaving, work meetings, and using unfamiliar tables well", "visual_motifs": ["overnight bag", "charger", "ticket", "hotel key"], "sub_character_bias": ["Isla", "Maya", "Nora"] },
+      "07": { "name": "July creative print review", "daily_focus": "turning scattered notes into something usable between work checks", "visual_motifs": ["marked pages", "print notes", "library table", "folder"], "sub_character_bias": ["Lena", "Nora", "Isla"] },
+      "08": { "name": "August errands, fulfilment and leave", "daily_focus": "sending things, collecting things, and using late-summer leave well", "visual_motifs": ["parcel", "envelope", "counter receipt", "tote bag"], "sub_character_bias": ["Ravi", "Maya", "Isla"] },
+      "09": { "name": "September friendship and follow-through", "daily_focus": "replying, remembering, and not letting people become background tasks while work restarts properly", "visual_motifs": ["birthday reminder", "message thread", "photo notification", "bookshop table"], "sub_character_bias": ["Maya", "Mum", "Nora"] },
+      "10": { "name": "October library ideas", "daily_focus": "using the library as a place where ideas get sorted around autumn work", "visual_motifs": ["library notes", "book list", "raincoat", "reading lamp"], "sub_character_bias": ["Lena", "Theo", "Isla"] },
+      "11": { "name": "November room reset", "daily_focus": "making the room less noisy before work and winter routines take over", "visual_motifs": ["laundry chair", "clear desk", "bag hook", "winter window"], "sub_character_bias": ["Isla", "Mum", "Nora"] },
+      "12": { "name": "December work wind-down and Christmas", "daily_focus": "answering properly, closing work, using leave, and letting Christmas build naturally", "visual_motifs": ["family call", "gift list", "train timetable", "closed notebook"], "sub_character_bias": ["Mum", "Maya", "Nora"] }
     }
   },
   "events": [
