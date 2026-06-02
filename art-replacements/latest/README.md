@@ -1,4 +1,4 @@
-# Sapiver Press Comic Art Replacement Slots — 2026-06-01
+# Sapiver Press Comic Art Replacement Slots — 2026-06-02
 
 Drop finished generated panel artwork into this folder using these exact names:
 

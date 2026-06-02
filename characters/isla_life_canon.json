@@ -29,12 +29,6 @@
     {
       "date": "2026-05-29",
       "attempt": 31,
-      "setting": "gothic window desk with cityscape view",
-      "reason": "she wants a quiet start before the day gets noisy"
-    },
-    {
-      "date": "2026-05-29",
-      "attempt": 31,
       "setting": "bookshop cafe corner",
       "reason": "she has come for one thing but stays for the quiet corner"
     },
@@ -385,15 +379,15 @@
       "attempt": 12,
       "setting": "small kitchen table in warm morning light",
       "reason": "home is still half-asleep and she has a few minutes to herself"
+    },
+    {
+      "date": "2026-06-02",
+      "attempt": 1,
+      "setting": "train table by the window",
+      "reason": "she is travelling and using the journey as thinking time"
     }
   ],
   "variant_memory": [
-    {
-      "date": "2026-05-29",
-      "attempt": 31,
-      "variant_name": "Trigoku",
-      "panel_index": 2
-    },
     {
       "date": "2026-05-29",
       "attempt": 31,
@@ -747,21 +741,15 @@
       "attempt": 12,
       "variant_name": "Anti-Knight",
       "panel_index": 2
+    },
+    {
+      "date": "2026-06-02",
+      "attempt": 1,
+      "variant_name": "Anti-Knight",
+      "panel_index": 2
     }
   ],
   "life_memory": [
-    {
-      "date": "2026-05-29",
-      "attempt": 31,
-      "location": "gothic window desk with cityscape view",
-      "reason_for_location": "she wants a quiet start before the day gets noisy",
-      "life_detail_learned": "Isla protects small morning rituals when she needs steadiness.",
-      "thread_to_continue": "quiet morning rituals help her reset",
-      "puzzle_variant_mentioned": "Trigoku",
-      "variant_panel_index": 2,
-      "uk_calendar_date": null,
-      "uk_calendar_panel_index": null
-    },
     {
       "date": "2026-05-29",
       "attempt": 31,
@@ -1469,8 +1457,20 @@
       "variant_panel_index": 2,
       "uk_calendar_date": null,
       "uk_calendar_panel_index": null
+    },
+    {
+      "date": "2026-06-02",
+      "attempt": 1,
+      "location": "train table by the window",
+      "reason_for_location": "she is travelling and using the journey as thinking time",
+      "life_detail_learned": "Isla likes journeys because they give her contained thinking time.",
+      "thread_to_continue": "train rides become moving pockets of focus",
+      "puzzle_variant_mentioned": "Anti-Knight",
+      "variant_panel_index": 2,
+      "uk_calendar_date": null,
+      "uk_calendar_panel_index": null
     }
   ],
-  "last_updated": "2026-06-01",
+  "last_updated": "2026-06-02",
   "calendar_memory": []
 }

@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <title>Daily Anti-Knight Sudoku</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <style>
+    :root{
+      --bg1:#F6F7FF;
+      --bg2:#F3FBF7;
+      --panel:#FFFFFF;
+      --panel2:#FBFBFF;
+      --stroke: rgba(17,24,39,.10);
+      --stroke2: rgba(17,24,39,.16);
+      --text:#111827;
+      --muted: rgba(17,24,39,.65);
+
+      --violet:#7C3AED;
+      --green:#16A34A;
+      --amber:#F59E0B;
+      --rose:#FB7185;
+      --blue:#3B82F6;
+
+      --cellBg:#FFFFFF;
+      --cellAlt:#FAFAFF;
+      --cellGiven:#EEF2FF;
+      --cellUnlock: rgba(245,158,11,.22);
+      --cellConflict: rgba(251,113,133,.22);
+      --cellSelect: rgba(124,58,237,.28);
+      --hintBg: rgba(59,130,246,.16);
+
+      --shadow: 0 18px 45px rgba(15,23,42,.12);
+      --r: 16px;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      padding:14px;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(900px 600px at 12% 0%, rgba(124,58,237,.12), transparent 55%),
+        radial-gradient(900px 600px at 90% 0%, rgba(22,163,74,.10), transparent 55%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+      color: var(--text);
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+      min-height:100vh;
+      overflow-x:hidden;
+    }
+
+    .app{
+      width:min(1100px, 100%);
+      background: linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.72));
+      border:1px solid var(--stroke);
+      border-radius: calc(var(--r) + 6px);
+      box-shadow: var(--shadow);
+      padding: 16px;
+      display:flex;
+      flex-direction:column;
+      gap: 14px;
+      backdrop-filter: blur(6px);
+    }
+
+    header{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      align-items:flex-start;
+      justify-content:space-between;
+      padding: 6px 4px 12px;
+      border-bottom: 1px solid var(--stroke);
+    }
+    header h1{ margin:0; font-size: 24px; letter-spacing: .2px; }
+    .sub{
+      margin:8px 0 0;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.35;
+      max-width: 650px;
+    }
+    .badgeRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 8px;
+      margin-top:10px;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.75);
+      border: 1px solid var(--stroke);
+      color: var(--text);
+      width:fit-content;
+    }
+    .dot{
+      width:8px; height:8px; border-radius:99px;
+      background: var(--violet);
+      box-shadow: 0 0 0 4px rgba(124,58,237,.12);
+    }
+    .dot.green{ background: var(--green); box-shadow: 0 0 0 4px rgba(22,163,74,.12); }
+    .dot.amber{ background: var(--amber); box-shadow: 0 0 0 4px rgba(245,158,11,.14); }
+
+    .meta{
+      text-align:right;
+      font-size: 13px;
+      color: var(--muted);
+      display:flex;
+      flex-direction:column;
+      gap: 6px;
+    }
+    .meta b{ color: var(--text); }
+
+    .layout{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 14px;
+    }
+    @media (max-width: 900px){
+      .layout{ grid-template-columns: 1fr; }
+      .meta{ text-align:left; }
+    }
+
+    .panel{
+      background: rgba(255,255,255,.78);
+      border:1px solid var(--stroke);
+      border-radius: var(--r);
+      padding: 14px;
+    }
+
+    .boardWrap{ width:min(560px, 100%); margin: 0 auto; }
+    .board{
+      width:100%;
+      aspect-ratio: 1 / 1;
+      display:grid;
+      grid-template-columns: repeat(9, 1fr);
+      grid-template-rows: repeat(9, 1fr);
+      border: 2px solid rgba(17,24,39,.30);
+      border-radius: 14px;
+      overflow:hidden;
+      background: rgba(17,24,39,.04);
+      position:relative;
+}
+.cell{
+      position:relative;
+      border: 1px solid rgba(17,24,39,.16);
+      background: var(--cellBg);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      user-select:none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .cell.alt{ background: var(--cellAlt); }
+    .cell.thickR{ border-right-width: 2px; border-right-color: rgba(17,24,39,.30); }
+    .cell.thickB{ border-bottom-width: 2px; border-bottom-color: rgba(17,24,39,.30); }
+
+    .cell button{
+      width:100%; height:100%;
+      border:0;
+      background:transparent;
+      color: var(--text);
+      font-size: clamp(18px, 5vw, 24px);
+      font-weight: 650;
+      cursor:pointer;
+    }
+
+    .cell.given{ background: var(--cellGiven); }
+    .cell.given button{ font-weight: 900; cursor: default; }
+    .cell.selected{ box-shadow: inset 0 0 0 3px var(--cellSelect); }
+    .cell.unlocked button{ background: var(--cellUnlock); font-weight: 900; }
+
+    .cell.conflict button{
+      background: var(--cellConflict);
+      color: #7F1D1D;
+      font-weight: 900;
+    }
+    .cell.hinted button{
+      background: var(--hintBg);
+      color: #1E40AF;
+      font-weight: 900;
+    }
+    .cell.revealed button{
+      background: rgba(22,163,74,.10);
+      color:#065F46;
+      font-weight: 900;
+    }
+
+    .cell.locked{ background: rgba(17,24,39,.06); }
+    .cell.locked button{ cursor:not-allowed; }
+    .cell.locked::after{
+      content:"";
+      position:absolute;
+      width:90%; height:90%;
+      opacity:.9;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23111827' d='M46 28h-2v-6c0-6.6-5.4-12-12-12S20 15.4 20 22v6h-2c-3.3 0-6 2.7-6 6v18c0 3.3 2.7 6 6 6h28c3.3 0 6-2.7 6-6V34c0-3.3-2.7-6-6-6zM26 22c0-3.3 2.7-6 6-6s6 2.7 6 6v6H26v-6zm8 23.7V48c0 1.1-.9 2-2 2s-2-.9-2-2v-2.3c-1.2-.7-2-2-2-3.4 0-2.2 1.8-4 4-4s4 1.8 4 4c0 1.4-.8 2.7-2 3.4z'/%3E%3C/svg%3E");
+      background-repeat:no-repeat;
+      background-position:center;
+      background-size:contain;
+      pointer-events:none;
+    }
+
+    .keypad{
+      width:min(560px, 100%);
+      margin: 14px auto 0;
+      display:grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+    .key{
+      height: 54px;
+      border-radius: 14px;
+      border:1px solid var(--stroke2);
+      background: rgba(255,255,255,.85);
+      color: var(--text);
+      font-size: 18px;
+      font-weight: 700;
+      cursor:pointer;
+      box-shadow: 0 10px 18px rgba(15,23,42,.10);
+    }
+    .key:active{ transform: translateY(1px); box-shadow:none; }
+    .key.clear{
+      background: rgba(251,113,133,.12);
+      border-color: rgba(251,113,133,.35);
+      color: #9F1239;
+      font-weight: 800;
+    }
+
+    .controls{ display:flex; gap:10px; flex-wrap:wrap; }
+    .btn{
+      border:0;
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-weight: 800;
+      cursor:pointer;
+      color: var(--text);
+      background: rgba(255,255,255,.85);
+      border:1px solid var(--stroke2);
+      box-shadow: 0 12px 20px rgba(15,23,42,.10);
+    }
+    .btn:active{ transform: translateY(1px); box-shadow:none; }
+    .btn.primary{ background: rgba(124,58,237,.12); border-color: rgba(124,58,237,.30); color:#4C1D95; }
+    .btn.good{ background: rgba(22,163,74,.12); border-color: rgba(22,163,74,.28); color:#065F46; }
+    .btn.warn{ background: rgba(245,158,11,.14); border-color: rgba(245,158,11,.32); color:#92400E; }
+    .btn.bad{ background: rgba(251,113,133,.14); border-color: rgba(251,113,133,.30); color:#9F1239; }
+
+    .status{
+      margin-top: 10px;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.80);
+      color: var(--muted);
+      min-height: 52px;
+      line-height: 1.35;
+      font-size: 14px;
+    }
+
+    .stack{ display:flex; flex-direction:column; gap: 10px; margin-top: 10px; }
+    .stat{
+      display:flex;
+      justify-content:space-between;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.80);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .stat b{ color: var(--text); font-weight: 900; }
+
+    .done{
+      padding: 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(22,163,74,.25);
+      background: rgba(22,163,74,.08);
+      color: #065F46;
+    }
+    .done h2{ margin:0 0 6px; font-size: 16px; }
+    .hidden{ display:none !important; }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div>
+        <h1>Daily Anti-Knight Sudoku</h1>
+        <div class="sub">
+          One puzzle per day (7/week). At midnight, today’s puzzle expires (solution revealed) and tomorrow’s becomes playable.
+          <div class="badgeRow">
+            <span class="pill"><span class="dot"></span><span id="weekLabel">Week of 2026-06-01 • 7 puzzles</span></span>
+            <span class="pill"><span class="dot green"></span><span id="dayLabel">Today: Tue (Day 2)</span></span>
+            <span class="pill"><span class="dot amber"></span><span id="modeLabel">Variant: Anti-Knight Sudoku</span></span>
+          </div>
+        </div>
+      </div>
+      <div class="meta">
+        <div class="pill" style="justify-content:flex-end; gap:10px;">
+          <span style="opacity:.75">Day</span> <b id="dayNum">2</b> <span style="opacity:.75">/</span> <b>7</b>
+        </div>
+        <div id="doneCounter">Solved this week: 0 / 7</div>
+        <div><b id="countdown">Next puzzle in 18:46:02</b></div>
+        <div style="opacity:.85">Saved: <b id="savedLabel">saved</b></div>
+      </div>
+    </header>
+
+    <div id="allDone" class="done hidden">
+      <h2>All seven puzzles solved 🎉</h2>
+      <div>New set starts next Monday.</div>
+    </div>
+
+    <div class="layout" id="mainLayout">
+      <div class="panel">
+        <div class="boardWrap">
+          <div id="board" class="board" aria-label="Trigoku board"><div class="cell"><button type="button"></button></div><div class="cell alt"><button type="button"></button></div><div class="cell thickR"><button type="button"></button></div><div class="cell alt given"><button type="button" disabled="">9</button></div><div class="cell given"><button type="button" disabled="">4</button></div><div class="cell alt thickR"><button type="button"></button></div><div class="cell"><button type="button"></button></div><div class="cell alt"><button type="button"></button></div><div class="cell"><button type="button"></button></div><div class="cell alt"><button type="button"></button></div><div class="cell"><button type="button"></button></div><div class="cell alt thickR"><button type="button"></button></div><div class="cell"><button type="button"></button></div><div class="cell alt"><button type="button"></button></div><div class="cell thickR given"><button type="button" disabled="">6</button></div><div class="cell alt"><button type="button"></button></div><div class="cell"><button type="button"></button></div><div class="cell alt given"><button type="button" disabled="">4</button></div><div class="cell thickB given"><button type="button" disabled="">4</button></div><div class="cell alt thickB"><button type="button"></button></div><div class="cell thickR thickB"><button type="button"></button></div><div class="cell alt thickB"><button type="button"></button></div><div class="cell thickB given"><button type="button" disabled="">8</button></div><div class="cell alt thickR thickB"><button type="button"></button></div><div class="cell thickB"><button type="button"></button></div><div class="cell alt thickB"><button type="button"></button></div><div class="cell thickB given"><button type="button" disabled="">7</button></div><div class="cell alt"><button type="button"></button></div><div class="cell"><button type="button"></button></div><div class="cell alt thickR given"><button type="button" disabled="">7</button></div><div class="cell given"><button type="button" disabled="">8</button></div><div class="cell alt given"><button type="button" disabled="">2</button></div><div class="cell thickR"><button type="button"></button></div><div class="cell alt given"><button type="button" disabled="">4</button></div><div class="cell"><button type="button"></button></div><div class="cell alt"><button type="button"></button></div><div class="cell"><button type="button"></button></div><div class="cell alt given"><button type="button" disabled="">1</button></div><div class="cell thickR given"><button type="button" disabled="">8</button></div><div class="cell alt given"><button type="button" disabled="">6</button></div><div class="cell given"><button type="button" disabled="">3</button></div><div class="cell alt thickR"><button type="button"></button></div><div class="cell"><button type="button"></button></div><div class="cell alt"><button type="button"></button></div><div class="cell"><button type="button"></button></div><div class="cell alt thickB"><button type="button"></button></div><div class="cell thickB"><button type="button"></button></div><div class="cell alt thickR thickB"><button type="button"></button></div><div class="cell thickB"><button type="button"></button></div><div class="cell alt thickB"><button type="button"></button></div><div class="cell thickR thickB"><button type="button"></button></div><div class="cell alt thickB"><button type="button"></button></div><div class="cell thickB"><button type="button"></button></div><div class="cell alt thickB given"><button type="button" disabled="">3</button></div><div class="cell given"><button type="button" disabled="">7</button></div><div class="cell alt given"><button type="button" disabled="">6</button></div><div class="cell thickR"><button type="button"></button></div><div class="cell alt given"><button type="button" disabled="">2</button></div><div class="cell"><button type="button"></button></div><div class="cell alt thickR given"><button type="button" disabled="">8</button></div><div class="cell given"><button type="button" disabled="">9</button></div><div class="cell alt given"><button type="button" disabled="">4</button></div><div class="cell given"><button type="button" disabled="">1</button></div><div class="cell alt"><button type="button"></button></div><div class="cell"><button type="button"></button></div><div class="cell alt thickR"><button type="button"></button></div><div class="cell given"><button type="button" disabled="">4</button></div><div class="cell alt given"><button type="button" disabled="">6</button></div><div class="cell thickR given"><button type="button" disabled="">3</button></div><div class="cell alt"><button type="button"></button></div><div class="cell given"><button type="button" disabled="">7</button></div><div class="cell alt"><button type="button"></button></div><div class="cell"><button type="button"></button></div><div class="cell alt"><button type="button"></button></div><div class="cell thickR given"><button type="button" disabled="">4</button></div><div class="cell alt"><button type="button"></button></div><div class="cell"><button type="button"></button></div><div class="cell alt thickR given"><button type="button" disabled="">1</button></div><div class="cell"><button type="button"></button></div><div class="cell alt"><button type="button"></button></div><div class="cell given"><button type="button" disabled="">6</button></div></div>
+        </div>
+
+        <div class="keypad" id="keypad" aria-label="Keypad">
+          <button class="key" data-k="1">1</button>
+          <button class="key" data-k="2">2</button>
+          <button class="key" data-k="3">3</button>
+          <button class="key" data-k="4">4</button>
+          <button class="key" data-k="5">5</button>
+          <button class="key" data-k="6">6</button>
+          <button class="key" data-k="7">7</button>
+          <button class="key" data-k="8">8</button>
+          <button class="key" data-k="9">9</button>
+          <button class="key clear" data-k="del">Clear</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="controls">
+          <button class="btn primary" id="hintBtn">Hint</button>
+          <button class="btn good" id="checkBtn">Check</button>
+          <button class="btn warn" id="prevBtn">Prev</button>
+          <button class="btn warn" id="nextBtn">Next</button>
+          <button class="btn bad" id="resetBtn">Reset</button>
+        <button class="btn" id="shareBtn">Share</button>
+        <button class="btn" id="downloadBtn">Download</button>
+        </div>
+
+        <div class="status" id="status">
+          Tap a square, then use the keypad. Wrong placements highlight red immediately. There are no extra clue marks for anti-knight; the rule is global.
+        </div>
+
+        <div class="stack">
+          <div class="stat"><span>Hints used</span><b id="hintsUsed">0/3</b></div>
+          <div class="stat"><span>Mistakes (from checks)</span><b id="mistakes">0</b></div>
+          <div class="stat"><span>Today</span><b id="availability">Playable</b></div>
+        </div>
+
+        <div style="margin-top:10px; color:var(--muted); font-size:13px; line-height:1.35">
+          <div><b>Rule clarity:</b> Classic Sudoku rules + <b>identical digits may not be a chess knight’s move apart</b>.</div>
+          <div><b>Daily puzzle:</b> Everyone gets the same anti-knight Sudoku each day. Share and compete easily.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>window.OFFLINE_DATA={"weekKey":"2026-06-01","dayOfWeek":1,"currentDay":1,"puzzles":[{"puzzle":[0,7,5,0,0,8,0,0,0,0,0,9,0,3,0,5,0,0,8,0,1,0,0,5,0,0,2,0,8,6,0,0,4,0,0,0,0,2,3,6,0,1,0,0,7,0,1,4,0,0,0,0,0,6,0,0,0,0,7,0,0,2,9,0,9,0,0,1,0,0,0,0,0,3,7,5,0,0,8,0,0],"solution":[3,7,5,2,6,8,9,1,4,2,4,9,1,3,7,5,6,8,8,6,1,9,4,5,7,3,2,5,8,6,7,2,4,1,9,3,9,2,3,6,8,1,4,5,7,7,1,4,3,5,9,2,8,6,1,5,8,4,7,6,3,2,9,4,9,2,8,1,3,6,7,5,6,3,7,5,9,2,8,4,1],"user":["","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""],"completed":false,"hintsUsed":0,"mistakes":0},{"puzzle":[0,0,0,9,4,0,0,0,0,0,0,0,0,0,6,0,0,4,4,0,0,0,8,0,0,0,7,0,0,7,8,2,0,4,0,0,0,1,8,6,3,0,0,0,0,0,0,0,0,0,0,0,0,3,7,6,0,2,0,8,9,4,1,0,0,0,4,6,3,0,7,0,0,0,4,0,0,1,0,0,6],"solution":[3,7,6,9,4,5,1,8,2,1,8,2,3,7,6,5,9,4,4,9,5,1,8,2,6,3,7,6,3,7,8,2,9,4,1,5,5,1,8,6,3,4,7,2,9,2,4,9,5,1,7,8,6,3,7,6,3,2,5,8,9,4,1,9,5,1,4,6,3,2,7,8,8,2,4,7,9,1,3,5,6],"user":["","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""],"completed":false,"hintsUsed":0,"mistakes":0},{"puzzle":[0,2,0,0,0,0,5,0,9,0,0,0,5,8,1,0,0,0,8,0,0,0,7,0,6,0,1,2,7,3,1,0,0,0,0,0,0,0,1,0,0,0,0,0,5,0,0,8,7,0,0,0,0,0,0,0,0,2,5,0,0,1,7,7,1,0,6,0,0,0,5,8,0,0,9,4,0,0,0,3,0],"solution":[1,2,7,3,6,4,5,8,9,9,6,4,5,8,1,3,7,2,8,3,5,9,7,2,6,4,1,2,7,3,1,9,5,8,6,4,6,9,1,8,4,3,7,2,5,4,5,8,7,2,6,1,9,3,3,4,6,2,5,8,9,1,7,7,1,2,6,3,9,4,5,8,5,8,9,4,1,7,2,3,6],"user":["","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""],"completed":false,"hintsUsed":0,"mistakes":0},{"puzzle":[3,7,5,1,0,0,2,0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,0,9,0,0,0,0,0,6,3,9,2,4,0,6,0,0,0,1,5,0,3,0,0,0,9,0,0,0,7,0,9,0,0,0,0,0,4,1,0,0,0,6,0,0,0,0,0,9,1,4,3,0,0,8,7,0,2],"solution":[3,7,5,1,8,9,2,4,6,6,9,2,3,4,7,1,5,8,4,1,8,2,5,6,3,9,7,7,5,1,8,6,3,9,2,4,2,6,9,4,7,1,5,8,3,8,3,4,9,2,5,6,7,1,9,8,7,6,3,2,4,1,5,5,2,6,7,1,4,8,3,9,1,4,3,5,9,8,7,6,2],"user":["","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""],"completed":false,"hintsUsed":0,"mistakes":0},{"puzzle":[6,5,0,0,0,0,0,0,1,0,4,9,1,0,0,3,7,0,7,0,0,0,4,0,0,6,5,9,0,0,0,0,0,0,0,0,0,2,4,0,0,0,0,3,0,0,0,0,8,2,9,5,4,0,5,7,0,0,9,2,1,8,0,0,0,0,6,0,0,0,0,0,0,0,0,7,0,4,0,0,0],"solution":[6,5,8,9,7,3,4,2,1,2,4,9,1,6,5,3,7,8,7,3,1,2,4,8,9,6,5,9,6,5,4,3,7,8,1,2,8,2,4,5,1,6,7,3,9,3,1,7,8,2,9,5,4,6,5,7,6,3,9,2,1,8,4,4,8,3,6,5,1,2,9,7,1,9,2,7,8,4,6,5,3],"user":["","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""],"completed":false,"hintsUsed":0,"mistakes":0},{"puzzle":[2,9,0,5,4,0,0,0,3,0,1,3,2,0,9,8,0,0,5,0,6,3,0,0,0,0,9,0,0,9,0,5,0,0,0,0,0,0,1,0,0,7,0,0,0,0,0,0,0,0,0,9,4,0,0,0,0,0,0,3,5,9,4,0,0,0,0,9,0,0,6,0,9,0,0,0,0,2,0,3,1],"solution":[2,9,8,5,4,6,1,7,3,4,1,3,2,7,9,8,5,6,5,7,6,3,1,8,4,2,9,8,2,9,6,5,4,3,1,7,3,4,1,9,2,7,6,8,5,6,5,7,8,3,1,9,4,2,1,6,2,7,8,3,5,9,4,7,3,4,1,9,5,2,6,8,9,8,5,4,6,2,7,3,1],"user":["","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""],"completed":false,"hintsUsed":0,"mistakes":0},{"puzzle":[0,0,5,0,0,7,0,0,0,0,0,1,9,0,0,7,0,0,0,7,0,1,0,2,0,3,4,0,0,2,4,0,8,0,0,0,0,3,4,0,7,0,0,0,9,0,1,6,0,0,0,0,4,0,0,6,8,0,0,0,4,0,5,0,4,0,0,0,0,0,9,3,0,0,0,0,4,6,2,0,0],"solution":[4,2,5,3,8,7,9,1,6,3,8,1,9,6,4,7,5,2,6,7,9,1,5,2,8,3,4,5,9,2,4,3,8,1,6,7,8,3,4,6,7,1,5,2,9,7,1,6,5,2,9,3,4,8,1,6,8,2,9,3,4,7,5,2,4,7,8,1,5,6,9,3,9,5,3,7,4,6,2,8,1],"user":["","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""],"completed":false,"hintsUsed":0,"mistakes":0}]};</script>
+<script>
+(() => {
+  "use strict";
+
+  const DAYS_PER_WEEK = 7;
+  const CLUES = 30;          // number of givens (approx)
+  const MAX_HINTS = 3;
+
+  const NS = "daily_anti_knight_v1";
+  const GLOBAL_SEED = "DAILY_ANTI_KNIGHT_GLOBAL_V1";
+  const STATE_KEY = (weekKey) => `${NS}:state:${weekKey}`;
+
+  const elWeekLabel = document.getElementById("weekLabel");
+  const elDayLabel = document.getElementById("dayLabel");
+  const elModeLabel = document.getElementById("modeLabel");
+  const elDayNum = document.getElementById("dayNum");
+  const elDoneCounter = document.getElementById("doneCounter");
+  const elCountdown = document.getElementById("countdown");
+  const elSavedLabel = document.getElementById("savedLabel");
+  const elBoard = document.getElementById("board");
+  const elStatus = document.getElementById("status");
+  const elAllDone = document.getElementById("allDone");
+  const elMainLayout = document.getElementById("mainLayout");
+  const elHintsUsed = document.getElementById("hintsUsed");
+  const elMistakes = document.getElementById("mistakes");
+  const elAvailability = document.getElementById("availability");
+
+  let weekKey = "";
+  let dayOfWeek = 0;   // 0..6 Mon..Sun
+  let currentDay = 0;  // viewed day
+  let selected = null;
+  let puzzles = [];
+  let tickId = null;
+  let offlineMode = false;
+
+  function setStatus(msg){ elStatus.textContent = msg; }
+  function nowMs(){ return Date.now(); }
+
+  function getMonday(d = new Date()){
+    const day = d.getDay();
+    const diffToMon = (day + 6) % 7;
+    const mon = new Date(d);
+    mon.setDate(d.getDate() - diffToMon);
+    mon.setHours(0,0,0,0);
+    return mon;
+  }
+  function toISODate(d){ return d.toISOString().slice(0,10); }
+  function getWeekKey(d = new Date()){ return toISODate(getMonday(d)); }
+  function getDayIndex(d = new Date()){
+    const mon = getMonday(d);
+    const dd = new Date(d); dd.setHours(0,0,0,0);
+    const diff = Math.floor((dd - mon)/86400000);
+    return Math.max(0, Math.min(6, diff));
+  }
+  function endOfDay(d = new Date()){
+    const dd = new Date(d);
+    dd.setHours(24,0,0,0);
+    return dd;
+  }
+  function formatHMS(ms){
+    const s = Math.max(0, Math.floor(ms/1000));
+    const hh = String(Math.floor(s/3600)).padStart(2,"0");
+    const mm = String(Math.floor((s%3600)/60)).padStart(2,"0");
+    const ss = String(s%60).padStart(2,"0");
+    return `${hh}:${mm}:${ss}`;
+  }
+
+  // Deterministic RNG
+  function makeRng(seed){
+    let s = seed % 2147483647;
+    if(s <= 0) s += 2147483646;
+    return () => (s = (s * 16807) % 2147483647, (s - 1) / 2147483646);
+  }
+  function shuffle(arr, rand){
+    for(let i=arr.length-1;i>0;i--){
+      const j = Math.floor(rand() * (i+1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+  }
+  function strSeed(str){
+    let h = 2166136261;
+    for(let i=0;i<str.length;i++){
+      h ^= str.charCodeAt(i);
+      h = Math.imul(h, 16777619);
+    }
+    return (h >>> 0) || 1;
+  }
+
+  // Anti-Knight constraints
+  function antiKnightConflict(grid, pos, num){
+    const r = (pos/9)|0, c = pos%9;
+    const offs = [[-2,-1],[-2,1],[-1,-2],[-1,2],[1,-2],[1,2],[2,-1],[2,1]];
+    for(const [dr,dc] of offs){
+      const rr = r+dr, cc = c+dc;
+      if(rr<0 || rr>8 || cc<0 || cc>8) continue;
+      if(grid[rr*9+cc] === num) return true;
+    }
+    return false;
+  }
+
+  function isSafe(grid, pos, num){
+    const row = (pos/9)|0;
+    const col = pos%9;
+    const base = row*9;
+    for(let j=0;j<9;j++) if(grid[base+j] === num) return false;
+    for(let r=0;r<9;r++) if(grid[col + 9*r] === num) return false;
+    const br = ((row/3)|0)*3;
+    const bc = ((col/3)|0)*3;
+    for(let rr=br; rr<br+3; rr++){
+      for(let cc=bc; cc<bc+3; cc++){
+        if(grid[rr*9 + cc] === num) return false;
+      }
+    }
+    if(antiKnightConflict(grid, pos, num)) return false;
+    return true;
+  }
+
+  function genSolution(rand){
+    const g = Array(81).fill(0);
+    function fill(pos){
+      if(pos === 81) return true;
+      if(g[pos] !== 0) return fill(pos+1);
+      const nums = [1,2,3,4,5,6,7,8,9];
+      shuffle(nums, rand);
+      for(const n of nums){
+        if(isSafe(g, pos, n)){
+          g[pos] = n;
+          if(fill(pos+1)) return true;
+          g[pos] = 0;
+        }
+      }
+      return false;
+    }
+    if(!fill(0)) throw new Error("Solution gen failed");
+    return g;
+  }
+
+  function carve(solution, rand, clues){
+    const p = solution.slice();
+    const pos = Array.from({length:81}, (_,i)=>i);
+    shuffle(pos, rand);
+    const blanks = Math.max(0, 81 - clues);
+    for(let k=0;k<blanks;k++) p[pos[k]] = 0;
+    return p;
+  }
+
+  function readVal(p, idx){
+    if(p.puzzle[idx] !== 0) return p.puzzle[idx];
+    const raw = p.user[idx];
+    if(!raw) return 0;
+    const n = parseInt(raw,10);
+    return (n>=1 && n<=9) ? n : 0;
+  }
+
+  function cellHasConflict(p, idx){
+    const v = readVal(p, idx);
+    if(v === 0) return false;
+    const row = (idx/9)|0;
+    const col = idx%9;
+    for(let c=0;c<9;c++){
+      const j = row*9 + c;
+      if(j !== idx && readVal(p, j) === v) return true;
+    }
+    for(let r=0;r<9;r++){
+      const k = r*9 + col;
+      if(k !== idx && readVal(p, k) === v) return true;
+    }
+    const br = ((row/3)|0)*3;
+    const bc = ((col/3)|0)*3;
+    for(let rr=br; rr<br+3; rr++){
+      for(let cc=bc; cc<bc+3; cc++){
+        const t = rr*9 + cc;
+        if(t !== idx && readVal(p, t) === v) return true;
+      }
+    }
+    const kOffs = [[-2,-1],[-2,1],[-1,-2],[-1,2],[1,-2],[1,2],[2,-1],[2,1]];
+    for(const [dr,dc] of kOffs){
+      const rr = row + dr, cc = col + dc;
+      if(rr < 0 || rr > 8 || cc < 0 || cc > 8) continue;
+      const t = rr*9 + cc;
+      if(readVal(p, t) === v) return true;
+    }
+    return false;
+  }
+
+  function isPlayableDay(dIdx){ return dIdx === dayOfWeek; }
+  function isPastDay(dIdx){ return dIdx < dayOfWeek; }
+  function isFutureDay(dIdx){ return dIdx > dayOfWeek; }
+
+  function setHeader(){
+    elWeekLabel.textContent = `Week of ${weekKey} • 7 puzzles`;
+    const names = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
+    elDayLabel.textContent = `Today: ${names[dayOfWeek]} (Day ${dayOfWeek+1})`;
+    elDayNum.textContent = String(currentDay + 1);
+    elModeLabel.textContent = `Variant: Anti-Knight Sudoku`;
+    const solved = puzzles.filter(p => p.completed).length;
+    elDoneCounter.textContent = `Solved this week: ${solved} / 7`;
+
+    // Show "All done" banner if all solved (like Trigoku)
+    const all = solved === 7;
+    elAllDone.classList.toggle("hidden", !all);
+    elMainLayout.classList.toggle("hidden", all);
+  }
+
+  function renderBoard(){
+    const p = puzzles[currentDay];
+    selected = null;
+    elBoard.innerHTML = "";
+
+    const playable = isPlayableDay(currentDay);
+    const expired = isPastDay(currentDay);
+    const future = isFutureDay(currentDay);
+
+    elAvailability.textContent = playable ? "Playable" : (expired ? "Expired (solution shown)" : "Locked (not yet)");
+
+    for(let r=0;r<9;r++){
+      for(let c=0;c<9;c++){
+        const idx = r*9 + c;
+        const given = p.puzzle[idx] !== 0;
+
+        const cell = document.createElement("div");
+        cell.className = "cell";
+        if(((r+c)%2)===1) cell.classList.add("alt");
+        if(c === 2 || c === 5) cell.classList.add("thickR");
+        if(r === 2 || r === 5) cell.classList.add("thickB");
+        if(given) cell.classList.add("given");
+        if(future) cell.classList.add("locked"); // reuse "locked" styling for future days only
+
+        const btn = document.createElement("button");
+        btn.type = "button";
+
+        if(given){
+          btn.textContent = String(p.puzzle[idx]);
+          btn.disabled = true;
+        } else if(expired){
+          btn.textContent = String(p.solution[idx]);
+          btn.disabled = true;
+          cell.classList.add("revealed");
+        } else if(future){
+          btn.textContent = "";
+          btn.disabled = true;
+        } else {
+          btn.textContent = p.user[idx] ? String(p.user[idx]) : "";
+          btn.disabled = !playable;
+        }
+
+        btn.addEventListener("click", () => {
+          if(btn.disabled) return;
+          Array.from(elBoard.children).forEach(ch => ch.classList.remove("selected"));
+          cell.classList.add("selected");
+          selected = idx;
+        });
+
+        cell.appendChild(btn);
+        elBoard.appendChild(cell);
+      }
+    }
+
+    refreshMarkers();
+    refreshStats();
+  }
+
+  function refreshMarkers(){
+    const p = puzzles[currentDay];
+    const cells = elBoard.children;
+    for(let i=0;i<81;i++){
+      const cell = cells[i];
+      cell.classList.remove("conflict");
+      cell.classList.remove("hinted");
+      if(isPlayableDay(currentDay)){
+        if(p.puzzle[i] !== 0) continue;
+        if(readVal(p, i) !== 0 && cellHasConflict(p, i)) cell.classList.add("conflict");
+      }
+    }
+  }
+
+  function refreshStats(){
+    const p = puzzles[currentDay];
+    elHintsUsed.textContent = `${p.hintsUsed}/${MAX_HINTS}`;
+    elMistakes.textContent = String(p.mistakes);
+  }
+
+  function renderAll(){
+    setHeader();
+    renderBoard();
+  }
+
+  function writeSelected(k){
+    if(!isPlayableDay(currentDay)){
+      setStatus("Only today’s puzzle is playable.");
+      return;
+    }
+    const p = puzzles[currentDay];
+    if(selected === null){
+      setStatus("Tap a square first.");
+      return;
+    }
+    if(p.puzzle[selected] !== 0){
+      setStatus("That’s a given.");
+      return;
+    }
+
+    const cell = elBoard.children[selected];
+    cell.classList.remove("hinted");
+
+    p.user[selected] = (k === "del") ? "" : String(k);
+    cell.querySelector("button").textContent = p.user[selected] || "";
+
+    refreshMarkers();
+    autoSave("saved");
+  }
+
+  function doHint(){
+    if(!isPlayableDay(currentDay)){
+      setStatus("Hints only apply to today’s puzzle.");
+      return;
+    }
+    const p = puzzles[currentDay];
+    if(p.hintsUsed >= MAX_HINTS){
+      setStatus("No hints left today.");
+      return;
+    }
+
+    const eligible = (i) => {
+      if(p.puzzle[i] !== 0) return false;
+      return readVal(p, i) !== p.solution[i];
+    };
+
+    let target = null;
+    if(selected !== null && eligible(selected)) target = selected;
+    else for(let i=0;i<81;i++){ if(eligible(i)){ target = i; break; } }
+
+    if(target === null){
+      setStatus("Nothing to hint.");
+      return;
+    }
+
+    p.user[target] = String(p.solution[target]);
+    p.hintsUsed++;
+
+    const cell = elBoard.children[target];
+    cell.querySelector("button").textContent = p.user[target];
+    cell.classList.add("hinted");
+
+    refreshMarkers();
+    refreshStats();
+    setStatus(`Hint used (${p.hintsUsed}/${MAX_HINTS}).`);
+    autoSave("saved");
+  }
+
+  function doCheck(){
+    if(!isPlayableDay(currentDay)){
+      setStatus("Only today’s puzzle can be checked.");
+      return;
+    }
+    const p = puzzles[currentDay];
+    let wrong = 0;
+    for(let i=0;i<81;i++){
+      if(p.puzzle[i] !== 0) continue;
+      if(readVal(p, i) !== p.solution[i]) wrong++;
+    }
+    if(wrong === 0){
+      p.completed = true;
+      setStatus("Solved ✅ See you tomorrow.");
+    } else {
+      p.mistakes += wrong;
+      setStatus(`${wrong} square(s) are wrong or empty.`);
+    }
+    refreshStats();
+    autoSave("saved");
+    setHeader();
+  }
+
+  function doReset(){
+    if(!isPlayableDay(currentDay)){
+      setStatus("Only today’s puzzle can be reset.");
+      return;
+    }
+    const p = puzzles[currentDay];
+    p.user = Array(81).fill("");
+    p.hintsUsed = 0;
+    p.mistakes = 0;
+    p.completed = false;
+    selected = null;
+    setStatus("Reset today’s puzzle.");
+    renderBoard();
+    autoSave("saved");
+  }
+
+  function prevDay(){
+    currentDay = Math.max(0, currentDay-1);
+    renderAll();
+    setStatus(currentDay < dayOfWeek ? "Expired day: solution shown." : (currentDay > dayOfWeek ? "Future day: locked." : "Today: playable."));
+    autoSave("saved");
+  }
+  function nextDay(){
+    currentDay = Math.min(6, currentDay+1);
+    renderAll();
+    setStatus(currentDay < dayOfWeek ? "Expired day: solution shown." : (currentDay > dayOfWeek ? "Future day: locked." : "Today: playable."));
+    autoSave("saved");
+  }
+
+  function autoSave(label){
+    try{
+      const state = {
+        weekKey,
+        dayOfWeek,
+        currentDay,
+        puzzles: puzzles.map(p => ({
+          puzzle: p.puzzle,
+          solution: p.solution,
+          user: p.user,
+          completed: p.completed,
+          hintsUsed: p.hintsUsed,
+          mistakes: p.mistakes
+        })),
+        savedAt: nowMs()
+      };
+      localStorage.setItem(STATE_KEY(weekKey), JSON.stringify(state));
+      elSavedLabel.textContent = label;
+    }catch{
+      elSavedLabel.textContent = "save failed";
+    }
+  }
+
+  function loadState(){
+    try{
+      const raw = localStorage.getItem(STATE_KEY(weekKey));
+      if(!raw) return null;
+      const st = JSON.parse(raw);
+      if(!st || st.weekKey !== weekKey) return null;
+      return st;
+    }catch{ return null; }
+  }
+
+  // Offline download (kept from Trigoku, simplified payload)
+  function downloadCurrent(){
+    try{
+      const payload = { weekKey, dayOfWeek, currentDay, puzzles };
+      const json = JSON.stringify(payload);
+      const END_SCRIPT = "</scr" + "ipt>";
+      const inject = "<script>window.OFFLINE_DATA=" + json + ";" + END_SCRIPT + "\n";
+
+      const marker = "<script>\n(() => {";
+      let html = document.documentElement.outerHTML;
+      if(html.includes(marker)){
+        html = html.replace(marker, inject + marker);
+      } else {
+        html = html.replace("</head>", inject + "</head>");
+      }
+      const blob = new Blob(["<!DOCTYPE html>\n" + html], {type: "text/html"});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      const safeWeek = String(weekKey || "offline").replace(/[^0-9A-Za-z_-]/g, "-");
+      a.href = url;
+      a.download = `daily-anti-knight-${safeWeek}-day${currentDay+1}.html`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 2000);
+      setStatus("Offline puzzle downloaded.");
+    }catch(e){
+      console.error(e);
+      setStatus("Download failed.");
+    }
+  }
+
+  function generateWeek(){
+    const arr = [];
+    for(let d=0; d<DAYS_PER_WEEK; d++){
+      const seed = strSeed(`${GLOBAL_SEED}::${weekKey}::${d}::anti-knight`);
+      const rand = makeRng(seed >>> 0);
+      const sol = genSolution(rand);
+      const puz = carve(sol, rand, CLUES);
+
+      arr.push({
+        puzzle: puz,
+        solution: sol,
+        user: Array(81).fill(""),
+        completed: false,
+        hintsUsed: 0,
+        mistakes: 0
+      });
+    }
+    return arr;
+  }
+
+  function updateCountdown(){
+    if(offlineMode){
+      elCountdown.textContent = "Offline puzzle";
+      return;
+    }
+    const now = new Date();
+    const wkNow = getWeekKey(now);
+    if(wkNow !== weekKey){
+      location.reload();
+      return;
+    }
+    const eod = endOfDay(now);
+    elCountdown.textContent = `Next puzzle in ${formatHMS(eod - now)}`;
+
+    const dayNow = getDayIndex(now);
+    if(dayNow !== dayOfWeek){
+      dayOfWeek = dayNow;
+      currentDay = dayOfWeek;
+      renderAll();
+      setStatus("New day unlocked.");
+      autoSave("saved");
+    }
+  }
+
+  // Share (kept Trigoku style, adjusted text)
+  function modeName(){ return "Anti-Knight Sudoku"; }
+
+  function buildShareText(){
+    const p = puzzles[currentDay];
+    if(!p) throw new Error("no puzzle");
+    const dateStr = (new Date()).toISOString().slice(0,10);
+    const solvedMark = p.completed ? "✅" : "🧩";
+
+    const baseUrl = (location && location.href) ? location.href.split("#")[0] : "";
+    const pid = `${weekKey}|${currentDay}|anti-knight`;
+    const url = `${baseUrl}#pid=${encodeURIComponent(pid)}`;
+
+    const lines = [];
+    lines.push(`Daily Anti-Knight Sudoku ${solvedMark}`);
+    lines.push(`${dateStr} • Day ${currentDay+1}/7 • ${modeName()}`);
+    lines.push(`Hints: ${p.hintsUsed||0} • Mistakes: ${p.mistakes||0}`);
+    lines.push(url);
+    return { text: lines.join("\n"), url };
+  }
+
+  async function copyText(text){
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      await navigator.clipboard.writeText(text);
+      return;
+    }
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.top = "-1000px";
+    ta.style.left = "-1000px";
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand("copy");
+    document.body.removeChild(ta);
+  }
+
+  async function doShare(){
+    try{
+      const { text, url } = buildShareText();
+      try{ await copyText(text); setStatus("Share text copied."); } catch(e){}
+
+      if(navigator.share){
+        try{
+          await navigator.share({ title: "Daily Anti-Knight Sudoku", text, url });
+          setStatus("Shared.");
+          return;
+        } catch(e){}
+      }
+      try{
+        window.open("https://wa.me/?text=" + encodeURIComponent(text), "_blank");
+        setStatus("Opened WhatsApp share (text copied).");
+        return;
+      } catch(e){}
+      setStatus("Share ready (copied). Paste into WhatsApp/social.");
+    } catch(e){
+      console.error(e);
+      setStatus("Share failed.");
+    }
+  }
+
+  function init(){
+    // Offline mode
+    if(window.OFFLINE_DATA && typeof window.OFFLINE_DATA === "object"){
+      offlineMode = true;
+      const d = window.OFFLINE_DATA;
+      weekKey = String(d.weekKey || "offline");
+      dayOfWeek = Math.max(0, Math.min(6, (d.dayOfWeek|0)));
+      currentDay = Math.max(0, Math.min(6, (d.currentDay|0)));
+
+      if(Array.isArray(d.puzzles) && d.puzzles.length === 7){
+        puzzles = d.puzzles.map((ps) => ({
+          puzzle: Array.isArray(ps?.puzzle) && ps.puzzle.length===81 ? ps.puzzle : Array(81).fill(0),
+          solution: Array.isArray(ps?.solution) && ps.solution.length===81 ? ps.solution : Array(81).fill(0),
+          user: Array.isArray(ps?.user) && ps.user.length===81 ? ps.user : Array(81).fill(""),
+          completed: !!ps?.completed,
+          hintsUsed: Math.max(0, Math.min(MAX_HINTS, ps?.hintsUsed|0)),
+          mistakes: Math.max(0, ps?.mistakes|0)
+        }));
+      } else {
+        offlineMode = false;
+        weekKey = getWeekKey(new Date());
+        dayOfWeek = getDayIndex(new Date());
+        currentDay = dayOfWeek;
+        puzzles = generateWeek();
+      }
+      elSavedLabel.textContent = "offline";
+      renderAll();
+      updateCountdown();
+      return;
+    }
+
+    // Normal mode
+    weekKey = getWeekKey(new Date());
+    dayOfWeek = getDayIndex(new Date());
+    currentDay = dayOfWeek;
+
+    puzzles = generateWeek();
+
+    const st = loadState();
+    if(st && Array.isArray(st.puzzles) && st.puzzles.length === 7){
+      currentDay = Math.max(0, Math.min(6, st.currentDay|0));
+      for(let i=0;i<7;i++){
+        const ps = st.puzzles[i];
+        if(ps && typeof ps === "object"){
+          if(Array.isArray(ps.user) && ps.user.length===81) puzzles[i].user = ps.user;
+          puzzles[i].completed = !!ps.completed;
+          puzzles[i].hintsUsed = Math.max(0, Math.min(MAX_HINTS, ps.hintsUsed|0));
+          puzzles[i].mistakes = Math.max(0, ps.mistakes|0);
+        }
+      }
+      elSavedLabel.textContent = "restored";
+    } else {
+      elSavedLabel.textContent = "new week";
+      autoSave("saved");
+    }
+
+    if(currentDay > dayOfWeek) currentDay = dayOfWeek;
+
+    renderAll();
+    updateCountdown();
+    if(tickId) clearInterval(tickId);
+    tickId = setInterval(updateCountdown, 1000);
+  }
+
+  document.getElementById("keypad").addEventListener("click", (e) => {
+    const btn = e.target.closest("button");
+    if(!btn) return;
+    writeSelected(btn.dataset.k);
+  });
+
+  document.getElementById("hintBtn").addEventListener("click", doHint);
+  document.getElementById("checkBtn").addEventListener("click", doCheck);
+  document.getElementById("resetBtn").addEventListener("click", doReset);
+  document.getElementById("prevBtn").addEventListener("click", prevDay);
+  document.getElementById("nextBtn").addEventListener("click", nextDay);
+  document.getElementById("downloadBtn").addEventListener("click", downloadCurrent);
+  document.getElementById("shareBtn").addEventListener("click", doShare);
+
+  init();
+})();
+</script>
+
+
+
+</body></html>
