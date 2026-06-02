@@ -45,15 +45,15 @@
   ],
   "storyboard_copy_source": "openai_repaired+gemini",
   "storyboard_copy_model": "gpt-4o-mini",
-  "storyboard_arc_title": "Reflections on a Rainy Day",
+  "storyboard_arc_title": "Isla's Pause",
   "storyboard_arc_type": "story_driven_not_location_driven",
   "storyboard_arc": {
-    "setup": "Isla packs the travel mug before the morning starts rushing her.",
-    "disruption": "On the platform, a family note changes the order of the morning.",
-    "choice": "Once seated, she opens the grid and checks the first safe move.",
+    "setup": "Outside, the morning traffic is already picking up, but Isla is determined to find a steady moment first.",
+    "disruption": "She finds a small table near the lobby doors, watching people hurry past in the chilly morning air.",
+    "choice": "Her phone buzzes with a calendar notification, reminding her that it is almost time to move on.",
     "puzzle_moment": "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-    "consequence": "The checked move holds, and the rest of the journey feels less scattered.",
-    "resolution": "She closes the laptop with the day back in her own order."
+    "consequence": "With the logic puzzle finally resolved, she takes a slow sip of her now lukewarm coffee.",
+    "resolution": "The calendar reminder did its job, creating a clean boundary before she steps out into the rain."
   },
   "storyboard_quality": {
     "location_sequence_only": false,
@@ -68,6 +68,7 @@
     "quality_gate_action": "repaired_in_place",
     "quality_gate_repair_reasons": [],
     "scene_truth_locked": true,
+    "story_led_scene_truth": true,
     "final_lint_passed": true,
     "final_banned_word_hits": [],
     "copy_repetition_lint": {
@@ -98,12 +99,12 @@
   },
   "location_flow_validated": true,
   "location_flow": [
-    "home",
-    "platform",
-    "train",
-    "coworking",
-    "bookshop",
-    "rainy_window"
+    "small home kitchen",
+    "train table by",
+    "outdoor cafe street",
+    "co-working desk near",
+    "bookshop cafe corner",
+    "rainy window nook"
   ],
   "post_ready_contract": {
     "openai_ok": true,
@@ -123,7 +124,7 @@
     "frames": "array:6"
   },
   "openai_storyboard_fallback_reason": null,
-  "openai_storyboard_checked_at": "2026-06-02T06:03:30.790Z",
+  "openai_storyboard_checked_at": "2026-06-02T06:07:09.932Z",
   "gemini_allowed_fields": [
     "caption",
     "dialogue"
@@ -153,26 +154,27 @@
     "isla_only_main_character": true,
     "overlay_only": true,
     "no_extra_faces": true,
+    "must_affect_story": true,
     "no_visible_supporting_character": true
   },
   "supporting_life_trigger_story_locked": true,
   "puzzle_product": "Trigoku Daily Lock",
   "puzzle_url": "https://suite.sapiverpress.co.uk",
   "captions": [
-    "Mug first. Then the train.\nIsla packs the travel mug before the morning starts rushing her.",
-    "I will reply properly.\nOn the platform, a family note changes the order of the morning.",
-    "Start where it proves itself.\nOnce seated, she opens the grid and checks the first safe move.",
-    "Anti-Knight first. Then the move.\nAnti-Knight changes the move, so Isla checks the rule before trusting it.",
-    "That one actually holds.\nThe checked move holds, and the rest of the journey feels less scattered.",
-    "Leave it there. Move on.\nShe closes the laptop with the day back in her own order."
+    "I'm not going to rush this morning. Let's just take it slow.\nOutside, the morning traffic is already picking up, but Isla is determined to find a steady moment first.",
+    "There is absolutely no point in trying to race against the clock today.\nShe finds a small table near the lobby doors, watching people hurry past in the chilly morning air.",
+    "I have exactly three minutes left, and I am going to spend them right here.\nHer phone buzzes with a calendar notification, reminding her that it is almost time to move on.",
+    "Anti-Knight today — knight moves block matching numbers.\nAnti-Knight changes the move, so Isla checks the rule before trusting it.",
+    "That feels right. The logic holds up, and I can finally step away.\nWith the logic puzzle finally resolved, she takes a slow sip of her now lukewarm coffee.",
+    "Time to head out. I'll leave the puzzle here and focus on what's next.\nThe calendar reminder did its job, creating a clean boundary before she steps out into the rain."
   ],
   "storyboard_locations": [
-    "home kitchen or home entry table",
-    "unmistakable railway platform waiting area",
-    "inside a train carriage at a window table",
+    "small home kitchen table in warm morning light",
+    "train table by the window",
+    "outdoor cafe street table",
     "co-working desk near a tall window",
-    "bookshop cafe corner with shelves and warm table light",
-    "rainy window nook with plants and bag nearby"
+    "bookshop cafe corner",
+    "rainy window nook with plants"
   ],
   "scenes": [
     {
@@ -187,11 +189,11 @@
       "screen_quad_mode": "overlay_skipped_screen_state_no_puzzle",
       "panel_screen_state": "no_puzzle",
       "screen_state_overlay_allowed": false,
-      "storyboard_text": "Mug first. Then the train.\nIsla packs the travel mug before the morning starts rushing her.",
+      "storyboard_text": "I'm not going to rush this morning. Let's just take it slow.\nOutside, the morning traffic is already picking up, but Isla is determined to find a steady moment first.",
       "arc_role": "setup",
-      "storyboard_caption": "Isla packs the travel mug before the morning starts rushing her.",
-      "storyboard_dialogue": "Mug first. Then the train.",
-      "panel_location": "home kitchen or home entry table"
+      "storyboard_caption": "Outside, the morning traffic is already picking up, but Isla is determined to find a steady moment first.",
+      "storyboard_dialogue": "I'm not going to rush this morning. Let's just take it slow.",
+      "panel_location": "small home kitchen table in warm morning light"
     },
     {
       "scene": "scene_02",
@@ -205,11 +207,11 @@
       "screen_quad_mode": "overlay_skipped_screen_state_no_puzzle",
       "panel_screen_state": "no_puzzle",
       "screen_state_overlay_allowed": false,
-      "storyboard_text": "I will reply properly.\nOn the platform, a family note changes the order of the morning.",
+      "storyboard_text": "There is absolutely no point in trying to race against the clock today.\nShe finds a small table near the lobby doors, watching people hurry past in the chilly morning air.",
       "arc_role": "disruption",
-      "storyboard_caption": "On the platform, a family note changes the order of the morning.",
-      "storyboard_dialogue": "I will reply properly.",
-      "panel_location": "unmistakable railway platform waiting area"
+      "storyboard_caption": "She finds a small table near the lobby doors, watching people hurry past in the chilly morning air.",
+      "storyboard_dialogue": "There is absolutely no point in trying to race against the clock today.",
+      "panel_location": "train table by the window"
     },
     {
       "scene": "scene_03",
@@ -221,30 +223,30 @@
       "output": "social/2026-06-02/03_panel-03.png",
       "screen_quad": [
         [
-          676,
-          673
+          662,
+          622
         ],
         [
-          1017,
-          699
+          1070,
+          648
         ],
         [
-          970,
-          960
+          1043,
+          933
         ],
         [
-          638,
-          898
+          629,
+          875
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
       "panel_screen_state": "first_moves",
       "screen_state_overlay_allowed": true,
-      "storyboard_text": "Start where it proves itself.\nOnce seated, she opens the grid and checks the first safe move.",
+      "storyboard_text": "I have exactly three minutes left, and I am going to spend them right here.\nHer phone buzzes with a calendar notification, reminding her that it is almost time to move on.",
       "arc_role": "choice",
-      "storyboard_caption": "Once seated, she opens the grid and checks the first safe move.",
-      "storyboard_dialogue": "Start where it proves itself.",
-      "panel_location": "inside a train carriage at a window table"
+      "storyboard_caption": "Her phone buzzes with a calendar notification, reminding her that it is almost time to move on.",
+      "storyboard_dialogue": "I have exactly three minutes left, and I am going to spend them right here.",
+      "panel_location": "outdoor cafe street table"
     },
     {
       "scene": "scene_04",
@@ -291,10 +293,10 @@
         "panel": 4,
         "arc_shift": "The reminder turns the puzzle into a boundary: one proof, then back to the day without dragging the mistake forward."
       },
-      "storyboard_text": "Anti-Knight first. Then the move.\nAnti-Knight changes the move, so Isla checks the rule before trusting it.",
+      "storyboard_text": "Anti-Knight today — knight moves block matching numbers.\nAnti-Knight changes the move, so Isla checks the rule before trusting it.",
       "arc_role": "puzzle_moment",
       "storyboard_caption": "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-      "storyboard_dialogue": "Anti-Knight first. Then the move.",
+      "storyboard_dialogue": "Anti-Knight today — knight moves block matching numbers.",
       "panel_location": "co-working desk near a tall window"
     },
     {
@@ -307,70 +309,65 @@
       "output": "social/2026-06-02/05_panel-05.png",
       "screen_quad": [
         [
-          674,
-          581
+          690,
+          603
         ],
         [
-          1026,
-          604
+          1067,
+          632
         ],
         [
-          982,
-          876
+          1034,
+          909
         ],
         [
-          636,
-          808
+          655,
+          842
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
       "panel_screen_state": "progress_pause",
       "screen_state_overlay_allowed": true,
-      "storyboard_text": "That one actually holds.\nThe checked move holds, and the rest of the journey feels less scattered.",
+      "storyboard_text": "That feels right. The logic holds up, and I can finally step away.\nWith the logic puzzle finally resolved, she takes a slow sip of her now lukewarm coffee.",
       "arc_role": "consequence",
-      "storyboard_caption": "The checked move holds, and the rest of the journey feels less scattered.",
-      "storyboard_dialogue": "That one actually holds.",
-      "panel_location": "bookshop cafe corner with shelves and warm table light"
+      "storyboard_caption": "With the logic puzzle finally resolved, she takes a slow sip of her now lukewarm coffee.",
+      "storyboard_dialogue": "That feels right. The logic holds up, and I can finally step away.",
+      "panel_location": "bookshop cafe corner"
     },
     {
       "scene": "scene_06",
-      "art_source": "template",
-      "art_path": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "replacement": "",
+      "art_source": "replacement",
+      "art_path": "art-replacements/2026-06-02/06_panel-06.png",
+      "template": "",
+      "replacement": "art-replacements/2026-06-02/06_panel-06.png",
       "capture": "captures/2026-06-02/extracted/06_complete_solution.png",
       "output": "social/2026-06-02/06_panel-06.png",
       "screen_quad": [
         [
-          652,
-          707
+          700,
+          644
         ],
         [
-          1071,
-          721
+          1045,
+          668
         ],
         [
-          1040,
-          1010
+          1008,
+          925
         ],
         [
-          624,
-          952
+          670,
+          869
         ]
       ],
-      "screen_quad_mode": "template_locked",
+      "screen_quad_mode": "detected_replacement_screen",
       "panel_screen_state": "finished_or_closing",
       "screen_state_overlay_allowed": true,
-      "recovered_from_missing_replacement_screen": true,
-      "failed_replacements": [
-        "art-replacements/2026-06-02/06_panel-06.png",
-        "art-replacements/latest/06_panel-06.png"
-      ],
-      "storyboard_text": "Leave it there. Move on.\nShe closes the laptop with the day back in her own order.",
+      "storyboard_text": "Time to head out. I'll leave the puzzle here and focus on what's next.\nThe calendar reminder did its job, creating a clean boundary before she steps out into the rain.",
       "arc_role": "resolution",
-      "storyboard_caption": "She closes the laptop with the day back in her own order.",
-      "storyboard_dialogue": "Leave it there. Move on.",
-      "panel_location": "rainy window nook with plants and bag nearby"
+      "storyboard_caption": "The calendar reminder did its job, creating a clean boundary before she steps out into the rain.",
+      "storyboard_dialogue": "Time to head out. I'll leave the puzzle here and focus on what's next.",
+      "panel_location": "rainy window nook with plants"
     }
   ],
   "all_panels_have_screen_overlay": false,
@@ -379,13 +376,13 @@
       "scene": "scene_01",
       "output": "social/2026-06-02/01_panel-01.png",
       "screen_quad_mode": "overlay_skipped_screen_state_no_puzzle",
-      "panel_location": "home kitchen or home entry table"
+      "panel_location": "small home kitchen table in warm morning light"
     },
     {
       "scene": "scene_02",
       "output": "social/2026-06-02/02_panel-02.png",
       "screen_quad_mode": "overlay_skipped_screen_state_no_puzzle",
-      "panel_location": "unmistakable railway platform waiting area"
+      "panel_location": "train table by the window"
     }
   ],
   "screen_overlay_recoveries": [
@@ -396,15 +393,6 @@
       "failed_replacements": [
         "art-replacements/2026-06-02/04_panel-04.png",
         "art-replacements/latest/04_panel-04.png"
-      ]
-    },
-    {
-      "scene": "scene_06",
-      "output": "social/2026-06-02/06_panel-06.png",
-      "screen_quad_mode": "template_locked",
-      "failed_replacements": [
-        "art-replacements/2026-06-02/06_panel-06.png",
-        "art-replacements/latest/06_panel-06.png"
       ]
     }
   ],

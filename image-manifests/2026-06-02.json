@@ -27,75 +27,76 @@
     "isla_only_main_character": true,
     "overlay_only": true,
     "no_extra_faces": true,
+    "must_affect_story": true,
     "no_visible_supporting_character": true
   },
   "puzzle_product": "Trigoku Daily Lock",
   "puzzle_url": "https://suite.sapiverpress.co.uk",
-  "selected_setting": "rainy window nook with plants",
+  "selected_setting": "outdoor cafe street table",
   "image_prompts": [
     {
       "scene": "scene_01",
       "pose_id": "pose_01_back_again",
-      "prompt": "ISLA_SP calm focus, phone in hand, morning light on face, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, front-facing or three-quarter view, Isla's face clearly visible, small kitchen table in warm morning light, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
-      "storyboard_caption": "Isla packs her favorite travel mug before the morning rush catches up with her.",
-      "storyboard_dialogue": "Mug is packed. Now, let's get to the station.",
-      "caption": "Isla packs her favorite travel mug before the morning rush catches up with her.",
-      "dialogue": "Mug is packed. Now, let's get to the station."
+      "prompt": "ISLA_SP calm, settling in, eyes on phone screen briefly, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, front-facing or three-quarter view, Isla's face clearly visible, small kitchen table in warm morning light, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
+      "storyboard_caption": "Outside, the morning traffic is already picking up, but Isla is determined to find a steady moment first.",
+      "storyboard_dialogue": "I'm not going to rush this morning. Let's just take it slow.",
+      "caption": "Outside, the morning traffic is already picking up, but Isla is determined to find a steady moment first.",
+      "dialogue": "I'm not going to rush this morning. Let's just take it slow."
     },
     {
       "scene": "scene_02",
       "pose_id": "pose_02_first_moves",
-      "prompt": "ISLA_SP leaning forward, pen moving, confident expression, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, small kitchen table in warm morning light, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
-      "storyboard_caption": "While waiting on the chilly platform, a sudden text from home changes her plan.",
-      "storyboard_dialogue": "I should probably send a quick reply to this first.",
-      "caption": "While waiting on the chilly platform, a sudden text from home changes her plan.",
-      "dialogue": "I should probably send a quick reply to this first."
+      "prompt": "ISLA_SP focused, writing quickly, slight forward lean, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, small kitchen table in warm morning light, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
+      "storyboard_caption": "She finds a small table near the lobby doors, watching people hurry past in the chilly morning air.",
+      "storyboard_dialogue": "There is absolutely no point in trying to race against the clock today.",
+      "caption": "She finds a small table near the lobby doors, watching people hurry past in the chilly morning air.",
+      "dialogue": "There is absolutely no point in trying to race against the clock today."
     },
     {
       "scene": "scene_03",
       "pose_id": "pose_03_stuck",
-      "prompt": "ISLA_SP eyes flicking to phone, pen paused mid-air, slight tension in shoulders, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, small kitchen table in warm morning light, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
-      "storyboard_caption": "Once she finally settles into her seat, she pulls up the grid to begin.",
-      "storyboard_dialogue": "Let's find a solid starting point that I can trust.",
-      "caption": "Once she finally settles into her seat, she pulls up the grid to begin.",
-      "dialogue": "Let's find a solid starting point that I can trust."
+      "prompt": "ISLA_SP frowning slightly, pen held still, reconsidering, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, small kitchen table in warm morning light, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
+      "storyboard_caption": "Her phone buzzes with a calendar notification, reminding her that it is almost time to move on.",
+      "storyboard_dialogue": "I have exactly three minutes left, and I am going to spend them right here.",
+      "caption": "Her phone buzzes with a calendar notification, reminding her that it is almost time to move on.",
+      "dialogue": "I have exactly three minutes left, and I am going to spend them right here."
     },
     {
       "scene": "scene_04",
       "pose_id": "pose_04_thinking",
-      "prompt": "ISLA_SP focused gaze down at grid, phone visible but ignored, determined expression, Isla notices a phone notification, no extra visible person, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, front-facing or three-quarter view, Isla's face clearly visible, small kitchen table in warm morning light, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
-      "storyboard_caption": "Since the Anti-Knight rule changes things, she pauses to double-check the constraints.",
+      "prompt": "ISLA_SP determined, face visible, eyes flicking to phone then back to grid, Isla notices a phone notification, no extra visible person, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, front-facing or three-quarter view, Isla's face clearly visible, small kitchen table in warm morning light, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
+      "storyboard_caption": "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
       "storyboard_dialogue": "Anti-Knight today — knight moves block matching numbers.",
-      "storyboard_caption_before_quality_gate": "Line found.",
+      "storyboard_caption_before_quality_gate": "Anti-Knight today — knight moves block matching numbers.",
       "storyboard_dialogue_before_quality_gate": "Anti-Knight today — knight moves block matching numbers.",
       "puzzle_moment_copy_snapshot": {
         "ran": true,
         "source_stage": "openai",
-        "caption": "Line found.",
+        "caption": "Anti-Knight today — knight moves block matching numbers.",
         "dialogue": "Anti-Knight today — knight moves block matching numbers.",
-        "image_prompt_fragment": "quiet breakthrough, thoughtful smile, Isla notices a phone notification, no extra visible person",
-        "captured_at": "2026-06-02T06:03:30.882Z"
+        "image_prompt_fragment": "tiny realisation in daylight, noticing today's Anti-Knight rule naturally, Isla notices a phone notification, no extra visible person",
+        "captured_at": "2026-06-02T06:07:10.024Z"
       },
-      "caption": "Since the Anti-Knight rule changes things, she pauses to double-check the constraints.",
+      "caption": "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
       "dialogue": "Anti-Knight today — knight moves block matching numbers."
     },
     {
       "scene": "scene_05",
       "pose_id": "pose_05_coffee",
-      "prompt": "ISLA_SP slight smile, pen finishing final entry, coffee mug out of focus nearby, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, small kitchen table in warm morning light, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
-      "storyboard_caption": "Her carefully calculated daily move pays off, bringing a welcome sense of focus to her trip.",
-      "storyboard_dialogue": "Perfect, that digit actually locks right into place.",
-      "caption": "Her carefully calculated daily move pays off, bringing a welcome sense of focus to her trip.",
-      "dialogue": "Perfect, that digit actually locks right into place."
+      "prompt": "ISLA_SP satisfied, leaning back slightly, pen down, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, small kitchen table in warm morning light, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
+      "storyboard_caption": "With the logic puzzle finally resolved, she takes a slow sip of her now lukewarm coffee.",
+      "storyboard_dialogue": "That feels right. The logic holds up, and I can finally step away.",
+      "caption": "With the logic puzzle finally resolved, she takes a slow sip of her now lukewarm coffee.",
+      "dialogue": "That feels right. The logic holds up, and I can finally step away."
     },
     {
       "scene": "scene_06",
       "pose_id": "pose_06_leaving",
-      "prompt": "ISLA_SP standing, phone in hand, satisfied expression, turning away from table, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, small kitchen table in warm morning light, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
-      "storyboard_caption": "Satisfied with her progress, she shuts her laptop and watches the rain slide down.",
-      "storyboard_dialogue": "That's enough for now. Time to get on with my day.",
-      "caption": "Satisfied with her progress, she shuts her laptop and watches the rain slide down.",
-      "dialogue": "That's enough for now. Time to get on with my day."
+      "prompt": "ISLA_SP standing, phone in hand, ready to move, young Black woman warm medium brown skin light freckles on nose and cheeks, natural coily dark hair high voluminous puff bun, wide floral teal rust orange headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, natural varied camera angle, not a repeated pose, small kitchen table in warm morning light, warm golden hour light, SJ ceramic mug on desk, open journal, dark hardcover books, vintage desk lamp amber glow, gothic window cityscape view, ivy bookshelf, warm painterly editorial illustration style, cinematic warm amber palette, detailed textures",
+      "storyboard_caption": "The calendar reminder did its job, creating a clean boundary before she steps out into the rain.",
+      "storyboard_dialogue": "Time to head out. I'll leave the puzzle here and focus on what's next.",
+      "caption": "The calendar reminder did its job, creating a clean boundary before she steps out into the rain.",
+      "dialogue": "Time to head out. I'll leave the puzzle here and focus on what's next."
     }
   ],
   "style_rules": [
@@ -163,6 +164,7 @@
     "quality_gate_action": "repaired_in_place",
     "quality_gate_repair_reasons": [],
     "scene_truth_locked": true,
+    "story_led_scene_truth": true,
     "final_lint_passed": true,
     "final_banned_word_hits": [],
     "copy_repetition_lint": {
@@ -183,24 +185,24 @@
   "puzzle_moment_copy_snapshot": {
     "ran": true,
     "source_stage": "openai",
-    "caption": "Line found.",
+    "caption": "Anti-Knight today — knight moves block matching numbers.",
     "dialogue": "Anti-Knight today — knight moves block matching numbers.",
-    "image_prompt_fragment": "quiet breakthrough, thoughtful smile, Isla notices a phone notification, no extra visible person",
-    "captured_at": "2026-06-02T06:03:30.882Z"
+    "image_prompt_fragment": "tiny realisation in daylight, noticing today's Anti-Knight rule naturally, Isla notices a phone notification, no extra visible person",
+    "captured_at": "2026-06-02T06:07:10.024Z"
   },
   "storyboard_copy_model": "gpt-4o-mini",
   "openai_storyboard_status": "ok",
   "openai_storyboard_model": "gpt-4o-mini",
   "openai_storyboard_fallback_reason": null,
-  "openai_storyboard_checked_at": "2026-06-02T06:03:30.790Z",
-  "storyboard_arc_title": "Reflections on a Rainy Day",
+  "openai_storyboard_checked_at": "2026-06-02T06:07:09.932Z",
+  "storyboard_arc_title": "Isla's Pause",
   "storyboard_locations": [
-    "home kitchen or home entry table",
-    "unmistakable railway platform waiting area",
-    "inside a train carriage at a window table",
+    "small home kitchen table in warm morning light",
+    "train table by the window",
+    "outdoor cafe street table",
     "co-working desk near a tall window",
-    "bookshop cafe corner with shelves and warm table light",
-    "rainy window nook with plants and bag nearby"
+    "bookshop cafe corner",
+    "rainy window nook with plants"
   ],
   "puzzle_moment_copy_protection": {
     "ran": true,
@@ -208,18 +210,18 @@
     "reason": "panel_4_not_generic"
   },
   "storyboard_arc": {
-    "setup": "Isla packs her favorite travel mug before the morning rush catches up with her.",
-    "disruption": "While waiting on the chilly platform, a sudden text from home changes her plan.",
-    "choice": "Once she finally settles into her seat, she pulls up the grid to begin.",
-    "puzzle_moment": "Since the Anti-Knight rule changes things, she pauses to double-check the constraints.",
-    "consequence": "Her carefully calculated daily move pays off, bringing a welcome sense of focus to her trip.",
-    "resolution": "Satisfied with her progress, she shuts her laptop and watches the rain slide down."
+    "setup": "Outside, the morning traffic is already picking up, but Isla is determined to find a steady moment first.",
+    "disruption": "She finds a small table near the lobby doors, watching people hurry past in the chilly morning air.",
+    "choice": "Her phone buzzes with a calendar notification, reminding her that it is almost time to move on.",
+    "puzzle_moment": "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+    "consequence": "With the logic puzzle finally resolved, she takes a slow sip of her now lukewarm coffee.",
+    "resolution": "The calendar reminder did its job, creating a clean boundary before she steps out into the rain."
   },
   "location_key": "home",
   "composition_key": "desk_right_screen",
   "per_panel_location_keys": true,
   "location_flow_forced": false,
-  "location_flow_id": "library_day",
+  "location_flow_id": "work_day",
   "location_flow_method": "rotating_daily_flow",
   "location_flow_validated": true,
   "panel_locations": [
@@ -231,93 +233,96 @@
     },
     {
       "panel": 2,
-      "setting": "public library reading table",
-      "location_key": "public_library",
+      "setting": "co-working lobby table near glass doors",
+      "location_key": "coworking",
       "composition_key": "desk_right_screen"
     },
     {
       "panel": 3,
-      "setting": "library window seat with bookshelves behind",
-      "location_key": "public_library",
+      "setting": "co-working desk near a tall window",
+      "location_key": "coworking",
       "composition_key": "desk_right_screen"
     },
     {
       "panel": 4,
-      "setting": "quiet side street bench outside the library",
-      "location_key": "cafe",
-      "composition_key": "cafe_right_screen"
+      "setting": "office break area table with notice board",
+      "location_key": "coworking",
+      "composition_key": "desk_right_screen"
     },
     {
       "panel": 5,
-      "setting": "bookshop cafe corner",
-      "location_key": "bookshop",
-      "composition_key": "cafe_right_screen"
+      "setting": "train table by the window",
+      "location_key": "train",
+      "composition_key": "train_right_screen"
     },
     {
       "panel": 6,
-      "setting": "home sofa corner with lamp and plants",
-      "location_key": "home",
+      "setting": "rainy window nook with plants",
+      "location_key": "rainy_window",
       "composition_key": "desk_right_screen"
     }
   ],
   "location_or_normalised": {
     "ran": true,
     "changed": true,
-    "fields_changed": 7
+    "fields_changed": 6
   },
   "scene_truth_contract": {
     "enabled": true,
-    "mode": "commuter_home_platform_train",
-    "applied_at": "2026-06-02T06:03:41.302Z"
+    "mode": "cafe_errand_day",
+    "selection_reason": "story_keyword_match",
+    "applied_at": "2026-06-02T06:07:22.294Z",
+    "fixed_sequence": false,
+    "story_led": true
   },
   "location_flow": [
-    "home",
-    "platform",
-    "train",
-    "coworking",
-    "bookshop",
-    "rainy_window"
+    "small home kitchen",
+    "train table by",
+    "outdoor cafe street",
+    "co-working desk near",
+    "bookshop cafe corner",
+    "rainy window nook"
   ],
   "scenes": [
     {
       "panel": 1,
-      "panel_location": "home kitchen or home entry table",
-      "panel_action": "packing travel mug, notebook and charger into a rucksack or tote bag before leaving",
-      "panel_pose_family": "standing_packing",
+      "panel_location": "small home kitchen table in warm morning light",
+      "panel_action": "checking the list before leaving",
+      "panel_pose_family": "standing_checking_list",
       "panel_screen_state": "no_puzzle"
     },
     {
       "panel": 2,
-      "panel_location": "unmistakable railway platform waiting area",
-      "panel_action": "waiting on the platform with bag over shoulder, checking the space around her",
-      "panel_pose_family": "standing_waiting",
+      "panel_location": "train table by the window",
+      "panel_action": "pausing outside while deciding what can wait",
+      "panel_pose_family": "standing_street_pause",
       "panel_screen_state": "no_puzzle"
     },
     {
       "panel": 3,
-      "panel_location": "inside a train carriage at a window table",
-      "panel_action": "opening the laptop on the train and making the first careful puzzle moves",
-      "panel_pose_family": "seated_train_start",
+      "panel_location": "outdoor cafe street table",
+      "panel_action": "starting the puzzle beside a coffee",
+      "panel_pose_family": "seated_cafe_start",
       "panel_screen_state": "first_moves"
     },
     {
       "panel": 4,
       "panel_location": "co-working desk near a tall window",
-      "panel_action": "leaning forward to check the active puzzle constraint before trusting the move",
+      "panel_action": "checking the rule before replying to a message",
       "panel_pose_family": "leaning_focus",
       "panel_screen_state": "active_puzzle"
     },
     {
       "panel": 5,
-      "panel_location": "bookshop cafe corner with shelves and warm table light",
-      "panel_action": "pausing beside notebook and mug after the checked move holds",
-      "panel_pose_family": "side_pause",
+      "panel_location": "bookshop cafe corner",
+      "panel_action": "holding a receipt and notebook after the move holds",
+      "panel_pose_family": "side_receipt_pause",
       "panel_screen_state": "progress_pause"
     },
     {
       "panel": 6,
-      "panel_location": "rainy window nook with plants and bag nearby",
-      "panel_action": "closing the laptop and packing up at the end of the day",
+      "panel_location": "rainy window nook with plants",
+      "panel_action": "closing the day with the bag set down",
       "panel_pose_family": "closing_up",
       "panel_screen_state": "finished_or_closing"
     }
@@ -334,7 +339,7 @@
   "variant_detection_unresolved": false,
   "final_storyboard_lint": {
     "ran": true,
-    "changed": false,
+    "changed": true,
     "banned_words": [
       "quiet",
       "gentle",

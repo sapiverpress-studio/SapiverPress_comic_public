@@ -65,7 +65,7 @@
       "output_file": "social/2026-06-02/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "Isla packs the travel mug before the morning starts rushing her.",
+      "caption": "Outside, the morning traffic is already picking up, but Isla is determined to find a steady moment first.",
       "scene_id": "scene_01"
     },
     {
@@ -75,7 +75,7 @@
       "output_file": "social/2026-06-02/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "On the platform, a family note changes the order of the morning.",
+      "caption": "She finds a small table near the lobby doors, watching people hurry past in the chilly morning air.",
       "scene_id": "scene_02"
     },
     {
@@ -85,7 +85,7 @@
       "output_file": "social/2026-06-02/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "Once seated, she opens the grid and checks the first safe move.",
+      "caption": "Her phone buzzes with a calendar notification, reminding her that it is almost time to move on.",
       "scene_id": "scene_03"
     },
     {
@@ -105,7 +105,7 @@
       "output_file": "social/2026-06-02/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "The checked move holds, and the rest of the journey feels less scattered.",
+      "caption": "With the logic puzzle finally resolved, she takes a slow sip of her now lukewarm coffee.",
       "scene_id": "scene_05"
     },
     {
@@ -115,10 +115,10 @@
       "output_file": "social/2026-06-02/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "She closes the laptop with the day back in her own order.",
+      "caption": "The calendar reminder did its job, creating a clean boundary before she steps out into the rain.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-06-02.json",
-  "generated_at": "2026-06-02T06:03:41.363Z"
+  "generated_at": "2026-06-02T06:07:22.348Z"
 }
