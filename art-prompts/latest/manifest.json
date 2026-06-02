@@ -65,7 +65,7 @@
       "output_file": "social/2026-06-02/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "Isla secures a steady moment at her desk before the rest of the busy house wakes up.",
+      "caption": "The morning sun hits the small kitchen table, offering a brief moment of steady before the rush begins.",
       "scene_id": "scene_01"
     },
     {
@@ -75,7 +75,7 @@
       "output_file": "social/2026-06-02/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "An early morning errand shifts her usual commute, offering a brief window of unexpected downtime.",
+      "caption": "The interruption changes the timing, not the whole shape of her morning.",
       "scene_id": "scene_02"
     },
     {
@@ -85,7 +85,7 @@
       "output_file": "social/2026-06-02/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "Sifting through her inbox on the train, she spots a crucial supplier update from Ravi.",
+      "caption": "Settling into the train carriage, she pulls out her notebook to focus on the day's grid.",
       "scene_id": "scene_03"
     },
     {
@@ -95,7 +95,7 @@
       "output_file": "social/2026-06-02/04_panel-04.png",
       "image_name": "04_panel-04.png",
       "fallback_template": "templates/characters/isla/isla_04_breakthrough.png",
-      "caption": "The daily rule changes the move, so Isla checks it before trusting the answer.",
+      "caption": "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
       "scene_id": "scene_04"
     },
     {
@@ -115,10 +115,10 @@
       "output_file": "social/2026-06-02/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "Wrapping up her morning habit cleanly allows Isla to focus entirely on the busy workday ahead.",
+      "caption": "With the morning puzzle resolved, she packs her things away, ready to tackle the workday ahead.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-06-02.json",
-  "generated_at": "2026-06-02T11:18:29.902Z"
+  "generated_at": "2026-06-02T11:31:13.282Z"
 }

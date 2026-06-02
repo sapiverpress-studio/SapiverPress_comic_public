@@ -1,6 +1,6 @@
 {
   "date": "2026-06-02",
-  "title": "Isla's Steady Start",
+  "title": "Morning Puzzle Routine",
   "voice_name": "Isla Sterling",
   "segments": [
     {
@@ -11,22 +11,22 @@
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "Isla secures a steady moment at her desk before the rest of the busy house wakes up."
+      "text": "The morning sun hits the small kitchen table, offering a brief moment of steady before the rush begins."
     },
     {
       "id": "panel_2",
       "image_name": "02_panel-02.png",
-      "text": "An early morning errand shifts her usual commute, offering a brief window of unexpected downtime."
+      "text": "The interruption changes the timing, not the whole shape of her morning."
     },
     {
       "id": "panel_3",
       "image_name": "03_panel-03.png",
-      "text": "Sifting through her inbox on the train, she spots a crucial supplier update from Ravi."
+      "text": "Settling into the train carriage, she pulls out her notebook to focus on the day's grid."
     },
     {
       "id": "panel_4",
       "image_name": "04_panel-04.png",
-      "text": "The daily rule changes the move, so Isla checks it before trusting the answer."
+      "text": "Anti-Knight changes the move, so Isla checks the rule before trusting it."
     },
     {
       "id": "panel_5",
@@ -36,7 +36,7 @@
     {
       "id": "panel_6",
       "image_name": "06_panel-06.png",
-      "text": "Wrapping up her morning habit cleanly allows Isla to focus entirely on the busy workday ahead."
+      "text": "With the morning puzzle resolved, she packs her things away, ready to tackle the workday ahead."
     },
     {
       "id": "cta",
@@ -44,11 +44,11 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nIsla secures a steady moment at her desk before the rest of the busy house wakes up.\n\nAn early morning errand shifts her usual commute, offering a brief window of unexpected downtime.\n\nSifting through her inbox on the train, she spots a crucial supplier update from Ravi.\n\nThe daily rule changes the move, so Isla checks it before trusting the answer.\n\nThe checked move holds, and the rest of the day has more room.\n\nWrapping up her morning habit cleanly allows Isla to focus entirely on the busy workday ahead.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-06-02T11:19:09.883Z",
-  "caption": "Join Isla as she navigates her workday while keeping her morning rituals intact.",
-  "variant_name": "daily rule",
-  "variant_line": "The daily rule changes the move, so Isla checks it before trusting the answer.",
+  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nThe morning sun hits the small kitchen table, offering a brief moment of steady before the rush begins.\n\nThe interruption changes the timing, not the whole shape of her morning.\n\nSettling into the train carriage, she pulls out her notebook to focus on the day's grid.\n\nAnti-Knight changes the move, so Isla checks the rule before trusting it.\n\nThe checked move holds, and the rest of the day has more room.\n\nWith the morning puzzle resolved, she packs her things away, ready to tackle the workday ahead.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-06-02T11:31:55.740Z",
+  "caption": "Join Isla as she navigates her morning puzzle amidst the bustle of a workday.",
+  "variant_name": "Anti-Knight",
+  "variant_line": "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
   "copy_refined": "openai",
   "copy_model": "gpt-4o-mini",
   "openai_response_shape": {
