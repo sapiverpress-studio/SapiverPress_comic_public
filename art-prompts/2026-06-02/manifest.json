@@ -65,7 +65,7 @@
       "output_file": "social/2026-06-02/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "Isla grabs a steady moment at her kitchen table before the workday truly begins.",
+      "caption": "Rain drums softly against the windowpane, bringing a welcome breath to a normally frantic morning.",
       "scene_id": "scene_01"
     },
     {
@@ -75,7 +75,7 @@
       "output_file": "social/2026-06-02/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "She glances at the passing scenery, trying to outrun her mounting daily checklist.",
+      "caption": "Watching the drizzle outside makes the steady lobby feel like the perfect spot to focus.",
       "scene_id": "scene_02"
     },
     {
@@ -85,7 +85,7 @@
       "output_file": "social/2026-06-02/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "A sudden buzz from her phone reminds her that time is quickly running out.",
+      "caption": "A sudden calendar reminder flashes on her screen, prompting her to set a quick boundary.",
       "scene_id": "scene_03"
     },
     {
@@ -95,7 +95,7 @@
       "output_file": "social/2026-06-02/04_panel-04.png",
       "image_name": "04_panel-04.png",
       "fallback_template": "templates/characters/isla/isla_04_breakthrough.png",
-      "caption": "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+      "caption": "Remembering the constraint, she carefully verifies the column's layout before making her final move.",
       "scene_id": "scene_04"
     },
     {
@@ -105,7 +105,7 @@
       "output_file": "social/2026-06-02/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "The calendar notification flashes on her screen, signaling it is time to wrap up.",
+      "caption": "With the proof resolved, she can finally let go of the mistake and move on.",
       "scene_id": "scene_05"
     },
     {
@@ -115,10 +115,10 @@
       "output_file": "social/2026-06-02/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "With the final proof settled, she closes the book and refocuses on her work.",
+      "caption": "Settling into the cozy, plant-filled nook, she prepares a comforting setup for tomorrow's fresh start.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-06-02.json",
-  "generated_at": "2026-06-02T06:31:45.469Z"
+  "generated_at": "2026-06-02T06:58:10.968Z"
 }

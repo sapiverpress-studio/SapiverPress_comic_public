@@ -1,14 +1,14 @@
 {
   "date": "2026-06-02",
-  "source_url": "https://sapiver-press-anti-knight.netlify.app/",
+  "source_url": "https://suite.sapiverpress.co.uk/play/trigoku/",
   "json_date": "2026-06-02",
   "week": null,
   "today": null,
-  "mode": "Anti-Knight Sudoku",
-  "source_id": "anti-knight",
-  "source_name": "Anti-Knight Sudoku",
+  "mode": "col",
+  "source_id": "trigoku",
+  "source_name": "Trigoku",
   "stage_method": "standalone_netlify_download_rendered_states",
-  "note": "Selected from standalone Netlify puzzle sources with recent-source cooldown. Downloaded real site data and rendered staged board PNGs. No browser gameplay screenshots.",
+  "note": "Selected from standalone Netlify puzzle sources with ten-day no-repeat rule. Downloaded real site data and rendered staged board PNGs. No browser gameplay screenshots.",
   "files": [
     "01_fresh_daily_grid.png",
     "02_first_moves.png",
@@ -18,29 +18,22 @@
     "06_complete_solution.png"
   ],
   "selected_source": {
-    "id": "anti-knight",
-    "name": "Anti-Knight Sudoku",
-    "netlify_project": "sapiver-press-anti-knight",
-    "url": "https://sapiver-press-anti-knight.netlify.app/",
-    "suite_url": "https://suite.sapiverpress.co.uk/play/anti-knight/",
-    "type": "sudoku_variant"
+    "id": "trigoku",
+    "name": "Trigoku",
+    "netlify_project": "sapiverpress-trigoku",
+    "url": "https://sapiverpress-trigoku.netlify.app/",
+    "suite_url": "https://suite.sapiverpress.co.uk/play/trigoku/",
+    "type": "trigoku"
   },
   "source_attempts": [
-    {
-      "id": "xv",
-      "project": "sapiver-press-xv",
-      "downloaded": true,
-      "extracted": false,
-      "url": "https://sapiver-press-xv.netlify.app/",
-      "recent_cooldown": false
-    },
     {
       "id": "thermo",
       "project": "sapiver-press-thermo",
       "downloaded": true,
       "extracted": false,
       "url": "https://sapiver-press-thermo.netlify.app/",
-      "recent_cooldown": false
+      "recent_no_repeat_blocked": false,
+      "no_repeat_window_days": 10
     },
     {
       "id": "sandwich",
@@ -48,7 +41,8 @@
       "downloaded": true,
       "extracted": false,
       "url": "https://sapiver-press-sandwich.netlify.app/",
-      "recent_cooldown": false
+      "recent_no_repeat_blocked": false,
+      "no_repeat_window_days": 10
     },
     {
       "id": "renban",
@@ -56,7 +50,8 @@
       "downloaded": true,
       "extracted": false,
       "url": "https://sapiver-press-renban.netlify.app/",
-      "recent_cooldown": false
+      "recent_no_repeat_blocked": false,
+      "no_repeat_window_days": 10
     },
     {
       "id": "little-killer",
@@ -64,7 +59,8 @@
       "downloaded": true,
       "extracted": false,
       "url": "https://sapiver-press-little-killer.netlify.app/",
-      "recent_cooldown": false
+      "recent_no_repeat_blocked": false,
+      "no_repeat_window_days": 10
     },
     {
       "id": "killer",
@@ -72,7 +68,8 @@
       "downloaded": true,
       "extracted": false,
       "url": "https://sapiver-press-killer.netlify.app/",
-      "recent_cooldown": false
+      "recent_no_repeat_blocked": false,
+      "no_repeat_window_days": 10
     },
     {
       "id": "german-whisper",
@@ -80,7 +77,8 @@
       "downloaded": true,
       "extracted": false,
       "url": "https://sapiver-press-german-whisper.netlify.app/",
-      "recent_cooldown": false
+      "recent_no_repeat_blocked": false,
+      "no_repeat_window_days": 10
     },
     {
       "id": "arrow",
@@ -88,7 +86,8 @@
       "downloaded": true,
       "extracted": false,
       "url": "https://sapiver-press-arrow.netlify.app/",
-      "recent_cooldown": false
+      "recent_no_repeat_blocked": false,
+      "no_repeat_window_days": 10
     },
     {
       "id": "sudoku-x",
@@ -96,7 +95,8 @@
       "downloaded": true,
       "extracted": false,
       "url": "https://sapiver-sudoku-x.netlify.app/",
-      "recent_cooldown": false
+      "recent_no_repeat_blocked": false,
+      "no_repeat_window_days": 10
     },
     {
       "id": "odds-and-evens",
@@ -104,7 +104,8 @@
       "downloaded": true,
       "extracted": false,
       "url": "https://sapiver-press-odds-and-evens.netlify.app/",
-      "recent_cooldown": false
+      "recent_no_repeat_blocked": false,
+      "no_repeat_window_days": 10
     },
     {
       "id": "non-consecutive",
@@ -112,7 +113,8 @@
       "downloaded": true,
       "extracted": false,
       "url": "https://sapiver-press-non-con.netlify.app/",
-      "recent_cooldown": false
+      "recent_no_repeat_blocked": false,
+      "no_repeat_window_days": 10
     },
     {
       "id": "kropki",
@@ -120,7 +122,8 @@
       "downloaded": true,
       "extracted": false,
       "url": "https://sapiver-press-kropki.netlify.app/",
-      "recent_cooldown": false
+      "recent_no_repeat_blocked": false,
+      "no_repeat_window_days": 10
     },
     {
       "id": "hyper",
@@ -128,7 +131,8 @@
       "downloaded": true,
       "extracted": false,
       "url": "https://sapiver-press-hyper.netlify.app/",
-      "recent_cooldown": false
+      "recent_no_repeat_blocked": false,
+      "no_repeat_window_days": 10
     },
     {
       "id": "anti-king",
@@ -136,25 +140,84 @@
       "downloaded": true,
       "extracted": false,
       "url": "https://sapiver-press-anti-king.netlify.app/",
-      "recent_cooldown": false
+      "recent_no_repeat_blocked": false,
+      "no_repeat_window_days": 10
     },
     {
-      "id": "anti-knight",
-      "project": "sapiver-press-anti-knight",
+      "id": "xv",
+      "project": "sapiver-press-xv",
+      "downloaded": true,
+      "extracted": false,
+      "url": "https://sapiver-press-xv.netlify.app/",
+      "recent_no_repeat_blocked": false,
+      "no_repeat_window_days": 10
+    },
+    {
+      "id": "trigoku",
+      "project": "sapiverpress-trigoku",
       "downloaded": true,
       "extracted": true,
-      "url": "https://sapiver-press-anti-knight.netlify.app/",
-      "recent_cooldown": true
+      "url": "https://suite.sapiverpress.co.uk/play/trigoku/",
+      "recent_no_repeat_blocked": true,
+      "no_repeat_window_days": 10
     }
   ],
-  "recent_source_ids": [
-    "anti-knight",
-    "anti-knight",
-    "anti-knight",
-    "trigoku",
-    "anti-knight",
+  "recent_source_history": [
+    {
+      "date": "2026-06-02",
+      "source_id": "anti-knight",
+      "source_type": "sudoku_variant",
+      "source_name": "Anti-Knight Sudoku",
+      "age_days": 0
+    },
+    {
+      "date": "2026-06-01",
+      "source_id": "anti-knight",
+      "source_type": "sudoku_variant",
+      "source_name": "Anti-Knight Sudoku",
+      "age_days": 1
+    },
+    {
+      "date": "2026-05-31",
+      "source_id": "anti-knight",
+      "source_type": "sudoku_variant",
+      "source_name": "Anti-Knight Sudoku",
+      "age_days": 2
+    },
+    {
+      "date": "2026-05-30",
+      "source_id": "trigoku",
+      "source_type": "trigoku",
+      "source_name": "Trigoku",
+      "age_days": 3
+    },
+    {
+      "date": "2026-05-29",
+      "source_id": "anti-knight",
+      "source_type": "sudoku_variant",
+      "source_name": "Anti-Knight Sudoku",
+      "age_days": 4
+    },
+    {
+      "date": "2026-05-28",
+      "source_id": "anti-knight",
+      "source_type": "sudoku_variant",
+      "source_name": "Anti-Knight Sudoku",
+      "age_days": 5
+    },
+    {
+      "date": "2026-05-27",
+      "source_id": "trigoku",
+      "source_type": "trigoku",
+      "source_name": "Trigoku",
+      "age_days": 6
+    }
+  ],
+  "no_repeat_window_days": 10,
+  "blocked_recent_source_ids": [
     "anti-knight",
     "trigoku"
   ],
-  "source_selection_method": "date_seeded_with_recent_cooldown"
+  "no_repeat_fallback_used": false,
+  "source_selection_method": "date_seeded_no_repeat_10_days"
 }
