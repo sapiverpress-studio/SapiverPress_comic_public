@@ -1,6 +1,6 @@
 {
   "date": "2026-06-02",
-  "title": "A Day in Isla's Life",
+  "title": "A Steady Start",
   "voice_name": "Isla Sterling",
   "segments": [
     {
@@ -11,32 +11,32 @@
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "Isla grabs a quick moment to organize her thoughts before the morning rush officially begins."
+      "text": "Isla lets the day show her what has to come first."
     },
     {
       "id": "panel_2",
       "image_name": "02_panel-02.png",
-      "text": "Waiting on the platform, she steals a few precious minutes to sketch out a quick plan."
+      "text": "The interruption changes the timing, not the whole shape of her morning."
     },
     {
       "id": "panel_3",
       "image_name": "03_panel-03.png",
-      "text": "Finding a seat by the window, she realizes this step requires careful, deliberate thought."
+      "text": "Squeezing a quick moment into her busy schedule, she sits at a steady desk between the bookshelves."
     },
     {
       "id": "panel_4",
       "image_name": "04_panel-04.png",
-      "text": "The daily rule changes the move, so Isla checks it before trusting the answer."
+      "text": "Anti-Knight changes the move, so Isla checks the rule before trusting it."
     },
     {
       "id": "panel_5",
       "image_name": "05_panel-05.png",
-      "text": "The checked move holds, and the rest of the day has more room."
+      "text": "After dropping off her admin paperwork at the shop counter, she feels ready for her 9:00 start."
     },
     {
       "id": "panel_6",
       "image_name": "06_panel-06.png",
-      "text": "Settling into a steady, rainy corner, she prepares to dive back into her pressing work tasks."
+      "text": "She closes the laptop with one decision carried forward."
     },
     {
       "id": "cta",
@@ -44,11 +44,11 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nIsla grabs a quick moment to organize her thoughts before the morning rush officially begins.\n\nWaiting on the platform, she steals a few precious minutes to sketch out a quick plan.\n\nFinding a seat by the window, she realizes this step requires careful, deliberate thought.\n\nThe daily rule changes the move, so Isla checks it before trusting the answer.\n\nThe checked move holds, and the rest of the day has more room.\n\nSettling into a steady, rainy corner, she prepares to dive back into her pressing work tasks.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-06-02T21:19:37.997Z",
-  "caption": "Isla balances work and her puzzle habit throughout a busy day.",
-  "variant_name": "daily rule",
-  "variant_line": "The daily rule changes the move, so Isla checks it before trusting the answer.",
+  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nIsla lets the day show her what has to come first.\n\nThe interruption changes the timing, not the whole shape of her morning.\n\nSqueezing a quick moment into her busy schedule, she sits at a steady desk between the bookshelves.\n\nAnti-Knight changes the move, so Isla checks the rule before trusting it.\n\nAfter dropping off her admin paperwork at the shop counter, she feels ready for her 9:00 start.\n\nShe closes the laptop with one decision carried forward.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-06-02T21:39:52.001Z",
+  "caption": "Isla protects her morning rituals amidst a busy workday.",
+  "variant_name": "Anti-Knight",
+  "variant_line": "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
   "copy_refined": "openai",
   "copy_model": "gpt-4o-mini",
   "openai_response_shape": {

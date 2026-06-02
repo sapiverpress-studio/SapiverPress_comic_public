@@ -1,81 +1,74 @@
 {
   "date": "2026-06-02",
-  "generated_at": "2026-06-02T21:19:21.065Z",
+  "generated_at": "2026-06-02T21:38:28.702Z",
   "route": "fal-ai-z-image-turbo-lora-first",
   "fal_model": "fal-ai/z-image/turbo/lora",
   "hf_fallback_model": "stabilityai/stable-diffusion-xl-base-1.0",
   "lora_file": "Isla_v2_1780410778059.safetensors",
-  "lora_url": "https://huggingface.co/sapiverpress/sapiverpress-isla-lora/resolve/main/Isla_v2_1780410778059.safetensors",
+  "lora_url": "https://huggingface.co/sapiverpress/Isla_v2/resolve/main/Isla_v2_1780410778059.safetensors",
   "lora_url_mode": "hf_repo_default",
   "lora_auth": "not_sent_public_repo",
   "trigger_word": "Isla_v2",
   "requested_panels": 6,
-  "generated_count": 0,
-  "generated_panels": [],
-  "fallback_template_panels": [
+  "generated_count": 6,
+  "generated_panels": [
     {
       "panel_number": 1,
       "image_name": "01_panel-01.png",
-      "reason": "not generated"
+      "provider": "fal",
+      "model": "fal-ai/z-image/turbo/lora",
+      "output": "art-replacements/2026-06-02/01_panel-01.png",
+      "remote_url": "https://v3b.fal.media/files/b/0a9cbaef/14UJ7YoCzBkrljF8gISUi_oe1ZlG6S.png",
+      "fal_error": ""
     },
     {
       "panel_number": 2,
       "image_name": "02_panel-02.png",
-      "reason": "not generated"
+      "provider": "fal",
+      "model": "fal-ai/z-image/turbo/lora",
+      "output": "art-replacements/2026-06-02/02_panel-02.png",
+      "remote_url": "https://v3b.fal.media/files/b/0a9cbaf1/eo9O7fGNYodC_Qgq6yTPU_u5AJ6bvR.png",
+      "fal_error": ""
     },
     {
       "panel_number": 3,
       "image_name": "03_panel-03.png",
-      "reason": "not generated"
+      "provider": "fal",
+      "model": "fal-ai/z-image/turbo/lora",
+      "output": "art-replacements/2026-06-02/03_panel-03.png",
+      "remote_url": "https://v3b.fal.media/files/b/0a9cbaf2/X7VB66gbFQStnBeK-6Fnm_9Y97XRqz.png",
+      "fal_error": ""
     },
     {
       "panel_number": 4,
       "image_name": "04_panel-04.png",
-      "reason": "not generated"
+      "provider": "fal",
+      "model": "fal-ai/z-image/turbo/lora",
+      "output": "art-replacements/2026-06-02/04_panel-04.png",
+      "remote_url": "https://v3b.fal.media/files/b/0a9cbaf2/oHLkuHn6dYU21db7gaJeB_UTV7Z51R.png",
+      "fal_error": ""
     },
     {
       "panel_number": 5,
       "image_name": "05_panel-05.png",
-      "reason": "not generated"
+      "provider": "fal",
+      "model": "fal-ai/z-image/turbo/lora",
+      "output": "art-replacements/2026-06-02/05_panel-05.png",
+      "remote_url": "https://v3b.fal.media/files/b/0a9cbaf4/UJvM2x1DGd5hoswZ6ox7u_ZjuT42wC.png",
+      "fal_error": ""
     },
     {
       "panel_number": 6,
       "image_name": "06_panel-06.png",
-      "reason": "not generated"
+      "provider": "fal",
+      "model": "fal-ai/z-image/turbo/lora",
+      "output": "art-replacements/2026-06-02/06_panel-06.png",
+      "remote_url": "https://v3b.fal.media/files/b/0a9cbaf9/bLB3JcNHB5U8Yr4QnPW4B_kv31ofMV.png",
+      "fal_error": ""
     }
   ],
-  "errors": [
-    {
-      "panel_number": 1,
-      "image_name": "01_panel-01.png",
-      "error": "Network fetch failed for api-inference.huggingface.co after 42ms: {\"message\":\"fetch failed\",\"name\":\"TypeError\",\"cause_message\":\"getaddrinfo ENOTFOUND api-inference.huggingface.co\",\"cause_code\":\"ENOTFOUND\",\"cause_errno\":-3007,\"cause_syscall\":\"getaddrinfo\",\"cause_hostname\":\"api-inference.huggingface.co\",\"cause_address\":\"\",\"cause_port\":\"\"}"
-    },
-    {
-      "panel_number": 2,
-      "image_name": "02_panel-02.png",
-      "error": "Network fetch failed for api-inference.huggingface.co after 22ms: {\"message\":\"fetch failed\",\"name\":\"TypeError\",\"cause_message\":\"getaddrinfo ENOTFOUND api-inference.huggingface.co\",\"cause_code\":\"ENOTFOUND\",\"cause_errno\":-3007,\"cause_syscall\":\"getaddrinfo\",\"cause_hostname\":\"api-inference.huggingface.co\",\"cause_address\":\"\",\"cause_port\":\"\"}"
-    },
-    {
-      "panel_number": 3,
-      "image_name": "03_panel-03.png",
-      "error": "Network fetch failed for api-inference.huggingface.co after 37ms: {\"message\":\"fetch failed\",\"name\":\"TypeError\",\"cause_message\":\"getaddrinfo ENOTFOUND api-inference.huggingface.co\",\"cause_code\":\"ENOTFOUND\",\"cause_errno\":-3007,\"cause_syscall\":\"getaddrinfo\",\"cause_hostname\":\"api-inference.huggingface.co\",\"cause_address\":\"\",\"cause_port\":\"\"}"
-    },
-    {
-      "panel_number": 4,
-      "image_name": "04_panel-04.png",
-      "error": "Network fetch failed for api-inference.huggingface.co after 39ms: {\"message\":\"fetch failed\",\"name\":\"TypeError\",\"cause_message\":\"getaddrinfo ENOTFOUND api-inference.huggingface.co\",\"cause_code\":\"ENOTFOUND\",\"cause_errno\":-3007,\"cause_syscall\":\"getaddrinfo\",\"cause_hostname\":\"api-inference.huggingface.co\",\"cause_address\":\"\",\"cause_port\":\"\"}"
-    },
-    {
-      "panel_number": 5,
-      "image_name": "05_panel-05.png",
-      "error": "Network fetch failed for api-inference.huggingface.co after 14ms: {\"message\":\"fetch failed\",\"name\":\"TypeError\",\"cause_message\":\"getaddrinfo ENOTFOUND api-inference.huggingface.co\",\"cause_code\":\"ENOTFOUND\",\"cause_errno\":-3007,\"cause_syscall\":\"getaddrinfo\",\"cause_hostname\":\"api-inference.huggingface.co\",\"cause_address\":\"\",\"cause_port\":\"\"}"
-    },
-    {
-      "panel_number": 6,
-      "image_name": "06_panel-06.png",
-      "error": "Network fetch failed for api-inference.huggingface.co after 43ms: {\"message\":\"fetch failed\",\"name\":\"TypeError\",\"cause_message\":\"getaddrinfo ENOTFOUND api-inference.huggingface.co\",\"cause_code\":\"ENOTFOUND\",\"cause_errno\":-3007,\"cause_syscall\":\"getaddrinfo\",\"cause_hostname\":\"api-inference.huggingface.co\",\"cause_address\":\"\",\"cause_port\":\"\"}"
-    }
-  ],
+  "fallback_template_panels": [],
+  "errors": [],
   "preflight": {
     "hf_token": {
       "ok": true,
@@ -88,7 +81,7 @@
       "ok": true,
       "status": 200,
       "status_text": "OK",
-      "id": "sapiverpress/sapiverpress-isla-lora",
+      "id": "sapiverpress/Isla_v2",
       "private": false,
       "error": ""
     }

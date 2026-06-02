@@ -28,12 +28,6 @@
   "location_memory": [
     {
       "date": "2026-05-30",
-      "attempt": 14,
-      "setting": "co-working desk near a tall window",
-      "reason": "she has work waiting, so the puzzle has to fit into a short gap"
-    },
-    {
-      "date": "2026-05-30",
       "attempt": 15,
       "setting": "rainy window nook with plants",
       "reason": "rain has slowed everything down and she lets it"
@@ -385,15 +379,15 @@
       "attempt": 15,
       "setting": "co-working desk near a tall window",
       "reason": "she has work waiting, so the puzzle has to fit into a short gap"
+    },
+    {
+      "date": "2026-06-02",
+      "attempt": 16,
+      "setting": "gothic window desk with cityscape view",
+      "reason": "she wants a quiet start before the day gets noisy"
     }
   ],
   "variant_memory": [
-    {
-      "date": "2026-05-30",
-      "attempt": 14,
-      "variant_name": "Trigoku",
-      "panel_index": 2
-    },
     {
       "date": "2026-05-30",
       "attempt": 15,
@@ -747,21 +741,15 @@
       "attempt": 15,
       "variant_name": "col",
       "panel_index": 4
+    },
+    {
+      "date": "2026-06-02",
+      "attempt": 16,
+      "variant_name": "Anti-Knight",
+      "panel_index": 2
     }
   ],
   "life_memory": [
-    {
-      "date": "2026-05-30",
-      "attempt": 14,
-      "location": "co-working desk near a tall window",
-      "reason_for_location": "she has work waiting, so the puzzle has to fit into a short gap",
-      "life_detail_learned": "Isla often fits her puzzle ritual between work blocks.",
-      "thread_to_continue": "work days make the puzzle a boundary marker",
-      "puzzle_variant_mentioned": "Trigoku",
-      "variant_panel_index": 2,
-      "uk_calendar_date": null,
-      "uk_calendar_panel_index": null
-    },
     {
       "date": "2026-05-30",
       "attempt": 15,
@@ -1467,6 +1455,18 @@
       "thread_to_continue": "work days make the puzzle a boundary marker",
       "puzzle_variant_mentioned": "col",
       "variant_panel_index": 4,
+      "uk_calendar_date": null,
+      "uk_calendar_panel_index": null
+    },
+    {
+      "date": "2026-06-02",
+      "attempt": 16,
+      "location": "gothic window desk with cityscape view",
+      "reason_for_location": "she wants a quiet start before the day gets noisy",
+      "life_detail_learned": "Isla protects small morning rituals when she needs steadiness.",
+      "thread_to_continue": "quiet morning rituals help her reset",
+      "puzzle_variant_mentioned": "Anti-Knight",
+      "variant_panel_index": 2,
       "uk_calendar_date": null,
       "uk_calendar_panel_index": null
     }

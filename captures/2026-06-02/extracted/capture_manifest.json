@@ -1,12 +1,12 @@
 {
   "date": "2026-06-02",
-  "source_url": "https://suite.sapiverpress.co.uk/play/trigoku/",
+  "source_url": "https://sapiver-press-anti-knight.netlify.app/",
   "json_date": "2026-06-02",
   "week": null,
   "today": null,
-  "mode": "col",
-  "source_id": "trigoku",
-  "source_name": "Trigoku",
+  "mode": "Anti-Knight Sudoku",
+  "source_id": "anti-knight",
+  "source_name": "Anti-Knight Sudoku",
   "stage_method": "standalone_netlify_download_rendered_states",
   "note": "Selected from standalone Netlify puzzle sources with ten-day no-repeat rule. Downloaded real site data and rendered staged board PNGs. No browser gameplay screenshots.",
   "files": [
@@ -18,12 +18,12 @@
     "06_complete_solution.png"
   ],
   "selected_source": {
-    "id": "trigoku",
-    "name": "Trigoku",
-    "netlify_project": "sapiverpress-trigoku",
-    "url": "https://sapiverpress-trigoku.netlify.app/",
-    "suite_url": "https://suite.sapiverpress.co.uk/play/trigoku/",
-    "type": "trigoku"
+    "id": "anti-knight",
+    "name": "Anti-Knight Sudoku",
+    "netlify_project": "sapiver-press-anti-knight",
+    "url": "https://sapiver-press-anti-knight.netlify.app/",
+    "suite_url": "https://suite.sapiverpress.co.uk/play/anti-knight/",
+    "type": "sudoku_variant"
   },
   "source_attempts": [
     {
@@ -153,11 +153,11 @@
       "no_repeat_window_days": 10
     },
     {
-      "id": "trigoku",
-      "project": "sapiverpress-trigoku",
+      "id": "anti-knight",
+      "project": "sapiver-press-anti-knight",
       "downloaded": true,
       "extracted": true,
-      "url": "https://suite.sapiverpress.co.uk/play/trigoku/",
+      "url": "https://sapiver-press-anti-knight.netlify.app/",
       "recent_no_repeat_blocked": true,
       "no_repeat_window_days": 10
     }
@@ -165,9 +165,9 @@
   "recent_source_history": [
     {
       "date": "2026-06-02",
-      "source_id": "anti-knight",
-      "source_type": "sudoku_variant",
-      "source_name": "Anti-Knight Sudoku",
+      "source_id": "trigoku",
+      "source_type": "trigoku",
+      "source_name": "Trigoku",
       "age_days": 0
     },
     {
@@ -215,8 +215,8 @@
   ],
   "no_repeat_window_days": 10,
   "blocked_recent_source_ids": [
-    "anti-knight",
-    "trigoku"
+    "trigoku",
+    "anti-knight"
   ],
   "no_repeat_fallback_used": false,
   "source_selection_method": "date_seeded_no_repeat_10_days"
