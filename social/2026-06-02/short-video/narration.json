@@ -1,6 +1,6 @@
 {
   "date": "2026-06-02",
-  "title": "Isla's Puzzle Day",
+  "title": "A Day in the Bookshop Cafe Corner",
   "voice_name": "Isla Sterling",
   "segments": [
     {
@@ -11,7 +11,7 @@
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "Isla lets the day show her what has to come first."
+      "text": "Before the morning rush takes over, Isla takes a steady minute to map out her day."
     },
     {
       "id": "panel_2",
@@ -21,12 +21,12 @@
     {
       "id": "panel_3",
       "image_name": "03_panel-03.png",
-      "text": "She claims a small desk deep in the stacks, carving out a brief moment of steady focus."
+      "text": "She waits for the first move that proves itself."
     },
     {
       "id": "panel_4",
       "image_name": "04_panel-04.png",
-      "text": "The daily rule changes the move, so Isla checks it before trusting the answer."
+      "text": "Anti-Knight changes the move, so Isla checks the rule before trusting it."
     },
     {
       "id": "panel_5",
@@ -36,7 +36,7 @@
     {
       "id": "panel_6",
       "image_name": "06_panel-06.png",
-      "text": "Back on the sofa, she finally closes her laptop with one major workday decision cleanly resolved."
+      "text": "She closes the laptop with one decision carried forward."
     },
     {
       "id": "cta",
@@ -44,11 +44,11 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nIsla lets the day show her what has to come first.\n\nThe interruption changes the timing, not the whole shape of her morning.\n\nShe claims a small desk deep in the stacks, carving out a brief moment of steady focus.\n\nThe daily rule changes the move, so Isla checks it before trusting the answer.\n\nThe checked move holds, and the rest of the day has more room.\n\nBack on the sofa, she finally closes her laptop with one major workday decision cleanly resolved.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-06-02T11:47:42.123Z",
-  "caption": "Join Isla as she navigates her workday while fitting in a puzzle.",
-  "variant_name": "daily rule",
-  "variant_line": "The daily rule changes the move, so Isla checks it before trusting the answer.",
+  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nBefore the morning rush takes over, Isla takes a steady minute to map out her day.\n\nThe interruption changes the timing, not the whole shape of her morning.\n\nShe waits for the first move that proves itself.\n\nAnti-Knight changes the move, so Isla checks the rule before trusting it.\n\nThe checked move holds, and the rest of the day has more room.\n\nShe closes the laptop with one decision carried forward.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-06-02T20:37:04.112Z",
+  "caption": "Isla finds solace in the quiet corner of a bookshop cafe, balancing work and a puzzle.",
+  "variant_name": "Anti-Knight",
+  "variant_line": "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
   "copy_refined": "openai",
   "copy_model": "gpt-4o-mini",
   "openai_response_shape": {

@@ -1,73 +1,81 @@
 {
   "date": "2026-06-02",
-  "generated_at": "2026-06-02T11:47:10.082Z",
-  "route": "fal-ai/flux-lora-first",
+  "generated_at": "2026-06-02T20:36:43.492Z",
+  "route": "fal-ai-z-image-turbo-lora-first",
   "fal_model": "fal-ai/z-image/turbo/lora",
   "hf_fallback_model": "stabilityai/stable-diffusion-xl-base-1.0",
-  "lora_file": "ISLA_SP_1779957190206.safetensors",
-  "lora_url_mode": "hard_coded_public_literal",
+  "lora_file": "Isla_v2_1780410778059.safetensors",
+  "lora_url": "https://huggingface.co/sapiverpress/sapiverpress-isla-lora/resolve/main/Isla_v2_1780410778059.safetensors",
+  "lora_url_mode": "hf_repo_default",
   "lora_auth": "not_sent_public_repo",
   "trigger_word": "ISLA_SP",
   "requested_panels": 6,
-  "generated_count": 6,
-  "generated_panels": [
+  "generated_count": 0,
+  "generated_panels": [],
+  "fallback_template_panels": [
     {
       "panel_number": 1,
       "image_name": "01_panel-01.png",
-      "provider": "fal",
-      "model": "fal-ai/z-image/turbo/lora",
-      "output": "art-replacements/2026-06-02/01_panel-01.png",
-      "remote_url": "https://v3b.fal.media/files/b/0a9cad13/ctjo2tObjt-N_DBVIwzqp_UktaYwYB.png",
-      "fal_error": ""
+      "reason": "not generated"
     },
     {
       "panel_number": 2,
       "image_name": "02_panel-02.png",
-      "provider": "fal",
-      "model": "fal-ai/z-image/turbo/lora",
-      "output": "art-replacements/2026-06-02/02_panel-02.png",
-      "remote_url": "https://v3b.fal.media/files/b/0a9cad17/-PzRBoB-JmPnfdnIltpPa_pkPViEiN.png",
-      "fal_error": ""
+      "reason": "not generated"
     },
     {
       "panel_number": 3,
       "image_name": "03_panel-03.png",
-      "provider": "fal",
-      "model": "fal-ai/z-image/turbo/lora",
-      "output": "art-replacements/2026-06-02/03_panel-03.png",
-      "remote_url": "https://v3b.fal.media/files/b/0a9cad13/d8RIiFwVZTSFQEwXkq8W3_rlkVkF6U.png",
-      "fal_error": ""
+      "reason": "not generated"
     },
     {
       "panel_number": 4,
       "image_name": "04_panel-04.png",
-      "provider": "fal",
-      "model": "fal-ai/z-image/turbo/lora",
-      "output": "art-replacements/2026-06-02/04_panel-04.png",
-      "remote_url": "https://v3b.fal.media/files/b/0a9cad14/0nnkSqVxf-VOpYzO8PPqG_NJVvqNKE.png",
-      "fal_error": ""
+      "reason": "not generated"
     },
     {
       "panel_number": 5,
       "image_name": "05_panel-05.png",
-      "provider": "fal",
-      "model": "fal-ai/z-image/turbo/lora",
-      "output": "art-replacements/2026-06-02/05_panel-05.png",
-      "remote_url": "https://v3b.fal.media/files/b/0a9cad14/xEck5QocusXV8YX77qsGv_MTlxbCR4.png",
-      "fal_error": ""
+      "reason": "not generated"
     },
     {
       "panel_number": 6,
       "image_name": "06_panel-06.png",
-      "provider": "fal",
-      "model": "fal-ai/z-image/turbo/lora",
-      "output": "art-replacements/2026-06-02/06_panel-06.png",
-      "remote_url": "https://v3b.fal.media/files/b/0a9cad14/lr1NRy8yT4v7L945hMwKU_ObewWyAQ.png",
-      "fal_error": ""
+      "reason": "not generated"
     }
   ],
-  "fallback_template_panels": [],
-  "errors": [],
+  "errors": [
+    {
+      "panel_number": 1,
+      "image_name": "01_panel-01.png",
+      "error": "Network fetch failed for api-inference.huggingface.co after 47ms: {\"message\":\"fetch failed\",\"name\":\"TypeError\",\"cause_message\":\"getaddrinfo ENOTFOUND api-inference.huggingface.co\",\"cause_code\":\"ENOTFOUND\",\"cause_errno\":-3007,\"cause_syscall\":\"getaddrinfo\",\"cause_hostname\":\"api-inference.huggingface.co\",\"cause_address\":\"\",\"cause_port\":\"\"}"
+    },
+    {
+      "panel_number": 2,
+      "image_name": "02_panel-02.png",
+      "error": "Network fetch failed for api-inference.huggingface.co after 85ms: {\"message\":\"fetch failed\",\"name\":\"TypeError\",\"cause_message\":\"getaddrinfo ENOTFOUND api-inference.huggingface.co\",\"cause_code\":\"ENOTFOUND\",\"cause_errno\":-3007,\"cause_syscall\":\"getaddrinfo\",\"cause_hostname\":\"api-inference.huggingface.co\",\"cause_address\":\"\",\"cause_port\":\"\"}"
+    },
+    {
+      "panel_number": 3,
+      "image_name": "03_panel-03.png",
+      "error": "Network fetch failed for api-inference.huggingface.co after 24ms: {\"message\":\"fetch failed\",\"name\":\"TypeError\",\"cause_message\":\"getaddrinfo ENOTFOUND api-inference.huggingface.co\",\"cause_code\":\"ENOTFOUND\",\"cause_errno\":-3007,\"cause_syscall\":\"getaddrinfo\",\"cause_hostname\":\"api-inference.huggingface.co\",\"cause_address\":\"\",\"cause_port\":\"\"}"
+    },
+    {
+      "panel_number": 4,
+      "image_name": "04_panel-04.png",
+      "error": "Network fetch failed for api-inference.huggingface.co after 40ms: {\"message\":\"fetch failed\",\"name\":\"TypeError\",\"cause_message\":\"getaddrinfo ENOTFOUND api-inference.huggingface.co\",\"cause_code\":\"ENOTFOUND\",\"cause_errno\":-3007,\"cause_syscall\":\"getaddrinfo\",\"cause_hostname\":\"api-inference.huggingface.co\",\"cause_address\":\"\",\"cause_port\":\"\"}"
+    },
+    {
+      "panel_number": 5,
+      "image_name": "05_panel-05.png",
+      "error": "Network fetch failed for api-inference.huggingface.co after 40ms: {\"message\":\"fetch failed\",\"name\":\"TypeError\",\"cause_message\":\"getaddrinfo ENOTFOUND api-inference.huggingface.co\",\"cause_code\":\"ENOTFOUND\",\"cause_errno\":-3007,\"cause_syscall\":\"getaddrinfo\",\"cause_hostname\":\"api-inference.huggingface.co\",\"cause_address\":\"\",\"cause_port\":\"\"}"
+    },
+    {
+      "panel_number": 6,
+      "image_name": "06_panel-06.png",
+      "error": "Network fetch failed for api-inference.huggingface.co after 87ms: {\"message\":\"fetch failed\",\"name\":\"TypeError\",\"cause_message\":\"getaddrinfo ENOTFOUND api-inference.huggingface.co\",\"cause_code\":\"ENOTFOUND\",\"cause_errno\":-3007,\"cause_syscall\":\"getaddrinfo\",\"cause_hostname\":\"api-inference.huggingface.co\",\"cause_address\":\"\",\"cause_port\":\"\"}"
+    }
+  ],
   "preflight": {
     "hf_token": {
       "ok": true,
