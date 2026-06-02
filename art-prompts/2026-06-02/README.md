@@ -12,6 +12,7 @@ Drop finished generated panel artwork into this folder using these exact names:
 Rules:
 
 - Use the locked Isla appearance plus the selected composition, hard environment markers, pose/body-language marker, mandatory screen block, optional story beat, and controlled readable prop text.
+- Prompt builder prepends the active LoRA trigger: Isla_v2.
 - Do not include puzzle content, captions, speech bubbles, page headers, footers, or large Sapiver Press titles.
 - The compositor will insert the real daily puzzle screenshots and captions.
 - Background prop text is allowed only on natural objects such as posters, book spines, cushions, mugs, notebooks, pencil cases, or reception signs.

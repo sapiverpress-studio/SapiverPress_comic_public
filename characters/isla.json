@@ -105,51 +105,6 @@
     {
       "date": "2026-05-31",
       "weekday": "Sunday",
-      "same_day_attempt": 1,
-      "setting": "gothic window desk with cityscape view",
-      "puzzle_phase": "late-week",
-      "story_note": "Isla spends this entry at the gothic window desk with cityscape view because she wants a quiet start before the day gets noisy. The puzzle stays as a light thread inside the day.",
-      "continuation_note": "Remember: Isla protects small morning rituals when she needs steadiness. Continue the thread: quiet morning rituals help her reset.",
-      "stuck_moment": "thoughtful pause, checking the route",
-      "life_memory_entry": {
-        "date": "2026-05-31",
-        "attempt": 1,
-        "location": "gothic window desk with cityscape view",
-        "reason_for_location": "she wants a quiet start before the day gets noisy",
-        "life_detail_learned": "Isla protects small morning rituals when she needs steadiness.",
-        "thread_to_continue": "quiet morning rituals help her reset",
-        "puzzle_variant_mentioned": "Trigoku",
-        "variant_panel_index": 4,
-        "uk_calendar_date": null,
-        "uk_calendar_panel_index": null
-      },
-      "variant_recap": {
-        "variant_name": "Trigoku",
-        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
-        "panel_index": 4,
-        "line": "Today has its own little rule-set — check the constraint before rushing."
-      },
-      "uk_calendar_date": null,
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "Bookshop corner.",
-        "First mark.",
-        "Pause there.",
-        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
-        "Nearly home.",
-        "One more page."
-      ]
-    },
-    {
-      "date": "2026-05-31",
-      "weekday": "Sunday",
       "same_day_attempt": 2,
       "setting": "small kitchen table in warm morning light",
       "puzzle_phase": "late-week",
@@ -859,12 +814,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Bookshop corner.",
-        "First mark.",
-        "Pause there.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly home.",
-        "One more page."
+        "Between tasks.",
+        "Quick start.",
+        "No shortcut.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Nearly done.",
+        "Back to work."
       ]
     },
     {
@@ -904,12 +859,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Bookshop corner.",
-        "First mark.",
-        "Pause there.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly home.",
-        "One more page."
+        "Between tasks.",
+        "Quick start.",
+        "No shortcut.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Nearly done.",
+        "Back to work."
       ]
     },
     {
@@ -949,12 +904,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Bookshop corner.",
-        "First mark.",
-        "Pause there.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly home.",
-        "One more page."
+        "Between tasks.",
+        "Quick start.",
+        "No shortcut.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Nearly done.",
+        "Back to work."
       ]
     },
     {
@@ -994,12 +949,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Bookshop corner.",
-        "First mark.",
-        "Pause there.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly home.",
-        "One more page."
+        "Between tasks.",
+        "Quick start.",
+        "No shortcut.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Nearly done.",
+        "Back to work."
       ]
     },
     {
@@ -1039,12 +994,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Bookshop corner.",
-        "First mark.",
-        "Pause there.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly home.",
-        "One more page."
+        "Between tasks.",
+        "Quick start.",
+        "No shortcut.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Nearly done.",
+        "Back to work."
       ]
     },
     {
@@ -1084,12 +1039,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Bookshop corner.",
-        "First mark.",
-        "Pause there.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly home.",
-        "One more page."
+        "Between tasks.",
+        "Quick start.",
+        "No shortcut.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Nearly done.",
+        "Back to work."
       ]
     },
     {
@@ -1129,12 +1084,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Bookshop corner.",
-        "First mark.",
-        "Pause there.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly home.",
-        "One more page."
+        "Between tasks.",
+        "Quick start.",
+        "No shortcut.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Nearly done.",
+        "Back to work."
       ]
     },
     {
@@ -1174,12 +1129,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Bookshop corner.",
-        "First mark.",
-        "Pause there.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly home.",
-        "One more page."
+        "Between tasks.",
+        "Quick start.",
+        "No shortcut.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Nearly done.",
+        "Back to work."
       ]
     },
     {
@@ -1219,12 +1174,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Bookshop corner.",
-        "First mark.",
-        "Pause there.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly home.",
-        "One more page."
+        "Between tasks.",
+        "Quick start.",
+        "No shortcut.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Nearly done.",
+        "Back to work."
       ]
     },
     {
@@ -1264,12 +1219,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Bookshop corner.",
-        "First mark.",
-        "Pause there.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly home.",
-        "One more page."
+        "Between tasks.",
+        "Quick start.",
+        "No shortcut.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Nearly done.",
+        "Back to work."
       ]
     },
     {
@@ -1309,12 +1264,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Bookshop corner.",
-        "First mark.",
-        "Pause there.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly home.",
-        "One more page."
+        "Between tasks.",
+        "Quick start.",
+        "No shortcut.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Nearly done.",
+        "Back to work."
       ]
     },
     {
@@ -1354,12 +1309,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Bookshop corner.",
-        "First mark.",
-        "Pause there.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly home.",
-        "One more page."
+        "Between tasks.",
+        "Quick start.",
+        "No shortcut.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Nearly done.",
+        "Back to work."
       ]
     },
     {
@@ -1399,12 +1354,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Bookshop corner.",
-        "First mark.",
-        "Pause there.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly home.",
-        "One more page."
+        "Between tasks.",
+        "Quick start.",
+        "No shortcut.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Nearly done.",
+        "Back to work."
       ]
     },
     {
@@ -1444,12 +1399,57 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Bookshop corner.",
-        "First mark.",
-        "Pause there.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly home.",
-        "One more page."
+        "Between tasks.",
+        "Quick start.",
+        "No shortcut.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Nearly done.",
+        "Back to work."
+      ]
+    },
+    {
+      "date": "2026-06-02",
+      "weekday": "Tuesday",
+      "same_day_attempt": 15,
+      "setting": "co-working desk near a tall window",
+      "puzzle_phase": "early-week",
+      "story_note": "Isla spends this entry at the co-working desk near a tall window because she has work waiting, so the puzzle has to fit into a short gap. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Isla often fits her puzzle ritual between work blocks. Continue the thread: work days make the puzzle a boundary marker.",
+      "stuck_moment": "hands still, thinking before moving",
+      "life_memory_entry": {
+        "date": "2026-06-02",
+        "attempt": 15,
+        "location": "co-working desk near a tall window",
+        "reason_for_location": "she has work waiting, so the puzzle has to fit into a short gap",
+        "life_detail_learned": "Isla often fits her puzzle ritual between work blocks.",
+        "thread_to_continue": "work days make the puzzle a boundary marker",
+        "puzzle_variant_mentioned": "col",
+        "variant_panel_index": 4,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "col",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 4,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Between tasks.",
+        "Quick start.",
+        "No shortcut.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Nearly done.",
+        "Back to work."
       ]
     }
   ],
@@ -1457,51 +1457,6 @@
     {
       "date": "2026-05-31",
       "weekday": "Sunday",
-      "same_day_attempt": 1,
-      "setting": "gothic window desk with cityscape view",
-      "puzzle_phase": "late-week",
-      "story_note": "Isla spends this entry at the gothic window desk with cityscape view because she wants a quiet start before the day gets noisy. The puzzle stays as a light thread inside the day.",
-      "continuation_note": "Remember: Isla protects small morning rituals when she needs steadiness. Continue the thread: quiet morning rituals help her reset.",
-      "stuck_moment": "thoughtful pause, checking the route",
-      "life_memory_entry": {
-        "date": "2026-05-31",
-        "attempt": 1,
-        "location": "gothic window desk with cityscape view",
-        "reason_for_location": "she wants a quiet start before the day gets noisy",
-        "life_detail_learned": "Isla protects small morning rituals when she needs steadiness.",
-        "thread_to_continue": "quiet morning rituals help her reset",
-        "puzzle_variant_mentioned": "Trigoku",
-        "variant_panel_index": 4,
-        "uk_calendar_date": null,
-        "uk_calendar_panel_index": null
-      },
-      "variant_recap": {
-        "variant_name": "Trigoku",
-        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
-        "panel_index": 4,
-        "line": "Today has its own little rule-set — check the constraint before rushing."
-      },
-      "uk_calendar_date": null,
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "Bookshop corner.",
-        "First mark.",
-        "Pause there.",
-        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
-        "Nearly home.",
-        "One more page."
-      ]
-    },
-    {
-      "date": "2026-05-31",
-      "weekday": "Sunday",
       "same_day_attempt": 2,
       "setting": "small kitchen table in warm morning light",
       "puzzle_phase": "late-week",
@@ -2211,12 +2166,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Bookshop corner.",
-        "First mark.",
-        "Pause there.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly home.",
-        "One more page."
+        "Between tasks.",
+        "Quick start.",
+        "No shortcut.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Nearly done.",
+        "Back to work."
       ]
     },
     {
@@ -2256,12 +2211,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Bookshop corner.",
-        "First mark.",
-        "Pause there.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly home.",
-        "One more page."
+        "Between tasks.",
+        "Quick start.",
+        "No shortcut.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Nearly done.",
+        "Back to work."
       ]
     },
     {
@@ -2301,12 +2256,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Bookshop corner.",
-        "First mark.",
-        "Pause there.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly home.",
-        "One more page."
+        "Between tasks.",
+        "Quick start.",
+        "No shortcut.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Nearly done.",
+        "Back to work."
       ]
     },
     {
@@ -2346,12 +2301,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Bookshop corner.",
-        "First mark.",
-        "Pause there.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly home.",
-        "One more page."
+        "Between tasks.",
+        "Quick start.",
+        "No shortcut.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Nearly done.",
+        "Back to work."
       ]
     },
     {
@@ -2391,12 +2346,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Bookshop corner.",
-        "First mark.",
-        "Pause there.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly home.",
-        "One more page."
+        "Between tasks.",
+        "Quick start.",
+        "No shortcut.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Nearly done.",
+        "Back to work."
       ]
     },
     {
@@ -2436,12 +2391,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Bookshop corner.",
-        "First mark.",
-        "Pause there.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly home.",
-        "One more page."
+        "Between tasks.",
+        "Quick start.",
+        "No shortcut.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Nearly done.",
+        "Back to work."
       ]
     },
     {
@@ -2481,12 +2436,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Bookshop corner.",
-        "First mark.",
-        "Pause there.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly home.",
-        "One more page."
+        "Between tasks.",
+        "Quick start.",
+        "No shortcut.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Nearly done.",
+        "Back to work."
       ]
     },
     {
@@ -2526,12 +2481,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Bookshop corner.",
-        "First mark.",
-        "Pause there.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly home.",
-        "One more page."
+        "Between tasks.",
+        "Quick start.",
+        "No shortcut.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Nearly done.",
+        "Back to work."
       ]
     },
     {
@@ -2571,12 +2526,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Bookshop corner.",
-        "First mark.",
-        "Pause there.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly home.",
-        "One more page."
+        "Between tasks.",
+        "Quick start.",
+        "No shortcut.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Nearly done.",
+        "Back to work."
       ]
     },
     {
@@ -2616,12 +2571,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Bookshop corner.",
-        "First mark.",
-        "Pause there.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly home.",
-        "One more page."
+        "Between tasks.",
+        "Quick start.",
+        "No shortcut.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Nearly done.",
+        "Back to work."
       ]
     },
     {
@@ -2661,12 +2616,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Bookshop corner.",
-        "First mark.",
-        "Pause there.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly home.",
-        "One more page."
+        "Between tasks.",
+        "Quick start.",
+        "No shortcut.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Nearly done.",
+        "Back to work."
       ]
     },
     {
@@ -2706,12 +2661,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Bookshop corner.",
-        "First mark.",
-        "Pause there.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly home.",
-        "One more page."
+        "Between tasks.",
+        "Quick start.",
+        "No shortcut.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Nearly done.",
+        "Back to work."
       ]
     },
     {
@@ -2751,12 +2706,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Bookshop corner.",
-        "First mark.",
-        "Pause there.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly home.",
-        "One more page."
+        "Between tasks.",
+        "Quick start.",
+        "No shortcut.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Nearly done.",
+        "Back to work."
       ]
     },
     {
@@ -2796,12 +2751,57 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Bookshop corner.",
-        "First mark.",
-        "Pause there.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly home.",
-        "One more page."
+        "Between tasks.",
+        "Quick start.",
+        "No shortcut.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Nearly done.",
+        "Back to work."
+      ]
+    },
+    {
+      "date": "2026-06-02",
+      "weekday": "Tuesday",
+      "same_day_attempt": 15,
+      "setting": "co-working desk near a tall window",
+      "puzzle_phase": "early-week",
+      "story_note": "Isla spends this entry at the co-working desk near a tall window because she has work waiting, so the puzzle has to fit into a short gap. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Isla often fits her puzzle ritual between work blocks. Continue the thread: work days make the puzzle a boundary marker.",
+      "stuck_moment": "hands still, thinking before moving",
+      "life_memory_entry": {
+        "date": "2026-06-02",
+        "attempt": 15,
+        "location": "co-working desk near a tall window",
+        "reason_for_location": "she has work waiting, so the puzzle has to fit into a short gap",
+        "life_detail_learned": "Isla often fits her puzzle ritual between work blocks.",
+        "thread_to_continue": "work days make the puzzle a boundary marker",
+        "puzzle_variant_mentioned": "col",
+        "variant_panel_index": 4,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "col",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 4,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Between tasks.",
+        "Quick start.",
+        "No shortcut.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Nearly done.",
+        "Back to work."
       ]
     }
   ],
