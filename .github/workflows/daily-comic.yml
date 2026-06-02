@@ -183,7 +183,7 @@ jobs:
           FORCE_FB_POST: ${{ github.event.inputs.force_facebook_post }}
           SUITE_URL: "https://suite.sapiverpress.co.uk"
           ETSY_CATALOG_URL: "https://sapiver-press-etsy-search-catalog.netlify.app/"
-        run: npm run facebook-post
+        run: node scripts/facebook-post-guarded.mjs
       - name: Commit generated story, prompts, social outputs and Facebook state
         if: always()
         run: |
@@ -231,7 +231,7 @@ jobs:
           PINTEREST_IMAGE_NAME: "00_start-grid.png"
           FORCE_PINTEREST_POST: ${{ github.event.inputs.force_pinterest_post }}
           SUITE_URL: "https://suite.sapiverpress.co.uk"
-        run: node scripts/pinterest-post.mjs
+        run: node scripts/pinterest-post-guarded.mjs
       - name: Commit Pinterest state
         if: always() && (github.event_name == 'schedule' || github.event.inputs.post_to_pinterest == 'true')
         run: |
