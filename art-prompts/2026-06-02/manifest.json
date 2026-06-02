@@ -65,7 +65,7 @@
       "output_file": "social/2026-06-02/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "Isla treasures these three minutes in the warm morning light before the rest of the city wakes.",
+      "caption": "Isla grabs a steady moment at her kitchen table before the workday truly begins.",
       "scene_id": "scene_01"
     },
     {
@@ -75,7 +75,7 @@
       "output_file": "social/2026-06-02/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "A sudden ping from her phone interrupts the silence, bringing a brief distraction to her morning routine.",
+      "caption": "She glances at the passing scenery, trying to outrun her mounting daily checklist.",
       "scene_id": "scene_02"
     },
     {
@@ -85,7 +85,7 @@
       "output_file": "social/2026-06-02/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "She decides to give the grid one quick proof to set a firm boundary for her morning.",
+      "caption": "A sudden buzz from her phone reminds her that time is quickly running out.",
       "scene_id": "scene_03"
     },
     {
@@ -105,7 +105,7 @@
       "output_file": "social/2026-06-02/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "With the logic verified, Isla feels the steady satisfaction of solving the grid without dragging doubts forward.",
+      "caption": "The calendar notification flashes on her screen, signaling it is time to wrap up.",
       "scene_id": "scene_05"
     },
     {
@@ -115,10 +115,10 @@
       "output_file": "social/2026-06-02/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "The morning reset is complete, leaving her mind clear and ready to face whatever comes next.",
+      "caption": "With the final proof settled, she closes the book and refocuses on her work.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-06-02.json",
-  "generated_at": "2026-06-02T06:25:21.397Z"
+  "generated_at": "2026-06-02T06:31:45.469Z"
 }

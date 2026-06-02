@@ -28,12 +28,6 @@
   "location_memory": [
     {
       "date": "2026-05-30",
-      "attempt": 4,
-      "setting": "train table by the window",
-      "reason": "she is travelling and using the journey as thinking time"
-    },
-    {
-      "date": "2026-05-30",
       "attempt": 5,
       "setting": "outdoor cafe street table",
       "reason": "she is trying not to rush straight into the next errand"
@@ -385,15 +379,15 @@
       "attempt": 5,
       "setting": "gothic window desk with cityscape view",
       "reason": "she wants a quiet start before the day gets noisy"
+    },
+    {
+      "date": "2026-06-02",
+      "attempt": 6,
+      "setting": "co-working desk near a tall window",
+      "reason": "she has work waiting, so the puzzle has to fit into a short gap"
     }
   ],
   "variant_memory": [
-    {
-      "date": "2026-05-30",
-      "attempt": 4,
-      "variant_name": "Trigoku",
-      "panel_index": 4
-    },
     {
       "date": "2026-05-30",
       "attempt": 5,
@@ -747,21 +741,15 @@
       "attempt": 5,
       "variant_name": "Anti-Knight",
       "panel_index": 2
+    },
+    {
+      "date": "2026-06-02",
+      "attempt": 6,
+      "variant_name": "Anti-Knight",
+      "panel_index": 4
     }
   ],
   "life_memory": [
-    {
-      "date": "2026-05-30",
-      "attempt": 4,
-      "location": "train table by the window",
-      "reason_for_location": "she is travelling and using the journey as thinking time",
-      "life_detail_learned": "Isla likes journeys because they give her contained thinking time.",
-      "thread_to_continue": "train rides become moving pockets of focus",
-      "puzzle_variant_mentioned": "Trigoku",
-      "variant_panel_index": 4,
-      "uk_calendar_date": null,
-      "uk_calendar_panel_index": null
-    },
     {
       "date": "2026-05-30",
       "attempt": 5,
@@ -1467,6 +1455,18 @@
       "thread_to_continue": "quiet morning rituals help her reset",
       "puzzle_variant_mentioned": "Anti-Knight",
       "variant_panel_index": 2,
+      "uk_calendar_date": null,
+      "uk_calendar_panel_index": null
+    },
+    {
+      "date": "2026-06-02",
+      "attempt": 6,
+      "location": "co-working desk near a tall window",
+      "reason_for_location": "she has work waiting, so the puzzle has to fit into a short gap",
+      "life_detail_learned": "Isla often fits her puzzle ritual between work blocks.",
+      "thread_to_continue": "work days make the puzzle a boundary marker",
+      "puzzle_variant_mentioned": "Anti-Knight",
+      "variant_panel_index": 4,
       "uk_calendar_date": null,
       "uk_calendar_panel_index": null
     }
