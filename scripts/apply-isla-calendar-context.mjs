@@ -133,14 +133,20 @@ function applyContext(story, calendar, context) {
   story.story_note = clean(`${story.story_note || ""} Calendar context: ${calendarStory}`).slice(0, 900);
   story.continuation_note = clean(`${story.continuation_note || ""} Calendar continuity: ${event.title} (${phase}) should influence today's flow and tomorrow setup.`).slice(0, 900);
   story.calendar_preferred_flows = preferred;
+  if (preferred.length) {
+    story.location_flow_id = preferred[0];
+    story.location_flow_method = "calendar_preferred_flow_hint";
+  }
   story.life_memory_entry = story.life_memory_entry || { date: story.date };
   story.life_memory_entry.calendar_context = story.calendar_context;
   story.life_memory_entry.supporting_life_trigger = trigger;
   story.life_memory_entry.tomorrow_setup = phase === "day_before" || phase === "preparation" ? (event.day_of_story || calendarStory) : (event.day_after_story || calendarStory);
+  story.life_memory_entry.location_flow_id = preferred[0] || story.location_flow_id || "";
   if (story.image_manifest) {
     story.image_manifest.calendar_context = story.calendar_context;
     story.image_manifest.supporting_life_trigger = trigger;
     story.image_manifest.supporting_cast_policy = story.supporting_cast_policy;
+    story.image_manifest.calendar_preferred_flows = preferred;
   }
   return { changed: true, reason: `${event.id}_${phase}` };
 }
