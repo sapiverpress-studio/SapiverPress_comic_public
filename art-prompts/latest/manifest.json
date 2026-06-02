@@ -65,7 +65,7 @@
       "output_file": "social/2026-06-02/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "The morning sun hits the small kitchen table, offering a brief moment of steady before the rush begins.",
+      "caption": "Isla lets the day show her what has to come first.",
       "scene_id": "scene_01"
     },
     {
@@ -85,7 +85,7 @@
       "output_file": "social/2026-06-02/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "Settling into the train carriage, she pulls out her notebook to focus on the day's grid.",
+      "caption": "She claims a small desk deep in the stacks, carving out a brief moment of steady focus.",
       "scene_id": "scene_03"
     },
     {
@@ -95,7 +95,7 @@
       "output_file": "social/2026-06-02/04_panel-04.png",
       "image_name": "04_panel-04.png",
       "fallback_template": "templates/characters/isla/isla_04_breakthrough.png",
-      "caption": "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+      "caption": "The daily rule changes the move, so Isla checks it before trusting the answer.",
       "scene_id": "scene_04"
     },
     {
@@ -115,10 +115,10 @@
       "output_file": "social/2026-06-02/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "With the morning puzzle resolved, she packs her things away, ready to tackle the workday ahead.",
+      "caption": "Back on the sofa, she finally closes her laptop with one major workday decision cleanly resolved.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-06-02.json",
-  "generated_at": "2026-06-02T11:31:13.282Z"
+  "generated_at": "2026-06-02T11:47:09.814Z"
 }
