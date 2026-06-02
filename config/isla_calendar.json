@@ -1,168 +1,87 @@
 {
-  "version": 1,
-  "purpose": "One-year repeating story calendar for Isla. Events create preparation days, reaction days, phone reminders, and planned life texture without making each strip random.",
+  "version": 2,
+  "purpose": "One-year repeating 365-anchor story calendar for Isla. Every calendar date has a predetermined daily-life anchor generated from coherent monthly arcs, weekly rhythms, and recurring sub-character threads. Major events layer on top; they do not replace the daily canon.",
   "rules": {
     "repeat_yearly": true,
+    "daily_anchor_count": 365,
+    "daily_anchor_source": "deterministic_blueprint",
     "use_event_window_days_before": 2,
     "use_event_window_days_after": 1,
     "max_calendar_influence_per_strip": 1,
     "calendar_can_change_flow": true,
     "overlay_allowed": true,
-    "no_visible_extra_characters_by_default": true
+    "no_visible_extra_characters_by_default": true,
+    "daily_anchor_required_before_story": true,
+    "major_events_overlay_daily_anchor": true,
+    "leap_year_policy": "02-29 reuses 02-28 daily anchor unless explicitly added later"
   },
   "event_types": {
-    "birthday": { "default_overlay_style": "phone_notification", "preferred_flows": ["home_kitchen_day", "cafe_errand_day", "bookshop_weekend_day"] },
+    "birthday": { "default_overlay_style": "phone_notification", "preferred_flows": ["home_kitchen_day", "mailing_errand_day", "bookshop_weekend_day"] },
     "appointment": { "default_overlay_style": "calendar_notification", "preferred_flows": ["work_pressure_day", "commute_day", "home_kitchen_day"] },
     "travel": { "default_overlay_style": "calendar_notification", "preferred_flows": ["commute_day", "hotel_room_followon"] },
-    "family": { "default_overlay_style": "phone_notification", "preferred_flows": ["home_kitchen_day", "cafe_errand_day", "weekend_no_work_day"] },
+    "family": { "default_overlay_style": "phone_notification", "preferred_flows": ["home_kitchen_day", "weekend_no_work_day", "bedroom_reset_day"] },
     "personal_reset": { "default_overlay_style": "calendar_notification", "preferred_flows": ["bedroom_reset_day", "morning_walk_dog_day", "home_kitchen_day"] },
     "creative": { "default_overlay_style": "calendar_notification", "preferred_flows": ["library_day", "bookshop_weekend_day", "home_kitchen_day"] },
-    "errand": { "default_overlay_style": "phone_notification", "preferred_flows": ["mailing_errand_day", "cafe_errand_day", "home_kitchen_day"] }
+    "errand": { "default_overlay_style": "phone_notification", "preferred_flows": ["mailing_errand_day", "library_day", "home_kitchen_day"] },
+    "work": { "default_overlay_style": "calendar_notification", "preferred_flows": ["work_pressure_day", "library_day", "commute_day"] },
+    "friendship": { "default_overlay_style": "phone_notification", "preferred_flows": ["weekend_no_work_day", "bookshop_weekend_day", "home_kitchen_day"] }
+  },
+  "sub_characters": {
+    "Mum": { "role": "family", "allowed_surface": "phone message, missed call, calendar note", "voice": "practical and warm" },
+    "Maya": { "role": "friend", "allowed_surface": "text message or shared photo notification", "voice": "direct, teasing, supportive" },
+    "Ravi": { "role": "print-shop/post-office contact", "allowed_surface": "receipt, collection text, counter note", "voice": "brief and practical" },
+    "Lena": { "role": "library thread", "allowed_surface": "library reminder, reservation email, due-date slip", "voice": "calm and specific" },
+    "Nora": { "role": "work/client thread", "allowed_surface": "calendar invite or work message", "voice": "deadline-focused" },
+    "Theo": { "role": "neighbour/outdoor thread", "allowed_surface": "doorstep note, dog-walk message, local reminder", "voice": "casual and time-based" },
+    "Isla": { "role": "self-note", "allowed_surface": "calendar note, notebook line, phone reminder", "voice": "plain and decisive" }
+  },
+  "year_arc": {
+    "title": "Isla builds a steadier year one small commitment at a time.",
+    "rule": "Every day has a concrete life reason before the puzzle appears. The puzzle responds to the day; it is never the whole story.",
+    "quarter_arcs": [
+      { "months": [1, 2, 3], "theme": "rebuild routine and make space" },
+      { "months": [4, 5, 6], "theme": "move outside, reconnect, prepare for travel" },
+      { "months": [7, 8, 9], "theme": "turn notes into useful output and keep promises" },
+      { "months": [10, 11, 12], "theme": "gather ideas, reset the room, close the year properly" }
+    ]
+  },
+  "daily_anchor_blueprint": {
+    "weekday_rhythm": {
+      "Monday": { "type": "work", "title_stub": "Week plan", "reminder_sender": "Isla", "reminder_message": "Choose the first task", "story_move": "Isla decides what gets done before the week starts making decisions for her.", "preferred_panel": 1, "preferred_flows": ["home_kitchen_day", "work_pressure_day"] },
+      "Tuesday": { "type": "errand", "title_stub": "Small errand", "reminder_sender": "Calendar", "reminder_message": "Fit the errand in", "story_move": "A small errand changes the route and gives the puzzle a narrow window.", "preferred_panel": 2, "preferred_flows": ["mailing_errand_day", "commute_day"] },
+      "Wednesday": { "type": "creative", "title_stub": "Midweek note", "reminder_sender": "Isla", "reminder_message": "Keep one useful note", "story_move": "Isla keeps one useful thought instead of collecting another half-finished idea.", "preferred_panel": 3, "preferred_flows": ["library_day", "home_kitchen_day"] },
+      "Thursday": { "type": "work", "title_stub": "Work boundary", "reminder_sender": "Nora", "reminder_message": "Can you check this later?", "story_move": "A work message tests whether Isla can answer properly without giving away the whole day.", "preferred_panel": 2, "preferred_flows": ["work_pressure_day", "library_day"] },
+      "Friday": { "type": "friendship", "title_stub": "Reply properly", "reminder_sender": "Maya", "reminder_message": "You free later?", "story_move": "Isla chooses a proper reply instead of leaving the message hanging.", "preferred_panel": 2, "preferred_flows": ["weekend_no_work_day", "bookshop_weekend_day"] },
+      "Saturday": { "type": "personal_reset", "title_stub": "Outside first", "reminder_sender": "Theo", "reminder_message": "Walk before it gets busy?", "story_move": "The day starts with movement, so the puzzle has to fit around real life rather than replace it.", "preferred_panel": 1, "preferred_flows": ["morning_walk_dog_day", "bookshop_weekend_day"] },
+      "Sunday": { "type": "personal_reset", "title_stub": "Reset before Monday", "reminder_sender": "Isla", "reminder_message": "Clear one thing", "story_move": "Isla resets one visible thing so Monday starts with less friction.", "preferred_panel": 1, "preferred_flows": ["bedroom_reset_day", "home_kitchen_day"] }
+    },
+    "monthly_arcs": {
+      "01": { "name": "January routine rebuild", "daily_focus": "protecting a workable morning routine", "visual_motifs": ["home entry table", "planner", "keys", "winter light"], "sub_character_bias": ["Mum", "Isla", "Nora"] },
+      "02": { "name": "February library and admin", "daily_focus": "returning borrowed things and closing small loops", "visual_motifs": ["library slip", "book stack", "receipt", "bag by the door"], "sub_character_bias": ["Lena", "Ravi", "Isla"] },
+      "03": { "name": "March appointment pressure", "daily_focus": "leaving on time and not letting appointments eat the day", "visual_motifs": ["calendar invite", "coat", "station sign", "waiting room note"], "sub_character_bias": ["Nora", "Mum", "Isla"] },
+      "04": { "name": "April outdoor reset", "daily_focus": "starting outside before screens take over", "visual_motifs": ["walking shoes", "park bench", "light jacket", "phone reminder"], "sub_character_bias": ["Theo", "Maya", "Isla"] },
+      "05": { "name": "May family and bank-holiday texture", "daily_focus": "keeping personal time even when plans move around", "visual_motifs": ["tote bag", "family message", "train platform", "shop receipt"], "sub_character_bias": ["Mum", "Maya", "Ravi"] },
+      "06": { "name": "June travel preparation", "daily_focus": "packing, leaving, and using unfamiliar tables well", "visual_motifs": ["overnight bag", "charger", "ticket", "hotel key"], "sub_character_bias": ["Isla", "Maya", "Ravi"] },
+      "07": { "name": "July creative print review", "daily_focus": "turning scattered notes into something usable", "visual_motifs": ["marked pages", "print notes", "library table", "folder"], "sub_character_bias": ["Lena", "Nora", "Isla"] },
+      "08": { "name": "August errands and fulfilment", "daily_focus": "sending things, collecting things, and making routes count", "visual_motifs": ["parcel", "envelope", "counter receipt", "tote bag"], "sub_character_bias": ["Ravi", "Maya", "Isla"] },
+      "09": { "name": "September friendship and follow-through", "daily_focus": "replying, remembering, and not letting people become background tasks", "visual_motifs": ["birthday reminder", "message thread", "photo notification", "bookshop table"], "sub_character_bias": ["Maya", "Mum", "Isla"] },
+      "10": { "name": "October library ideas", "daily_focus": "using the library as a place where ideas get sorted", "visual_motifs": ["library notes", "book list", "raincoat", "reading lamp"], "sub_character_bias": ["Lena", "Theo", "Isla"] },
+      "11": { "name": "November room reset", "daily_focus": "making the room less noisy before the day begins", "visual_motifs": ["laundry chair", "clear desk", "bag hook", "winter window"], "sub_character_bias": ["Isla", "Mum", "Nora"] },
+      "12": { "name": "December family and year close", "daily_focus": "answering properly and closing the year without rushing", "visual_motifs": ["family call", "gift list", "train timetable", "closed notebook"], "sub_character_bias": ["Mum", "Maya", "Isla"] }
+    }
   },
   "events": [
-    {
-      "id": "mum_birthday",
-      "date": "01-18",
-      "type": "birthday",
-      "title": "Mum birthday",
-      "reminder_sender": "Calendar",
-      "reminder_message": "Mum birthday tomorrow",
-      "day_before_story": "Isla needs to choose a card, send a message properly, or pick up something small before tomorrow.",
-      "day_of_story": "Isla makes room for a family call or birthday message without letting the day become only a task list.",
-      "day_after_story": "Isla carries the feeling of having replied properly into a calmer day.",
-      "preferred_panel": 2
-    },
-    {
-      "id": "library_due",
-      "date": "02-06",
-      "type": "errand",
-      "title": "Library books due",
-      "reminder_sender": "Calendar",
-      "reminder_message": "Library books due",
-      "day_before_story": "Isla gathers the books and decides whether to return them today or make time tomorrow.",
-      "day_of_story": "The library errand shapes the day and gives the puzzle a reading-room pause.",
-      "day_after_story": "The returned books leave space for the next small habit.",
-      "preferred_panel": 1
-    },
-    {
-      "id": "dentist_checkup",
-      "date": "03-12",
-      "type": "appointment",
-      "title": "Dentist check-up",
-      "reminder_sender": "Calendar",
-      "reminder_message": "Dentist at 10:30",
-      "day_before_story": "Isla prepares to leave earlier than usual and keeps the puzzle moment short.",
-      "day_of_story": "The appointment gives the strip a real deadline and changes where the puzzle fits.",
-      "day_after_story": "The day after the appointment can feel lighter or slightly disrupted.",
-      "preferred_panel": 2
-    },
-    {
-      "id": "spring_walk",
-      "date": "04-20",
-      "type": "personal_reset",
-      "title": "Early walk morning",
-      "reminder_sender": "Calendar",
-      "reminder_message": "Early walk",
-      "day_before_story": "Isla sets out shoes, coat, keys, or a bag so the morning walk actually happens.",
-      "day_of_story": "The walk changes the day before the puzzle starts, giving the story outdoor movement.",
-      "day_after_story": "The previous walk becomes proof that starting outside helped.",
-      "preferred_panel": 1
-    },
-    {
-      "id": "bank_holiday_family",
-      "date": "05-05",
-      "type": "family",
-      "title": "Family bank holiday plan",
-      "reminder_sender": "Mum",
-      "reminder_message": "Still on for later?",
-      "day_before_story": "Isla needs to decide what to take and whether to keep the morning free.",
-      "day_of_story": "The family plan makes the day non-work and shifts the puzzle into a small private window.",
-      "day_after_story": "The story can pick up the after-feeling of having stepped away from routine.",
-      "preferred_panel": 2
-    },
-    {
-      "id": "away_night",
-      "date": "06-14",
-      "type": "travel",
-      "title": "Night away",
-      "reminder_sender": "Calendar",
-      "reminder_message": "Pack overnight bag",
-      "day_before_story": "Isla packs a small overnight bag, charger, notebook, and travel mug, changing the next day setup.",
-      "day_of_story": "The story can happen in a hotel room, station, or unfamiliar table instead of a normal routine.",
-      "day_after_story": "Checkout, return travel, or a hotel-room aftermath can shape the next strip.",
-      "preferred_panel": 1
-    },
-    {
-      "id": "creative_print_day",
-      "date": "07-09",
-      "type": "creative",
-      "title": "Print notes review",
-      "reminder_sender": "Calendar",
-      "reminder_message": "Review print notes",
-      "day_before_story": "Isla collects notebook pages and decides what is worth keeping.",
-      "day_of_story": "The creative review puts books, notes, and readable wall text naturally into the panels.",
-      "day_after_story": "The chosen note can become a small phrase on a poster or book spine later.",
-      "preferred_panel": 3
-    },
-    {
-      "id": "post_office_errand",
-      "date": "08-22",
-      "type": "errand",
-      "title": "Post office errand",
-      "reminder_sender": "Calendar",
-      "reminder_message": "Post office before 4",
-      "day_before_story": "Isla puts envelopes or a parcel near the bag so tomorrow has a reason to move.",
-      "day_of_story": "The post-office errand dictates the route and gives the puzzle a queue or cafe pause.",
-      "day_after_story": "The sent parcel leaves a visible empty space on the table.",
-      "preferred_panel": 1
-    },
-    {
-      "id": "friend_birthday",
-      "date": "09-03",
-      "type": "birthday",
-      "title": "Friend birthday",
-      "reminder_sender": "Calendar",
-      "reminder_message": "Birthday message today",
-      "day_before_story": "Isla notices the reminder and chooses not to leave the message until the last second.",
-      "day_of_story": "The birthday message creates a more social day without needing another visible person.",
-      "day_after_story": "The reply or photo sent back can influence the next morning.",
-      "preferred_panel": 2
-    },
-    {
-      "id": "autumn_library_day",
-      "date": "10-11",
-      "type": "creative",
-      "title": "Library idea day",
-      "reminder_sender": "Calendar",
-      "reminder_message": "Library notes",
-      "day_before_story": "Isla gathers a notebook and book list before going to the library.",
-      "day_of_story": "The library setting becomes the real reason for the day flow, not a random location swap.",
-      "day_after_story": "A borrowed idea can carry into the next day's poster or book-title texture.",
-      "preferred_panel": 1
-    },
-    {
-      "id": "winter_reset",
-      "date": "11-24",
-      "type": "personal_reset",
-      "title": "Room reset",
-      "reminder_sender": "Calendar",
-      "reminder_message": "Reset the room",
-      "day_before_story": "Isla notices the room has become part of the problem and prepares to reset it.",
-      "day_of_story": "Bedroom or home reset gives the strip a practical, visual non-work shape.",
-      "day_after_story": "The tidier room makes tomorrow's first choice easier.",
-      "preferred_panel": 1
-    },
-    {
-      "id": "december_family_call",
-      "date": "12-18",
-      "type": "family",
-      "title": "Family call",
-      "reminder_sender": "Mum",
-      "reminder_message": "Call when you can",
-      "day_before_story": "Isla makes space to call properly instead of sending a rushed reply.",
-      "day_of_story": "The family call changes the evening rhythm and gives the puzzle a boundary.",
-      "day_after_story": "The next day can carry the relief of having made time.",
-      "preferred_panel": 5
-    }
+    { "id": "mum_birthday", "date": "01-18", "anchor_level": "major", "type": "birthday", "title": "Mum birthday", "sub_character": "Mum", "engagement_channel": "phone_message", "reminder_sender": "Calendar", "reminder_message": "Mum birthday tomorrow", "day_before_story": "Isla needs to choose a card, send a message properly, or pick up something small before tomorrow.", "day_of_story": "Isla makes room for a family call or birthday message without letting the day become only a task list.", "day_after_story": "Isla carries the feeling of having replied properly into a calmer day.", "preferred_panel": 2 },
+    { "id": "library_due", "date": "02-06", "anchor_level": "major", "type": "errand", "title": "Library books due", "sub_character": "Lena", "engagement_channel": "library_notice", "reminder_sender": "Calendar", "reminder_message": "Library books due", "day_before_story": "Isla gathers the books and decides whether to return them today or make time tomorrow.", "day_of_story": "The library errand shapes the day and gives the puzzle a reading-room stop.", "day_after_story": "The returned books leave space for the next small habit.", "preferred_panel": 1 },
+    { "id": "dentist_checkup", "date": "03-12", "anchor_level": "major", "type": "appointment", "title": "Dentist check-up", "sub_character": "Calendar", "engagement_channel": "calendar_notification", "reminder_sender": "Calendar", "reminder_message": "Dentist at 10:30", "day_before_story": "Isla prepares to leave earlier than usual and keeps the puzzle moment short.", "day_of_story": "The appointment gives the strip a real deadline and changes where the puzzle fits.", "day_after_story": "The day after the appointment can feel lighter or slightly disrupted.", "preferred_panel": 2 },
+    { "id": "spring_walk", "date": "04-20", "anchor_level": "major", "type": "personal_reset", "title": "Early walk morning", "sub_character": "Theo", "engagement_channel": "phone_message", "reminder_sender": "Calendar", "reminder_message": "Early walk", "day_before_story": "Isla sets out shoes, coat, keys, or a bag so the morning walk actually happens.", "day_of_story": "The walk changes the day before the puzzle starts, giving the story outdoor movement.", "day_after_story": "The previous walk becomes proof that starting outside helped.", "preferred_panel": 1 },
+    { "id": "bank_holiday_family", "date": "05-05", "anchor_level": "major", "type": "family", "title": "Family bank holiday plan", "sub_character": "Mum", "engagement_channel": "phone_message", "reminder_sender": "Mum", "reminder_message": "Still on for later?", "day_before_story": "Isla needs to decide what to take and whether to keep the morning free.", "day_of_story": "The family plan makes the day non-work and shifts the puzzle into a small private window.", "day_after_story": "The story can pick up the after-feeling of having stepped away from routine.", "preferred_panel": 2 },
+    { "id": "away_night", "date": "06-14", "anchor_level": "major", "type": "travel", "title": "Night away", "sub_character": "Maya", "engagement_channel": "calendar_notification", "reminder_sender": "Calendar", "reminder_message": "Pack overnight bag", "day_before_story": "Isla packs a small overnight bag, charger, notebook, and ticket, changing the next day setup.", "day_of_story": "The story can happen in a hotel room, station, or unfamiliar table instead of a normal routine.", "day_after_story": "Checkout, return travel, or a hotel-room aftermath can shape the next strip.", "preferred_panel": 1 },
+    { "id": "creative_print_day", "date": "07-09", "anchor_level": "major", "type": "creative", "title": "Print notes review", "sub_character": "Nora", "engagement_channel": "calendar_notification", "reminder_sender": "Calendar", "reminder_message": "Review print notes", "day_before_story": "Isla collects notebook pages and decides what is worth keeping.", "day_of_story": "The creative review puts books, notes, and readable wall text naturally into the panels.", "day_after_story": "The chosen note can become a small phrase on a poster or book spine later.", "preferred_panel": 3 },
+    { "id": "post_office_errand", "date": "08-22", "anchor_level": "major", "type": "errand", "title": "Post office errand", "sub_character": "Ravi", "engagement_channel": "receipt_or_text", "reminder_sender": "Calendar", "reminder_message": "Post office before 4", "day_before_story": "Isla puts envelopes or a parcel near the bag so tomorrow has a reason to move.", "day_of_story": "The post-office errand dictates the route and gives the puzzle a queue or counter-side stop.", "day_after_story": "The sent parcel leaves a visible empty space on the table.", "preferred_panel": 1 },
+    { "id": "friend_birthday", "date": "09-03", "anchor_level": "major", "type": "birthday", "title": "Friend birthday", "sub_character": "Maya", "engagement_channel": "phone_message", "reminder_sender": "Calendar", "reminder_message": "Birthday message today", "day_before_story": "Isla notices the reminder and chooses not to leave the message until the last second.", "day_of_story": "The birthday message creates a more social day without needing another visible person.", "day_after_story": "The reply or photo sent back can influence the next morning.", "preferred_panel": 2 },
+    { "id": "autumn_library_day", "date": "10-11", "anchor_level": "major", "type": "creative", "title": "Library idea day", "sub_character": "Lena", "engagement_channel": "library_notice", "reminder_sender": "Calendar", "reminder_message": "Library notes", "day_before_story": "Isla gathers a notebook and book list before going to the library.", "day_of_story": "The library setting becomes the real reason for the day flow, not a random location swap.", "day_after_story": "A kept idea can carry into the next day's poster or book-title texture.", "preferred_panel": 1 },
+    { "id": "winter_reset", "date": "11-24", "anchor_level": "major", "type": "personal_reset", "title": "Room reset", "sub_character": "Isla", "engagement_channel": "self_note", "reminder_sender": "Calendar", "reminder_message": "Reset the room", "day_before_story": "Isla notices the room has become part of the problem and prepares to reset it.", "day_of_story": "Bedroom or home reset gives the strip a practical, visual non-work shape.", "day_after_story": "The tidier room makes tomorrow's first choice easier.", "preferred_panel": 1 },
+    { "id": "december_family_call", "date": "12-18", "anchor_level": "major", "type": "family", "title": "Family call", "sub_character": "Mum", "engagement_channel": "phone_call_reminder", "reminder_sender": "Mum", "reminder_message": "Call when you can", "day_before_story": "Isla makes space to call properly instead of sending a rushed reply.", "day_of_story": "The family call changes the evening rhythm and gives the puzzle a boundary.", "day_after_story": "The next day can carry the relief of having made time.", "preferred_panel": 5 }
   ]
 }
