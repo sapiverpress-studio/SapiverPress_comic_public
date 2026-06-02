@@ -45,14 +45,14 @@
   ],
   "storyboard_copy_source": "openai_repaired+gemini",
   "storyboard_copy_model": "gpt-4o-mini",
-  "storyboard_arc_title": "Isla's Quiet Reset",
+  "storyboard_arc_title": "Isla's Journey of Focus",
   "storyboard_arc_type": "story_driven_not_location_driven",
   "storyboard_arc": {
-    "setup": "Seeking a pocket of silence, Isla gathers her books before the morning rush begins.",
-    "disruption": "The public library offers her a familiar, peaceful sanctuary to reset her chaotic day.",
-    "choice": "Suddenly, her phone screen lights up with a calendar reminder, signaling it is time to focus.",
-    "puzzle_moment": "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-    "consequence": "With the grid nearly complete, she feels the tension of the day finally starting to lift.",
+    "setup": "A steady kitchen corner provides a steady starting point before the morning rush begins in earnest.",
+    "disruption": "A sudden calendar reminder pops up on her phone, shifting her attention toward the pending task.",
+    "choice": "Staring out the window, she decides to tackle the challenge right now instead of delaying it.",
+    "puzzle_moment": "col changes the move, so Isla checks the rule before trusting it.",
+    "consequence": "The final step of the logic puzzle falls into place with satisfying, absolute clarity.",
     "resolution": "She closes the laptop with one decision carried forward."
   },
   "storyboard_quality": {
@@ -62,13 +62,13 @@
     "uses_phase2_story": true,
     "quality_gate_passed": false,
     "interchangeable": false,
-    "generic_phrase_hits": [
-      "borrowed quiet"
-    ],
-    "cause_effect_link_count": 1,
+    "generic_phrase_hits": [],
+    "cause_effect_link_count": 2,
     "character_turn_count": 1,
     "quality_gate_action": "repaired_in_place",
-    "quality_gate_repair_reasons": [],
+    "quality_gate_repair_reasons": [
+      "moved_puzzle_rule_dialogue_from_panel_2"
+    ],
     "scene_truth_locked": true,
     "story_led_scene_truth": true,
     "continuity_aware": true,
@@ -91,7 +91,9 @@
     }
   },
   "quality_gate_action": "repaired_in_place",
-  "quality_gate_repair_reasons": [],
+  "quality_gate_repair_reasons": [
+    "moved_puzzle_rule_dialogue_from_panel_2"
+  ],
   "final_copy_sanity": {
     "ran": true,
     "duplicate_words_fixed": [],
@@ -103,12 +105,12 @@
   },
   "location_flow_validated": true,
   "location_flow": [
-    "home table with",
-    "public library entrance",
-    "library reading desk",
-    "library window seat",
-    "bookshop cafe corner",
-    "home sofa with"
+    "home kitchen counter",
+    "small kitchen table",
+    "kitchen window with",
+    "home sofa corner",
+    "home desk nook",
+    "home entry table"
   ],
   "post_ready_contract": {
     "openai_ok": true,
@@ -116,9 +118,26 @@
     "gemini_preserved_locations": true,
     "final_copy_sanity_passed": true,
     "location_flow_validated": true,
-    "all_panels_have_screen_overlay": false,
+    "all_panels_have_screen_overlay": true,
     "variant_copy_mode": "exact_variant",
-    "posting_allowed": false
+    "posting_allowed": true,
+    "all_required_panels_have_screen_overlay": true,
+    "intentional_no_puzzle_panels": [
+      {
+        "scene": "scene_01",
+        "output": "social/2026-06-02/01_panel-01.png",
+        "screen_quad_mode": "overlay_skipped_screen_state_no_puzzle",
+        "panel_screen_state": "no_puzzle",
+        "panel_location": "home kitchen counter with mug"
+      },
+      {
+        "scene": "scene_02",
+        "output": "social/2026-06-02/02_panel-02.png",
+        "screen_quad_mode": "overlay_skipped_screen_state_closed_device",
+        "panel_screen_state": "closed_device",
+        "panel_location": "small kitchen table"
+      }
+    ]
   },
   "openai_storyboard_status": "ok",
   "openai_storyboard_model": "gpt-4o-mini",
@@ -128,7 +147,7 @@
     "frames": "array:6"
   },
   "openai_storyboard_fallback_reason": null,
-  "openai_storyboard_checked_at": "2026-06-02T07:20:55.190Z",
+  "openai_storyboard_checked_at": "2026-06-02T08:02:01.138Z",
   "gemini_allowed_fields": [
     "caption",
     "dialogue"
@@ -136,10 +155,10 @@
   "gemini_preserved_locations": true,
   "gemini_preserved_panel_order": true,
   "variant_recap": {
-    "variant_name": "Anti-Knight",
-    "short_rule": "Anti-Knight today — knight moves block matching numbers.",
+    "variant_name": "col",
+    "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
     "panel_index": 4,
-    "line": "Anti-Knight today — knight moves block matching numbers.",
+    "line": "Today has its own little rule-set — check the constraint before rushing.",
     "variant_detected": true
   },
   "variant_copy_mode": "exact_variant",
@@ -165,20 +184,20 @@
   "puzzle_product": "Trigoku Daily Lock",
   "puzzle_url": "https://suite.sapiverpress.co.uk",
   "captions": [
-    "If I head out now, I can grab that steady corner table.\nSeeking a pocket of silence, Isla gathers her books before the morning rush begins.",
-    "This place always helps me clear my head when things get loud.\nThe public library offers her a familiar, peaceful sanctuary to reset her chaotic day.",
-    "Okay, let's solve this puzzle quickly and keep moving forward.\nSuddenly, her phone screen lights up with a calendar reminder, signaling it is time to focus.",
-    "Anti-Knight today — knight moves block matching numbers.\nAnti-Knight changes the move, so Isla checks the rule before trusting it.",
-    "There we go. That number fits perfectly without breaking any rules.\nWith the grid nearly complete, she feels the tension of the day finally starting to lift.",
+    "I should get a head start on this before the house wakes up.\nA steady kitchen corner provides a steady starting point before the morning rush begins in earnest.",
+    "Right, there's that quick proof I promised to wrap up today.\nA sudden calendar reminder pops up on her phone, shifting her attention toward the pending task.",
+    "No more putting this off. Let's get it done.\nStaring out the window, she decides to tackle the challenge right now instead of delaying it.",
+    "Check the daily rule before trusting it.\ncol changes the move, so Isla checks the rule before trusting it.",
+    "There we go. This step actually holds up under pressure.\nThe final step of the logic puzzle falls into place with satisfying, absolute clarity.",
     "Leave it there. Move on.\nShe closes the laptop with one decision carried forward."
   ],
   "storyboard_locations": [
-    "home table with library books",
-    "public library entrance table",
-    "library reading desk between bookshelves",
-    "library window seat",
-    "bookshop cafe corner",
-    "home sofa with borrowed books nearby"
+    "home kitchen counter with mug",
+    "small kitchen table",
+    "kitchen window with plants",
+    "home sofa corner",
+    "home desk nook",
+    "home entry table"
   ],
   "scenes": [
     {
@@ -193,11 +212,11 @@
       "screen_quad_mode": "overlay_skipped_screen_state_no_puzzle",
       "panel_screen_state": "no_puzzle",
       "screen_state_overlay_allowed": false,
-      "storyboard_text": "If I head out now, I can grab that steady corner table.\nSeeking a pocket of silence, Isla gathers her books before the morning rush begins.",
+      "storyboard_text": "I should get a head start on this before the house wakes up.\nA steady kitchen corner provides a steady starting point before the morning rush begins in earnest.",
       "arc_role": "setup",
-      "storyboard_caption": "Seeking a pocket of silence, Isla gathers her books before the morning rush begins.",
-      "storyboard_dialogue": "If I head out now, I can grab that steady corner table.",
-      "panel_location": "home table with library books"
+      "storyboard_caption": "A steady kitchen corner provides a steady starting point before the morning rush begins in earnest.",
+      "storyboard_dialogue": "I should get a head start on this before the house wakes up.",
+      "panel_location": "home kitchen counter with mug"
     },
     {
       "scene": "scene_02",
@@ -208,14 +227,14 @@
       "capture": "captures/2026-06-02/extracted/02_first_moves.png",
       "output": "social/2026-06-02/02_panel-02.png",
       "screen_quad": [],
-      "screen_quad_mode": "overlay_skipped_screen_state_no_puzzle",
-      "panel_screen_state": "no_puzzle",
+      "screen_quad_mode": "overlay_skipped_screen_state_closed_device",
+      "panel_screen_state": "closed_device",
       "screen_state_overlay_allowed": false,
-      "storyboard_text": "This place always helps me clear my head when things get loud.\nThe public library offers her a familiar, peaceful sanctuary to reset her chaotic day.",
+      "storyboard_text": "Right, there's that quick proof I promised to wrap up today.\nA sudden calendar reminder pops up on her phone, shifting her attention toward the pending task.",
       "arc_role": "disruption",
-      "storyboard_caption": "The public library offers her a familiar, peaceful sanctuary to reset her chaotic day.",
-      "storyboard_dialogue": "This place always helps me clear my head when things get loud.",
-      "panel_location": "public library entrance table"
+      "storyboard_caption": "A sudden calendar reminder pops up on her phone, shifting her attention toward the pending task.",
+      "storyboard_dialogue": "Right, there's that quick proof I promised to wrap up today.",
+      "panel_location": "small kitchen table"
     },
     {
       "scene": "scene_03",
@@ -227,30 +246,30 @@
       "output": "social/2026-06-02/03_panel-03.png",
       "screen_quad": [
         [
-          676,
-          626
+          685,
+          741
         ],
         [
-          1067,
-          647
+          1042,
+          761
         ],
         [
-          1028,
-          934
+          1020,
+          984
         ],
         [
-          635,
-          869
+          661,
+          939
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
       "panel_screen_state": "first_moves",
       "screen_state_overlay_allowed": true,
-      "storyboard_text": "Okay, let's solve this puzzle quickly and keep moving forward.\nSuddenly, her phone screen lights up with a calendar reminder, signaling it is time to focus.",
+      "storyboard_text": "No more putting this off. Let's get it done.\nStaring out the window, she decides to tackle the challenge right now instead of delaying it.",
       "arc_role": "choice",
-      "storyboard_caption": "Suddenly, her phone screen lights up with a calendar reminder, signaling it is time to focus.",
-      "storyboard_dialogue": "Okay, let's solve this puzzle quickly and keep moving forward.",
-      "panel_location": "library reading desk between bookshelves"
+      "storyboard_caption": "Staring out the window, she decides to tackle the challenge right now instead of delaying it.",
+      "storyboard_dialogue": "No more putting this off. Let's get it done.",
+      "panel_location": "kitchen window with plants"
     },
     {
       "scene": "scene_04",
@@ -262,20 +281,20 @@
       "output": "social/2026-06-02/04_panel-04.png",
       "screen_quad": [
         [
-          650,
-          567
+          627,
+          568
         ],
         [
-          1071,
-          595
+          1072,
+          592
         ],
         [
-          1055,
-          931
+          1050,
+          950
         ],
         [
-          604,
-          851
+          582,
+          866
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -292,11 +311,11 @@
         "panel": 4,
         "arc_shift": "The reminder turns the puzzle into a boundary: one proof, then back to the day without dragging the mistake forward."
       },
-      "storyboard_text": "Anti-Knight today — knight moves block matching numbers.\nAnti-Knight changes the move, so Isla checks the rule before trusting it.",
+      "storyboard_text": "Check the daily rule before trusting it.\ncol changes the move, so Isla checks the rule before trusting it.",
       "arc_role": "puzzle_moment",
-      "storyboard_caption": "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-      "storyboard_dialogue": "Anti-Knight today — knight moves block matching numbers.",
-      "panel_location": "library window seat"
+      "storyboard_caption": "col changes the move, so Isla checks the rule before trusting it.",
+      "storyboard_dialogue": "Check the daily rule before trusting it.",
+      "panel_location": "home sofa corner"
     },
     {
       "scene": "scene_05",
@@ -308,30 +327,30 @@
       "output": "social/2026-06-02/05_panel-05.png",
       "screen_quad": [
         [
-          772,
-          562
+          666,
+          609
         ],
         [
-          1067,
-          582
+          1056,
+          630
         ],
         [
-          1069,
-          851
+          1029,
+          894
         ],
         [
-          739,
-          784
+          642,
+          841
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
       "panel_screen_state": "progress_pause",
       "screen_state_overlay_allowed": true,
-      "storyboard_text": "There we go. That number fits perfectly without breaking any rules.\nWith the grid nearly complete, she feels the tension of the day finally starting to lift.",
+      "storyboard_text": "There we go. This step actually holds up under pressure.\nThe final step of the logic puzzle falls into place with satisfying, absolute clarity.",
       "arc_role": "consequence",
-      "storyboard_caption": "With the grid nearly complete, she feels the tension of the day finally starting to lift.",
-      "storyboard_dialogue": "There we go. That number fits perfectly without breaking any rules.",
-      "panel_location": "bookshop cafe corner"
+      "storyboard_caption": "The final step of the logic puzzle falls into place with satisfying, absolute clarity.",
+      "storyboard_dialogue": "There we go. This step actually holds up under pressure.",
+      "panel_location": "home desk nook"
     },
     {
       "scene": "scene_06",
@@ -343,20 +362,20 @@
       "output": "social/2026-06-02/06_panel-06.png",
       "screen_quad": [
         [
-          697,
-          678
+          706,
+          603
         ],
         [
-          1061,
-          704
+          1068,
+          621
         ],
         [
-          1021,
-          976
+          1044,
+          881
         ],
         [
-          663,
-          913
+          675,
+          830
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -366,24 +385,46 @@
       "arc_role": "resolution",
       "storyboard_caption": "She closes the laptop with one decision carried forward.",
       "storyboard_dialogue": "Leave it there. Move on.",
-      "panel_location": "home sofa with borrowed books nearby"
+      "panel_location": "home entry table"
     }
   ],
-  "all_panels_have_screen_overlay": false,
-  "screen_overlay_failures": [
+  "all_required_panels_have_screen_overlay": true,
+  "all_panels_have_screen_overlay": true,
+  "intentional_no_puzzle_panels": [
     {
       "scene": "scene_01",
       "output": "social/2026-06-02/01_panel-01.png",
       "screen_quad_mode": "overlay_skipped_screen_state_no_puzzle",
-      "panel_location": "home table with library books"
+      "panel_screen_state": "no_puzzle",
+      "panel_location": "home kitchen counter with mug"
     },
     {
       "scene": "scene_02",
       "output": "social/2026-06-02/02_panel-02.png",
-      "screen_quad_mode": "overlay_skipped_screen_state_no_puzzle",
-      "panel_location": "public library entrance table"
+      "screen_quad_mode": "overlay_skipped_screen_state_closed_device",
+      "panel_screen_state": "closed_device",
+      "panel_location": "small kitchen table"
     }
   ],
+  "screen_overlay_failures": [],
   "screen_overlay_recoveries": [],
-  "posting_allowed": false
+  "posting_allowed": true,
+  "puzzle_moment_copy_snapshot": {
+    "ran": true,
+    "source_stage": "openai",
+    "caption": "That fits.",
+    "dialogue": "Today has its own little rule-set — check the constraint before rushing.",
+    "image_prompt_fragment": "small solution moment on train, Isla notices a phone notification, no extra visible person",
+    "captured_at": "2026-06-02T08:02:01.222Z"
+  },
+  "puzzle_moment_copy_protection": {
+    "ran": true,
+    "changed": false,
+    "reason": "panel_4_not_generic"
+  },
+  "location_or_normalised": {
+    "ran": true,
+    "changed": true,
+    "fields_changed": 6
+  }
 }

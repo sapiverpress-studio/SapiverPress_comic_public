@@ -106,51 +106,6 @@
       "date": "2026-05-30",
       "weekday": "Saturday",
       "same_day_attempt": 31,
-      "setting": "co-working desk near a tall window",
-      "puzzle_phase": "late-week",
-      "story_note": "Isla spends this entry at the co-working desk near a tall window because she has work waiting, so the puzzle has to fit into a short gap. The puzzle stays as a light thread inside the day.",
-      "continuation_note": "Remember: Isla often fits her puzzle ritual between work blocks. Continue the thread: work days make the puzzle a boundary marker.",
-      "stuck_moment": "hands still, thinking before moving",
-      "life_memory_entry": {
-        "date": "2026-05-30",
-        "attempt": 31,
-        "location": "co-working desk near a tall window",
-        "reason_for_location": "she has work waiting, so the puzzle has to fit into a short gap",
-        "life_detail_learned": "Isla often fits her puzzle ritual between work blocks.",
-        "thread_to_continue": "work days make the puzzle a boundary marker",
-        "puzzle_variant_mentioned": "Trigoku",
-        "variant_panel_index": 4,
-        "uk_calendar_date": null,
-        "uk_calendar_panel_index": null
-      },
-      "variant_recap": {
-        "variant_name": "Trigoku",
-        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
-        "panel_index": 4,
-        "line": "Today has its own little rule-set — check the constraint before rushing."
-      },
-      "uk_calendar_date": null,
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "Between tasks.",
-        "Quick start.",
-        "No shortcut.",
-        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
-        "Nearly done.",
-        "Back to work."
-      ]
-    },
-    {
-      "date": "2026-05-30",
-      "weekday": "Saturday",
-      "same_day_attempt": 31,
       "setting": "small kitchen table in warm morning light",
       "puzzle_phase": "late-week",
       "story_note": "Isla spends this entry at the small kitchen table in warm morning light because home is still half-asleep and she has a few minutes to herself. The puzzle stays as a light thread inside the day.",
@@ -1129,12 +1084,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Anti-Knight today — knight moves block matching numbers.",
-        "Hold the line.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Almost clear.",
-        "Back outside."
+        "Window seat.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Not yet.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Almost there.",
+        "Next stop."
       ]
     },
     {
@@ -1174,12 +1129,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Anti-Knight today — knight moves block matching numbers.",
-        "Hold the line.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Almost clear.",
-        "Back outside."
+        "Window seat.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Not yet.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Almost there.",
+        "Next stop."
       ]
     },
     {
@@ -1219,12 +1174,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Anti-Knight today — knight moves block matching numbers.",
-        "Hold the line.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Almost clear.",
-        "Back outside."
+        "Window seat.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Not yet.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Almost there.",
+        "Next stop."
       ]
     },
     {
@@ -1264,12 +1219,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Anti-Knight today — knight moves block matching numbers.",
-        "Hold the line.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Almost clear.",
-        "Back outside."
+        "Window seat.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Not yet.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Almost there.",
+        "Next stop."
       ]
     },
     {
@@ -1309,12 +1264,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Anti-Knight today — knight moves block matching numbers.",
-        "Hold the line.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Almost clear.",
-        "Back outside."
+        "Window seat.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Not yet.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Almost there.",
+        "Next stop."
       ]
     },
     {
@@ -1354,12 +1309,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Anti-Knight today — knight moves block matching numbers.",
-        "Hold the line.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Almost clear.",
-        "Back outside."
+        "Window seat.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Not yet.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Almost there.",
+        "Next stop."
       ]
     },
     {
@@ -1399,12 +1354,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Anti-Knight today — knight moves block matching numbers.",
-        "Hold the line.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Almost clear.",
-        "Back outside."
+        "Window seat.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Not yet.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Almost there.",
+        "Next stop."
       ]
     },
     {
@@ -1444,12 +1399,57 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Anti-Knight today — knight moves block matching numbers.",
-        "Hold the line.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Almost clear.",
-        "Back outside."
+        "Window seat.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Not yet.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Almost there.",
+        "Next stop."
+      ]
+    },
+    {
+      "date": "2026-06-02",
+      "weekday": "Tuesday",
+      "same_day_attempt": 9,
+      "setting": "train table by the window",
+      "puzzle_phase": "early-week",
+      "story_note": "Isla spends this entry at the train table by the window because she is travelling and using the journey as thinking time. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Isla likes journeys because they give her contained thinking time. Continue the thread: train rides become moving pockets of focus.",
+      "stuck_moment": "thoughtful pause with landscape outside",
+      "life_memory_entry": {
+        "date": "2026-06-02",
+        "attempt": 9,
+        "location": "train table by the window",
+        "reason_for_location": "she is travelling and using the journey as thinking time",
+        "life_detail_learned": "Isla likes journeys because they give her contained thinking time.",
+        "thread_to_continue": "train rides become moving pockets of focus",
+        "puzzle_variant_mentioned": "col",
+        "variant_panel_index": 2,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "col",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 2,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Window seat.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Not yet.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Almost there.",
+        "Next stop."
       ]
     }
   ],
@@ -1458,51 +1458,6 @@
       "date": "2026-05-30",
       "weekday": "Saturday",
       "same_day_attempt": 31,
-      "setting": "co-working desk near a tall window",
-      "puzzle_phase": "late-week",
-      "story_note": "Isla spends this entry at the co-working desk near a tall window because she has work waiting, so the puzzle has to fit into a short gap. The puzzle stays as a light thread inside the day.",
-      "continuation_note": "Remember: Isla often fits her puzzle ritual between work blocks. Continue the thread: work days make the puzzle a boundary marker.",
-      "stuck_moment": "hands still, thinking before moving",
-      "life_memory_entry": {
-        "date": "2026-05-30",
-        "attempt": 31,
-        "location": "co-working desk near a tall window",
-        "reason_for_location": "she has work waiting, so the puzzle has to fit into a short gap",
-        "life_detail_learned": "Isla often fits her puzzle ritual between work blocks.",
-        "thread_to_continue": "work days make the puzzle a boundary marker",
-        "puzzle_variant_mentioned": "Trigoku",
-        "variant_panel_index": 4,
-        "uk_calendar_date": null,
-        "uk_calendar_panel_index": null
-      },
-      "variant_recap": {
-        "variant_name": "Trigoku",
-        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
-        "panel_index": 4,
-        "line": "Today has its own little rule-set — check the constraint before rushing."
-      },
-      "uk_calendar_date": null,
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "Between tasks.",
-        "Quick start.",
-        "No shortcut.",
-        "Trigoku gives the grid its own rule today, so Isla checks the constraint before moving on.",
-        "Nearly done.",
-        "Back to work."
-      ]
-    },
-    {
-      "date": "2026-05-30",
-      "weekday": "Saturday",
-      "same_day_attempt": 31,
       "setting": "small kitchen table in warm morning light",
       "puzzle_phase": "late-week",
       "story_note": "Isla spends this entry at the small kitchen table in warm morning light because home is still half-asleep and she has a few minutes to herself. The puzzle stays as a light thread inside the day.",
@@ -2481,12 +2436,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Anti-Knight today — knight moves block matching numbers.",
-        "Hold the line.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Almost clear.",
-        "Back outside."
+        "Window seat.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Not yet.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Almost there.",
+        "Next stop."
       ]
     },
     {
@@ -2526,12 +2481,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Anti-Knight today — knight moves block matching numbers.",
-        "Hold the line.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Almost clear.",
-        "Back outside."
+        "Window seat.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Not yet.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Almost there.",
+        "Next stop."
       ]
     },
     {
@@ -2571,12 +2526,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Anti-Knight today — knight moves block matching numbers.",
-        "Hold the line.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Almost clear.",
-        "Back outside."
+        "Window seat.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Not yet.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Almost there.",
+        "Next stop."
       ]
     },
     {
@@ -2616,12 +2571,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Anti-Knight today — knight moves block matching numbers.",
-        "Hold the line.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Almost clear.",
-        "Back outside."
+        "Window seat.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Not yet.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Almost there.",
+        "Next stop."
       ]
     },
     {
@@ -2661,12 +2616,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Anti-Knight today — knight moves block matching numbers.",
-        "Hold the line.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Almost clear.",
-        "Back outside."
+        "Window seat.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Not yet.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Almost there.",
+        "Next stop."
       ]
     },
     {
@@ -2706,12 +2661,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Anti-Knight today — knight moves block matching numbers.",
-        "Hold the line.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Almost clear.",
-        "Back outside."
+        "Window seat.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Not yet.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Almost there.",
+        "Next stop."
       ]
     },
     {
@@ -2751,12 +2706,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Anti-Knight today — knight moves block matching numbers.",
-        "Hold the line.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Almost clear.",
-        "Back outside."
+        "Window seat.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Not yet.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Almost there.",
+        "Next stop."
       ]
     },
     {
@@ -2796,12 +2751,57 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Anti-Knight today — knight moves block matching numbers.",
-        "Hold the line.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Almost clear.",
-        "Back outside."
+        "Window seat.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Not yet.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Almost there.",
+        "Next stop."
+      ]
+    },
+    {
+      "date": "2026-06-02",
+      "weekday": "Tuesday",
+      "same_day_attempt": 9,
+      "setting": "train table by the window",
+      "puzzle_phase": "early-week",
+      "story_note": "Isla spends this entry at the train table by the window because she is travelling and using the journey as thinking time. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Isla likes journeys because they give her contained thinking time. Continue the thread: train rides become moving pockets of focus.",
+      "stuck_moment": "thoughtful pause with landscape outside",
+      "life_memory_entry": {
+        "date": "2026-06-02",
+        "attempt": 9,
+        "location": "train table by the window",
+        "reason_for_location": "she is travelling and using the journey as thinking time",
+        "life_detail_learned": "Isla likes journeys because they give her contained thinking time.",
+        "thread_to_continue": "train rides become moving pockets of focus",
+        "puzzle_variant_mentioned": "col",
+        "variant_panel_index": 2,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "col",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 2,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Window seat.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Not yet.",
+        "col changes the move, so Isla checks the rule before trusting it.",
+        "Almost there.",
+        "Next stop."
       ]
     }
   ],

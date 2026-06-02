@@ -65,7 +65,7 @@
       "output_file": "social/2026-06-02/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "Seeking a pocket of silence, Isla gathers her books before the morning rush begins.",
+      "caption": "A steady kitchen corner provides a steady starting point before the morning rush begins in earnest.",
       "scene_id": "scene_01"
     },
     {
@@ -75,7 +75,7 @@
       "output_file": "social/2026-06-02/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "The public library offers her a familiar, peaceful sanctuary to reset her chaotic day.",
+      "caption": "A sudden calendar reminder pops up on her phone, shifting her attention toward the pending task.",
       "scene_id": "scene_02"
     },
     {
@@ -85,7 +85,7 @@
       "output_file": "social/2026-06-02/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "Suddenly, her phone screen lights up with a calendar reminder, signaling it is time to focus.",
+      "caption": "Staring out the window, she decides to tackle the challenge right now instead of delaying it.",
       "scene_id": "scene_03"
     },
     {
@@ -95,7 +95,7 @@
       "output_file": "social/2026-06-02/04_panel-04.png",
       "image_name": "04_panel-04.png",
       "fallback_template": "templates/characters/isla/isla_04_breakthrough.png",
-      "caption": "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
+      "caption": "col changes the move, so Isla checks the rule before trusting it.",
       "scene_id": "scene_04"
     },
     {
@@ -105,7 +105,7 @@
       "output_file": "social/2026-06-02/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "With the grid nearly complete, she feels the tension of the day finally starting to lift.",
+      "caption": "The final step of the logic puzzle falls into place with satisfying, absolute clarity.",
       "scene_id": "scene_05"
     },
     {
@@ -120,5 +120,5 @@
     }
   ],
   "story_source": "daily/2026-06-02.json",
-  "generated_at": "2026-06-02T07:21:06.936Z"
+  "generated_at": "2026-06-02T08:02:16.663Z"
 }
