@@ -65,7 +65,7 @@
       "output_file": "social/2026-06-02/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "Packing her travel mug, Isla looks forward to the steady focus of her upcoming morning train ride.",
+      "caption": "Isla packs the travel mug before the morning starts rushing her.",
       "scene_id": "scene_01"
     },
     {
@@ -75,7 +75,7 @@
       "output_file": "social/2026-06-02/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "Waiting on the platform, she enjoys having a few uninterrupted minutes to let her mind wander freely.",
+      "caption": "On the platform, a family note changes the order of the morning.",
       "scene_id": "scene_02"
     },
     {
@@ -85,7 +85,7 @@
       "output_file": "social/2026-06-02/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "The train glides forward, turning the window seat into her own private, moving office for the hour.",
+      "caption": "Once seated, she opens the grid and checks the first safe move.",
       "scene_id": "scene_03"
     },
     {
@@ -105,7 +105,7 @@
       "output_file": "social/2026-06-02/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "She works through the final steps of the proof quickly, determined not to carry any mistakes forward.",
+      "caption": "The checked move holds, and the rest of the journey feels less scattered.",
       "scene_id": "scene_05"
     },
     {
@@ -115,10 +115,10 @@
       "output_file": "social/2026-06-02/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "With the puzzle solved and the boundary set, she steps back into her day feeling completely refreshed.",
+      "caption": "She closes the laptop with the day back in her own order.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-06-02.json",
-  "generated_at": "2026-06-02T05:14:39.901Z"
+  "generated_at": "2026-06-02T06:03:41.363Z"
 }

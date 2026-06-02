@@ -3,7 +3,28 @@
   "enabled": false,
   "model": "gpt-image-1",
   "status": "skipped_disabled",
-  "purpose": "Polish only background signs/books/mugs/notebooks with coherent Sapiver Press and diary details while preserving Isla and screen composition.",
+  "purpose": "Polish coherent readable poster/book/merch text while preserving Isla, action, pose, scene truth and screen state.",
+  "poster_quotes": [
+    "Small steps. Big impact.",
+    "Progress over perfection.",
+    "One page at a time.",
+    "Focus. Solve. Grow.",
+    "Lead with intention.",
+    "One win at a time.",
+    "Puzzle Therapy",
+    "Logic & Pattern",
+    "Word Wise"
+  ],
+  "book_titles": [
+    "Word Wise",
+    "Logic & Pattern",
+    "Puzzle Therapy",
+    "The Focus Habit",
+    "Daily Clarity",
+    "One Page at a Time",
+    "Small Wins Journal",
+    "Notes for Better Days"
+  ],
   "panels": [],
-  "generated_at": "2026-06-02T05:15:07.026Z"
+  "generated_at": "2026-06-02T06:04:06.432Z"
 }
