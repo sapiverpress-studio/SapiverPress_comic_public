@@ -4,9 +4,9 @@ import path from "path";
 const ROOT = process.cwd();
 const COFFEE_RE = /\b(coffee|mug|mugs|cup|cups|latte|espresso)\b/i;
 const COFFEE_NEGATIVE = "multiple mugs, repeated coffee cups, extra cups, duplicate mugs, cluttered coffee cups, many mugs, many cups";
-const NO_PUZZLE_SCREEN_NEGATIVE = "open laptop screen, visible puzzle grid, sudoku grid, trigoku grid, puzzle numbers, puzzle on paper, physical puzzle pieces, jigsaw pieces";
+const NO_PUZZLE_SCREEN_NEGATIVE = "open laptop, open laptop screen, visible laptop screen, laptop solving, visible puzzle grid, sudoku grid, trigoku grid, puzzle numbers, puzzle on paper, physical puzzle pieces, jigsaw pieces";
 const GENERAL_NEGATIVE = "jigsaw pieces, physical puzzle pieces, cardboard puzzle pieces, loose puzzle shapes, collage layout, split panel, multiple frames, storyboard grid, contact sheet, instruction text, caption text, same seated laptop pose in every panel";
-const CONTROL_NEGATIVE = "LOCK, TRUTH, BANS, mandatory, panel text, prompt text, readable prop text, machine instruction, labels, arrows, numbered panel, contact sheet, split-screen collage";
+const CONTROL_NEGATIVE = "LOCK, TRUTH, BANS, mandatory, panel text, prompt text, readable prop text, machine instruction, labels, arrows, numbered panel, contact sheet, split-screen collage, LOCATION text prefix";
 
 function dateString() {
   const override = process.env.DATE_OVERRIDE || "";
@@ -38,14 +38,46 @@ function stripScreenDemand(prompt) {
     .replace(/,\s*$/, "");
 }
 
-function stripControlLanguage(prompt) {
+function stripReadableLocationGarbage(prompt) {
   return clean(prompt)
+    .replace(/^LOCATION\s+[^,]+,\s*/i, "")
+    .replace(/\bLOCATION\s+Big impact\.;\s*Progress over perfection\.;\s*One page at a time\.;\s*Focus\. Solve\. Grow\.;\s*Lead with intention\.;\s*One win at a time\.;\s*Puzzle Therapy;\s*Logic & Pattern;\s*Word Wise;\s*The Focus Habit;\s*Daily Clarity;\s*Small Wins Journal,?\s*/gi, "")
+    .replace(/\bLOCATION\s+/gi, "");
+}
+
+function stripControlLanguage(prompt) {
+  return clean(stripReadableLocationGarbage(prompt))
     .replace(/\b(?:SCENE TRUTH|STORY BEAT|PANEL TRUTH|DIGITAL PUZZLE LOCK|READABLE PROP TEXT PACK|BANS?|LOCKS?|TRUTH):[^.]+[.]?/gi, "")
     .replace(/\b(?:must|mandatory|required|ensure|avoid|ban|do not|no)\b[^,.]*(?:panel|prompt|instruction|label|caption|text|overlay|lock|truth|ban)[^,.]*/gi, "")
     .replace(/\bpanel\s*\d+\b/gi, "")
     .replace(/\bscene_\d+\b/gi, "")
     .replace(/\bprompt\b/gi, "")
     .replace(/\binstruction[s]?\b/gi, "")
+    .replace(/,+/g, ",")
+    .replace(/\s+,/g, ",")
+    .replace(/,\s*,/g, ",")
+    .replace(/^,\s*/, "")
+    .replace(/,\s*$/, "");
+}
+
+function stripNoPuzzleContradictions(prompt) {
+  return clean(prompt)
+    .replace(/\bdesk scene,?\s*/gi, "")
+    .replace(/\bone laptop only open on desk,?\s*/gi, "")
+    .replace(/\blaptop screen visible and angled naturally for later digital overlay,?\s*/gi, "")
+    .replace(/\bscreen is blank dark matte rectangle,?\s*/gi, "")
+    .replace(/\bscreen not obscuring face,?\s*/gi, "")
+    .replace(/\bnatural desk perspective,?\s*/gi, "")
+    .replace(/\bdo not draw content on the laptop screen,?\s*/gi, "")
+    .replace(/\bone laptop only,?\s*/gi, "")
+    .replace(/\bactive working pose,?\s*/gi, "")
+    .replace(/\bone hand on keyboard or trackpad,?\s*/gi, "")
+    .replace(/\beyes on blank screen,?\s*/gi, "")
+    .replace(/\bseated calm opening pose,?\s*/gi, "")
+    .replace(/\bseated opening laptop,?\s*/gi, "")
+    .replace(/\bone hand on laptop lid or table edge,?\s*/gi, "one hand on table edge, ")
+    .replace(/\bone hand on lid,?\s*/gi, "")
+    .replace(/\bbody angled toward viewer,?\s*/gi, "")
     .replace(/,+/g, ",")
     .replace(/\s+,/g, ",")
     .replace(/,\s*,/g, ",")
@@ -95,8 +127,8 @@ function processPanelPrompt(panel, scene, index, coffeeAllowed) {
 
   if (!coffeeAllowed && hadCoffee) prompt = replaceCoffee(prompt);
   if (noPuzzle) {
-    prompt = stripScreenDemand(prompt);
-    prompt = appendOnce(prompt, "device closed or absent, no visible grid, no laptop solving, no numbers");
+    prompt = stripScreenDemand(stripNoPuzzleContradictions(prompt));
+    prompt = appendOnce(prompt, "no open laptop, no visible screen, no puzzle grid, no numbers, device closed or absent");
     prompt = appendOnce(prompt, "not a laptop desk pose");
     negative = appendOnce(negative, NO_PUZZLE_SCREEN_NEGATIVE);
   }
@@ -118,6 +150,7 @@ function processPanelPrompt(panel, scene, index, coffeeAllowed) {
     supporting_life_trigger_here: Boolean(scene?.supporting_life_trigger_here),
     coffee_prompt_stripped: Boolean(hadCoffee && !coffeeAllowed),
     control_language_stripped: true,
+    no_puzzle_contradictions_stripped: noPuzzle,
     no_puzzle_prompt_guard: noPuzzle,
   };
 }
@@ -150,6 +183,8 @@ async function main() {
       coffee_allowed_panels: Array.from(coffeeAllowedPanels).map((i) => i + 1),
       no_puzzle_prompt_guards: data.panels.filter((panel) => panel.no_puzzle_prompt_guard).map((panel) => panel.panel_number),
       control_language_stripped: true,
+      no_puzzle_contradictions_stripped: true,
+      location_prefix_garbage_stripped: true,
       negative_prompt_added: [GENERAL_NEGATIVE, COFFEE_NEGATIVE, CONTROL_NEGATIVE],
       checked_at: new Date().toISOString(),
     };
@@ -164,12 +199,14 @@ async function main() {
     coffee_allowed_panels: Array.from(coffeeAllowedPanels).map((i) => i + 1),
     changed_prompt_files: changedFiles,
     control_language_stripped: true,
+    no_puzzle_contradictions_stripped: true,
+    location_prefix_garbage_stripped: true,
     checked_at: new Date().toISOString(),
   };
   await writeJson(path.join(ROOT, "daily", `${date}.json`), story);
   await writeJson(path.join(ROOT, "latest.json"), story);
   await writeJson(path.join(ROOT, "image-manifests", `${date}.json`), story.image_manifest);
-  console.log(`Art prompt lint: ${changedFiles} prompt pack(s) updated; coffee allowed panels ${Array.from(coffeeAllowedPanels).map((i) => i + 1).join(", ") || "none"}; control language stripped`);
+  console.log(`Art prompt lint: ${changedFiles} prompt pack(s) updated; coffee allowed panels ${Array.from(coffeeAllowedPanels).map((i) => i + 1).join(", ") || "none"}; control/no-puzzle contradictions stripped`);
 }
 
 main().catch((error) => {
