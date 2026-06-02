@@ -2,6 +2,7 @@ import fs from "fs/promises";
 import path from "path";
 
 const ROOT = process.cwd();
+const ALLOWED_NO_OVERLAY_STATES = new Set(["no_puzzle", "closed_device"]);
 
 function dateString() {
   return process.env.DATE_OVERRIDE || new Intl.DateTimeFormat("sv-SE", {
@@ -32,7 +33,19 @@ function hasValidQuad(scene) {
     && scene.screen_quad.every((point) => Array.isArray(point) && point.length >= 2 && Number.isFinite(Number(point[0])) && Number.isFinite(Number(point[1])));
 }
 
+function panelScreenState(scene) {
+  return String(scene?.panel_screen_state || scene?.screen_state || "").trim().toLowerCase();
+}
+
+function isIntentionalNoOverlay(scene) {
+  const mode = String(scene?.screen_quad_mode || "");
+  const state = panelScreenState(scene);
+  if (!ALLOWED_NO_OVERLAY_STATES.has(state)) return false;
+  return mode === `overlay_skipped_screen_state_${state}` || mode === "overlay_skipped_intentional_no_puzzle" || mode === "missing" || !hasValidQuad(scene);
+}
+
 function isFailure(scene) {
+  if (isIntentionalNoOverlay(scene)) return false;
   const mode = String(scene?.screen_quad_mode || "");
   if (mode === "overlay_skipped_no_screen_detected" || mode === "missing") return true;
   return !hasValidQuad(scene);
@@ -50,6 +63,14 @@ async function main() {
     scene: scene.scene,
     output: scene.output,
     screen_quad_mode: scene.screen_quad_mode || "missing",
+    panel_screen_state: panelScreenState(scene),
+    panel_location: scene.panel_location || "",
+  }));
+  const intentionalNoOverlay = scenes.filter(isIntentionalNoOverlay).map((scene) => ({
+    scene: scene.scene,
+    output: scene.output,
+    screen_quad_mode: scene.screen_quad_mode || "missing",
+    panel_screen_state: panelScreenState(scene),
     panel_location: scene.panel_location || "",
   }));
   const recovered = scenes.filter((scene) => scene.recovered_from_missing_replacement_screen).map((scene) => ({
@@ -59,12 +80,16 @@ async function main() {
     failed_replacements: scene.failed_replacements || [],
   }));
 
+  manifest.all_required_panels_have_screen_overlay = failures.length === 0;
   manifest.all_panels_have_screen_overlay = failures.length === 0;
+  manifest.intentional_no_puzzle_panels = intentionalNoOverlay;
   manifest.screen_overlay_failures = failures;
   manifest.screen_overlay_recoveries = recovered;
   manifest.posting_allowed = failures.length === 0;
   if (manifest.post_ready_contract) {
+    manifest.post_ready_contract.all_required_panels_have_screen_overlay = failures.length === 0;
     manifest.post_ready_contract.all_panels_have_screen_overlay = failures.length === 0;
+    manifest.post_ready_contract.intentional_no_puzzle_panels = intentionalNoOverlay;
     manifest.post_ready_contract.posting_allowed = failures.length === 0 && manifest.post_ready_contract.posting_allowed !== false;
   }
 
@@ -75,7 +100,7 @@ async function main() {
     console.error(`Screen overlay validation failed: ${failures.map((f) => `${f.scene}:${f.screen_quad_mode}`).join(", ")}`);
     process.exit(1);
   }
-  console.log(`Screen overlay validation passed: all panels have valid screen quads (${recovered.length} recovered from template)`);
+  console.log(`Screen overlay validation passed: ${intentionalNoOverlay.length} intentional no-puzzle panels, ${recovered.length} recovered from template`);
 }
 
 main().catch((error) => {
