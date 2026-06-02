@@ -1,14 +1,6 @@
 name: Sapiver Press Daily Comic Engine V3
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - ".github/workflows/daily-comic.yml"
-      - "scripts/**"
-      - "config/**"
-      - "package.json"
   schedule:
     - cron: "15 7 * * *"
     - cron: "0 6 * * 1"
@@ -58,7 +50,7 @@ jobs:
   generate-daily-story:
     name: Generate Daily Story
     runs-on: ubuntu-latest
-    if: github.event_name == 'workflow_dispatch' || github.event_name == 'push' || github.event.schedule == '15 7 * * *'
+    if: github.event_name == 'workflow_dispatch' || github.event.schedule == '15 7 * * *'
     steps:
       - name: Checkout public repo
         uses: actions/checkout@v5
