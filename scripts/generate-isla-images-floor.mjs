@@ -22,3 +22,4 @@ process.env.FAL_LORA_SCALE = process.env.FAL_LORA_SCALE || process.env.HF_LORA_S
 
 console.log(`Isla TurboLoRA settings: fal_model=${process.env.FAL_MODEL}; lora_file=${process.env.HF_LORA_FILE}; trigger_word=${process.env.HF_LORA_TRIGGER}; steps=${process.env.HF_NUM_INFERENCE_STEPS}; lora_scale=${process.env.HF_LORA_SCALE}; width=${process.env.HF_IMAGE_WIDTH}; height=${process.env.HF_IMAGE_HEIGHT}`);
 await import("./generate-isla-images.mjs");
+await import("./update-isla-generation-provenance.mjs");
