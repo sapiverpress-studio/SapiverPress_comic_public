@@ -3,9 +3,11 @@
     "sapiverpress-puzzle-suite"
   ],
   "selection": {
-    "method": "date-seeded",
+    "method": "date-seeded-no-repeat-window",
     "fallback_policy": "skip-source-if-no-json-or-data",
-    "no_browser_hint_check_guessing": true
+    "no_browser_hint_check_guessing": true,
+    "no_repeat_window_days": 10,
+    "fallback_when_all_recent": "least_recently_used_source"
   },
   "sources": [
     {
