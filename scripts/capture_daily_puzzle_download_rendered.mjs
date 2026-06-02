@@ -30,6 +30,13 @@ function stableIndex(seed, length) {
   return (hash >>> 0) % Math.max(1, length);
 }
 
+function daysBetween(a, b) {
+  const da = new Date(`${a}T12:00:00Z`);
+  const db = new Date(`${b}T12:00:00Z`);
+  if (Number.isNaN(da.getTime()) || Number.isNaN(db.getTime())) return 9999;
+  return Math.round((db.getTime() - da.getTime()) / 86400000);
+}
+
 function fail(message) {
   console.error(`DAILY PUZZLE DOWNLOAD CAPTURE FAILED: ${message}`);
   process.exit(1);
@@ -48,9 +55,9 @@ function runPython(args, label) {
   if (result.status !== 0) fail(label);
 }
 
-async function recentSourceIds(limit = 8) {
+async function recentSourceHistory(currentDate, windowDays = 10, limit = 40) {
   const socialDir = path.join(ROOT, "social");
-  const ids = [];
+  const rows = [];
   try {
     const entries = await fs.readdir(socialDir, { withFileTypes: true });
     const dates = entries
@@ -59,14 +66,19 @@ async function recentSourceIds(limit = 8) {
       .sort()
       .reverse();
     for (const date of dates) {
-      if (ids.length >= limit) break;
+      if (rows.length >= limit) break;
+      const ageDays = daysBetween(date, currentDate);
+      if (ageDays < 0) continue;
+      if (ageDays > Math.max(windowDays, 30)) continue;
       const data = await readJson(path.join(socialDir, date, "raw_captures", "today_puzzle_data.json"), null);
       const manifest = await readJson(path.join(socialDir, date, "raw_captures", "capture_manifest.json"), null);
       const id = data?.source_id || manifest?.selected_source?.id || null;
-      if (id) ids.push(id);
+      const type = data?.source_type || manifest?.selected_source?.type || null;
+      const name = data?.source_name || manifest?.selected_source?.name || id;
+      if (id) rows.push({ date, source_id: id, source_type: type, source_name: name, age_days: ageDays });
     }
   } catch {}
-  return ids;
+  return rows;
 }
 
 async function tryDownloadFromSource(source, date, captureDir) {
@@ -124,13 +136,37 @@ async function tryDownloadFromSource(source, date, captureDir) {
   return null;
 }
 
-function orderedSources({ sources, date, recentIds }) {
-  const recent = new Set(recentIds.slice(0, 6));
-  const start = stableIndex(`${date}-source-diversity-v2`, sources.length);
+function orderedSources({ sources, date, history, noRepeatWindowDays }) {
+  const recentWindow = history.filter((row) => row.age_days <= noRepeatWindowDays);
+  const recentIds = new Set(recentWindow.map((row) => row.source_id));
+  const lastUsedAge = new Map();
+  for (const source of sources) lastUsedAge.set(source.id, 9999);
+  for (const row of history) {
+    if (!lastUsedAge.has(row.source_id)) continue;
+    lastUsedAge.set(row.source_id, Math.min(lastUsedAge.get(row.source_id), row.age_days));
+  }
+
+  const start = stableIndex(`${date}-source-diversity-no-repeat-${noRepeatWindowDays}`, sources.length);
   const rotated = [...sources.slice(start), ...sources.slice(0, start)];
-  const fresh = rotated.filter((source) => !recent.has(source.id));
-  const repeated = rotated.filter((source) => recent.has(source.id));
-  return [...fresh, ...repeated];
+  const fresh = rotated.filter((source) => !recentIds.has(source.id));
+  const recent = rotated.filter((source) => recentIds.has(source.id));
+
+  if (fresh.length) {
+    return {
+      ordered: [...fresh, ...recent.sort((a, b) => (lastUsedAge.get(b.id) || 0) - (lastUsedAge.get(a.id) || 0))],
+      method: `date_seeded_no_repeat_${noRepeatWindowDays}_days`,
+      fallback_used: false,
+      blocked_recent_source_ids: [...recentIds],
+    };
+  }
+
+  const leastRecent = [...recent].sort((a, b) => (lastUsedAge.get(b.id) || 0) - (lastUsedAge.get(a.id) || 0));
+  return {
+    ordered: leastRecent,
+    method: `least_recently_used_after_all_sources_seen_within_${noRepeatWindowDays}_days`,
+    fallback_used: true,
+    blocked_recent_source_ids: [...recentIds],
+  };
 }
 
 async function main() {
@@ -152,10 +188,15 @@ async function main() {
   const sources = (registry.sources || []).filter((s) => !(registry.exclude || []).includes(s.netlify_project));
   if (!sources.length) fail("No standalone puzzle sources configured");
 
-  const recentIds = await recentSourceIds();
-  const ordered = orderedSources({ sources, date, recentIds });
-  console.log(`Puzzle source diversity: recent=${recentIds.slice(0, 6).join(", ") || "none"}`);
+  const noRepeatWindowDays = Number(registry.selection?.no_repeat_window_days || 10);
+  const history = await recentSourceHistory(date, noRepeatWindowDays);
+  const selection = orderedSources({ sources, date, history, noRepeatWindowDays });
+  const ordered = selection.ordered;
+  console.log(`Puzzle source no-repeat window: ${noRepeatWindowDays} days`);
+  console.log(`Puzzle source recent history: ${history.slice(0, noRepeatWindowDays).map((row) => `${row.date}:${row.source_id}`).join(", ") || "none"}`);
+  console.log(`Puzzle source blocked this window: ${selection.blocked_recent_source_ids.join(", ") || "none"}`);
   console.log(`Puzzle source order: ${ordered.map((source) => source.id).join(" > ")}`);
+  if (selection.fallback_used) console.log("Puzzle source no-repeat fallback: all configured sources were recently used; choosing least recently used source first.");
 
   const captureDir = path.join(ROOT, "captures", date, "extracted");
   const rawDir = path.join(ROOT, "social", date, "raw_captures");
@@ -167,10 +208,11 @@ async function main() {
   let extractedPath = null;
 
   for (const source of ordered) {
-    console.log(`Trying downloadable puzzle source: ${source.id}`);
+    const recentlyUsed = selection.blocked_recent_source_ids.includes(source.id);
+    console.log(`Trying downloadable puzzle source: ${source.id}${recentlyUsed ? " (recent fallback candidate)" : ""}`);
     const result = await tryDownloadFromSource(source, date, captureDir);
     if (!result) {
-      attempts.push({ id: source.id, project: source.netlify_project, downloaded: false, recent_cooldown: recentIds.includes(source.id) });
+      attempts.push({ id: source.id, project: source.netlify_project, downloaded: false, recent_no_repeat_blocked: recentlyUsed, no_repeat_window_days: noRepeatWindowDays });
       continue;
     }
 
@@ -193,8 +235,11 @@ async function main() {
         mode: data.mode || source.name,
         date,
         source_selection: {
-          method: "date_seeded_with_recent_cooldown",
-          recent_source_ids: recentIds.slice(0, 8),
+          method: selection.method,
+          no_repeat_window_days: noRepeatWindowDays,
+          fallback_used: selection.fallback_used,
+          blocked_recent_source_ids: selection.blocked_recent_source_ids,
+          recent_source_history: history.slice(0, noRepeatWindowDays),
           order: ordered.map((item) => item.id),
         },
       };
@@ -202,15 +247,15 @@ async function main() {
       await fs.writeFile(path.join(captureDir, "today_trigoku_data.json"), JSON.stringify(enriched, null, 2) + "\n", "utf8");
       selected = source;
       extractedPath = dataPath;
-      attempts.push({ id: source.id, project: source.netlify_project, downloaded: true, extracted: true, url: result.url, recent_cooldown: recentIds.includes(source.id) });
+      attempts.push({ id: source.id, project: source.netlify_project, downloaded: true, extracted: true, url: result.url, recent_no_repeat_blocked: recentlyUsed, no_repeat_window_days: noRepeatWindowDays });
       break;
     }
 
-    attempts.push({ id: source.id, project: source.netlify_project, downloaded: true, extracted: false, url: result.url, recent_cooldown: recentIds.includes(source.id) });
+    attempts.push({ id: source.id, project: source.netlify_project, downloaded: true, extracted: false, url: result.url, recent_no_repeat_blocked: recentlyUsed, no_repeat_window_days: noRepeatWindowDays });
   }
 
   if (!selected || !extractedPath) {
-    const manifest = { date, stage_method: "download_probe_failed", attempts, recent_source_ids: recentIds.slice(0, 8), note: "No standalone source produced a downloadable givens+solution JSON. Browser screenshots are intentionally disabled." };
+    const manifest = { date, stage_method: "download_probe_failed", source_attempts: attempts, recent_source_history: history, no_repeat_window_days: noRepeatWindowDays, note: "No standalone source produced a downloadable givens+solution JSON. Browser screenshots are intentionally disabled." };
     await fs.writeFile(path.join(rawDir, "capture_manifest.json"), JSON.stringify(manifest, null, 2) + "\n", "utf8");
     fail("No standalone source produced downloadable givens+solution JSON. Refusing browser screenshot fallback.");
   }
@@ -222,10 +267,13 @@ async function main() {
   const manifest = JSON.parse(await fs.readFile(manifestPath, "utf8"));
   manifest.selected_source = selected;
   manifest.source_attempts = attempts;
-  manifest.recent_source_ids = recentIds.slice(0, 8);
-  manifest.source_selection_method = "date_seeded_with_recent_cooldown";
+  manifest.recent_source_history = history;
+  manifest.no_repeat_window_days = noRepeatWindowDays;
+  manifest.blocked_recent_source_ids = selection.blocked_recent_source_ids;
+  manifest.no_repeat_fallback_used = selection.fallback_used;
+  manifest.source_selection_method = selection.method;
   manifest.stage_method = "standalone_netlify_download_rendered_states";
-  manifest.note = "Selected from standalone Netlify puzzle sources with recent-source cooldown. Downloaded real site data and rendered staged board PNGs. No browser gameplay screenshots.";
+  manifest.note = "Selected from standalone Netlify puzzle sources with ten-day no-repeat rule. Downloaded real site data and rendered staged board PNGs. No browser gameplay screenshots.";
   await fs.writeFile(manifestPath, JSON.stringify(manifest, null, 2) + "\n", "utf8");
   await fs.copyFile(manifestPath, path.join(rawDir, "capture_manifest.json"));
   await fs.copyFile(extractedPath, path.join(rawDir, "today_puzzle_data.json"));
