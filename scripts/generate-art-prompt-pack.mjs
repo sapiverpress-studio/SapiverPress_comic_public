@@ -5,8 +5,8 @@ const ROOT = process.cwd();
 const CHARACTER = (process.env.COMIC_CHARACTER || "isla").trim().toLowerCase() || "isla";
 const SUITE_URL = process.env.SUITE_URL || "https://suite.sapiverpress.co.uk";
 const LORA_TRIGGER = process.env.HF_LORA_TRIGGER || "ISLA_SP";
-const LORA_REPO = "sapiverpress/sapiverpress-isla-lora";
-const LORA_FILE = "ISLA_SP_1779957190206.safetensors";
+const LORA_REPO = process.env.HF_LORA_REPO?.trim() || "sapiverpress/sapiverpress-isla-lora";
+const LORA_FILE = process.env.HF_LORA_FILE?.trim() || "Isla_v2_1780410778059.safetensors";
 
 const PANEL_FILES = ["01_panel-01.png", "02_panel-02.png", "03_panel-03.png", "04_panel-04.png", "05_panel-05.png", "06_panel-06.png"];
 const TEMPLATE_REFS = ["isla_01_opening_return.png", "isla_02_first_move.png", "isla_03_stuck_moment.png", "isla_04_breakthrough.png", "isla_05_finish.png", "isla_06_tomorrow_set.png"];
