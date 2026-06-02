@@ -133,24 +133,37 @@ function storyText(story, continuityText) {
   ].filter(Boolean).join(" ")).toLowerCase();
 }
 
+function calendarPreferredFlowIds(story) {
+  const values = [
+    ...(Array.isArray(story.calendar_preferred_flows) ? story.calendar_preferred_flows : []),
+    ...(Array.isArray(story.calendar_context?.preferred_flows) ? story.calendar_context.preferred_flows : []),
+  ].filter(Boolean);
+  return new Set(values);
+}
+
 function chooseFlow(story, date, history) {
   const info = dayInfo(date);
   const continuityText = compactHistoryText(history);
   const text = storyText(story, continuityText);
   const recentFlowIds = new Set(history.slice(-4).map((entry) => entry.location_flow_id || entry.life_memory_entry?.scene_truth_contract?.mode).filter(Boolean));
+  const calendarPreferred = calendarPreferredFlowIds(story);
   const scored = FLOW_LIBRARY.map((flow) => {
     let score = 0;
     for (const tag of flow.tags) if (text.includes(tag)) score += 4;
-    if (flow.id === story.location_flow_id) score += 5;
-    if (recentFlowIds.has(flow.id)) score -= 4;
+    if (calendarPreferred.has(flow.id)) score += 30;
+    if (flow.id === story.location_flow_id) score += 8;
+    if (recentFlowIds.has(flow.id)) score -= calendarPreferred.has(flow.id) ? 1 : 4;
     if (info.isWeekend && flow.id === "weekend_no_work_day") score += 6;
     if (info.isWeekend && flow.id === "work_pressure_day" && !text.includes("work")) score -= 8;
     if (text.includes("tomorrow") && (text.includes("hotel") || text.includes("travel")) && flow.id === "commute_day") score += 4;
     if (continuityText.includes("hotel") && flow.id === "hotel_room_followon") score += 7;
     if (continuityText.includes("dog") && flow.id === "morning_walk_dog_day") score += 7;
-    return { flow, score };
+    return { flow, score, calendarPreferred: calendarPreferred.has(flow.id) };
   }).sort((a, b) => b.score - a.score);
-  if (scored[0]?.score > 0) return { ...scored[0].flow, reason: "continuity_story_keyword_match", score: scored[0].score };
+  if (scored[0]?.score > 0) {
+    const reason = scored[0].calendarPreferred ? "calendar_preferred_flow" : "continuity_story_keyword_match";
+    return { ...scored[0].flow, reason, score: scored[0].score };
+  }
   const index = stableIndex(`${date}-${story.supporting_life_trigger?.type || "none"}-${variantName(story)}-${continuityText}`, FLOW_LIBRARY.length);
   return { ...FLOW_LIBRARY[index], reason: "date_seeded_variety", score: 0 };
 }
@@ -160,7 +173,44 @@ function existingTrigger(story) {
   if (trigger.enabled && trigger.sender && trigger.message && trigger.panel) return trigger;
   return { enabled: false, reason: "no_story_trigger" };
 }
-function shouldPreserveCopy(scene) { return Boolean(scene.storyboard_caption || scene.caption || scene.storyboard_dialogue || scene.dialogue || scene.speech_bubble); }
+
+function locationBucket(text) {
+  const v = clean(text).toLowerCase();
+  if (/train carriage|on the train|train interior|rail carriage/.test(v)) return "train";
+  if (/platform|station platform|railway platform/.test(v)) return "platform";
+  if (/hotel|lobby|checkout|room key/.test(v)) return "hotel";
+  if (/library|reading room|borrowed books/.test(v)) return "library";
+  if (/bookshop|book shop|book shelves|book spines/.test(v)) return "bookshop";
+  if (/cafe|café|coffee|receipt|waiter/.test(v)) return "cafe";
+  if (/office|co-working|coworking|meeting|work/.test(v)) return "work";
+  if (/bedroom|bedside|wardrobe|dresser/.test(v)) return "bedroom";
+  if (/park|walk|dog|pavement|outside/.test(v)) return "outside_walk";
+  if (/post office|parcel|envelope|mail/.test(v)) return "mailing";
+  if (/home|kitchen|sofa|living room|entry table/.test(v)) return "home";
+  return "other";
+}
+
+function textMentionsBucket(text) {
+  return locationBucket(text);
+}
+
+function copyMatchesLocation(scene, panelLocation) {
+  const copy = clean([scene.storyboard_caption, scene.caption, scene.storyboard_dialogue, scene.dialogue, scene.speech_bubble].filter(Boolean).join(" "));
+  if (!copy) return false;
+  const copyBucket = textMentionsBucket(copy);
+  if (copyBucket === "other") return true;
+  const locBucket = locationBucket(panelLocation);
+  if (locBucket === "other") return true;
+  if (copyBucket === locBucket) return true;
+  if (locBucket === "home" && ["bedroom"].includes(copyBucket)) return true;
+  return false;
+}
+
+function shouldPreserveCopy(scene, panelLocation) {
+  const hasCopy = Boolean(scene.storyboard_caption || scene.caption || scene.storyboard_dialogue || scene.dialogue || scene.speech_bubble);
+  return hasCopy && copyMatchesLocation(scene, panelLocation);
+}
+
 function fallbackCaption(flow, index, variant) {
   const lines = ["Isla lets the day show her what has to come first.", "The interruption changes the timing, not the whole shape of her morning.", "She waits for the first move that proves itself.", `${variant} changes the move, so Isla checks the rule before trusting it.`, "The checked move holds, and the rest of the day has more room.", "She closes the laptop with one decision carried forward."];
   return lines[index] || flow.actions[index] || "Isla follows the next small decision.";
@@ -170,15 +220,13 @@ function fallbackDialogue(index, variant) {
   return lines[index] || "One thing at a time.";
 }
 function screenForScene(scene, flow, index) {
-  const existing = clean(scene.panel_screen_state);
-  if (["no_puzzle", "closed_device", "first_moves", "active_puzzle", "progress_pause", "finished_or_closing"].includes(existing)) return existing;
-  return flow.screens[index] || (index < 2 ? "no_puzzle" : index === 2 ? "first_moves" : index === 3 ? "active_puzzle" : index === 5 ? "finished_or_closing" : "progress_pause");
+  return flow.screens[index] || clean(scene.panel_screen_state) || (index < 2 ? "no_puzzle" : index === 2 ? "first_moves" : index === 3 ? "active_puzzle" : index === 5 ? "finished_or_closing" : "progress_pause");
 }
-function poseForScene(scene, flow, index) { return clean(scene.panel_pose_family) || flow.poses[index] || ["standing_start", "standing_waiting", "seated_start", "leaning_focus", "side_pause", "closing_up"][index]; }
-function locationForScene(scene, flow, index) { return clean(scene.panel_location || scene.setting || scene.location_label) || flow.locations[index] || "specific daily-life location"; }
-function actionForScene(scene, flow, index) { return clean(scene.panel_action) || flow.actions[index] || clean(scene.scene_description || scene.beat || "visible daily action"); }
+function poseForScene(scene, flow, index) { return flow.poses[index] || clean(scene.panel_pose_family) || ["standing_start", "standing_waiting", "seated_start", "leaning_focus", "side_pause", "closing_up"][index]; }
+function locationForScene(scene, flow, index) { return flow.locations[index] || clean(scene.panel_location || scene.setting || scene.location_label) || "specific daily-life location"; }
+function actionForScene(scene, flow, index) { return flow.actions[index] || clean(scene.panel_action) || clean(scene.scene_description || scene.beat || "visible daily action"); }
 
-function tomorrowSetupForFlow(flow, date) {
+function tomorrowSetupForFlow(flow) {
   const map = {
     hotel_room_followon: "Tomorrow may begin with checkout, station travel, or the return home.",
     commute_day: "Tomorrow may follow from where the commute left her: work, home, or a delayed errand.",
@@ -200,29 +248,33 @@ function applyTruth(story, date, history) {
   const trigger = existingTrigger(story);
   const previous = history.at(-1) || null;
   story.supporting_cast_policy = { ...(story.supporting_cast_policy || {}), isla_only_main_character: true, overlay_only: true, no_extra_faces: true, no_visible_supporting_character: true };
-  story.scene_truth_contract = { enabled: true, mode: flow.id, selection_reason: flow.reason, score: flow.score, applied_at: new Date().toISOString(), fixed_sequence: false, story_led: true, continuity_aware: true };
-  story.story_continuity = { previous_day_used: previous ? { date: previous.date, story_note: previous.story_note || "", flow_id: previous.location_flow_id || previous.life_memory_entry?.scene_truth_contract?.mode || "" } : null, tomorrow_setup: tomorrowSetupForFlow(flow, date), weekend_logic: dayInfo(date).isWeekend ? "weekend: avoid work-led story unless story explicitly requires it" : "weekday" };
+  story.scene_truth_contract = { enabled: true, mode: flow.id, selection_reason: flow.reason, score: flow.score, applied_at: new Date().toISOString(), fixed_sequence: false, story_led: true, continuity_aware: true, caption_location_guard: true, flow_enforced: true };
+  story.story_continuity = { previous_day_used: previous ? { date: previous.date, story_note: previous.story_note || "", flow_id: previous.location_flow_id || previous.life_memory_entry?.scene_truth_contract?.mode || "" } : null, tomorrow_setup: tomorrowSetupForFlow(flow), weekend_logic: dayInfo(date).isWeekend ? "weekend: avoid work-led story unless story explicitly requires it" : "weekday" };
   story.continuation_note = clean(`${story.continuation_note || ""} Image truth follows today's continuity-aware story flow (${flow.id}); tomorrow setup: ${story.story_continuity.tomorrow_setup}`).slice(0, 950);
   story.location_flow_id = flow.id;
   story.location_flow_method = `scene_truth_contract_${flow.reason}`;
 
   const scenes = Array.isArray(story.scenes) ? story.scenes : [];
   while (scenes.length < 6) scenes.push({ id: `scene_${String(scenes.length + 1).padStart(2, "0")}` });
+  const normalisedCopyPanels = [];
   story.scenes = scenes.slice(0, 6).map((scene, index) => {
     const panel_location = locationForScene(scene, flow, index);
     const panel_action = actionForScene(scene, flow, index);
     const panel_pose_family = poseForScene(scene, flow, index);
     const panel_screen_state = screenForScene(scene, flow, index);
     const triggerHere = trigger.enabled && Number(trigger.panel) === index + 1;
-    const caption = shouldPreserveCopy(scene) ? clean(scene.storyboard_caption || scene.caption) : fallbackCaption(flow, index, variant);
-    const dialogue = clean(scene.storyboard_dialogue || scene.dialogue || scene.speech_bubble) || fallbackDialogue(index, variant);
+    const preserveCopy = shouldPreserveCopy(scene, panel_location);
+    if (!preserveCopy && (scene.storyboard_caption || scene.caption || scene.storyboard_dialogue || scene.dialogue || scene.speech_bubble)) normalisedCopyPanels.push(index + 1);
+    const caption = preserveCopy ? clean(scene.storyboard_caption || scene.caption) : fallbackCaption(flow, index, variant);
+    const dialogue = preserveCopy ? (clean(scene.storyboard_dialogue || scene.dialogue || scene.speech_bubble) || fallbackDialogue(index, variant)) : fallbackDialogue(index, variant);
     return { ...scene, panel_location, setting: panel_location, location_label: panel_location, panel_action, panel_pose_family, panel_screen_state, scene_truth_locked: true, scene_truth_flow_id: flow.id, caption, dialogue, speech_bubble: dialogue, storyboard_caption: caption, storyboard_dialogue: dialogue, storyboard_panel_text: `${dialogue}\n${caption}`, scene_description: clean(`${panel_location}. ${panel_action}. ${caption}${triggerHere ? ` Overlay from ${trigger.sender}: ${trigger.message}.` : ""}`).slice(0, 700), image_prompt_fragment: clean(`${panel_action}, ${panel_pose_family}, ${panel_screen_state}${triggerHere ? ", notices phone notification, no extra visible person" : ""}`).slice(0, 520), supporting_life_trigger_here: triggerHere, supporting_life_trigger: triggerHere ? trigger : undefined };
   });
 
+  story.scene_truth_contract.normalised_copy_panels = normalisedCopyPanels;
   story.storyboard_locations = story.scenes.map((scene) => scene.panel_location);
   story.location_flow = story.storyboard_locations.map((location) => location.split(" ").slice(0, 3).join(" "));
   story.storyboard_arc = Object.fromEntries(["setup", "disruption", "choice", "puzzle_moment", "consequence", "resolution"].map((key, i) => [key, story.scenes[i].storyboard_caption]));
-  story.storyboard_quality = { ...(story.storyboard_quality || {}), location_sequence_only: false, has_cause_effect: true, has_character_turn: true, uses_phase2_story: true, scene_truth_locked: true, story_led_scene_truth: true, continuity_aware: true };
+  story.storyboard_quality = { ...(story.storyboard_quality || {}), location_sequence_only: false, has_cause_effect: true, has_character_turn: true, uses_phase2_story: true, scene_truth_locked: true, story_led_scene_truth: true, continuity_aware: true, caption_location_guard: true };
   story.life_memory_entry = story.life_memory_entry || { date: story.date };
   story.life_memory_entry.supporting_life_trigger = trigger;
   story.life_memory_entry.scene_truth_contract = story.scene_truth_contract;
