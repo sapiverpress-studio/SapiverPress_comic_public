@@ -1,6 +1,6 @@
 {
   "date": "2026-06-02",
-  "title": "Isla's Journey of Focus",
+  "title": "Isla's Cafe Pause",
   "voice_name": "Isla Sterling",
   "segments": [
     {
@@ -11,32 +11,32 @@
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "A steady kitchen corner provides a steady starting point before the morning rush begins in earnest."
+      "text": "The distant hum of morning traffic filters through the kitchen window as Isla packs her bag."
     },
     {
       "id": "panel_2",
       "image_name": "02_panel-02.png",
-      "text": "A sudden calendar reminder pops up on her phone, shifting her attention toward the pending task."
+      "text": "The interruption changes the timing, not the whole shape of her morning."
     },
     {
       "id": "panel_3",
       "image_name": "03_panel-03.png",
-      "text": "Staring out the window, she decides to tackle the challenge right now instead of delaying it."
+      "text": "She waits for the first move that proves itself."
     },
     {
       "id": "panel_4",
       "image_name": "04_panel-04.png",
-      "text": "Today has its own little rule-set — check the constraint before rushing."
+      "text": "Anti-Knight changes the move, so Isla checks the rule before trusting it."
     },
     {
       "id": "panel_5",
       "image_name": "05_panel-05.png",
-      "text": "The final step of the logic puzzle falls into place with satisfying, absolute clarity."
+      "text": "Taking a final sip of her cold notebook, she closes the app, satisfied with her quick deduction."
     },
     {
       "id": "panel_6",
       "image_name": "06_panel-06.png",
-      "text": "She closes the laptop with one decision carried forward."
+      "text": "Back at home in the steady evening light, she feels glad she didn't drag her mistakes forward."
     },
     {
       "id": "cta",
@@ -44,11 +44,11 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nA steady kitchen corner provides a steady starting point before the morning rush begins in earnest.\n\nA sudden calendar reminder pops up on her phone, shifting her attention toward the pending task.\n\nStaring out the window, she decides to tackle the challenge right now instead of delaying it.\n\nToday has its own little rule-set — check the constraint before rushing.\n\nThe final step of the logic puzzle falls into place with satisfying, absolute clarity.\n\nShe closes the laptop with one decision carried forward.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-06-02T08:02:52.913Z",
-  "caption": "Join Isla as she navigates her thoughts during a train journey, tackling a puzzle along the way.",
-  "variant_name": "col",
-  "variant_line": "Today has its own little rule-set — check the constraint before rushing.",
+  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nThe distant hum of morning traffic filters through the kitchen window as Isla packs her bag.\n\nThe interruption changes the timing, not the whole shape of her morning.\n\nShe waits for the first move that proves itself.\n\nAnti-Knight changes the move, so Isla checks the rule before trusting it.\n\nTaking a final sip of her cold notebook, she closes the app, satisfied with her quick deduction.\n\nBack at home in the steady evening light, she feels glad she didn't drag her mistakes forward.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-06-02T10:30:01.341Z",
+  "caption": "Join Isla as she learns to pause before moving on.",
+  "variant_name": "Anti-Knight",
+  "variant_line": "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
   "copy_refined": "openai",
   "copy_model": "gpt-4o-mini",
   "openai_response_shape": {
