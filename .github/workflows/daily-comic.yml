@@ -98,18 +98,40 @@ jobs:
         env:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
         run: node scripts/lint-final-storyboard-copy.mjs
-      - name: Generate Phase 3 art prompt pack
+      - name: Generate routed art prompt pack
         env:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
           SUITE_URL: "https://suite.sapiverpress.co.uk"
-        run: npm run art-prompts
+          FAL_MODEL: "fal-ai/z-image/turbo/lora"
+          HF_LORA_TRIGGER: "Isla_v2"
+          HF_LORA_FILE: "Isla_v2_1780410778059.safetensors"
+          HF_NUM_INFERENCE_STEPS: "9"
+          FAL_NUM_INFERENCE_STEPS: "9"
+          HF_LORA_SCALE: "1"
+          FAL_LORA_SCALE: "1"
+          HF_IMAGE_WIDTH: "1024"
+          HF_IMAGE_HEIGHT: "1024"
+          FAL_IMAGE_WIDTH: "1024"
+          FAL_IMAGE_HEIGHT: "1024"
+        run: |
+          npm run art-prompts
+          node scripts/resolve-image-model-profile.mjs
       - name: Generate Isla panel images
         continue-on-error: true
         env:
           FAL_KEY: ${{ secrets.FAL_KEY }}
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-          HF_LORA_TRIGGER: "ISLA_SP"
           FAL_MODEL: "fal-ai/z-image/turbo/lora"
+          HF_LORA_TRIGGER: "Isla_v2"
+          HF_LORA_FILE: "Isla_v2_1780410778059.safetensors"
+          HF_NUM_INFERENCE_STEPS: "9"
+          FAL_NUM_INFERENCE_STEPS: "9"
+          HF_LORA_SCALE: "1"
+          FAL_LORA_SCALE: "1"
+          HF_IMAGE_WIDTH: "1024"
+          HF_IMAGE_HEIGHT: "1024"
+          FAL_IMAGE_WIDTH: "1024"
+          FAL_IMAGE_HEIGHT: "1024"
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
         run: npm run generate-images
       - name: Polish generated images with OpenAI
