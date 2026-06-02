@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "purpose": "Central registry for character and cast-specific image generation models. Add new LoRA/profile entries here instead of hard-coding model names in scripts.",
+  "default_profile_id": "isla_v2_solo",
+  "selection_policy": {
+    "prefer_exact_visible_cast_match": true,
+    "fallback_to_default_profile": true,
+    "unknown_visible_character_action": "fallback_with_warning",
+    "do_not_use_multi_character_profile_unless_all_required_characters_are_visible": true
+  },
+  "profiles": [
+    {
+      "profile_id": "isla_v2_solo",
+      "label": "Isla v2 solo",
+      "status": "active",
+      "character_keys": ["isla"],
+      "aliases": ["isla", "Isla", "Isla_v2"],
+      "use_when": [
+        "Isla is the only visible generated character",
+        "Supporting people are only notifications, messages, receipts, calendar reminders, voice-over, or off-screen references"
+      ],
+      "fal_model": "fal-ai/z-image/turbo/lora",
+      "hf_lora_repo": "sapiverpress/sapiverpress-isla-lora",
+      "lora_file": "Isla_v2_1780410778059.safetensors",
+      "trigger_word": "Isla_v2",
+      "lora_scale": 1,
+      "steps": 9,
+      "width": 1024,
+      "height": 1024,
+      "prompt_prefix": "Isla_v2",
+      "notes": "Current intended TurboLoRA model. Replaces legacy ISLA_SP setup."
+    },
+    {
+      "profile_id": "isla_v2_with_neil_waiter_placeholder",
+      "label": "Isla v2 with Neil waiter placeholder",
+      "status": "placeholder",
+      "character_keys": ["isla", "neil_waiter"],
+      "aliases": ["neil", "Neil", "waiter", "familiar waiter", "cafe waiter"],
+      "required_context_any": ["cafe", "coffee", "waiter", "serves", "speaks to her", "talks to her"],
+      "use_when": [
+        "Isla and Neil the waiter are both visibly present in the generated panel",
+        "Neil is a visible in-scene person, not just a message, receipt, or off-screen reference"
+      ],
+      "fal_model": "fal-ai/z-image/turbo/lora",
+      "hf_lora_repo": "sapiverpress/sapiverpress-isla-lora",
+      "lora_file": "ADD_ISLA_NEIL_MODEL_FILE_HERE.safetensors",
+      "trigger_word": "ADD_ISLA_NEIL_TRIGGER_HERE",
+      "lora_scale": 1,
+      "steps": 9,
+      "width": 1024,
+      "height": 1024,
+      "prompt_prefix": "ADD_ISLA_NEIL_TRIGGER_HERE",
+      "notes": "Disabled placeholder. When a real Isla+Neil model exists, replace file/trigger and set status to active. Router will then select it for visible Isla+Neil cafe panels."
+    }
+  ],
+  "known_characters": {
+    "isla": {
+      "display_name": "Isla",
+      "aliases": ["isla", "Isla", "Isla_v2"],
+      "default_visibility": "visible_main_character"
+    },
+    "neil_waiter": {
+      "display_name": "Neil the waiter",
+      "aliases": ["neil", "Neil", "waiter", "familiar waiter", "cafe waiter"],
+      "default_visibility": "supporting_character",
+      "visibility_rule": "Only route to a Neil model if Neil is visibly in the image, not merely mentioned in text."
+    }
+  }
+}
