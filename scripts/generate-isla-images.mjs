@@ -5,9 +5,9 @@ import sharp from "sharp";
 const ROOT = process.cwd();
 const HF_TOKEN = process.env.HF_TOKEN?.trim() || "";
 const FAL_KEY = process.env.FAL_KEY?.trim() || "";
-const HF_PREFLIGHT_REPO = "sapiverpress/sapiverpress-isla-lora";
-const LORA_FILE = "ISLA_SP_1779957190206.safetensors";
-const LORA_URL = "https://huggingface.co/sapiverpress/sapiverpress-isla-lora/resolve/main/ISLA_SP_1779957190206.safetensors";
+const HF_PREFLIGHT_REPO = process.env.HF_LORA_REPO?.trim() || "sapiverpress/sapiverpress-isla-lora";
+const LORA_FILE = process.env.HF_LORA_FILE?.trim() || "Isla_v2_1780410778059.safetensors";
+const LORA_URL = process.env.HF_LORA_URL?.trim() || `https://huggingface.co/${HF_PREFLIGHT_REPO}/resolve/main/${encodeURIComponent(LORA_FILE)}`;
 const TRIGGER = process.env.HF_LORA_TRIGGER?.trim() || "ISLA_SP";
 const FAL_MODEL = process.env.FAL_MODEL?.trim() || "fal-ai/z-image/turbo/lora";
 const HF_FALLBACK_MODEL = process.env.HF_FALLBACK_MODEL?.trim() || "stabilityai/stable-diffusion-xl-base-1.0";
@@ -178,7 +178,7 @@ async function preflightHf(summary) {
 }
 
 async function requestFalImage(prompt, negativePrompt) {
-  if (!FAL_KEY) throw new Error("FAL_KEY missing; cannot call fal-ai/flux-lora directly.");
+  if (!FAL_KEY) throw new Error("FAL_KEY missing; cannot call fal-ai/z-image/turbo/lora directly.");
   const url = `https://fal.run/${FAL_MODEL}`;
   const response = await fetchWithDiagnostics(url, {
     method: "POST",
@@ -280,11 +280,12 @@ async function main() {
   const summary = {
     date,
     generated_at: new Date().toISOString(),
-    route: FAL_KEY ? "fal-ai/flux-lora-first" : "hf-fallback-only",
+    route: FAL_KEY ? "fal-ai-z-image-turbo-lora-first" : "hf-fallback-only",
     fal_model: FAL_MODEL,
     hf_fallback_model: HF_FALLBACK_MODEL,
     lora_file: LORA_FILE,
-    lora_url_mode: "hard_coded_public_literal",
+    lora_url: LORA_URL,
+    lora_url_mode: process.env.HF_LORA_URL ? "env_override" : "hf_repo_default",
     lora_auth: "not_sent_public_repo",
     trigger_word: TRIGGER,
     requested_panels: 6,
