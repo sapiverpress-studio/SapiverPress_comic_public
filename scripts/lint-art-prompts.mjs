@@ -5,7 +5,8 @@ const ROOT = process.cwd();
 const COFFEE_RE = /\b(coffee|mug|mugs|cup|cups|latte|espresso)\b/i;
 const COFFEE_NEGATIVE = "multiple mugs, repeated coffee cups, extra cups, duplicate mugs, cluttered coffee cups, many mugs, many cups";
 const NO_PUZZLE_SCREEN_NEGATIVE = "open laptop screen, visible puzzle grid, sudoku grid, trigoku grid, puzzle numbers, puzzle on paper, physical puzzle pieces, jigsaw pieces";
-const GENERAL_NEGATIVE = "jigsaw pieces, physical puzzle pieces, cardboard puzzle pieces, loose puzzle shapes, same seated laptop pose in every panel";
+const GENERAL_NEGATIVE = "jigsaw pieces, physical puzzle pieces, cardboard puzzle pieces, loose puzzle shapes, collage layout, split panel, multiple frames, storyboard grid, contact sheet, instruction text, caption text, same seated laptop pose in every panel";
+const CONTROL_NEGATIVE = "LOCK, TRUTH, BANS, mandatory, panel text, prompt text, readable prop text, machine instruction, labels, arrows, numbered panel, contact sheet, split-screen collage";
 
 function dateString() {
   const override = process.env.DATE_OVERRIDE || "";
@@ -23,8 +24,8 @@ async function writeText(file, text) { await fs.mkdir(path.dirname(file), { recu
 
 function stripScreenDemand(prompt) {
   return clean(prompt)
-    .replace(/MANDATORY SCREEN FOR PANEL 4:[^,]+(?:,[^,]+){0,12}/gi, "")
-    .replace(/MANDATORY SCREEN:[^,]+(?:,[^,]+){0,12}/gi, "")
+    .replace(/MANDATORY SCREEN FOR PANEL 4:[^,]+(?:,[^,]+){0,18}/gi, "")
+    .replace(/MANDATORY SCREEN:[^,]+(?:,[^,]+){0,18}/gi, "")
     .replace(/open laptop screen visible[^,]*/gi, "")
     .replace(/dark blank rectangular screen area[^,]*/gi, "")
     .replace(/clear four-corner rectangle for puzzle insertion/gi, "")
@@ -33,6 +34,21 @@ function stripScreenDemand(prompt) {
     .replace(/no hands covering screen/gi, "")
     .replace(/no reflections hiding screen/gi, "")
     .replace(/,+/g, ",")
+    .replace(/^,\s*/, "")
+    .replace(/,\s*$/, "");
+}
+
+function stripControlLanguage(prompt) {
+  return clean(prompt)
+    .replace(/\b(?:SCENE TRUTH|STORY BEAT|PANEL TRUTH|DIGITAL PUZZLE LOCK|READABLE PROP TEXT PACK|BANS?|LOCKS?|TRUTH):[^.]+[.]?/gi, "")
+    .replace(/\b(?:must|mandatory|required|ensure|avoid|ban|do not|no)\b[^,.]*(?:panel|prompt|instruction|label|caption|text|overlay|lock|truth|ban)[^,.]*/gi, "")
+    .replace(/\bpanel\s*\d+\b/gi, "")
+    .replace(/\bscene_\d+\b/gi, "")
+    .replace(/\bprompt\b/gi, "")
+    .replace(/\binstruction[s]?\b/gi, "")
+    .replace(/,+/g, ",")
+    .replace(/\s+,/g, ",")
+    .replace(/,\s*,/g, ",")
     .replace(/^,\s*/, "")
     .replace(/,\s*$/, "");
 }
@@ -63,30 +79,32 @@ function appendOnce(text, addition) {
 
 function poseInstruction(scene, index) {
   const pose = clean(scene?.panel_pose_family || "");
-  if (/standing|walking|packing|waiting|arrival|browsing|choosing/i.test(pose)) return "POSE EMPHASIS: full body or three-quarter standing pose, visible arms and bag/notebook, not seated at laptop";
-  if (/side|receipt|book|note|consequence/i.test(pose)) return "POSE EMPHASIS: side angle or over-shoulder consequence pose, not another front-on laptop desk shot";
-  if (/closing/i.test(pose)) return "POSE EMPHASIS: closing laptop or packing bag, looking away from the screen, clear ending gesture";
-  if (index === 3) return "POSE EMPHASIS: active puzzle check, side angle, one hand clear of the screen";
-  return "POSE EMPHASIS: body language visibly different from adjacent panels";
+  if (/standing|walking|packing|waiting|arrival|browsing|choosing/i.test(pose)) return "single full-body or three-quarter standing pose, visible arms and bag or notebook, not a laptop desk pose";
+  if (/side|receipt|book|note|consequence/i.test(pose)) return "single side-angle or over-shoulder consequence pose, not a front-on desk shot";
+  if (/closing/i.test(pose)) return "single closing or packing gesture, looking away from the screen, clear ending body language";
+  if (index === 3) return "single active puzzle-check pose, side angle, one hand clear of the screen";
+  return "single coherent illustration, body language visibly different from adjacent panels";
 }
 
 function processPanelPrompt(panel, scene, index, coffeeAllowed) {
   const state = clean(scene?.panel_screen_state || panel.panel_screen_state || "active_puzzle");
   const noPuzzle = ["no_puzzle", "closed_device"].includes(state);
-  let prompt = clean(panel.prompt || "");
+  let prompt = stripControlLanguage(clean(panel.prompt || ""));
   let negative = clean(panel.negative_prompt || "");
   const hadCoffee = COFFEE_RE.test(prompt);
 
   if (!coffeeAllowed && hadCoffee) prompt = replaceCoffee(prompt);
   if (noPuzzle) {
     prompt = stripScreenDemand(prompt);
-    prompt = appendOnce(prompt, "NO PUZZLE SCREEN: device closed or absent, no visible grid, no laptop solving, no numbers");
-    prompt = appendOnce(prompt, "not seated at laptop");
+    prompt = appendOnce(prompt, "device closed or absent, no visible grid, no laptop solving, no numbers");
+    prompt = appendOnce(prompt, "not a laptop desk pose");
     negative = appendOnce(negative, NO_PUZZLE_SCREEN_NEGATIVE);
   }
   prompt = appendOnce(prompt, poseInstruction(scene, index));
+  prompt = appendOnce(prompt, "one scene only, one continuous illustration, no collage, no split panels, no text labels");
   negative = appendOnce(negative, GENERAL_NEGATIVE);
   negative = appendOnce(negative, COFFEE_NEGATIVE);
+  negative = appendOnce(negative, CONTROL_NEGATIVE);
 
   return {
     ...panel,
@@ -99,6 +117,7 @@ function processPanelPrompt(panel, scene, index, coffeeAllowed) {
     scene_truth_flow_id: scene?.scene_truth_flow_id || "",
     supporting_life_trigger_here: Boolean(scene?.supporting_life_trigger_here),
     coffee_prompt_stripped: Boolean(hadCoffee && !coffeeAllowed),
+    control_language_stripped: true,
     no_puzzle_prompt_guard: noPuzzle,
   };
 }
@@ -130,7 +149,8 @@ async function main() {
       coffee_mug_max: 2,
       coffee_allowed_panels: Array.from(coffeeAllowedPanels).map((i) => i + 1),
       no_puzzle_prompt_guards: data.panels.filter((panel) => panel.no_puzzle_prompt_guard).map((panel) => panel.panel_number),
-      negative_prompt_added: [GENERAL_NEGATIVE, COFFEE_NEGATIVE],
+      control_language_stripped: true,
+      negative_prompt_added: [GENERAL_NEGATIVE, COFFEE_NEGATIVE, CONTROL_NEGATIVE],
       checked_at: new Date().toISOString(),
     };
     await writeJson(promptsPath, data);
@@ -143,12 +163,13 @@ async function main() {
     coffee_mug_max: 2,
     coffee_allowed_panels: Array.from(coffeeAllowedPanels).map((i) => i + 1),
     changed_prompt_files: changedFiles,
+    control_language_stripped: true,
     checked_at: new Date().toISOString(),
   };
   await writeJson(path.join(ROOT, "daily", `${date}.json`), story);
   await writeJson(path.join(ROOT, "latest.json"), story);
   await writeJson(path.join(ROOT, "image-manifests", `${date}.json`), story.image_manifest);
-  console.log(`Art prompt lint: ${changedFiles} prompt pack(s) updated; coffee allowed panels ${Array.from(coffeeAllowedPanels).map((i) => i + 1).join(", ") || "none"}`);
+  console.log(`Art prompt lint: ${changedFiles} prompt pack(s) updated; coffee allowed panels ${Array.from(coffeeAllowedPanels).map((i) => i + 1).join(", ") || "none"}; control language stripped`);
 }
 
 main().catch((error) => {
