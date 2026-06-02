@@ -118,11 +118,13 @@ async function main() {
     const promptsPath = path.join(dir, "prompts.json");
     const data = await readJson(promptsPath, null);
     if (!data?.panels?.length) continue;
-    data.panels = data.panels.map((panel, index) => {
+    const nextPanels = [];
+    for (const [index, panel] of data.panels.entries()) {
       const next = processPanelPrompt(panel, scenes[index] || {}, index, coffeeAllowedPanels.has(index));
-      if (next.prompt_file) writeText(path.join(ROOT, next.prompt_file), `${next.prompt}\n`);
-      return next;
-    });
+      if (next.prompt_file) await writeText(path.join(ROOT, next.prompt_file), `${next.prompt}\n`);
+      nextPanels.push(next);
+    }
+    data.panels = nextPanels;
     data.prompt_lint = {
       ran: true,
       coffee_mug_max: 2,
