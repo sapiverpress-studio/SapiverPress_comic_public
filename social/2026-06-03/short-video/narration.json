@@ -1,6 +1,6 @@
 {
   "date": "2026-06-03",
-  "title": "A Rainy Reflection",
+  "title": "Isla's Journey of Focus",
   "voice_name": "Isla Sterling",
   "segments": [
     {
@@ -11,7 +11,7 @@
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "Rain streaks the window nook while Isla prepares for a busy midweek of work and packing."
+      "text": "The morning starts with quick packing before Isla finds a steady window seat on her early train."
     },
     {
       "id": "panel_2",
@@ -21,7 +21,7 @@
     {
       "id": "panel_3",
       "image_name": "03_panel-03.png",
-      "text": "She pauses between bookshelves, letting one useful idea settle instead of rushing into another half-finished thought."
+      "text": "Between the towering shelves, she spots a detail in the records that makes her breath and reconsider."
     },
     {
       "id": "panel_4",
@@ -44,9 +44,9 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nRain streaks the window nook while Isla prepares for a busy midweek of work and packing.\n\nThe interruption changes the timing, not the whole shape of her morning.\n\nShe pauses between bookshelves, letting one useful idea settle instead of rushing into another half-finished thought.\n\nKiller changes the move, so Isla checks the rule before trusting it.\n\nThe checked move holds, and the rest of the day has more room.\n\nShe closes the laptop with one decision carried forward.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-06-03T19:07:25.969Z",
-  "caption": "Isla embraces the slower pace of a rainy day, allowing her thoughts to settle amidst her busy schedule.",
+  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nThe morning starts with quick packing before Isla finds a steady window seat on her early train.\n\nThe interruption changes the timing, not the whole shape of her morning.\n\nBetween the towering shelves, she spots a detail in the records that makes her breath and reconsider.\n\nKiller changes the move, so Isla checks the rule before trusting it.\n\nThe checked move holds, and the rest of the day has more room.\n\nShe closes the laptop with one decision carried forward.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-06-03T19:28:58.394Z",
+  "caption": "Join Isla as she navigates her workday while solving a puzzle.",
   "variant_name": "Killer",
   "variant_line": "Killer changes the move, so Isla checks the rule before trusting it.",
   "copy_refined": "openai",
