@@ -45,15 +45,15 @@
   ],
   "storyboard_copy_source": "openai_repaired+gemini",
   "storyboard_copy_model": "gpt-4o-mini",
-  "storyboard_arc_title": "June Work and Travel Preparation",
+  "storyboard_arc_title": "Isla keeps the morning moving",
   "storyboard_arc_type": "story_driven_not_location_driven",
   "storyboard_arc": {
-    "setup": "The morning starts with quick packing before Isla finds a steady window seat on her early train.",
+    "setup": "Isla lets the day show her what has to come first.",
     "trigger": "The interruption changes the timing, not the whole shape of her morning.",
-    "choice": "Between the towering shelves, she spots a detail in the records that makes her breath and reconsider.",
+    "choice": "She pauses by the window, catching her breath before the busy workday completely takes over.",
     "puzzle_moment": "Killer changes the move, so Isla checks the rule before trusting it.",
-    "consequence": "The checked move holds, and the rest of the day has more room.",
-    "resolution": "She closes the laptop with one decision carried forward."
+    "consequence": "With the tricky rule confirmed, she happily closes her notebook and gets back to work.",
+    "resolution": "Watching the evening lights drift past, she feels glad she kept her day so balanced."
   },
   "storyboard_quality": {
     "location_sequence_only": false,
@@ -63,7 +63,7 @@
     "quality_gate_passed": false,
     "interchangeable": false,
     "generic_phrase_hits": [],
-    "cause_effect_link_count": 1,
+    "cause_effect_link_count": 2,
     "character_turn_count": 1,
     "quality_gate_action": "repaired_in_place",
     "quality_gate_repair_reasons": [],
@@ -127,7 +127,7 @@
     "generated_art_panel_count": 6,
     "fallback_template_panel_count": 0,
     "ran": true,
-    "checked_at": "2026-06-03T19:28:49.865Z"
+    "checked_at": "2026-06-03T20:53:04.922Z"
   },
   "openai_storyboard_status": "ok",
   "openai_storyboard_model": "gpt-4o-mini",
@@ -137,7 +137,7 @@
     "frames": "array:6"
   },
   "openai_storyboard_fallback_reason": null,
-  "openai_storyboard_checked_at": "2026-06-03T19:27:53.988Z",
+  "openai_storyboard_checked_at": "2026-06-03T20:52:13.052Z",
   "gemini_allowed_fields": [
     "caption",
     "dialogue"
@@ -179,12 +179,12 @@
   "puzzle_product": "Trigoku Daily Lock",
   "puzzle_url": "https://suite.sapiverpress.co.uk",
   "captions": [
-    "If I get a head start now, I can actually enjoy the steady before the carriage fills up.\nThe morning starts with quick packing before Isla finds a steady window seat on her early train.",
+    "First things first.\nIsla lets the day show her what has to come first.",
     "I can answer that properly later.\nThe interruption changes the timing, not the whole shape of her morning.",
-    "Hold on a second, something in these old files isn't lining up at all.\nBetween the towering shelves, she spots a detail in the records that makes her breath and reconsider.",
+    "Just five minutes to clear my head before I go in.\nShe pauses by the window, catching her breath before the busy workday completely takes over.",
     "Killer changes the move, so Isla checks the rule before trusting it.\nKiller changes the move, so Isla checks the rule before trusting it.",
-    "That one holds.\nThe checked move holds, and the rest of the day has more room.",
-    "Leave it there. Move on.\nShe closes the laptop with one decision carried forward."
+    "Perfect, that actually works out. Now, back to reality.\nWith the tricky rule confirmed, she happily closes her notebook and gets back to work.",
+    "It's good to leave things in a nice, neat place.\nWatching the evening lights drift past, she feels glad she kept her day so balanced."
   ],
   "storyboard_locations": [
     "home desk before work",
@@ -207,10 +207,10 @@
       "screen_quad_mode": "overlay_skipped_screen_state_closed_device",
       "panel_screen_state": "closed_device",
       "screen_state_overlay_allowed": false,
-      "storyboard_text": "If I get a head start now, I can actually enjoy the steady before the carriage fills up.\nThe morning starts with quick packing before Isla finds a steady window seat on her early train.",
+      "storyboard_text": "First things first.\nIsla lets the day show her what has to come first.",
       "arc_role": "setup",
-      "storyboard_caption": "The morning starts with quick packing before Isla finds a steady window seat on her early train.",
-      "storyboard_dialogue": "If I get a head start now, I can actually enjoy the steady before the carriage fills up.",
+      "storyboard_caption": "Isla lets the day show her what has to come first.",
+      "storyboard_dialogue": "First things first.",
       "panel_location": "home desk before work",
       "panel": 1,
       "scene_id": "scene_01",
@@ -270,28 +270,28 @@
       "screen_quad": [
         [
           221,
-          447
+          365
         ],
         [
-          974,
-          446
+          984,
+          365
         ],
         [
-          974,
-          977
+          984,
+          916
         ],
         [
           221,
-          977
+          916
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
       "panel_screen_state": "first_moves",
       "screen_state_overlay_allowed": true,
-      "storyboard_text": "Hold on a second, something in these old files isn't lining up at all.\nBetween the towering shelves, she spots a detail in the records that makes her breath and reconsider.",
+      "storyboard_text": "Just five minutes to clear my head before I go in.\nShe pauses by the window, catching her breath before the busy workday completely takes over.",
       "arc_role": "choice",
-      "storyboard_caption": "Between the towering shelves, she spots a detail in the records that makes her breath and reconsider.",
-      "storyboard_dialogue": "Hold on a second, something in these old files isn't lining up at all.",
+      "storyboard_caption": "She pauses by the window, catching her breath before the busy workday completely takes over.",
+      "storyboard_dialogue": "Just five minutes to clear my head before I go in.",
       "panel_location": "co-working desk near glass partitions",
       "panel": 3,
       "scene_id": "scene_03",
@@ -302,38 +302,33 @@
     },
     {
       "scene": "scene_04",
-      "art_source": "template",
-      "art_path": "templates/characters/isla/isla_04_breakthrough.png",
-      "template": "templates/characters/isla/isla_04_breakthrough.png",
-      "replacement": "",
+      "art_source": "replacement",
+      "art_path": "art-replacements/2026-06-03/04_panel-04.png",
+      "template": "",
+      "replacement": "art-replacements/2026-06-03/04_panel-04.png",
       "capture": "captures/2026-06-03/extracted/04_breakthrough.png",
       "output": "social/2026-06-03/04_panel-04.png",
       "screen_quad": [
         [
-          612,
-          404
+          226,
+          791
         ],
         [
-          1052,
-          414
+          1080,
+          551
         ],
         [
           1025,
-          760
+          1053
         ],
         [
-          580,
-          736
+          212,
+          970
         ]
       ],
-      "screen_quad_mode": "template_locked",
+      "screen_quad_mode": "detected_replacement_screen",
       "panel_screen_state": "active_puzzle",
       "screen_state_overlay_allowed": true,
-      "recovered_from_missing_replacement_screen": true,
-      "failed_replacements": [
-        "art-replacements/2026-06-03/04_panel-04.png",
-        "art-replacements/latest/04_panel-04.png"
-      ],
       "storyboard_text": "Killer changes the move, so Isla checks the rule before trusting it.\nKiller changes the move, so Isla checks the rule before trusting it.",
       "arc_role": "puzzle_moment",
       "storyboard_caption": "Killer changes the move, so Isla checks the rule before trusting it.",
@@ -356,29 +351,29 @@
       "output": "social/2026-06-03/05_panel-05.png",
       "screen_quad": [
         [
-          219,
-          368
+          337,
+          842
         ],
         [
-          985,
-          369
+          809,
+          880
         ],
         [
-          985,
-          878
+          828,
+          1132
         ],
         [
-          220,
-          878
+          296,
+          1137
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
       "panel_screen_state": "progress_pause",
       "screen_state_overlay_allowed": true,
-      "storyboard_text": "That one holds.\nThe checked move holds, and the rest of the day has more room.",
+      "storyboard_text": "Perfect, that actually works out. Now, back to reality.\nWith the tricky rule confirmed, she happily closes her notebook and gets back to work.",
       "arc_role": "consequence",
-      "storyboard_caption": "The checked move holds, and the rest of the day has more room.",
-      "storyboard_dialogue": "That one holds.",
+      "storyboard_caption": "With the tricky rule confirmed, she happily closes her notebook and gets back to work.",
+      "storyboard_dialogue": "Perfect, that actually works out. Now, back to reality.",
       "panel_location": "office break area with notebook",
       "panel": 5,
       "scene_id": "scene_05",
@@ -389,42 +384,37 @@
     },
     {
       "scene": "scene_06",
-      "art_source": "template",
-      "art_path": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "replacement": "",
+      "art_source": "replacement",
+      "art_path": "art-replacements/2026-06-03/06_panel-06.png",
+      "template": "",
+      "replacement": "art-replacements/2026-06-03/06_panel-06.png",
       "capture": "captures/2026-06-03/extracted/06_complete_solution.png",
       "output": "social/2026-06-03/06_panel-06.png",
       "screen_quad": [
         [
-          652,
-          707
+          224,
+          542
         ],
         [
-          1071,
-          721
+          1059,
+          272
         ],
         [
-          1040,
-          1010
+          1028,
+          648
         ],
         [
-          624,
-          952
+          217,
+          682
         ]
       ],
-      "screen_quad_mode": "template_locked",
+      "screen_quad_mode": "detected_replacement_screen",
       "panel_screen_state": "finished_or_closing",
       "screen_state_overlay_allowed": true,
-      "recovered_from_missing_replacement_screen": true,
-      "failed_replacements": [
-        "art-replacements/2026-06-03/06_panel-06.png",
-        "art-replacements/latest/06_panel-06.png"
-      ],
-      "storyboard_text": "Leave it there. Move on.\nShe closes the laptop with one decision carried forward.",
+      "storyboard_text": "It's good to leave things in a nice, neat place.\nWatching the evening lights drift past, she feels glad she kept her day so balanced.",
       "arc_role": "resolution",
-      "storyboard_caption": "She closes the laptop with one decision carried forward.",
-      "storyboard_dialogue": "Leave it there. Move on.",
+      "storyboard_caption": "Watching the evening lights drift past, she feels glad she kept her day so balanced.",
+      "storyboard_dialogue": "It's good to leave things in a nice, neat place.",
       "panel_location": "train or home window after work",
       "panel": 6,
       "scene_id": "scene_06",
@@ -448,7 +438,7 @@
       "panel": 4,
       "scene": "scene_04",
       "output": "social/2026-06-03/04_panel-04.png",
-      "screen_quad_mode": "template_locked",
+      "screen_quad_mode": "detected_replacement_screen",
       "panel_screen_state": "active_puzzle",
       "panel_location": "meeting-room side table",
       "has_valid_screen_quad": true
@@ -466,7 +456,7 @@
       "panel": 6,
       "scene": "scene_06",
       "output": "social/2026-06-03/06_panel-06.png",
-      "screen_quad_mode": "template_locked",
+      "screen_quad_mode": "detected_replacement_screen",
       "panel_screen_state": "finished_or_closing",
       "panel_location": "train or home window after work",
       "has_valid_screen_quad": true
@@ -486,7 +476,7 @@
       "panel": 4,
       "scene": "scene_04",
       "output": "social/2026-06-03/04_panel-04.png",
-      "screen_quad_mode": "template_locked",
+      "screen_quad_mode": "detected_replacement_screen",
       "panel_screen_state": "active_puzzle",
       "panel_location": "meeting-room side table",
       "has_valid_screen_quad": true
@@ -504,7 +494,7 @@
       "panel": 6,
       "scene": "scene_06",
       "output": "social/2026-06-03/06_panel-06.png",
-      "screen_quad_mode": "template_locked",
+      "screen_quad_mode": "detected_replacement_screen",
       "panel_screen_state": "finished_or_closing",
       "panel_location": "train or home window after work",
       "has_valid_screen_quad": true
@@ -518,34 +508,7 @@
     2
   ],
   "screen_overlay_failures": [],
-  "screen_overlay_recoveries": [
-    {
-      "panel": 4,
-      "scene": "scene_04",
-      "output": "social/2026-06-03/04_panel-04.png",
-      "screen_quad_mode": "template_locked",
-      "panel_screen_state": "active_puzzle",
-      "panel_location": "meeting-room side table",
-      "has_valid_screen_quad": true,
-      "failed_replacements": [
-        "art-replacements/2026-06-03/04_panel-04.png",
-        "art-replacements/latest/04_panel-04.png"
-      ]
-    },
-    {
-      "panel": 6,
-      "scene": "scene_06",
-      "output": "social/2026-06-03/06_panel-06.png",
-      "screen_quad_mode": "template_locked",
-      "panel_screen_state": "finished_or_closing",
-      "panel_location": "train or home window after work",
-      "has_valid_screen_quad": true,
-      "failed_replacements": [
-        "art-replacements/2026-06-03/06_panel-06.png",
-        "art-replacements/latest/06_panel-06.png"
-      ]
-    }
-  ],
+  "screen_overlay_recoveries": [],
   "screen_overlay_validation": {
     "passed": true,
     "required_puzzle_panel_count": 4,
@@ -563,7 +526,7 @@
         "panel": 4,
         "scene": "scene_04",
         "output": "social/2026-06-03/04_panel-04.png",
-        "screen_quad_mode": "template_locked",
+        "screen_quad_mode": "detected_replacement_screen",
         "panel_screen_state": "active_puzzle",
         "panel_location": "meeting-room side table",
         "has_valid_screen_quad": true
@@ -581,7 +544,7 @@
         "panel": 6,
         "scene": "scene_06",
         "output": "social/2026-06-03/06_panel-06.png",
-        "screen_quad_mode": "template_locked",
+        "screen_quad_mode": "detected_replacement_screen",
         "panel_screen_state": "finished_or_closing",
         "panel_location": "train or home window after work",
         "has_valid_screen_quad": true
@@ -601,7 +564,7 @@
         "panel": 4,
         "scene": "scene_04",
         "output": "social/2026-06-03/04_panel-04.png",
-        "screen_quad_mode": "template_locked",
+        "screen_quad_mode": "detected_replacement_screen",
         "panel_screen_state": "active_puzzle",
         "panel_location": "meeting-room side table",
         "has_valid_screen_quad": true
@@ -619,7 +582,7 @@
         "panel": 6,
         "scene": "scene_06",
         "output": "social/2026-06-03/06_panel-06.png",
-        "screen_quad_mode": "template_locked",
+        "screen_quad_mode": "detected_replacement_screen",
         "panel_screen_state": "finished_or_closing",
         "panel_location": "train or home window after work",
         "has_valid_screen_quad": true
@@ -647,44 +610,17 @@
       }
     ],
     "failures": [],
-    "recoveries": [
-      {
-        "panel": 4,
-        "scene": "scene_04",
-        "output": "social/2026-06-03/04_panel-04.png",
-        "screen_quad_mode": "template_locked",
-        "panel_screen_state": "active_puzzle",
-        "panel_location": "meeting-room side table",
-        "has_valid_screen_quad": true,
-        "failed_replacements": [
-          "art-replacements/2026-06-03/04_panel-04.png",
-          "art-replacements/latest/04_panel-04.png"
-        ]
-      },
-      {
-        "panel": 6,
-        "scene": "scene_06",
-        "output": "social/2026-06-03/06_panel-06.png",
-        "screen_quad_mode": "template_locked",
-        "panel_screen_state": "finished_or_closing",
-        "panel_location": "train or home window after work",
-        "has_valid_screen_quad": true,
-        "failed_replacements": [
-          "art-replacements/2026-06-03/06_panel-06.png",
-          "art-replacements/latest/06_panel-06.png"
-        ]
-      }
-    ],
-    "checked_at": "2026-06-03T19:28:49.764Z"
+    "recoveries": [],
+    "checked_at": "2026-06-03T20:53:04.822Z"
   },
   "posting_allowed": true,
   "puzzle_moment_copy_snapshot": {
     "ran": true,
     "source_stage": "openai",
-    "caption": "Killer today — cage totals first, then the grid.",
+    "caption": "Killer changes this move, so Isla checks that constraint before she trusts it.",
     "dialogue": "Killer today — cage totals first, then the grid.",
-    "image_prompt_fragment": "small solution moment on train, noticing today's Killer rule naturally",
-    "captured_at": "2026-06-03T19:27:54.077Z"
+    "image_prompt_fragment": "face brightening with a clean deduction",
+    "captured_at": "2026-06-03T20:52:13.141Z"
   },
   "puzzle_moment_copy_protection": {
     "ran": true,
@@ -693,8 +629,8 @@
   },
   "location_or_normalised": {
     "ran": true,
-    "changed": false,
-    "fields_changed": 0
+    "changed": true,
+    "fields_changed": 4
   },
   "story_coherence_lint": {
     "ran": true,
@@ -746,7 +682,7 @@
       "repaired_negation_aware": true
     },
     "variant_copy_mode": "exact_variant",
-    "checked_at": "2026-06-03T19:28:08.908Z"
+    "checked_at": "2026-06-03T20:52:24.402Z"
   },
   "prompt_lint": {
     "ran": true,
@@ -760,7 +696,7 @@
     "no_puzzle_contradictions_stripped": true,
     "location_prefix_garbage_stripped": true,
     "screen_contract_rule": "Open usable screen means puzzle required; no-puzzle panel means no open blank laptop screen.",
-    "checked_at": "2026-06-03T19:28:09.150Z"
+    "checked_at": "2026-06-03T20:52:24.640Z"
   },
   "location_flow_id": "work_pressure_day",
   "location_flow_method": "scene_truth_contract_calendar_preferred_flow",
@@ -769,16 +705,15 @@
     "mode": "work_pressure_day",
     "selection_reason": "calendar_preferred_flow",
     "score": 50,
-    "applied_at": "2026-06-03T19:28:08.680Z",
+    "applied_at": "2026-06-03T20:52:24.173Z",
     "fixed_sequence": false,
     "story_led": true,
     "continuity_aware": true,
     "caption_location_guard": true,
     "flow_enforced": true,
     "normalised_copy_panels": [
-      2,
-      5,
-      6
+      1,
+      2
     ]
   },
   "story_continuity": {
@@ -801,8 +736,8 @@
       "panel_screen_state": "closed_device",
       "scene_truth_flow_id": "work_pressure_day",
       "supporting_life_trigger_here": false,
-      "storyboard_caption": "The morning starts with quick packing before Isla finds a steady window seat on her early train.",
-      "storyboard_dialogue": "If I get a head start now, I can actually enjoy the steady before the carriage fills up."
+      "storyboard_caption": "Isla lets the day show her what has to come first.",
+      "storyboard_dialogue": "First things first."
     },
     {
       "panel": 2,
@@ -827,8 +762,8 @@
       "panel_screen_state": "first_moves",
       "scene_truth_flow_id": "work_pressure_day",
       "supporting_life_trigger_here": false,
-      "storyboard_caption": "Between the towering shelves, she spots a detail in the records that makes her breath and reconsider.",
-      "storyboard_dialogue": "Hold on a second, something in these old files isn't lining up at all."
+      "storyboard_caption": "She pauses by the window, catching her breath before the busy workday completely takes over.",
+      "storyboard_dialogue": "Just five minutes to clear my head before I go in."
     },
     {
       "panel": 4,
@@ -853,8 +788,8 @@
       "panel_screen_state": "progress_pause",
       "scene_truth_flow_id": "work_pressure_day",
       "supporting_life_trigger_here": false,
-      "storyboard_caption": "The checked move holds, and the rest of the day has more room.",
-      "storyboard_dialogue": "That one holds."
+      "storyboard_caption": "With the tricky rule confirmed, she happily closes her notebook and gets back to work.",
+      "storyboard_dialogue": "Perfect, that actually works out. Now, back to reality."
     },
     {
       "panel": 6,
@@ -866,8 +801,8 @@
       "panel_screen_state": "finished_or_closing",
       "scene_truth_flow_id": "work_pressure_day",
       "supporting_life_trigger_here": false,
-      "storyboard_caption": "She closes the laptop with one decision carried forward.",
-      "storyboard_dialogue": "Leave it there. Move on."
+      "storyboard_caption": "Watching the evening lights drift past, she feels glad she kept her day so balanced.",
+      "storyboard_dialogue": "It's good to leave things in a nice, neat place."
     }
   ],
   "supporting_life_overlay_drawn": true

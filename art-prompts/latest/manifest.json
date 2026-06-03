@@ -74,7 +74,7 @@
       "output_file": "social/2026-06-03/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "The morning starts with quick packing before Isla finds a steady window seat on her early train.",
+      "caption": "Isla lets the day show her what has to come first.",
       "scene_id": "scene_01"
     },
     {
@@ -94,7 +94,7 @@
       "output_file": "social/2026-06-03/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "Between the towering shelves, she spots a detail in the records that makes her breath and reconsider.",
+      "caption": "She pauses by the window, catching her breath before the busy workday completely takes over.",
       "scene_id": "scene_03"
     },
     {
@@ -114,7 +114,7 @@
       "output_file": "social/2026-06-03/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "The checked move holds, and the rest of the day has more room.",
+      "caption": "With the tricky rule confirmed, she happily closes her notebook and gets back to work.",
       "scene_id": "scene_05"
     },
     {
@@ -124,10 +124,10 @@
       "output_file": "social/2026-06-03/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "She closes the laptop with one decision carried forward.",
+      "caption": "Watching the evening lights drift past, she feels glad she kept her day so balanced.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-06-03.json",
-  "generated_at": "2026-06-03T19:28:08.965Z"
+  "generated_at": "2026-06-03T20:52:24.460Z"
 }
