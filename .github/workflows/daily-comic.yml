@@ -64,19 +64,41 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: "22"
+      - name: Check paid API spend guard
+        id: api_guard
+        env:
+          DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+          POST_TO_FACEBOOK: ${{ github.event.inputs.post_to_facebook }}
+          POST_TO_PINTEREST: ${{ github.event.inputs.post_to_pinterest }}
+          IMAGE_GENERATION_WINDOW_START: "07:00"
+          IMAGE_GENERATION_WINDOW_END: "08:30"
+        run: node scripts/should-generate-images.mjs
+      - name: Stop before paid APIs
+        if: steps.api_guard.outputs.generate_images != 'true'
+        run: |
+          echo "Paid API guard blocked this run."
+          echo "Reason: ${{ steps.api_guard.outputs.image_generation_reason }}"
+          echo "No OpenAI, Anthropic, Gemini, fal.ai, or ElevenLabs calls will run."
       - name: Install dependencies
+        if: steps.api_guard.outputs.generate_images == 'true'
         run: npm install
       - name: Install ffmpeg
+        if: steps.api_guard.outputs.generate_images == 'true'
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
       - name: Install Chromium for compositor
+        if: steps.api_guard.outputs.generate_images == 'true'
         run: npx playwright install --with-deps chromium
       - name: Validate project
+        if: steps.api_guard.outputs.generate_images == 'true'
         run: npm run validate
       - name: Capture today's puzzle before story generation
+        if: steps.api_guard.outputs.generate_images == 'true'
         env:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
         run: npm run capture:today
       - name: Run daily generator
+        if: steps.api_guard.outputs.generate_images == 'true'
         env:
           COMIC_GITHUB_TOKEN: ${{ secrets.COMIC_GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ github.token }}
@@ -88,6 +110,7 @@ jobs:
           SUPPORTING_LIFE_TRIGGER: ${{ github.event.inputs.supporting_life_trigger }}
         run: npm run daily
       - name: Humanise storyboard with Gemini
+        if: steps.api_guard.outputs.generate_images == 'true'
         continue-on-error: true
         env:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
@@ -95,10 +118,12 @@ jobs:
           GEMINI_MODEL: ${{ secrets.GEMINI_MODEL }}
         run: node scripts/humanise-storyboard-gemini.mjs
       - name: Lint final storyboard copy
+        if: steps.api_guard.outputs.generate_images == 'true'
         env:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
         run: node scripts/lint-final-storyboard-copy.mjs
       - name: Generate routed art prompt pack
+        if: steps.api_guard.outputs.generate_images == 'true'
         env:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
           SUITE_URL: "https://suite.sapiverpress.co.uk"
@@ -117,6 +142,7 @@ jobs:
           npm run art-prompts
           node scripts/resolve-image-model-profile.mjs
       - name: Generate Isla panel images
+        if: steps.api_guard.outputs.generate_images == 'true'
         continue-on-error: true
         env:
           FAL_KEY: ${{ secrets.FAL_KEY }}
@@ -135,6 +161,7 @@ jobs:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
         run: npm run generate-images
       - name: Polish generated images with OpenAI
+        if: steps.api_guard.outputs.generate_images == 'true'
         continue-on-error: true
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -143,12 +170,14 @@ jobs:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
         run: npm run polish-images
       - name: Compose full strip and close-ups
+        if: steps.api_guard.outputs.generate_images == 'true'
         env:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
           SUITE_URL: "https://suite.sapiverpress.co.uk"
           COMIC_SCREEN_BOX: ${{ secrets.COMIC_SCREEN_BOX }}
         run: npm run compose
       - name: Generate short video script
+        if: steps.api_guard.outputs.generate_images == 'true'
         continue-on-error: true
         env:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
@@ -159,6 +188,7 @@ jobs:
           ELEVENLABS_VOICE_ID: "qSR2T7SqN7Pcd0YpO3Vd"
         run: npm run short-video-script
       - name: Generate short video voiceover
+        if: steps.api_guard.outputs.generate_images == 'true'
         continue-on-error: true
         env:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
@@ -168,6 +198,7 @@ jobs:
           ELEVENLABS_MODEL_ID: "eleven_multilingual_v2"
         run: npm run short-video-voice
       - name: Build short video MP4
+        if: steps.api_guard.outputs.generate_images == 'true'
         continue-on-error: true
         env:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
@@ -175,7 +206,7 @@ jobs:
           ETSY_URL: "https://sapiverpress.etsy.com?coupon=SAVE20"
         run: npm run short-video-build
       - name: Upload daily video and TikTok copy
-        if: always()
+        if: steps.api_guard.outputs.generate_images == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: sapiver-isla-daily-video-${{ github.run_number }}
@@ -191,7 +222,7 @@ jobs:
           retention-days: 30
           compression-level: 0
       - name: Post comic to Facebook
-        if: github.event_name == 'schedule' || github.event.inputs.post_to_facebook == 'true'
+        if: steps.api_guard.outputs.generate_images == 'true' && (github.event_name == 'schedule' || github.event.inputs.post_to_facebook == 'true')
         continue-on-error: true
         env:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
@@ -207,7 +238,7 @@ jobs:
           ETSY_CATALOG_URL: "https://sapiver-press-etsy-search-catalog.netlify.app/"
         run: node scripts/facebook-post-guarded.mjs
       - name: Commit generated story, prompts, social outputs and Facebook state
-        if: always()
+        if: steps.api_guard.outputs.generate_images == 'true'
         run: |
           set -e
           git config user.name "sapiver-comic-bot"
@@ -244,7 +275,7 @@ jobs:
             done
           fi
       - name: Post comic to Pinterest
-        if: always() && (github.event_name == 'schedule' || github.event.inputs.post_to_pinterest == 'true')
+        if: steps.api_guard.outputs.generate_images == 'true' && (github.event_name == 'schedule' || github.event.inputs.post_to_pinterest == 'true')
         env:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
           PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
@@ -255,7 +286,7 @@ jobs:
           SUITE_URL: "https://suite.sapiverpress.co.uk"
         run: node scripts/pinterest-post-guarded.mjs
       - name: Commit Pinterest state
-        if: always() && (github.event_name == 'schedule' || github.event.inputs.post_to_pinterest == 'true')
+        if: steps.api_guard.outputs.generate_images == 'true' && (github.event_name == 'schedule' || github.event.inputs.post_to_pinterest == 'true')
         run: |
           set -e
           git config user.name "sapiver-comic-bot"
