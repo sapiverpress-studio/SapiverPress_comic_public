@@ -1,6 +1,6 @@
 {
   "date": "2026-06-03",
-  "title": "Morning Puzzle Routine",
+  "title": "Isla's Library Day",
   "voice_name": "Isla Sterling",
   "segments": [
     {
@@ -11,22 +11,22 @@
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "A steady morning in the kitchen offers a rare moment of peace before the busy day begins."
+      "text": "Finding a steady moment at home helps Isla set her pace before a busy day starts."
     },
     {
       "id": "panel_2",
       "image_name": "02_panel-02.png",
-      "text": "Waiting on the chilly platform, she keeps her mind anchored on the task ahead."
+      "text": "Standing on the chilly platform, she glances at her phone to see Lena's text about meeting later."
     },
     {
       "id": "panel_3",
       "image_name": "03_panel-03.png",
-      "text": "Watching the scenery blur past the train window helps clear away the early morning clutter."
+      "text": "She waits for the first move that proves itself."
     },
     {
       "id": "panel_4",
       "image_name": "04_panel-04.png",
-      "text": "The daily rule changes the move, so Isla checks it before trusting the answer."
+      "text": "Killer changes the move, so Isla checks the rule before trusting it."
     },
     {
       "id": "panel_5",
@@ -36,7 +36,7 @@
     {
       "id": "panel_6",
       "image_name": "06_panel-06.png",
-      "text": "With everything neatly organized, she is finally ready to step out and tackle the workday."
+      "text": "Finding a steady nook by the glass, Isla lets the rainy afternoon fade into the background."
     },
     {
       "id": "cta",
@@ -44,11 +44,11 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nA steady morning in the kitchen offers a rare moment of peace before the busy day begins.\n\nWaiting on the chilly platform, she keeps her mind anchored on the task ahead.\n\nWatching the scenery blur past the train window helps clear away the early morning clutter.\n\nThe daily rule changes the move, so Isla checks it before trusting the answer.\n\nThe checked move holds, and the rest of the day has more room.\n\nWith everything neatly organized, she is finally ready to step out and tackle the workday.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-06-03T03:36:51.559Z",
-  "caption": "Isla finds moments of clarity amidst her busy workday.",
-  "variant_name": "daily rule",
-  "variant_line": "The daily rule changes the move, so Isla checks it before trusting the answer.",
+  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nFinding a steady moment at home helps Isla set her pace before a busy day starts.\n\nStanding on the chilly platform, she glances at her phone to see Lena's text about meeting later.\n\nShe waits for the first move that proves itself.\n\nKiller changes the move, so Isla checks the rule before trusting it.\n\nThe checked move holds, and the rest of the day has more room.\n\nFinding a steady nook by the glass, Isla lets the rainy afternoon fade into the background.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-06-03T22:16:46.379Z",
+  "caption": "Join Isla as she navigates a busy workday, finding calm in the library.",
+  "variant_name": "Killer",
+  "variant_line": "Killer changes the move, so Isla checks the rule before trusting it.",
   "copy_refined": "openai",
   "copy_model": "gpt-4o-mini",
   "openai_response_shape": {

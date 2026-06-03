@@ -74,7 +74,7 @@
       "output_file": "social/2026-06-03/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "Isla lets the day show her what has to come first.",
+      "caption": "Finding a steady moment at home helps Isla set her pace before a busy day starts.",
       "scene_id": "scene_01"
     },
     {
@@ -84,7 +84,7 @@
       "output_file": "social/2026-06-03/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "The interruption changes the timing, not the whole shape of her morning.",
+      "caption": "Standing on the chilly platform, she glances at her phone to see Lena's text about meeting later.",
       "scene_id": "scene_02"
     },
     {
@@ -94,7 +94,7 @@
       "output_file": "social/2026-06-03/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "She pauses by the window, catching her breath before the busy workday completely takes over.",
+      "caption": "She waits for the first move that proves itself.",
       "scene_id": "scene_03"
     },
     {
@@ -114,7 +114,7 @@
       "output_file": "social/2026-06-03/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "With the tricky rule confirmed, she happily closes her notebook and gets back to work.",
+      "caption": "The checked move holds, and the rest of the day has more room.",
       "scene_id": "scene_05"
     },
     {
@@ -124,10 +124,10 @@
       "output_file": "social/2026-06-03/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "Watching the evening lights drift past, she feels glad she kept her day so balanced.",
+      "caption": "Finding a steady nook by the glass, Isla lets the rainy afternoon fade into the background.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-06-03.json",
-  "generated_at": "2026-06-03T20:52:24.460Z"
+  "generated_at": "2026-06-03T22:10:33.330Z"
 }

@@ -1,8 +1,8 @@
 {
   "date": "2026-06-03",
-  "enabled": false,
+  "enabled": true,
   "model": "gpt-image-1",
-  "status": "skipped_disabled",
+  "status": "complete",
   "purpose": "Polish coherent readable poster/book/merch text while preserving Isla, action, pose, scene truth and screen state.",
   "poster_quotes": [
     "Small steps. Big impact.",
@@ -25,6 +25,62 @@
     "Small Wins Journal",
     "Notes for Better Days"
   ],
-  "panels": [],
-  "generated_at": "2026-06-03T20:52:57.007Z"
+  "panels": [
+    {
+      "panel_number": 1,
+      "image_name": "01_panel-01.png",
+      "status": "polished",
+      "panel_screen_state": "no_puzzle",
+      "backup_file": "art-replacements/2026-06-03/openai-originals/01_panel-01.png",
+      "output_file": "art-replacements/2026-06-03/01_panel-01.png",
+      "prompt_summary": "coherent readable prop text only; preserve Isla, action, pose and screen state"
+    },
+    {
+      "panel_number": 2,
+      "image_name": "02_panel-02.png",
+      "status": "polished",
+      "panel_screen_state": "no_puzzle",
+      "backup_file": "art-replacements/2026-06-03/openai-originals/02_panel-02.png",
+      "output_file": "art-replacements/2026-06-03/02_panel-02.png",
+      "prompt_summary": "coherent readable prop text only; preserve Isla, action, pose and screen state"
+    },
+    {
+      "panel_number": 3,
+      "image_name": "03_panel-03.png",
+      "status": "polished",
+      "panel_screen_state": "first_moves",
+      "backup_file": "art-replacements/2026-06-03/openai-originals/03_panel-03.png",
+      "output_file": "art-replacements/2026-06-03/03_panel-03.png",
+      "prompt_summary": "coherent readable prop text only; preserve Isla, action, pose and screen state"
+    },
+    {
+      "panel_number": 4,
+      "image_name": "04_panel-04.png",
+      "status": "polished",
+      "panel_screen_state": "active_puzzle",
+      "backup_file": "art-replacements/2026-06-03/openai-originals/04_panel-04.png",
+      "output_file": "art-replacements/2026-06-03/04_panel-04.png",
+      "prompt_summary": "coherent readable prop text only; preserve Isla, action, pose and screen state"
+    },
+    {
+      "panel_number": 5,
+      "image_name": "05_panel-05.png",
+      "status": "polished",
+      "panel_screen_state": "progress_pause",
+      "backup_file": "art-replacements/2026-06-03/openai-originals/05_panel-05.png",
+      "output_file": "art-replacements/2026-06-03/05_panel-05.png",
+      "prompt_summary": "coherent readable prop text only; preserve Isla, action, pose and screen state"
+    },
+    {
+      "panel_number": 6,
+      "image_name": "06_panel-06.png",
+      "status": "polished",
+      "panel_screen_state": "finished_or_closing",
+      "backup_file": "art-replacements/2026-06-03/openai-originals/06_panel-06.png",
+      "output_file": "art-replacements/2026-06-03/06_panel-06.png",
+      "prompt_summary": "coherent readable prop text only; preserve Isla, action, pose and screen state"
+    }
+  ],
+  "generated_at": "2026-06-03T22:10:58.474Z",
+  "polished_count": 6
 }
