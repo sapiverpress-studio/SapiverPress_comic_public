@@ -105,51 +105,6 @@
     {
       "date": "2026-06-01",
       "weekday": "Monday",
-      "same_day_attempt": 4,
-      "setting": "gothic window desk with cityscape view",
-      "puzzle_phase": "early-week",
-      "story_note": "Isla spends this entry at the gothic window desk with cityscape view because she wants a quiet start before the day gets noisy. The puzzle stays as a light thread inside the day.",
-      "continuation_note": "Remember: Isla protects small morning rituals when she needs steadiness. Continue the thread: quiet morning rituals help her reset.",
-      "stuck_moment": "thoughtful pause, checking the route",
-      "life_memory_entry": {
-        "date": "2026-06-01",
-        "attempt": 4,
-        "location": "gothic window desk with cityscape view",
-        "reason_for_location": "she wants a quiet start before the day gets noisy",
-        "life_detail_learned": "Isla protects small morning rituals when she needs steadiness.",
-        "thread_to_continue": "quiet morning rituals help her reset",
-        "puzzle_variant_mentioned": "Trigoku",
-        "variant_panel_index": 4,
-        "uk_calendar_date": null,
-        "uk_calendar_panel_index": null
-      },
-      "variant_recap": {
-        "variant_name": "Trigoku",
-        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
-        "panel_index": 4,
-        "line": "Today has its own little rule-set — check the constraint before rushing."
-      },
-      "uk_calendar_date": null,
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "Kitchen quiet.",
-        "Anti-Knight today — knight moves block matching numbers.",
-        "Think slower.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Last checks.",
-        "Day begins."
-      ]
-    },
-    {
-      "date": "2026-06-01",
-      "weekday": "Monday",
       "same_day_attempt": 5,
       "setting": "co-working desk near a tall window",
       "puzzle_phase": "early-week",
@@ -1264,12 +1219,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Killer today — cage totals first, then the grid.",
-        "Hold the line.",
+        "Street noise.",
+        "One safe move.",
+        "Wait there.",
         "Killer changes the move, so Isla checks the rule before trusting it.",
-        "Almost clear.",
-        "Back outside."
+        "Last sip.",
+        "On again."
       ]
     },
     {
@@ -1309,12 +1264,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Killer today — cage totals first, then the grid.",
-        "Hold the line.",
+        "Street noise.",
+        "One safe move.",
+        "Wait there.",
         "Killer changes the move, so Isla checks the rule before trusting it.",
-        "Almost clear.",
-        "Back outside."
+        "Last sip.",
+        "On again."
       ]
     },
     {
@@ -1354,12 +1309,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Killer today — cage totals first, then the grid.",
-        "Hold the line.",
+        "Street noise.",
+        "One safe move.",
+        "Wait there.",
         "Killer changes the move, so Isla checks the rule before trusting it.",
-        "Almost clear.",
-        "Back outside."
+        "Last sip.",
+        "On again."
       ]
     },
     {
@@ -1399,12 +1354,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Killer today — cage totals first, then the grid.",
-        "Hold the line.",
+        "Street noise.",
+        "One safe move.",
+        "Wait there.",
         "Killer changes the move, so Isla checks the rule before trusting it.",
-        "Almost clear.",
-        "Back outside."
+        "Last sip.",
+        "On again."
       ]
     },
     {
@@ -1444,12 +1399,57 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Killer today — cage totals first, then the grid.",
-        "Hold the line.",
+        "Street noise.",
+        "One safe move.",
+        "Wait there.",
         "Killer changes the move, so Isla checks the rule before trusting it.",
-        "Almost clear.",
-        "Back outside."
+        "Last sip.",
+        "On again."
+      ]
+    },
+    {
+      "date": "2026-06-03",
+      "weekday": "Wednesday",
+      "same_day_attempt": 6,
+      "setting": "outdoor cafe street table",
+      "puzzle_phase": "mid-week",
+      "story_note": "Isla spends this entry at the outdoor cafe street table because she is trying not to rush straight into the next errand. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Isla sometimes uses a cafe table as a buffer between obligations. Continue the thread: she is learning to pause before moving on.",
+      "stuck_moment": "brief hesitation, coffee nearby",
+      "life_memory_entry": {
+        "date": "2026-06-03",
+        "attempt": 6,
+        "location": "outdoor cafe street table",
+        "reason_for_location": "she is trying not to rush straight into the next errand",
+        "life_detail_learned": "Isla sometimes uses a cafe table as a buffer between obligations.",
+        "thread_to_continue": "she is learning to pause before moving on",
+        "puzzle_variant_mentioned": "Killer",
+        "variant_panel_index": 4,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Killer",
+        "short_rule": "Killer today — cage totals first, then the grid.",
+        "panel_index": 4,
+        "line": "Killer today — cage totals first, then the grid."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Street noise.",
+        "One safe move.",
+        "Wait there.",
+        "Killer changes the move, so Isla checks the rule before trusting it.",
+        "Last sip.",
+        "On again."
       ]
     }
   ],
@@ -1457,51 +1457,6 @@
     {
       "date": "2026-06-01",
       "weekday": "Monday",
-      "same_day_attempt": 4,
-      "setting": "gothic window desk with cityscape view",
-      "puzzle_phase": "early-week",
-      "story_note": "Isla spends this entry at the gothic window desk with cityscape view because she wants a quiet start before the day gets noisy. The puzzle stays as a light thread inside the day.",
-      "continuation_note": "Remember: Isla protects small morning rituals when she needs steadiness. Continue the thread: quiet morning rituals help her reset.",
-      "stuck_moment": "thoughtful pause, checking the route",
-      "life_memory_entry": {
-        "date": "2026-06-01",
-        "attempt": 4,
-        "location": "gothic window desk with cityscape view",
-        "reason_for_location": "she wants a quiet start before the day gets noisy",
-        "life_detail_learned": "Isla protects small morning rituals when she needs steadiness.",
-        "thread_to_continue": "quiet morning rituals help her reset",
-        "puzzle_variant_mentioned": "Trigoku",
-        "variant_panel_index": 4,
-        "uk_calendar_date": null,
-        "uk_calendar_panel_index": null
-      },
-      "variant_recap": {
-        "variant_name": "Trigoku",
-        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
-        "panel_index": 4,
-        "line": "Today has its own little rule-set — check the constraint before rushing."
-      },
-      "uk_calendar_date": null,
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "Kitchen quiet.",
-        "Anti-Knight today — knight moves block matching numbers.",
-        "Think slower.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Last checks.",
-        "Day begins."
-      ]
-    },
-    {
-      "date": "2026-06-01",
-      "weekday": "Monday",
       "same_day_attempt": 5,
       "setting": "co-working desk near a tall window",
       "puzzle_phase": "early-week",
@@ -2616,12 +2571,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Killer today — cage totals first, then the grid.",
-        "Hold the line.",
+        "Street noise.",
+        "One safe move.",
+        "Wait there.",
         "Killer changes the move, so Isla checks the rule before trusting it.",
-        "Almost clear.",
-        "Back outside."
+        "Last sip.",
+        "On again."
       ]
     },
     {
@@ -2661,12 +2616,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Killer today — cage totals first, then the grid.",
-        "Hold the line.",
+        "Street noise.",
+        "One safe move.",
+        "Wait there.",
         "Killer changes the move, so Isla checks the rule before trusting it.",
-        "Almost clear.",
-        "Back outside."
+        "Last sip.",
+        "On again."
       ]
     },
     {
@@ -2706,12 +2661,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Killer today — cage totals first, then the grid.",
-        "Hold the line.",
+        "Street noise.",
+        "One safe move.",
+        "Wait there.",
         "Killer changes the move, so Isla checks the rule before trusting it.",
-        "Almost clear.",
-        "Back outside."
+        "Last sip.",
+        "On again."
       ]
     },
     {
@@ -2751,12 +2706,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Killer today — cage totals first, then the grid.",
-        "Hold the line.",
+        "Street noise.",
+        "One safe move.",
+        "Wait there.",
         "Killer changes the move, so Isla checks the rule before trusting it.",
-        "Almost clear.",
-        "Back outside."
+        "Last sip.",
+        "On again."
       ]
     },
     {
@@ -2796,12 +2751,57 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Borrowed quiet.",
-        "Killer today — cage totals first, then the grid.",
-        "Hold the line.",
+        "Street noise.",
+        "One safe move.",
+        "Wait there.",
         "Killer changes the move, so Isla checks the rule before trusting it.",
-        "Almost clear.",
-        "Back outside."
+        "Last sip.",
+        "On again."
+      ]
+    },
+    {
+      "date": "2026-06-03",
+      "weekday": "Wednesday",
+      "same_day_attempt": 6,
+      "setting": "outdoor cafe street table",
+      "puzzle_phase": "mid-week",
+      "story_note": "Isla spends this entry at the outdoor cafe street table because she is trying not to rush straight into the next errand. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Isla sometimes uses a cafe table as a buffer between obligations. Continue the thread: she is learning to pause before moving on.",
+      "stuck_moment": "brief hesitation, coffee nearby",
+      "life_memory_entry": {
+        "date": "2026-06-03",
+        "attempt": 6,
+        "location": "outdoor cafe street table",
+        "reason_for_location": "she is trying not to rush straight into the next errand",
+        "life_detail_learned": "Isla sometimes uses a cafe table as a buffer between obligations.",
+        "thread_to_continue": "she is learning to pause before moving on",
+        "puzzle_variant_mentioned": "Killer",
+        "variant_panel_index": 4,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Killer",
+        "short_rule": "Killer today — cage totals first, then the grid.",
+        "panel_index": 4,
+        "line": "Killer today — cage totals first, then the grid."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Street noise.",
+        "One safe move.",
+        "Wait there.",
+        "Killer changes the move, so Isla checks the rule before trusting it.",
+        "Last sip.",
+        "On again."
       ]
     }
   ],

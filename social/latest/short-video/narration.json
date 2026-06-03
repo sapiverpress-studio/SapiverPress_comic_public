@@ -1,6 +1,6 @@
 {
   "date": "2026-06-03",
-  "title": "Isla's Library Day",
+  "title": "Isla's Midweek Check",
   "voice_name": "Isla Sterling",
   "segments": [
     {
@@ -11,17 +11,17 @@
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "Finding a steady moment at home helps Isla set her pace before a busy day starts."
+      "text": "Isla lets the day show her what has to come first."
     },
     {
       "id": "panel_2",
       "image_name": "02_panel-02.png",
-      "text": "Standing on the chilly platform, she glances at her phone to see Lena's text about meeting later."
+      "text": "She settles into the busy lobby, finding a steady moment to review her schedule and notes."
     },
     {
       "id": "panel_3",
       "image_name": "03_panel-03.png",
-      "text": "She waits for the first move that proves itself."
+      "text": "She pauses at her desk, double-checking the figures on her screen before sending the final report."
     },
     {
       "id": "panel_4",
@@ -31,12 +31,12 @@
     {
       "id": "panel_5",
       "image_name": "05_panel-05.png",
-      "text": "The checked move holds, and the rest of the day has more room."
+      "text": "Satisfied with her quick reasoning, she closes her notebook and gets ready for the next meeting."
     },
     {
       "id": "panel_6",
       "image_name": "06_panel-06.png",
-      "text": "Finding a steady nook by the glass, Isla lets the rainy afternoon fade into the background."
+      "text": "As the evening train starts moving, she lets her mind wander, leaving the busy workday behind."
     },
     {
       "id": "cta",
@@ -44,9 +44,9 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nFinding a steady moment at home helps Isla set her pace before a busy day starts.\n\nStanding on the chilly platform, she glances at her phone to see Lena's text about meeting later.\n\nShe waits for the first move that proves itself.\n\nKiller changes the move, so Isla checks the rule before trusting it.\n\nThe checked move holds, and the rest of the day has more room.\n\nFinding a steady nook by the glass, Isla lets the rainy afternoon fade into the background.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-06-03T22:16:46.379Z",
-  "caption": "Join Isla as she navigates a busy workday, finding calm in the library.",
+  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nIsla lets the day show her what has to come first.\n\nShe settles into the busy lobby, finding a steady moment to review her schedule and notes.\n\nShe pauses at her desk, double-checking the figures on her screen before sending the final report.\n\nKiller changes the move, so Isla checks the rule before trusting it.\n\nSatisfied with her quick reasoning, she closes her notebook and gets ready for the next meeting.\n\nAs the evening train starts moving, she lets her mind wander, leaving the busy workday behind.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-06-03T22:40:23.306Z",
+  "caption": "Isla takes a moment to pause and reflect amidst her busy workday.",
   "variant_name": "Killer",
   "variant_line": "Killer changes the move, so Isla checks the rule before trusting it.",
   "copy_refined": "openai",
