@@ -1,6 +1,6 @@
 {
   "date": "2026-06-03",
-  "title": "Isla's Midweek Check",
+  "title": "Morning Puzzle Routine",
   "voice_name": "Isla Sterling",
   "segments": [
     {
@@ -11,32 +11,32 @@
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "Isla lets the day show her what has to come first."
+      "text": "A steady morning in the kitchen offers a rare moment of peace before the busy day begins."
     },
     {
       "id": "panel_2",
       "image_name": "02_panel-02.png",
-      "text": "The interruption changes the timing, not the whole shape of her morning."
+      "text": "Waiting on the chilly platform, she keeps her mind anchored on the task ahead."
     },
     {
       "id": "panel_3",
       "image_name": "03_panel-03.png",
-      "text": "She pauses by the window, catching her breath before the busy workday completely takes over."
+      "text": "Watching the scenery blur past the train window helps clear away the early morning clutter."
     },
     {
       "id": "panel_4",
       "image_name": "04_panel-04.png",
-      "text": "Killer changes the move, so Isla checks the rule before trusting it."
+      "text": "The daily rule changes the move, so Isla checks it before trusting the answer."
     },
     {
       "id": "panel_5",
       "image_name": "05_panel-05.png",
-      "text": "With the tricky rule confirmed, she happily closes her notebook and gets back to work."
+      "text": "The checked move holds, and the rest of the day has more room."
     },
     {
       "id": "panel_6",
       "image_name": "06_panel-06.png",
-      "text": "Watching the evening lights drift past, she feels glad she kept her day so balanced."
+      "text": "With everything neatly organized, she is finally ready to step out and tackle the workday."
     },
     {
       "id": "cta",
@@ -44,11 +44,11 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nIsla lets the day show her what has to come first.\n\nThe interruption changes the timing, not the whole shape of her morning.\n\nShe pauses by the window, catching her breath before the busy workday completely takes over.\n\nKiller changes the move, so Isla checks the rule before trusting it.\n\nWith the tricky rule confirmed, she happily closes her notebook and gets back to work.\n\nWatching the evening lights drift past, she feels glad she kept her day so balanced.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-06-03T20:53:13.100Z",
-  "caption": "Join Isla as she navigates her workday with a puzzle in mind.",
-  "variant_name": "Killer",
-  "variant_line": "Killer changes the move, so Isla checks the rule before trusting it.",
+  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nA steady morning in the kitchen offers a rare moment of peace before the busy day begins.\n\nWaiting on the chilly platform, she keeps her mind anchored on the task ahead.\n\nWatching the scenery blur past the train window helps clear away the early morning clutter.\n\nThe daily rule changes the move, so Isla checks it before trusting the answer.\n\nThe checked move holds, and the rest of the day has more room.\n\nWith everything neatly organized, she is finally ready to step out and tackle the workday.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-06-03T03:36:51.559Z",
+  "caption": "Isla finds moments of clarity amidst her busy workday.",
+  "variant_name": "daily rule",
+  "variant_line": "The daily rule changes the move, so Isla checks it before trusting the answer.",
   "copy_refined": "openai",
   "copy_model": "gpt-4o-mini",
   "openai_response_shape": {
