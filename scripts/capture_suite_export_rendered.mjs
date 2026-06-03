@@ -2,6 +2,7 @@ import fs from "fs/promises";
 import path from "path";
 import { fileURLToPath } from "url";
 import { spawnSync } from "child_process";
+import { chromium } from "playwright";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const VARIANTS = ["kropki-sudoku", "hyper-sudoku", "anti-king-sudoku", "anti-knight-sudoku", "non-consecutive-sudoku", "odd-even-sudoku", "sudoku-x", "arrow-sudoku", "german-whispers-sudoku", "killer-sudoku", "little-killer-sudoku", "renban-sudoku", "sandwich-sudoku", "thermo-sudoku", "xv-sudoku", "trigoku"];
@@ -29,6 +30,25 @@ function variantForDate(date) {
   return { slug, playUrl: `https://suite.sapiverpress.co.uk/play/${slug}/` };
 }
 
+async function readRenderedSuiteExport(exportUrl) {
+  const browser = await chromium.launch({ headless: true });
+  const page = await browser.newPage({ viewport: { width: 1280, height: 900 }, deviceScaleFactor: 1 });
+  try {
+    const response = await page.goto(exportUrl.toString(), { waitUntil: "domcontentloaded", timeout: 45000 });
+    if (!response || !response.ok()) throw new Error(`Suite export HTTP ${response?.status?.() || "no response"}`);
+    await page.waitForFunction(() => {
+      const text = document.body?.innerText || "";
+      return text.includes('"export_status"') && text.includes('"solution"') && text.includes('"givens"');
+    }, { timeout: 20000 });
+    await page.waitForTimeout(300);
+    const raw = await page.locator("body").innerText({ timeout: 5000 });
+    return JSON.parse(raw);
+  } finally {
+    await page.close().catch(() => {});
+    await browser.close().catch(() => {});
+  }
+}
+
 async function main() {
   const date = dateLondon();
   const variant = variantForDate(date);
@@ -36,9 +56,7 @@ async function main() {
   exportUrl.searchParams.set("sapiver_export", "1");
   console.log(`Suite export source: ${exportUrl}`);
 
-  const res = await fetch(exportUrl, { headers: { "user-agent": "SapiverPressComic/1.0" } });
-  if (!res.ok) throw new Error(`Suite export HTTP ${res.status}`);
-  const data = JSON.parse(await res.text());
+  const data = await readRenderedSuiteExport(exportUrl);
   if (!String(data.export_status || "").startsWith("ok_solution_found")) throw new Error(`Bad Suite export status: ${data.export_status || "blank"}`);
   if (!Array.isArray(data.givens) || data.givens.length !== 81) throw new Error(`Bad givens length: ${data.givens?.length || 0}`);
   if (!Array.isArray(data.solution) || data.solution.length !== 81) throw new Error(`Bad solution length: ${data.solution?.length || 0}`);
@@ -80,6 +98,7 @@ async function main() {
   await fs.copyFile(manifestPath, path.join(rawDir, "capture_manifest.json"));
   await fs.copyFile(path.join(captureDir, "today_puzzle_data.json"), path.join(rawDir, "today_puzzle_data.json"));
   console.log(`Suite V9 capture ready: ${variant.slug}`);
+  console.log(`Export status: ${data.export_status}; solution=${data.solution.length}; givens=${data.givens.length}`);
 }
 
 main().catch((err) => { console.error(`SUITE EXPORT CAPTURE FAILED: ${err?.message || err}`); process.exit(1); });
