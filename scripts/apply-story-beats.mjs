@@ -10,9 +10,10 @@ const date = override || new Intl.DateTimeFormat("sv-SE", {
   day: "2-digit",
 }).format(new Date());
 
-const DIGITAL_GRID_LOCK = "DIGITAL PUZZLE LOCK: puzzle means a Sudoku or Trigoku grid on a laptop screen only when panel_screen_state allows it; no physical puzzle props, no jigsaw pieces, no cardboard pieces, no board-game tokens, no loose puzzle shapes on the desk";
-const NEGATIVE_JIGSAW = "jigsaw pieces, physical puzzle pieces, cardboard puzzle pieces, board game pieces, loose cardboard puzzle shapes, scattered game tiles, tabletop jigsaw, wooden puzzle pieces, tangram pieces, loose game pieces";
-const TEXT_PACK = "READABLE PROP TEXT PACK: use a few coherent readable text details only where natural: Small steps. Big impact.; Progress over perfection.; One page at a time.; Focus. Solve. Grow.; Lead with intention.; One win at a time.; Puzzle Therapy; Logic & Pattern; Word Wise; The Focus Habit; Daily Clarity; Small Wins Journal";
+const DIGITAL_GRID_LOCK = "DIGITAL PUZZLE LOCK: puzzle means a Sudoku or Trigoku grid on a laptop screen only when panel_screen_state allows it; no physical puzzle props, no scattered pieces, no board-game tokens, no loose puzzle shapes on the desk";
+const NEGATIVE_PROPS = "physical puzzle pieces, cardboard puzzle pieces, board game pieces, loose cardboard puzzle shapes, scattered game tiles, tabletop jigsaw, wooden puzzle pieces, tangram pieces, loose game pieces";
+const VISUAL_STORY_LOCK = "VISUAL STORY LOCK: Isla must be the main visible person; show the story consequence through pose, location, timing, and objects being used; do not turn story metadata into large written labels; no page-collage background; no repeated notebook wallpaper";
+const TEXT_MINIMISE_LOCK = "TEXT MINIMISE LOCK: background text must be tiny and incidental only; do not render model names, trigger words, prompt words, large titles, diary paragraphs, or fake notebook pages as the subject";
 
 function readJson(file) { return JSON.parse(fs.readFileSync(file, "utf8")); }
 function writeJson(file, data) { fs.writeFileSync(file, `${JSON.stringify(data, null, 2)}\n`, "utf8"); }
@@ -26,6 +27,9 @@ function stripPriorLocks(text) {
     .replace(/SCREEN STATE LOCK:[^,]+(?:,[^,]+){0,12}/gi, "")
     .replace(/DIGITAL PUZZLE LOCK:[^,]+(?:,[^,]+){0,12}/gi, "")
     .replace(/READABLE PROP TEXT PACK:[^,]+(?:,[^,]+){0,16}/gi, "")
+    .replace(/VISUAL STORY LOCK:[^,]+(?:,[^,]+){0,16}/gi, "")
+    .replace(/TEXT MINIMISE LOCK:[^,]+(?:,[^,]+){0,12}/gi, "")
+    .replace(/CALENDAR CONSEQUENCE LOCK:[^,]+(?:,[^,]+){0,18}/gi, "")
     .replace(/^,\s*/, "");
 }
 function cleanStoryBeat(beat) {
@@ -34,6 +38,13 @@ function cleanStoryBeat(beat) {
     .replace(/\bpieces\b/gi, "numbers")
     .replace(/\bfit into place\b/gi, "resolve cleanly")
     .replace(/\bfall into place\b/gi, "resolve cleanly");
+}
+function calendarLock(story) {
+  const ctx = story.calendar_context || {};
+  const primary = ctx.primary_anchor || {};
+  const effect = tidy(ctx.story_effect || primary.story_effect || story.story_note || "");
+  if (!effect) return "CALENDAR CONSEQUENCE LOCK: use today's 365-day calendar anchor as visual cause for the scene, not as written text";
+  return `CALENDAR CONSEQUENCE LOCK: today's 365-day calendar effect is ${effect}; visualise this consequence through the scene, not through written labels`;
 }
 
 function sceneLock(scene, index) {
@@ -44,17 +55,12 @@ function sceneLock(scene, index) {
   if (pose === "standing_packing") return `PANEL ${index + 1} LOCATION LOCK: ${setting}, unmistakable home kitchen or entry area, domestic cupboards or hallway surface, travel mug and rucksack visible, not seated, not office, not train, no active puzzle`;
   if (pose === "standing_waiting") return `PANEL ${index + 1} LOCATION LOCK: ${setting}, unmistakable railway platform, platform edge markings, station signs, platform bench or rail cues, bag over shoulder, not train interior, not office, no active puzzle`;
   if (pose === "seated_train_start") return `PANEL ${index + 1} LOCATION LOCK: ${setting}, unmistakable train interior, train window, seat backs, compact train table, passing view outside, not platform, not generic desk`;
-  if (lower.includes("bookshop")) return `PANEL ${index + 1} LOCATION LOCK: ${setting}, visible bookshelves and readable book spines, display table, warm shop lighting, stacks of books nearby, not garden, not generic desk`;
+  if (lower.includes("bookshop")) return `PANEL ${index + 1} LOCATION LOCK: ${setting}, visible bookshelves and display table, warm shop lighting, stacks of books nearby, not garden, not generic desk`;
   if (lower.includes("cowork") || lower.includes("office")) return `PANEL ${index + 1} LOCATION LOCK: ${setting}, modern working environment, glass partitions or notice board, office chair, other desks blurred behind, not home kitchen`;
   if (lower.includes("rain") || lower.includes("window nook")) return `PANEL ${index + 1} LOCATION LOCK: ${setting}, rain streaks on glass, wet street or grey light outside, plants on sill, reflective ending scene, not office`;
   return `PANEL ${index + 1} LOCATION LOCK: ${setting}, visually distinct from every other panel, specific environmental props visible, not generic indoor desk`;
 }
-
-function actionLock(scene) {
-  const action = tidy(scene.panel_action || scene.scene_description || "story action must be visible");
-  return `ACTION LOCK: ${action}`;
-}
-
+function actionLock(scene) { return `ACTION LOCK: ${tidy(scene.panel_action || scene.scene_description || "story action must be visible")}`; }
 function poseLock(scene) {
   const pose = tidy(scene.panel_pose_family || "varied_pose");
   const rules = {
@@ -67,7 +73,6 @@ function poseLock(scene) {
   };
   return `POSE FAMILY LOCK: ${pose}, ${rules[pose] || "visibly different body language from adjacent panels"}`;
 }
-
 function screenLock(scene) {
   const state = tidy(scene.panel_screen_state || "active_puzzle");
   const rules = {
@@ -86,6 +91,7 @@ const scenes = Array.isArray(story.scenes) ? story.scenes : [];
 const promptKey = "pro" + "mpt";
 const promptFileKey = "pro" + "mpt_file";
 const promptDir = "art-" + "prompts";
+const calendar = calendarLock(story);
 
 for (const dir of [path.join(root, promptDir, date), path.join(root, promptDir, "latest")]) {
   const file = path.join(dir, "prompts.json");
@@ -94,10 +100,11 @@ for (const dir of [path.join(root, promptDir, date), path.join(root, promptDir, 
   for (const [index, panel] of (data.panels || []).entries()) {
     const scene = scenes[index] || {};
     const beat = cleanStoryBeat(sceneStoryBeat(scene));
-    const locks = [sceneLock(scene, index), actionLock(scene), poseLock(scene), screenLock(scene), DIGITAL_GRID_LOCK, TEXT_PACK];
+    const locks = [calendar, sceneLock(scene, index), actionLock(scene), poseLock(scene), screenLock(scene), DIGITAL_GRID_LOCK, VISUAL_STORY_LOCK, TEXT_MINIMISE_LOCK];
     panel.arc_role = scene.arc_role || panel.arc_role || "";
     panel.story_beat = beat;
     panel.story_beat_enabled = Boolean(beat);
+    panel.calendar_consequence_lock = calendar;
     panel.storyboard_caption = tidy(scene.storyboard_caption || scene.caption || "");
     panel.storyboard_dialogue = tidy(scene.storyboard_dialogue || scene.dialogue || scene.speech_bubble || "");
     panel.panel_location = tidy(scene.panel_location || scene.setting || "");
@@ -107,16 +114,16 @@ for (const dir of [path.join(root, promptDir, date), path.join(root, promptDir, 
     panel.story_source_used = story.story_source_used || (story.date === date ? `daily/${date}.json` : "latest.json");
     panel.storyboard_copy_source = story.storyboard_copy_source || "unknown";
     panel.storyboard_arc_type = story.storyboard_arc_type || "story_driven_not_location_driven";
-    panel.panel_scene_lock = locks[0];
-    panel.panel_pose_lock = locks[2];
-    panel.screen_state_lock = locks[3];
+    panel.panel_scene_lock = locks[1];
+    panel.panel_pose_lock = locks[3];
+    panel.screen_state_lock = locks[4];
     panel.digital_grid_lock = DIGITAL_GRID_LOCK;
-    panel.readable_prop_text_pack = TEXT_PACK;
+    panel.readable_prop_text_pack = "disabled_story_first";
     panel.location_flow_id = story.location_flow_id || "unknown";
     panel.scene_truth_contract = story.scene_truth_contract || {};
     panel.scene_lock_front_loaded = true;
     panel.jigsaw_ban_enabled = true;
-    panel.negative_prompt = tidy([panel.negative_prompt || "", NEGATIVE_JIGSAW, "same seated laptop pose in every panel, generic indoor desk, wrong location, train interior when platform requested, platform when train interior requested"].filter(Boolean).join(", "));
+    panel.negative_prompt = tidy([panel.negative_prompt || "", NEGATIVE_PROPS, "visible model or trigger text, large titles, diary paragraphs, page collage background, same seated laptop pose in every panel, generic indoor desk, wrong location, train interior when platform requested, platform when train interior requested"].filter(Boolean).join(", "));
     const current = stripPriorLocks(panel[promptKey]);
     const front = locks.filter(Boolean).join(", ");
     const withBeat = beat && !current.includes(beat) ? `${current}, ${beat}` : current;
@@ -124,10 +131,11 @@ for (const dir of [path.join(root, promptDir, date), path.join(root, promptDir, 
     if (panel[promptFileKey]) fs.writeFileSync(path.join(root, panel[promptFileKey]), `${panel[promptKey]}\n`, "utf8");
   }
   data.story_beat_enabled = true;
+  data.calendar_consequence_enabled = true;
   data.scene_lock_front_loaded = true;
   data.jigsaw_ban_enabled = true;
   data.digital_grid_lock = DIGITAL_GRID_LOCK;
-  data.readable_prop_text_pack = TEXT_PACK;
+  data.readable_prop_text_pack = "disabled_story_first";
   data.scene_truth_contract = story.scene_truth_contract || {};
   data.location_flow_id = story.location_flow_id || "unknown";
   data.location_flow_method = story.location_flow_method || "unknown";
@@ -139,5 +147,4 @@ for (const dir of [path.join(root, promptDir, date), path.join(root, promptDir, 
   data.storyboard_quality = story.storyboard_quality || {};
   writeJson(file, data);
 }
-
-console.log(`Story beats and scene-truth locks appended to panel generation text: ${story.location_flow_id || "unknown"}`);
+console.log(`Story beats and 365-calendar consequence locks appended to panel generation text: ${story.location_flow_id || "unknown"}`);
