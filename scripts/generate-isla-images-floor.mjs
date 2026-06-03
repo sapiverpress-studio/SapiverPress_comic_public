@@ -15,6 +15,11 @@ if (!loraFile || LEGACY_LORA_FILES.has(loraFile)) process.env.HF_LORA_FILE = INT
 const loraRepo = process.env.HF_LORA_REPO?.trim() || "";
 if (!loraRepo || LEGACY_HF_LORA_REPOS.has(loraRepo)) process.env.HF_LORA_REPO = INTENDED_HF_LORA_REPO;
 
+// Hugging Face is storage only. Do not use HF Inference as a paid/credit fallback.
+// fal.ai is the only image generator allowed in this pipeline.
+process.env.HF_TOKEN = "";
+process.env.HF_FALLBACK_MODEL = "";
+
 process.env.FAL_MODEL = process.env.FAL_MODEL?.trim() || INTENDED_FAL_MODEL;
 process.env.HF_IMAGE_WIDTH = process.env.HF_IMAGE_WIDTH || process.env.FAL_IMAGE_WIDTH || "1024";
 process.env.HF_IMAGE_HEIGHT = process.env.HF_IMAGE_HEIGHT || process.env.FAL_IMAGE_HEIGHT || "1024";
@@ -26,5 +31,6 @@ process.env.HF_LORA_SCALE = process.env.HF_LORA_SCALE || process.env.FAL_LORA_SC
 process.env.FAL_LORA_SCALE = process.env.FAL_LORA_SCALE || process.env.HF_LORA_SCALE;
 
 console.log(`Isla TurboLoRA settings: fal_model=${process.env.FAL_MODEL}; hf_lora_repo=${process.env.HF_LORA_REPO}; lora_file=${process.env.HF_LORA_FILE}; trigger_word=${process.env.HF_LORA_TRIGGER}; steps=${process.env.HF_NUM_INFERENCE_STEPS}; lora_scale=${process.env.HF_LORA_SCALE}; width=${process.env.HF_IMAGE_WIDTH}; height=${process.env.HF_IMAGE_HEIGHT}`);
+console.log("HF image inference fallback: disabled. Hugging Face is used only as LoRA file storage.");
 await import("./generate-isla-images.mjs");
 await import("./update-isla-generation-provenance.mjs");
