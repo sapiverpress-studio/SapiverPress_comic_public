@@ -8,6 +8,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const ROOT = path.resolve(__dirname, "..");
 
+function bool(value) {
+  return ["1", "true", "yes", "y"].includes(String(value || "").trim().toLowerCase());
+}
+
 function todayLondon() {
   const override = (process.env.DATE_OVERRIDE || "").trim();
   if (override) return override;
@@ -136,7 +140,7 @@ async function tryDownloadFromSource(source, date, captureDir) {
   return null;
 }
 
-function orderedSources({ sources, date, history, noRepeatWindowDays }) {
+function orderedSources({ sources, date, history, noRepeatWindowDays, allowRecentFallback }) {
   const recentWindow = history.filter((row) => row.age_days <= noRepeatWindowDays);
   const recentIds = new Set(recentWindow.map((row) => row.source_id));
   const lastUsedAge = new Map();
@@ -146,16 +150,29 @@ function orderedSources({ sources, date, history, noRepeatWindowDays }) {
     lastUsedAge.set(row.source_id, Math.min(lastUsedAge.get(row.source_id), row.age_days));
   }
 
-  const start = stableIndex(`${date}-source-diversity-no-repeat-${noRepeatWindowDays}`, sources.length);
+  const start = stableIndex(`${date}-source-diversity-hard-no-repeat-${noRepeatWindowDays}`, sources.length);
   const rotated = [...sources.slice(start), ...sources.slice(0, start)];
   const fresh = rotated.filter((source) => !recentIds.has(source.id));
   const recent = rotated.filter((source) => recentIds.has(source.id));
 
   if (fresh.length) {
     return {
-      ordered: [...fresh, ...recent.sort((a, b) => (lastUsedAge.get(b.id) || 0) - (lastUsedAge.get(a.id) || 0))],
-      method: `date_seeded_no_repeat_${noRepeatWindowDays}_days`,
+      ordered: allowRecentFallback ? [...fresh, ...recent.sort((a, b) => (lastUsedAge.get(b.id) || 0) - (lastUsedAge.get(a.id) || 0))] : fresh,
+      method: allowRecentFallback ? `date_seeded_no_repeat_${noRepeatWindowDays}_days_soft_with_override` : `date_seeded_hard_no_repeat_${noRepeatWindowDays}_days`,
       fallback_used: false,
+      hard_no_repeat: !allowRecentFallback,
+      allow_recent_fallback: allowRecentFallback,
+      blocked_recent_source_ids: [...recentIds],
+    };
+  }
+
+  if (!allowRecentFallback) {
+    return {
+      ordered: [],
+      method: `hard_no_repeat_${noRepeatWindowDays}_days_no_fresh_sources_available`,
+      fallback_used: false,
+      hard_no_repeat: true,
+      allow_recent_fallback: false,
       blocked_recent_source_ids: [...recentIds],
     };
   }
@@ -163,8 +180,10 @@ function orderedSources({ sources, date, history, noRepeatWindowDays }) {
   const leastRecent = [...recent].sort((a, b) => (lastUsedAge.get(b.id) || 0) - (lastUsedAge.get(a.id) || 0));
   return {
     ordered: leastRecent,
-    method: `least_recently_used_after_all_sources_seen_within_${noRepeatWindowDays}_days`,
+    method: `least_recently_used_after_all_sources_seen_within_${noRepeatWindowDays}_days_override`,
     fallback_used: true,
+    hard_no_repeat: false,
+    allow_recent_fallback: true,
     blocked_recent_source_ids: [...recentIds],
   };
 }
@@ -189,14 +208,16 @@ async function main() {
   if (!sources.length) fail("No standalone puzzle sources configured");
 
   const noRepeatWindowDays = Number(registry.selection?.no_repeat_window_days || 10);
+  const allowRecentFallback = bool(process.env.ALLOW_RECENT_PUZZLE_SOURCE) || Boolean(registry.selection?.allow_recent_fallback === true);
   const history = await recentSourceHistory(date, noRepeatWindowDays);
-  const selection = orderedSources({ sources, date, history, noRepeatWindowDays });
+  const selection = orderedSources({ sources, date, history, noRepeatWindowDays, allowRecentFallback });
   const ordered = selection.ordered;
   console.log(`Puzzle source no-repeat window: ${noRepeatWindowDays} days`);
+  console.log(`Puzzle source hard no-repeat: ${selection.hard_no_repeat ? "yes" : "no"}`);
   console.log(`Puzzle source recent history: ${history.slice(0, noRepeatWindowDays).map((row) => `${row.date}:${row.source_id}`).join(", ") || "none"}`);
   console.log(`Puzzle source blocked this window: ${selection.blocked_recent_source_ids.join(", ") || "none"}`);
-  console.log(`Puzzle source order: ${ordered.map((source) => source.id).join(" > ")}`);
-  if (selection.fallback_used) console.log("Puzzle source no-repeat fallback: all configured sources were recently used; choosing least recently used source first.");
+  console.log(`Puzzle source order: ${ordered.map((source) => source.id).join(" > ") || "none"}`);
+  if (selection.fallback_used) console.log("Puzzle source no-repeat override fallback: all configured sources were recently used; choosing least recently used source first.");
 
   const captureDir = path.join(ROOT, "captures", date, "extracted");
   const rawDir = path.join(ROOT, "social", date, "raw_captures");
@@ -207,9 +228,20 @@ async function main() {
   let selected = null;
   let extractedPath = null;
 
+  if (!ordered.length) {
+    const manifest = { date, stage_method: "hard_no_repeat_blocked", source_attempts: attempts, recent_source_history: history, no_repeat_window_days: noRepeatWindowDays, blocked_recent_source_ids: selection.blocked_recent_source_ids, hard_no_repeat: true, note: "No fresh puzzle source available inside the no-repeat window. Refusing to reuse a recent source." };
+    await fs.writeFile(path.join(rawDir, "capture_manifest.json"), JSON.stringify(manifest, null, 2) + "\n", "utf8");
+    fail(`No fresh puzzle source available inside ${noRepeatWindowDays}-day hard no-repeat window. Set ALLOW_RECENT_PUZZLE_SOURCE=true only for deliberate emergency override.`);
+  }
+
   for (const source of ordered) {
     const recentlyUsed = selection.blocked_recent_source_ids.includes(source.id);
-    console.log(`Trying downloadable puzzle source: ${source.id}${recentlyUsed ? " (recent fallback candidate)" : ""}`);
+    if (recentlyUsed && selection.hard_no_repeat) {
+      attempts.push({ id: source.id, project: source.netlify_project, skipped: true, recent_no_repeat_blocked: true, no_repeat_window_days: noRepeatWindowDays });
+      console.log(`Skipping recent puzzle source under hard no-repeat: ${source.id}`);
+      continue;
+    }
+    console.log(`Trying downloadable puzzle source: ${source.id}${recentlyUsed ? " (recent override candidate)" : ""}`);
     const result = await tryDownloadFromSource(source, date, captureDir);
     if (!result) {
       attempts.push({ id: source.id, project: source.netlify_project, downloaded: false, recent_no_repeat_blocked: recentlyUsed, no_repeat_window_days: noRepeatWindowDays });
@@ -238,6 +270,8 @@ async function main() {
           method: selection.method,
           no_repeat_window_days: noRepeatWindowDays,
           fallback_used: selection.fallback_used,
+          hard_no_repeat: selection.hard_no_repeat,
+          allow_recent_fallback: selection.allow_recent_fallback,
           blocked_recent_source_ids: selection.blocked_recent_source_ids,
           recent_source_history: history.slice(0, noRepeatWindowDays),
           order: ordered.map((item) => item.id),
@@ -255,9 +289,9 @@ async function main() {
   }
 
   if (!selected || !extractedPath) {
-    const manifest = { date, stage_method: "download_probe_failed", source_attempts: attempts, recent_source_history: history, no_repeat_window_days: noRepeatWindowDays, note: "No standalone source produced a downloadable givens+solution JSON. Browser screenshots are intentionally disabled." };
+    const manifest = { date, stage_method: "download_probe_failed_fresh_sources_only", source_attempts: attempts, recent_source_history: history, no_repeat_window_days: noRepeatWindowDays, blocked_recent_source_ids: selection.blocked_recent_source_ids, hard_no_repeat: selection.hard_no_repeat, note: "No fresh standalone source produced a downloadable givens+solution JSON. Recent sources were not reused under hard no-repeat." };
     await fs.writeFile(path.join(rawDir, "capture_manifest.json"), JSON.stringify(manifest, null, 2) + "\n", "utf8");
-    fail("No standalone source produced downloadable givens+solution JSON. Refusing browser screenshot fallback.");
+    fail("No fresh standalone source produced downloadable givens+solution JSON. Refusing recent-source fallback and browser screenshot fallback.");
   }
 
   runPython(["-m", "pip", "install", "-r", "requirements.txt"], "Python requirements install failed");
@@ -271,9 +305,11 @@ async function main() {
   manifest.no_repeat_window_days = noRepeatWindowDays;
   manifest.blocked_recent_source_ids = selection.blocked_recent_source_ids;
   manifest.no_repeat_fallback_used = selection.fallback_used;
+  manifest.hard_no_repeat = selection.hard_no_repeat;
+  manifest.allow_recent_fallback = selection.allow_recent_fallback;
   manifest.source_selection_method = selection.method;
   manifest.stage_method = "standalone_netlify_download_rendered_states";
-  manifest.note = "Selected from standalone Netlify puzzle sources with ten-day no-repeat rule. Downloaded real site data and rendered staged board PNGs. No browser gameplay screenshots.";
+  manifest.note = "Selected from standalone Netlify puzzle sources with hard no-repeat rule. Downloaded real site data and rendered staged board PNGs. No browser gameplay screenshots.";
   await fs.writeFile(manifestPath, JSON.stringify(manifest, null, 2) + "\n", "utf8");
   await fs.copyFile(manifestPath, path.join(rawDir, "capture_manifest.json"));
   await fs.copyFile(extractedPath, path.join(rawDir, "today_puzzle_data.json"));
