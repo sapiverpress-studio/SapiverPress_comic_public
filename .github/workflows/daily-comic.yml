@@ -38,6 +38,10 @@ on:
         description: "Supporting-life trigger mode: auto, force, or off"
         required: false
         default: "auto"
+      force_paid_api_run:
+        description: "Override spend guard and allow paid API calls outside posting window"
+        required: false
+        default: "false"
 
 permissions:
   contents: write
@@ -71,6 +75,7 @@ jobs:
           GITHUB_EVENT_NAME: ${{ github.event_name }}
           POST_TO_FACEBOOK: ${{ github.event.inputs.post_to_facebook }}
           POST_TO_PINTEREST: ${{ github.event.inputs.post_to_pinterest }}
+          FORCE_GENERATE_IMAGES: ${{ github.event.inputs.force_paid_api_run }}
           IMAGE_GENERATION_WINDOW_START: "07:00"
           IMAGE_GENERATION_WINDOW_END: "08:30"
         run: node scripts/should-generate-images.mjs
