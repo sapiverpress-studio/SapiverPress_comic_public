@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Daily Killer Sudoku</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <style>
+    :root{
+      --bg1:#F6F7FF;
+      --bg2:#F3FBF7;
+      --panel:#FFFFFF;
+      --stroke: rgba(17,24,39,.10);
+      --stroke2: rgba(17,24,39,.16);
+      --text:#111827;
+      --muted: rgba(17,24,39,.65);
+      --violet:#7C3AED;
+      --green:#16A34A;
+      --amber:#F59E0B;
+      --rose:#FB7185;
+      --blue:#3B82F6;
+      --cellBg:#FFFFFF;
+      --cellAlt:#FAFAFF;
+      --cellGiven:rgba(17,24,39,.02);
+      --cellSelect: rgba(59,130,246,.20);
+      --cellPeer: rgba(59,130,246,.07);
+      --cellMatch: rgba(59,130,246,.11);
+      --cellConflict: rgba(251,113,133,.20);
+      --hintBg: rgba(59,130,246,.16);
+      --shadow: 0 18px 45px rgba(15,23,42,.12);
+      --r: 16px;
+      --cageLine: rgba(17,24,39,.26);
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      padding:14px;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(900px 600px at 12% 0%, rgba(124,58,237,.12), transparent 55%),
+        radial-gradient(900px 600px at 90% 0%, rgba(22,163,74,.10), transparent 55%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+      color: var(--text);
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+      min-height:100vh;
+      overflow-x:hidden;
+    }
+    .app{
+      width:min(1100px, 100%);
+      background: linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.72));
+      border:1px solid var(--stroke);
+      border-radius: calc(var(--r) + 6px);
+      box-shadow: var(--shadow);
+      padding:16px;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      backdrop-filter: blur(6px);
+    }
+    header{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:flex-start;
+      justify-content:space-between;
+      padding:6px 4px 12px;
+      border-bottom:1px solid var(--stroke);
+    }
+    header h1{ margin:0; font-size:24px; letter-spacing:.2px; }
+    .sub{ margin:8px 0 0; font-size:13px; color:var(--muted); line-height:1.35; max-width:650px; }
+    .badgeRow{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    .pill{
+      display:inline-flex; align-items:center; gap:8px; padding:6px 10px;
+      border-radius:999px; background:rgba(255,255,255,.75); border:1px solid var(--stroke); color:var(--text);
+      width:fit-content;
+    }
+    .dotTag{ width:8px; height:8px; border-radius:99px; background:var(--violet); box-shadow:0 0 0 4px rgba(124,58,237,.12); }
+    .dotTag.green{ background:var(--green); box-shadow:0 0 0 4px rgba(22,163,74,.12); }
+    .dotTag.amber{ background:var(--amber); box-shadow:0 0 0 4px rgba(245,158,11,.14); }
+    .meta{ text-align:right; font-size:13px; color:var(--muted); display:flex; flex-direction:column; gap:6px; }
+    .meta b{ color:var(--text); }
+    .layout{ display:grid; grid-template-columns:1.15fr .85fr; gap:14px; }
+    @media (max-width: 900px){ .layout{ grid-template-columns:1fr; } .meta{ text-align:left; } }
+    .panel{ background:rgba(255,255,255,.78); border:1px solid var(--stroke); border-radius:var(--r); padding:14px; }
+    .boardWrap{ width:min(560px, 100%); margin:0 auto; }
+    .board{
+      width:100%; aspect-ratio:1/1; display:grid; grid-template-columns:repeat(9,1fr); grid-template-rows:repeat(9,1fr);
+      border:2px solid rgba(17,24,39,.30); border-radius:14px; overflow:hidden; background:rgba(17,24,39,.04); position:relative;
+    }
+    .cell{
+      position:relative; overflow:visible; border:1px solid rgba(17,24,39,.16); background:var(--cellBg);
+      display:flex; align-items:center; justify-content:center; user-select:none; -webkit-tap-highlight-color:transparent;
+    }
+    .cell.alt{ background:var(--cellAlt); }
+    .cell.thickR{ border-right-width:2px; border-right-color:rgba(17,24,39,.30); }
+    .cell.thickB{ border-bottom-width:2px; border-bottom-color:rgba(17,24,39,.30); }
+    .cell.given{ background:var(--cellGiven); }
+    .cell.selected{ box-shadow:inset 0 0 0 3px var(--cellSelect); z-index:10; }
+    .cell.peer{ background:var(--cellPeer); }
+    .cell.match:not(.selected){ background:var(--cellMatch); }
+    .cell.conflict button{ background:var(--cellConflict); color:#7F1D1D; font-weight:900; }
+    .cell.hinted button{ background:var(--hintBg); color:#1E40AF; font-weight:900; }
+    .overlay{ position:absolute; inset:0; overflow:visible; pointer-events:none; z-index:1; }
+    .cell button{
+      width:100%; height:100%; border:0; background:transparent; color:var(--text); font-size:clamp(18px, 5vw, 24px);
+      font-weight:650; cursor:pointer; position:relative; z-index:12;
+    }
+    .cell.user-filled button{
+      font-weight:900; color:#0F172A; text-shadow:0 1px 0 rgba(255,255,255,.55), 0 0 1px rgba(15,23,42,.15);
+    }
+    .cell.given button{ font-weight:900; cursor:default; }
+    .notes-grid{ position:absolute; inset:3px; display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:repeat(3,1fr); gap:0; pointer-events:none; z-index:11; }
+    .note{ display:flex; align-items:center; justify-content:center; font-size:10px; line-height:1; color:rgba(17,24,39,.68); font-weight:700; }
+    .cell.selected .note{ color:rgba(17,24,39,.78); }
+    .cage-line{
+      position:absolute; background:transparent; z-index:1; border-color:var(--cageLine);
+      border-style:dotted; opacity:.78;
+    }
+    .cage-line.top{ top:3px; left:8px; right:4px; border-top-width:1.5px; }
+    .cage-line.right{ top:4px; bottom:4px; right:2px; border-right-width:1.5px; }
+    .cage-line.bottom{ bottom:2px; left:4px; right:4px; border-bottom-width:1.5px; }
+    .cage-line.left{ top:8px; bottom:4px; left:3px; border-left-width:1.5px; }
+    .cage-sum{
+      position:absolute; top:1px; left:2px; min-width:0; font-size:7px; line-height:1; font-weight:700; letter-spacing:0;
+      color:rgba(71,85,105,.82); background:rgba(255,255,255,.72); border:0; border-radius:3px; padding:0 1px; z-index:2;
+      box-shadow:none; text-align:left; pointer-events:none;
+    }
+    .keypad{
+      width:min(560px, 100%); margin:14px auto 0; display:grid; grid-template-columns:repeat(5,1fr); gap:10px;
+    }
+    .key{
+      height:54px; border-radius:14px; border:1px solid var(--stroke2); background:rgba(255,255,255,.85); color:var(--text);
+      font-size:18px; font-weight:700; cursor:pointer; box-shadow:0 10px 18px rgba(15,23,42,.10);
+    }
+    .key:active{ transform:translateY(1px); box-shadow:none; }
+    .key.active{ background:rgba(245,158,11,.20); border-color:rgba(245,158,11,.45); }
+    .key.clear{ background:rgba(251,113,133,.12); border-color:rgba(251,113,133,.35); color:#9F1239; font-weight:800; }
+    .controls{ display:flex; gap:10px; flex-wrap:wrap; }
+    .btn{
+      border:0; border-radius:999px; padding:10px 14px; font-weight:800; cursor:pointer; color:var(--text);
+      background:rgba(255,255,255,.85); border:1px solid var(--stroke2); box-shadow:0 12px 20px rgba(15,23,42,.10);
+    }
+    .btn:active{ transform:translateY(1px); box-shadow:none; }
+    .btn.primary{ background:rgba(124,58,237,.12); border-color:rgba(124,58,237,.30); color:#4C1D95; }
+    .btn.good{ background:rgba(22,163,74,.12); border-color:rgba(22,163,74,.28); color:#065F46; }
+    .btn.warn{ background:rgba(245,158,11,.14); border-color:rgba(245,158,11,.32); color:#92400E; }
+    .btn.bad{ background:rgba(251,113,133,.14); border-color:rgba(251,113,133,.30); color:#9F1239; }
+    .btn.toggle.active{ background:rgba(59,130,246,.16); border-color:rgba(59,130,246,.34); color:#1D4ED8; }
+    .status{
+      margin-top:10px; padding:12px; border-radius:14px; border:1px solid var(--stroke); background:rgba(255,255,255,.80);
+      color:var(--muted); min-height:52px; line-height:1.35; font-size:14px;
+    }
+    .stack{ display:flex; flex-direction:column; gap:10px; margin-top:10px; }
+    .stat{
+      display:flex; justify-content:space-between; gap:10px; padding:10px 12px; border-radius:14px; border:1px solid var(--stroke);
+      background:rgba(255,255,255,.80); color:var(--muted); font-size:13px;
+    }
+    .stat b{ color:var(--text); font-weight:900; }
+    .done{ padding:14px; border-radius:14px; border:1px solid rgba(22,163,74,.25); background:rgba(22,163,74,.08); color:#065F46; }
+    .hidden{ display:none !important; }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div>
+        <h1>Daily Killer Sudoku</h1>
+        <div class="sub">
+          One Killer Sudoku per day (7/week). At midnight, today’s puzzle expires, the solution is revealed, and tomorrow’s puzzle becomes playable.
+          <div class="badgeRow">
+            <span class="pill"><span class="dotTag"></span><span id="weekLabel"></span></span>
+            <span class="pill"><span class="dotTag green"></span><span id="dayLabel"></span></span>
+            <span class="pill"><span class="dotTag amber"></span><span id="variantLabel">Variant: Killer</span></span>
+          </div>
+        </div>
+      </div>
+      <div class="meta">
+        <div class="pill" style="justify-content:flex-end; gap:10px;">
+          <span style="opacity:.75">Day</span> <b id="dayNum">1</b> <span style="opacity:.75">/</span> <b>7</b>
+        </div>
+        <div><b id="countdown">–</b></div>
+        <div style="opacity:.85">Saved: <b id="savedLabel">–</b></div>
+      </div>
+    </header>
+
+    <div id="allDone" class="done hidden">
+      <h2 style="margin:0 0 6px; font-size:16px;">All seven puzzles solved 🎉</h2>
+      <div>New set starts next Monday.</div>
+    </div>
+
+    <div class="layout" id="mainLayout">
+      <div class="panel">
+        <div class="boardWrap">
+          <div id="board" class="board" aria-label="Killer board"></div>
+        </div>
+        <div class="keypad" id="keypad" aria-label="Keypad">
+          <button class="key" data-k="1">1</button>
+          <button class="key" data-k="2">2</button>
+          <button class="key" data-k="3">3</button>
+          <button class="key" data-k="4">4</button>
+          <button class="key" data-k="5">5</button>
+          <button class="key" data-k="6">6</button>
+          <button class="key" data-k="7">7</button>
+          <button class="key" data-k="8">8</button>
+          <button class="key" data-k="9">9</button>
+          <button class="key clear" data-k="del">Clear</button>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="controls">
+          <button class="btn primary" id="hintBtn">Hint</button>
+          <button class="btn good" id="checkBtn">Check</button>
+          <button class="btn toggle" id="notesBtn">Notes: Off</button>
+          <button class="btn warn" id="prevBtn">Prev</button>
+          <button class="btn warn" id="nextBtn">Next</button>
+          <button class="btn bad" id="resetBtn">Reset</button>
+          <button class="btn" id="shareBtn">Share</button>
+          <button class="btn" id="downloadBtn">Download</button>
+        </div>
+        <div class="status" id="status">Tap a square, then use the keypad. Cage totals are shown in the top-left of each cage, and digits may not repeat within a cage.</div>
+        <div class="stack">
+          <div class="stat"><span>Hints used</span><b id="hintsUsed">0</b></div>
+          <div class="stat"><span>Mistakes (from checks)</span><b id="mistakes">0</b></div>
+          <div class="stat"><span>Time (this puzzle)</span><b id="runTime">00:00</b></div>
+          <div class="stat"><span>Today</span><b id="availability">Playable</b></div>
+        </div>
+        <div style="margin-top:10px; color:var(--muted); font-size:13px; line-height:1.35">
+          <div><b>Rule clarity:</b> Standard Sudoku rules apply. Digits do not repeat inside a cage, and each cage must add to its small clue total.</div>
+          <div><b>Visual clue:</b> Soft cage borders and small sum labels mark the cage structure.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script>
+(() => {
+  'use strict';
+
+  const DAYS_PER_WEEK = 7;
+  const MAX_HINTS = 3;
+  const NS = 'daily_killer_v2';
+  const GLOBAL_SEED = 'DAILY_KILLER_GLOBAL_V2';
+
+  const BASE_SOLUTION = [
+    1,2,3,4,5,6,7,8,9,
+    4,5,6,7,8,9,1,2,3,
+    7,8,9,1,2,3,4,5,6,
+    2,3,4,5,6,7,8,9,1,
+    5,6,7,8,9,1,2,3,4,
+    8,9,1,2,3,4,5,6,7,
+    3,4,5,6,7,8,9,1,2,
+    6,7,8,9,1,2,3,4,5,
+    9,1,2,3,4,5,6,7,8
+  ];
+
+  const elWeekLabel = document.getElementById('weekLabel');
+  const elDayLabel = document.getElementById('dayLabel');
+  const elDayNum = document.getElementById('dayNum');
+  const elCountdown = document.getElementById('countdown');
+  const elSavedLabel = document.getElementById('savedLabel');
+  const elBoard = document.getElementById('board');
+  const elStatus = document.getElementById('status');
+  const elAllDone = document.getElementById('allDone');
+  const elHintsUsed = document.getElementById('hintsUsed');
+  const elMistakes = document.getElementById('mistakes');
+  const elRunTime = document.getElementById('runTime');
+  const elAvailability = document.getElementById('availability');
+  const elNotesBtn = document.getElementById('notesBtn');
+
+  let weekKey = '';
+  let dayOfWeek = 0;
+  let currentDay = 0;
+  let selected = null;
+  let activeDigit = null;
+  let notesMode = false;
+  let puzzles = [];
+  let weekState = null;
+  let tickId = null;
+
+  function nowMs(){ return Date.now(); }
+  function setStatus(msg){ elStatus.textContent = msg; }
+  function toISODate(d){ return d.toISOString().slice(0,10); }
+  function getMonday(d = new Date()){
+    const day = d.getDay();
+    const diffToMon = (day + 6) % 7;
+    const mon = new Date(d);
+    mon.setDate(d.getDate() - diffToMon);
+    mon.setHours(0,0,0,0);
+    return mon;
+  }
+  function getWeekKey(d = new Date()){ return toISODate(getMonday(d)); }
+  function getDayIndex(d = new Date()){
+    const mon = getMonday(d);
+    const dd = new Date(d); dd.setHours(0,0,0,0);
+    return Math.max(0, Math.min(6, Math.floor((dd - mon) / 86400000)));
+  }
+  function endOfDay(d = new Date()){
+    const dd = new Date(d); dd.setHours(24,0,0,0); return dd;
+  }
+  function formatHMS(ms){
+    const s = Math.max(0, Math.floor(ms / 1000));
+    const hh = String(Math.floor(s / 3600)).padStart(2,'0');
+    const mm = String(Math.floor((s % 3600) / 60)).padStart(2,'0');
+    const ss = String(s % 60).padStart(2,'0');
+    return `${hh}:${mm}:${ss}`;
+  }
+  function formatMMSS(ms){
+    const s = Math.max(0, Math.floor(ms / 1000));
+    const mm = String(Math.floor(s / 60)).padStart(2,'0');
+    const ss = String(s % 60).padStart(2,'0');
+    return `${mm}:${ss}`;
+  }
+  function weekdayName(day){ return ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'][day] || 'Mon'; }
+  function makeRng(seed){
+    let s = seed % 2147483647;
+    if (s <= 0) s += 2147483646;
+    return () => (s = s * 16807 % 2147483647, (s - 1) / 2147483646);
+  }
+  function strSeed(str){
+    let h = 2166136261 >>> 0;
+    for(let i = 0; i < str.length; i++){
+      h ^= str.charCodeAt(i);
+      h = Math.imul(h, 16777619);
+    }
+    return h >>> 0;
+  }
+  function shuffle(arr, rand){
+    for(let i = arr.length - 1; i > 0; i--){
+      const j = Math.floor(rand() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+  }
+  function permutedBoard(seedStr){
+    const rand = makeRng(strSeed(seedStr));
+    const bandOrder = [0,1,2]; shuffle(bandOrder, rand);
+    const stackOrder = [0,1,2]; shuffle(stackOrder, rand);
+    const rows = [];
+    for(const band of bandOrder){
+      const local = [0,1,2]; shuffle(local, rand);
+      for(const r of local) rows.push(band*3 + r);
+    }
+    const cols = [];
+    for(const stack of stackOrder){
+      const local = [0,1,2]; shuffle(local, rand);
+      for(const c of local) cols.push(stack*3 + c);
+    }
+    const digits = [1,2,3,4,5,6,7,8,9];
+    shuffle(digits, rand);
+    const dmap = {};
+    for(let i = 0; i < 9; i++) dmap[i + 1] = digits[i];
+    const solution = Array(81).fill(0);
+    for(let r = 0; r < 9; r++){
+      for(let c = 0; c < 9; c++){
+        const baseIdx = rows[r] * 9 + cols[c];
+        const v = dmap[BASE_SOLUTION[baseIdx]];
+        solution[r * 9 + c] = v;
+      }
+    }
+    return solution;
+  }
+  function orthNeighbors(idx){
+    const r = Math.floor(idx/9), c = idx%9;
+    const out = [];
+    if(r > 0) out.push(idx - 9);
+    if(r < 8) out.push(idx + 9);
+    if(c > 0) out.push(idx - 1);
+    if(c < 8) out.push(idx + 1);
+    return out;
+  }
+  function generateCages(solution, seedStr){
+    const rand = makeRng(strSeed(seedStr + ':cages'));
+    const unassigned = new Set(Array.from({length:81}, (_, i) => i));
+    const cages = [];
+    while(unassigned.size){
+      const avail = Array.from(unassigned);
+      const start = avail[Math.floor(rand() * avail.length)];
+      const cage = [start];
+      unassigned.delete(start);
+      let target = rand() < 0.12 ? 1 : (rand() < 0.62 ? 2 : 3);
+      while(cage.length < target){
+        const values = new Set(cage.map(i => solution[i]));
+        const frontier = [];
+        for(const cell of cage){
+          for(const n of orthNeighbors(cell)){
+            if(!unassigned.has(n)) continue;
+            if(values.has(solution[n])) continue;
+            frontier.push(n);
+          }
+        }
+        const unique = Array.from(new Set(frontier));
+        if(!unique.length) break;
+        const pick = unique[Math.floor(rand() * unique.length)];
+        cage.push(pick);
+        unassigned.delete(pick);
+      }
+      cages.push(cage);
+    }
+    return cages.map(cells => {
+      const sorted = cells.slice().sort((a,b) => {
+        const ra = Math.floor(a/9), rb = Math.floor(b/9);
+        const ca = a%9, cb = b%9;
+        return ra === rb ? ca - cb : ra - rb;
+      });
+      return {
+        cells: sorted,
+        clueCell: sorted[0],
+        sum: cells.reduce((acc, i) => acc + solution[i], 0)
+      };
+    });
+  }
+  function buildWeekPuzzles(){
+    return Array.from({length:DAYS_PER_WEEK}, (_, d) => {
+      const solution = permutedBoard(`${GLOBAL_SEED}:${weekKey}:day:${d}`);
+      const cages = generateCages(solution, `${GLOBAL_SEED}:${weekKey}:day:${d}`);
+      return { givens:Array(81).fill(0), solution, cages };
+    });
+  }
+  function emptyDayState(){
+    return { entries:Array(81).fill(0), notes:Array.from({length:81}, ()=>[]), hintsUsed:0, mistakes:0, completed:false, startedAtMs:0, completedAtMs:0, lastSavedAt:0 };
+  }
+  function normalizeDayState(day){
+    const out = day && typeof day === 'object' ? day : emptyDayState();
+    out.entries = Array.isArray(out.entries) ? out.entries.slice(0,81).map(v => Number(v) || 0) : Array(81).fill(0);
+    while(out.entries.length < 81) out.entries.push(0);
+    out.notes = Array.isArray(out.notes) ? out.notes.slice(0,81).map(v => Array.isArray(v) ? Array.from(new Set(v.map(Number).filter(n => n >= 1 && n <= 9))).sort((a,b)=>a-b) : []) : Array.from({length:81}, ()=>[]);
+    while(out.notes.length < 81) out.notes.push([]);
+    out.hintsUsed = Number(out.hintsUsed) || 0;
+    out.mistakes = Number(out.mistakes) || 0;
+    out.completed = !!out.completed;
+    out.startedAtMs = Number(out.startedAtMs) || 0;
+    out.completedAtMs = Number(out.completedAtMs) || 0;
+    out.lastSavedAt = Number(out.lastSavedAt) || 0;
+    return out;
+  }
+  function loadWeekState(){
+    try{
+      const raw = localStorage.getItem(`${NS}:state:${weekKey}`);
+      if(raw){
+        const parsed = JSON.parse(raw);
+        if(parsed && Array.isArray(parsed.days)){
+          return { days: parsed.days.slice(0,DAYS_PER_WEEK).map(normalizeDayState).concat(Array.from({length:Math.max(0, DAYS_PER_WEEK - parsed.days.length)}, () => emptyDayState())) };
+        }
+      }
+    }catch{}
+    return { days: Array.from({length:DAYS_PER_WEEK}, () => emptyDayState()) };
+  }
+  function saveWeekState(){
+    try{ localStorage.setItem(`${NS}:state:${weekKey}`, JSON.stringify(weekState)); }catch{}
+    elSavedLabel.textContent = 'saved';
+  }
+  function isPastDay(day){ return day < dayOfWeek; }
+  function isFutureDay(day){ return day > dayOfWeek; }
+  function isPlayableDay(day){ return day === dayOfWeek; }
+  function currentPuzzle(){ return puzzles[currentDay]; }
+  function currentState(){ return weekState.days[currentDay]; }
+  function ensureRunStarted(){
+    const st = currentState();
+    if(!isPlayableDay(currentDay) || st.completed) return;
+    if(!st.startedAtMs){
+      st.startedAtMs = nowMs();
+      st.lastSavedAt = st.lastSavedAt || st.startedAtMs;
+      saveWeekState();
+    }
+  }
+  function currentRunMs(){
+    const st = currentState();
+    if(!st.startedAtMs) return 0;
+    const endMs = st.completed && st.completedAtMs ? st.completedAtMs : nowMs();
+    return Math.max(0, endMs - st.startedAtMs);
+  }
+  function displayValue(idx){
+    const puz = currentPuzzle();
+    const st = currentState();
+    if(isPastDay(currentDay)) return puz.solution[idx];
+    return puz.givens[idx] || st.entries[idx] || 0;
+  }
+  function notesAt(idx){
+    const st = currentState();
+    return Array.isArray(st.notes?.[idx]) ? st.notes[idx] : [];
+  }
+  function clearNotesAt(idx){
+    const st = currentState();
+    if(!Array.isArray(st.notes)) st.notes = Array.from({length:81}, ()=>[]);
+    st.notes[idx] = [];
+  }
+  function cellCanEdit(idx){
+    const puz = currentPuzzle();
+    if(!isPlayableDay(currentDay)) return false;
+    return !puz.givens[idx];
+  }
+  function activeOrSelectedDigit(){
+    if(activeDigit) return activeDigit;
+    if(selected == null) return null;
+    return displayValue(selected) || null;
+  }
+  function cageForCell(idx){
+    const puz = currentPuzzle();
+    return puz.cages.find(c => c.cells.includes(idx)) || null;
+  }
+  function inSameCage(i, j){
+    const cage = cageForCell(i);
+    return !!cage && cage.cells.includes(j);
+  }
+  function cageBoundaryFlags(idx){
+    const cage = cageForCell(idx);
+    if(!cage) return {};
+    const set = new Set(cage.cells);
+    const r = Math.floor(idx/9), c = idx%9;
+    return {
+      top: r > 0 && !set.has(idx - 9),
+      right: c < 8 && !set.has(idx + 1),
+      bottom: r < 8 && !set.has(idx + 9),
+      left: c > 0 && !set.has(idx - 1)
+    };
+  }
+  function hasConflictAt(idx){
+    const puz = currentPuzzle();
+    const v = displayValue(idx);
+    if(!v || puz.givens[idx] || !isPlayableDay(currentDay)) return false;
+    const r = Math.floor(idx / 9), c = idx % 9;
+    for(let i = 0; i < 9; i++){
+      const rr = r * 9 + i, cc = i * 9 + c;
+      if(rr !== idx && displayValue(rr) === v) return true;
+      if(cc !== idx && displayValue(cc) === v) return true;
+    }
+    const br = Math.floor(r / 3) * 3, bc = Math.floor(c / 3) * 3;
+    for(let dr = 0; dr < 3; dr++) for(let dc = 0; dc < 3; dc++){
+      const j = (br + dr) * 9 + (bc + dc);
+      if(j !== idx && displayValue(j) === v) return true;
+    }
+    const cage = cageForCell(idx);
+    if(cage){
+      const vals = cage.cells.map(displayValue).filter(Boolean);
+      const repeats = vals.length !== new Set(vals).size;
+      if(repeats) return true;
+      const sum = vals.reduce((a,b) => a+b, 0);
+      const filled = cage.cells.every(i => !!displayValue(i));
+      if(sum > cage.sum) return true;
+      if(filled && sum !== cage.sum) return true;
+    }
+    return false;
+  }
+  function checkCompletion(){
+    const puz = currentPuzzle(), st = currentState();
+    if(!isPlayableDay(currentDay)) return;
+    for(let i = 0; i < 81; i++){
+      if(displayValue(i) !== puz.solution[i]){ st.completed = false; return; }
+    }
+    st.completed = true;
+    if(!st.completedAtMs) st.completedAtMs = nowMs();
+    setStatus('Puzzle solved. Great work.');
+  }
+  function renderNotes(cell, idx){
+    const notes = notesAt(idx);
+    if(!notes.length || displayValue(idx)) return;
+    const grid = document.createElement('div');
+    grid.className = 'notes-grid';
+    for(let n = 1; n <= 9; n++){
+      const s = document.createElement('div');
+      s.className = 'note';
+      s.textContent = notes.includes(n) ? String(n) : '';
+      grid.appendChild(s);
+    }
+    cell.appendChild(grid);
+  }
+  function renderBoard(){
+    const puz = currentPuzzle();
+    const st = currentState();
+    elBoard.innerHTML = '';
+    for(let r = 0; r < 9; r++){
+      for(let c = 0; c < 9; c++){
+        const idx = r * 9 + c;
+        const cell = document.createElement('div');
+        cell.className = 'cell';
+        if(((r + c) % 2) === 1) cell.classList.add('alt');
+        if(c === 2 || c === 5) cell.classList.add('thickR');
+        if(r === 2 || r === 5) cell.classList.add('thickB');
+        const given = puz.givens[idx];
+        if(given || isPastDay(currentDay)) cell.classList.add('given');
+
+        const overlay = document.createElement('div');
+        overlay.className = 'overlay';
+
+        const flags = cageBoundaryFlags(idx);
+        ['top','right','bottom','left'].forEach(side => {
+          if(flags[side]){
+            const line = document.createElement('div');
+            line.className = `cage-line ${side}`;
+            overlay.appendChild(line);
+          }
+        });
+        const cage = cageForCell(idx);
+
+        cell.appendChild(overlay);
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        const val = displayValue(idx);
+        btn.textContent = val ? String(val) : '';
+        btn.disabled = !cellCanEdit(idx);
+        btn.addEventListener('click', () => {
+          if(cellCanEdit(idx)){
+            if(selected === idx){
+              selected = null;
+              activeDigit = null;
+              renderBoard();
+              return;
+            }
+            selected = idx;
+            const v = displayValue(idx);
+            activeDigit = v || null;
+            renderBoard();
+          }
+        });
+        cell.appendChild(btn);
+        renderNotes(cell, idx);
+
+        if(!given && st.entries[idx]) cell.classList.add('user-filled');
+        if(cage && cage.clueCell === idx){
+          const lab = document.createElement('div');
+          lab.className = 'cage-sum';
+          lab.textContent = String(cage.sum);
+          cell.appendChild(lab);
+        }
+
+        if(selected === idx) cell.classList.add('selected');
+        if(selected != null){
+          const sr = Math.floor(selected / 9), sc = selected % 9;
+          const sameRow = r === sr, sameCol = c === sc;
+          const sameBox = Math.floor(r / 3) === Math.floor(sr / 3) && Math.floor(c / 3) === Math.floor(sc / 3);
+          const sameCage = inSameCage(idx, selected);
+          if(idx !== selected && (sameRow || sameCol || sameBox || sameCage)) cell.classList.add('peer');
+        }
+        const matchDigit = activeOrSelectedDigit();
+        if(matchDigit && displayValue(idx) === matchDigit) cell.classList.add('match');
+        if(hasConflictAt(idx)) cell.classList.add('conflict');
+
+        elBoard.appendChild(cell);
+      }
+    }
+    document.querySelectorAll('#keypad .key').forEach(btn => {
+      const k = btn.dataset.k;
+      btn.classList.toggle('active', /^[1-9]$/.test(k || '') && Number(k) === activeDigit);
+    });
+    if(elNotesBtn){
+      elNotesBtn.textContent = `Notes: ${notesMode ? 'On' : 'Off'}`;
+      elNotesBtn.classList.toggle('active', notesMode);
+    }
+  }
+  function refreshStats(){
+    const st = currentState();
+    elHintsUsed.textContent = String(st.hintsUsed);
+    elMistakes.textContent = String(st.mistakes);
+    elRunTime.textContent = formatMMSS(currentRunMs());
+    elAvailability.textContent = isPastDay(currentDay) ? 'Expired' : (isFutureDay(currentDay) ? 'Locked' : 'Playable');
+    const completeCount = weekState.days.filter(d => d.completed).length;
+    elAllDone.classList.toggle('hidden', completeCount !== DAYS_PER_WEEK);
+  }
+  function updateLabels(){
+    elWeekLabel.textContent = `Week of ${weekKey} • 7 puzzles`;
+    elDayLabel.textContent = `Today: ${weekdayName(dayOfWeek)} (Day ${dayOfWeek + 1})`;
+    elDayNum.textContent = String(currentDay + 1);
+    const st = currentState();
+    elSavedLabel.textContent = st.lastSavedAt ? 'restored' : '–';
+  }
+  function writeEntry(v){
+    if(selected == null || !isPlayableDay(currentDay) || !cellCanEdit(selected)) return;
+    ensureRunStarted();
+    const st = currentState();
+    if(st.completed) st.completedAtMs = 0;
+    if(notesMode){
+      if(v === 0){
+        clearNotesAt(selected);
+        st.lastSavedAt = nowMs();
+        activeDigit = null;
+        saveWeekState();
+        renderBoard();
+        refreshStats();
+        return;
+      }
+      if(displayValue(selected)){
+        setStatus('Clear the placed digit first to add notes.');
+        return;
+      }
+      const current = notesAt(selected).slice();
+      const pos = current.indexOf(v);
+      if(pos >= 0) current.splice(pos, 1);
+      else current.push(v);
+      current.sort((a,b)=>a-b);
+      st.notes[selected] = current;
+      st.lastSavedAt = nowMs();
+      activeDigit = v || null;
+      saveWeekState();
+      renderBoard();
+      refreshStats();
+      return;
+    }
+    st.entries[selected] = v || 0;
+    if(v) clearNotesAt(selected);
+    st.lastSavedAt = nowMs();
+    activeDigit = v || null;
+    saveWeekState();
+    checkCompletion();
+    renderBoard();
+    refreshStats();
+  }
+  function revealHint(){
+    if(!isPlayableDay(currentDay)) return;
+    ensureRunStarted();
+    const puz = currentPuzzle(), st = currentState();
+    if(st.hintsUsed >= MAX_HINTS){ setStatus('No more hints for today.'); return; }
+    for(let i = 0; i < 81; i++){
+      if(!puz.givens[i] && st.entries[i] !== puz.solution[i]){
+        st.entries[i] = puz.solution[i];
+        clearNotesAt(i);
+        st.hintsUsed++;
+        st.lastSavedAt = nowMs();
+        saveWeekState();
+        setStatus('One cell has been revealed.');
+        checkCompletion();
+        renderBoard();
+        refreshStats();
+        return;
+      }
+    }
+  }
+  function checkBoard(){
+    if(!isPlayableDay(currentDay)) return;
+    ensureRunStarted();
+    const st = currentState();
+    let bad = 0;
+    for(let i = 0; i < 81; i++) if(hasConflictAt(i)) bad++;
+    st.mistakes += bad ? 1 : 0;
+    st.lastSavedAt = nowMs();
+    saveWeekState();
+    setStatus(bad ? `Found ${bad} conflicting cell${bad === 1 ? '' : 's'}.` : 'No conflicts found right now.');
+    renderBoard();
+    refreshStats();
+  }
+  function resetBoard(){
+    if(!isPlayableDay(currentDay)) return;
+    weekState.days[currentDay] = emptyDayState();
+    saveWeekState();
+    selected = null;
+    activeDigit = null;
+    notesMode = false;
+    renderBoard();
+    refreshStats();
+    setStatus('Today’s puzzle has been reset.');
+  }
+  function toggleNotesMode(){
+    notesMode = !notesMode;
+    renderBoard();
+    setStatus(notesMode ? 'Notes mode on. Tap digits to add or remove candidates.' : 'Notes mode off. Tap digits to place values.');
+  }
+  function updateClock(){
+    const ms = endOfDay() - new Date();
+    elCountdown.textContent = `Next puzzle in ${formatHMS(ms)}`;
+    elRunTime.textContent = formatMMSS(currentRunMs());
+  }
+
+  document.getElementById('keypad').addEventListener('click', (ev) => {
+    const k = ev.target && ev.target.dataset ? ev.target.dataset.k : null;
+    if(!k) return;
+    if(k === 'del'){
+      activeDigit = null;
+      if(selected != null) writeEntry(0);
+      else renderBoard();
+      return;
+    }
+    activeDigit = Number(k);
+    if(selected != null) writeEntry(activeDigit);
+    else renderBoard();
+  });
+  document.getElementById('hintBtn').addEventListener('click', revealHint);
+  document.getElementById('checkBtn').addEventListener('click', checkBoard);
+  document.getElementById('notesBtn').addEventListener('click', toggleNotesMode);
+  document.getElementById('resetBtn').addEventListener('click', resetBoard);
+  document.getElementById('prevBtn').addEventListener('click', () => {
+    currentDay = Math.max(0, currentDay - 1); selected = null; activeDigit = null; notesMode = false; updateLabels(); renderBoard(); refreshStats();
+  });
+  document.getElementById('nextBtn').addEventListener('click', () => {
+    currentDay = Math.min(6, currentDay + 1); selected = null; activeDigit = null; notesMode = false; updateLabels(); renderBoard(); refreshStats();
+  });
+  document.getElementById('shareBtn').addEventListener('click', async () => {
+    const url = location.href;
+    try{ await navigator.clipboard.writeText(url); setStatus('Link copied.'); }catch{ setStatus('Could not copy link.'); }
+  });
+  document.getElementById('downloadBtn').addEventListener('click', () => {
+    const a = document.createElement('a');
+    a.href = location.href;
+    a.download = 'killer-sudoku.html';
+    a.click();
+  });
+
+  weekKey = getWeekKey();
+  dayOfWeek = getDayIndex();
+  currentDay = dayOfWeek;
+  puzzles = buildWeekPuzzles();
+  weekState = loadWeekState();
+  updateLabels();
+  renderBoard();
+  refreshStats();
+  updateClock();
+  clearInterval(tickId);
+  tickId = setInterval(updateClock, 1000);
+})();
+</script>
+</body>
+</html>

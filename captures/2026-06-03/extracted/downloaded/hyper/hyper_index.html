@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <title>Daily Hyper Sudoku</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <style>
+    :root{
+      --bg1:#F6F7FF;
+      --bg2:#F3FBF7;
+      --panel:#FFFFFF;
+      --stroke: rgba(17,24,39,.10);
+      --stroke2: rgba(17,24,39,.16);
+      --text:#111827;
+      --muted: rgba(17,24,39,.65);
+      --violet:#7C3AED;
+      --green:#16A34A;
+      --amber:#F59E0B;
+      --rose:#FB7185;
+      --blue:#3B82F6;
+      --cellBg:#FFFFFF;
+      --cellAlt:#FAFAFF;
+      --cellGiven:#EEF2FF;
+      --cellSelect: rgba(124,58,237,.28);
+      --cellPeer: rgba(124,58,237,.10);
+      --cellMatch: rgba(245,158,11,.20);
+      --cellConflict: rgba(251,113,133,.20);
+      --hintBg: rgba(59,130,246,.16);
+      --shadow: 0 18px 45px rgba(15,23,42,.12);
+      --r: 16px;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      padding:14px;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(900px 600px at 12% 0%, rgba(124,58,237,.12), transparent 55%),
+        radial-gradient(900px 600px at 90% 0%, rgba(22,163,74,.10), transparent 55%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+      color: var(--text);
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+      min-height:100vh;
+      overflow-x:hidden;
+    }
+    .app{
+      width:min(1100px, 100%);
+      background: linear-gradient(180deg, rgba(255,255,255,.86), rgba(255,255,255,.74));
+      border:1px solid var(--stroke);
+      border-radius: calc(var(--r) + 6px);
+      box-shadow: var(--shadow);
+      padding:16px;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      backdrop-filter: blur(6px);
+    }
+    header{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:flex-start;
+      justify-content:space-between;
+      padding:6px 4px 12px;
+      border-bottom:1px solid var(--stroke);
+    }
+    header h1{ margin:0; font-size:24px; letter-spacing:.2px; }
+    .sub{ margin:8px 0 0; font-size:13px; color:var(--muted); line-height:1.35; max-width:650px; }
+    .badgeRow{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    .pill{
+      display:inline-flex; align-items:center; gap:8px; padding:6px 10px;
+      border-radius:999px; background:rgba(255,255,255,.75); border:1px solid var(--stroke); color:var(--text);
+      width:fit-content;
+    }
+    .dot{ width:8px; height:8px; border-radius:99px; background:var(--violet); box-shadow:0 0 0 4px rgba(124,58,237,.12); }
+    .dot.green{ background:var(--green); box-shadow:0 0 0 4px rgba(22,163,74,.12); }
+    .dot.amber{ background:var(--amber); box-shadow:0 0 0 4px rgba(245,158,11,.14); }
+    .meta{ text-align:right; font-size:13px; color:var(--muted); display:flex; flex-direction:column; gap:6px; }
+    .meta b{ color:var(--text); }
+    .layout{ display:grid; grid-template-columns:1.15fr .85fr; gap:14px; }
+    @media (max-width: 900px){ .layout{ grid-template-columns:1fr; } .meta{ text-align:left; } }
+    .panel{ background:rgba(255,255,255,.78); border:1px solid var(--stroke); border-radius:var(--r); padding:14px; }
+    .boardWrap{ width:min(560px, 100%); margin:0 auto; }
+    .board{
+      width:100%; aspect-ratio:1/1; display:grid; grid-template-columns:repeat(9,1fr); grid-template-rows:repeat(9,1fr);
+      border:2px solid rgba(17,24,39,.30); border-radius:14px; overflow:hidden; background:rgba(17,24,39,.04); position:relative;
+    }
+    .boardSvg{
+      position:absolute; inset:0; width:100%; height:100%; z-index:0; pointer-events:none;
+    }
+    .diagOverlay{
+      position:absolute; inset:0; pointer-events:none; z-index:0; opacity:.22;
+      background:
+        linear-gradient(45deg, transparent 49.4%, rgba(59,130,246,.70) 49.4%, rgba(59,130,246,.70) 50.6%, transparent 50.6%),
+        linear-gradient(-45deg, transparent 49.4%, rgba(59,130,246,.70) 49.4%, rgba(59,130,246,.70) 50.6%, transparent 50.6%);
+      mix-blend-mode:multiply;
+    }
+    .cell{
+      position:relative; border:1px solid rgba(17,24,39,.16); background:var(--cellBg);
+      display:flex; align-items:center; justify-content:center; user-select:none; -webkit-tap-highlight-color:transparent; z-index:1;
+    }
+    .cell.alt{ background:var(--cellAlt); }
+    .cell.thickR{ border-right-width:2px; border-right-color:rgba(17,24,39,.30); }
+    .cell.thickB{ border-bottom-width:2px; border-bottom-color:rgba(17,24,39,.30); }
+    .cell.given{ background:var(--cellGiven); }
+    .cell.selected{ box-shadow:inset 0 0 0 3px var(--cellSelect); }
+    .cell.peer{ box-shadow: inset 0 0 0 2px rgba(124,58,237,.16); }
+    .cell.match button{
+      background: var(--cellMatch);
+      box-shadow: inset 0 0 0 2px rgba(245,158,11,.45);
+      font-weight:900;
+    }
+    .cell.selected.match{
+      box-shadow: inset 0 0 0 3px var(--cellSelect), inset 0 0 0 6px rgba(245,158,11,.38);
+    }
+    .cell.conflict button{ background:var(--cellConflict); color:#7F1D1D; font-weight:900; }
+    .cell.hinted button{ background:var(--hintBg); color:#1E40AF; font-weight:900; }
+    .cell.revealed button{ background:rgba(22,163,74,.10); color:#065F46; font-weight:900; }
+    .cell.future{ background: rgba(17,24,39,.06); }
+    .cell.future button{ cursor:not-allowed; }
+    .cell.future::after{
+      content:"";
+      position:absolute; width:90%; height:90%; opacity:.9;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23111827' d='M46 28h-2v-6c0-6.6-5.4-12-12-12S20 15.4 20 22v6h-2c-3.3 0-6 2.7-6 6v18c0 3.3 2.7 6 6 6h28c3.3 0 6-2.7 6-6V34c0-3.3-2.7-6-6-6zM26 22c0-3.3 2.7-6 6-6s6 2.7 6 6v6H26v-6zm8 23.7V48c0 1.1-.9 2-2 2s-2-.9-2-2v-2.3c-1.2-.7-2-2-2-3.4 0-2.2 1.8-4 4-4s4 1.8 4 4c0 1.4-.8 2.7-2 3.4z'/%3E%3C/svg%3E");
+      background-repeat:no-repeat; background-position:center; background-size:contain; pointer-events:none; z-index:3;
+    }
+    .cell button{
+      width:100%; height:100%; border:0; background:transparent; color:var(--text); font-size:clamp(18px, 5vw, 24px);
+      font-weight:650; cursor:pointer; position:relative; z-index:2;
+    }
+    .cell.given button{ font-weight:900; cursor:default; }
+    .cell.parity-odd{ background: rgba(245,158,11,.14); }
+    .cell.parity-even{ background: rgba(59,130,246,.12); }
+    .cell.hyper{ background: rgba(245,158,11,.085); }
+    .cell.hyperTop{ border-top:3px solid rgba(245,158,11,.34); }
+    .cell.hyperBottom{ border-bottom:3px solid rgba(245,158,11,.34); }
+    .cell.hyperLeft{ border-left:3px solid rgba(245,158,11,.34); }
+    .cell.hyperRight{ border-right:3px solid rgba(245,158,11,.34); }
+
+    .keypad{ width:min(560px, 100%); margin:14px auto 0; display:grid; grid-template-columns:repeat(5,1fr); gap:10px; }
+    .key{
+      height:54px; border-radius:14px; border:1px solid var(--stroke2); background:rgba(255,255,255,.85); color:var(--text);
+      font-size:18px; font-weight:700; cursor:pointer; box-shadow:0 10px 18px rgba(15,23,42,.10);
+    }
+    .key:active{ transform:translateY(1px); box-shadow:none; }
+    .key.active{ background:rgba(245,158,11,.20); border-color:rgba(245,158,11,.52); box-shadow:inset 0 0 0 3px rgba(245,158,11,.28), 0 10px 18px rgba(15,23,42,.10); }
+    .key.clear{ background:rgba(251,113,133,.12); border-color:rgba(251,113,133,.35); color:#9F1239; font-weight:800; }
+
+    .controls{ display:flex; gap:10px; flex-wrap:wrap; }
+    .btn{
+      border:0; border-radius:999px; padding:10px 14px; font-weight:800; cursor:pointer; color:var(--text);
+      background:rgba(255,255,255,.85); border:1px solid var(--stroke2); box-shadow:0 12px 20px rgba(15,23,42,.10);
+    }
+    .btn:active{ transform:translateY(1px); box-shadow:none; }
+    .btn.primary{ background:rgba(124,58,237,.12); border-color:rgba(124,58,237,.30); color:#4C1D95; }
+    .btn.good{ background:rgba(22,163,74,.12); border-color:rgba(22,163,74,.28); color:#065F46; }
+    .btn.warn{ background:rgba(245,158,11,.14); border-color:rgba(245,158,11,.32); color:#92400E; }
+    .btn.bad{ background:rgba(251,113,133,.14); border-color:rgba(251,113,133,.30); color:#9F1239; }
+
+    .status{
+      margin-top:10px; padding:12px; border-radius:14px; border:1px solid var(--stroke); background:rgba(255,255,255,.80);
+      color:var(--muted); min-height:52px; line-height:1.35; font-size:14px;
+    }
+    .stack{ display:flex; flex-direction:column; gap:10px; margin-top:10px; }
+    .stat{
+      display:flex; justify-content:space-between; gap:10px; padding:10px 12px; border-radius:14px; border:1px solid var(--stroke);
+      background:rgba(255,255,255,.80); color:var(--muted); font-size:13px;
+    }
+    .stat b{ color:var(--text); font-weight:900; }
+    .done{ padding:14px; border-radius:14px; border:1px solid rgba(22,163,74,.25); background:rgba(22,163,74,.08); color:#065F46; }
+    .done h2{ margin:0 0 6px; font-size:16px; }
+
+    .shareSheet{
+      position:fixed; inset:0; z-index:9999; background:rgba(17,24,39,.42);
+      display:flex; align-items:center; justify-content:center; padding:16px;
+    }
+    .shareCard{
+      width:min(460px, 100%); background:rgba(255,255,255,.98); border:1px solid var(--stroke);
+      border-radius:20px; padding:16px; box-shadow:var(--shadow);
+    }
+    .shareHead{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    .shareHead h3{ margin:0; font-size:18px; }
+    .shareClose{
+      width:40px; height:40px; border-radius:999px; border:1px solid var(--stroke2);
+      background:rgba(255,255,255,.92); color:var(--text); font-size:24px; line-height:1; cursor:pointer;
+    }
+    .shareGrid{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:10px; margin-top:14px; }
+    .shareOption{
+      min-height:48px; border-radius:14px; border:1px solid var(--stroke2); background:rgba(255,255,255,.92);
+      color:var(--text); font-size:14px; font-weight:800; cursor:pointer; text-decoration:none;
+      display:flex; align-items:center; justify-content:center; text-align:center; padding:10px 12px;
+      box-shadow:0 10px 18px rgba(15,23,42,.08);
+    }
+    .shareOption.primary{ background:rgba(124,58,237,.12); border-color:rgba(124,58,237,.30); color:#4C1D95; }
+    .shareMeta{ margin-top:12px; color:var(--muted); font-size:12px; line-height:1.4; word-break:break-word; }
+    .hidden{ display:none !important; }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div>
+        <h1 id="titleLabel">Daily Hyper Sudoku</h1>
+        <div class="sub">
+          One Hyper puzzle per day (7/week). At midnight, today’s puzzle expires (solution revealed) and tomorrow’s becomes playable.
+          <div class="badgeRow">
+            <span class="pill"><span class="dot"></span><span id="weekLabel">Week of 2026-06-01 • 7 puzzles</span></span>
+            <span class="pill"><span class="dot green"></span><span id="dayLabel">Today: Wed (Day 3)</span></span>
+            <span class="pill"><span class="dot amber"></span><span id="modeLabel">Variant: Hyper</span></span>
+          </div>
+        </div>
+      </div>
+      <div class="meta">
+        <div class="pill" style="justify-content:flex-end; gap:10px;">
+          <span style="opacity:.75">Day</span> <b id="dayNum">3</b> <span style="opacity:.75">/</span> <b>7</b>
+        </div>
+        <div id="doneCounter">Solved this week: 0 / 7</div>
+        <div><b id="countdown">Next puzzle in 20:25:31</b></div>
+        <div style="opacity:.85">Saved: <b id="savedLabel">saved</b></div>
+      </div>
+    </header>
+
+    <div id="allDone" class="done hidden">
+      <h2>All seven puzzles solved 🎉</h2>
+      <div>New set starts next Monday.</div>
+    </div>
+
+    <div class="layout" id="mainLayout">
+      <div class="panel">
+        <div class="boardWrap">
+          <div id="board" class="board" aria-label="Sudoku board"><div class="cell" data-idx="0"><button type="button"></button></div><div class="cell alt" data-idx="1"><button type="button"></button></div><div class="cell thickR" data-idx="2"><button type="button"></button></div><div class="cell alt" data-idx="3"><button type="button"></button></div><div class="cell" data-idx="4"><button type="button"></button></div><div class="cell alt thickR given" data-idx="5"><button type="button" disabled="">3</button></div><div class="cell" data-idx="6"><button type="button"></button></div><div class="cell alt given" data-idx="7"><button type="button" disabled="">2</button></div><div class="cell" data-idx="8"><button type="button"></button></div><div class="cell alt given" data-idx="9"><button type="button" disabled="">5</button></div><div class="cell hyper hyperTop hyperLeft" data-idx="10"><button type="button"></button></div><div class="cell alt thickR hyper hyperTop" data-idx="11"><button type="button"></button></div><div class="cell hyper hyperTop hyperRight" data-idx="12"><button type="button"></button></div><div class="cell alt given" data-idx="13"><button type="button" disabled="">7</button></div><div class="cell thickR given hyper hyperTop hyperLeft" data-idx="14"><button type="button" disabled="">6</button></div><div class="cell alt hyper hyperTop" data-idx="15"><button type="button"></button></div><div class="cell hyper hyperTop hyperRight" data-idx="16"><button type="button"></button></div><div class="cell alt" data-idx="17"><button type="button"></button></div><div class="cell thickB" data-idx="18"><button type="button"></button></div><div class="cell alt thickB hyper hyperLeft" data-idx="19"><button type="button"></button></div><div class="cell thickR thickB given hyper" data-idx="20"><button type="button" disabled="">8</button></div><div class="cell alt thickB hyper hyperRight" data-idx="21"><button type="button"></button></div><div class="cell thickB" data-idx="22"><button type="button"></button></div><div class="cell alt thickR thickB given hyper hyperLeft" data-idx="23"><button type="button" disabled="">1</button></div><div class="cell thickB hyper" data-idx="24"><button type="button"></button></div><div class="cell alt thickB hyper hyperRight" data-idx="25"><button type="button"></button></div><div class="cell thickB given" data-idx="26"><button type="button" disabled="">3</button></div><div class="cell alt" data-idx="27"><button type="button"></button></div><div class="cell given hyper hyperBottom hyperLeft" data-idx="28"><button type="button" disabled="">6</button></div><div class="cell alt thickR hyper hyperBottom" data-idx="29"><button type="button"></button></div><div class="cell hyper hyperBottom hyperRight" data-idx="30"><button type="button"></button></div><div class="cell alt given" data-idx="31"><button type="button" disabled="">9</button></div><div class="cell thickR given hyper hyperBottom hyperLeft" data-idx="32"><button type="button" disabled="">2</button></div><div class="cell alt given hyper hyperBottom" data-idx="33"><button type="button" disabled="">3</button></div><div class="cell given hyper hyperBottom hyperRight" data-idx="34"><button type="button" disabled="">7</button></div><div class="cell alt given" data-idx="35"><button type="button" disabled="">8</button></div><div class="cell" data-idx="36"><button type="button"></button></div><div class="cell alt given" data-idx="37"><button type="button" disabled="">2</button></div><div class="cell thickR given" data-idx="38"><button type="button" disabled="">3</button></div><div class="cell alt" data-idx="39"><button type="button"></button></div><div class="cell given" data-idx="40"><button type="button" disabled="">5</button></div><div class="cell alt thickR given" data-idx="41"><button type="button" disabled="">8</button></div><div class="cell given" data-idx="42"><button type="button" disabled="">9</button></div><div class="cell alt given" data-idx="43"><button type="button" disabled="">6</button></div><div class="cell given" data-idx="44"><button type="button" disabled="">4</button></div><div class="cell alt thickB" data-idx="45"><button type="button"></button></div><div class="cell thickB hyper hyperTop hyperLeft" data-idx="46"><button type="button"></button></div><div class="cell alt thickR thickB given hyper hyperTop" data-idx="47"><button type="button" disabled="">7</button></div><div class="cell thickB hyper hyperTop hyperRight" data-idx="48"><button type="button"></button></div><div class="cell alt thickB given" data-idx="49"><button type="button" disabled="">6</button></div><div class="cell thickR thickB hyper hyperTop hyperLeft" data-idx="50"><button type="button"></button></div><div class="cell alt thickB hyper hyperTop" data-idx="51"><button type="button"></button></div><div class="cell thickB hyper hyperTop hyperRight" data-idx="52"><button type="button"></button></div><div class="cell alt thickB" data-idx="53"><button type="button"></button></div><div class="cell given" data-idx="54"><button type="button" disabled="">7</button></div><div class="cell alt given hyper hyperLeft" data-idx="55"><button type="button" disabled="">1</button></div><div class="cell thickR hyper" data-idx="56"><button type="button"></button></div><div class="cell alt hyper hyperRight" data-idx="57"><button type="button"></button></div><div class="cell" data-idx="58"><button type="button"></button></div><div class="cell alt thickR given hyper hyperLeft" data-idx="59"><button type="button" disabled="">9</button></div><div class="cell given hyper" data-idx="60"><button type="button" disabled="">2</button></div><div class="cell alt hyper hyperRight" data-idx="61"><button type="button"></button></div><div class="cell" data-idx="62"><button type="button"></button></div><div class="cell alt given" data-idx="63"><button type="button" disabled="">3</button></div><div class="cell given hyper hyperBottom hyperLeft" data-idx="64"><button type="button" disabled="">5</button></div><div class="cell alt thickR hyper hyperBottom" data-idx="65"><button type="button"></button></div><div class="cell hyper hyperBottom hyperRight" data-idx="66"><button type="button"></button></div><div class="cell alt" data-idx="67"><button type="button"></button></div><div class="cell thickR hyper hyperBottom hyperLeft" data-idx="68"><button type="button"></button></div><div class="cell alt given hyper hyperBottom" data-idx="69"><button type="button" disabled="">6</button></div><div class="cell given hyper hyperBottom hyperRight" data-idx="70"><button type="button" disabled="">8</button></div><div class="cell alt given" data-idx="71"><button type="button" disabled="">9</button></div><div class="cell given" data-idx="72"><button type="button" disabled="">2</button></div><div class="cell alt" data-idx="73"><button type="button"></button></div><div class="cell thickR" data-idx="74"><button type="button"></button></div><div class="cell alt given" data-idx="75"><button type="button" disabled="">6</button></div><div class="cell" data-idx="76"><button type="button"></button></div><div class="cell alt thickR" data-idx="77"><button type="button"></button></div><div class="cell" data-idx="78"><button type="button"></button></div><div class="cell alt" data-idx="79"><button type="button"></button></div><div class="cell" data-idx="80"><button type="button"></button></div></div>
+        </div>
+
+        <div class="keypad" id="keypad" aria-label="Keypad">
+          <button class="key" data-k="1">1</button>
+          <button class="key" data-k="2">2</button>
+          <button class="key" data-k="3">3</button>
+          <button class="key" data-k="4">4</button>
+          <button class="key" data-k="5">5</button>
+          <button class="key" data-k="6">6</button>
+          <button class="key" data-k="7">7</button>
+          <button class="key" data-k="8">8</button>
+          <button class="key" data-k="9">9</button>
+          <button class="key clear" data-k="del">Clear</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="controls">
+          <button class="btn primary" id="hintBtn">Hint</button>
+          <button class="btn good" id="checkBtn">Check</button>
+          <button class="btn warn" id="prevBtn">Prev</button>
+          <button class="btn warn" id="nextBtn">Next</button>
+          <button class="btn bad" id="resetBtn">Reset</button>
+          <button class="btn" id="shareBtn">Share</button>
+          <button class="btn" id="downloadBtn">Download</button>
+        </div>
+
+        <div class="status" id="status">Ready.</div>
+
+        <div class="stack">
+          <div class="stat"><span>Hints used</span><b id="hintsUsed">0/3</b></div>
+          <div class="stat"><span>Mistakes (from checks)</span><b id="mistakes">0</b></div>
+          <div class="stat"><span>Time (this puzzle)</span><b id="runTime">00:00</b></div>
+          <div class="stat"><span>Today</span><b id="availability">Playable</b></div>
+        </div>
+
+        <div style="margin-top:10px; color:var(--muted); font-size:13px; line-height:1.35" id="rulesBox"><div><b>Rule clarity:</b> Standard Sudoku rules apply. In addition, each of the four shaded 3×3 Hyper regions must also contain the digits 1–9 exactly once.</div><div><b>Visual clue:</b> The extra Hyper regions are shaded and outlined inside the grid.</div></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="shareSheet" class="shareSheet hidden" aria-hidden="true">
+    <div class="shareCard" role="dialog" aria-modal="true" aria-labelledby="shareTitle">
+      <div class="shareHead">
+        <h3 id="shareTitle">Share this puzzle</h3>
+        <button class="shareClose" id="shareCloseBtn" type="button" aria-label="Close share options">×</button>
+      </div>
+      <div class="shareGrid">
+        <button class="shareOption primary hidden" id="shareNativeBtn" type="button">Native Share</button>
+        <button class="shareOption" id="shareCopyTextBtn" type="button">Copy Share Text</button>
+        <button class="shareOption" id="shareCopyLinkBtn" type="button">Copy Link</button>
+        <a class="shareOption" id="shareEmailLink" href="#" target="_blank" rel="noopener">Email</a>
+        <a class="shareOption" id="shareWhatsappLink" href="#" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="shareOption" id="shareTwitterLink" href="#" target="_blank" rel="noopener">X</a>
+        <a class="shareOption" id="shareFacebookLink" href="#" target="_blank" rel="noopener">Facebook</a>
+      </div>
+      <div class="shareMeta" id="shareMeta">Choose how you want to share this puzzle.</div>
+    </div>
+  </div>
+
+
+<script>
+window.__VARIANT_CONFIG__ = {"filename": "hyper/index.html", "pageTitle": "Daily Hyper Sudoku", "h1Title": "Daily Hyper Sudoku", "subtitle": "One Hyper puzzle per day (7/week). At midnight, today\u2019s puzzle expires (solution revealed) and tomorrow\u2019s becomes playable.", "statusText": "Tap a square, then use the keypad. Tap the same keypad number again to turn it off. The four shaded 3\u00d73 Hyper regions must also contain 1\u20139 once each.", "rulesHtml": "<div><b>Rule clarity:</b> Standard Sudoku rules apply. In addition, each of the four shaded 3\u00d73 Hyper regions must also contain the digits 1\u20139 exactly once.</div><div><b>Visual clue:</b> The extra Hyper regions are shaded and outlined inside the grid.</div>", "variant": "hyper", "variantLabel": "Hyper", "shareTitle": "Daily Hyper Sudoku", "clues": 34};
+</script>
+<script>
+(() => {
+  "use strict";
+
+  const CFG = window.__VARIANT_CONFIG__ || {};
+  const DAYS_PER_WEEK = 7;
+  const CLUES = CFG.clues || 34;
+  const MAX_HINTS = 3;
+  const NS = `sapiver_${CFG.variant || 'sudoku'}_daily_fixed_v1`;
+  const GLOBAL_SEED = `${String(CFG.variant || 'sudoku').toUpperCase()}_GLOBAL_FIXED_V1`;
+  const STATE_KEY = (weekKey) => `${NS}:state:${weekKey}`;
+
+  const elWeekLabel = document.getElementById("weekLabel");
+  const elDayLabel = document.getElementById("dayLabel");
+  const elModeLabel = document.getElementById("modeLabel");
+  const elDayNum = document.getElementById("dayNum");
+  const elDoneCounter = document.getElementById("doneCounter");
+  const elCountdown = document.getElementById("countdown");
+  const elSavedLabel = document.getElementById("savedLabel");
+  const elBoard = document.getElementById("board");
+  const elStatus = document.getElementById("status");
+  const elAllDone = document.getElementById("allDone");
+  const elMainLayout = document.getElementById("mainLayout");
+  const elHintsUsed = document.getElementById("hintsUsed");
+  const elMistakes = document.getElementById("mistakes");
+  const elAvailability = document.getElementById("availability");
+  const elRunTime = document.getElementById("runTime");
+
+  let weekKey = "";
+  let dayOfWeek = 0;
+  let currentDay = 0;
+  let selected = null;
+  let activeDigit = null;
+  let puzzles = [];
+  let tickId = null;
+  let offlineMode = false;
+
+  function setStatus(msg){ elStatus.textContent = msg; }
+  function nowMs(){ return Date.now(); }
+  function toISODate(d){ return d.toISOString().slice(0,10); }
+  function getMonday(d = new Date()){
+    const day = d.getDay();
+    const diffToMon = (day + 6) % 7;
+    const mon = new Date(d);
+    mon.setDate(d.getDate() - diffToMon);
+    mon.setHours(0,0,0,0);
+    return mon;
+  }
+  function getWeekKey(d = new Date()){ return toISODate(getMonday(d)); }
+  function getDayIndex(d = new Date()){
+    const mon = getMonday(d);
+    const dd = new Date(d); dd.setHours(0,0,0,0);
+    return Math.max(0, Math.min(6, Math.floor((dd - mon) / 86400000)));
+  }
+  function endOfDay(d = new Date()){
+    const dd = new Date(d); dd.setHours(24,0,0,0); return dd;
+  }
+  function formatHMS(ms){
+    const s = Math.max(0, Math.floor(ms / 1000));
+    const hh = String(Math.floor(s / 3600)).padStart(2,"0");
+    const mm = String(Math.floor((s % 3600) / 60)).padStart(2,"0");
+    const ss = String(s % 60).padStart(2,"0");
+    return `${hh}:${mm}:${ss}`;
+  }
+  function formatMMSS(ms){
+    const s = Math.max(0, Math.floor(ms / 1000));
+    const mm = String(Math.floor(s / 60)).padStart(2,"0");
+    const ss = String(s % 60).padStart(2,"0");
+    return `${mm}:${ss}`;
+  }
+  function weekdayName(day){ return ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"][day] || "Mon"; }
+
+  function makeRng(seed){
+    let s = seed % 2147483647;
+    if(s <= 0) s += 2147483646;
+    return () => (s = (s * 16807) % 2147483647, (s - 1) / 2147483646);
+  }
+  function strSeed(str){
+    let h = 2166136261 >>> 0;
+    for(let i=0;i<str.length;i++){
+      h ^= str.charCodeAt(i);
+      h = Math.imul(h, 16777619);
+    }
+    return (h >>> 0) || 1;
+  }
+  function shuffle(arr, rand){
+    for(let i=arr.length-1;i>0;i--){
+      const j = Math.floor(rand() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+  }
+
+  function rowOf(i){ return (i / 9) | 0; }
+  function colOf(i){ return i % 9; }
+  function boxIndex(i){ return (((rowOf(i)/3)|0) * 3 + ((colOf(i)/3)|0)); }
+
+  function onMainDiag(pos){ return rowOf(pos) === colOf(pos); }
+  function onAntiDiag(pos){ return rowOf(pos) + colOf(pos) === 8; }
+
+  function getHyperRegionIndex(i){
+    const r = rowOf(i), c = colOf(i);
+    const starts = [[1,1],[1,5],[5,1],[5,5]];
+    for(let k=0;k<starts.length;k++){
+      const [sr, sc] = starts[k];
+      if(r >= sr && r < sr + 3 && c >= sc && c < sc + 3) return k;
+    }
+    return -1;
+  }
+  function orthogonalNeighbours(pos){
+    const r = rowOf(pos), c = colOf(pos);
+    const out = [];
+    if(r > 0) out.push(pos - 9);
+    if(r < 8) out.push(pos + 9);
+    if(c > 0) out.push(pos - 1);
+    if(c < 8) out.push(pos + 1);
+    return out;
+  }
+
+  function relationType(a,b){
+    const max = Math.max(a,b), min = Math.min(a,b);
+    if(max === min * 2) return "black";
+    if(Math.abs(a - b) === 1) return "white";
+    return null;
+  }
+  function dotBetween(runtime, i, dir){
+    if(!runtime || !runtime.kropki) return null;
+    const arr = dir === "right" ? runtime.kropki.right : runtime.kropki.down;
+    for(const d of arr){ if(d.i === i) return d.type; }
+    return null;
+  }
+  function parityAt(runtime, i){
+    if(!runtime || !runtime.parity) return null;
+    for(const p of runtime.parity){ if(p.i === i) return p.kind; }
+    return null;
+  }
+
+  function getEditableCellNodes(){
+    return Array.from(elBoard.querySelectorAll(".cell"));
+  }
+
+  function isPlayableDay(dIdx){ return offlineMode ? dIdx === currentDay : dIdx === dayOfWeek; }
+  function isPastDay(dIdx){ return offlineMode ? false : dIdx < dayOfWeek; }
+  function isFutureDay(dIdx){ return offlineMode ? false : dIdx > dayOfWeek; }
+
+  function ensureRunStarted(){
+    if(!isPlayableDay(currentDay)) return;
+    const p = puzzles[currentDay];
+    if(!p || p.completed) return;
+    if(!p.startedAtMs) p.startedAtMs = nowMs();
+  }
+  function currentElapsedMs(p){
+    if(!p) return 0;
+    if(Number.isFinite(p.finishedElapsedMs) && p.finishedElapsedMs >= 0) return p.finishedElapsedMs;
+    if(!p.startedAtMs) return 0;
+    return Math.max(0, nowMs() - p.startedAtMs);
+  }
+
+  function basicSafe(grid, pos, num){
+    const row = rowOf(pos), col = colOf(pos);
+    const base = row * 9;
+    for(let j=0;j<9;j++) if(grid[base + j] === num) return false;
+    for(let r=0;r<9;r++) if(grid[col + 9*r] === num) return false;
+    const br = ((row/3)|0) * 3, bc = ((col/3)|0) * 3;
+    for(let rr=br; rr<br+3; rr++) for(let cc=bc; cc<bc+3; cc++) if(grid[rr*9 + cc] === num) return false;
+    return true;
+  }
+
+  function extraSafe(grid, pos, num, runtime){
+    const row = rowOf(pos), col = colOf(pos);
+
+    if(CFG.variant === "x"){
+      if(onMainDiag(pos)){ for(let t=0;t<9;t++){ const j = t*9+t; if(j !== pos && grid[j] === num) return false; } }
+      if(onAntiDiag(pos)){ for(let t=0;t<9;t++){ const j = t*9 + (8-t); if(j !== pos && grid[j] === num) return false; } }
+    }
+    if(CFG.variant === "hyper"){
+      const reg = getHyperRegionIndex(pos);
+      if(reg >= 0){
+        const starts = [[1,1],[1,5],[5,1],[5,5]];
+        const [sr, sc] = starts[reg];
+        for(let rr=sr; rr<sr+3; rr++) for(let cc=sc; cc<sc+3; cc++){
+          const j = rr*9 + cc;
+          if(j !== pos && grid[j] === num) return false;
+        }
+      }
+    }
+    if(CFG.variant === "anti-knight"){
+      const moves = [[-2,-1],[-2,1],[-1,-2],[-1,2],[1,-2],[1,2],[2,-1],[2,1]];
+      for(const [dr,dc] of moves){
+        const rr = row + dr, cc = col + dc;
+        if(rr >= 0 && rr < 9 && cc >= 0 && cc < 9){
+          const j = rr*9 + cc;
+          if(j !== pos && grid[j] === num) return false;
+        }
+      }
+    }
+    if(CFG.variant === "anti-king"){
+      const moves = [[-1,-1],[-1,1],[1,-1],[1,1]];
+      for(const [dr,dc] of moves){
+        const rr = row + dr, cc = col + dc;
+        if(rr >= 0 && rr < 9 && cc >= 0 && cc < 9){
+          const j = rr*9 + cc;
+          if(j !== pos && grid[j] === num) return false;
+        }
+      }
+    }
+    if(CFG.variant === "non-con"){
+      for(const nPos of orthogonalNeighbours(pos)){
+        const other = grid[nPos];
+        if(other && Math.abs(other - num) === 1) return false;
+      }
+    }
+    if(CFG.variant === "odds-evens"){
+      const parity = parityAt(runtime, pos);
+      if(parity === "odd" && num % 2 === 0) return false;
+      if(parity === "even" && num % 2 === 1) return false;
+    }
+    if(CFG.variant === "kropki"){
+      const r = row, c = col;
+      if(c < 8){
+        const j = pos + 1, v = grid[j], rel = dotBetween(runtime, pos, "right");
+        if(v){
+          if(rel === "black" && !(num*2 === v || v*2 === num)) return false;
+          if(rel === "white" && Math.abs(num - v) !== 1) return false;
+          if(!rel && (num*2 === v || v*2 === num || Math.abs(num - v) === 1)) return false;
+        }
+      }
+      if(c > 0){
+        const j = pos - 1, v = grid[j], rel = dotBetween(runtime, j, "right");
+        if(v){
+          if(rel === "black" && !(num*2 === v || v*2 === num)) return false;
+          if(rel === "white" && Math.abs(num - v) !== 1) return false;
+          if(!rel && (num*2 === v || v*2 === num || Math.abs(num - v) === 1)) return false;
+        }
+      }
+      if(r < 8){
+        const j = pos + 9, v = grid[j], rel = dotBetween(runtime, pos, "down");
+        if(v){
+          if(rel === "black" && !(num*2 === v || v*2 === num)) return false;
+          if(rel === "white" && Math.abs(num - v) !== 1) return false;
+          if(!rel && (num*2 === v || v*2 === num || Math.abs(num - v) === 1)) return false;
+        }
+      }
+      if(r > 0){
+        const j = pos - 9, v = grid[j], rel = dotBetween(runtime, j, "down");
+        if(v){
+          if(rel === "black" && !(num*2 === v || v*2 === num)) return false;
+          if(rel === "white" && Math.abs(num - v) !== 1) return false;
+          if(!rel && (num*2 === v || v*2 === num || Math.abs(num - v) === 1)) return false;
+        }
+      }
+    }
+    return true;
+  }
+
+  function isAllowed(grid, pos, num, runtime){
+    return basicSafe(grid, pos, num) && extraSafe(grid, pos, num, runtime);
+  }
+
+  function genSolution(rand){
+    const g = Array(81).fill(0);
+    function nextEmptyMRV(){
+      let best = -1, bestC = null;
+      for(let pos=0; pos<81; pos++){
+        if(g[pos] !== 0) continue;
+        const cands = [];
+        for(let n=1; n<=9; n++) if(isAllowed(g, pos, n, null)) cands.push(n);
+        if(cands.length === 0) return {pos, cands};
+        if(best === -1 || cands.length < bestC.length){ best = pos; bestC = cands; if(cands.length === 1) break; }
+      }
+      return {pos: best, cands: bestC};
+    }
+    function fill(){
+      const {pos, cands} = nextEmptyMRV();
+      if(pos === -1) return true;
+      if(!cands || cands.length === 0) return false;
+      shuffle(cands, rand);
+      for(const n of cands){
+        g[pos] = n;
+        if(fill()) return true;
+        g[pos] = 0;
+      }
+      return false;
+    }
+    if(!fill()) throw new Error("Solution generation failed");
+    return g;
+  }
+
+  function carve(solution, rand, clues){
+    const p = solution.slice();
+    const pos = Array.from({length:81}, (_,i) => i);
+    shuffle(pos, rand);
+    const blanks = Math.max(0, 81 - clues);
+    for(let k=0; k<blanks; k++) p[pos[k]] = 0;
+    return p;
+  }
+
+  function buildRuntimeFromSolution(solution, rand){
+    const runtime = {};
+    if(CFG.variant === "kropki"){
+      const right = [];
+      const down = [];
+      for(let r=0;r<9;r++){
+        for(let c=0;c<9;c++){
+          const i = r*9 + c;
+          if(c < 8){
+            const t = relationType(solution[i], solution[i+1]);
+            if(t) right.push({i, type:t});
+          }
+          if(r < 8){
+            const t = relationType(solution[i], solution[i+9]);
+            if(t) down.push({i, type:t});
+          }
+        }
+      }
+      shuffle(right, rand);
+      shuffle(down, rand);
+      runtime.kropki = {
+        right: right.slice(0, Math.min(10, right.length)),
+        down: down.slice(0, Math.min(10, down.length))
+      };
+    }
+    if(CFG.variant === "odds-evens"){
+      const idxs = Array.from({length:81}, (_,i) => i);
+      shuffle(idxs, rand);
+      const picks = idxs.slice(0, 26).sort((a,b) => a - b);
+      runtime.parity = picks.map(i => ({i, kind: (solution[i] % 2 === 0) ? "even" : "odd"}));
+    }
+    return runtime;
+  }
+
+  function generateWeek(){
+    const arr = [];
+    for(let d=0; d<DAYS_PER_WEEK; d++){
+      const seed = strSeed(`${GLOBAL_SEED}::${weekKey}::${d}`);
+      const rand = makeRng(seed >>> 0);
+      const solution = genSolution(rand);
+      const runtime = buildRuntimeFromSolution(solution, rand);
+      const puzzle = carve(solution, rand, CLUES);
+      arr.push({
+        puzzle,
+        solution,
+        runtime,
+        user: Array(81).fill(""),
+        completed: false,
+        hintsUsed: 0,
+        mistakes: 0,
+        startedAtMs: null,
+        finishedElapsedMs: null
+      });
+    }
+    return arr;
+  }
+
+  function readVal(p, i){
+    const v = p.puzzle[i] || p.user[i] || 0;
+    const n = parseInt(v, 10);
+    return Number.isFinite(n) ? n : 0;
+  }
+
+  function cellHasConflict(p, idx){
+    const v = readVal(p, idx);
+    if(!v) return false;
+    const row = rowOf(idx), col = colOf(idx);
+    for(let c=0;c<9;c++){ const j=row*9+c; if(j!==idx && readVal(p,j)===v) return true; }
+    for(let r=0;r<9;r++){ const j=r*9+col; if(j!==idx && readVal(p,j)===v) return true; }
+    const br=((row/3)|0)*3, bc=((col/3)|0)*3;
+    for(let rr=br; rr<br+3; rr++) for(let cc=bc; cc<bc+3; cc++){ const j=rr*9+cc; if(j!==idx && readVal(p,j)===v) return true; }
+
+    if(CFG.variant === "x"){
+      if(onMainDiag(idx)){ for(let t=0;t<9;t++){ const j=t*9+t; if(j!==idx && readVal(p,j)===v) return true; } }
+      if(onAntiDiag(idx)){ for(let t=0;t<9;t++){ const j=t*9+(8-t); if(j!==idx && readVal(p,j)===v) return true; } }
+    }
+    if(CFG.variant === "hyper"){
+      const reg = getHyperRegionIndex(idx);
+      if(reg >= 0){
+        const starts = [[1,1],[1,5],[5,1],[5,5]];
+        const [sr, sc] = starts[reg];
+        for(let rr=sr; rr<sr+3; rr++) for(let cc=sc; cc<sc+3; cc++){
+          const j = rr*9 + cc;
+          if(j!==idx && readVal(p,j)===v) return true;
+        }
+      }
+    }
+    if(CFG.variant === "anti-knight"){
+      const moves = [[-2,-1],[-2,1],[-1,-2],[-1,2],[1,-2],[1,2],[2,-1],[2,1]];
+      for(const [dr,dc] of moves){
+        const rr=row+dr, cc=col+dc;
+        if(rr>=0 && rr<9 && cc>=0 && cc<9){ const j=rr*9+cc; if(j!==idx && readVal(p,j)===v) return true; }
+      }
+    }
+    if(CFG.variant === "anti-king"){
+      const moves = [[-1,-1],[-1,1],[1,-1],[1,1]];
+      for(const [dr,dc] of moves){
+        const rr=row+dr, cc=col+dc;
+        if(rr>=0 && rr<9 && cc>=0 && cc<9){ const j=rr*9+cc; if(j!==idx && readVal(p,j)===v) return true; }
+      }
+    }
+    if(CFG.variant === "non-con"){
+      for(const nPos of orthogonalNeighbours(idx)){
+        const other = readVal(p, nPos);
+        if(other && Math.abs(other - v) === 1) return true;
+      }
+    }
+    if(CFG.variant === "odds-evens"){
+      const parity = parityAt(p.runtime, idx);
+      if(parity === "odd" && v % 2 === 0) return true;
+      if(parity === "even" && v % 2 === 1) return true;
+    }
+    if(CFG.variant === "kropki"){
+      const r=row, c=col, runtime = p.runtime;
+      if(c < 8){
+        const j=idx+1, v2=readVal(p,j), rel=dotBetween(runtime, idx, "right");
+        if(v2){
+          if(rel === "black" && !(v*2===v2 || v2*2===v)) return true;
+          if(rel === "white" && Math.abs(v-v2)!==1) return true;
+          if(!rel && (v*2===v2 || v2*2===v || Math.abs(v-v2)===1)) return true;
+        }
+      }
+      if(c > 0){
+        const j=idx-1, v2=readVal(p,j), rel=dotBetween(runtime, j, "right");
+        if(v2){
+          if(rel === "black" && !(v*2===v2 || v2*2===v)) return true;
+          if(rel === "white" && Math.abs(v-v2)!==1) return true;
+          if(!rel && (v*2===v2 || v2*2===v || Math.abs(v-v2)===1)) return true;
+        }
+      }
+      if(r < 8){
+        const j=idx+9, v2=readVal(p,j), rel=dotBetween(runtime, idx, "down");
+        if(v2){
+          if(rel === "black" && !(v*2===v2 || v2*2===v)) return true;
+          if(rel === "white" && Math.abs(v-v2)!==1) return true;
+          if(!rel && (v*2===v2 || v2*2===v || Math.abs(v-v2)===1)) return true;
+        }
+      }
+      if(r > 0){
+        const j=idx-9, v2=readVal(p,j), rel=dotBetween(runtime, j, "down");
+        if(v2){
+          if(rel === "black" && !(v*2===v2 || v2*2===v)) return true;
+          if(rel === "white" && Math.abs(v-v2)!==1) return true;
+          if(!rel && (v*2===v2 || v2*2===v || Math.abs(v-v2)===1)) return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  function setHeader(){
+    elWeekLabel.textContent = `Week of ${weekKey} • 7 puzzles`;
+    elDayLabel.textContent = `Today: ${weekdayName(dayOfWeek)} (Day ${dayOfWeek + 1})`;
+    elDayNum.textContent = String(currentDay + 1);
+    elModeLabel.textContent = `Variant: ${CFG.variantLabel || CFG.variant}`;
+    const solved = puzzles.filter(p => p.completed).length;
+    elDoneCounter.textContent = `Solved this week: ${solved} / 7`;
+    const all = solved === 7;
+    elAllDone.classList.toggle("hidden", !all);
+    elMainLayout.classList.toggle("hidden", all);
+  }
+
+  function activeOrSelectedDigit(){
+    if(activeDigit) return activeDigit;
+    if(selected == null) return null;
+    const v = readVal(puzzles[currentDay], selected);
+    return v || null;
+  }
+
+  function clearInteraction(){
+    selected = null;
+    activeDigit = null;
+    renderBoard();
+  }
+
+  function drawBoardOverlay(p){
+    const oldSvg = elBoard.querySelector(".boardSvg");
+    if(oldSvg) oldSvg.remove();
+    const oldDiag = elBoard.querySelector(".diagOverlay");
+    if(oldDiag) oldDiag.remove();
+
+    const NSVG = "http://www.w3.org/2000/svg";
+    if(CFG.variant === "x"){
+      const diag = document.createElement("div");
+      diag.className = "diagOverlay";
+      elBoard.appendChild(diag);
+    }
+
+    if(CFG.variant === "kropki"){
+      const svg = document.createElementNS(NSVG, "svg");
+      svg.setAttribute("class", "boardSvg");
+      svg.setAttribute("viewBox", "0 0 900 900");
+      svg.setAttribute("aria-hidden", "true");
+      function circle(cx,cy,r,fill,stroke,strokeWidth){
+        const el = document.createElementNS(NSVG, "circle");
+        el.setAttribute("cx", cx); el.setAttribute("cy", cy); el.setAttribute("r", r);
+        el.setAttribute("fill", fill); el.setAttribute("stroke", stroke); el.setAttribute("stroke-width", strokeWidth);
+        svg.appendChild(el);
+      }
+      if(p.runtime && p.runtime.kropki){
+        p.runtime.kropki.right.forEach(d => {
+          const r = rowOf(d.i), c = colOf(d.i);
+          const cx = (c + 1) * 100, cy = r * 100 + 50;
+          if(d.type === "black") circle(cx,cy,15,"#111827","#FFFFFF",4);
+          else circle(cx,cy,15,"#FFFFFF","#111827",4);
+        });
+        p.runtime.kropki.down.forEach(d => {
+          const r = rowOf(d.i), c = colOf(d.i);
+          const cx = c * 100 + 50, cy = (r + 1) * 100;
+          if(d.type === "black") circle(cx,cy,15,"#111827","#FFFFFF",4);
+          else circle(cx,cy,15,"#FFFFFF","#111827",4);
+        });
+      }
+      elBoard.appendChild(svg);
+    }
+  }
+
+  function renderBoard(){
+    const p = puzzles[currentDay];
+    if(selected !== null && (selected < 0 || selected > 80)) selected = null;
+    elBoard.innerHTML = "";
+    drawBoardOverlay(p);
+
+    const playable = isPlayableDay(currentDay);
+    const expired = isPastDay(currentDay);
+    const future = isFutureDay(currentDay);
+    elAvailability.textContent = playable ? "Playable" : (expired ? "Expired (solution shown)" : "Locked (not yet)");
+
+    for(let r=0;r<9;r++){
+      for(let c=0;c<9;c++){
+        const idx = r*9 + c;
+        const given = p.puzzle[idx] !== 0;
+        const cell = document.createElement("div");
+        cell.className = "cell";
+        cell.dataset.idx = String(idx);
+        if(((r+c)%2)===1) cell.classList.add("alt");
+        if(c === 2 || c === 5) cell.classList.add("thickR");
+        if(r === 2 || r === 5) cell.classList.add("thickB");
+        if(given) cell.classList.add("given");
+        if(future) cell.classList.add("future");
+
+        if(CFG.variant === "hyper"){
+          const reg = getHyperRegionIndex(idx);
+          if(reg >= 0){
+            cell.classList.add("hyper");
+            const starts = [[1,1],[1,5],[5,1],[5,5]];
+            const [sr, sc] = starts[reg];
+            if(r === sr) cell.classList.add("hyperTop");
+            if(r === sr + 2) cell.classList.add("hyperBottom");
+            if(c === sc) cell.classList.add("hyperLeft");
+            if(c === sc + 2) cell.classList.add("hyperRight");
+          }
+        }
+        if(CFG.variant === "odds-evens"){
+          const parity = parityAt(p.runtime, idx);
+          if(parity) cell.classList.add(parity === "odd" ? "parity-odd" : "parity-even");
+        }
+
+        const btn = document.createElement("button");
+        btn.type = "button";
+        if(given){
+          btn.textContent = String(p.puzzle[idx]);
+          btn.disabled = true;
+        } else if(expired){
+          btn.textContent = String(p.solution[idx]);
+          btn.disabled = true;
+          cell.classList.add("revealed");
+        } else if(future){
+          btn.textContent = "";
+          btn.disabled = true;
+        } else {
+          btn.textContent = p.user[idx] ? String(p.user[idx]) : "";
+          btn.disabled = false;
+        }
+
+        btn.addEventListener("click", (ev) => {
+          ev.stopPropagation();
+          onCellTap(idx);
+        });
+
+        cell.appendChild(btn);
+        elBoard.appendChild(cell);
+      }
+    }
+
+    refreshMarkers();
+    refreshStats();
+  }
+
+  function refreshMarkers(){
+    const p = puzzles[currentDay];
+    const cells = getEditableCellNodes();
+    const matchDigit = activeOrSelectedDigit();
+
+    cells.forEach((cell, i) => {
+      cell.classList.remove("selected", "peer", "match", "conflict", "hinted");
+      if(selected === i) cell.classList.add("selected");
+
+      if(selected !== null && i !== selected){
+        const sameRow = rowOf(i) === rowOf(selected);
+        const sameCol = colOf(i) === colOf(selected);
+        const sameBox = boxIndex(i) === boxIndex(selected);
+        let sameExtra = false;
+        if(CFG.variant === "x"){
+          sameExtra = (onMainDiag(i) && onMainDiag(selected)) || (onAntiDiag(i) && onAntiDiag(selected));
+        } else if(CFG.variant === "hyper"){
+          const a = getHyperRegionIndex(i), b = getHyperRegionIndex(selected);
+          sameExtra = a >= 0 && a === b;
+        }
+        if(sameRow || sameCol || sameBox || sameExtra) cell.classList.add("peer");
+      }
+
+      const v = readVal(p, i);
+      if(matchDigit && v === Number(matchDigit)) cell.classList.add("match");
+
+      if(isPlayableDay(currentDay)){
+        if(p.puzzle[i] === 0 && v !== 0 && cellHasConflict(p, i)) cell.classList.add("conflict");
+      }
+    });
+
+    document.querySelectorAll("#keypad .key").forEach(btn => {
+      const k = String(btn.dataset.k || "");
+      if(/^[1-9]$/.test(k)) btn.classList.toggle("active", String(activeDigit || "") === k);
+      else btn.classList.remove("active");
+    });
+  }
+
+  function refreshStats(){
+    const p = puzzles[currentDay];
+    elHintsUsed.textContent = `${p.hintsUsed}/${MAX_HINTS}`;
+    elMistakes.textContent = String(p.mistakes);
+    elRunTime.textContent = formatMMSS(currentElapsedMs(p));
+  }
+
+  function renderAll(){
+    setHeader();
+    renderBoard();
+  }
+
+  function writeAt(idx, value){
+    if(!isPlayableDay(currentDay)){ setStatus("Only today’s puzzle is playable."); return; }
+    const p = puzzles[currentDay];
+    if(p.puzzle[idx] !== 0){ setStatus("That’s a given."); return; }
+
+    ensureRunStarted();
+    p.user[idx] = value === "del" ? "" : String(value);
+    autoSave("saved");
+    checkCompletion();
+    renderBoard();
+  }
+
+  function onCellTap(idx){
+    const p = puzzles[currentDay];
+    if(!isPlayableDay(currentDay)){ setStatus("Only today’s puzzle is playable."); return; }
+    if(p.puzzle[idx] !== 0){ setStatus("That’s a given."); return; }
+
+    if(activeDigit){
+      writeAt(idx, activeDigit);
+      selected = idx;
+      return;
+    }
+
+    if(selected === idx){
+      selected = null;
+      renderBoard();
+      return;
+    }
+
+    selected = idx;
+    renderBoard();
+  }
+
+  function onKeyTap(key){
+    if(key === "del"){
+      if(selected !== null && isPlayableDay(currentDay)){
+        writeAt(selected, "del");
+      } else {
+        activeDigit = null;
+        renderBoard();
+      }
+      return;
+    }
+
+    if(!/^[1-9]$/.test(String(key || ""))) return;
+
+    if(activeDigit === String(key)){
+      activeDigit = null;
+      renderBoard();
+      return;
+    }
+
+    activeDigit = String(key);
+
+    if(selected !== null && isPlayableDay(currentDay)){
+      writeAt(selected, key);
+      return;
+    }
+    renderBoard();
+  }
+
+  function doHint(){
+    if(!isPlayableDay(currentDay)){ setStatus("Hints only apply to today’s puzzle."); return; }
+    const p = puzzles[currentDay];
+    if(p.hintsUsed >= MAX_HINTS){ setStatus("No hints left today."); return; }
+    ensureRunStarted();
+
+    const eligible = (i) => p.puzzle[i] === 0 && readVal(p, i) !== p.solution[i];
+    let target = null;
+    if(selected !== null && eligible(selected)) target = selected;
+    else for(let i=0;i<81;i++){ if(eligible(i)){ target = i; break; } }
+
+    if(target === null){ setStatus("Nothing to hint."); return; }
+
+    p.user[target] = String(p.solution[target]);
+    p.hintsUsed++;
+    selected = target;
+    activeDigit = p.user[target];
+    setStatus(`Hint used (${p.hintsUsed}/${MAX_HINTS}).`);
+    autoSave("saved");
+    checkCompletion();
+    renderBoard();
+  }
+
+  function doCheck(){
+    if(!isPlayableDay(currentDay)){ setStatus("Only today’s puzzle can be checked."); return; }
+    const p = puzzles[currentDay];
+    let wrong = 0;
+    for(let i=0;i<81;i++){
+      if(p.puzzle[i] !== 0) continue;
+      if(readVal(p, i) !== p.solution[i]) wrong++;
+    }
+    if(wrong === 0){
+      p.completed = true;
+      if(!Number.isFinite(p.finishedElapsedMs)) p.finishedElapsedMs = currentElapsedMs(p);
+      setStatus("Solved ✅");
+    } else {
+      p.mistakes += wrong;
+      setStatus(`${wrong} editable square(s) are wrong or empty.`);
+    }
+    autoSave("saved");
+    renderAll();
+  }
+
+  function doReset(){
+    if(!isPlayableDay(currentDay)){ setStatus("Only today’s puzzle can be reset."); return; }
+    const p = puzzles[currentDay];
+    p.user = Array(81).fill("");
+    p.hintsUsed = 0;
+    p.mistakes = 0;
+    p.completed = false;
+    p.startedAtMs = null;
+    p.finishedElapsedMs = null;
+    selected = null;
+    activeDigit = null;
+    setStatus("Puzzle reset.");
+    autoSave("saved");
+    renderAll();
+  }
+
+  function prevDay(){
+    currentDay = Math.max(0, currentDay - 1);
+    selected = null;
+    activeDigit = null;
+    renderAll();
+    setStatus(currentDay < dayOfWeek ? "Expired day: solution shown." : (currentDay > dayOfWeek ? "Future day: locked." : "Today: playable."));
+  }
+  function nextDay(){
+    currentDay = Math.min(6, currentDay + 1);
+    selected = null;
+    activeDigit = null;
+    renderAll();
+    setStatus(currentDay < dayOfWeek ? "Expired day: solution shown." : (currentDay > dayOfWeek ? "Future day: locked." : "Today: playable."));
+  }
+
+  function checkCompletion(){
+    const p = puzzles[currentDay];
+    let done = true;
+    for(let i=0;i<81;i++){
+      const v = p.puzzle[i] || parseInt(p.user[i] || "0", 10) || 0;
+      if(v !== p.solution[i]) { done = false; break; }
+    }
+    p.completed = done;
+    if(done && !Number.isFinite(p.finishedElapsedMs)) p.finishedElapsedMs = currentElapsedMs(p);
+  }
+
+  function buildShareText(){
+    const p = puzzles[currentDay];
+    const dateStr = (new Date()).toISOString().slice(0,10);
+    const solvedMark = p.completed ? "✅" : "🧩";
+    const baseUrl = (location && location.href) ? location.href.split("#")[0] : "";
+    const pid = `${weekKey}|${currentDay}|${CFG.variant || "sudoku"}`;
+    const url = `${baseUrl}#pid=${encodeURIComponent(pid)}`;
+    return [
+      `${CFG.shareTitle || CFG.pageTitle} ${solvedMark}`,
+      `${dateStr} • Day ${currentDay + 1}/7 • ${CFG.variantLabel || CFG.variant}`,
+      `Time: ${formatMMSS(currentElapsedMs(p))} • Hints: ${p.hintsUsed || 0} • Mistakes: ${p.mistakes || 0}`,
+      url
+    ].join("\n");
+  }
+
+
+  function currentShareUrl(){
+    return (location && location.href) ? location.href.split("#")[0] : "";
+  }
+
+  function buildSharePayload(){
+    return {
+      title: CFG.shareTitle || CFG.pageTitle || document.title || "Sudoku",
+      text: buildShareText(),
+      url: currentShareUrl()
+    };
+  }
+
+  async function copyText(text){
+    if(navigator.clipboard && window.isSecureContext && navigator.clipboard.writeText){
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.top = "-1000px";
+    ta.style.left = "-1000px";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    ta.setSelectionRange(0, ta.value.length);
+    let copied = false;
+    try{ copied = document.execCommand("copy"); }catch{}
+    document.body.removeChild(ta);
+    if(copied) return true;
+    window.prompt("Copy this text:", text);
+    return false;
+  }
+
+  function updateShareMenu(){
+    const payload = buildSharePayload();
+    const nativeBtn = document.getElementById("shareNativeBtn");
+    nativeBtn.classList.toggle("hidden", !(navigator && navigator.share));
+    document.getElementById("shareEmailLink").href = `mailto:?subject=${encodeURIComponent(payload.title)}&body=${encodeURIComponent(payload.text)}`;
+    document.getElementById("shareWhatsappLink").href = `https://wa.me/?text=${encodeURIComponent(payload.text)}`;
+    document.getElementById("shareTwitterLink").href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(payload.text)}`;
+    document.getElementById("shareFacebookLink").href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(payload.url || "")}`;
+    document.getElementById("shareMeta").textContent = payload.url || "Share text is ready to copy.";
+  }
+
+  function openShareMenu(){
+    updateShareMenu();
+    const sheet = document.getElementById("shareSheet");
+    sheet.classList.remove("hidden");
+    sheet.setAttribute("aria-hidden", "false");
+  }
+
+  function closeShareMenu(){
+    const sheet = document.getElementById("shareSheet");
+    sheet.classList.add("hidden");
+    sheet.setAttribute("aria-hidden", "true");
+  }
+
+  async function doNativeShare(){
+    if(!(navigator && navigator.share)){
+      setStatus("Native share is not available here.");
+      return;
+    }
+    const payload = buildSharePayload();
+    try{
+      await navigator.share({ title: payload.title, text: payload.text, url: payload.url });
+      setStatus("Share sheet opened.");
+      closeShareMenu();
+    }catch(e){
+      if(e && e.name === "AbortError"){
+        setStatus("Share cancelled.");
+        return;
+      }
+      console.error(e);
+      setStatus("Native share failed.");
+    }
+  }
+
+  async function doShareCopyText(){
+    const payload = buildSharePayload();
+    const copied = await copyText(payload.text);
+    setStatus(copied ? "Share text copied." : "Copy dialog opened.");
+    closeShareMenu();
+  }
+
+  async function doShareCopyLink(){
+    const payload = buildSharePayload();
+    const copied = await copyText(payload.url || payload.text);
+    setStatus(copied ? "Link copied." : "Copy dialog opened.");
+    closeShareMenu();
+  }
+
+  async function doShare(){
+    openShareMenu();
+  }
+
+
+  function doDownload(){
+    try{
+      const blob = new Blob(["<!DOCTYPE html>\n" + document.documentElement.outerHTML], {type:"text/html"});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = CFG.filename || `${CFG.variant || "sudoku"}.html`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 2000);
+      setStatus("HTML downloaded.");
+    }catch(e){
+      console.error(e);
+      setStatus("Download failed.");
+    }
+  }
+
+  function updateCountdown(){
+    if(offlineMode){
+      elCountdown.textContent = "Offline puzzle";
+      return;
+    }
+    const now = new Date();
+    const wkNow = getWeekKey(now);
+    if(wkNow !== weekKey){ location.reload(); return; }
+    elCountdown.textContent = `Next puzzle in ${formatHMS(endOfDay(now) - now)}`;
+    if(isPlayableDay(currentDay)) refreshStats();
+
+    const dayNow = getDayIndex(now);
+    if(dayNow !== dayOfWeek){
+      dayOfWeek = dayNow;
+      currentDay = dayOfWeek;
+      selected = null;
+      activeDigit = null;
+      renderAll();
+      setStatus("New day unlocked.");
+      autoSave("saved");
+    }
+  }
+
+  function autoSave(label){
+    try{
+      localStorage.setItem(STATE_KEY(weekKey), JSON.stringify({ weekKey, puzzles }));
+      elSavedLabel.textContent = label || "saved";
+    }catch{
+      elSavedLabel.textContent = "save failed";
+    }
+  }
+  function loadStateForWeek(){
+    try{
+      const raw = localStorage.getItem(STATE_KEY(weekKey));
+      if(!raw) return null;
+      const data = JSON.parse(raw);
+      if(!data || data.weekKey !== weekKey || !Array.isArray(data.puzzles)) return null;
+      return data.puzzles;
+    }catch{ return null; }
+  }
+
+  function bindEvents(){
+    document.getElementById("prevBtn").addEventListener("click", prevDay);
+    document.getElementById("nextBtn").addEventListener("click", nextDay);
+    document.getElementById("resetBtn").addEventListener("click", doReset);
+    document.getElementById("hintBtn").addEventListener("click", doHint);
+    document.getElementById("checkBtn").addEventListener("click", doCheck);
+    document.getElementById("shareBtn").addEventListener("click", doShare);
+    document.getElementById("shareNativeBtn").addEventListener("click", doNativeShare);
+    document.getElementById("shareCopyTextBtn").addEventListener("click", doShareCopyText);
+    document.getElementById("shareCopyLinkBtn").addEventListener("click", doShareCopyLink);
+    document.getElementById("shareCloseBtn").addEventListener("click", closeShareMenu);
+    document.getElementById("shareSheet").addEventListener("click", (e) => { if(e.target && e.target.id === "shareSheet") closeShareMenu(); });
+    document.addEventListener("keydown", (e) => { if(e.key === "Escape") closeShareMenu(); });
+    document.getElementById("downloadBtn").addEventListener("click", doDownload);
+
+    document.getElementById("keypad").addEventListener("click", (e) => {
+      const btn = e.target.closest(".key");
+      if(!btn) return;
+      e.stopPropagation();
+      onKeyTap(btn.dataset.k);
+    });
+
+    document.addEventListener("pointerdown", (e) => {
+      const inBoard = !!e.target.closest("#board");
+      const inKeypad = !!e.target.closest("#keypad");
+      const inControls = !!e.target.closest(".controls");
+      if(!inBoard && !inKeypad && !inControls){
+        if(selected !== null || activeDigit !== null){
+          selected = null;
+          activeDigit = null;
+          renderBoard();
+        }
+      }
+    });
+  }
+
+  function init(){
+    bindEvents();
+
+    weekKey = getWeekKey(new Date());
+    dayOfWeek = getDayIndex(new Date());
+    currentDay = dayOfWeek;
+
+    const saved = loadStateForWeek();
+    puzzles = saved || generateWeek();
+
+    renderAll();
+    updateCountdown();
+    if(tickId) clearInterval(tickId);
+    tickId = setInterval(updateCountdown, 1000);
+    if(!saved) autoSave("saved");
+    setStatus("Ready.");
+  }
+
+  init();
+})();
+</script>
+
+
+</body></html>
