@@ -1,14 +1,14 @@
 {
   "date": "2026-06-03",
-  "source_url": "https://suite.sapiverpress.co.uk/play/trigoku/",
+  "source_url": "https://suite.sapiverpress.co.uk/play/little-killer-sudoku/?sapiver_export=1",
   "json_date": "2026-06-03",
-  "week": null,
-  "today": null,
-  "mode": "col",
-  "source_id": "trigoku",
-  "source_name": "Trigoku",
-  "stage_method": "standalone_netlify_download_rendered_states",
-  "note": "Selected from standalone Netlify puzzle sources with ten-day no-repeat rule. Downloaded real site data and rendered staged board PNGs. No browser gameplay screenshots.",
+  "week": "2026-06-01",
+  "today": "2026-06-03",
+  "mode": "Daily Little Killer Sudoku | Sapiver Press",
+  "source_id": "little-killer-sudoku",
+  "source_name": "Daily Little Killer Sudoku | Sapiver Press",
+  "stage_method": "suite_v9_export_rendered_states",
+  "note": "Rendered from live Suite SAPIVER_FINAL_EXPORT_V9 export. No compositor or model-generation changes.",
   "files": [
     "01_fresh_daily_grid.png",
     "02_first_moves.png",
@@ -17,207 +17,9 @@
     "05_nearly_complete.png",
     "06_complete_solution.png"
   ],
+  "source_export_url": "https://suite.sapiverpress.co.uk/play/little-killer-sudoku/?sapiver_export=1",
   "selected_source": {
-    "id": "trigoku",
-    "name": "Trigoku",
-    "netlify_project": "sapiverpress-trigoku",
-    "url": "https://sapiverpress-trigoku.netlify.app/",
-    "suite_url": "https://suite.sapiverpress.co.uk/play/trigoku/",
-    "type": "trigoku"
-  },
-  "source_attempts": [
-    {
-      "id": "hyper",
-      "project": "sapiver-press-hyper",
-      "downloaded": true,
-      "extracted": false,
-      "url": "https://sapiver-press-hyper.netlify.app/",
-      "recent_no_repeat_blocked": false,
-      "no_repeat_window_days": 10
-    },
-    {
-      "id": "anti-king",
-      "project": "sapiver-press-anti-king",
-      "downloaded": true,
-      "extracted": false,
-      "url": "https://sapiver-press-anti-king.netlify.app/",
-      "recent_no_repeat_blocked": false,
-      "no_repeat_window_days": 10
-    },
-    {
-      "id": "xv",
-      "project": "sapiver-press-xv",
-      "downloaded": true,
-      "extracted": false,
-      "url": "https://sapiver-press-xv.netlify.app/",
-      "recent_no_repeat_blocked": false,
-      "no_repeat_window_days": 10
-    },
-    {
-      "id": "thermo",
-      "project": "sapiver-press-thermo",
-      "downloaded": true,
-      "extracted": false,
-      "url": "https://sapiver-press-thermo.netlify.app/",
-      "recent_no_repeat_blocked": false,
-      "no_repeat_window_days": 10
-    },
-    {
-      "id": "sandwich",
-      "project": "sapiver-press-sandwich",
-      "downloaded": true,
-      "extracted": false,
-      "url": "https://sapiver-press-sandwich.netlify.app/",
-      "recent_no_repeat_blocked": false,
-      "no_repeat_window_days": 10
-    },
-    {
-      "id": "renban",
-      "project": "sapiver-press-renban",
-      "downloaded": true,
-      "extracted": false,
-      "url": "https://sapiver-press-renban.netlify.app/",
-      "recent_no_repeat_blocked": false,
-      "no_repeat_window_days": 10
-    },
-    {
-      "id": "little-killer",
-      "project": "sapiver-press-little-killer",
-      "downloaded": true,
-      "extracted": false,
-      "url": "https://sapiver-press-little-killer.netlify.app/",
-      "recent_no_repeat_blocked": false,
-      "no_repeat_window_days": 10
-    },
-    {
-      "id": "killer",
-      "project": "sapiver-press-killer",
-      "downloaded": true,
-      "extracted": false,
-      "url": "https://sapiver-press-killer.netlify.app/",
-      "recent_no_repeat_blocked": false,
-      "no_repeat_window_days": 10
-    },
-    {
-      "id": "german-whisper",
-      "project": "sapiver-press-german-whisper",
-      "downloaded": true,
-      "extracted": false,
-      "url": "https://sapiver-press-german-whisper.netlify.app/",
-      "recent_no_repeat_blocked": false,
-      "no_repeat_window_days": 10
-    },
-    {
-      "id": "arrow",
-      "project": "sapiver-press-arrow",
-      "downloaded": true,
-      "extracted": false,
-      "url": "https://sapiver-press-arrow.netlify.app/",
-      "recent_no_repeat_blocked": false,
-      "no_repeat_window_days": 10
-    },
-    {
-      "id": "sudoku-x",
-      "project": "sapiver-sudoku-x",
-      "downloaded": true,
-      "extracted": false,
-      "url": "https://sapiver-sudoku-x.netlify.app/",
-      "recent_no_repeat_blocked": false,
-      "no_repeat_window_days": 10
-    },
-    {
-      "id": "odds-and-evens",
-      "project": "sapiver-press-odds-and-evens",
-      "downloaded": true,
-      "extracted": false,
-      "url": "https://sapiver-press-odds-and-evens.netlify.app/",
-      "recent_no_repeat_blocked": false,
-      "no_repeat_window_days": 10
-    },
-    {
-      "id": "non-consecutive",
-      "project": "sapiver-press-non-con",
-      "downloaded": true,
-      "extracted": false,
-      "url": "https://sapiver-press-non-con.netlify.app/",
-      "recent_no_repeat_blocked": false,
-      "no_repeat_window_days": 10
-    },
-    {
-      "id": "kropki",
-      "project": "sapiver-press-kropki",
-      "downloaded": true,
-      "extracted": false,
-      "url": "https://sapiver-press-kropki.netlify.app/",
-      "recent_no_repeat_blocked": false,
-      "no_repeat_window_days": 10
-    },
-    {
-      "id": "trigoku",
-      "project": "sapiverpress-trigoku",
-      "downloaded": true,
-      "extracted": true,
-      "url": "https://suite.sapiverpress.co.uk/play/trigoku/",
-      "recent_no_repeat_blocked": true,
-      "no_repeat_window_days": 10
-    }
-  ],
-  "recent_source_history": [
-    {
-      "date": "2026-06-02",
-      "source_id": "anti-knight",
-      "source_type": "sudoku_variant",
-      "source_name": "Anti-Knight Sudoku",
-      "age_days": 1
-    },
-    {
-      "date": "2026-06-01",
-      "source_id": "anti-knight",
-      "source_type": "sudoku_variant",
-      "source_name": "Anti-Knight Sudoku",
-      "age_days": 2
-    },
-    {
-      "date": "2026-05-31",
-      "source_id": "anti-knight",
-      "source_type": "sudoku_variant",
-      "source_name": "Anti-Knight Sudoku",
-      "age_days": 3
-    },
-    {
-      "date": "2026-05-30",
-      "source_id": "trigoku",
-      "source_type": "trigoku",
-      "source_name": "Trigoku",
-      "age_days": 4
-    },
-    {
-      "date": "2026-05-29",
-      "source_id": "anti-knight",
-      "source_type": "sudoku_variant",
-      "source_name": "Anti-Knight Sudoku",
-      "age_days": 5
-    },
-    {
-      "date": "2026-05-28",
-      "source_id": "anti-knight",
-      "source_type": "sudoku_variant",
-      "source_name": "Anti-Knight Sudoku",
-      "age_days": 6
-    },
-    {
-      "date": "2026-05-27",
-      "source_id": "trigoku",
-      "source_type": "trigoku",
-      "source_name": "Trigoku",
-      "age_days": 7
-    }
-  ],
-  "no_repeat_window_days": 10,
-  "blocked_recent_source_ids": [
-    "anti-knight",
-    "trigoku"
-  ],
-  "no_repeat_fallback_used": false,
-  "source_selection_method": "date_seeded_no_repeat_10_days"
+    "id": "little-killer-sudoku",
+    "url": "https://suite.sapiverpress.co.uk/play/little-killer-sudoku/"
+  }
 }

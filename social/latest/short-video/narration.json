@@ -1,6 +1,6 @@
 {
   "date": "2026-06-03",
-  "title": "Morning Puzzle Routine",
+  "title": "A Rainy Reflection",
   "voice_name": "Isla Sterling",
   "segments": [
     {
@@ -11,22 +11,22 @@
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "A steady morning in the kitchen offers a rare moment of peace before the busy day begins."
+      "text": "Rain streaks the window nook while Isla prepares for a busy midweek of work and packing."
     },
     {
       "id": "panel_2",
       "image_name": "02_panel-02.png",
-      "text": "Waiting on the chilly platform, she keeps her mind anchored on the task ahead."
+      "text": "The interruption changes the timing, not the whole shape of her morning."
     },
     {
       "id": "panel_3",
       "image_name": "03_panel-03.png",
-      "text": "Watching the scenery blur past the train window helps clear away the early morning clutter."
+      "text": "She pauses between bookshelves, letting one useful idea settle instead of rushing into another half-finished thought."
     },
     {
       "id": "panel_4",
       "image_name": "04_panel-04.png",
-      "text": "The daily rule changes the move, so Isla checks it before trusting the answer."
+      "text": "Killer changes the move, so Isla checks the rule before trusting it."
     },
     {
       "id": "panel_5",
@@ -36,7 +36,7 @@
     {
       "id": "panel_6",
       "image_name": "06_panel-06.png",
-      "text": "With everything neatly organized, she is finally ready to step out and tackle the workday."
+      "text": "She closes the laptop with one decision carried forward."
     },
     {
       "id": "cta",
@@ -44,11 +44,11 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nA steady morning in the kitchen offers a rare moment of peace before the busy day begins.\n\nWaiting on the chilly platform, she keeps her mind anchored on the task ahead.\n\nWatching the scenery blur past the train window helps clear away the early morning clutter.\n\nThe daily rule changes the move, so Isla checks it before trusting the answer.\n\nThe checked move holds, and the rest of the day has more room.\n\nWith everything neatly organized, she is finally ready to step out and tackle the workday.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-06-03T03:36:51.559Z",
-  "caption": "Isla finds moments of clarity amidst her busy workday.",
-  "variant_name": "daily rule",
-  "variant_line": "The daily rule changes the move, so Isla checks it before trusting the answer.",
+  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nRain streaks the window nook while Isla prepares for a busy midweek of work and packing.\n\nThe interruption changes the timing, not the whole shape of her morning.\n\nShe pauses between bookshelves, letting one useful idea settle instead of rushing into another half-finished thought.\n\nKiller changes the move, so Isla checks the rule before trusting it.\n\nThe checked move holds, and the rest of the day has more room.\n\nShe closes the laptop with one decision carried forward.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-06-03T19:07:25.969Z",
+  "caption": "Isla embraces the slower pace of a rainy day, allowing her thoughts to settle amidst her busy schedule.",
+  "variant_name": "Killer",
+  "variant_line": "Killer changes the move, so Isla checks the rule before trusting it.",
   "copy_refined": "openai",
   "copy_model": "gpt-4o-mini",
   "openai_response_shape": {

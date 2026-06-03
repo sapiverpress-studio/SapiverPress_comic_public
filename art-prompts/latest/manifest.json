@@ -74,7 +74,7 @@
       "output_file": "social/2026-06-03/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "A steady morning in the kitchen offers a rare moment of peace before the busy day begins.",
+      "caption": "Rain streaks the window nook while Isla prepares for a busy midweek of work and packing.",
       "scene_id": "scene_01"
     },
     {
@@ -84,7 +84,7 @@
       "output_file": "social/2026-06-03/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "Waiting on the chilly platform, she keeps her mind anchored on the task ahead.",
+      "caption": "The interruption changes the timing, not the whole shape of her morning.",
       "scene_id": "scene_02"
     },
     {
@@ -94,7 +94,7 @@
       "output_file": "social/2026-06-03/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "Watching the scenery blur past the train window helps clear away the early morning clutter.",
+      "caption": "She pauses between bookshelves, letting one useful idea settle instead of rushing into another half-finished thought.",
       "scene_id": "scene_03"
     },
     {
@@ -104,7 +104,7 @@
       "output_file": "social/2026-06-03/04_panel-04.png",
       "image_name": "04_panel-04.png",
       "fallback_template": "templates/characters/isla/isla_04_breakthrough.png",
-      "caption": "The daily rule changes the move, so Isla checks it before trusting the answer.",
+      "caption": "Killer changes the move, so Isla checks the rule before trusting it.",
       "scene_id": "scene_04"
     },
     {
@@ -124,10 +124,10 @@
       "output_file": "social/2026-06-03/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "With everything neatly organized, she is finally ready to step out and tackle the workday.",
+      "caption": "She closes the laptop with one decision carried forward.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-06-03.json",
-  "generated_at": "2026-06-03T03:36:01.592Z"
+  "generated_at": "2026-06-03T19:06:33.042Z"
 }

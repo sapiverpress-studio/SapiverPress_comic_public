@@ -1,6 +1,6 @@
 {
   "date": "2026-06-03",
-  "generated_at": "2026-06-03T03:36:01.990Z",
+  "generated_at": "2026-06-03T19:06:33.497Z",
   "route": "fal-ai-z-image-turbo-lora-first",
   "fal_model": "fal-ai/z-image/turbo/lora",
   "hf_fallback_model": "stabilityai/stable-diffusion-xl-base-1.0",
@@ -18,7 +18,7 @@
       "provider": "fal",
       "model": "fal-ai/z-image/turbo/lora",
       "output": "art-replacements/2026-06-03/01_panel-01.png",
-      "remote_url": "https://v3b.fal.media/files/b/0a9cc350/CADb4ROZYciXKQOjorWP9_ColOyJKV.png",
+      "remote_url": "https://v3b.fal.media/files/b/0a9cd923/mjgaBGv3rGaxMls7G8SN0_hHPzv9Pj.png",
       "fal_error": ""
     },
     {
@@ -27,7 +27,7 @@
       "provider": "fal",
       "model": "fal-ai/z-image/turbo/lora",
       "output": "art-replacements/2026-06-03/02_panel-02.png",
-      "remote_url": "https://v3b.fal.media/files/b/0a9cc351/s7KgV5JUs4BYktSqI0ZIo_Xi5atb1l.png",
+      "remote_url": "https://v3b.fal.media/files/b/0a9cd923/mP34_NpTBSTQnArUdCs5f_AXqgyXbM.png",
       "fal_error": ""
     },
     {
@@ -36,7 +36,7 @@
       "provider": "fal",
       "model": "fal-ai/z-image/turbo/lora",
       "output": "art-replacements/2026-06-03/03_panel-03.png",
-      "remote_url": "https://v3b.fal.media/files/b/0a9cc351/ZcPDCSkZDFvF8jhN-iKZO_qlcCwYJ6.png",
+      "remote_url": "https://v3b.fal.media/files/b/0a9cd921/wHeO9ARCwCAs6fydZtMS3_TGAf27gJ.png",
       "fal_error": ""
     },
     {
@@ -45,7 +45,7 @@
       "provider": "fal",
       "model": "fal-ai/z-image/turbo/lora",
       "output": "art-replacements/2026-06-03/04_panel-04.png",
-      "remote_url": "https://v3b.fal.media/files/b/0a9cc352/zct9UI382LVQgs0TjWPbN_A0YYsFsB.png",
+      "remote_url": "https://v3b.fal.media/files/b/0a9cd921/lG41C2tg7SLKXkGOEh8Y8_Jivp62Wp.png",
       "fal_error": ""
     },
     {
@@ -54,7 +54,7 @@
       "provider": "fal",
       "model": "fal-ai/z-image/turbo/lora",
       "output": "art-replacements/2026-06-03/05_panel-05.png",
-      "remote_url": "https://v3b.fal.media/files/b/0a9cc352/uC9O3G7n7lmtp4-PxfLuD_sqSPm3on.png",
+      "remote_url": "https://v3b.fal.media/files/b/0a9cd921/XhjxutlatUGQ6ssbZe7IZ_M4KdAKI5.png",
       "fal_error": ""
     },
     {
@@ -63,7 +63,7 @@
       "provider": "fal",
       "model": "fal-ai/z-image/turbo/lora",
       "output": "art-replacements/2026-06-03/06_panel-06.png",
-      "remote_url": "https://v3b.fal.media/files/b/0a9cc353/aMc7vJPoDj6jyBQXinmNv_WKIzhQgn.png",
+      "remote_url": "https://v3b.fal.media/files/b/0a9cd923/kxpGNONjjcDJoq4J7kqMm_IukOgyny.png",
       "fal_error": ""
     }
   ],
@@ -72,18 +72,7 @@
   "preflight": {
     "hf_token": {
       "ok": false,
-      "status": 429,
-      "status_text": "Too Many Requests",
-      "name": "",
-      "error": "<!DOCTYPE html>\n<html class=\"\" lang=\"en\">\n<head>\n    <meta charset=\"utf-8\" />\n    <meta\n            name=\"viewport\"\n            content=\"width=device-width, initial-scale=1.0, user-scalable=no\"\n    />\n    <meta\n            name=\"description\"\n            content=\"We're on a journey to advance and democratize artificial intelligence through open source and open science.\"\n    />\n    <meta property=\"fb:app_id\" content=\"1321688464574422\" />\n    <meta name=\"twitter:card\" content=\"summary_large_image\" />\n    <meta name=\"twitter:site\" content=\"@huggingface\" />\n    <meta\n            property=\"og:title\""
-    },
-    "hf_lora_repo": {
-      "ok": false,
-      "status": 429,
-      "status_text": "Too Many Requests",
-      "id": "",
-      "private": false,
-      "error": "<!DOCTYPE html>\n<html class=\"\" lang=\"en\">\n<head>\n    <meta charset=\"utf-8\" />\n    <meta\n            name=\"viewport\"\n            content=\"width=device-width, initial-scale=1.0, user-scalable=no\"\n    />\n    <meta\n            name=\"description\"\n            content=\"We're on a journey to advance and democratize artificial intelligence through open source and open science.\"\n    />\n    <meta property=\"fb:app_id\" content=\"1321688464574422\" />\n    <meta name=\"twitter:card\" content=\"summary_large_image\" />\n    <meta name=\"twitter:site\" content=\"@huggingface\" />\n    <meta\n            property=\"og:title\""
+      "reason": "HF_TOKEN missing"
     }
   }
 }

@@ -28,12 +28,6 @@
   "location_memory": [
     {
       "date": "2026-05-30",
-      "attempt": 16,
-      "setting": "quiet public library reading table",
-      "reason": "the library gives her a borrowed pocket of quiet"
-    },
-    {
-      "date": "2026-05-30",
       "attempt": 17,
       "setting": "outdoor cafe street table",
       "reason": "she is trying not to rush straight into the next errand"
@@ -385,15 +379,15 @@
       "attempt": 1,
       "setting": "small kitchen table in warm morning light",
       "reason": "home is still half-asleep and she has a few minutes to herself"
+    },
+    {
+      "date": "2026-06-03",
+      "attempt": 2,
+      "setting": "rainy window nook with plants",
+      "reason": "rain has slowed everything down and she lets it"
     }
   ],
   "variant_memory": [
-    {
-      "date": "2026-05-30",
-      "attempt": 16,
-      "variant_name": "Trigoku",
-      "panel_index": 4
-    },
     {
       "date": "2026-05-30",
       "attempt": 17,
@@ -747,21 +741,15 @@
       "attempt": 1,
       "variant_name": "col",
       "panel_index": 2
+    },
+    {
+      "date": "2026-06-03",
+      "attempt": 2,
+      "variant_name": "Killer",
+      "panel_index": 4
     }
   ],
   "life_memory": [
-    {
-      "date": "2026-05-30",
-      "attempt": 16,
-      "location": "quiet public library reading table",
-      "reason_for_location": "the library gives her a borrowed pocket of quiet",
-      "life_detail_learned": "Isla uses libraries as reset spaces, not just work spaces.",
-      "thread_to_continue": "library visits become her backup calm place",
-      "puzzle_variant_mentioned": "Trigoku",
-      "variant_panel_index": 4,
-      "uk_calendar_date": null,
-      "uk_calendar_panel_index": null
-    },
     {
       "date": "2026-05-30",
       "attempt": 17,
@@ -1467,6 +1455,18 @@
       "thread_to_continue": "home mornings reveal her private routine",
       "puzzle_variant_mentioned": "col",
       "variant_panel_index": 2,
+      "uk_calendar_date": null,
+      "uk_calendar_panel_index": null
+    },
+    {
+      "date": "2026-06-03",
+      "attempt": 2,
+      "location": "rainy window nook with plants",
+      "reason_for_location": "rain has slowed everything down and she lets it",
+      "life_detail_learned": "Isla does not mind slower days when they give her room to notice things.",
+      "thread_to_continue": "rainy days bring out her reflective side",
+      "puzzle_variant_mentioned": "Killer",
+      "variant_panel_index": 4,
       "uk_calendar_date": null,
       "uk_calendar_panel_index": null
     }
