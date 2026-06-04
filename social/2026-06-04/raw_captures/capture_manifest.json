@@ -1,0 +1,25 @@
+{
+  "date": "2026-06-04",
+  "source_url": "https://suite.sapiverpress.co.uk/play/renban-sudoku/?sapiver_export=1",
+  "json_date": "2026-06-04",
+  "week": "2026-06-01",
+  "today": "2026-06-04",
+  "mode": "Daily Renban Sudoku | Sapiver Press",
+  "source_id": "renban-sudoku",
+  "source_name": "Daily Renban Sudoku | Sapiver Press",
+  "stage_method": "suite_v9_export_rendered_states",
+  "note": "Rendered from live Suite SAPIVER_FINAL_EXPORT_V9 export. No compositor or model-generation changes.",
+  "files": [
+    "01_fresh_daily_grid.png",
+    "02_first_moves.png",
+    "03_stuck_moment.png",
+    "04_breakthrough.png",
+    "05_nearly_complete.png",
+    "06_complete_solution.png"
+  ],
+  "source_export_url": "https://suite.sapiverpress.co.uk/play/renban-sudoku/?sapiver_export=1",
+  "selected_source": {
+    "id": "renban-sudoku",
+    "url": "https://suite.sapiverpress.co.uk/play/renban-sudoku/"
+  }
+}

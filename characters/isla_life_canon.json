@@ -28,12 +28,6 @@
   "location_memory": [
     {
       "date": "2026-05-30",
-      "attempt": 21,
-      "setting": "quiet public library reading table",
-      "reason": "the library gives her a borrowed pocket of quiet"
-    },
-    {
-      "date": "2026-05-30",
       "attempt": 22,
       "setting": "rainy window nook with plants",
       "reason": "rain has slowed everything down and she lets it"
@@ -385,15 +379,15 @@
       "attempt": 6,
       "setting": "outdoor cafe street table",
       "reason": "she is trying not to rush straight into the next errand"
+    },
+    {
+      "date": "2026-06-04",
+      "attempt": 1,
+      "setting": "co-working desk near a tall window",
+      "reason": "she has work waiting, so the puzzle has to fit into a short gap"
     }
   ],
   "variant_memory": [
-    {
-      "date": "2026-05-30",
-      "attempt": 21,
-      "variant_name": "Trigoku",
-      "panel_index": 5
-    },
     {
       "date": "2026-05-30",
       "attempt": 22,
@@ -747,21 +741,15 @@
       "attempt": 6,
       "variant_name": "Killer",
       "panel_index": 4
+    },
+    {
+      "date": "2026-06-04",
+      "attempt": 1,
+      "variant_name": "Daily Renban Sudoku | Sapiver Press",
+      "panel_index": 4
     }
   ],
   "life_memory": [
-    {
-      "date": "2026-05-30",
-      "attempt": 21,
-      "location": "quiet public library reading table",
-      "reason_for_location": "the library gives her a borrowed pocket of quiet",
-      "life_detail_learned": "Isla uses libraries as reset spaces, not just work spaces.",
-      "thread_to_continue": "library visits become her backup calm place",
-      "puzzle_variant_mentioned": "Trigoku",
-      "variant_panel_index": 5,
-      "uk_calendar_date": null,
-      "uk_calendar_panel_index": null
-    },
     {
       "date": "2026-05-30",
       "attempt": 22,
@@ -1469,8 +1457,20 @@
       "variant_panel_index": 4,
       "uk_calendar_date": null,
       "uk_calendar_panel_index": null
+    },
+    {
+      "date": "2026-06-04",
+      "attempt": 1,
+      "location": "co-working desk near a tall window",
+      "reason_for_location": "she has work waiting, so the puzzle has to fit into a short gap",
+      "life_detail_learned": "Isla often fits her puzzle ritual between work blocks.",
+      "thread_to_continue": "work days make the puzzle a boundary marker",
+      "puzzle_variant_mentioned": "Daily Renban Sudoku | Sapiver Press",
+      "variant_panel_index": 4,
+      "uk_calendar_date": null,
+      "uk_calendar_panel_index": null
     }
   ],
-  "last_updated": "2026-06-03",
+  "last_updated": "2026-06-04",
   "calendar_memory": []
 }

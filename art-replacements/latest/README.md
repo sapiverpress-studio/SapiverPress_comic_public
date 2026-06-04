@@ -1,4 +1,4 @@
-# Sapiver Press Comic Art Replacement Slots — 2026-06-03
+# Sapiver Press Comic Art Replacement Slots — 2026-06-04
 
 Drop finished generated panel artwork into this folder using these exact names:
 
@@ -11,13 +11,11 @@ Drop finished generated panel artwork into this folder using these exact names:
 
 Rules:
 
-- Use the locked Isla appearance plus the selected composition, hard environment markers, pose/body-language marker, mandatory screen block, optional story beat, and controlled readable prop text.
-- Prompt builder prepends the active LoRA trigger: Isla_v2.
-- Do not include puzzle content, captions, speech bubbles, page headers, footers, or large Sapiver Press titles.
+- Use the locked Isla appearance plus the story/narration beat, location, pose/body-language marker, and screen rule.
+- Prompt builder prepends the active LoRA trigger: Isla_v2. The trigger must not appear as visible text.
+- Do not include puzzle content, captions, speech bubbles, page headers, footers, poster quotes, book-spine titles, diary paragraphs, or readable metadata.
 - The compositor will insert the real daily puzzle screenshots and captions.
-- Background prop text is allowed only on natural objects such as posters, book spines, cushions, mugs, notebooks, pencil cases, or reception signs.
-- Every panel must contain a clear open laptop screen area for puzzle insertion.
+- Every puzzle panel must contain a clear blank screen area for puzzle insertion.
 - If a file is missing, the compositor falls back to the locked template artwork.
-- Starter and finished grid images are still generated from the real captured puzzle state.
 
 Play URL: https://suite.sapiverpress.co.uk
