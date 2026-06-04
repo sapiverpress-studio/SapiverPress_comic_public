@@ -3,7 +3,6 @@ name: Sapiver Press Daily Comic Engine V3
 on:
   schedule:
     - cron: "15 7 * * *"
-    - cron: "0 6 * * 1"
   workflow_dispatch:
     inputs:
       date_override:
@@ -12,22 +11,6 @@ on:
         default: ""
       run_archive:
         description: "Run archive migration too"
-        required: false
-        default: "false"
-      post_to_facebook:
-        description: "Try Facebook post after generation"
-        required: false
-        default: "false"
-      force_facebook_post:
-        description: "Force Facebook post even if state says already posted"
-        required: false
-        default: "false"
-      post_to_pinterest:
-        description: "Try Pinterest post after generation"
-        required: false
-        default: "false"
-      force_pinterest_post:
-        description: "Force Pinterest post even if state says already posted"
         required: false
         default: "false"
       polish_images_openai:
@@ -51,57 +34,62 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  generate-daily-story:
-    name: Generate Daily Story
+  generate-daily-preview:
+    name: Generate Daily Preview Assets
     runs-on: ubuntu-latest
-    if: github.event_name == 'workflow_dispatch' || github.event.schedule == '15 7 * * *'
     steps:
       - name: Checkout public repo
         uses: actions/checkout@v5
         with:
           persist-credentials: true
+
       - name: Sync to latest main
         run: |
           git fetch origin main
           git reset --hard origin/main
+
       - name: Setup Node.js
         uses: actions/setup-node@v5
         with:
           node-version: "22"
+
       - name: Check paid API spend guard
         id: api_guard
         env:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
           GITHUB_EVENT_NAME: ${{ github.event_name }}
-          POST_TO_FACEBOOK: ${{ github.event.inputs.post_to_facebook }}
-          POST_TO_PINTEREST: ${{ github.event.inputs.post_to_pinterest }}
+          POST_TO_FACEBOOK: "false"
+          POST_TO_PINTEREST: "false"
           FORCE_GENERATE_IMAGES: ${{ github.event.inputs.force_paid_api_run }}
           IMAGE_GENERATION_WINDOW_START: "07:00"
           IMAGE_GENERATION_WINDOW_END: "08:30"
         run: node scripts/should-generate-images.mjs
+
       - name: Stop before paid APIs
         if: steps.api_guard.outputs.generate_images != 'true'
         run: |
           echo "Paid API guard blocked this run."
           echo "Reason: ${{ steps.api_guard.outputs.image_generation_reason }}"
-          echo "No OpenAI, Anthropic, Gemini, fal.ai, or ElevenLabs calls will run."
+          echo "No OpenAI, Anthropic, Gemini, fal.ai, ElevenLabs, Facebook, or Pinterest calls will run."
+
       - name: Install dependencies
         if: steps.api_guard.outputs.generate_images == 'true'
         run: npm install
-      - name: Install ffmpeg
-        if: steps.api_guard.outputs.generate_images == 'true'
-        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
       - name: Install Chromium for compositor
         if: steps.api_guard.outputs.generate_images == 'true'
         run: npx playwright install --with-deps chromium
+
       - name: Validate project
         if: steps.api_guard.outputs.generate_images == 'true'
         run: npm run validate
+
       - name: Capture today's puzzle before story generation
         if: steps.api_guard.outputs.generate_images == 'true'
         env:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
         run: npm run capture:today
+
       - name: Run daily generator
         if: steps.api_guard.outputs.generate_images == 'true'
         env:
@@ -114,6 +102,7 @@ jobs:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
           SUPPORTING_LIFE_TRIGGER: ${{ github.event.inputs.supporting_life_trigger }}
         run: npm run daily
+
       - name: Humanise storyboard with Gemini
         if: steps.api_guard.outputs.generate_images == 'true'
         continue-on-error: true
@@ -122,11 +111,13 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ secrets.GEMINI_MODEL }}
         run: node scripts/humanise-storyboard-gemini.mjs
+
       - name: Lint final storyboard copy
         if: steps.api_guard.outputs.generate_images == 'true'
         env:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
         run: node scripts/lint-final-storyboard-copy.mjs
+
       - name: Generate routed art prompt pack
         if: steps.api_guard.outputs.generate_images == 'true'
         env:
@@ -146,6 +137,7 @@ jobs:
         run: |
           npm run art-prompts
           node scripts/resolve-image-model-profile.mjs
+
       - name: Generate Isla panel images
         if: steps.api_guard.outputs.generate_images == 'true'
         continue-on-error: true
@@ -165,6 +157,7 @@ jobs:
           FAL_IMAGE_HEIGHT: "1024"
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
         run: npm run generate-images
+
       - name: Polish generated images with OpenAI
         if: steps.api_guard.outputs.generate_images == 'true'
         continue-on-error: true
@@ -174,75 +167,33 @@ jobs:
           OPENAI_IMAGE_MODEL: "gpt-image-1"
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
         run: npm run polish-images
-      - name: Compose full strip and close-ups
+
+      - name: Compose preview PNG set
         if: steps.api_guard.outputs.generate_images == 'true'
         env:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
           SUITE_URL: "https://suite.sapiverpress.co.uk"
           COMIC_SCREEN_BOX: ${{ secrets.COMIC_SCREEN_BOX }}
         run: npm run compose
-      - name: Generate short video script
-        if: steps.api_guard.outputs.generate_images == 'true'
-        continue-on-error: true
-        env:
-          DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
-          SUITE_URL: "https://suite.sapiverpress.co.uk"
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
-          ELEVENLABS_VOICE_NAME: "Isla Sterling"
-          ELEVENLABS_VOICE_ID: "qSR2T7SqN7Pcd0YpO3Vd"
-        run: npm run short-video-script
-      - name: Generate short video voiceover
-        if: steps.api_guard.outputs.generate_images == 'true'
-        continue-on-error: true
-        env:
-          DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
-          ISLA_ELEVEN: ${{ secrets.ISLA_ELEVEN }}
-          ELEVENLABS_VOICE_NAME: "Isla Sterling"
-          ELEVENLABS_VOICE_ID: "qSR2T7SqN7Pcd0YpO3Vd"
-          ELEVENLABS_MODEL_ID: "eleven_multilingual_v2"
-        run: npm run short-video-voice
-      - name: Build short video MP4
-        if: steps.api_guard.outputs.generate_images == 'true'
-        continue-on-error: true
-        env:
-          DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
-          SUITE_URL: "https://suite.sapiverpress.co.uk"
-          ETSY_URL: "https://sapiverpress.etsy.com?coupon=SAVE20"
-        run: npm run short-video-build
-      - name: Upload daily video and TikTok copy
+
+      - name: Upload preview assets
         if: steps.api_guard.outputs.generate_images == 'true'
         uses: actions/upload-artifact@v4
         with:
-          name: sapiver-isla-daily-video-${{ github.run_number }}
+          name: sapiver-isla-preview-${{ github.run_number }}
           path: |
-            social/*/short-video/*.mp4
-            social/*/short-video/tiktok-post.txt
-            social/*/short-video/tiktok-post.json
-            social/*/short-video/script.txt
-            social/*/short-video/caption.txt
-            social/*/short-video/narration.json
-            social/*/short-video/manifest.json
+            daily/*.json
+            latest.json
+            image-manifests/*.json
+            social/*/*.png
+            social/*/manifest.json
+            art-prompts/**/*
+            captures/**/*
           if-no-files-found: warn
           retention-days: 30
           compression-level: 0
-      - name: Post comic to Facebook
-        if: steps.api_guard.outputs.generate_images == 'true' && (github.event_name == 'schedule' || github.event.inputs.post_to_facebook == 'true')
-        continue-on-error: true
-        env:
-          DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
-          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID || secrets.FACEBOOK_PAGE_ID || secrets.META_PAGE_ID || secrets.PAGE_ID || secrets.FACEBOOK_ID || secrets.FB_ID }}
-          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN || secrets.FACEBOOK_PAGE_TOKEN || secrets.FB_PAGE_ACCESS_TOKEN || secrets.FACEBOOK_PAGE_ACCESS_TOKEN || secrets.PAGE_ACCESS_TOKEN || secrets.META_PAGE_TOKEN || secrets.META_PAGE_ACCESS_TOKEN }}
-          META_USER_TOKEN: ${{ secrets.META_USER_TOKEN || secrets.META_ACCESS_TOKEN || secrets.FACEBOOK_USER_TOKEN || secrets.FB_USER_TOKEN || secrets.USER_ACCESS_TOKEN }}
-          FB_GENERIC_ACCESS_TOKEN: ${{ secrets.FB_ACCESS_TOKEN || secrets.FACEBOOK_ACCESS_TOKEN || secrets.ACCESS_TOKEN }}
-          FB_GRAPH_VERSION: "v24.0"
-          FB_POST_STRICT: "1"
-          COMIC_POST_IMAGE_PATH: "social/{date}.png"
-          FORCE_FB_POST: ${{ github.event.inputs.force_facebook_post }}
-          SUITE_URL: "https://suite.sapiverpress.co.uk"
-          ETSY_CATALOG_URL: "https://sapiver-press-etsy-search-catalog.netlify.app/"
-        run: node scripts/facebook-post-guarded.mjs
-      - name: Commit generated story, prompts, social outputs and Facebook state
+
+      - name: Commit generated preview outputs
         if: steps.api_guard.outputs.generate_images == 'true'
         run: |
           set -e
@@ -263,13 +214,10 @@ jobs:
           fi
 
           git add characters/isla.json characters/isla_life_canon.json daily image-manifests latest.json social art-prompts art-replacements captures || true
-          if [ -f facebook-posts.json ]; then
-            git add facebook-posts.json
-          fi
           if git diff --cached --quiet; then
-            echo "No generated story, prompt, social or Facebook state changes"
+            echo "No generated preview changes"
           else
-            git commit -m "Update daily comic story, prompts, social and video outputs"
+            git commit -m "Update daily comic preview assets"
             for attempt in 1 2 3; do
               if git push; then
                 break
@@ -279,27 +227,7 @@ jobs:
               git pull --rebase --autostash origin main || true
             done
           fi
-      - name: Post comic to Pinterest
-        if: steps.api_guard.outputs.generate_images == 'true' && (github.event_name == 'schedule' || github.event.inputs.post_to_pinterest == 'true')
-        env:
-          DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
-          PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
-          PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
-          PINTEREST_BOARD_NAME: "Sapiver Press Comic"
-          PINTEREST_IMAGE_NAME: "00_start-grid.png"
-          FORCE_PINTEREST_POST: ${{ github.event.inputs.force_pinterest_post }}
-          SUITE_URL: "https://suite.sapiverpress.co.uk"
-        run: node scripts/pinterest-post-guarded.mjs
-      - name: Commit Pinterest state
-        if: steps.api_guard.outputs.generate_images == 'true' && (github.event_name == 'schedule' || github.event.inputs.post_to_pinterest == 'true')
-        run: |
-          set -e
-          git config user.name "sapiver-comic-bot"
-          git config user.email "sapiver-comic-bot@users.noreply.github.com"
-          git add pinterest-posts.json social || true
-          if git diff --cached --quiet; then
-            echo "No Pinterest state changes"
-          else
-            git commit -m "Update Pinterest comic post state"
-            git push || true
-          fi
+
+      - name: Run archive migration
+        if: steps.api_guard.outputs.generate_images == 'true' && github.event_name == 'workflow_dispatch' && github.event.inputs.run_archive == 'true'
+        run: npm run archive
