@@ -50,7 +50,7 @@
       "output_file": "social/2026-06-04/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "Isla clears a tiny corner of her cluttered desk before her morning meetings officially begin.",
+      "caption": "Packing my bag early ensures I can grab that perfect window seat on the morning express train.",
       "scene_id": "scene_01"
     },
     {
@@ -60,7 +60,7 @@
       "output_file": "social/2026-06-04/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "An urgent message from Nora flashes on her screen, setting a firm deadline for the afternoon.",
+      "caption": "The interruption changes the timing, not the whole shape of her morning.",
       "scene_id": "scene_02"
     },
     {
@@ -70,7 +70,7 @@
       "output_file": "social/2026-06-04/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "She claims a steady spot near the window, determined to solve this puzzle despite the rush.",
+      "caption": "Before diving deep into the work crisis, I steal a brief moment of steady thinking time.",
       "scene_id": "scene_03"
     },
     {
@@ -90,7 +90,7 @@
       "output_file": "social/2026-06-04/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "With the grid finally solved, she packs up her notebook and prepares to tackle her work.",
+      "caption": "I sketch out the solution quickly on my notepad, keeping the numbers aligned and organized.",
       "scene_id": "scene_05"
     },
     {
@@ -100,10 +100,10 @@
       "output_file": "social/2026-06-04/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "She shuts her laptop with a clear plan on how to handle Nora's looming deadline tomorrow.",
+      "caption": "She closes the laptop with one decision carried forward.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-06-04.json",
-  "generated_at": "2026-06-04T04:22:22.974Z"
+  "generated_at": "2026-06-04T04:59:59.785Z"
 }

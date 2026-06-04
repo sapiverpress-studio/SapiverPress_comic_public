@@ -48,12 +48,12 @@
   "storyboard_arc_title": "June work and travel preparation",
   "storyboard_arc_type": "story_driven_not_location_driven",
   "storyboard_arc": {
-    "setup": "Isla clears a tiny corner of her cluttered desk before her morning meetings officially begin.",
-    "trigger": "An urgent message from Nora flashes on her screen, setting a firm deadline for the afternoon.",
-    "choice": "She claims a steady spot near the window, determined to solve this puzzle despite the rush.",
+    "setup": "Packing my bag early ensures I can grab that perfect window seat on the morning express train.",
+    "trigger": "The interruption changes the timing, not the whole shape of her morning.",
+    "choice": "Before diving deep into the work crisis, I steal a brief moment of steady thinking time.",
     "puzzle_moment": "Daily Renban Sudoku | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
-    "consequence": "With the grid finally solved, she packs up her notebook and prepares to tackle her work.",
-    "resolution": "She shuts her laptop with a clear plan on how to handle Nora's looming deadline tomorrow."
+    "consequence": "I sketch out the solution quickly on my notepad, keeping the numbers aligned and organized.",
+    "resolution": "She closes the laptop with one decision carried forward."
   },
   "storyboard_quality": {
     "location_sequence_only": false,
@@ -63,10 +63,12 @@
     "quality_gate_passed": false,
     "interchangeable": false,
     "generic_phrase_hits": [],
-    "cause_effect_link_count": 1,
+    "cause_effect_link_count": 2,
     "character_turn_count": 1,
     "quality_gate_action": "repaired_in_place",
-    "quality_gate_repair_reasons": [],
+    "quality_gate_repair_reasons": [
+      "moved_puzzle_rule_dialogue_from_panel_2"
+    ],
     "scene_truth_locked": true,
     "story_led_scene_truth": true,
     "continuity_aware": true,
@@ -93,7 +95,9 @@
     }
   },
   "quality_gate_action": "repaired_in_place",
-  "quality_gate_repair_reasons": [],
+  "quality_gate_repair_reasons": [
+    "moved_puzzle_rule_dialogue_from_panel_2"
+  ],
   "final_copy_sanity": {
     "ran": true,
     "duplicate_words_fixed": [],
@@ -127,7 +131,7 @@
     "generated_art_panel_count": 6,
     "fallback_template_panel_count": 0,
     "ran": true,
-    "checked_at": "2026-06-04T04:23:00.352Z"
+    "checked_at": "2026-06-04T05:00:36.367Z"
   },
   "openai_storyboard_status": "ok",
   "openai_storyboard_model": "gpt-4o-mini",
@@ -137,7 +141,7 @@
     "frames": "array:6"
   },
   "openai_storyboard_fallback_reason": null,
-  "openai_storyboard_checked_at": "2026-06-04T04:22:10.918Z",
+  "openai_storyboard_checked_at": "2026-06-04T04:59:46.252Z",
   "gemini_allowed_fields": [
     "caption",
     "dialogue"
@@ -179,12 +183,12 @@
   "puzzle_product": "Trigoku Daily Lock",
   "puzzle_url": "https://suite.sapiverpress.co.uk",
   "captions": [
-    "I'd better squeeze this in before my inbox starts blowing up.\nIsla clears a tiny corner of her cluttered desk before her morning meetings officially begin.",
-    "Great, a deadline note from Nora already. I need to focus first.\nAn urgent message from Nora flashes on her screen, setting a firm deadline for the afternoon.",
-    "Just five minutes to think to clear my head before I reply.\nShe claims a steady spot near the window, determined to solve this puzzle despite the rush.",
+    "If I get moving now, I can secure a steady spot before the main rush starts.\nPacking my bag early ensures I can grab that perfect window seat on the morning express train.",
+    "I can answer that properly later.\nThe interruption changes the timing, not the whole shape of her morning.",
+    "Just a couple of minutes to clear my head before I draft my response to Nora.\nBefore diving deep into the work crisis, I steal a brief moment of steady thinking time.",
     "Daily Renban Sudoku | Sapiver Press changes the move, so Isla checks the rule before trusting it.\nDaily Renban Sudoku | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
-    "There we go. That logic actually holds up under pressure.\nWith the grid finally solved, she packs up her notebook and prepares to tackle her work.",
-    "That's sorted. Now I can finally send that reply and call it a day.\nShe shuts her laptop with a clear plan on how to handle Nora's looming deadline tomorrow."
+    "There we go, that sequence actually fits perfectly without breaking any of the standard rules.\nI sketch out the solution quickly on my notepad, keeping the numbers aligned and organized.",
+    "Leave it there. Move on.\nShe closes the laptop with one decision carried forward."
   ],
   "storyboard_locations": [
     "home desk before work",
@@ -207,10 +211,10 @@
       "screen_quad_mode": "overlay_skipped_screen_state_closed_device",
       "panel_screen_state": "closed_device",
       "screen_state_overlay_allowed": false,
-      "storyboard_text": "I'd better squeeze this in before my inbox starts blowing up.\nIsla clears a tiny corner of her cluttered desk before her morning meetings officially begin.",
+      "storyboard_text": "If I get moving now, I can secure a steady spot before the main rush starts.\nPacking my bag early ensures I can grab that perfect window seat on the morning express train.",
       "arc_role": "setup",
-      "storyboard_caption": "Isla clears a tiny corner of her cluttered desk before her morning meetings officially begin.",
-      "storyboard_dialogue": "I'd better squeeze this in before my inbox starts blowing up.",
+      "storyboard_caption": "Packing my bag early ensures I can grab that perfect window seat on the morning express train.",
+      "storyboard_dialogue": "If I get moving now, I can secure a steady spot before the main rush starts.",
       "panel_location": "home desk before work",
       "panel": 1,
       "scene_id": "scene_01",
@@ -247,10 +251,10 @@
         "arc_shift": "packing, leaving, work meetings, and using unfamiliar tables well; A work message tests whether Isla can answer properly without giving away the whole day. Workday anchor: deadline note from Nora. Isla has normal work between 09:00 and 17:30, so the puzzle must fit around work rather than replacing it.",
         "source": "isla_recurring_work_anchor"
       },
-      "storyboard_text": "Great, a deadline note from Nora already. I need to focus first.\nAn urgent message from Nora flashes on her screen, setting a firm deadline for the afternoon.",
+      "storyboard_text": "I can answer that properly later.\nThe interruption changes the timing, not the whole shape of her morning.",
       "arc_role": "trigger",
-      "storyboard_caption": "An urgent message from Nora flashes on her screen, setting a firm deadline for the afternoon.",
-      "storyboard_dialogue": "Great, a deadline note from Nora already. I need to focus first.",
+      "storyboard_caption": "The interruption changes the timing, not the whole shape of her morning.",
+      "storyboard_dialogue": "I can answer that properly later.",
       "panel_location": "co-working lobby table",
       "panel": 2,
       "scene_id": "scene_02",
@@ -269,29 +273,29 @@
       "output": "social/2026-06-04/03_panel-03.png",
       "screen_quad": [
         [
-          231,
-          623
+          252,
+          514
         ],
         [
-          945,
-          571
+          879,
+          515
         ],
         [
-          927,
-          955
+          877,
+          901
         ],
         [
-          226,
-          947
+          253,
+          786
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
       "panel_screen_state": "first_moves",
       "screen_state_overlay_allowed": true,
-      "storyboard_text": "Just five minutes to think to clear my head before I reply.\nShe claims a steady spot near the window, determined to solve this puzzle despite the rush.",
+      "storyboard_text": "Just a couple of minutes to clear my head before I draft my response to Nora.\nBefore diving deep into the work crisis, I steal a brief moment of steady thinking time.",
       "arc_role": "choice",
-      "storyboard_caption": "She claims a steady spot near the window, determined to solve this puzzle despite the rush.",
-      "storyboard_dialogue": "Just five minutes to think to clear my head before I reply.",
+      "storyboard_caption": "Before diving deep into the work crisis, I steal a brief moment of steady thinking time.",
+      "storyboard_dialogue": "Just a couple of minutes to clear my head before I draft my response to Nora.",
       "panel_location": "co-working desk near glass partitions",
       "panel": 3,
       "scene_id": "scene_03",
@@ -302,33 +306,38 @@
     },
     {
       "scene": "scene_04",
-      "art_source": "replacement",
-      "art_path": "art-replacements/2026-06-04/04_panel-04.png",
-      "template": "",
-      "replacement": "art-replacements/2026-06-04/04_panel-04.png",
+      "art_source": "template",
+      "art_path": "templates/characters/isla/isla_04_breakthrough.png",
+      "template": "templates/characters/isla/isla_04_breakthrough.png",
+      "replacement": "",
       "capture": "captures/2026-06-04/extracted/04_breakthrough.png",
       "output": "social/2026-06-04/04_panel-04.png",
       "screen_quad": [
         [
-          466,
-          1156
+          612,
+          404
         ],
         [
-          674,
-          1156
+          1052,
+          414
         ],
         [
-          673,
-          1276
+          1025,
+          760
         ],
         [
-          462,
-          1273
+          580,
+          736
         ]
       ],
-      "screen_quad_mode": "detected_replacement_screen",
+      "screen_quad_mode": "template_locked",
       "panel_screen_state": "active_puzzle",
       "screen_state_overlay_allowed": true,
+      "recovered_from_missing_replacement_screen": true,
+      "failed_replacements": [
+        "art-replacements/2026-06-04/04_panel-04.png",
+        "art-replacements/latest/04_panel-04.png"
+      ],
       "storyboard_text": "Daily Renban Sudoku | Sapiver Press changes the move, so Isla checks the rule before trusting it.\nDaily Renban Sudoku | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
       "arc_role": "puzzle_moment",
       "storyboard_caption": "Daily Renban Sudoku | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
@@ -351,29 +360,29 @@
       "output": "social/2026-06-04/05_panel-05.png",
       "screen_quad": [
         [
-          261,
-          467
+          294,
+          465
         ],
         [
-          880,
-          467
+          928,
+          466
         ],
         [
-          880,
-          846
+          930,
+          859
         ],
         [
-          261,
-          846
+          294,
+          859
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
       "panel_screen_state": "progress_pause",
       "screen_state_overlay_allowed": true,
-      "storyboard_text": "There we go. That logic actually holds up under pressure.\nWith the grid finally solved, she packs up her notebook and prepares to tackle her work.",
+      "storyboard_text": "There we go, that sequence actually fits perfectly without breaking any of the standard rules.\nI sketch out the solution quickly on my notepad, keeping the numbers aligned and organized.",
       "arc_role": "consequence",
-      "storyboard_caption": "With the grid finally solved, she packs up her notebook and prepares to tackle her work.",
-      "storyboard_dialogue": "There we go. That logic actually holds up under pressure.",
+      "storyboard_caption": "I sketch out the solution quickly on my notepad, keeping the numbers aligned and organized.",
+      "storyboard_dialogue": "There we go, that sequence actually fits perfectly without breaking any of the standard rules.",
       "panel_location": "office break area with notebook",
       "panel": 5,
       "scene_id": "scene_05",
@@ -392,29 +401,29 @@
       "output": "social/2026-06-04/06_panel-06.png",
       "screen_quad": [
         [
-          221,
-          393
+          286,
+          456
         ],
         [
-          945,
-          394
+          825,
+          456
         ],
         [
-          945,
-          901
+          827,
+          767
         ],
         [
-          212,
-          913
+          285,
+          798
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
       "panel_screen_state": "finished_or_closing",
       "screen_state_overlay_allowed": true,
-      "storyboard_text": "That's sorted. Now I can finally send that reply and call it a day.\nShe shuts her laptop with a clear plan on how to handle Nora's looming deadline tomorrow.",
+      "storyboard_text": "Leave it there. Move on.\nShe closes the laptop with one decision carried forward.",
       "arc_role": "resolution",
-      "storyboard_caption": "She shuts her laptop with a clear plan on how to handle Nora's looming deadline tomorrow.",
-      "storyboard_dialogue": "That's sorted. Now I can finally send that reply and call it a day.",
+      "storyboard_caption": "She closes the laptop with one decision carried forward.",
+      "storyboard_dialogue": "Leave it there. Move on.",
       "panel_location": "train or home window after work",
       "panel": 6,
       "scene_id": "scene_06",
@@ -438,7 +447,7 @@
       "panel": 4,
       "scene": "scene_04",
       "output": "social/2026-06-04/04_panel-04.png",
-      "screen_quad_mode": "detected_replacement_screen",
+      "screen_quad_mode": "template_locked",
       "panel_screen_state": "active_puzzle",
       "panel_location": "meeting-room side table",
       "has_valid_screen_quad": true
@@ -476,7 +485,7 @@
       "panel": 4,
       "scene": "scene_04",
       "output": "social/2026-06-04/04_panel-04.png",
-      "screen_quad_mode": "detected_replacement_screen",
+      "screen_quad_mode": "template_locked",
       "panel_screen_state": "active_puzzle",
       "panel_location": "meeting-room side table",
       "has_valid_screen_quad": true
@@ -508,7 +517,21 @@
     2
   ],
   "screen_overlay_failures": [],
-  "screen_overlay_recoveries": [],
+  "screen_overlay_recoveries": [
+    {
+      "panel": 4,
+      "scene": "scene_04",
+      "output": "social/2026-06-04/04_panel-04.png",
+      "screen_quad_mode": "template_locked",
+      "panel_screen_state": "active_puzzle",
+      "panel_location": "meeting-room side table",
+      "has_valid_screen_quad": true,
+      "failed_replacements": [
+        "art-replacements/2026-06-04/04_panel-04.png",
+        "art-replacements/latest/04_panel-04.png"
+      ]
+    }
+  ],
   "screen_overlay_validation": {
     "passed": true,
     "required_puzzle_panel_count": 4,
@@ -526,7 +549,7 @@
         "panel": 4,
         "scene": "scene_04",
         "output": "social/2026-06-04/04_panel-04.png",
-        "screen_quad_mode": "detected_replacement_screen",
+        "screen_quad_mode": "template_locked",
         "panel_screen_state": "active_puzzle",
         "panel_location": "meeting-room side table",
         "has_valid_screen_quad": true
@@ -564,7 +587,7 @@
         "panel": 4,
         "scene": "scene_04",
         "output": "social/2026-06-04/04_panel-04.png",
-        "screen_quad_mode": "detected_replacement_screen",
+        "screen_quad_mode": "template_locked",
         "panel_screen_state": "active_puzzle",
         "panel_location": "meeting-room side table",
         "has_valid_screen_quad": true
@@ -610,17 +633,31 @@
       }
     ],
     "failures": [],
-    "recoveries": [],
-    "checked_at": "2026-06-04T04:23:00.271Z"
+    "recoveries": [
+      {
+        "panel": 4,
+        "scene": "scene_04",
+        "output": "social/2026-06-04/04_panel-04.png",
+        "screen_quad_mode": "template_locked",
+        "panel_screen_state": "active_puzzle",
+        "panel_location": "meeting-room side table",
+        "has_valid_screen_quad": true,
+        "failed_replacements": [
+          "art-replacements/2026-06-04/04_panel-04.png",
+          "art-replacements/latest/04_panel-04.png"
+        ]
+      }
+    ],
+    "checked_at": "2026-06-04T05:00:36.264Z"
   },
   "posting_allowed": true,
   "puzzle_moment_copy_snapshot": {
     "ran": true,
     "source_stage": "openai",
-    "caption": "Daily Renban Sudoku | Sapiver Press changes this move, so Isla checks that constraint before she trusts it.",
+    "caption": "That fits.",
     "dialogue": "Today has its own little rule-set — check the constraint before rushing.",
-    "image_prompt_fragment": "clear route found, restrained smile, noticing today's Daily Renban Sudoku | Sapiver Press rule naturally",
-    "captured_at": "2026-06-04T04:22:10.990Z"
+    "image_prompt_fragment": "small solution moment on train",
+    "captured_at": "2026-06-04T04:59:46.343Z"
   },
   "puzzle_moment_copy_protection": {
     "ran": true,
@@ -629,8 +666,8 @@
   },
   "location_or_normalised": {
     "ran": true,
-    "changed": false,
-    "fields_changed": 0
+    "changed": true,
+    "fields_changed": 4
   },
   "story_coherence_lint": {
     "ran": true,
@@ -682,7 +719,7 @@
       "repaired_negation_aware": true
     },
     "variant_copy_mode": "exact_variant",
-    "checked_at": "2026-06-04T04:22:22.928Z"
+    "checked_at": "2026-06-04T04:59:59.727Z"
   },
   "prompt_lint": {
     "ran": true,
@@ -696,7 +733,7 @@
     "no_puzzle_contradictions_stripped": true,
     "location_prefix_garbage_stripped": true,
     "screen_contract_rule": "Open usable screen means puzzle required; no-puzzle panel means no open blank laptop screen.",
-    "checked_at": "2026-06-04T04:22:23.117Z"
+    "checked_at": "2026-06-04T04:59:59.976Z"
   },
   "location_flow_id": "work_pressure_day",
   "location_flow_method": "scene_truth_contract_calendar_preferred_flow",
@@ -705,13 +742,16 @@
     "mode": "work_pressure_day",
     "selection_reason": "calendar_preferred_flow",
     "score": 54,
-    "applied_at": "2026-06-04T04:22:22.743Z",
+    "applied_at": "2026-06-04T04:59:59.494Z",
     "fixed_sequence": false,
     "story_led": true,
     "continuity_aware": true,
     "caption_location_guard": true,
     "flow_enforced": true,
-    "normalised_copy_panels": []
+    "normalised_copy_panels": [
+      2,
+      6
+    ]
   },
   "story_continuity": {
     "previous_day_used": {
@@ -733,8 +773,8 @@
       "panel_screen_state": "closed_device",
       "scene_truth_flow_id": "work_pressure_day",
       "supporting_life_trigger_here": false,
-      "storyboard_caption": "Isla clears a tiny corner of her cluttered desk before her morning meetings officially begin.",
-      "storyboard_dialogue": "I'd better squeeze this in before my inbox starts blowing up."
+      "storyboard_caption": "Packing my bag early ensures I can grab that perfect window seat on the morning express train.",
+      "storyboard_dialogue": "If I get moving now, I can secure a steady spot before the main rush starts."
     },
     {
       "panel": 2,
@@ -746,8 +786,8 @@
       "panel_screen_state": "no_puzzle",
       "scene_truth_flow_id": "work_pressure_day",
       "supporting_life_trigger_here": true,
-      "storyboard_caption": "An urgent message from Nora flashes on her screen, setting a firm deadline for the afternoon.",
-      "storyboard_dialogue": "Great, a deadline note from Nora already. I need to focus first."
+      "storyboard_caption": "The interruption changes the timing, not the whole shape of her morning.",
+      "storyboard_dialogue": "I can answer that properly later."
     },
     {
       "panel": 3,
@@ -759,8 +799,8 @@
       "panel_screen_state": "first_moves",
       "scene_truth_flow_id": "work_pressure_day",
       "supporting_life_trigger_here": false,
-      "storyboard_caption": "She claims a steady spot near the window, determined to solve this puzzle despite the rush.",
-      "storyboard_dialogue": "Just five minutes to think to clear my head before I reply."
+      "storyboard_caption": "Before diving deep into the work crisis, I steal a brief moment of steady thinking time.",
+      "storyboard_dialogue": "Just a couple of minutes to clear my head before I draft my response to Nora."
     },
     {
       "panel": 4,
@@ -785,8 +825,8 @@
       "panel_screen_state": "progress_pause",
       "scene_truth_flow_id": "work_pressure_day",
       "supporting_life_trigger_here": false,
-      "storyboard_caption": "With the grid finally solved, she packs up her notebook and prepares to tackle her work.",
-      "storyboard_dialogue": "There we go. That logic actually holds up under pressure."
+      "storyboard_caption": "I sketch out the solution quickly on my notepad, keeping the numbers aligned and organized.",
+      "storyboard_dialogue": "There we go, that sequence actually fits perfectly without breaking any of the standard rules."
     },
     {
       "panel": 6,
@@ -798,8 +838,8 @@
       "panel_screen_state": "finished_or_closing",
       "scene_truth_flow_id": "work_pressure_day",
       "supporting_life_trigger_here": false,
-      "storyboard_caption": "She shuts her laptop with a clear plan on how to handle Nora's looming deadline tomorrow.",
-      "storyboard_dialogue": "That's sorted. Now I can finally send that reply and call it a day."
+      "storyboard_caption": "She closes the laptop with one decision carried forward.",
+      "storyboard_dialogue": "Leave it there. Move on."
     }
   ],
   "supporting_life_overlay_drawn": true

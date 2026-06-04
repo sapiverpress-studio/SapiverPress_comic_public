@@ -105,51 +105,6 @@
     {
       "date": "2026-06-01",
       "weekday": "Monday",
-      "same_day_attempt": 6,
-      "setting": "quiet public library reading table",
-      "puzzle_phase": "early-week",
-      "story_note": "Isla spends this entry at the quiet public library reading table because the library gives her a borrowed pocket of quiet. The puzzle stays as a light thread inside the day.",
-      "continuation_note": "Remember: Isla uses libraries as reset spaces, not just work spaces. Continue the thread: library visits become her backup calm place.",
-      "stuck_moment": "patient pause at a shared table",
-      "life_memory_entry": {
-        "date": "2026-06-01",
-        "attempt": 6,
-        "location": "quiet public library reading table",
-        "reason_for_location": "the library gives her a borrowed pocket of quiet",
-        "life_detail_learned": "Isla uses libraries as reset spaces, not just work spaces.",
-        "thread_to_continue": "library visits become her backup calm place",
-        "puzzle_variant_mentioned": "Trigoku",
-        "variant_panel_index": 2,
-        "uk_calendar_date": null,
-        "uk_calendar_panel_index": null
-      },
-      "variant_recap": {
-        "variant_name": "Trigoku",
-        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
-        "panel_index": 2,
-        "line": "Today has its own little rule-set — check the constraint before rushing."
-      },
-      "uk_calendar_date": null,
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "Kitchen quiet.",
-        "Anti-Knight today — knight moves block matching numbers.",
-        "Think slower.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Last checks.",
-        "Day begins."
-      ]
-    },
-    {
-      "date": "2026-06-01",
-      "weekday": "Monday",
       "same_day_attempt": 7,
       "setting": "small kitchen table in warm morning light",
       "puzzle_phase": "early-week",
@@ -1444,12 +1399,57 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Between tasks.",
-        "Quick start.",
-        "No shortcut.",
+        "Window seat.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Not yet.",
         "Daily Renban Sudoku | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
-        "Nearly done.",
-        "Back to work."
+        "Almost there.",
+        "Next stop."
+      ]
+    },
+    {
+      "date": "2026-06-04",
+      "weekday": "Thursday",
+      "same_day_attempt": 2,
+      "setting": "train table by the window",
+      "puzzle_phase": "mid-week",
+      "story_note": "Isla spends this entry at the train table by the window because she is travelling and using the journey as thinking time. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Isla likes journeys because they give her contained thinking time. Continue the thread: train rides become moving pockets of focus.",
+      "stuck_moment": "thoughtful pause with landscape outside",
+      "life_memory_entry": {
+        "date": "2026-06-04",
+        "attempt": 2,
+        "location": "train table by the window",
+        "reason_for_location": "she is travelling and using the journey as thinking time",
+        "life_detail_learned": "Isla likes journeys because they give her contained thinking time.",
+        "thread_to_continue": "train rides become moving pockets of focus",
+        "puzzle_variant_mentioned": "Daily Renban Sudoku | Sapiver Press",
+        "variant_panel_index": 2,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Daily Renban Sudoku | Sapiver Press",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 2,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Window seat.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Not yet.",
+        "Daily Renban Sudoku | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
+        "Almost there.",
+        "Next stop."
       ]
     }
   ],
@@ -1457,51 +1457,6 @@
     {
       "date": "2026-06-01",
       "weekday": "Monday",
-      "same_day_attempt": 6,
-      "setting": "quiet public library reading table",
-      "puzzle_phase": "early-week",
-      "story_note": "Isla spends this entry at the quiet public library reading table because the library gives her a borrowed pocket of quiet. The puzzle stays as a light thread inside the day.",
-      "continuation_note": "Remember: Isla uses libraries as reset spaces, not just work spaces. Continue the thread: library visits become her backup calm place.",
-      "stuck_moment": "patient pause at a shared table",
-      "life_memory_entry": {
-        "date": "2026-06-01",
-        "attempt": 6,
-        "location": "quiet public library reading table",
-        "reason_for_location": "the library gives her a borrowed pocket of quiet",
-        "life_detail_learned": "Isla uses libraries as reset spaces, not just work spaces.",
-        "thread_to_continue": "library visits become her backup calm place",
-        "puzzle_variant_mentioned": "Trigoku",
-        "variant_panel_index": 2,
-        "uk_calendar_date": null,
-        "uk_calendar_panel_index": null
-      },
-      "variant_recap": {
-        "variant_name": "Trigoku",
-        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
-        "panel_index": 2,
-        "line": "Today has its own little rule-set — check the constraint before rushing."
-      },
-      "uk_calendar_date": null,
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "Kitchen quiet.",
-        "Anti-Knight today — knight moves block matching numbers.",
-        "Think slower.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Last checks.",
-        "Day begins."
-      ]
-    },
-    {
-      "date": "2026-06-01",
-      "weekday": "Monday",
       "same_day_attempt": 7,
       "setting": "small kitchen table in warm morning light",
       "puzzle_phase": "early-week",
@@ -2796,12 +2751,57 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Between tasks.",
-        "Quick start.",
-        "No shortcut.",
+        "Window seat.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Not yet.",
         "Daily Renban Sudoku | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
-        "Nearly done.",
-        "Back to work."
+        "Almost there.",
+        "Next stop."
+      ]
+    },
+    {
+      "date": "2026-06-04",
+      "weekday": "Thursday",
+      "same_day_attempt": 2,
+      "setting": "train table by the window",
+      "puzzle_phase": "mid-week",
+      "story_note": "Isla spends this entry at the train table by the window because she is travelling and using the journey as thinking time. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Isla likes journeys because they give her contained thinking time. Continue the thread: train rides become moving pockets of focus.",
+      "stuck_moment": "thoughtful pause with landscape outside",
+      "life_memory_entry": {
+        "date": "2026-06-04",
+        "attempt": 2,
+        "location": "train table by the window",
+        "reason_for_location": "she is travelling and using the journey as thinking time",
+        "life_detail_learned": "Isla likes journeys because they give her contained thinking time.",
+        "thread_to_continue": "train rides become moving pockets of focus",
+        "puzzle_variant_mentioned": "Daily Renban Sudoku | Sapiver Press",
+        "variant_panel_index": 2,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Daily Renban Sudoku | Sapiver Press",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 2,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Window seat.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Not yet.",
+        "Daily Renban Sudoku | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
+        "Almost there.",
+        "Next stop."
       ]
     }
   ],

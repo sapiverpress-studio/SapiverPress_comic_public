@@ -1,6 +1,6 @@
 {
   "date": "2026-06-04",
-  "title": "Isla's Workday Puzzle",
+  "title": "Isla's Journey of Focus",
   "voice_name": "Isla Sterling",
   "segments": [
     {
@@ -11,17 +11,17 @@
     {
       "id": "panel_1",
       "image_name": "01_panel-01.png",
-      "text": "Isla clears a tiny corner of her cluttered desk before her morning meetings officially begin."
+      "text": "Packing my bag early ensures I can grab that perfect window seat on the morning express train."
     },
     {
       "id": "panel_2",
       "image_name": "02_panel-02.png",
-      "text": "An urgent message from Nora flashes on her screen, setting a firm deadline for the afternoon."
+      "text": "The interruption changes the timing, not the whole shape of her morning."
     },
     {
       "id": "panel_3",
       "image_name": "03_panel-03.png",
-      "text": "She claims a steady spot near the window, determined to solve this puzzle despite the rush."
+      "text": "Before diving deep into the work crisis, I steal a brief moment of steady thinking time."
     },
     {
       "id": "panel_4",
@@ -31,12 +31,12 @@
     {
       "id": "panel_5",
       "image_name": "05_panel-05.png",
-      "text": "With the grid finally solved, she packs up her notebook and prepares to tackle her work."
+      "text": "I sketch out the solution quickly on my notepad, keeping the numbers aligned and organized."
     },
     {
       "id": "panel_6",
       "image_name": "06_panel-06.png",
-      "text": "She shuts her laptop with a clear plan on how to handle Nora's looming deadline tomorrow."
+      "text": "She closes the laptop with one decision carried forward."
     },
     {
       "id": "cta",
@@ -44,9 +44,9 @@
       "text": "Play along at suite.sapiverpress.co.uk"
     }
   ],
-  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nIsla clears a tiny corner of her cluttered desk before her morning meetings officially begin.\n\nAn urgent message from Nora flashes on her screen, setting a firm deadline for the afternoon.\n\nShe claims a steady spot near the window, determined to solve this puzzle despite the rush.\n\nDaily Renban Sudoku | Sapiver Press changes the move, so Isla checks the rule before trusting it.\n\nWith the grid finally solved, she packs up her notebook and prepares to tackle her work.\n\nShe shuts her laptop with a clear plan on how to handle Nora's looming deadline tomorrow.\n\nPlay along at suite.sapiverpress.co.uk",
-  "generated_at": "2026-06-04T04:23:05.894Z",
-  "caption": "Join Isla as she navigates her workday with a puzzle on the side.",
+  "full_text": "Here’s today’s Sapiver Press puzzle comic.\n\nPacking my bag early ensures I can grab that perfect window seat on the morning express train.\n\nThe interruption changes the timing, not the whole shape of her morning.\n\nBefore diving deep into the work crisis, I steal a brief moment of steady thinking time.\n\nDaily Renban Sudoku | Sapiver Press changes the move, so Isla checks the rule before trusting it.\n\nI sketch out the solution quickly on my notepad, keeping the numbers aligned and organized.\n\nShe closes the laptop with one decision carried forward.\n\nPlay along at suite.sapiverpress.co.uk",
+  "generated_at": "2026-06-04T05:00:42.270Z",
+  "caption": "Join Isla as she navigates her workday while embracing the joy of solving puzzles during her travels.",
   "variant_name": "Daily Renban Sudoku | Sapiver Press",
   "variant_line": "Daily Renban Sudoku | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
   "copy_refined": "openai",
