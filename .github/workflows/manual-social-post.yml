@@ -1,0 +1,88 @@
+name: Sapiver Press Manual Social Post
+
+on:
+  workflow_dispatch:
+    inputs:
+      date_override:
+        description: "YYYY-MM-DD approved preview date to post"
+        required: false
+        default: ""
+      platform:
+        description: "facebook or pinterest"
+        required: true
+        default: "facebook"
+      force_post:
+        description: "Force post even if state says already posted"
+        required: false
+        default: "false"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sapiver-press-manual-social-post
+  cancel-in-progress: false
+
+jobs:
+  post-approved-preview:
+    name: Post approved preview manually
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout public repo
+        uses: actions/checkout@v5
+        with:
+          persist-credentials: true
+
+      - name: Sync to latest main
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Post approved comic to Facebook
+        if: github.event.inputs.platform == 'facebook'
+        env:
+          DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID || secrets.FACEBOOK_PAGE_ID || secrets.META_PAGE_ID || secrets.PAGE_ID || secrets.FACEBOOK_ID || secrets.FB_ID }}
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN || secrets.FACEBOOK_PAGE_TOKEN || secrets.FB_PAGE_ACCESS_TOKEN || secrets.FACEBOOK_PAGE_ACCESS_TOKEN || secrets.PAGE_ACCESS_TOKEN || secrets.META_PAGE_TOKEN || secrets.META_PAGE_ACCESS_TOKEN }}
+          META_USER_TOKEN: ${{ secrets.META_USER_TOKEN || secrets.META_ACCESS_TOKEN || secrets.FACEBOOK_USER_TOKEN || secrets.FB_USER_TOKEN || secrets.USER_ACCESS_TOKEN }}
+          FB_GENERIC_ACCESS_TOKEN: ${{ secrets.FB_ACCESS_TOKEN || secrets.FACEBOOK_ACCESS_TOKEN || secrets.ACCESS_TOKEN }}
+          FB_GRAPH_VERSION: "v24.0"
+          FB_POST_STRICT: "1"
+          COMIC_POST_IMAGE_PATH: "social/{date}/00_start-grid.png"
+          FORCE_FB_POST: ${{ github.event.inputs.force_post }}
+          SUITE_URL: "https://suite.sapiverpress.co.uk"
+          ETSY_CATALOG_URL: "https://sapiver-press-etsy-search-catalog.netlify.app/"
+        run: node scripts/facebook-post-guarded.mjs
+
+      - name: Post approved comic to Pinterest
+        if: github.event.inputs.platform == 'pinterest'
+        env:
+          DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
+          PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
+          PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
+          PINTEREST_BOARD_NAME: "Sapiver Press Comic"
+          PINTEREST_IMAGE_NAME: "00_start-grid.png"
+          FORCE_PINTEREST_POST: ${{ github.event.inputs.force_post }}
+          SUITE_URL: "https://suite.sapiverpress.co.uk"
+        run: node scripts/pinterest-post-guarded.mjs
+
+      - name: Commit post state
+        run: |
+          set -e
+          git config user.name "sapiver-comic-bot"
+          git config user.email "sapiver-comic-bot@users.noreply.github.com"
+          git add facebook-posts.json pinterest-posts.json social || true
+          if git diff --cached --quiet; then
+            echo "No post state changes"
+          else
+            git commit -m "Update manual social post state"
+            git push
+          fi
