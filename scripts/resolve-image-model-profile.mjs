@@ -30,6 +30,21 @@ function activeProfiles(registry) {
 function profileById(registry, id) {
   return (registry.profiles || []).find((profile) => profile.profile_id === id);
 }
+function escapeRegExp(value) {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+function sanitizeLegacyText(value) {
+  let text = String(value || "");
+  for (const term of LEGACY_LORA_FILES) text = text.replace(new RegExp(escapeRegExp(term), "g"), "legacy lora file");
+  for (const term of LEGACY_TRIGGERS) text = text.replace(new RegExp(`\\b${escapeRegExp(term)}\\b`, "g"), "legacy trigger text");
+  return text;
+}
+function sanitizeLegacyRefs(value) {
+  if (typeof value === "string") return sanitizeLegacyText(value);
+  if (Array.isArray(value)) return value.map((item) => sanitizeLegacyRefs(item));
+  if (value && typeof value === "object") return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, sanitizeLegacyRefs(item)]));
+  return value;
+}
 function textForPanel(panel) {
   return lower([
     panel.prompt,
@@ -83,7 +98,7 @@ function stripKnownTriggers(value, registry) {
   return clean(text).replace(/^,\s*/, "");
 }
 function prependTrigger(prompt, profile, registry) {
-  const base = stripKnownTriggers(prompt, registry);
+  const base = stripKnownTriggers(sanitizeLegacyText(prompt), registry);
   const trigger = profile.prompt_prefix || profile.trigger_word;
   return base ? `${trigger}, ${base}` : trigger;
 }
@@ -115,8 +130,9 @@ const registry = await readJson(REGISTRY_PATH, null);
 if (!registry) throw new Error("Missing config/image-model-registry.json");
 const promptPath = path.join(ROOT, "art-prompts", date, "prompts.json");
 const latestPromptPath = path.join(ROOT, "art-prompts", "latest", "prompts.json");
-const prompts = await readJson(promptPath, await readJson(latestPromptPath, null));
-if (!prompts) throw new Error(`Missing art prompt payload for ${date}`);
+const rawPrompts = await readJson(promptPath, await readJson(latestPromptPath, null));
+if (!rawPrompts) throw new Error(`Missing art prompt payload for ${date}`);
+const prompts = sanitizeLegacyRefs(rawPrompts);
 
 const panels = (Array.isArray(prompts.panels) ? prompts.panels : []).map((panel, index) => {
   const model = modelForPanel(panel, registry);
