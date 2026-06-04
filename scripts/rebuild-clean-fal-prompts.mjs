@@ -57,6 +57,21 @@ function safeNegativePrompt(p, pack) {
     .replace(/,{2,}/g, ",");
   return tidy([cleaned, "text elements, lettering, labels, typography, captions, puzzle grid, numbers, watermark, large logo, low quality, blurry"].filter(Boolean).join(", "));
 }
+function assertSafeFinalPrompts(pack) {
+  const hits = [];
+  for (const [index, panel] of (pack.panels || []).entries()) {
+    for (const field of ["prompt", "negative_prompt"]) {
+      const text = String(panel[field] || "");
+      for (const pattern of RISKY_OBJECT_PATTERNS) {
+        pattern.lastIndex = 0;
+        if (pattern.test(text)) hits.push(`panel ${index + 1} ${field}`);
+      }
+    }
+  }
+  if (hits.length) {
+    throw new Error(`Final Fal prompt contamination guard failed: ${Array.from(new Set(hits)).join(", ")}`);
+  }
+}
 
 const dated = path.join(ROOT, "art-prompts", DATE, "prompts.json");
 const latest = path.join(ROOT, "art-prompts", "latest", "prompts.json");
@@ -69,6 +84,7 @@ pack.panels = PANEL_FILES.map((name, i) => {
   const promptFile = p.prompt_file || `art-prompts/${DATE}/${String(i + 1).padStart(2, "0")}_panel-${String(i + 1).padStart(2, "0")}_prompt.txt`;
   return { ...p, panel_number: i + 1, image_name: p.image_name || name, prompt_file: promptFile, prompt: promptFor(p, pack), negative_prompt: safeNegativePrompt(p, pack), final_prompt_composer: "clean_story_fields_only_v2_no_object_name_contamination" };
 });
+assertSafeFinalPrompts(pack);
 await writeJson(dated, pack);
 await writeJson(latest, pack);
 for (const p of pack.panels) await writeText(path.join(ROOT, p.prompt_file), `${p.prompt}\n`);
