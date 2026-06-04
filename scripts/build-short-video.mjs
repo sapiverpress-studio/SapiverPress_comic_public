@@ -3,8 +3,8 @@ import path from "path";
 import { spawnSync } from "child_process";
 
 const ROOT = process.cwd();
-const DEFAULT_FRAME_SECONDS = 3;
-const AUDIO_TAIL_PAD_SECONDS = Number(process.env.SHORT_VIDEO_AUDIO_TAIL_PAD_SECONDS || "1.2");
+const DEFAULT_FRAME_SECONDS = Number(process.env.SHORT_VIDEO_FRAME_SECONDS || "2.25");
+const AUDIO_TAIL_PAD_SECONDS = Number(process.env.SHORT_VIDEO_AUDIO_TAIL_PAD_SECONDS || "0.8");
 const SUITE_URL = process.env.SUITE_URL || "https://suite.sapiverpress.co.uk";
 const ETSY_URL = process.env.ETSY_URL || "https://sapiverpress.etsy.com?coupon=SAVE20";
 
@@ -112,7 +112,8 @@ function variantName(story) {
 
 function pickHook(story, narration) {
   const title = clean(story?.storyboard_arc_title || narration?.title || "Isla's daily puzzle break");
-  const panel = clean(story?.scenes?.[3]?.storyboard_caption || story?.storyboard_arc?.puzzle_moment || "one careful grid check changes the day");
+  const puzzlePanel = Array.isArray(story?.scenes) ? story.scenes.find((scene) => scene.variant_recap_here) : null;
+  const panel = clean(puzzlePanel?.storyboard_caption || puzzlePanel?.caption || story?.storyboard_arc?.puzzle_moment || "one careful grid check changes the day");
   if (title && panel) return `${title}: ${panel}`;
   return title || panel || "Isla takes three minutes for today's puzzle.";
 }
@@ -120,7 +121,8 @@ function pickHook(story, narration) {
 function buildTikTokPost({ date, story, narration, videoFile }) {
   const hook = pickHook(story, narration).replace(/\.$/, "");
   const puzzle = variantName(story);
-  const line = clean(story?.scenes?.[3]?.storyboard_dialogue || story?.required_puzzle_copy?.required_dialogue_panel_4 || "Can you spot the move before Isla does?");
+  const puzzlePanel = Array.isArray(story?.scenes) ? story.scenes.find((scene) => scene.variant_recap_here) : null;
+  const line = clean(puzzlePanel?.storyboard_dialogue || puzzlePanel?.dialogue || story?.required_puzzle_copy?.required_dialogue_panel_4 || "Can you spot the move before Isla does?");
   const hashtags = [
     "#SapiverPress",
     "#IslaDaily",
@@ -149,6 +151,13 @@ function buildTikTokPost({ date, story, narration, videoFile }) {
   ].join("\n");
 }
 
+function expectedFallbackImageNames(story) {
+  const panelNames = Array.isArray(story?.scenes)
+    ? story.scenes.map((_, index) => `${String(index + 1).padStart(2, "0")}_panel-${String(index + 1).padStart(2, "0")}.png`)
+    : ["01_panel-01.png", "02_panel-02.png", "03_panel-03.png", "04_panel-04.png", "05_panel-05.png", "06_panel-06.png"];
+  return ["00_start-grid.png", ...panelNames, "07_finished-grid.png", "09_finished-grid.png"];
+}
+
 async function main() {
   const date = dateString();
   const socialDir = path.join(ROOT, "social", date);
@@ -160,16 +169,7 @@ async function main() {
 
   const narration = await readJson(path.join(videoDir, "narration.json"), await readJson(path.join(latestVideoDir, "narration.json"), null));
   const story = await readJson(path.join(ROOT, "daily", `${date}.json`), await readJson(path.join(ROOT, "latest.json"), null));
-  const imageNames = narration?.segments?.map((segment) => segment.image_name).filter(Boolean) || [
-    "00_start-grid.png",
-    "01_panel-01.png",
-    "02_panel-02.png",
-    "03_panel-03.png",
-    "04_panel-04.png",
-    "05_panel-05.png",
-    "06_panel-06.png",
-    "07_finished-grid.png",
-  ];
+  const imageNames = narration?.segments?.map((segment) => segment.image_name).filter(Boolean) || expectedFallbackImageNames(story);
 
   const framePaths = [];
   for (const imageName of imageNames) {
