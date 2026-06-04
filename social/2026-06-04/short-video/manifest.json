@@ -1,13 +1,6 @@
 {
   "date": "2026-06-04",
-  "status": "video_ready",
-  "video_file": "social/2026-06-04/short-video/sapiver_isla_daily_2026-06-04.mp4",
-  "tiktok_post_file": "social/2026-06-04/short-video/tiktok-post.txt",
-  "audio_used": true,
-  "audio_duration_seconds": 41.64,
-  "audio_tail_pad_seconds": 1.2,
-  "frame_count": 8,
-  "frame_duration_seconds": 5.36,
-  "estimated_silent_duration_seconds": 42.88,
-  "generated_at": "2026-06-04T06:34:10.466Z"
+  "status": "script_ready",
+  "voice_name": "Isla Sterling",
+  "generated_at": "2026-06-04T16:55:41.946Z"
 }
