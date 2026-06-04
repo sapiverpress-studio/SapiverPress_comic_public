@@ -12,10 +12,6 @@ async function readJson(file, fallback = null) {
   try { return JSON.parse(await fs.readFile(file, "utf8")); } catch { return fallback; }
 }
 
-function clean(value) {
-  return String(value || "").replace(/\s+/g, " ").trim();
-}
-
 function esc(value) {
   return String(value ?? "").replace(/[&<>\"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;" }[ch]));
 }
@@ -60,11 +56,74 @@ function expectedFiles(manifest, story) {
   return files;
 }
 
-function sceneText(story, index) {
-  const scene = story?.scenes?.[index] || {};
-  const dialogue = clean(scene.storyboard_dialogue || scene.dialogue || scene.speech_bubble || "");
-  const caption = clean(scene.storyboard_caption || scene.caption || scene.beat || scene.scene_description || "");
-  return { dialogue, caption, location: clean(scene.panel_location || scene.setting || ""), description: clean(scene.scene_description || scene.image_prompt_fragment || "") };
+function clientScript(dates, latestDate) {
+  return [
+    "const dates = " + JSON.stringify(dates) + ";",
+    "const initialDate = " + JSON.stringify(latestDate) + ";",
+    "function pad(n){return String(n).padStart(2,'0')}",
+    "function expectedFiles(manifest, story){",
+    "  if(Array.isArray(manifest && manifest.post_order) && manifest.post_order.length) return manifest.post_order;",
+    "  if(Array.isArray(manifest && manifest.files) && manifest.files.length) return manifest.files;",
+    "  const sceneCount = Array.isArray(story && story.scenes) ? story.scenes.length : 0;",
+    "  const panelCount = Math.max(8, sceneCount || 0);",
+    "  const arr=['00_start-grid.png'];",
+    "  for(let i=1;i<=panelCount;i++) arr.push(pad(i)+'_panel-'+pad(i)+'.png');",
+    "  arr.push(pad(panelCount+1)+'_finished-grid.png');",
+    "  return arr;",
+    "}",
+    "async function fetchJson(url, fallback){try{const r=await fetch(url,{cache:'no-store'}); if(!r.ok) return fallback; return await r.json()}catch{return fallback}}",
+    "async function fetchText(url, fallback){try{const r=await fetch(url,{cache:'no-store'}); if(!r.ok) return fallback; return await r.text()}catch{return fallback}}",
+    "function h(text){return String(text==null?'':text).replace(/[&<>\\\"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','\\\"':'&quot;'}[c]})}",
+    "async function loadDate(date){",
+    "  document.getElementById('datePill').textContent=date||'No date';",
+    "  const manifest=await fetchJson('/social/'+date+'/manifest.json',{});",
+    "  const story=await fetchJson('/daily/'+date+'.json',await fetchJson('/latest.json',{}));",
+    "  const files=expectedFiles(manifest,story);",
+    "  const grid=document.getElementById('assetGrid'); grid.innerHTML='';",
+    "  let imageCount=0; document.getElementById('imageCount').textContent='0';",
+    "  for(const pair of files.entries()){",
+    "    const i=pair[0], name=pair[1];",
+    "    const src='/social/'+date+'/'+name;",
+    "    const img=new Image();",
+    "    const card=document.createElement('div'); card.className='card';",
+    "    const title=i===0?'Start puzzle clip':name.includes('finished')?'Finished puzzle clip':'Story PNG '+i;",
+    "    card.innerHTML='<div class=\"missing\">Checking '+h(name)+'…</div><div class=\"body\"><h3>'+h(title)+'</h3><div class=\"small\">'+h(name)+'</div></div>';",
+    "    img.onload=function(){imageCount++; document.getElementById('imageCount').textContent=String(imageCount); const miss=card.querySelector('.missing'); if(miss) miss.replaceWith(img);};",
+    "    img.onerror=function(){const miss=card.querySelector('.missing'); if(miss) miss.textContent='Missing: '+name;};",
+    "    img.src=src+'?v='+Date.now();",
+    "    grid.appendChild(card);",
+    "  }",
+    "  const scenes=Array.isArray(story && story.scenes)?story.scenes:[];",
+    "  document.getElementById('storyText').innerHTML=scenes.map(function(s,i){",
+    "    const dialogue=s.storyboard_dialogue||s.dialogue||s.speech_bubble||'';",
+    "    const caption=s.storyboard_caption||s.caption||s.beat||'';",
+    "    const loc=s.panel_location||s.setting||'';",
+    "    return '<div class=\"scene\"><b>Panel '+(i+1)+': '+h(s.title||s.id||'')+'</b>'+(dialogue?'<div class=\"dialogue\">'+h(dialogue)+'</div>':'')+'<div class=\"caption\">'+h(caption)+'</div><div class=\"loc\">'+h(loc)+'</div></div>';",
+    "  }).join('') || '<p class=\"note\">No story scenes found.</p>';",
+    "  const videoManifest=await fetchJson('/social/'+date+'/short-video/manifest.json',{});",
+    "  document.getElementById('videoStatus').textContent=videoManifest.status||'not built';",
+    "  const videoPath=videoManifest.video_file?('/'+videoManifest.video_file):('/social/'+date+'/short-video/sapiver_isla_daily_'+date+'.mp4');",
+    "  document.getElementById('videoBlock').innerHTML=videoManifest.status==='video_ready'?'<video class=\"video\" controls src=\"'+h(videoPath)+'?v='+Date.now()+'\"></video><p><a href=\"'+h(videoPath)+'\" download>Download MP4</a></p>':'<p class=\"note\">No video yet. Use Create video after approving the PNGs and text.</p>';",
+    "  const script=await fetchText('/social/'+date+'/short-video/script.txt','Video script has not been generated yet.');",
+    "  document.getElementById('scriptText').textContent=script;",
+    "}",
+    "async function callAction(action){",
+    "  const key=localStorage.getItem('sapiverPreviewKey') || prompt('Preview admin key');",
+    "  if(!key) return;",
+    "  localStorage.setItem('sapiverPreviewKey',key);",
+    "  const date=document.getElementById('dateSelect').value || initialDate;",
+    "  const result=document.getElementById('actionResult'); result.textContent='Sending request…';",
+    "  const r=await fetch('/api/trigger-github-action',{method:'POST',headers:{'content-type':'application/json','x-preview-admin-key':key},body:JSON.stringify({action:action,date:date})});",
+    "  const data=await r.json().catch(function(){return {}});",
+    "  result.textContent=r.ok?'Triggered '+action+'. Check GitHub Actions, then refresh this page after it finishes.':'Failed: '+(data.error||r.statusText);",
+    "}",
+    "document.getElementById('dateSelect').addEventListener('change',function(e){loadDate(e.target.value)});",
+    "document.getElementById('runDailyBtn').addEventListener('click',function(){callAction('daily')});",
+    "document.getElementById('buildVideoBtn').addEventListener('click',function(){callAction('video')});",
+    "document.getElementById('postFacebookBtn').addEventListener('click',function(){callAction('facebook')});",
+    "document.getElementById('postPinterestBtn').addEventListener('click',function(){callAction('pinterest')});",
+    "loadDate(initialDate);"
+  ].join("\n");
 }
 
 async function build() {
@@ -83,6 +142,7 @@ async function build() {
   const scriptText = latestDate && await exists(path.join(ROOT, "social", latestDate, "short-video", "script.txt"))
     ? await fs.readFile(path.join(ROOT, "social", latestDate, "short-video", "script.txt"), "utf8")
     : "";
+  const options = dates.map((date) => `<option value="${esc(date)}" ${date === latestDate ? "selected" : ""}>${esc(date)}</option>`).join("");
 
   const html = `<!doctype html>
 <html lang="en">
@@ -111,7 +171,7 @@ section{margin:0 0 18px}.box{background:var(--panel);border:1px solid var(--line
 <div class="wrap">
   <aside class="side">
     <label class="small" for="dateSelect">Preview date</label>
-    <select id="dateSelect">${dates.map((date) => `<option value="${esc(date)}" ${date === latestDate ? "selected" : ""}>${esc(date)}</option>`).join("")}</select>
+    <select id="dateSelect">${options}</select>
     <div class="status">
       <span class="pill"><strong id="datePill">${esc(latestDate || "No date")}</strong></span>
       <span class="pill">Images: <strong id="imageCount">0</strong></span>
@@ -145,66 +205,7 @@ section{margin:0 0 18px}.box{background:var(--panel);border:1px solid var(--line
   </main>
 </div>
 <script>
-const dates = ${JSON.stringify(dates)};
-const initialDate = ${JSON.stringify(latestDate)};
-
-function pad(n){return String(n).padStart(2,'0')}
-function expectedFiles(manifest, story){
-  if(Array.isArray(manifest?.post_order)&&manifest.post_order.length) return manifest.post_order;
-  if(Array.isArray(manifest?.files)&&manifest.files.length) return manifest.files;
-  const sceneCount = Array.isArray(story?.scenes) ? story.scenes.length : 0;
-  const panelCount = Math.max(8, sceneCount || 0);
-  const arr=['00_start-grid.png'];
-  for(let i=1;i<=panelCount;i++) arr.push(`${pad(i)}_panel-${pad(i)}.png`);
-  arr.push(`${pad(panelCount+1)}_finished-grid.png`);
-  return arr;
-}
-async function fetchJson(url, fallback={}){try{const r=await fetch(url,{cache:'no-store'}); if(!r.ok) return fallback; return await r.json()}catch{return fallback}}
-async function fetchText(url, fallback=''){try{const r=await fetch(url,{cache:'no-store'}); if(!r.ok) return fallback; return await r.text()}catch{return fallback}}
-function h(text){return String(text??'').replace(/[&<>\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]))}
-async function loadDate(date){
-  document.getElementById('datePill').textContent=date||'No date';
-  const manifest=await fetchJson(`/social/${date}/manifest.json`,{});
-  const story=await fetchJson(`/daily/${date}.json`,await fetchJson('/latest.json',{}));
-  const files=expectedFiles(manifest,story);
-  const grid=document.getElementById('assetGrid'); grid.innerHTML='';
-  let imageCount=0;
-  for(const [i,name] of files.entries()){
-    const src=`/social/${date}/${name}`;
-    const img=new Image();
-    const card=document.createElement('div'); card.className='card';
-    const title=i===0?'Start puzzle clip':name.includes('finished')?'Finished puzzle clip':`Story PNG ${i}`;
-    card.innerHTML=`<div class="missing">Checking ${h(name)}…</div><div class="body"><h3>${h(title)}</h3><div class="small">${h(name)}</div></div>`;
-    img.onload=()=>{imageCount++; document.getElementById('imageCount').textContent=String(imageCount); card.querySelector('.missing')?.replaceWith(img);};
-    img.onerror=()=>{card.querySelector('.missing').textContent='Missing: '+name;};
-    img.src=src+'?v='+Date.now();
-    grid.appendChild(card);
-  }
-  const scenes=Array.isArray(story?.scenes)?story.scenes:[];
-  document.getElementById('storyText').innerHTML=scenes.map((s,i)=>`<div class="scene"><b>Panel ${i+1}: ${h(s.title||s.id||'')}</b>${s.storyboard_dialogue||s.dialogue||s.speech_bubble?`<div class="dialogue">${h(s.storyboard_dialogue||s.dialogue||s.speech_bubble)}</div>`:''}<div class="caption">${h(s.storyboard_caption||s.caption||s.beat||'')}</div><div class="loc">${h(s.panel_location||s.setting||'')}</div></div>`).join('') || '<p class="note">No story scenes found.</p>';
-  const videoManifest=await fetchJson(`/social/${date}/short-video/manifest.json`,{});
-  document.getElementById('videoStatus').textContent=videoManifest.status||'not built';
-  const videoPath=videoManifest.video_file?`/${videoManifest.video_file}`:`/social/${date}/short-video/sapiver_isla_daily_${date}.mp4`;
-  document.getElementById('videoBlock').innerHTML=videoManifest.status==='video_ready'?`<video class="video" controls src="${h(videoPath)}?v=${Date.now()}"></video><p><a href="${h(videoPath)}" download>Download MP4</a></p>`:'<p class="note">No video yet. Use Create video after approving the PNGs and text.</p>';
-  const script=await fetchText(`/social/${date}/short-video/script.txt`,'Video script has not been generated yet.');
-  document.getElementById('scriptText').textContent=script;
-}
-async function callAction(action){
-  const key=localStorage.getItem('sapiverPreviewKey') || prompt('Preview admin key');
-  if(!key) return;
-  localStorage.setItem('sapiverPreviewKey',key);
-  const date=document.getElementById('dateSelect').value || initialDate;
-  const result=document.getElementById('actionResult'); result.textContent='Sending request…';
-  const r=await fetch('/api/trigger-github-action',{method:'POST',headers:{'content-type':'application/json','x-preview-admin-key':key},body:JSON.stringify({action,date})});
-  const data=await r.json().catch(()=>({}));
-  result.textContent=r.ok?`Triggered ${action}. Check GitHub Actions, then refresh this page after it finishes.`:`Failed: ${data.error||r.statusText}`;
-}
-document.getElementById('dateSelect').addEventListener('change',e=>loadDate(e.target.value));
-document.getElementById('runDailyBtn').addEventListener('click',()=>callAction('daily'));
-document.getElementById('buildVideoBtn').addEventListener('click',()=>callAction('video'));
-document.getElementById('postFacebookBtn').addEventListener('click',()=>callAction('facebook'));
-document.getElementById('postPinterestBtn').addEventListener('click',()=>callAction('pinterest'));
-loadDate(initialDate);
+${clientScript(dates, latestDate)}
 </script>
 </body>
 </html>`;
