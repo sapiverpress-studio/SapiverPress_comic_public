@@ -158,6 +158,12 @@ jobs:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
         run: npm run generate-images
 
+      - name: Validate generated panel set before compose
+        if: steps.api_guard.outputs.generate_images == 'true'
+        env:
+          DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
+        run: node scripts/validate-generated-panel-set.mjs
+
       - name: Polish generated images with OpenAI
         if: steps.api_guard.outputs.generate_images == 'true'
         continue-on-error: true
@@ -189,6 +195,7 @@ jobs:
             social/*/manifest.json
             art-prompts/**/*
             captures/**/*
+            art-replacements/*/generated-panel-validation.json
           if-no-files-found: warn
           retention-days: 30
           compression-level: 0
