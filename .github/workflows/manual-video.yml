@@ -1,0 +1,105 @@
+name: Sapiver Press Manual Video Build
+
+on:
+  workflow_dispatch:
+    inputs:
+      date_override:
+        description: "YYYY-MM-DD preview date to turn into video"
+        required: false
+        default: ""
+      generate_voiceover:
+        description: "Use ElevenLabs voiceover if available"
+        required: false
+        default: "true"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sapiver-press-manual-video
+  cancel-in-progress: false
+
+jobs:
+  build-video:
+    name: Build approved preview video
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout public repo
+        uses: actions/checkout@v5
+        with:
+          persist-credentials: true
+
+      - name: Sync to latest main
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Generate shorter, denser video script
+        env:
+          DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
+          SUITE_URL: "https://suite.sapiverpress.co.uk"
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
+          ELEVENLABS_VOICE_NAME: "Isla Sterling"
+          ELEVENLABS_VOICE_ID: "qSR2T7SqN7Pcd0YpO3Vd"
+        run: npm run short-video-script
+
+      - name: Generate voiceover
+        if: github.event.inputs.generate_voiceover != 'false'
+        continue-on-error: true
+        env:
+          DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
+          ISLA_ELEVEN: ${{ secrets.ISLA_ELEVEN }}
+          ELEVENLABS_VOICE_NAME: "Isla Sterling"
+          ELEVENLABS_VOICE_ID: "qSR2T7SqN7Pcd0YpO3Vd"
+          ELEVENLABS_MODEL_ID: "eleven_multilingual_v2"
+        run: npm run short-video-voice
+
+      - name: Build MP4
+        env:
+          DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
+          SUITE_URL: "https://suite.sapiverpress.co.uk"
+          ETSY_URL: "https://sapiverpress.etsy.com?coupon=SAVE20"
+          SHORT_VIDEO_FRAME_SECONDS: "2.25"
+        run: npm run short-video-build
+
+      - name: Upload video artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sapiver-isla-approved-video-${{ github.run_number }}
+          path: |
+            social/*/short-video/*.mp4
+            social/*/short-video/tiktok-post.txt
+            social/*/short-video/tiktok-post.json
+            social/*/short-video/script.txt
+            social/*/short-video/caption.txt
+            social/*/short-video/subtitles.srt
+            social/*/short-video/narration.json
+            social/*/short-video/manifest.json
+          if-no-files-found: warn
+          retention-days: 30
+          compression-level: 0
+
+      - name: Commit video outputs
+        run: |
+          set -e
+          git config user.name "sapiver-comic-bot"
+          git config user.email "sapiver-comic-bot@users.noreply.github.com"
+          git add social || true
+          if git diff --cached --quiet; then
+            echo "No video changes"
+          else
+            git commit -m "Build approved daily comic video"
+            git push
+          fi
