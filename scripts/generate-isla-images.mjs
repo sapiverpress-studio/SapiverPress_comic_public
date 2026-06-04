@@ -18,6 +18,7 @@ const GUIDANCE = Number(process.env.HF_GUIDANCE_SCALE || process.env.FAL_GUIDANC
 const LORA_SCALE = Number(process.env.HF_LORA_SCALE || process.env.FAL_LORA_SCALE || 1.0);
 const FAL_TIMEOUT_MS = Number(process.env.FAL_TIMEOUT_MS || 180000);
 const HF_TIMEOUT_MS = Number(process.env.HF_TIMEOUT_MS || 120000);
+const DEFAULT_NEGATIVE_PROMPT = "text elements, lettering, labels, typography, captions, puzzle grid, numbers, watermark, large logo, low quality, blurry";
 
 const PANEL_FILES = [
   "01_panel-01.png",
@@ -148,7 +149,7 @@ function normalisePanels(promptPack) {
   const panels = Array.isArray(promptPack?.panels) ? promptPack.panels : [];
   return PANEL_FILES.map((imageName, index) => {
     const panel = panels[index] || {};
-    return { panel_number: index + 1, image_name: imageName, prompt: ensureTrigger(panel.prompt), negative_prompt: panel.negative_prompt || "text, captions, speech bubbles, puzzle grid, numbers, watermark, large logo, low quality, blurry" };
+    return { panel_number: index + 1, image_name: imageName, prompt: ensureTrigger(panel.prompt), negative_prompt: panel.negative_prompt || DEFAULT_NEGATIVE_PROMPT };
   });
 }
 
