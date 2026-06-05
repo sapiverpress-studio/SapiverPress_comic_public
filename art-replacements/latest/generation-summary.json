@@ -1,6 +1,6 @@
 {
   "date": "2026-06-05",
-  "generated_at": "2026-06-05T05:17:31.084Z",
+  "generated_at": "2026-06-05T06:44:20.756Z",
   "route": "fal-ai-z-image-turbo-lora-first",
   "fal_model": "fal-ai/z-image/turbo/lora",
   "hf_fallback_model": "stabilityai/stable-diffusion-xl-base-1.0",
@@ -18,7 +18,7 @@
       "provider": "fal",
       "model": "fal-ai/z-image/turbo/lora",
       "output": "art-replacements/2026-06-05/01_panel-01.png",
-      "remote_url": "https://v3b.fal.media/files/b/0a9d0931/JE17BWLE31uDwT4aI8h4h_GWNBMo5e.png",
+      "remote_url": "https://v3b.fal.media/files/b/0a9d0b3a/pm1ahYWYNT5CfIWRl4L1h_trBLKpoL.png",
       "fal_error": ""
     },
     {
@@ -27,7 +27,7 @@
       "provider": "fal",
       "model": "fal-ai/z-image/turbo/lora",
       "output": "art-replacements/2026-06-05/02_panel-02.png",
-      "remote_url": "https://v3b.fal.media/files/b/0a9d0935/4YL3bMiePn3qJpwz0ksmY_82k1Y0ec.png",
+      "remote_url": "https://v3b.fal.media/files/b/0a9d0b3a/HHx-XXh5RgEWm8wX7roan_1Alwb1Yd.png",
       "fal_error": ""
     },
     {
@@ -36,7 +36,7 @@
       "provider": "fal",
       "model": "fal-ai/z-image/turbo/lora",
       "output": "art-replacements/2026-06-05/03_panel-03.png",
-      "remote_url": "https://v3b.fal.media/files/b/0a9d0935/JJFQHZuTd7PlDO56NnPpR_wQ8Ij1PI.png",
+      "remote_url": "https://v3b.fal.media/files/b/0a9d0b3b/1TDwurNLNNMAY4Nmvatlu_9vTDazu4.png",
       "fal_error": ""
     },
     {
@@ -45,7 +45,7 @@
       "provider": "fal",
       "model": "fal-ai/z-image/turbo/lora",
       "output": "art-replacements/2026-06-05/04_panel-04.png",
-      "remote_url": "https://v3b.fal.media/files/b/0a9d0936/RWxvnzccCZHWXJdm9IgrT_CQHD3aFx.png",
+      "remote_url": "https://v3b.fal.media/files/b/0a9d0b3c/C3FxFK3LY9VPIDQRaDk0L_HxgJj1Ge.png",
       "fal_error": ""
     },
     {
@@ -54,7 +54,7 @@
       "provider": "fal",
       "model": "fal-ai/z-image/turbo/lora",
       "output": "art-replacements/2026-06-05/05_panel-05.png",
-      "remote_url": "https://v3b.fal.media/files/b/0a9d0937/INVJmx51_-cWG8HorSBo1_xAJa40eo.png",
+      "remote_url": "https://v3b.fal.media/files/b/0a9d0b3d/MR6-jRz3s1TimHQyRFeF2_FK2erYUR.png",
       "fal_error": ""
     },
     {
@@ -63,7 +63,7 @@
       "provider": "fal",
       "model": "fal-ai/z-image/turbo/lora",
       "output": "art-replacements/2026-06-05/06_panel-06.png",
-      "remote_url": "https://v3b.fal.media/files/b/0a9d0938/dAeiV7Fg53EdqCjHIYWBu_Y2E1a8FD.png",
+      "remote_url": "https://v3b.fal.media/files/b/0a9d0b3d/lSrPiyW2EmCevUQIWncnA_pU90tqs9.png",
       "fal_error": ""
     }
   ],
@@ -71,19 +71,19 @@
   "errors": [],
   "preflight": {
     "hf_token": {
-      "ok": false,
-      "status": 429,
-      "status_text": "Too Many Requests",
-      "name": "",
-      "error": "<!DOCTYPE html>\n<html class=\"\" lang=\"en\">\n<head>\n    <meta charset=\"utf-8\" />\n    <meta\n            name=\"viewport\"\n            content=\"width=device-width, initial-scale=1.0, user-scalable=no\"\n    />\n    <meta\n            name=\"description\"\n            content=\"We're on a journey to advance and democratize artificial intelligence through open source and open science.\"\n    />\n    <meta property=\"fb:app_id\" content=\"1321688464574422\" />\n    <meta name=\"twitter:card\" content=\"summary_large_image\" />\n    <meta name=\"twitter:site\" content=\"@huggingface\" />\n    <meta\n            property=\"og:title\""
+      "ok": true,
+      "status": 200,
+      "status_text": "OK",
+      "name": "sapiverpress",
+      "error": ""
     },
     "hf_lora_repo": {
-      "ok": false,
-      "status": 429,
-      "status_text": "Too Many Requests",
-      "id": "",
+      "ok": true,
+      "status": 200,
+      "status_text": "OK",
+      "id": "sapiverpress/Isla_v2",
       "private": false,
-      "error": "<!DOCTYPE html>\n<html class=\"\" lang=\"en\">\n<head>\n    <meta charset=\"utf-8\" />\n    <meta\n            name=\"viewport\"\n            content=\"width=device-width, initial-scale=1.0, user-scalable=no\"\n    />\n    <meta\n            name=\"description\"\n            content=\"We're on a journey to advance and democratize artificial intelligence through open source and open science.\"\n    />\n    <meta property=\"fb:app_id\" content=\"1321688464574422\" />\n    <meta name=\"twitter:card\" content=\"summary_large_image\" />\n    <meta name=\"twitter:site\" content=\"@huggingface\" />\n    <meta\n            property=\"og:title\""
+      "error": ""
     }
   }
 }

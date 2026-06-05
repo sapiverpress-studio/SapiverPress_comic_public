@@ -50,7 +50,7 @@
       "output_file": "social/2026-06-05/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "Isla squeezes in a few quick moments at her table before the busy workday begins.",
+      "caption": "Isla lets the day show her what has to come first.",
       "scene_id": "scene_01"
     },
     {
@@ -70,7 +70,7 @@
       "output_file": "social/2026-06-05/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "Finding a steady desk among the shelves, she realizes there are no real shortcuts here.",
+      "caption": "She waits for the first move that proves itself.",
       "scene_id": "scene_03"
     },
     {
@@ -90,7 +90,7 @@
       "output_file": "social/2026-06-05/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "With the puzzle almost solved, she jots down a final note at the counter.",
+      "caption": "Heading out to grab lunch, she makes a quick stop to finalize some of her notes.",
       "scene_id": "scene_05"
     },
     {
@@ -100,10 +100,10 @@
       "output_file": "social/2026-06-05/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "Isla closes her laptop, ready to handle the Friday wrap-up with Nora on time.",
+      "caption": "With her work completely wrapped up, Isla packs her things and enjoys the peaceful, rainy afternoon view.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-06-05.json",
-  "generated_at": "2026-06-05T05:17:30.587Z"
+  "generated_at": "2026-06-05T06:44:20.248Z"
 }
