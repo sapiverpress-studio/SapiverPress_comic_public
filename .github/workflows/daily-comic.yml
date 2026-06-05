@@ -175,15 +175,17 @@ jobs:
         run: npm run polish-images
 
       - name: Compose preview PNG set
+        id: compose_preview
         if: steps.api_guard.outputs.generate_images == 'true'
+        continue-on-error: true
         env:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
           SUITE_URL: "https://suite.sapiverpress.co.uk"
           COMIC_SCREEN_BOX: ${{ secrets.COMIC_SCREEN_BOX }}
         run: npm run compose
 
-      - name: Upload preview assets
-        if: steps.api_guard.outputs.generate_images == 'true'
+      - name: Upload preview and rejection assets
+        if: steps.api_guard.outputs.generate_images == 'true' && always()
         uses: actions/upload-artifact@v4
         with:
           name: sapiver-isla-preview-${{ github.run_number }}
@@ -195,13 +197,14 @@ jobs:
             social/*/manifest.json
             art-prompts/**/*
             captures/**/*
-            art-replacements/*/generated-panel-validation.json
+            art-replacements/**/*
+            rejected-art/**/*
           if-no-files-found: warn
           retention-days: 30
           compression-level: 0
 
-      - name: Commit generated preview outputs
-        if: steps.api_guard.outputs.generate_images == 'true'
+      - name: Commit generated preview or rejection outputs
+        if: steps.api_guard.outputs.generate_images == 'true' && always()
         run: |
           set -e
           git config user.name "sapiver-comic-bot"
@@ -220,11 +223,11 @@ jobs:
             done
           fi
 
-          git add characters/isla.json characters/isla_life_canon.json daily image-manifests latest.json social art-prompts art-replacements captures || true
+          git add characters/isla.json characters/isla_life_canon.json daily image-manifests latest.json social art-prompts art-replacements rejected-art captures || true
           if git diff --cached --quiet; then
-            echo "No generated preview changes"
+            echo "No generated preview/rejection changes"
           else
-            git commit -m "Update daily comic preview assets"
+            git commit -m "Update daily comic preview or rejected art assets"
             for attempt in 1 2 3; do
               if git push; then
                 break
@@ -234,6 +237,12 @@ jobs:
               git pull --rebase --autostash origin main || true
             done
           fi
+
+      - name: Fail if compose failed
+        if: steps.api_guard.outputs.generate_images == 'true' && always()
+        env:
+          COMPOSE_OUTCOME: ${{ steps.compose_preview.outcome }}
+        run: node scripts/fail-if-compose-failed.mjs
 
       - name: Run archive migration
         if: steps.api_guard.outputs.generate_images == 'true' && github.event_name == 'workflow_dispatch' && github.event.inputs.run_archive == 'true'
