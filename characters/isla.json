@@ -105,51 +105,6 @@
     {
       "date": "2026-06-01",
       "weekday": "Monday",
-      "same_day_attempt": 10,
-      "setting": "co-working desk near a tall window",
-      "puzzle_phase": "early-week",
-      "story_note": "Isla spends this entry at the co-working desk near a tall window because she has work waiting, so the puzzle has to fit into a short gap. The puzzle stays as a light thread inside the day.",
-      "continuation_note": "Remember: Isla often fits her puzzle ritual between work blocks. Continue the thread: work days make the puzzle a boundary marker.",
-      "stuck_moment": "hands still, thinking before moving",
-      "life_memory_entry": {
-        "date": "2026-06-01",
-        "attempt": 10,
-        "location": "co-working desk near a tall window",
-        "reason_for_location": "she has work waiting, so the puzzle has to fit into a short gap",
-        "life_detail_learned": "Isla often fits her puzzle ritual between work blocks.",
-        "thread_to_continue": "work days make the puzzle a boundary marker",
-        "puzzle_variant_mentioned": "Anti-Knight",
-        "variant_panel_index": 4,
-        "uk_calendar_date": null,
-        "uk_calendar_panel_index": null
-      },
-      "variant_recap": {
-        "variant_name": "Anti-Knight",
-        "short_rule": "Anti-Knight today — knight moves block matching numbers.",
-        "panel_index": 4,
-        "line": "Anti-Knight today — knight moves block matching numbers."
-      },
-      "uk_calendar_date": null,
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "Kitchen quiet.",
-        "Anti-Knight today — knight moves block matching numbers.",
-        "Think slower.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Last checks.",
-        "Day begins."
-      ]
-    },
-    {
-      "date": "2026-06-01",
-      "weekday": "Monday",
       "same_day_attempt": 11,
       "setting": "bookshop cafe corner",
       "puzzle_phase": "early-week",
@@ -1450,6 +1405,51 @@
         "Daily Renban Sudoku | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
         "Almost done.",
         "No rush."
+      ]
+    },
+    {
+      "date": "2026-06-05",
+      "weekday": "Friday",
+      "same_day_attempt": 1,
+      "setting": "co-working desk near a tall window",
+      "puzzle_phase": "late-week",
+      "story_note": "Isla spends this entry at the co-working desk near a tall window because she has work waiting, so the puzzle has to fit into a short gap. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Isla often fits her puzzle ritual between work blocks. Continue the thread: work days make the puzzle a boundary marker.",
+      "stuck_moment": "hands still, thinking before moving",
+      "life_memory_entry": {
+        "date": "2026-06-05",
+        "attempt": 1,
+        "location": "co-working desk near a tall window",
+        "reason_for_location": "she has work waiting, so the puzzle has to fit into a short gap",
+        "life_detail_learned": "Isla often fits her puzzle ritual between work blocks.",
+        "thread_to_continue": "work days make the puzzle a boundary marker",
+        "puzzle_variant_mentioned": "Daily German Whispers Sudoku | Sapiver Press",
+        "variant_panel_index": 4,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Daily German Whispers Sudoku | Sapiver Press",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 4,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Between tasks.",
+        "Quick start.",
+        "No shortcut.",
+        "Daily German Whispers Sudoku | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
+        "Nearly done.",
+        "Back to work."
       ]
     }
   ],
@@ -1457,51 +1457,6 @@
     {
       "date": "2026-06-01",
       "weekday": "Monday",
-      "same_day_attempt": 10,
-      "setting": "co-working desk near a tall window",
-      "puzzle_phase": "early-week",
-      "story_note": "Isla spends this entry at the co-working desk near a tall window because she has work waiting, so the puzzle has to fit into a short gap. The puzzle stays as a light thread inside the day.",
-      "continuation_note": "Remember: Isla often fits her puzzle ritual between work blocks. Continue the thread: work days make the puzzle a boundary marker.",
-      "stuck_moment": "hands still, thinking before moving",
-      "life_memory_entry": {
-        "date": "2026-06-01",
-        "attempt": 10,
-        "location": "co-working desk near a tall window",
-        "reason_for_location": "she has work waiting, so the puzzle has to fit into a short gap",
-        "life_detail_learned": "Isla often fits her puzzle ritual between work blocks.",
-        "thread_to_continue": "work days make the puzzle a boundary marker",
-        "puzzle_variant_mentioned": "Anti-Knight",
-        "variant_panel_index": 4,
-        "uk_calendar_date": null,
-        "uk_calendar_panel_index": null
-      },
-      "variant_recap": {
-        "variant_name": "Anti-Knight",
-        "short_rule": "Anti-Knight today — knight moves block matching numbers.",
-        "panel_index": 4,
-        "line": "Anti-Knight today — knight moves block matching numbers."
-      },
-      "uk_calendar_date": null,
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "Kitchen quiet.",
-        "Anti-Knight today — knight moves block matching numbers.",
-        "Think slower.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Last checks.",
-        "Day begins."
-      ]
-    },
-    {
-      "date": "2026-06-01",
-      "weekday": "Monday",
       "same_day_attempt": 11,
       "setting": "bookshop cafe corner",
       "puzzle_phase": "early-week",
@@ -2803,10 +2758,55 @@
         "Almost done.",
         "No rush."
       ]
+    },
+    {
+      "date": "2026-06-05",
+      "weekday": "Friday",
+      "same_day_attempt": 1,
+      "setting": "co-working desk near a tall window",
+      "puzzle_phase": "late-week",
+      "story_note": "Isla spends this entry at the co-working desk near a tall window because she has work waiting, so the puzzle has to fit into a short gap. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Isla often fits her puzzle ritual between work blocks. Continue the thread: work days make the puzzle a boundary marker.",
+      "stuck_moment": "hands still, thinking before moving",
+      "life_memory_entry": {
+        "date": "2026-06-05",
+        "attempt": 1,
+        "location": "co-working desk near a tall window",
+        "reason_for_location": "she has work waiting, so the puzzle has to fit into a short gap",
+        "life_detail_learned": "Isla often fits her puzzle ritual between work blocks.",
+        "thread_to_continue": "work days make the puzzle a boundary marker",
+        "puzzle_variant_mentioned": "Daily German Whispers Sudoku | Sapiver Press",
+        "variant_panel_index": 4,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Daily German Whispers Sudoku | Sapiver Press",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 4,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Between tasks.",
+        "Quick start.",
+        "No shortcut.",
+        "Daily German Whispers Sudoku | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
+        "Nearly done.",
+        "Back to work."
+      ]
     }
   ],
   "ongoing_threads": [],
-  "last_updated": "2026-06-04",
+  "last_updated": "2026-06-05",
   "same_day_attempts_kept": true,
   "life_canon_file": "characters/isla_life_canon.json"
 }
