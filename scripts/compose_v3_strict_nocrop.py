@@ -8,6 +8,7 @@ Exports the daily comic as eight PNG files:
 
 Critical rule: if a generated replacement panel exists but cannot accept the puzzle overlay,
 this script fails. It must not silently recover by swapping in locked template art.
+Rejected generated panels are archived for review before failure.
 """
 from __future__ import annotations
 
@@ -28,6 +29,8 @@ OUT_DIR = base.OUT_DIR
 LATEST_DIR = ROOT / "social" / "latest"
 REPLACEMENT_DIR = ROOT / "art-replacements" / DATE
 LATEST_REPLACEMENT_DIR = ROOT / "art-replacements" / "latest"
+REJECTED_DIR = ROOT / "rejected-art" / DATE
+LATEST_REJECTED_DIR = ROOT / "rejected-art" / "latest"
 
 EXPORT_FILES = [
     "00_start-grid.png",
@@ -87,7 +90,6 @@ def scene_text_parts(story: dict, index: int) -> tuple[str, str]:
     scenes = story.get("scenes") or []
     if index < len(scenes):
         scene = scenes[index]
-        # Overlay-safe text fields are preferred. The image prompt layer should not use the legacy fields.
         dialogue = str(scene.get("storyboard_dialogue") or scene.get("overlay_dialogue") or scene.get("overlay_text") or "").strip()
         caption = str(scene.get("storyboard_caption") or scene.get("caption") or "").strip()
         return dialogue, caption or base.DEFAULT_CAPTIONS[index]
@@ -201,13 +203,7 @@ def clear_old_outputs() -> None:
     old_montage = ROOT / "social" / f"{DATE}.png"
     if old_montage.exists():
         old_montage.unlink()
-    old_names = set(EXPORT_FILES) | {
-        "manifest.json",
-        "strict_clean_map.json",
-        "contact_sheet_strict_clean.jpg",
-        f"isla_v3_STRICT_CLEAN_{DATE}.zip",
-        f"isla_v3_daily_set_{DATE}.zip",
-    }
+    old_names = set(EXPORT_FILES) | {"manifest.json", "strict_clean_map.json", "contact_sheet_strict_clean.jpg", f"isla_v3_STRICT_CLEAN_{DATE}.zip", f"isla_v3_daily_set_{DATE}.zip"}
     old_names.update(f"{i:02d}_strict_clean.png" for i in range(1, 7))
     for folder in (OUT_DIR, LATEST_DIR):
         for name in old_names:
@@ -302,6 +298,47 @@ def replacement_candidates(index: int) -> list[Path]:
     return [REPLACEMENT_DIR / name, LATEST_REPLACEMENT_DIR / name]
 
 
+def archive_rejected_panel(story: dict, scene: dict, index: int, panel_path: Path | None, row: dict, reason: str, candidates: list[Path]) -> Path:
+    panel_name = PANEL_REPLACEMENT_NAMES[index]
+    panel_no = index + 1
+    archive_dir = REJECTED_DIR / f"{panel_no:02d}_{panel_name.removesuffix('.png')}"
+    latest_dir = LATEST_REJECTED_DIR / f"{panel_no:02d}_{panel_name.removesuffix('.png')}"
+    for folder in (archive_dir, latest_dir):
+        folder.mkdir(parents=True, exist_ok=True)
+
+    copied: list[str] = []
+    for source in candidates:
+        if not source.exists() or not source.is_file():
+            continue
+        prefix = "latest" if source.parent.name == "latest" else "dated"
+        target_name = f"{prefix}_{source.name}"
+        for folder in (archive_dir, latest_dir):
+            shutil.copy2(source, folder / target_name)
+        copied.append(str((archive_dir / target_name).relative_to(ROOT)))
+
+    if panel_path and panel_path.exists() and panel_path.is_file():
+        for folder in (archive_dir, latest_dir):
+            shutil.copy2(panel_path, folder / "compositor_attempt.png")
+        copied.append(str((archive_dir / "compositor_attempt.png").relative_to(ROOT)))
+
+    report = {
+        "date": DATE,
+        "panel": panel_no,
+        "scene_id": scene.get("id") or scene.get("scene_id") or f"scene_{panel_no:02d}",
+        "status": "rejected_before_template_recovery",
+        "reason": reason,
+        "row": row,
+        "scene": scene,
+        "candidate_paths": [str(p.relative_to(ROOT)) for p in candidates],
+        "copied_review_files": copied,
+        "next_fix": "Revise the image prompt/screen-state so puzzle panels contain a large, clean, dark blank laptop/screen area; or mark story-only panels as no_puzzle.",
+        "archived_at": datetime.now(ZoneInfo("Europe/London")).isoformat(),
+    }
+    for folder in (archive_dir, latest_dir):
+        (folder / "rejection-report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
+    return archive_dir
+
+
 def compose_panel_strict(story: dict, scene: dict, index: int, capture: Path) -> tuple[Path, dict]:
     panel_path, row = base.compose_panel(story, scene, index, capture)
     candidates = replacement_candidates(index)
@@ -309,22 +346,26 @@ def compose_panel_strict(story: dict, scene: dict, index: int, capture: Path) ->
     panel_no = index + 1
 
     if existing_candidates and row.get("art_source") == "template":
+        reason = "locked template art was selected even though generated replacement art exists"
+        archive_dir = archive_rejected_panel(story, scene, index, panel_path, row, reason, candidates)
         raise RuntimeError(
-            f"STRICT COMPOSE FAILED: panel {panel_no} used locked template art even though generated replacement art exists: "
-            + ", ".join(str(p.relative_to(ROOT)) for p in existing_candidates)
+            f"STRICT COMPOSE FAILED: panel {panel_no} used locked template art even though generated replacement art exists. "
+            f"Rejected art archived at {archive_dir.relative_to(ROOT)}"
         )
 
     if row.get("art_source") == "replacement" and row.get("screen_quad_mode") == "overlay_skipped_no_screen_detected":
+        reason = "generated replacement art has no valid screen area for puzzle overlay"
+        archive_dir = archive_rejected_panel(story, scene, index, panel_path, row, reason, candidates)
         raise RuntimeError(
             f"STRICT COMPOSE FAILED: panel {panel_no} generated replacement art was used, but no valid screen area was detected for puzzle overlay. "
-            f"Replacement: {row.get('replacement') or row.get('art_path') or PANEL_REPLACEMENT_NAMES[index]}. "
-            "The run must stop here; do not recover with locked template art. Fix the panel prompt or mark the scene as no_puzzle."
+            f"Rejected art archived at {archive_dir.relative_to(ROOT)}. "
+            "Do not recover with locked template art. Fix the panel prompt or mark the scene as no_puzzle."
         )
 
     if row.get("recovered_from_missing_replacement_screen"):
-        raise RuntimeError(
-            f"STRICT COMPOSE FAILED: panel {panel_no} attempted template recovery. Template recovery is disabled."
-        )
+        reason = "template recovery was attempted"
+        archive_dir = archive_rejected_panel(story, scene, index, panel_path, row, reason, candidates)
+        raise RuntimeError(f"STRICT COMPOSE FAILED: panel {panel_no} attempted template recovery. Rejected art archived at {archive_dir.relative_to(ROOT)}")
 
     return panel_path, row
 
