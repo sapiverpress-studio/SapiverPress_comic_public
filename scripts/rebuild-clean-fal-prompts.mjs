@@ -33,18 +33,38 @@ function clean(v) {
   return tidy(s);
 }
 function first(...xs) { for (const x of xs) { const y = clean(x); if (y) return y; } return ""; }
+function screenSurfaceRequired(panel) {
+  const state = tidy(panel.panel_screen_state || panel.screen_state || "").toLowerCase();
+  if (!state) return true;
+  if (state.includes("no_puzzle") || state.includes("closed") || state.includes("absent")) return false;
+  return true;
+}
+function screenSurfaceInstruction(panel) {
+  const state = tidy(panel.panel_screen_state || panel.screen_state || "active_puzzle");
+  if (!screenSurfaceRequired(panel)) {
+    return "Story-only panel: if a laptop appears, it is closed, turned away, or naturally packed away; no display surface is needed.";
+  }
+  return [
+    "LOCKED COMPOSITION REQUIREMENT: Isla and her real laptop are equal priority subjects in the same believable scene.",
+    "The laptop is a physical object connected to its keyboard by a visible hinge, resting naturally on the desk, table, counter, or Isla's lap according to the setting.",
+    "The laptop is not floating, not detached from the desk, not a standalone rectangle, not a poster, not a wall screen, and not a graphic frame.",
+    "Show the full open laptop body: keyboard base visible, hinge visible, display attached to the base, perspective consistent with the tabletop or lap.",
+    "The display faces the viewer at a clear three-quarter front angle and contains a large plain dark blank rectangular screen.",
+    "The blank screen must be unobstructed, clean, matte, inside the frame, with visible screen edges and enough size for a later digital puzzle overlay.",
+    "Hands, cups, books, hair, sleeves, and foreground props must not cross or cover the display.",
+    "The screen should take roughly one quarter to one third of the image width while Isla remains clearly visible and expressive.",
+    `Panel screen state: ${state}; preserve a contextual real laptop screen surface for the compositor.`
+  ].join(" ");
+}
 function promptFor(p, pack) {
   const appearance = first(p.appearance_lock, pack.appearance_lock) || "young Black woman, warm medium brown skin, natural coily dark hair in a high puff bun, floral headband, gold hoop earrings, oversized deep teal hoodie, warm painterly editorial style";
   const story = first(p.story_beat, p.storyboard_caption, p.caption) || "Isla pauses with calm focus";
   const location = first(p.panel_location, p.location_text, p.environment_text);
   const action = first(p.panel_action);
   const pose = first(p.panel_pose_family, p.pose_text, p.pose_marker);
-  const screenState = tidy(p.panel_screen_state).toLowerCase();
-  const screen = screenState.includes("no_puzzle") || screenState.includes("closed")
-    ? "Story-only panel, device closed or absent, focus on Isla and the setting."
-    : "Open laptop with a large plain dark blank screen facing the viewer for later puzzle overlay.";
-  const cleanSurfaces = "Clean editorial illustration, plain unmarked surfaces, books and notebooks used only as simple colour-block props, background props secondary.";
-  return `${TRIGGER}, ${[appearance, `Visual moment: ${story}.`, location ? `Location: ${location}.` : "", action ? `Action: ${action}.` : "", pose ? `Pose: ${pose}.` : "", screen, cleanSurfaces, "Single coherent real-world scene, Isla is the clear main subject."].filter(Boolean).join(" ")}`;
+  const screen = screenSurfaceInstruction(p);
+  const cleanSurfaces = "Clean editorial illustration, plain unmarked walls and tidy surfaces, books and notebooks used only as simple colour-block props, background props secondary.";
+  return `${TRIGGER}, ${[appearance, screen, `Visual moment: ${story}.`, location ? `Location: ${location}.` : "", action ? `Action: ${action}.` : "", pose ? `Pose: ${pose}.` : "", cleanSurfaces, "Single coherent real-world scene, Isla is the clear main subject and the contextual laptop screen is the clear overlay surface."].filter(Boolean).join(" ")}`;
 }
 function safeNegativePrompt(p, pack) {
   const raw = tidy(p.negative_prompt || pack.locked_negative_prompt || "");
@@ -55,7 +75,7 @@ function safeNegativePrompt(p, pack) {
     .replace(/\bpost\b/gi, "")
     .replace(/\bnote\b/gi, "")
     .replace(/,{2,}/g, ",");
-  return tidy([cleaned, "text elements, lettering, labels, typography, captions, puzzle grid, numbers, watermark, large logo, low quality, blurry"].filter(Boolean).join(", "));
+  return tidy([cleaned, "text elements, lettering, labels, typography, captions, puzzle grid, numbers, watermark, large logo, low quality, blurry, floating screen, detached screen, standalone rectangle, wall screen, poster frame, cropped laptop, hidden display, tiny laptop, cluttered display, reflective screen, hands covering screen"].filter(Boolean).join(", "));
 }
 function assertSafeFinalPrompts(pack) {
   const hits = [];
@@ -78,14 +98,31 @@ const latest = path.join(ROOT, "art-prompts", "latest", "prompts.json");
 const pack = await readJson(dated, await readJson(latest, null));
 if (!pack) throw new Error(`Missing art prompt payload for ${DATE}`);
 const panels = Array.isArray(pack.panels) ? pack.panels : [];
-pack.final_fal_prompt_composer = "clean_story_fields_only_v2_no_object_name_contamination";
+pack.final_fal_prompt_composer = "clean_story_fields_with_contextual_laptop_overlay_surface_v4";
+pack.overlay_surface_contract = {
+  screen_surface_priority: "equal_to_isla_identity",
+  puzzle_panels_require_contextual_open_laptop: true,
+  screen_prompt_rule: "Use panel_screen_state to require a real open laptop in scene context unless the scene is explicitly no_puzzle or closed_device.",
+};
 pack.panels = PANEL_FILES.map((name, i) => {
   const p = panels[i] || {};
   const promptFile = p.prompt_file || `art-prompts/${DATE}/${String(i + 1).padStart(2, "0")}_panel-${String(i + 1).padStart(2, "0")}_prompt.txt`;
-  return { ...p, panel_number: i + 1, image_name: p.image_name || name, prompt_file: promptFile, prompt: promptFor(p, pack), negative_prompt: safeNegativePrompt(p, pack), final_prompt_composer: "clean_story_fields_only_v2_no_object_name_contamination" };
+  const overlaySurfaceRequired = screenSurfaceRequired(p);
+  return {
+    ...p,
+    panel_number: i + 1,
+    image_name: p.image_name || name,
+    prompt_file: promptFile,
+    overlay_surface_required: overlaySurfaceRequired,
+    overlay_surface: overlaySurfaceRequired ? "contextual_open_laptop_blank_screen" : "none_story_only",
+    screen_surface_priority: overlaySurfaceRequired ? "equal_to_isla_identity" : "not_required",
+    prompt: promptFor(p, pack),
+    negative_prompt: safeNegativePrompt(p, pack),
+    final_prompt_composer: "clean_story_fields_with_contextual_laptop_overlay_surface_v4"
+  };
 });
 assertSafeFinalPrompts(pack);
 await writeJson(dated, pack);
 await writeJson(latest, pack);
 for (const p of pack.panels) await writeText(path.join(ROOT, p.prompt_file), `${p.prompt}\n`);
-console.log(`Clean final fal prompts rebuilt for ${DATE} without risky object-name contamination`);
+console.log(`Clean final fal prompts rebuilt for ${DATE}; contextual open laptop screen is locked as equal priority to Isla where overlay is required`);
