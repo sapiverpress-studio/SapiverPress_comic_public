@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
-"""Phase 1 Isla compositor wrapper.
+"""Strict no-crop Isla compositor.
 
-Exports the daily comic as eight neutral PNG files instead of one montage:
+Exports the daily comic as eight PNG files:
 - starter grid close-up
 - six individual comic panels
 - finished grid close-up
 
-The same ordered set is written to both social/YYYY-MM-DD/ and social/latest/.
+Critical rule: if a generated replacement panel exists but cannot accept the puzzle overlay,
+this script fails. It must not silently recover by swapping in locked template art.
 """
 from __future__ import annotations
 
@@ -28,9 +29,25 @@ LATEST_DIR = ROOT / "social" / "latest"
 REPLACEMENT_DIR = ROOT / "art-replacements" / DATE
 LATEST_REPLACEMENT_DIR = ROOT / "art-replacements" / "latest"
 
-EXPORT_FILES = ["00_start-grid.png", "01_panel-01.png", "02_panel-02.png", "03_panel-03.png", "04_panel-04.png", "05_panel-05.png", "06_panel-06.png", "07_finished-grid.png"]
+EXPORT_FILES = [
+    "00_start-grid.png",
+    "01_panel-01.png",
+    "02_panel-02.png",
+    "03_panel-03.png",
+    "04_panel-04.png",
+    "05_panel-05.png",
+    "06_panel-06.png",
+    "07_finished-grid.png",
+]
 ARC_KEYS = ["setup", "disruption", "choice", "puzzle_moment", "consequence", "resolution"]
-PANEL_REPLACEMENT_NAMES = ["01_panel-01.png", "02_panel-02.png", "03_panel-03.png", "04_panel-04.png", "05_panel-05.png", "06_panel-06.png"]
+PANEL_REPLACEMENT_NAMES = [
+    "01_panel-01.png",
+    "02_panel-02.png",
+    "03_panel-03.png",
+    "04_panel-04.png",
+    "05_panel-05.png",
+    "06_panel-06.png",
+]
 
 
 def crop_capture_to_game(path: Path) -> Image.Image:
@@ -70,7 +87,8 @@ def scene_text_parts(story: dict, index: int) -> tuple[str, str]:
     scenes = story.get("scenes") or []
     if index < len(scenes):
         scene = scenes[index]
-        dialogue = str(scene.get("storyboard_dialogue") or scene.get("dialogue") or scene.get("speech_bubble") or "").strip()
+        # Overlay-safe text fields are preferred. The image prompt layer should not use the legacy fields.
+        dialogue = str(scene.get("storyboard_dialogue") or scene.get("overlay_dialogue") or scene.get("overlay_text") or "").strip()
         caption = str(scene.get("storyboard_caption") or scene.get("caption") or "").strip()
         return dialogue, caption or base.DEFAULT_CAPTIONS[index]
     return "", base.DEFAULT_CAPTIONS[index]
@@ -183,7 +201,13 @@ def clear_old_outputs() -> None:
     old_montage = ROOT / "social" / f"{DATE}.png"
     if old_montage.exists():
         old_montage.unlink()
-    old_names = set(EXPORT_FILES) | {"manifest.json", "strict_clean_map.json", "contact_sheet_strict_clean.jpg", f"isla_v3_STRICT_CLEAN_{DATE}.zip", f"isla_v3_daily_set_{DATE}.zip"}
+    old_names = set(EXPORT_FILES) | {
+        "manifest.json",
+        "strict_clean_map.json",
+        "contact_sheet_strict_clean.jpg",
+        f"isla_v3_STRICT_CLEAN_{DATE}.zip",
+        f"isla_v3_daily_set_{DATE}.zip",
+    }
     old_names.update(f"{i:02d}_strict_clean.png" for i in range(1, 7))
     for folder in (OUT_DIR, LATEST_DIR):
         for name in old_names:
@@ -278,50 +302,37 @@ def replacement_candidates(index: int) -> list[Path]:
     return [REPLACEMENT_DIR / name, LATEST_REPLACEMENT_DIR / name]
 
 
-def disable_paths(paths: list[Path]) -> list[tuple[Path, Path]]:
-    disabled: list[tuple[Path, Path]] = []
-    for path in paths:
-        if not path.exists() or not path.is_file():
-            continue
-        disabled_path = path.with_suffix(path.suffix + ".screenfail")
-        if disabled_path.exists():
-            disabled_path.unlink()
-        path.rename(disabled_path)
-        disabled.append((path, disabled_path))
-    return disabled
-
-
-def restore_paths(disabled: list[tuple[Path, Path]]) -> None:
-    for original, disabled_path in reversed(disabled):
-        if disabled_path.exists():
-            if original.exists():
-                original.unlink()
-            disabled_path.rename(original)
-
-
-def compose_panel_with_template_recovery(story: dict, scene: dict, index: int, capture: Path) -> tuple[Path, dict]:
+def compose_panel_strict(story: dict, scene: dict, index: int, capture: Path) -> tuple[Path, dict]:
     panel_path, row = base.compose_panel(story, scene, index, capture)
-    if row.get("screen_quad_mode") != "overlay_skipped_no_screen_detected" or row.get("art_source") != "replacement":
-        return panel_path, row
     candidates = replacement_candidates(index)
-    print(f"Replacement screen missing for scene_{index + 1:02d}; recomposing from locked template")
-    disabled = disable_paths(candidates)
-    try:
-        recovered_path, recovered_row = base.compose_panel(story, scene, index, capture)
-        if recovered_row.get("screen_quad_mode") == "overlay_skipped_no_screen_detected":
-            recovered_row["recovery_failed_after_template_fallback"] = True
-        recovered_row["recovered_from_missing_replacement_screen"] = True
-        recovered_row["failed_replacements"] = [str(p.relative_to(ROOT)) for p, _ in disabled]
-        return recovered_path, recovered_row
-    finally:
-        restore_paths(disabled)
+    existing_candidates = [p for p in candidates if p.exists() and p.is_file()]
+    panel_no = index + 1
+
+    if existing_candidates and row.get("art_source") == "template":
+        raise RuntimeError(
+            f"STRICT COMPOSE FAILED: panel {panel_no} used locked template art even though generated replacement art exists: "
+            + ", ".join(str(p.relative_to(ROOT)) for p in existing_candidates)
+        )
+
+    if row.get("art_source") == "replacement" and row.get("screen_quad_mode") == "overlay_skipped_no_screen_detected":
+        raise RuntimeError(
+            f"STRICT COMPOSE FAILED: panel {panel_no} generated replacement art was used, but no valid screen area was detected for puzzle overlay. "
+            f"Replacement: {row.get('replacement') or row.get('art_path') or PANEL_REPLACEMENT_NAMES[index]}. "
+            "The run must stop here; do not recover with locked template art. Fix the panel prompt or mark the scene as no_puzzle."
+        )
+
+    if row.get("recovered_from_missing_replacement_screen"):
+        raise RuntimeError(
+            f"STRICT COMPOSE FAILED: panel {panel_no} attempted template recovery. Template recovery is disabled."
+        )
+
+    return panel_path, row
 
 
 def main() -> None:
     captures = base.map_captures()
     if not captures:
-        base.run_fallback()
-        return
+        raise RuntimeError("STRICT COMPOSE FAILED: no valid puzzle captures found. Refusing to run fallback compositor.")
     clear_old_outputs()
     story = base.read_story()
     scenes = (story.get("scenes") or [])[:6]
@@ -331,7 +342,7 @@ def main() -> None:
     rows: list[dict] = []
     intermediate_paths: list[Path] = []
     for index, scene in enumerate(scenes[:6]):
-        panel_path, row = compose_panel_with_template_recovery(story, scene, index, captures[index])
+        panel_path, row = compose_panel_strict(story, scene, index, captures[index])
         trigger = trigger_for_panel(story, index)
         if trigger:
             panel_img = Image.open(panel_path).convert("RGB")
@@ -344,7 +355,7 @@ def main() -> None:
         row["storyboard_text"] = caption_for_scene(story, index)
         row["arc_role"] = scene.get("arc_role") or (ARC_KEYS[index] if index < len(ARC_KEYS) else "")
         row["storyboard_caption"] = scene.get("storyboard_caption") or scene.get("caption") or ""
-        row["storyboard_dialogue"] = scene.get("storyboard_dialogue") or scene.get("dialogue") or scene.get("speech_bubble") or ""
+        row["storyboard_dialogue"] = scene.get("storyboard_dialogue") or scene.get("overlay_dialogue") or scene.get("overlay_text") or ""
         row["panel_location"] = scene.get("panel_location") or scene.get("setting") or ""
         rows.append(row)
         intermediate_paths.append(panel_path)
