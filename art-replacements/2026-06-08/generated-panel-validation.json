@@ -1,0 +1,26 @@
+{
+  "date": "2026-06-08",
+  "status": "ok_generated_panels_complete",
+  "required_count": 6,
+  "present_count": 6,
+  "missing_count": 0,
+  "present": [
+    "art-replacements/2026-06-08/01_panel-01.png",
+    "art-replacements/2026-06-08/02_panel-02.png",
+    "art-replacements/2026-06-08/03_panel-03.png",
+    "art-replacements/2026-06-08/04_panel-04.png",
+    "art-replacements/2026-06-08/05_panel-05.png",
+    "art-replacements/2026-06-08/06_panel-06.png"
+  ],
+  "missing": [],
+  "latest_fallback_images_detected": [
+    "art-replacements/latest/01_panel-01.png",
+    "art-replacements/latest/02_panel-02.png",
+    "art-replacements/latest/03_panel-03.png",
+    "art-replacements/latest/04_panel-04.png",
+    "art-replacements/latest/05_panel-05.png",
+    "art-replacements/latest/06_panel-06.png"
+  ],
+  "rule": "Compositor must only use date-specific generated replacement art. Latest/template fallback art is not allowed for preview publication.",
+  "checked_at": "2026-06-08T20:48:35.563Z"
+}

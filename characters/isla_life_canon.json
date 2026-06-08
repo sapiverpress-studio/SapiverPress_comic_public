@@ -28,12 +28,6 @@
   "location_memory": [
     {
       "date": "2026-05-30",
-      "attempt": 29,
-      "setting": "rainy window nook with plants",
-      "reason": "rain has slowed everything down and she lets it"
-    },
-    {
-      "date": "2026-05-30",
       "attempt": 30,
       "setting": "quiet public library reading table",
       "reason": "the library gives her a borrowed pocket of quiet"
@@ -385,15 +379,15 @@
       "attempt": 3,
       "setting": "small kitchen table in warm morning light",
       "reason": "home is still half-asleep and she has a few minutes to herself"
+    },
+    {
+      "date": "2026-06-08",
+      "attempt": 1,
+      "setting": "bookshop cafe corner",
+      "reason": "she has come for one thing but stays for the quiet corner"
     }
   ],
   "variant_memory": [
-    {
-      "date": "2026-05-30",
-      "attempt": 29,
-      "variant_name": "Trigoku",
-      "panel_index": 2
-    },
     {
       "date": "2026-05-30",
       "attempt": 30,
@@ -747,21 +741,15 @@
       "attempt": 3,
       "variant_name": "Daily German Whispers Sudoku | Sapiver Press",
       "panel_index": 2
+    },
+    {
+      "date": "2026-06-08",
+      "attempt": 1,
+      "variant_name": "Trigoku â€¢ Daily Lock | Sapiver Press",
+      "panel_index": 4
     }
   ],
   "life_memory": [
-    {
-      "date": "2026-05-30",
-      "attempt": 29,
-      "location": "rainy window nook with plants",
-      "reason_for_location": "rain has slowed everything down and she lets it",
-      "life_detail_learned": "Isla does not mind slower days when they give her room to notice things.",
-      "thread_to_continue": "rainy days bring out her reflective side",
-      "puzzle_variant_mentioned": "Trigoku",
-      "variant_panel_index": 2,
-      "uk_calendar_date": null,
-      "uk_calendar_panel_index": null
-    },
     {
       "date": "2026-05-30",
       "attempt": 30,
@@ -1469,8 +1457,20 @@
       "variant_panel_index": 2,
       "uk_calendar_date": null,
       "uk_calendar_panel_index": null
+    },
+    {
+      "date": "2026-06-08",
+      "attempt": 1,
+      "location": "bookshop cafe corner",
+      "reason_for_location": "she has come for one thing but stays for the quiet corner",
+      "life_detail_learned": "Bookshops pull Isla into longer pauses than she planned.",
+      "thread_to_continue": "she is drawn to places with books and warm corners",
+      "puzzle_variant_mentioned": "Trigoku â€¢ Daily Lock | Sapiver Press",
+      "variant_panel_index": 4,
+      "uk_calendar_date": null,
+      "uk_calendar_panel_index": null
     }
   ],
-  "last_updated": "2026-06-05",
+  "last_updated": "2026-06-08",
   "calendar_memory": []
 }
