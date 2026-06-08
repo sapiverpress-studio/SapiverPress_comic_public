@@ -105,51 +105,6 @@
     {
       "date": "2026-06-02",
       "weekday": "Tuesday",
-      "same_day_attempt": 6,
-      "setting": "co-working desk near a tall window",
-      "puzzle_phase": "early-week",
-      "story_note": "Isla spends this entry at the co-working desk near a tall window because she has work waiting, so the puzzle has to fit into a short gap. The puzzle stays as a light thread inside the day.",
-      "continuation_note": "Remember: Isla often fits her puzzle ritual between work blocks. Continue the thread: work days make the puzzle a boundary marker.",
-      "stuck_moment": "hands still, thinking before moving",
-      "life_memory_entry": {
-        "date": "2026-06-02",
-        "attempt": 6,
-        "location": "co-working desk near a tall window",
-        "reason_for_location": "she has work waiting, so the puzzle has to fit into a short gap",
-        "life_detail_learned": "Isla often fits her puzzle ritual between work blocks.",
-        "thread_to_continue": "work days make the puzzle a boundary marker",
-        "puzzle_variant_mentioned": "Anti-Knight",
-        "variant_panel_index": 4,
-        "uk_calendar_date": null,
-        "uk_calendar_panel_index": null
-      },
-      "variant_recap": {
-        "variant_name": "Anti-Knight",
-        "short_rule": "Anti-Knight today — knight moves block matching numbers.",
-        "panel_index": 4,
-        "line": "Anti-Knight today — knight moves block matching numbers."
-      },
-      "uk_calendar_date": null,
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "A clean start.",
-        "Anti-Knight today — knight moves block matching numbers.",
-        "Check it twice.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly set.",
-        "Leave it tidy."
-      ]
-    },
-    {
-      "date": "2026-06-02",
-      "weekday": "Tuesday",
       "same_day_attempt": 7,
       "setting": "rainy window nook with plants",
       "puzzle_phase": "early-week",
@@ -1264,12 +1219,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Street noise.",
-        "One safe move.",
-        "Wait there.",
+        "Between tasks.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "No shortcut.",
         "Trigoku â€¢ Daily Lock | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
-        "Last sip.",
-        "On again."
+        "Nearly done.",
+        "Back to work."
       ]
     },
     {
@@ -1309,12 +1264,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Street noise.",
-        "One safe move.",
-        "Wait there.",
+        "Between tasks.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "No shortcut.",
         "Trigoku â€¢ Daily Lock | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
-        "Last sip.",
-        "On again."
+        "Nearly done.",
+        "Back to work."
       ]
     },
     {
@@ -1354,12 +1309,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Street noise.",
-        "One safe move.",
-        "Wait there.",
+        "Between tasks.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "No shortcut.",
         "Trigoku â€¢ Daily Lock | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
-        "Last sip.",
-        "On again."
+        "Nearly done.",
+        "Back to work."
       ]
     },
     {
@@ -1399,12 +1354,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Street noise.",
-        "One safe move.",
-        "Wait there.",
+        "Between tasks.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "No shortcut.",
         "Trigoku â€¢ Daily Lock | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
-        "Last sip.",
-        "On again."
+        "Nearly done.",
+        "Back to work."
       ]
     },
     {
@@ -1444,12 +1399,57 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Street noise.",
-        "One safe move.",
-        "Wait there.",
+        "Between tasks.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "No shortcut.",
         "Trigoku â€¢ Daily Lock | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
-        "Last sip.",
-        "On again."
+        "Nearly done.",
+        "Back to work."
+      ]
+    },
+    {
+      "date": "2026-06-08",
+      "weekday": "Monday",
+      "same_day_attempt": 6,
+      "setting": "co-working desk near a tall window",
+      "puzzle_phase": "early-week",
+      "story_note": "Isla spends this entry at the co-working desk near a tall window because she has work waiting, so the puzzle has to fit into a short gap. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Isla often fits her puzzle ritual between work blocks. Continue the thread: work days make the puzzle a boundary marker.",
+      "stuck_moment": "hands still, thinking before moving",
+      "life_memory_entry": {
+        "date": "2026-06-08",
+        "attempt": 6,
+        "location": "co-working desk near a tall window",
+        "reason_for_location": "she has work waiting, so the puzzle has to fit into a short gap",
+        "life_detail_learned": "Isla often fits her puzzle ritual between work blocks.",
+        "thread_to_continue": "work days make the puzzle a boundary marker",
+        "puzzle_variant_mentioned": "Trigoku â€¢ Daily Lock | Sapiver Press",
+        "variant_panel_index": 2,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Trigoku â€¢ Daily Lock | Sapiver Press",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 2,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Between tasks.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "No shortcut.",
+        "Trigoku â€¢ Daily Lock | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
+        "Nearly done.",
+        "Back to work."
       ]
     }
   ],
@@ -1457,51 +1457,6 @@
     {
       "date": "2026-06-02",
       "weekday": "Tuesday",
-      "same_day_attempt": 6,
-      "setting": "co-working desk near a tall window",
-      "puzzle_phase": "early-week",
-      "story_note": "Isla spends this entry at the co-working desk near a tall window because she has work waiting, so the puzzle has to fit into a short gap. The puzzle stays as a light thread inside the day.",
-      "continuation_note": "Remember: Isla often fits her puzzle ritual between work blocks. Continue the thread: work days make the puzzle a boundary marker.",
-      "stuck_moment": "hands still, thinking before moving",
-      "life_memory_entry": {
-        "date": "2026-06-02",
-        "attempt": 6,
-        "location": "co-working desk near a tall window",
-        "reason_for_location": "she has work waiting, so the puzzle has to fit into a short gap",
-        "life_detail_learned": "Isla often fits her puzzle ritual between work blocks.",
-        "thread_to_continue": "work days make the puzzle a boundary marker",
-        "puzzle_variant_mentioned": "Anti-Knight",
-        "variant_panel_index": 4,
-        "uk_calendar_date": null,
-        "uk_calendar_panel_index": null
-      },
-      "variant_recap": {
-        "variant_name": "Anti-Knight",
-        "short_rule": "Anti-Knight today — knight moves block matching numbers.",
-        "panel_index": 4,
-        "line": "Anti-Knight today — knight moves block matching numbers."
-      },
-      "uk_calendar_date": null,
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "A clean start.",
-        "Anti-Knight today — knight moves block matching numbers.",
-        "Check it twice.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly set.",
-        "Leave it tidy."
-      ]
-    },
-    {
-      "date": "2026-06-02",
-      "weekday": "Tuesday",
       "same_day_attempt": 7,
       "setting": "rainy window nook with plants",
       "puzzle_phase": "early-week",
@@ -2616,12 +2571,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Street noise.",
-        "One safe move.",
-        "Wait there.",
+        "Between tasks.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "No shortcut.",
         "Trigoku â€¢ Daily Lock | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
-        "Last sip.",
-        "On again."
+        "Nearly done.",
+        "Back to work."
       ]
     },
     {
@@ -2661,12 +2616,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Street noise.",
-        "One safe move.",
-        "Wait there.",
+        "Between tasks.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "No shortcut.",
         "Trigoku â€¢ Daily Lock | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
-        "Last sip.",
-        "On again."
+        "Nearly done.",
+        "Back to work."
       ]
     },
     {
@@ -2706,12 +2661,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Street noise.",
-        "One safe move.",
-        "Wait there.",
+        "Between tasks.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "No shortcut.",
         "Trigoku â€¢ Daily Lock | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
-        "Last sip.",
-        "On again."
+        "Nearly done.",
+        "Back to work."
       ]
     },
     {
@@ -2751,12 +2706,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Street noise.",
-        "One safe move.",
-        "Wait there.",
+        "Between tasks.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "No shortcut.",
         "Trigoku â€¢ Daily Lock | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
-        "Last sip.",
-        "On again."
+        "Nearly done.",
+        "Back to work."
       ]
     },
     {
@@ -2796,12 +2751,57 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Street noise.",
-        "One safe move.",
-        "Wait there.",
+        "Between tasks.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "No shortcut.",
         "Trigoku â€¢ Daily Lock | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
-        "Last sip.",
-        "On again."
+        "Nearly done.",
+        "Back to work."
+      ]
+    },
+    {
+      "date": "2026-06-08",
+      "weekday": "Monday",
+      "same_day_attempt": 6,
+      "setting": "co-working desk near a tall window",
+      "puzzle_phase": "early-week",
+      "story_note": "Isla spends this entry at the co-working desk near a tall window because she has work waiting, so the puzzle has to fit into a short gap. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Isla often fits her puzzle ritual between work blocks. Continue the thread: work days make the puzzle a boundary marker.",
+      "stuck_moment": "hands still, thinking before moving",
+      "life_memory_entry": {
+        "date": "2026-06-08",
+        "attempt": 6,
+        "location": "co-working desk near a tall window",
+        "reason_for_location": "she has work waiting, so the puzzle has to fit into a short gap",
+        "life_detail_learned": "Isla often fits her puzzle ritual between work blocks.",
+        "thread_to_continue": "work days make the puzzle a boundary marker",
+        "puzzle_variant_mentioned": "Trigoku â€¢ Daily Lock | Sapiver Press",
+        "variant_panel_index": 2,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Trigoku â€¢ Daily Lock | Sapiver Press",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 2,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Between tasks.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "No shortcut.",
+        "Trigoku â€¢ Daily Lock | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
+        "Nearly done.",
+        "Back to work."
       ]
     }
   ],
