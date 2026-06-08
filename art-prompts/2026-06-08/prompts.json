@@ -46,9 +46,9 @@
       "image_name": "01_panel-01.png",
       "replacement_file": "art-replacements/2026-06-08/01_panel-01.png",
       "prompt_file": "art-prompts/2026-06-08/01_panel-01_prompt.txt",
-      "prompt": "Isla_v2, young Black woman, warm medium brown skin, light freckles on nose and cheeks, natural coily dark hair in high voluminous puff bun, wide floral teal rust orange cream headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, soft focused expression, natural facial proportions, true-to-life oil painting feel, painterly editorial illustration style, cinematic warm amber palette, detailed textures Story-only panel: if a laptop appears, it is closed, turned away, or naturally packed away; no display surface is needed. Visual moment: Rain beats against the window nook as Isla preps her files before the daily rush begins.. Location: home desk before work. Action: checking the day plan before the first message lands. Pose: standing full-body start, hands on bag or notebook, not seated at laptop. Clean editorial illustration, plain unmarked walls and tidy surfaces, books and notebooks used only as simple colour-block props, background props secondary. Single coherent real-world scene, Isla is the clear main subject and the contextual laptop screen is the clear overlay surface.",
+      "prompt": "Isla_v2, young Black woman, warm medium brown skin, light freckles on nose and cheeks, natural coily dark hair in high voluminous puff bun, wide floral teal rust orange cream headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, soft focused expression, natural facial proportions, true-to-life oil painting feel, painterly editorial illustration style, cinematic warm amber palette, detailed textures Story-only panel: if a laptop appears, it is closed, turned away, or naturally packed away; no display surface is needed. Visual moment: Isla sets up her steady workspace early, preparing for her upcoming Teams meeting with Nora.. Location: home desk before work. Action: checking the day plan before the first message lands. Pose: standing full-body start, hands on bag or notebook, not seated at laptop. Clean editorial illustration, plain unmarked walls and tidy surfaces, books and notebooks used only as simple colour-block props, background props secondary. Single coherent real-world scene, Isla is the clear main subject and the contextual laptop screen is the clear overlay surface.",
       "negative_prompt": "screen obscuring face, device held in front of face, floating overlay, phone pressed to cheek, jigsaw puzzle pieces, physical puzzle pieces, scattered puzzle pieces, board game pieces, toy blocks, loose tiles, crossword pieces, extra mugs, multiple coffee cups, duplicate cups, extra laptop, extra tablet, extra screens, distorted laptop screen, unreadable screen, content drawn on laptop screen, sudoku drawn by model, puzzle grid drawn by model, numbers drawn by model, duplicate hands, extra fingers, extra arms, cloned face, repeated identical pose, hand-on-chin repeated, same pose as previous panel, same camera angle every panel, low quality, blurry, repeated identical pose, same indoor desk in every panel, hidden laptop screen, covered laptop screen, unreadable screen area, readable poster quotes, readable book spine titles, signage text, diary paragraphs, fake paragraphs, gibberish writing, notebook wallpaper, page collage background, visible model or trigger text, visible Isla_v2 text, visible legacy trigger text text, visible LoRA text, visible prompt text, supporting life trigger text, workday anchor text, timing metadata labels, physical puzzle pieces, cardboard puzzle pieces, board game pieces, loose cardboard puzzle shapes, scattered game tiles, tabletop jigsaw, wooden puzzle pieces, tangram pieces, loose game pieces, visible model or trigger text, visible Isla_v2 text, visible legacy trigger text text, visible LoRA text, visible prompt text, supporting life trigger text, workday anchor text, timing metadata labels, readable poster quotes, readable book spine titles, signage text, large titles, diary paragraphs, fake paragraphs, gibberish writing, notebook wallpaper, page collage background, same seated laptop pose in every panel, generic indoor desk, wrong location, train interior when platform requested, platform when train interior requested, readable text, writing, letters, typography, signs, labels, captions, s, handwriting, book titles, poster slogans, page writing, gibberish text, open laptop, open laptop screen, visible laptop screen, laptop solving, visible puzzle grid, sudoku grid, trigoku grid, puzzle numbers, puzzle on paper, physical puzzle pieces, jigsaw pieces, jigsaw pieces, physical puzzle pieces, cardboard puzzle pieces, loose puzzle shapes, collage layout, split panel, multiple frames, storyboard grid, contact sheet, instruction text, caption text, same seated laptop pose in every panel, multiple mugs, repeated coffee cups, extra cups, duplicate mugs, cluttered coffee cups, many mugs, many cups, LOCK, TRUTH, BANS, mandatory, panel text, prompt text, readable prop text, machine instruction, labels, arrows, numbered panel, contact sheet, split-screen collage, LOCATION text prefix, text elements, lettering, labels, typography, captions, puzzle grid, numbers, watermark, large logo, low quality, blurry, floating screen, detached screen, standalone rectangle, wall screen, poster frame, cropped laptop, hidden display, tiny laptop, cluttered display, reflective screen, hands covering screen",
-      "caption": "Rain beats against the window nook as Isla preps her files before the daily rush begins.",
+      "caption": "Isla sets up her steady workspace early, preparing for her upcoming Teams meeting with Nora.",
       "appearance_lock": "Isla_v2, young Black woman, warm medium brown skin, light freckles on nose and cheeks, natural coily dark hair in high voluminous puff bun, wide floral teal rust orange cream headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, soft focused expression, natural facial proportions, true-to-life oil painting feel, painterly editorial illustration style, cinematic warm amber palette, detailed textures",
       "composition_key": "desk_right_screen",
       "composition_text": "desk scene, one laptop only open on desk, laptop screen visible and angled naturally for later digital overlay, screen is blank dark matte rectangle, screen not obscuring face, Isla visible from waist or mid-torso up, natural desk perspective, do not draw content on the laptop screen",
@@ -59,15 +59,15 @@
       "pose_text": "PANEL 1 POSE: seated calm opening pose, torso front three-quarter view, one hand on laptop lid or table edge, head upright, not hand-on-chin",
       "pose_marker": "opening moment, front three-quarter view, one hand on bag, notebook, or laptop lid, alert but calm",
       "screen_requirement": "SCREEN STATE: no puzzle screen needed in this panel; no grid, no puzzle numbers, no solving action, story-only visual beat",
-      "story_beat": "Rain beats against the window nook as Isla preps her files before the daily rush begins.",
-      "story_visual_direction": "STORY-FIRST IMAGE RULE: visualise this narration beat through Isla's body language, setting, timing, and objects in use; do not render it as written text: Rain beats against the window nook as Isla preps her files before the daily rush begins.",
+      "story_beat": "Isla sets up her steady workspace early, preparing for her upcoming Teams meeting with Nora.",
+      "story_visual_direction": "STORY-FIRST IMAGE RULE: visualise this narration beat through Isla's body language, setting, timing, and objects in use; do not render it as written text: Isla sets up her steady workspace early, preparing for her upcoming Teams meeting with Nora.",
       "prop_text": "",
       "static_prompt_only": false,
       "arc_role": "setup",
       "story_beat_enabled": true,
       "calendar_consequence_lock": "CALENDAR CONSEQUENCE LOCK: use today's 365-day story anchor as invisible visual direction only; do not render calendar, workday anchor, or supporting life trigger words in the image",
-      "storyboard_caption": "Rain beats against the window nook as Isla preps her files before the daily rush begins.",
-      "storyboard_dialogue": "Better get these files sorted before Nora starts our team planning call.",
+      "storyboard_caption": "Isla sets up her steady workspace early, preparing for her upcoming Teams meeting with Nora.",
+      "storyboard_dialogue": "Better get through these weekly files before the morning rush starts.",
       "panel_location": "home desk before work",
       "panel_action": "checking the day plan before the first message lands",
       "panel_pose_family": "standing full-body start, hands on bag or notebook, not seated at laptop",
@@ -86,7 +86,7 @@
         "mode": "work_pressure_day",
         "selection_reason": "calendar_preferred_flow",
         "score": 50,
-        "applied_at": "2026-06-08T21:51:07.461Z",
+        "applied_at": "2026-06-08T21:54:40.985Z",
         "fixed_sequence": false,
         "story_led": true,
         "continuity_aware": true,
@@ -94,6 +94,7 @@
         "flow_enforced": true,
         "normalised_copy_panels": [
           2,
+          5,
           6
         ]
       },
@@ -175,7 +176,7 @@
         "mode": "work_pressure_day",
         "selection_reason": "calendar_preferred_flow",
         "score": 50,
-        "applied_at": "2026-06-08T21:51:07.461Z",
+        "applied_at": "2026-06-08T21:54:40.985Z",
         "fixed_sequence": false,
         "story_led": true,
         "continuity_aware": true,
@@ -183,6 +184,7 @@
         "flow_enforced": true,
         "normalised_copy_panels": [
           2,
+          5,
           6
         ]
       },
@@ -224,9 +226,9 @@
       "image_name": "03_panel-03.png",
       "replacement_file": "art-replacements/2026-06-08/03_panel-03.png",
       "prompt_file": "art-prompts/2026-06-08/03_panel-03_prompt.txt",
-      "prompt": "Isla_v2, young Black woman, warm medium brown skin, light freckles on nose and cheeks, natural coily dark hair in high voluminous puff bun, wide floral teal rust orange cream headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, soft focused expression, natural facial proportions, true-to-life oil painting feel, painterly editorial illustration style, cinematic warm amber palette, detailed textures LOCKED COMPOSITION REQUIREMENT: Isla and her real laptop are equal priority subjects in the same believable scene. The laptop is a physical object connected to its keyboard by a visible hinge, resting naturally on the desk, table, counter, or Isla's lap according to the setting. The laptop is not floating, not detached from the desk, not a standalone rectangle, not a poster, not a wall screen, and not a graphic frame. Show the full open laptop body: keyboard base visible, hinge visible, display attached to the base, perspective consistent with the tabletop or lap. The display faces the viewer at a clear three-quarter front angle and contains a large plain dark blank rectangular screen. The blank screen must be unobstructed, clean, matte, inside the frame, with visible screen edges and enough size for a later digital puzzle overlay. Hands, cups, books, hair, sleeves, and foreground props must not cross or cover the display. The screen should take roughly one quarter to one third of the image width while Isla remains clearly visible and expressive. Panel screen state: first_moves; preserve a contextual real laptop screen surface for the compositor. Visual moment: Stepping away after the meeting, Isla finds a steady desk to squeeze in her daily puzzle.. Location: co-working desk near glass partitions. Action: opening the grid before the work question takes over. Pose: seated bench start, angled body, laptop present only for first moves. Clean editorial illustration, plain unmarked walls and tidy surfaces, books and notebooks used only as simple colour-block props, background props secondary. Single coherent real-world scene, Isla is the clear main subject and the contextual laptop screen is the clear overlay surface.",
+      "prompt": "Isla_v2, young Black woman, warm medium brown skin, light freckles on nose and cheeks, natural coily dark hair in high voluminous puff bun, wide floral teal rust orange cream headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, soft focused expression, natural facial proportions, true-to-life oil painting feel, painterly editorial illustration style, cinematic warm amber palette, detailed textures LOCKED COMPOSITION REQUIREMENT: Isla and her real laptop are equal priority subjects in the same believable scene. The laptop is a physical object connected to its keyboard by a visible hinge, resting naturally on the desk, table, counter, or Isla's lap according to the setting. The laptop is not floating, not detached from the desk, not a standalone rectangle, not a poster, not a wall screen, and not a graphic frame. Show the full open laptop body: keyboard base visible, hinge visible, display attached to the base, perspective consistent with the tabletop or lap. The display faces the viewer at a clear three-quarter front angle and contains a large plain dark blank rectangular screen. The blank screen must be unobstructed, clean, matte, inside the frame, with visible screen edges and enough size for a later digital puzzle overlay. Hands, cups, books, hair, sleeves, and foreground props must not cross or cover the display. The screen should take roughly one quarter to one third of the image width while Isla remains clearly visible and expressive. Panel screen state: first_moves; preserve a contextual real laptop screen surface for the compositor. Visual moment: With her team meeting wrapped up, Isla shifts her focus to the small puzzle waiting patiently.. Location: co-working desk near glass partitions. Action: opening the grid before the work question takes over. Pose: seated bench start, angled body, laptop present only for first moves. Clean editorial illustration, plain unmarked walls and tidy surfaces, books and notebooks used only as simple colour-block props, background props secondary. Single coherent real-world scene, Isla is the clear main subject and the contextual laptop screen is the clear overlay surface.",
       "negative_prompt": "screen obscuring face, device held in front of face, floating overlay, phone pressed to cheek, jigsaw puzzle pieces, physical puzzle pieces, scattered puzzle pieces, board game pieces, toy blocks, loose tiles, crossword pieces, extra mugs, multiple coffee cups, duplicate cups, extra laptop, extra tablet, extra screens, distorted laptop screen, unreadable screen, content drawn on laptop screen, sudoku drawn by model, puzzle grid drawn by model, numbers drawn by model, duplicate hands, extra fingers, extra arms, cloned face, repeated identical pose, hand-on-chin repeated, same pose as previous panel, same camera angle every panel, low quality, blurry, repeated identical pose, same indoor desk in every panel, hidden laptop screen, covered laptop screen, unreadable screen area, readable poster quotes, readable book spine titles, signage text, diary paragraphs, fake paragraphs, gibberish writing, notebook wallpaper, page collage background, visible model or trigger text, visible Isla_v2 text, visible legacy trigger text text, visible LoRA text, visible prompt text, supporting life trigger text, workday anchor text, timing metadata labels, physical puzzle pieces, cardboard puzzle pieces, board game pieces, loose cardboard puzzle shapes, scattered game tiles, tabletop jigsaw, wooden puzzle pieces, tangram pieces, loose game pieces, visible model or trigger text, visible Isla_v2 text, visible legacy trigger text text, visible LoRA text, visible prompt text, supporting life trigger text, workday anchor text, timing metadata labels, readable poster quotes, readable book spine titles, signage text, large titles, diary paragraphs, fake paragraphs, gibberish writing, notebook wallpaper, page collage background, same seated laptop pose in every panel, generic indoor desk, wrong location, train interior when platform requested, platform when train interior requested, readable text, writing, letters, typography, signs, labels, captions, s, handwriting, book titles, poster slogans, page writing, gibberish text, closed laptop, absent device, hidden screen, screen facing away, hand covering screen, reflections hiding screen, tiny unreadable screen, jigsaw pieces, physical puzzle pieces, cardboard puzzle pieces, loose puzzle shapes, collage layout, split panel, multiple frames, storyboard grid, contact sheet, instruction text, caption text, same seated laptop pose in every panel, multiple mugs, repeated coffee cups, extra cups, duplicate mugs, cluttered coffee cups, many mugs, many cups, LOCK, TRUTH, BANS, mandatory, panel text, prompt text, readable prop text, machine instruction, labels, arrows, numbered panel, contact sheet, split-screen collage, LOCATION text prefix, text elements, lettering, labels, typography, captions, puzzle grid, numbers, watermark, large logo, low quality, blurry, floating screen, detached screen, standalone rectangle, wall screen, poster frame, cropped laptop, hidden display, tiny laptop, cluttered display, reflective screen, hands covering screen",
-      "caption": "Stepping away after the meeting, Isla finds a steady desk to squeeze in her daily puzzle.",
+      "caption": "With her team meeting wrapped up, Isla shifts her focus to the small puzzle waiting patiently.",
       "appearance_lock": "Isla_v2, young Black woman, warm medium brown skin, light freckles on nose and cheeks, natural coily dark hair in high voluminous puff bun, wide floral teal rust orange cream headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, soft focused expression, natural facial proportions, true-to-life oil painting feel, painterly editorial illustration style, cinematic warm amber palette, detailed textures",
       "composition_key": "desk_right_screen",
       "composition_text": "desk scene, one laptop only open on desk, laptop screen visible and angled naturally for later digital overlay, screen is blank dark matte rectangle, screen not obscuring face, Isla visible from waist or mid-torso up, natural desk perspective, do not draw content on the laptop screen",
@@ -237,15 +239,15 @@
       "pose_text": "PANEL 3 POSE: thinking pause pose, leaning back from laptop, both hands away from face and away from screen, shoulders relaxed, looking slightly upward or to the side",
       "pose_marker": "pause moment, leaning back or standing still, hands away from face, thoughtful expression, story consequence visible in posture",
       "screen_requirement": "MANDATORY SCREEN WHEN LAPTOP IS PRESENT: open laptop screen visible, dark blank rectangular screen area, unobstructed, clear four-corner rectangle for compositor insertion, do not draw puzzle content",
-      "story_beat": "Stepping away after the meeting, Isla finds a steady desk to squeeze in her daily puzzle.",
-      "story_visual_direction": "STORY-FIRST IMAGE RULE: visualise this narration beat through Isla's body language, setting, timing, and objects in use; do not render it as written text: Stepping away after the meeting, Isla finds a steady desk to squeeze in her daily puzzle.",
+      "story_beat": "With her team meeting wrapped up, Isla shifts her focus to the small puzzle waiting patiently.",
+      "story_visual_direction": "STORY-FIRST IMAGE RULE: visualise this narration beat through Isla's body language, setting, timing, and objects in use; do not render it as written text: With her team meeting wrapped up, Isla shifts her focus to the small puzzle waiting patiently.",
       "prop_text": "",
       "static_prompt_only": false,
       "arc_role": "choice",
       "story_beat_enabled": true,
       "calendar_consequence_lock": "CALENDAR CONSEQUENCE LOCK: use today's 365-day story anchor as invisible visual direction only; do not render calendar, workday anchor, or supporting life trigger words in the image",
-      "storyboard_caption": "Stepping away after the meeting, Isla finds a steady desk to squeeze in her daily puzzle.",
-      "storyboard_dialogue": "Just a quick mental break before I pack up and head out.",
+      "storyboard_caption": "With her team meeting wrapped up, Isla shifts her focus to the small puzzle waiting patiently.",
+      "storyboard_dialogue": "No, that spot doesn't look right at all. Let's try another path.",
       "panel_location": "co-working desk near glass partitions",
       "panel_action": "opening the grid before the work question takes over",
       "panel_pose_family": "seated bench start, angled body, laptop present only for first moves",
@@ -264,7 +266,7 @@
         "mode": "work_pressure_day",
         "selection_reason": "calendar_preferred_flow",
         "score": 50,
-        "applied_at": "2026-06-08T21:51:07.461Z",
+        "applied_at": "2026-06-08T21:54:40.985Z",
         "fixed_sequence": false,
         "story_led": true,
         "continuity_aware": true,
@@ -272,6 +274,7 @@
         "flow_enforced": true,
         "normalised_copy_panels": [
           2,
+          5,
           6
         ]
       },
@@ -353,7 +356,7 @@
         "mode": "work_pressure_day",
         "selection_reason": "calendar_preferred_flow",
         "score": 50,
-        "applied_at": "2026-06-08T21:51:07.461Z",
+        "applied_at": "2026-06-08T21:54:40.985Z",
         "fixed_sequence": false,
         "story_led": true,
         "continuity_aware": true,
@@ -361,6 +364,7 @@
         "flow_enforced": true,
         "normalised_copy_panels": [
           2,
+          5,
           6
         ]
       },
@@ -402,9 +406,9 @@
       "image_name": "05_panel-05.png",
       "replacement_file": "art-replacements/2026-06-08/05_panel-05.png",
       "prompt_file": "art-prompts/2026-06-08/05_panel-05_prompt.txt",
-      "prompt": "Isla_v2, young Black woman, warm medium brown skin, light freckles on nose and cheeks, natural coily dark hair in high voluminous puff bun, wide floral teal rust orange cream headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, soft focused expression, natural facial proportions, true-to-life oil painting feel, painterly editorial illustration style, cinematic warm amber palette, detailed textures LOCKED COMPOSITION REQUIREMENT: Isla and her real laptop are equal priority subjects in the same believable scene. The laptop is a physical object connected to its keyboard by a visible hinge, resting naturally on the desk, table, counter, or Isla's lap according to the setting. The laptop is not floating, not detached from the desk, not a standalone rectangle, not a poster, not a wall screen, and not a graphic frame. Show the full open laptop body: keyboard base visible, hinge visible, display attached to the base, perspective consistent with the tabletop or lap. The display faces the viewer at a clear three-quarter front angle and contains a large plain dark blank rectangular screen. The blank screen must be unobstructed, clean, matte, inside the frame, with visible screen edges and enough size for a later digital puzzle overlay. Hands, cups, books, hair, sleeves, and foreground props must not cross or cover the display. The screen should take roughly one quarter to one third of the image width while Isla remains clearly visible and expressive. Panel screen state: progress_pause; preserve a contextual real laptop screen surface for the compositor. Visual moment: With the puzzle solved, Isla stops by the local counter to grab a warm afternoon tea.. Location: office break area with notebook. Action: taking a short notebook stopped after the checked move. Pose: standing or side-angle consequence with notebook or receipt, not another head-on laptop shot. Clean editorial illustration, plain unmarked walls and tidy surfaces, books and notebooks used only as simple colour-block props, background props secondary. Single coherent real-world scene, Isla is the clear main subject and the contextual laptop screen is the clear overlay surface.",
+      "prompt": "Isla_v2, young Black woman, warm medium brown skin, light freckles on nose and cheeks, natural coily dark hair in high voluminous puff bun, wide floral teal rust orange cream headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, soft focused expression, natural facial proportions, true-to-life oil painting feel, painterly editorial illustration style, cinematic warm amber palette, detailed textures LOCKED COMPOSITION REQUIREMENT: Isla and her real laptop are equal priority subjects in the same believable scene. The laptop is a physical object connected to its keyboard by a visible hinge, resting naturally on the desk, table, counter, or Isla's lap according to the setting. The laptop is not floating, not detached from the desk, not a standalone rectangle, not a poster, not a wall screen, and not a graphic frame. Show the full open laptop body: keyboard base visible, hinge visible, display attached to the base, perspective consistent with the tabletop or lap. The display faces the viewer at a clear three-quarter front angle and contains a large plain dark blank rectangular screen. The blank screen must be unobstructed, clean, matte, inside the frame, with visible screen edges and enough size for a later digital puzzle overlay. Hands, cups, books, hair, sleeves, and foreground props must not cross or cover the display. The screen should take roughly one quarter to one third of the image width while Isla remains clearly visible and expressive. Panel screen state: progress_pause; preserve a contextual real laptop screen surface for the compositor. Visual moment: The checked move holds, and the rest of the day has more room.. Location: office break area with notebook. Action: taking a short notebook stopped after the checked move. Pose: standing or side-angle consequence with notebook or receipt, not another head-on laptop shot. Clean editorial illustration, plain unmarked walls and tidy surfaces, books and notebooks used only as simple colour-block props, background props secondary. Single coherent real-world scene, Isla is the clear main subject and the contextual laptop screen is the clear overlay surface.",
       "negative_prompt": "screen obscuring face, device held in front of face, floating overlay, phone pressed to cheek, jigsaw puzzle pieces, physical puzzle pieces, scattered puzzle pieces, board game pieces, toy blocks, loose tiles, crossword pieces, extra mugs, multiple coffee cups, duplicate cups, extra laptop, extra tablet, extra screens, distorted laptop screen, unreadable screen, content drawn on laptop screen, sudoku drawn by model, puzzle grid drawn by model, numbers drawn by model, duplicate hands, extra fingers, extra arms, cloned face, repeated identical pose, hand-on-chin repeated, same pose as previous panel, same camera angle every panel, low quality, blurry, repeated identical pose, same indoor desk in every panel, hidden laptop screen, covered laptop screen, unreadable screen area, readable poster quotes, readable book spine titles, signage text, diary paragraphs, fake paragraphs, gibberish writing, notebook wallpaper, page collage background, visible model or trigger text, visible Isla_v2 text, visible legacy trigger text text, visible LoRA text, visible prompt text, supporting life trigger text, workday anchor text, timing metadata labels, physical puzzle pieces, cardboard puzzle pieces, board game pieces, loose cardboard puzzle shapes, scattered game tiles, tabletop jigsaw, wooden puzzle pieces, tangram pieces, loose game pieces, visible model or trigger text, visible Isla_v2 text, visible legacy trigger text text, visible LoRA text, visible prompt text, supporting life trigger text, workday anchor text, timing metadata labels, readable poster quotes, readable book spine titles, signage text, large titles, diary paragraphs, fake paragraphs, gibberish writing, notebook wallpaper, page collage background, same seated laptop pose in every panel, generic indoor desk, wrong location, train interior when platform requested, platform when train interior requested, readable text, writing, letters, typography, signs, labels, captions, s, handwriting, book titles, poster slogans, page writing, gibberish text, closed laptop, absent device, hidden screen, screen facing away, hand covering screen, reflections hiding screen, tiny unreadable screen, jigsaw pieces, physical puzzle pieces, cardboard puzzle pieces, loose puzzle shapes, collage layout, split panel, multiple frames, storyboard grid, contact sheet, instruction text, caption text, same seated laptop pose in every panel, multiple mugs, repeated coffee cups, extra cups, duplicate mugs, cluttered coffee cups, many mugs, many cups, LOCK, TRUTH, BANS, mandatory, panel text, prompt text, readable prop text, machine instruction, labels, arrows, numbered panel, contact sheet, split-screen collage, LOCATION text prefix, text elements, lettering, labels, typography, captions, puzzle grid, numbers, watermark, large logo, low quality, blurry, floating screen, detached screen, standalone rectangle, wall screen, poster frame, cropped laptop, hidden display, tiny laptop, cluttered display, reflective screen, hands covering screen",
-      "caption": "With the puzzle solved, Isla stops by the local counter to grab a warm afternoon tea.",
+      "caption": "The checked move holds, and the rest of the day has more room.",
       "appearance_lock": "Isla_v2, young Black woman, warm medium brown skin, light freckles on nose and cheeks, natural coily dark hair in high voluminous puff bun, wide floral teal rust orange cream headband worn across forehead, medium gold hoop earrings, oversized deep teal hoodie, soft focused expression, natural facial proportions, true-to-life oil painting feel, painterly editorial illustration style, cinematic warm amber palette, detailed textures",
       "composition_key": "cafe_right_screen",
       "composition_text": "cafe table scene, one laptop only open on table, laptop screen visible and angled naturally for later digital overlay, screen is blank dark matte rectangle, screen not obscuring face, Isla visible from waist or mid-torso up, natural table perspective, do not draw content on the laptop screen",
@@ -415,15 +419,15 @@
       "pose_text": "PANEL 5 POSE: return-to-work pose, leaning toward laptop from a different angle, one hand near keyboard or stylus, other hand holding notebook edge, screen unobstructed",
       "pose_marker": "side-angle reflection, holding mug or notebook naturally, relaxed shoulders, no head-on repeated laptop pose",
       "screen_requirement": "MANDATORY SCREEN WHEN LAPTOP IS PRESENT: open laptop screen visible, dark blank rectangular screen area, unobstructed, clear four-corner rectangle for compositor insertion, do not draw puzzle content",
-      "story_beat": "With the puzzle solved, Isla stops by the local counter to grab a warm afternoon tea.",
-      "story_visual_direction": "STORY-FIRST IMAGE RULE: visualise this narration beat through Isla's body language, setting, timing, and objects in use; do not render it as written text: With the puzzle solved, Isla stops by the local counter to grab a warm afternoon tea.",
+      "story_beat": "The checked move holds, and the rest of the day has more room.",
+      "story_visual_direction": "STORY-FIRST IMAGE RULE: visualise this narration beat through Isla's body language, setting, timing, and objects in use; do not render it as written text: The checked move holds, and the rest of the day has more room.",
       "prop_text": "",
       "static_prompt_only": false,
       "arc_role": "consequence",
       "story_beat_enabled": true,
       "calendar_consequence_lock": "CALENDAR CONSEQUENCE LOCK: use today's 365-day story anchor as invisible visual direction only; do not render calendar, workday anchor, or supporting life trigger words in the image",
-      "storyboard_caption": "With the puzzle solved, Isla stops by the local counter to grab a warm afternoon tea.",
-      "storyboard_dialogue": "That logic actually held up. Quite satisfying.",
+      "storyboard_caption": "The checked move holds, and the rest of the day has more room.",
+      "storyboard_dialogue": "That one holds.",
       "panel_location": "office break area with notebook",
       "panel_action": "taking a short notebook stopped after the checked move",
       "panel_pose_family": "standing or side-angle consequence with notebook or receipt, not another head-on laptop shot",
@@ -442,7 +446,7 @@
         "mode": "work_pressure_day",
         "selection_reason": "calendar_preferred_flow",
         "score": 50,
-        "applied_at": "2026-06-08T21:51:07.461Z",
+        "applied_at": "2026-06-08T21:54:40.985Z",
         "fixed_sequence": false,
         "story_led": true,
         "continuity_aware": true,
@@ -450,6 +454,7 @@
         "flow_enforced": true,
         "normalised_copy_panels": [
           2,
+          5,
           6
         ]
       },
@@ -531,7 +536,7 @@
         "mode": "work_pressure_day",
         "selection_reason": "calendar_preferred_flow",
         "score": 50,
-        "applied_at": "2026-06-08T21:51:07.461Z",
+        "applied_at": "2026-06-08T21:54:40.985Z",
         "fixed_sequence": false,
         "story_led": true,
         "continuity_aware": true,
@@ -539,6 +544,7 @@
         "flow_enforced": true,
         "normalised_copy_panels": [
           2,
+          5,
           6
         ]
       },
@@ -575,7 +581,7 @@
       "final_prompt_composer": "clean_story_fields_with_contextual_laptop_overlay_surface_v4"
     }
   ],
-  "generated_at": "2026-06-08T21:51:07.753Z",
+  "generated_at": "2026-06-08T21:54:41.267Z",
   "story_beat_enabled": true,
   "calendar_consequence_enabled": true,
   "scene_lock_front_loaded": true,
@@ -587,7 +593,7 @@
     "mode": "work_pressure_day",
     "selection_reason": "calendar_preferred_flow",
     "score": 50,
-    "applied_at": "2026-06-08T21:51:07.461Z",
+    "applied_at": "2026-06-08T21:54:40.985Z",
     "fixed_sequence": false,
     "story_led": true,
     "continuity_aware": true,
@@ -595,6 +601,7 @@
     "flow_enforced": true,
     "normalised_copy_panels": [
       2,
+      5,
       6
     ]
   },
@@ -620,11 +627,11 @@
   "storyboard_copy_source": "openai_repaired+gemini",
   "storyboard_arc_type": "story_driven_not_location_driven",
   "storyboard_arc": {
-    "setup": "Rain beats against the window nook as Isla preps her files before the daily rush begins.",
+    "setup": "Isla sets up her steady workspace early, preparing for her upcoming Teams meeting with Nora.",
     "trigger": "The interruption changes the timing, not the whole shape of her morning.",
-    "choice": "Stepping away after the meeting, Isla finds a steady desk to squeeze in her daily puzzle.",
+    "choice": "With her team meeting wrapped up, Isla shifts her focus to the small puzzle waiting patiently.",
     "puzzle_moment": "Trigoku â€¢ Daily Lock | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
-    "consequence": "With the puzzle solved, Isla stops by the local counter to grab a warm afternoon tea.",
+    "consequence": "The checked move holds, and the rest of the day has more room.",
     "resolution": "She closes the laptop with one decision carried forward."
   },
   "storyboard_quality": {
@@ -634,7 +641,9 @@
     "uses_phase2_story": true,
     "quality_gate_passed": false,
     "interchangeable": false,
-    "generic_phrase_hits": [],
+    "generic_phrase_hits": [
+      "borrowed quiet"
+    ],
     "cause_effect_link_count": 2,
     "character_turn_count": 1,
     "quality_gate_action": "repaired_in_place",
@@ -693,12 +702,12 @@
       "LOCK, TRUTH, BANS, mandatory, panel text, prompt text, readable prop text, machine instruction, labels, arrows, numbered panel, contact sheet, split-screen collage, LOCATION text prefix",
       "closed laptop, absent device, hidden screen, screen facing away, hand covering screen, reflections hiding screen, tiny unreadable screen"
     ],
-    "checked_at": "2026-06-08T21:51:07.898Z"
+    "checked_at": "2026-06-08T21:54:41.442Z"
   },
   "model_registry_version": 1,
   "model_registry_path": "config/image-model-registry.json",
   "model_routing_enabled": true,
-  "model_routed_at": "2026-06-08T21:51:07.966Z",
+  "model_routed_at": "2026-06-08T21:54:41.512Z",
   "final_fal_prompt_composer": "clean_story_fields_with_contextual_laptop_overlay_surface_v4",
   "overlay_surface_contract": {
     "screen_surface_priority": "equal_to_isla_identity",

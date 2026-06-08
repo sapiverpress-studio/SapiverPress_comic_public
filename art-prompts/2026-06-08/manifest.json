@@ -50,7 +50,7 @@
       "output_file": "social/2026-06-08/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "Rain beats against the window nook as Isla preps her files before the daily rush begins.",
+      "caption": "Isla sets up her steady workspace early, preparing for her upcoming Teams meeting with Nora.",
       "scene_id": "scene_01"
     },
     {
@@ -70,7 +70,7 @@
       "output_file": "social/2026-06-08/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "Stepping away after the meeting, Isla finds a steady desk to squeeze in her daily puzzle.",
+      "caption": "With her team meeting wrapped up, Isla shifts her focus to the small puzzle waiting patiently.",
       "scene_id": "scene_03"
     },
     {
@@ -90,7 +90,7 @@
       "output_file": "social/2026-06-08/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "With the puzzle solved, Isla stops by the local counter to grab a warm afternoon tea.",
+      "caption": "The checked move holds, and the rest of the day has more room.",
       "scene_id": "scene_05"
     },
     {
@@ -105,5 +105,5 @@
     }
   ],
   "story_source": "daily/2026-06-08.json",
-  "generated_at": "2026-06-08T21:51:07.753Z"
+  "generated_at": "2026-06-08T21:54:41.267Z"
 }

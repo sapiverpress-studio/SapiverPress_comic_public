@@ -105,51 +105,6 @@
     {
       "date": "2026-06-02",
       "weekday": "Tuesday",
-      "same_day_attempt": 3,
-      "setting": "outdoor cafe street table",
-      "puzzle_phase": "early-week",
-      "story_note": "Isla spends this entry at the outdoor cafe street table because she is trying not to rush straight into the next errand. The puzzle stays as a light thread inside the day.",
-      "continuation_note": "Remember: Isla sometimes uses a cafe table as a buffer between obligations. Continue the thread: she is learning to pause before moving on.",
-      "stuck_moment": "brief hesitation, coffee nearby",
-      "life_memory_entry": {
-        "date": "2026-06-02",
-        "attempt": 3,
-        "location": "outdoor cafe street table",
-        "reason_for_location": "she is trying not to rush straight into the next errand",
-        "life_detail_learned": "Isla sometimes uses a cafe table as a buffer between obligations.",
-        "thread_to_continue": "she is learning to pause before moving on",
-        "puzzle_variant_mentioned": "Anti-Knight",
-        "variant_panel_index": 4,
-        "uk_calendar_date": null,
-        "uk_calendar_panel_index": null
-      },
-      "variant_recap": {
-        "variant_name": "Anti-Knight",
-        "short_rule": "Anti-Knight today — knight moves block matching numbers.",
-        "panel_index": 4,
-        "line": "Anti-Knight today — knight moves block matching numbers."
-      },
-      "uk_calendar_date": null,
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "A clean start.",
-        "Anti-Knight today — knight moves block matching numbers.",
-        "Check it twice.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly set.",
-        "Leave it tidy."
-      ]
-    },
-    {
-      "date": "2026-06-02",
-      "weekday": "Tuesday",
       "same_day_attempt": 4,
       "setting": "bookshop cafe corner",
       "puzzle_phase": "early-week",
@@ -1399,12 +1354,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Rain on glass.",
+        "Borrowed quiet.",
         "Today has its own little rule-set — check the constraint before rushing.",
-        "Let it sit.",
+        "Hold the line.",
         "Trigoku â€¢ Daily Lock | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
-        "Almost done.",
-        "No rush."
+        "Almost clear.",
+        "Back outside."
       ]
     },
     {
@@ -1444,12 +1399,57 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Rain on glass.",
+        "Borrowed quiet.",
         "Today has its own little rule-set — check the constraint before rushing.",
-        "Let it sit.",
+        "Hold the line.",
         "Trigoku â€¢ Daily Lock | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
-        "Almost done.",
-        "No rush."
+        "Almost clear.",
+        "Back outside."
+      ]
+    },
+    {
+      "date": "2026-06-08",
+      "weekday": "Monday",
+      "same_day_attempt": 3,
+      "setting": "quiet public library reading table",
+      "puzzle_phase": "early-week",
+      "story_note": "Isla spends this entry at the quiet public library reading table because the library gives her a borrowed pocket of quiet. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Isla uses libraries as reset spaces, not just work spaces. Continue the thread: library visits become her backup calm place.",
+      "stuck_moment": "patient pause at a shared table",
+      "life_memory_entry": {
+        "date": "2026-06-08",
+        "attempt": 3,
+        "location": "quiet public library reading table",
+        "reason_for_location": "the library gives her a borrowed pocket of quiet",
+        "life_detail_learned": "Isla uses libraries as reset spaces, not just work spaces.",
+        "thread_to_continue": "library visits become her backup calm place",
+        "puzzle_variant_mentioned": "Trigoku â€¢ Daily Lock | Sapiver Press",
+        "variant_panel_index": 2,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Trigoku â€¢ Daily Lock | Sapiver Press",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 2,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Borrowed quiet.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Hold the line.",
+        "Trigoku â€¢ Daily Lock | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
+        "Almost clear.",
+        "Back outside."
       ]
     }
   ],
@@ -1457,51 +1457,6 @@
     {
       "date": "2026-06-02",
       "weekday": "Tuesday",
-      "same_day_attempt": 3,
-      "setting": "outdoor cafe street table",
-      "puzzle_phase": "early-week",
-      "story_note": "Isla spends this entry at the outdoor cafe street table because she is trying not to rush straight into the next errand. The puzzle stays as a light thread inside the day.",
-      "continuation_note": "Remember: Isla sometimes uses a cafe table as a buffer between obligations. Continue the thread: she is learning to pause before moving on.",
-      "stuck_moment": "brief hesitation, coffee nearby",
-      "life_memory_entry": {
-        "date": "2026-06-02",
-        "attempt": 3,
-        "location": "outdoor cafe street table",
-        "reason_for_location": "she is trying not to rush straight into the next errand",
-        "life_detail_learned": "Isla sometimes uses a cafe table as a buffer between obligations.",
-        "thread_to_continue": "she is learning to pause before moving on",
-        "puzzle_variant_mentioned": "Anti-Knight",
-        "variant_panel_index": 4,
-        "uk_calendar_date": null,
-        "uk_calendar_panel_index": null
-      },
-      "variant_recap": {
-        "variant_name": "Anti-Knight",
-        "short_rule": "Anti-Knight today — knight moves block matching numbers.",
-        "panel_index": 4,
-        "line": "Anti-Knight today — knight moves block matching numbers."
-      },
-      "uk_calendar_date": null,
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "A clean start.",
-        "Anti-Knight today — knight moves block matching numbers.",
-        "Check it twice.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly set.",
-        "Leave it tidy."
-      ]
-    },
-    {
-      "date": "2026-06-02",
-      "weekday": "Tuesday",
       "same_day_attempt": 4,
       "setting": "bookshop cafe corner",
       "puzzle_phase": "early-week",
@@ -2751,12 +2706,12 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Rain on glass.",
+        "Borrowed quiet.",
         "Today has its own little rule-set — check the constraint before rushing.",
-        "Let it sit.",
+        "Hold the line.",
         "Trigoku â€¢ Daily Lock | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
-        "Almost done.",
-        "No rush."
+        "Almost clear.",
+        "Back outside."
       ]
     },
     {
@@ -2796,12 +2751,57 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Rain on glass.",
+        "Borrowed quiet.",
         "Today has its own little rule-set — check the constraint before rushing.",
-        "Let it sit.",
+        "Hold the line.",
         "Trigoku â€¢ Daily Lock | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
-        "Almost done.",
-        "No rush."
+        "Almost clear.",
+        "Back outside."
+      ]
+    },
+    {
+      "date": "2026-06-08",
+      "weekday": "Monday",
+      "same_day_attempt": 3,
+      "setting": "quiet public library reading table",
+      "puzzle_phase": "early-week",
+      "story_note": "Isla spends this entry at the quiet public library reading table because the library gives her a borrowed pocket of quiet. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Isla uses libraries as reset spaces, not just work spaces. Continue the thread: library visits become her backup calm place.",
+      "stuck_moment": "patient pause at a shared table",
+      "life_memory_entry": {
+        "date": "2026-06-08",
+        "attempt": 3,
+        "location": "quiet public library reading table",
+        "reason_for_location": "the library gives her a borrowed pocket of quiet",
+        "life_detail_learned": "Isla uses libraries as reset spaces, not just work spaces.",
+        "thread_to_continue": "library visits become her backup calm place",
+        "puzzle_variant_mentioned": "Trigoku â€¢ Daily Lock | Sapiver Press",
+        "variant_panel_index": 2,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Trigoku â€¢ Daily Lock | Sapiver Press",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 2,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Borrowed quiet.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Hold the line.",
+        "Trigoku â€¢ Daily Lock | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
+        "Almost clear.",
+        "Back outside."
       ]
     }
   ],
