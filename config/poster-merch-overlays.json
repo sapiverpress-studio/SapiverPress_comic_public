@@ -1,0 +1,89 @@
+{
+  "version": "poster_merch_overlay_contract_v1",
+  "rule": "Readable poster, merch, product, logo, and slogan text must be compositor overlay only. Image prompts may request blank physical surfaces only.",
+  "brand": {
+    "name": "Sapiver Press",
+    "site": "suite.sapiverpress.co.uk",
+    "allowed_logo_contexts": [
+      "mug",
+      "tote_bag",
+      "notebook_cover",
+      "book_cover",
+      "laptop_sticker",
+      "phone_screen",
+      "poster_print",
+      "monitor_browser_url"
+    ]
+  },
+  "allowed_surfaces": [
+    {
+      "id": "blank_wall_poster",
+      "prompt_phrase": "plain blank framed wall poster, no writing, no letters, no symbols",
+      "overlay_slot": "poster"
+    },
+    {
+      "id": "blank_mug",
+      "prompt_phrase": "plain blank ceramic mug facing the viewer, no writing, no logo",
+      "overlay_slot": "mug"
+    },
+    {
+      "id": "blank_notebook",
+      "prompt_phrase": "plain blank notebook cover on the desk, no title, no text",
+      "overlay_slot": "notebook"
+    },
+    {
+      "id": "blank_tote_bag",
+      "prompt_phrase": "plain blank tote bag hanging or resting naturally, no writing, no logo",
+      "overlay_slot": "tote_bag"
+    },
+    {
+      "id": "blank_laptop_sticker",
+      "prompt_phrase": "plain blank laptop lid sticker area, no writing, no logo",
+      "overlay_slot": "laptop_sticker"
+    },
+    {
+      "id": "blank_book_cover",
+      "prompt_phrase": "plain blank puzzle book cover as a subtle desk prop, no readable title",
+      "overlay_slot": "book_cover"
+    }
+  ],
+  "approved_quotes": [
+    "A DAILY PUZZLE",
+    "One grid. Five quiet minutes.",
+    "Solve today's lock.",
+    "Group the clues. Order the timeline.",
+    "Make a little room for logic.",
+    "New puzzle every day.",
+    "Quiet focus. Clean logic.",
+    "Pause. Solve. Continue.",
+    "The grid waits.",
+    "Today has one lock."
+  ],
+  "approved_ctas": [
+    "Play along at suite.sapiverpress.co.uk",
+    "Sapiver Press",
+    "Daily puzzle at suite.sapiverpress.co.uk"
+  ],
+  "motifs": [
+    "small sudoku grid icon",
+    "simple pencil mark motif",
+    "small lock icon",
+    "minimal calendar-square icon",
+    "small coffee mug icon",
+    "simple book spine icon",
+    "tiny checkmark trail",
+    "small puzzle-cell pattern"
+  ],
+  "negative_prompt_additions": [
+    "readable poster text",
+    "fake brand text",
+    "gibberish wall writing",
+    "generated slogan",
+    "generated logo",
+    "random label text",
+    "fake notebook title",
+    "fake book title",
+    "watermark",
+    "signature"
+  ]
+}
