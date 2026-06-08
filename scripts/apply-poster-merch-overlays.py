@@ -2,8 +2,9 @@
 """Apply controlled poster/merch overlays to composed comic panels.
 
 Readable brand/poster/merch copy belongs here, not in image prompts.
-This script adds small, tasteful Sapiver Press overlay marks to blank surfaces
-where the art generation has provided usable space.
+Daily comic runs leave this disabled by default because generic automatic overlay
+placement can land in the wrong place. Enable only for explicit poster/merch
+renders with POSTER_MERCH_OVERLAYS=true.
 """
 from __future__ import annotations
 
@@ -21,6 +22,10 @@ OUT_DIR = ROOT / "social" / DATE
 LATEST_DIR = ROOT / "social" / "latest"
 CONFIG_PATH = ROOT / "config" / "poster-merch-overlays.json"
 PANEL_FILES = [f"{i:02d}_panel-{i:02d}.png" for i in range(1, 7)]
+
+
+def enabled() -> bool:
+    return str(os.environ.get("POSTER_MERCH_OVERLAYS") or "").strip().lower() in {"1", "true", "yes", "on"}
 
 
 def load_config() -> dict:
@@ -76,8 +81,6 @@ def choose_overlay(index: int, config: dict) -> dict:
 
 def overlay_box_for_surface(img: Image.Image, surface: str) -> tuple[int, int, int, int]:
     w, h = img.size
-    # These are deliberately small and conservative: brand/merch overlays should
-    # be subtle, not cover Isla or the puzzle screen.
     if surface == "mug":
         return (int(w * 0.06), int(h * 0.66), int(w * 0.24), int(h * 0.78))
     if surface == "poster":
@@ -122,12 +125,10 @@ def apply_overlay(img: Image.Image, overlay: dict) -> bool:
     text_x = x0 + min(78, box_w // 3)
     text_w = max(60, x1 - text_x - 10)
     y = y0 + 12
-    quote_lines = wrap(str(overlay.get("quote") or ""), quote_font, text_w, 2)
-    for line in quote_lines:
+    for line in wrap(str(overlay.get("quote") or ""), quote_font, text_w, 2):
         draw.text((text_x, y), line, font=quote_font, fill=(18, 29, 48, 255))
         y += quote_font.size + 3
-    cta = str(overlay.get("cta") or "")
-    for line in wrap(cta, cta_font, text_w, 2):
+    for line in wrap(str(overlay.get("cta") or ""), cta_font, text_w, 2):
         draw.text((text_x, y + 2), line, font=cta_font, fill=(54, 65, 82, 255))
         y += cta_font.size + 2
     return True
@@ -141,6 +142,9 @@ def save_png(img: Image.Image, path: Path) -> None:
 
 
 def main() -> None:
+    if not enabled():
+        print("Poster/merch overlays skipped: set POSTER_MERCH_OVERLAYS=true for explicit poster/merch renders")
+        return
     config = load_config()
     manifest_path = OUT_DIR / "manifest.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8")) if manifest_path.exists() else {}
@@ -150,8 +154,6 @@ def main() -> None:
         path = OUT_DIR / name
         if not path.exists():
             continue
-        # Keep overlay subtle and only on non-puzzle/key product panels. Avoid
-        # panel 4/5 by default because they usually carry main puzzle evidence.
         if i in {3, 4}:
             continue
         img = Image.open(path).convert("RGBA")
