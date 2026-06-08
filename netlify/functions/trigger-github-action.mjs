@@ -6,8 +6,10 @@ const WORKFLOWS = {
     file: "daily-comic.yml",
     inputs: (date) => ({
       date_override: date || "",
-      force_paid_api_run: "true",
+      run_archive: "false",
+      polish_images_openai: "true",
       supporting_life_trigger: "auto",
+      force_paid_api_run: "true",
     }),
   },
   video: {
@@ -46,10 +48,6 @@ function cleanDate(value) {
   return /^\d{4}-\d{2}-\d{2}$/.test(text) ? text : "";
 }
 
-function header(req, name) {
-  return req.headers.get(name) || req.headers.get(name.toLowerCase()) || req.headers.get(name.toUpperCase()) || "";
-}
-
 async function parseBody(req) {
   const text = await req.text();
   if (!text.trim()) return {};
@@ -67,8 +65,8 @@ async function dispatchWorkflow({ action, date }) {
     return json(500, { error: "Missing GitHub dispatch token in Netlify environment" });
   }
 
-  const url = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/actions/workflows/${workflow.file}/dispatches`;
   const payload = { ref: "main", inputs: workflow.inputs(date) };
+  const url = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/actions/workflows/${workflow.file}/dispatches`;
   const response = await fetch(url, {
     method: "POST",
     headers: {
@@ -76,7 +74,7 @@ async function dispatchWorkflow({ action, date }) {
       authorization: `Bearer ${token}`,
       "content-type": "application/json",
       "x-github-api-version": "2022-11-28",
-      "user-agent": "SapiverPressPreviewDashboard/2.0",
+      "user-agent": "SapiverPressPreviewDashboard/3.0",
     },
     body: JSON.stringify(payload),
   });
@@ -98,15 +96,15 @@ async function dispatchWorkflow({ action, date }) {
     workflow: workflow.file,
     date,
     request: { ref: payload.ref, inputs: payload.inputs },
-    message: "Workflow triggered. Check GitHub Actions, then refresh after it finishes.",
+    message: "Workflow triggered with website API switches enabled. Check GitHub Actions, then refresh after it finishes.",
   });
 }
 
-export default async function handler(req) {
+export default async function triggerGithubAction(req) {
   if (req.method !== "POST") return json(405, { error: "POST only" });
 
   const expectedKey = env("PREVIEW_ADMIN_KEY");
-  const suppliedKey = header(req, "x-preview-admin-key").trim();
+  const suppliedKey = (req.headers.get("x-preview-admin-key") || "").trim();
   if (!expectedKey || suppliedKey !== expectedKey) {
     return json(401, {
       error: "Preview admin key missing or incorrect",
@@ -124,24 +122,6 @@ export default async function handler(req) {
   const action = String(body.action || "").trim().toLowerCase();
   const date = cleanDate(body.date);
   return dispatchWorkflow({ action, date });
-}
-
-export async function handler(event) {
-  const req = new Request("https://sapiver-comic.netlify.app/api/trigger-github-action", {
-    method: event.httpMethod || "GET",
-    headers: event.headers || {},
-    body: event.body || undefined,
-  });
-  const response = await handlerDefaultCompat(req);
-  return {
-    statusCode: response.status,
-    headers: Object.fromEntries(response.headers.entries()),
-    body: await response.text(),
-  };
-}
-
-async function handlerDefaultCompat(req) {
-  return handler(req);
 }
 
 export const config = {
