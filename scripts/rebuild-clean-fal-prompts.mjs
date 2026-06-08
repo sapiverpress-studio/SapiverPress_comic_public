@@ -15,6 +15,9 @@ const RISKY_OBJECT_PATTERNS = [
   /callout\s+box/gi,
   /caption\s+box/gi,
   /note\s+stuck\s+to\s+(?:the\s+)?(?:wall|screen|laptop|desk|window)/gi,
+  /poster/gi,
+  /framed\s+(?:print|art|sign|picture|poster|text)/gi,
+  /wall\s+(?:art|sign|poster|print|frame)/gi,
 ];
 
 async function readJson(file, fallback = null) { try { return JSON.parse(await fs.readFile(file, "utf8")); } catch { return fallback; } }
@@ -46,15 +49,17 @@ function screenSurfaceInstruction(panel) {
   }
   return [
     "LOCKED COMPOSITION REQUIREMENT: Isla and her real laptop are equal priority subjects in the same believable scene.",
+    "The laptop is open on the desk between Isla and the audience, angled about 30 to 45 degrees so Isla can see it and the viewer can clearly see the screen at the same time.",
+    "The laptop display must face the camera/audience, not the back of the laptop lid, not edge-on, not facing only Isla, and not turned away.",
+    "The screen plane is visible to the viewer as a large trapezoid or rectangle; keyboard base and hinge are visible directly below it.",
     "The laptop is a physical object connected to its keyboard by a visible hinge, resting naturally on the desk, table, counter, or Isla's lap according to the setting.",
     "The laptop is not floating, not detached from the desk, not a standalone rectangle, not a poster, not a wall screen, and not a graphic frame.",
     "Show the full open laptop body: keyboard base visible, hinge visible, display attached to the base, perspective consistent with the tabletop or lap.",
-    "The display faces the viewer at a clear three-quarter front angle.",
     "The display contains a large blank pale screen, soft off-white or light grey, matte, not glowing, not reflective.",
     "The screen must have a clearly visible dark bezel around it so the full screen boundary is obvious.",
     "The blank screen must be unobstructed, fully inside the frame, and large enough for a later digital puzzle overlay.",
     "Hands, cups, books, hair, sleeves, and foreground props must not cross or cover the display.",
-    "The screen should take roughly one quarter to one third of the image width while Isla remains clearly visible and expressive.",
+    "The visible laptop screen should take roughly one third of the image width while Isla remains clearly visible and expressive.",
     `Panel screen state: ${state}; preserve a contextual real laptop screen surface for the compositor.`
   ].join(" ");
 }
@@ -67,8 +72,9 @@ function promptFor(p, pack) {
   const screen = screenSurfaceInstruction(p);
   const cleanSurfaces = [
     "Clean editorial illustration with plain unmarked walls and tidy surfaces.",
-    "No readable background signs, no wall poster words, no framed text, no fake labels, no invented writing anywhere.",
-    "If framed wall art, posters, books, notebooks, mugs, clothing, stickers, or product props appear, they are blank colour-block shapes only with no letters, numbers, logos, marks, slogans, or symbols.",
+    "No posters, no wall art, no framed pictures, no framed signs, no wall notices, no decorative text panels, no calendars, no whiteboards, no charts, no labels.",
+    "No readable background signs, no wall words, no fake labels, no invented writing anywhere.",
+    "Books, notebooks, mugs, clothing, stickers, and product props are blank colour-block shapes only with no letters, numbers, logos, marks, slogans, or symbols.",
     "Background props are secondary and visually quiet; all readable text is reserved for later compositor overlay only."
   ].join(" ");
   return `${TRIGGER}, ${[appearance, screen, `Visual moment: ${story}.`, location ? `Location: ${location}.` : "", action ? `Action: ${action}.` : "", pose ? `Pose: ${pose}.` : "", cleanSurfaces, "Single coherent real-world scene, Isla is the clear main subject and the contextual laptop screen is the clear overlay surface."].filter(Boolean).join(" ")}`;
@@ -82,7 +88,7 @@ function safeNegativePrompt(p, pack) {
     .replace(/\bpost\b/gi, "")
     .replace(/\bnote\b/gi, "")
     .replace(/,{2,}/g, ",");
-  return tidy([cleaned, "text elements, lettering, labels, typography, captions, puzzle grid, numbers, watermark, large logo, low quality, blurry, floating screen, detached screen, standalone rectangle, wall screen, poster frame, cropped laptop, hidden display, tiny laptop, cluttered display, reflective screen, glowing white rectangle, hands covering screen, wall poster writing, framed sign text, wall sign, framed text, clothing text, hoodie logo, shirt logo, book spine text, notebook writing, mug logo, sticker text, fake calendar text, pseudo letters, gibberish letters, random symbols"].filter(Boolean).join(", "));
+  return tidy([cleaned, "text elements, lettering, labels, typography, captions, puzzle grid, numbers, watermark, large logo, low quality, blurry, floating screen, detached screen, standalone rectangle, wall screen, poster frame, cropped laptop, hidden display, tiny laptop, cluttered display, reflective screen, glowing white rectangle, hands covering screen, back of laptop screen, laptop facing away, screen facing away, edge-on laptop, closed laptop, wall poster, framed poster, framed art, wall art, framed sign, wall sign, framed text, wall notice, calendar on wall, chart on wall, whiteboard, clothing text, hoodie logo, shirt logo, book spine text, notebook writing, mug logo, sticker text, fake calendar text, pseudo letters, gibberish letters, random symbols"].filter(Boolean).join(", "));
 }
 function assertSafeFinalPrompts(pack) {
   const hits = [];
@@ -91,7 +97,8 @@ function assertSafeFinalPrompts(pack) {
       const text = String(panel[field] || "");
       for (const pattern of RISKY_OBJECT_PATTERNS) {
         pattern.lastIndex = 0;
-        if (pattern.test(text)) hits.push(`panel ${index + 1} ${field}`);
+        // The negative prompt may include banned terms to suppress them.
+        if (field !== "negative_prompt" && pattern.test(text)) hits.push(`panel ${index + 1} ${field}`);
       }
     }
   }
@@ -105,11 +112,11 @@ const latest = path.join(ROOT, "art-prompts", "latest", "prompts.json");
 const pack = await readJson(dated, await readJson(latest, null));
 if (!pack) throw new Error(`Missing art prompt payload for ${DATE}`);
 const panels = Array.isArray(pack.panels) ? pack.panels : [];
-pack.final_fal_prompt_composer = "clean_story_fields_with_pale_laptop_overlay_surface_no_generated_text_v6";
+pack.final_fal_prompt_composer = "audience_facing_laptop_no_posters_v7";
 pack.overlay_surface_contract = {
   screen_surface_priority: "equal_to_isla_identity",
   puzzle_panels_require_contextual_open_laptop: true,
-  screen_prompt_rule: "Use panel_screen_state to require a real open laptop in scene context unless the scene is explicitly no_puzzle or closed_device. Overlay surfaces should be pale/off-white or light grey with a dark bezel for reliable detector contrast. All poster/merch/logo/copy text is compositor overlay only; generated art must keep surfaces blank and unmarked.",
+  screen_prompt_rule: "Daily comic panels require an open laptop angled so both Isla and the audience can see the display. Posters, framed wall art, wall signs, wall notices, and all generated background text are banned. Overlay surfaces should be pale/off-white or light grey with a dark bezel for reliable detector contrast.",
 };
 pack.panels = PANEL_FILES.map((name, i) => {
   const p = panels[i] || {};
@@ -121,15 +128,15 @@ pack.panels = PANEL_FILES.map((name, i) => {
     image_name: p.image_name || name,
     prompt_file: promptFile,
     overlay_surface_required: overlaySurfaceRequired,
-    overlay_surface: overlaySurfaceRequired ? "contextual_open_laptop_blank_pale_screen" : "none_story_only",
+    overlay_surface: overlaySurfaceRequired ? "contextual_open_laptop_blank_pale_screen_audience_facing" : "none_story_only",
     screen_surface_priority: overlaySurfaceRequired ? "equal_to_isla_identity" : "not_required",
     prompt: promptFor(p, pack),
     negative_prompt: safeNegativePrompt(p, pack),
-    final_prompt_composer: "clean_story_fields_with_pale_laptop_overlay_surface_no_generated_text_v6"
+    final_prompt_composer: "audience_facing_laptop_no_posters_v7"
   };
 });
 assertSafeFinalPrompts(pack);
 await writeJson(dated, pack);
 await writeJson(latest, pack);
 for (const p of pack.panels) await writeText(path.join(ROOT, p.prompt_file), `${p.prompt}\n`);
-console.log(`Clean final fal prompts rebuilt for ${DATE}; generated poster/merch/wall/clothing text is banned and pale laptop overlay screen is locked where required`);
+console.log(`Clean final fal prompts rebuilt for ${DATE}; laptop must face Isla and viewer, posters are banned, generated text remains banned`);
