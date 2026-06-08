@@ -48,12 +48,12 @@
   "storyboard_arc_title": "June Work and Travel Preparation",
   "storyboard_arc_type": "story_driven_not_location_driven",
   "storyboard_arc": {
-    "setup": "Isla quickly checks her morning schedule at the kitchen table before the long commute begins.",
-    "trigger": "Standing on the chilly railway platform, she reviews her messages before the train finally arrives.",
-    "choice": "Finding a steady window seat on the carriage, she prepares for a busy day ahead.",
+    "setup": "Isla lets the day show her what has to come first.",
+    "trigger": "The interruption changes the timing, not the whole shape of her morning.",
+    "choice": "I need to prep my notes for our workday session before diving into any puzzles.",
     "puzzle_moment": "Trigoku â€¢ Daily Lock | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
-    "consequence": "The checked move holds, and the rest of the day has more room.",
-    "resolution": "With the daily puzzle complete, she settles in for her online planning session with Nora."
+    "consequence": "Solving the grid on my commute keeps my focus sharp before my meeting with Nora starts.",
+    "resolution": "She closes the laptop with one decision carried forward."
   },
   "storyboard_quality": {
     "location_sequence_only": false,
@@ -109,12 +109,12 @@
   },
   "location_flow_validated": true,
   "location_flow": [
-    "home kitchen or",
-    "unmistakable railway platform",
-    "inside a train",
+    "home desk before",
+    "co-working lobby table",
     "co-working desk near",
-    "shop counter with",
-    "rainy window nook"
+    "meeting-room side table",
+    "office break area",
+    "train or home"
   ],
   "post_ready_contract": {
     "openai_ok": true,
@@ -131,7 +131,7 @@
     "generated_art_panel_count": 6,
     "fallback_template_panel_count": 0,
     "ran": true,
-    "checked_at": "2026-06-08T23:14:59.142Z"
+    "checked_at": "2026-06-08T23:18:44.375Z"
   },
   "openai_storyboard_status": "ok",
   "openai_storyboard_model": "gpt-4o-mini",
@@ -141,7 +141,7 @@
     "frames": "array:6"
   },
   "openai_storyboard_fallback_reason": null,
-  "openai_storyboard_checked_at": "2026-06-08T23:13:57.314Z",
+  "openai_storyboard_checked_at": "2026-06-08T23:17:49.846Z",
   "gemini_allowed_fields": [
     "caption",
     "dialogue"
@@ -183,20 +183,20 @@
   "puzzle_product": "Trigoku Daily Lock",
   "puzzle_url": "https://suite.sapiverpress.co.uk",
   "captions": [
-    "Let me squeeze in a quick glance at this before the day gets completely chaotic.\nIsla quickly checks her morning schedule at the kitchen table before the long commute begins.",
-    "The train is delayed, which actually gives me a few minutes to think.\nStanding on the chilly railway platform, she reviews her messages before the train finally arrives.",
-    "Okay, I've got a clear table here. Let's see what we're dealing with.\nFinding a steady window seat on the carriage, she prepares for a busy day ahead.",
+    "First things first.\nIsla lets the day show her what has to come first.",
+    "I can answer that properly later.\nThe interruption changes the timing, not the whole shape of her morning.",
+    "First things first, let's get this planning file sorted.\nI need to prep my notes for our workday session before diving into any puzzles.",
     "Trigoku â€¢ Daily Lock | Sapiver Press changes the move, so Isla checks the rule before trusting it.\nTrigoku â€¢ Daily Lock | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
-    "That one holds.\nThe checked move holds, and the rest of the day has more room.",
-    "All done. Now I'd better log into Teams for this planning meeting with Nora.\nWith the daily puzzle complete, she settles in for her online planning session with Nora."
+    "There we go, that layout fits perfectly now.\nSolving the grid on my commute keeps my focus sharp before my meeting with Nora starts.",
+    "Leave it there. Move on.\nShe closes the laptop with one decision carried forward."
   ],
   "storyboard_locations": [
-    "home kitchen or home entry table",
-    "unmistakable railway platform waiting area",
-    "inside a train carriage at a window table",
-    "co-working desk near a tall window",
-    "shop counter with receipt and notebook",
-    "rainy window nook with plants and bag nearby"
+    "home desk before work",
+    "co-working lobby table",
+    "co-working desk near glass partitions",
+    "meeting-room side table",
+    "office break area with notebook",
+    "train or home window after work"
   ],
   "scenes": [
     {
@@ -208,20 +208,20 @@
       "capture": "captures/2026-06-08/extracted/01_fresh_daily_grid.png",
       "output": "social/2026-06-08/01_panel-01.png",
       "screen_quad": [],
-      "screen_quad_mode": "overlay_skipped_screen_state_no_puzzle",
-      "panel_screen_state": "no_puzzle",
+      "screen_quad_mode": "overlay_skipped_screen_state_closed_device",
+      "panel_screen_state": "closed_device",
       "screen_state_overlay_allowed": false,
       "overlay_fit_mode": "auto_fill_detected_screen_quad_real_capture",
-      "storyboard_text": "Let me squeeze in a quick glance at this before the day gets completely chaotic.\nIsla quickly checks her morning schedule at the kitchen table before the long commute begins.",
+      "storyboard_text": "First things first.\nIsla lets the day show her what has to come first.",
       "arc_role": "setup",
-      "storyboard_caption": "Isla quickly checks her morning schedule at the kitchen table before the long commute begins.",
-      "storyboard_dialogue": "Let me squeeze in a quick glance at this before the day gets completely chaotic.",
-      "panel_location": "home kitchen or home entry table",
+      "storyboard_caption": "Isla lets the day show her what has to come first.",
+      "storyboard_dialogue": "First things first.",
+      "panel_location": "home desk before work",
       "panel": 1,
       "scene_id": "scene_01",
-      "panel_action": "checking the day plan before opening any puzzle",
+      "panel_action": "checking the day plan before the first message lands",
       "panel_pose_family": "standing full-body start, hands on bag or notebook, not seated at laptop",
-      "scene_truth_flow_id": "commute_day",
+      "scene_truth_flow_id": "work_pressure_day",
       "supporting_life_trigger_here": false
     },
     {
@@ -253,16 +253,16 @@
         "arc_shift": "packing, leaving, work meetings, and using unfamiliar tables well; Isla starts with work, a meeting, or a weekly file before the puzzle gets a narrow slot. Workday anchor: team planning meeting with Nora in Teams. Isla has normal work between 09:00 and 17:30, so the puzzle must fit around work rather than replacing it.",
         "source": "isla_recurring_work_anchor"
       },
-      "storyboard_text": "The train is delayed, which actually gives me a few minutes to think.\nStanding on the chilly railway platform, she reviews her messages before the train finally arrives.",
+      "storyboard_text": "I can answer that properly later.\nThe interruption changes the timing, not the whole shape of her morning.",
       "arc_role": "trigger",
-      "storyboard_caption": "Standing on the chilly railway platform, she reviews her messages before the train finally arrives.",
-      "storyboard_dialogue": "The train is delayed, which actually gives me a few minutes to think.",
-      "panel_location": "unmistakable railway platform waiting area",
+      "storyboard_caption": "The interruption changes the timing, not the whole shape of her morning.",
+      "storyboard_dialogue": "I can answer that properly later.",
+      "panel_location": "co-working lobby table",
       "panel": 2,
       "scene_id": "scene_02",
-      "panel_action": "waiting on the platform with bag over shoulder, checking the space around her",
+      "panel_action": "responding to the reminder before the laptop opens",
       "panel_pose_family": "standing or walking reaction to reminder, phone/calendar cue visible, not seated at laptop",
-      "scene_truth_flow_id": "commute_day",
+      "scene_truth_flow_id": "work_pressure_day",
       "supporting_life_trigger_here": true
     },
     {
@@ -275,36 +275,36 @@
       "output": "social/2026-06-08/03_panel-03.png",
       "screen_quad": [
         [
-          98,
-          659
+          277,
+          773
         ],
         [
-          511,
-          665
+          838,
+          787
         ],
         [
-          495,
-          935
+          812,
+          1173
         ],
         [
-          115,
-          872
+          245,
+          1124
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
       "panel_screen_state": "first_moves",
       "screen_state_overlay_allowed": true,
       "overlay_fit_mode": "auto_fill_detected_screen_quad_real_capture",
-      "storyboard_text": "Okay, I've got a clear table here. Let's see what we're dealing with.\nFinding a steady window seat on the carriage, she prepares for a busy day ahead.",
+      "storyboard_text": "First things first, let's get this planning file sorted.\nI need to prep my notes for our workday session before diving into any puzzles.",
       "arc_role": "choice",
-      "storyboard_caption": "Finding a steady window seat on the carriage, she prepares for a busy day ahead.",
-      "storyboard_dialogue": "Okay, I've got a clear table here. Let's see what we're dealing with.",
-      "panel_location": "inside a train carriage at a window table",
+      "storyboard_caption": "I need to prep my notes for our workday session before diving into any puzzles.",
+      "storyboard_dialogue": "First things first, let's get this planning file sorted.",
+      "panel_location": "co-working desk near glass partitions",
       "panel": 3,
       "scene_id": "scene_03",
-      "panel_action": "opening the laptop on the train and making the first careful puzzle moves",
+      "panel_action": "opening the grid before the work question takes over",
       "panel_pose_family": "seated bench start, angled body, laptop present only for first moves",
-      "scene_truth_flow_id": "commute_day",
+      "scene_truth_flow_id": "work_pressure_day",
       "supporting_life_trigger_here": false
     },
     {
@@ -317,20 +317,20 @@
       "output": "social/2026-06-08/04_panel-04.png",
       "screen_quad": [
         [
-          60,
-          657
+          806,
+          1113
         ],
         [
-          590,
-          666
+          1055,
+          1048
         ],
         [
-          682,
-          1086
+          1079,
+          1200
         ],
         [
-          60,
-          1135
+          826,
+          1184
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -341,12 +341,12 @@
       "arc_role": "puzzle_moment",
       "storyboard_caption": "Trigoku â€¢ Daily Lock | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
       "storyboard_dialogue": "Trigoku â€¢ Daily Lock | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
-      "panel_location": "co-working desk near a tall window",
+      "panel_location": "meeting-room side table",
       "panel": 4,
       "scene_id": "scene_04",
-      "panel_action": "leaning forward to check the active puzzle rule before trusting the move",
+      "panel_action": "using the puzzle rule as a boundary before the meeting",
       "panel_pose_family": "leaning focus at active digital puzzle, side angle, one hand clear of screen",
-      "scene_truth_flow_id": "commute_day",
+      "scene_truth_flow_id": "work_pressure_day",
       "supporting_life_trigger_here": false
     },
     {
@@ -359,36 +359,36 @@
       "output": "social/2026-06-08/05_panel-05.png",
       "screen_quad": [
         [
-          466,
-          674
+          634,
+          633
         ],
         [
-          1082,
-          680
+          1086,
+          637
         ],
         [
-          1068,
-          1192
+          1087,
+          1101
         ],
         [
-          391,
-          1118
+          569,
+          1024
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
       "panel_screen_state": "progress_pause",
       "screen_state_overlay_allowed": true,
       "overlay_fit_mode": "auto_fill_detected_screen_quad_real_capture",
-      "storyboard_text": "That one holds.\nThe checked move holds, and the rest of the day has more room.",
+      "storyboard_text": "There we go, that layout fits perfectly now.\nSolving the grid on my commute keeps my focus sharp before my meeting with Nora starts.",
       "arc_role": "consequence",
-      "storyboard_caption": "The checked move holds, and the rest of the day has more room.",
-      "storyboard_dialogue": "That one holds.",
-      "panel_location": "shop counter with receipt and notebook",
+      "storyboard_caption": "Solving the grid on my commute keeps my focus sharp before my meeting with Nora starts.",
+      "storyboard_dialogue": "There we go, that layout fits perfectly now.",
+      "panel_location": "office break area with notebook",
       "panel": 5,
       "scene_id": "scene_05",
-      "panel_action": "checking the result against her note, receipt nearby, no drink props",
+      "panel_action": "taking a short notebook stopped after the checked move",
       "panel_pose_family": "standing or side-angle consequence with notebook or receipt, not another head-on laptop shot",
-      "scene_truth_flow_id": "commute_day",
+      "scene_truth_flow_id": "work_pressure_day",
       "supporting_life_trigger_here": false
     },
     {
@@ -401,36 +401,36 @@
       "output": "social/2026-06-08/06_panel-06.png",
       "screen_quad": [
         [
-          58,
-          761
+          691,
+          676
         ],
         [
-          539,
-          766
+          1086,
+          692
         ],
         [
-          568,
-          1133
+          1088,
+          1096
         ],
         [
-          58,
-          1144
+          634,
+          1016
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
       "panel_screen_state": "finished_or_closing",
       "screen_state_overlay_allowed": true,
       "overlay_fit_mode": "auto_fill_detected_screen_quad_real_capture",
-      "storyboard_text": "All done. Now I'd better log into Teams for this planning meeting with Nora.\nWith the daily puzzle complete, she settles in for her online planning session with Nora.",
+      "storyboard_text": "Leave it there. Move on.\nShe closes the laptop with one decision carried forward.",
       "arc_role": "resolution",
-      "storyboard_caption": "With the daily puzzle complete, she settles in for her online planning session with Nora.",
-      "storyboard_dialogue": "All done. Now I'd better log into Teams for this planning meeting with Nora.",
-      "panel_location": "rainy window nook with plants and bag nearby",
+      "storyboard_caption": "She closes the laptop with one decision carried forward.",
+      "storyboard_dialogue": "Leave it there. Move on.",
+      "panel_location": "train or home window after work",
       "panel": 6,
       "scene_id": "scene_06",
-      "panel_action": "closing the laptop and packing up at the end of the day",
+      "panel_action": "packing up after work with the laptop closing",
       "panel_pose_family": "closing laptop or packing bag, looking away from screen, clear ending gesture",
-      "scene_truth_flow_id": "commute_day",
+      "scene_truth_flow_id": "work_pressure_day",
       "supporting_life_trigger_here": false
     }
   ],
@@ -441,7 +441,7 @@
       "output": "social/2026-06-08/03_panel-03.png",
       "screen_quad_mode": "detected_replacement_screen",
       "panel_screen_state": "first_moves",
-      "panel_location": "inside a train carriage at a window table",
+      "panel_location": "co-working desk near glass partitions",
       "has_valid_screen_quad": true
     },
     {
@@ -450,7 +450,7 @@
       "output": "social/2026-06-08/04_panel-04.png",
       "screen_quad_mode": "detected_replacement_screen",
       "panel_screen_state": "active_puzzle",
-      "panel_location": "co-working desk near a tall window",
+      "panel_location": "meeting-room side table",
       "has_valid_screen_quad": true
     },
     {
@@ -459,7 +459,7 @@
       "output": "social/2026-06-08/05_panel-05.png",
       "screen_quad_mode": "detected_replacement_screen",
       "panel_screen_state": "progress_pause",
-      "panel_location": "shop counter with receipt and notebook",
+      "panel_location": "office break area with notebook",
       "has_valid_screen_quad": true
     },
     {
@@ -468,7 +468,7 @@
       "output": "social/2026-06-08/06_panel-06.png",
       "screen_quad_mode": "detected_replacement_screen",
       "panel_screen_state": "finished_or_closing",
-      "panel_location": "rainy window nook with plants and bag nearby",
+      "panel_location": "train or home window after work",
       "has_valid_screen_quad": true
     }
   ],
@@ -479,7 +479,7 @@
       "output": "social/2026-06-08/03_panel-03.png",
       "screen_quad_mode": "detected_replacement_screen",
       "panel_screen_state": "first_moves",
-      "panel_location": "inside a train carriage at a window table",
+      "panel_location": "co-working desk near glass partitions",
       "has_valid_screen_quad": true
     },
     {
@@ -488,7 +488,7 @@
       "output": "social/2026-06-08/04_panel-04.png",
       "screen_quad_mode": "detected_replacement_screen",
       "panel_screen_state": "active_puzzle",
-      "panel_location": "co-working desk near a tall window",
+      "panel_location": "meeting-room side table",
       "has_valid_screen_quad": true
     },
     {
@@ -497,7 +497,7 @@
       "output": "social/2026-06-08/05_panel-05.png",
       "screen_quad_mode": "detected_replacement_screen",
       "panel_screen_state": "progress_pause",
-      "panel_location": "shop counter with receipt and notebook",
+      "panel_location": "office break area with notebook",
       "has_valid_screen_quad": true
     },
     {
@@ -506,7 +506,7 @@
       "output": "social/2026-06-08/06_panel-06.png",
       "screen_quad_mode": "detected_replacement_screen",
       "panel_screen_state": "finished_or_closing",
-      "panel_location": "rainy window nook with plants and bag nearby",
+      "panel_location": "train or home window after work",
       "has_valid_screen_quad": true
     }
   ],
@@ -529,7 +529,7 @@
         "output": "social/2026-06-08/03_panel-03.png",
         "screen_quad_mode": "detected_replacement_screen",
         "panel_screen_state": "first_moves",
-        "panel_location": "inside a train carriage at a window table",
+        "panel_location": "co-working desk near glass partitions",
         "has_valid_screen_quad": true
       },
       {
@@ -538,7 +538,7 @@
         "output": "social/2026-06-08/04_panel-04.png",
         "screen_quad_mode": "detected_replacement_screen",
         "panel_screen_state": "active_puzzle",
-        "panel_location": "co-working desk near a tall window",
+        "panel_location": "meeting-room side table",
         "has_valid_screen_quad": true
       },
       {
@@ -547,7 +547,7 @@
         "output": "social/2026-06-08/05_panel-05.png",
         "screen_quad_mode": "detected_replacement_screen",
         "panel_screen_state": "progress_pause",
-        "panel_location": "shop counter with receipt and notebook",
+        "panel_location": "office break area with notebook",
         "has_valid_screen_quad": true
       },
       {
@@ -556,7 +556,7 @@
         "output": "social/2026-06-08/06_panel-06.png",
         "screen_quad_mode": "detected_replacement_screen",
         "panel_screen_state": "finished_or_closing",
-        "panel_location": "rainy window nook with plants and bag nearby",
+        "panel_location": "train or home window after work",
         "has_valid_screen_quad": true
       }
     ],
@@ -567,7 +567,7 @@
         "output": "social/2026-06-08/03_panel-03.png",
         "screen_quad_mode": "detected_replacement_screen",
         "panel_screen_state": "first_moves",
-        "panel_location": "inside a train carriage at a window table",
+        "panel_location": "co-working desk near glass partitions",
         "has_valid_screen_quad": true
       },
       {
@@ -576,7 +576,7 @@
         "output": "social/2026-06-08/04_panel-04.png",
         "screen_quad_mode": "detected_replacement_screen",
         "panel_screen_state": "active_puzzle",
-        "panel_location": "co-working desk near a tall window",
+        "panel_location": "meeting-room side table",
         "has_valid_screen_quad": true
       },
       {
@@ -585,7 +585,7 @@
         "output": "social/2026-06-08/05_panel-05.png",
         "screen_quad_mode": "detected_replacement_screen",
         "panel_screen_state": "progress_pause",
-        "panel_location": "shop counter with receipt and notebook",
+        "panel_location": "office break area with notebook",
         "has_valid_screen_quad": true
       },
       {
@@ -594,7 +594,7 @@
         "output": "social/2026-06-08/06_panel-06.png",
         "screen_quad_mode": "detected_replacement_screen",
         "panel_screen_state": "finished_or_closing",
-        "panel_location": "rainy window nook with plants and bag nearby",
+        "panel_location": "train or home window after work",
         "has_valid_screen_quad": true
       }
     ],
@@ -604,9 +604,9 @@
         "panel": 1,
         "scene": "scene_01",
         "output": "social/2026-06-08/01_panel-01.png",
-        "screen_quad_mode": "overlay_skipped_screen_state_no_puzzle",
-        "panel_screen_state": "no_puzzle",
-        "panel_location": "home kitchen or home entry table",
+        "screen_quad_mode": "overlay_skipped_screen_state_closed_device",
+        "panel_screen_state": "closed_device",
+        "panel_location": "home desk before work",
         "has_valid_screen_quad": false
       },
       {
@@ -615,22 +615,22 @@
         "output": "social/2026-06-08/02_panel-02.png",
         "screen_quad_mode": "overlay_skipped_screen_state_no_puzzle",
         "panel_screen_state": "no_puzzle",
-        "panel_location": "unmistakable railway platform waiting area",
+        "panel_location": "co-working lobby table",
         "has_valid_screen_quad": false
       }
     ],
     "failures": [],
     "recoveries": [],
-    "checked_at": "2026-06-08T23:14:59.058Z"
+    "checked_at": "2026-06-08T23:18:44.291Z"
   },
   "posting_allowed": true,
   "puzzle_moment_copy_snapshot": {
     "ran": true,
     "source_stage": "openai",
-    "caption": "Clean route.",
+    "caption": "That fits.",
     "dialogue": "Today has its own little rule-set — check the constraint before rushing.",
-    "image_prompt_fragment": "clear route found, restrained smile",
-    "captured_at": "2026-06-08T23:13:57.389Z"
+    "image_prompt_fragment": "small solution moment on train",
+    "captured_at": "2026-06-08T23:17:49.922Z"
   },
   "puzzle_moment_copy_protection": {
     "ran": true,
@@ -639,8 +639,8 @@
   },
   "location_or_normalised": {
     "ran": true,
-    "changed": true,
-    "fields_changed": 4
+    "changed": false,
+    "fields_changed": 0
   },
   "story_coherence_lint": {
     "ran": true,
@@ -692,7 +692,7 @@
       "repaired_negation_aware": true
     },
     "variant_copy_mode": "exact_variant",
-    "checked_at": "2026-06-08T23:14:16.016Z"
+    "checked_at": "2026-06-08T23:18:02.520Z"
   },
   "prompt_lint": {
     "ran": true,
@@ -706,23 +706,25 @@
     "no_puzzle_contradictions_stripped": true,
     "location_prefix_garbage_stripped": true,
     "screen_contract_rule": "Open usable screen means puzzle required; no-puzzle panel means no open blank laptop screen.",
-    "checked_at": "2026-06-08T23:14:16.234Z"
+    "checked_at": "2026-06-08T23:18:02.739Z"
   },
-  "location_flow_id": "commute_day",
+  "location_flow_id": "work_pressure_day",
   "location_flow_method": "scene_truth_contract_calendar_preferred_flow",
   "scene_truth_contract": {
     "enabled": true,
-    "mode": "commute_day",
+    "mode": "work_pressure_day",
     "selection_reason": "calendar_preferred_flow",
     "score": 50,
-    "applied_at": "2026-06-08T23:14:15.785Z",
+    "applied_at": "2026-06-08T23:18:02.289Z",
     "fixed_sequence": false,
     "story_led": true,
     "continuity_aware": true,
     "caption_location_guard": true,
     "flow_enforced": true,
     "normalised_copy_panels": [
-      5
+      1,
+      2,
+      6
     ]
   },
   "story_continuity": {
@@ -731,7 +733,7 @@
       "story_note": "Isla spends this entry at the small kitchen table in warm morning light because home is still half-asleep and she has a few minutes to herself. The puzzle stays as a light thread inside the day.",
       "flow_id": ""
     },
-    "tomorrow_setup": "Tomorrow may follow from where the commute left her: work, home, or a delayed errand.",
+    "tomorrow_setup": "Tomorrow can show recovery from work pressure or preparation before the next meeting.",
     "weekend_logic": "weekday"
   },
   "scene_truth_rows": [
@@ -739,50 +741,50 @@
       "panel": 1,
       "scene_id": "scene_01",
       "arc_role": "setup",
-      "panel_location": "home kitchen or home entry table",
-      "panel_action": "checking the day plan before opening any puzzle",
+      "panel_location": "home desk before work",
+      "panel_action": "checking the day plan before the first message lands",
       "panel_pose_family": "standing full-body start, hands on bag or notebook, not seated at laptop",
-      "panel_screen_state": "no_puzzle",
-      "scene_truth_flow_id": "commute_day",
+      "panel_screen_state": "closed_device",
+      "scene_truth_flow_id": "work_pressure_day",
       "supporting_life_trigger_here": false,
-      "storyboard_caption": "Isla quickly checks her morning schedule at the kitchen table before the long commute begins.",
-      "storyboard_dialogue": "Let me squeeze in a quick glance at this before the day gets completely chaotic."
+      "storyboard_caption": "Isla lets the day show her what has to come first.",
+      "storyboard_dialogue": "First things first."
     },
     {
       "panel": 2,
       "scene_id": "scene_02",
       "arc_role": "trigger",
-      "panel_location": "unmistakable railway platform waiting area",
-      "panel_action": "waiting on the platform with bag over shoulder, checking the space around her",
+      "panel_location": "co-working lobby table",
+      "panel_action": "responding to the reminder before the laptop opens",
       "panel_pose_family": "standing or walking reaction to reminder, phone/calendar cue visible, not seated at laptop",
       "panel_screen_state": "no_puzzle",
-      "scene_truth_flow_id": "commute_day",
+      "scene_truth_flow_id": "work_pressure_day",
       "supporting_life_trigger_here": true,
-      "storyboard_caption": "Standing on the chilly railway platform, she reviews her messages before the train finally arrives.",
-      "storyboard_dialogue": "The train is delayed, which actually gives me a few minutes to think."
+      "storyboard_caption": "The interruption changes the timing, not the whole shape of her morning.",
+      "storyboard_dialogue": "I can answer that properly later."
     },
     {
       "panel": 3,
       "scene_id": "scene_03",
       "arc_role": "choice",
-      "panel_location": "inside a train carriage at a window table",
-      "panel_action": "opening the laptop on the train and making the first careful puzzle moves",
+      "panel_location": "co-working desk near glass partitions",
+      "panel_action": "opening the grid before the work question takes over",
       "panel_pose_family": "seated bench start, angled body, laptop present only for first moves",
       "panel_screen_state": "first_moves",
-      "scene_truth_flow_id": "commute_day",
+      "scene_truth_flow_id": "work_pressure_day",
       "supporting_life_trigger_here": false,
-      "storyboard_caption": "Finding a steady window seat on the carriage, she prepares for a busy day ahead.",
-      "storyboard_dialogue": "Okay, I've got a clear table here. Let's see what we're dealing with."
+      "storyboard_caption": "I need to prep my notes for our workday session before diving into any puzzles.",
+      "storyboard_dialogue": "First things first, let's get this planning file sorted."
     },
     {
       "panel": 4,
       "scene_id": "scene_04",
       "arc_role": "puzzle_moment",
-      "panel_location": "co-working desk near a tall window",
-      "panel_action": "leaning forward to check the active puzzle rule before trusting the move",
+      "panel_location": "meeting-room side table",
+      "panel_action": "using the puzzle rule as a boundary before the meeting",
       "panel_pose_family": "leaning focus at active digital puzzle, side angle, one hand clear of screen",
       "panel_screen_state": "active_puzzle",
-      "scene_truth_flow_id": "commute_day",
+      "scene_truth_flow_id": "work_pressure_day",
       "supporting_life_trigger_here": false,
       "storyboard_caption": "Trigoku â€¢ Daily Lock | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
       "storyboard_dialogue": "Trigoku â€¢ Daily Lock | Sapiver Press changes the move, so Isla checks the rule before trusting it."
@@ -791,27 +793,27 @@
       "panel": 5,
       "scene_id": "scene_05",
       "arc_role": "consequence",
-      "panel_location": "shop counter with receipt and notebook",
-      "panel_action": "checking the result against her note, receipt nearby, no drink props",
+      "panel_location": "office break area with notebook",
+      "panel_action": "taking a short notebook stopped after the checked move",
       "panel_pose_family": "standing or side-angle consequence with notebook or receipt, not another head-on laptop shot",
       "panel_screen_state": "progress_pause",
-      "scene_truth_flow_id": "commute_day",
+      "scene_truth_flow_id": "work_pressure_day",
       "supporting_life_trigger_here": false,
-      "storyboard_caption": "The checked move holds, and the rest of the day has more room.",
-      "storyboard_dialogue": "That one holds."
+      "storyboard_caption": "Solving the grid on my commute keeps my focus sharp before my meeting with Nora starts.",
+      "storyboard_dialogue": "There we go, that layout fits perfectly now."
     },
     {
       "panel": 6,
       "scene_id": "scene_06",
       "arc_role": "resolution",
-      "panel_location": "rainy window nook with plants and bag nearby",
-      "panel_action": "closing the laptop and packing up at the end of the day",
+      "panel_location": "train or home window after work",
+      "panel_action": "packing up after work with the laptop closing",
       "panel_pose_family": "closing laptop or packing bag, looking away from screen, clear ending gesture",
       "panel_screen_state": "finished_or_closing",
-      "scene_truth_flow_id": "commute_day",
+      "scene_truth_flow_id": "work_pressure_day",
       "supporting_life_trigger_here": false,
-      "storyboard_caption": "With the daily puzzle complete, she settles in for her online planning session with Nora.",
-      "storyboard_dialogue": "All done. Now I'd better log into Teams for this planning meeting with Nora."
+      "storyboard_caption": "She closes the laptop with one decision carried forward.",
+      "storyboard_dialogue": "Leave it there. Move on."
     }
   ],
   "supporting_life_overlay_drawn": true
