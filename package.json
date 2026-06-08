@@ -19,7 +19,7 @@
     "archive": "node scripts/archive-migration.mjs",
     "validate": "node scripts/validate-project.mjs && node scripts/validate-isla-calendar-coherence.mjs",
     "facebook-post": "node scripts/facebook-post.mjs",
-    "preview:build": "node scripts/build-preview-index.mjs"
+    "preview:build": "node scripts/build-preview-index.mjs && node scripts/build-rejected-preview-addon.mjs"
   },
   "dependencies": {
     "@octokit/rest": "^21.0.2",
