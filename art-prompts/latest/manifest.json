@@ -50,7 +50,7 @@
       "output_file": "social/2026-06-08/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "Isla seeks a steady moment at her gothic window desk before the noisy workday begins.",
+      "caption": "Before heading out into the noisy morning streets, Isla takes a moment to gather her thoughts.",
       "scene_id": "scene_01"
     },
     {
@@ -60,7 +60,7 @@
       "output_file": "social/2026-06-08/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "The interruption changes the timing, not the whole shape of her morning.",
+      "caption": "Waiting on the chilly railway platform, she decides to make one quick, careful move on her phone.",
       "scene_id": "scene_02"
     },
     {
@@ -70,7 +70,7 @@
       "output_file": "social/2026-06-08/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "With only a narrow window before work, she decides to tackle a quick mental challenge first.",
+      "caption": "The carriage hums around her as she pauses, resisting the urge to hurry through her puzzle.",
       "scene_id": "scene_03"
     },
     {
@@ -90,7 +90,7 @@
       "output_file": "social/2026-06-08/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "Having solved the puzzle cleanly, she prepares her notes for the team planning session ahead.",
+      "caption": "With a quick final check at the counter, she feels satisfied with her neat little deduction.",
       "scene_id": "scene_05"
     },
     {
@@ -100,10 +100,10 @@
       "output_file": "social/2026-06-08/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "With the meeting wrapped up successfully, she enjoys a peaceful evening view from the train window.",
+      "caption": "Looking out at the rain, she packs her bag, ready to face the next appointment.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-06-08.json",
-  "generated_at": "2026-06-08T22:35:48.765Z"
+  "generated_at": "2026-06-08T23:08:13.930Z"
 }

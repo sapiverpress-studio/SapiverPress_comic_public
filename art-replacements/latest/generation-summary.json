@@ -1,6 +1,6 @@
 {
   "date": "2026-06-08",
-  "generated_at": "2026-06-08T22:35:49.234Z",
+  "generated_at": "2026-06-08T23:08:14.396Z",
   "route": "fal-ai-z-image-turbo-lora-first",
   "fal_model": "fal-ai/z-image/turbo/lora",
   "hf_fallback_model": "stabilityai/stable-diffusion-xl-base-1.0",
@@ -18,7 +18,7 @@
       "provider": "fal",
       "model": "fal-ai/z-image/turbo/lora",
       "output": "art-replacements/2026-06-08/01_panel-01.png",
-      "remote_url": "https://v3b.fal.media/files/b/0a9d86c7/g7IztCi_Jq-EXTs45ABNu_uja5soZc.png",
+      "remote_url": "https://v3b.fal.media/files/b/0a9d878a/Q1TfHb4tom_vVb15bqecR_gdDIEl7k.png",
       "fal_error": ""
     },
     {
@@ -27,7 +27,7 @@
       "provider": "fal",
       "model": "fal-ai/z-image/turbo/lora",
       "output": "art-replacements/2026-06-08/02_panel-02.png",
-      "remote_url": "https://v3b.fal.media/files/b/0a9d86c8/Kl00L60CScH2PuvAUx7Rj_VTuNqNrc.png",
+      "remote_url": "https://v3b.fal.media/files/b/0a9d878b/Vdeok8NJ23EqRk61EiP0F_OMaauyUd.png",
       "fal_error": ""
     },
     {
@@ -36,7 +36,7 @@
       "provider": "fal",
       "model": "fal-ai/z-image/turbo/lora",
       "output": "art-replacements/2026-06-08/03_panel-03.png",
-      "remote_url": "https://v3b.fal.media/files/b/0a9d86c8/jEcEjTqfVQM2SaiECdE3j_3qZbhcnc.png",
+      "remote_url": "https://v3b.fal.media/files/b/0a9d878b/6Z7jfR_GGCRgdmG7afBfH_dq5SuDvs.png",
       "fal_error": ""
     },
     {
@@ -45,7 +45,7 @@
       "provider": "fal",
       "model": "fal-ai/z-image/turbo/lora",
       "output": "art-replacements/2026-06-08/04_panel-04.png",
-      "remote_url": "https://v3b.fal.media/files/b/0a9d86c9/U0KMvJ3DtNHc2JqxMLyab_50lbMJma.png",
+      "remote_url": "https://v3b.fal.media/files/b/0a9d878c/Pc4XuMDp97MD7yok2AbkY_GBFmggIA.png",
       "fal_error": ""
     },
     {
@@ -54,7 +54,7 @@
       "provider": "fal",
       "model": "fal-ai/z-image/turbo/lora",
       "output": "art-replacements/2026-06-08/05_panel-05.png",
-      "remote_url": "https://v3b.fal.media/files/b/0a9d86c9/lJz-s4WFS7LqPbe8X0TuR_A9nVBheN.png",
+      "remote_url": "https://v3b.fal.media/files/b/0a9d8792/wv1hLuGiVtfBaOCwW-3TX_YiGIPX93.png",
       "fal_error": ""
     },
     {
@@ -63,7 +63,7 @@
       "provider": "fal",
       "model": "fal-ai/z-image/turbo/lora",
       "output": "art-replacements/2026-06-08/06_panel-06.png",
-      "remote_url": "https://v3b.fal.media/files/b/0a9d86ca/S4MsPkaFJFAWD95jCtgK7_7zXCO3X1.png",
+      "remote_url": "https://v3b.fal.media/files/b/0a9d878e/kNCFv_chWMz5F8LFvQjPp_xSJvLYzg.png",
       "fal_error": ""
     }
   ],
