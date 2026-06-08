@@ -50,7 +50,7 @@
       "output_file": "social/2026-06-08/01_panel-01.png",
       "image_name": "01_panel-01.png",
       "fallback_template": "templates/characters/isla/isla_01_opening_return.png",
-      "caption": "Isla sets up her steady workspace early, preparing for her upcoming Teams meeting with Nora.",
+      "caption": "Isla seeks a steady moment at her gothic window desk before the noisy workday begins.",
       "scene_id": "scene_01"
     },
     {
@@ -70,7 +70,7 @@
       "output_file": "social/2026-06-08/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "With her team meeting wrapped up, Isla shifts her focus to the small puzzle waiting patiently.",
+      "caption": "With only a narrow window before work, she decides to tackle a quick mental challenge first.",
       "scene_id": "scene_03"
     },
     {
@@ -90,7 +90,7 @@
       "output_file": "social/2026-06-08/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "The checked move holds, and the rest of the day has more room.",
+      "caption": "Having solved the puzzle cleanly, she prepares her notes for the team planning session ahead.",
       "scene_id": "scene_05"
     },
     {
@@ -100,10 +100,10 @@
       "output_file": "social/2026-06-08/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "She closes the laptop with one decision carried forward.",
+      "caption": "With the meeting wrapped up successfully, she enjoys a peaceful evening view from the train window.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-06-08.json",
-  "generated_at": "2026-06-08T21:54:41.267Z"
+  "generated_at": "2026-06-08T22:35:48.765Z"
 }
