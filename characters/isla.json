@@ -105,51 +105,6 @@
     {
       "date": "2026-06-02",
       "weekday": "Tuesday",
-      "same_day_attempt": 2,
-      "setting": "rainy window nook with plants",
-      "puzzle_phase": "early-week",
-      "story_note": "Isla spends this entry at the rainy window nook with plants because rain has slowed everything down and she lets it. The puzzle stays as a light thread inside the day.",
-      "continuation_note": "Remember: Isla does not mind slower days when they give her room to notice things. Continue the thread: rainy days bring out her reflective side.",
-      "stuck_moment": "pen paused while rain falls",
-      "life_memory_entry": {
-        "date": "2026-06-02",
-        "attempt": 2,
-        "location": "rainy window nook with plants",
-        "reason_for_location": "rain has slowed everything down and she lets it",
-        "life_detail_learned": "Isla does not mind slower days when they give her room to notice things.",
-        "thread_to_continue": "rainy days bring out her reflective side",
-        "puzzle_variant_mentioned": "Anti-Knight",
-        "variant_panel_index": 5,
-        "uk_calendar_date": null,
-        "uk_calendar_panel_index": null
-      },
-      "variant_recap": {
-        "variant_name": "Anti-Knight",
-        "short_rule": "Anti-Knight today — knight moves block matching numbers.",
-        "panel_index": 5,
-        "line": "Anti-Knight today — knight moves block matching numbers."
-      },
-      "uk_calendar_date": null,
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "A clean start.",
-        "Anti-Knight today — knight moves block matching numbers.",
-        "Check it twice.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly set.",
-        "Leave it tidy."
-      ]
-    },
-    {
-      "date": "2026-06-02",
-      "weekday": "Tuesday",
       "same_day_attempt": 3,
       "setting": "outdoor cafe street table",
       "puzzle_phase": "early-week",
@@ -1444,12 +1399,57 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Bookshop corner.",
-        "First mark.",
-        "Pause there.",
+        "Rain on glass.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Let it sit.",
         "Trigoku â€¢ Daily Lock | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
-        "Nearly home.",
-        "One more page."
+        "Almost done.",
+        "No rush."
+      ]
+    },
+    {
+      "date": "2026-06-08",
+      "weekday": "Monday",
+      "same_day_attempt": 2,
+      "setting": "rainy window nook with plants",
+      "puzzle_phase": "early-week",
+      "story_note": "Isla spends this entry at the rainy window nook with plants because rain has slowed everything down and she lets it. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Isla does not mind slower days when they give her room to notice things. Continue the thread: rainy days bring out her reflective side.",
+      "stuck_moment": "pen paused while rain falls",
+      "life_memory_entry": {
+        "date": "2026-06-08",
+        "attempt": 2,
+        "location": "rainy window nook with plants",
+        "reason_for_location": "rain has slowed everything down and she lets it",
+        "life_detail_learned": "Isla does not mind slower days when they give her room to notice things.",
+        "thread_to_continue": "rainy days bring out her reflective side",
+        "puzzle_variant_mentioned": "Trigoku â€¢ Daily Lock | Sapiver Press",
+        "variant_panel_index": 2,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Trigoku â€¢ Daily Lock | Sapiver Press",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 2,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Rain on glass.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Let it sit.",
+        "Trigoku â€¢ Daily Lock | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
+        "Almost done.",
+        "No rush."
       ]
     }
   ],
@@ -1457,51 +1457,6 @@
     {
       "date": "2026-06-02",
       "weekday": "Tuesday",
-      "same_day_attempt": 2,
-      "setting": "rainy window nook with plants",
-      "puzzle_phase": "early-week",
-      "story_note": "Isla spends this entry at the rainy window nook with plants because rain has slowed everything down and she lets it. The puzzle stays as a light thread inside the day.",
-      "continuation_note": "Remember: Isla does not mind slower days when they give her room to notice things. Continue the thread: rainy days bring out her reflective side.",
-      "stuck_moment": "pen paused while rain falls",
-      "life_memory_entry": {
-        "date": "2026-06-02",
-        "attempt": 2,
-        "location": "rainy window nook with plants",
-        "reason_for_location": "rain has slowed everything down and she lets it",
-        "life_detail_learned": "Isla does not mind slower days when they give her room to notice things.",
-        "thread_to_continue": "rainy days bring out her reflective side",
-        "puzzle_variant_mentioned": "Anti-Knight",
-        "variant_panel_index": 5,
-        "uk_calendar_date": null,
-        "uk_calendar_panel_index": null
-      },
-      "variant_recap": {
-        "variant_name": "Anti-Knight",
-        "short_rule": "Anti-Knight today — knight moves block matching numbers.",
-        "panel_index": 5,
-        "line": "Anti-Knight today — knight moves block matching numbers."
-      },
-      "uk_calendar_date": null,
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "A clean start.",
-        "Anti-Knight today — knight moves block matching numbers.",
-        "Check it twice.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly set.",
-        "Leave it tidy."
-      ]
-    },
-    {
-      "date": "2026-06-02",
-      "weekday": "Tuesday",
       "same_day_attempt": 3,
       "setting": "outdoor cafe street table",
       "puzzle_phase": "early-week",
@@ -2796,12 +2751,57 @@
         "pose_06_leaving"
       ],
       "captions": [
-        "Bookshop corner.",
-        "First mark.",
-        "Pause there.",
+        "Rain on glass.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Let it sit.",
         "Trigoku â€¢ Daily Lock | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
-        "Nearly home.",
-        "One more page."
+        "Almost done.",
+        "No rush."
+      ]
+    },
+    {
+      "date": "2026-06-08",
+      "weekday": "Monday",
+      "same_day_attempt": 2,
+      "setting": "rainy window nook with plants",
+      "puzzle_phase": "early-week",
+      "story_note": "Isla spends this entry at the rainy window nook with plants because rain has slowed everything down and she lets it. The puzzle stays as a light thread inside the day.",
+      "continuation_note": "Remember: Isla does not mind slower days when they give her room to notice things. Continue the thread: rainy days bring out her reflective side.",
+      "stuck_moment": "pen paused while rain falls",
+      "life_memory_entry": {
+        "date": "2026-06-08",
+        "attempt": 2,
+        "location": "rainy window nook with plants",
+        "reason_for_location": "rain has slowed everything down and she lets it",
+        "life_detail_learned": "Isla does not mind slower days when they give her room to notice things.",
+        "thread_to_continue": "rainy days bring out her reflective side",
+        "puzzle_variant_mentioned": "Trigoku â€¢ Daily Lock | Sapiver Press",
+        "variant_panel_index": 2,
+        "uk_calendar_date": null,
+        "uk_calendar_panel_index": null
+      },
+      "variant_recap": {
+        "variant_name": "Trigoku â€¢ Daily Lock | Sapiver Press",
+        "short_rule": "Today has its own little rule-set — check the constraint before rushing.",
+        "panel_index": 2,
+        "line": "Today has its own little rule-set — check the constraint before rushing."
+      },
+      "uk_calendar_date": null,
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ],
+      "captions": [
+        "Rain on glass.",
+        "Today has its own little rule-set — check the constraint before rushing.",
+        "Let it sit.",
+        "Trigoku â€¢ Daily Lock | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
+        "Almost done.",
+        "No rush."
       ]
     }
   ],
