@@ -60,7 +60,7 @@
       "output_file": "social/2026-06-05/02_panel-02.png",
       "image_name": "02_panel-02.png",
       "fallback_template": "templates/characters/isla/isla_02_first_move.png",
-      "caption": "The interruption changes the timing, not the whole shape of her morning.",
+      "caption": "With a notification from Nora about their Friday wrap-up, Isla gets ready to pack up her notes.",
       "scene_id": "scene_02"
     },
     {
@@ -70,7 +70,7 @@
       "output_file": "social/2026-06-05/03_panel-03.png",
       "image_name": "03_panel-03.png",
       "fallback_template": "templates/characters/isla/isla_03_stuck_moment.png",
-      "caption": "She waits for the first move that proves itself.",
+      "caption": "She wants to finish her work completely so she can enjoy her weekend without any lingering worries.",
       "scene_id": "scene_03"
     },
     {
@@ -90,7 +90,7 @@
       "output_file": "social/2026-06-05/05_panel-05.png",
       "image_name": "05_panel-05.png",
       "fallback_template": "templates/characters/isla/isla_05_finish.png",
-      "caption": "Heading out to grab lunch, she makes a quick stop to finalize some of her notes.",
+      "caption": "She double-checks her steps on the notepad to ensure she hasn't missed a single detail.",
       "scene_id": "scene_05"
     },
     {
@@ -100,10 +100,10 @@
       "output_file": "social/2026-06-05/06_panel-06.png",
       "image_name": "06_panel-06.png",
       "fallback_template": "templates/characters/isla/isla_06_tomorrow_set.png",
-      "caption": "With her work completely wrapped up, Isla packs her things and enjoys the peaceful, rainy afternoon view.",
+      "caption": "With the work week properly closed, Isla can finally relax as she heads home for the weekend.",
       "scene_id": "scene_06"
     }
   ],
   "story_source": "daily/2026-06-05.json",
-  "generated_at": "2026-06-05T06:44:20.248Z"
+  "generated_at": "2026-06-08T20:43:08.516Z"
 }
