@@ -13,12 +13,12 @@ async function readJson(rel, fallback = null) { try { return JSON.parse(await fs
 async function writeJson(rel, data) { const file = path.join(ROOT, rel); await fs.mkdir(path.dirname(file), { recursive: true }); await fs.writeFile(file, `${JSON.stringify(data, null, 2)}\n`, "utf8"); }
 
 const PANEL_DATA = [
-  ["scene_01", "The idea", "setup", "warm desk with notebook, pencil, tidy folders and plain wall", "Isla imagines making her own Sudoku book", "Could I make my own Sudoku book?", "The idea is exciting. The starting point is not obvious.", "curious creator moment with notebook and paper planning materials"],
-  ["scene_02", "The moving parts", "disruption", "same desk with blank paper stacks, plain folders and organiser tray", "Isla sorts folders while realising the project has many parts", "It is more than one puzzle page.", "Puzzles, solutions, interiors, covers, rights, and file organisation all matter.", "workflow overwhelm shown through blank paper stacks and folders"],
-  ["scene_03", "The structure", "choice", "paper-based discovery scene with a neat folder stack", "Isla finds a practical starting structure", "This gives me a structure.", "Sapiver Press turns the blank start into a file-led workflow.", "soft discovery moment using folders, paper bundles and clean desk props"],
-  ["scene_04", "The proof", "product_proof", "clean desk with organised blank folders and sample sheets", "Isla checks the organised pack structure", "900 puzzles. 900 solutions.", "Classic, Hyper, Diagonal. Easy, Medium, Hard.", "file-checking moment with blank folders and paper stacks"],
-  ["scene_05", "One book at a time", "consequence", "planning desk with blank notebook, pencil and tidy folders", "Isla turns the pack into a one-book-at-a-time plan", "I do not need to build every grid from scratch.", "Pick one variant, one difficulty, one style. Build from there.", "calmer planning mood with blank notebook and folder stack"],
-  ["scene_06", "The next step", "resolution", "finished planning desk with notebook closed and tidy folders ready", "Isla finishes with a clear next step", "Start with the files. Build the book from there.", "Find the pack at Sapiver Press on Etsy.", "finished desk moment with tidy folders and calm expression"]
+  ["scene_01", "The idea", "setup", "warm desk with blank notebook, pencil, tidy document folders and plain wall", "Isla imagines making her own Sudoku book", "Could I make my own Sudoku book?", "The idea is exciting. The starting point is not obvious.", "curious creator moment with notebook, pencil, tidy document folders and planning materials"],
+  ["scene_02", "The moving parts", "disruption", "same desk with printed sample sheets, blank document wallets and organiser tray", "Isla sorts document wallets while realising the project has many parts", "It is more than one puzzle page.", "Puzzles, solutions, interiors, covers, rights, and file organisation all matter.", "workflow overwhelm shown through blank printed sample sheets, document wallets and file folders"],
+  ["scene_03", "The structure", "choice", "product discovery scene with a neat binder, document wallets and plain background", "Isla finds a practical starting structure", "This gives me a structure.", "Sapiver Press turns the blank start into a file-led workflow.", "soft discovery moment using a binder, document wallets, blank sample sheets and clean desk props"],
+  ["scene_04", "The proof", "product_proof", "clean desk with organised blank document folders, sample sheets and cover-sized blank papers", "Isla checks the organised pack structure", "900 puzzles. 900 solutions.", "Classic, Hyper, Diagonal. Easy, Medium, Hard.", "file-checking moment with blank document folders, sample sheets and tidy paper stacks"],
+  ["scene_05", "One book at a time", "consequence", "planning desk with blank notebook, pencil, binder and tidy document folders", "Isla turns the pack into a one-book-at-a-time plan", "I do not need to build every grid from scratch.", "Pick one variant, one difficulty, one style. Build from there.", "calmer planning mood with blank notebook, pencil, binder and organised document folders"],
+  ["scene_06", "The next step", "resolution", "finished planning desk with notebook closed, binder and tidy document folders ready", "Isla finishes with a clear next step", "Start with the files. Build the book from there.", "Find the pack at Sapiver Press on Etsy.", "finished desk moment with tidy document folders, a binder and calm expression"]
 ];
 
 function makeScene(row, index) {
@@ -54,7 +54,7 @@ async function main() {
     storyboard_arc_title: "Isla Learns to Publish Puzzle Books", storyboard_arc_type: MODE, storyboard_arc: arc,
     storyboard_copy_source: "deterministic_story_only_product_ad", storyboard_copy_model: "deterministic_contract",
     story_note: "Isla wants to make a Sudoku book, sees the workflow, then uses the Sapiver Press pack as a practical file-led starting point.",
-    selected_setting: "warm paper-based home publishing desk",
+    selected_setting: "warm creator desk with notebooks, document folders and binders",
     scenes, storyboard_locations: scenes.map(s => s.panel_location), location_flow_id: MODE, location_flow_method: "fixed_story_only_contract",
     product_referenced: product,
     puzzle_state: { ...(existing.puzzle_state || {}), ad_mode: true, product_name: PRODUCT_NAME, product_url: SHOP_URL, puzzle_capture_required: false, story_only_no_screen: true },
