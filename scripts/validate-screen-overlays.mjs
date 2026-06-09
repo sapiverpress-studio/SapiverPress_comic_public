@@ -2,7 +2,7 @@ import fs from "fs/promises";
 import path from "path";
 
 const ROOT = process.cwd();
-const ALLOWED_NO_OVERLAY_STATES = new Set(["no_puzzle", "closed_device"]);
+const ALLOWED_NO_OVERLAY_STATES = new Set(["no_puzzle", "closed_device", "story_only_no_screen"]);
 
 function dateString() {
   return process.env.DATE_OVERRIDE || new Intl.DateTimeFormat("sv-SE", {
@@ -48,7 +48,7 @@ function isIntentionalNoOverlay(scene) {
   const mode = String(scene?.screen_quad_mode || "");
   const state = panelScreenState(scene);
   if (!ALLOWED_NO_OVERLAY_STATES.has(state)) return false;
-  return mode === `overlay_skipped_screen_state_${state}` || mode === "overlay_skipped_intentional_no_puzzle" || mode === "missing" || !hasValidQuad(scene);
+  return mode === `overlay_skipped_screen_state_${state}` || mode === "overlay_skipped_intentional_no_puzzle" || mode === "not_required_story_only" || mode === "missing" || !hasValidQuad(scene);
 }
 
 function isRequiredPuzzlePanel(scene) {
@@ -100,6 +100,7 @@ async function main() {
     intentional_no_puzzle_panels: intentionalNoOverlay,
     failures,
     recoveries: recovered,
+    story_only_no_screen: intentionalNoOverlay.some((row) => row.panel_screen_state === "story_only_no_screen"),
     checked_at: new Date().toISOString(),
   };
 
@@ -132,7 +133,7 @@ async function main() {
     console.error(`Screen overlay validation failed: required puzzle panels missing overlay: ${failures.map((f) => `${f.scene || f.panel}:${f.screen_quad_mode}`).join(", ")}`);
     process.exit(1);
   }
-  console.log(`Screen overlay validation passed: ${requiredPuzzlePanelsWithOverlay.length}/${requiredPuzzlePanels.length} required puzzle panels overlaid, ${intentionalNoOverlay.length} intentional no-puzzle panels, ${recovered.length} recovered from template`);
+  console.log(`Screen overlay validation passed: ${requiredPuzzlePanelsWithOverlay.length}/${requiredPuzzlePanels.length} required puzzle panels overlaid, ${intentionalNoOverlay.length} intentional no-screen/story panels, ${recovered.length} recovered from template`);
 }
 
 main().catch((error) => { console.error(error); process.exit(1); });
