@@ -51,8 +51,30 @@ function sceneTruthRows(story, imageManifest) {
   return rows.slice(0, 6);
 }
 
+function syncProductAdFields(merged, story, imageManifest) {
+  const productAd = story?.product_ad_contract || imageManifest?.product_ad_contract || null;
+  const product = story?.product_referenced || imageManifest?.product_referenced || null;
+  if (!productAd?.enabled && !story?.puzzle_state?.ad_mode) return merged;
+
+  const productName = product?.name || productAd?.product_name || "Commercial Sudoku Publisher Starter Pack";
+  const productUrl = product?.url || productAd?.shop_url || story?.puzzle_state?.product_url || "https://sapiverpress.etsy.com";
+
+  return {
+    ...merged,
+    puzzle_product: productName,
+    puzzle_url: productUrl,
+    product_name: productName,
+    product_url: productUrl,
+    active_campaign_id: story?.active_campaign_id || imageManifest?.active_campaign_id || merged.active_campaign_id || "isla_puzzle_book_publisher",
+    active_ad_material_id: story?.active_ad_material_id || imageManifest?.active_ad_material_id || merged.active_ad_material_id || "commercial_sudoku_vol001",
+    product_ad_contract: productAd || merged.product_ad_contract,
+    product_referenced: product || merged.product_referenced,
+    daily_puzzle_solving_angle_paused: true,
+  };
+}
+
 function mergeMetadata(target, story, imageManifest) {
-  const merged = { ...target };
+  let merged = { ...target };
   const keys = [
     "puzzle_moment_copy_snapshot",
     "puzzle_moment_copy_protection",
@@ -77,11 +99,19 @@ function mergeMetadata(target, story, imageManifest) {
     "story_continuity",
     "supporting_life_trigger",
     "supporting_cast_policy",
+    "active_campaign_id",
+    "campaign_strategy",
+    "active_ad_material_id",
+    "active_ad_material",
+    "product_ad_contract",
+    "product_referenced",
   ];
   for (const key of keys) {
     if (story?.[key] !== undefined) merged[key] = story[key];
     else if (imageManifest?.[key] !== undefined) merged[key] = imageManifest[key];
   }
+
+  merged = syncProductAdFields(merged, story, imageManifest);
 
   merged.scene_truth_rows = sceneTruthRows(story, imageManifest);
   merged.intentional_no_puzzle_panels = merged.scene_truth_rows
