@@ -7,7 +7,7 @@
     "daily": "node scripts/validate-isla-calendar-coherence.mjs && node scripts/daily-generator-local.mjs && node scripts/apply-isla-calendar-context.mjs && node scripts/reinforce-supporting-life-trigger.mjs && node scripts/sync-storyboard-fields.mjs after-progressive && node scripts/refine-storyboard-copy-openai.mjs && node scripts/repair-openai-storyboard-wrapper.mjs && node scripts/enforce-storyboard-arc.mjs && node scripts/protect-puzzle-moment-copy.mjs && node scripts/sync-storyboard-fields.mjs after-refine && node scripts/apply-isla-calendar-context.mjs && node scripts/apply-location-keys.mjs && node scripts/normalise-location-or-fields.mjs && node scripts/apply-scene-truth-contract.mjs && node scripts/lint-story-coherence.mjs && node scripts/harden-isla-proof-run.mjs && node scripts/lint-story-coherence.mjs && node scripts/repair-pose-variety-lint.mjs && node scripts/apply-kdp-learner-ad-contract.mjs && node scripts/apply-vol001-ad-materials.mjs && node scripts/apply-story-only-ad-contract.mjs",
     "capture:today": "node scripts/capture_suite_export_rendered.mjs",
     "art-prompts": "node scripts/validate-isla-calendar-coherence.mjs && node scripts/normalise-location-or-fields.mjs && node scripts/apply-isla-calendar-context.mjs && node scripts/apply-scene-truth-contract.mjs && node scripts/lint-story-coherence.mjs && node scripts/harden-isla-proof-run.mjs && node scripts/lint-story-coherence.mjs && node scripts/repair-pose-variety-lint.mjs && node scripts/apply-kdp-learner-ad-contract.mjs && node scripts/apply-vol001-ad-materials.mjs && node scripts/apply-story-only-ad-contract.mjs && node scripts/generate-art-prompt-pack.mjs && node scripts/apply-story-beats.mjs && node scripts/strip-generated-readable-text.mjs && node scripts/lint-art-prompts.mjs",
-    "generate-images": "node scripts/rebuild-clean-fal-prompts.mjs && node scripts/generate-isla-images-floor.mjs",
+    "generate-images": "node scripts/rebuild-story-only-fal-prompts.mjs && node scripts/generate-isla-images-floor.mjs",
     "polish-images": "node scripts/test_phase4_placeholder.mjs",
     "short-video-script": "node scripts/test_phase4_placeholder.mjs && node scripts/refine-short-video-copy-openai.mjs",
     "short-video-voice": "node scripts/test_phase4_voice.mjs",
@@ -19,6 +19,7 @@
     "archive": "node scripts/archive-migration.mjs",
     "validate": "node scripts/validate-project.mjs && node scripts/validate-isla-calendar-coherence.mjs",
     "facebook-post": "node scripts/facebook-post.mjs",
+    "pinterest-post": "node scripts/pinterest-post.mjs",
     "preview:build": "node scripts/build-preview-index.mjs && node scripts/build-rejected-preview-addon.mjs"
   },
   "dependencies": {
