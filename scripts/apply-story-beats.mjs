@@ -11,6 +11,7 @@ const date = override || new Intl.DateTimeFormat("sv-SE", {
 }).format(new Date());
 
 const DIGITAL_GRID_LOCK = "DIGITAL PUZZLE LOCK: puzzle means a Sudoku or Trigoku grid on a laptop screen only when panel_screen_state allows it; no physical puzzle props, no scattered pieces, no board-game tokens, no loose puzzle shapes on the desk";
+const PRODUCT_WORKFLOW_LOCK = "PRODUCT WORKFLOW OVERLAY LOCK: this is a creator publishing workflow advert; generated art must show blank laptop screens and blank folders only; product names, checklist words, shop URL, pack facts, file names, and CTA text are compositor overlays only; no generated puzzle grid, no generated numbers, no fake product page text";
 const NEGATIVE_PROPS = "physical puzzle pieces, cardboard puzzle pieces, board game pieces, loose cardboard puzzle shapes, scattered game tiles, tabletop jigsaw, wooden puzzle pieces, tangram pieces, loose game pieces";
 const VISUAL_STORY_LOCK = "VISUAL STORY LOCK: Isla must be the main visible person; build the image from the narration/story beat; show the story through pose, location, timing, and objects in use; do not turn story metadata into written labels; no page-collage background; no repeated notebook wallpaper";
 const TEXT_MINIMISE_LOCK = "TEXT MINIMISE LOCK: no readable poster quotes, no book spine title text, no signage text, no diary paragraphs, no supporting life trigger text, no workday anchor text, no calendar metadata, no pipeline labels, no visible model names or trigger words, no giant titles, no fake notebook pages as subject";
@@ -19,6 +20,8 @@ function readJson(file) { return JSON.parse(fs.readFileSync(file, "utf8")); }
 function writeJson(file, data) { fs.writeFileSync(file, `${JSON.stringify(data, null, 2)}\n`, "utf8"); }
 function tidy(value) { return String(value || "").replace(/\s+/g, " ").trim(); }
 function sceneStoryBeat(scene) { return sanitizeStoryText(scene.storyboard_caption || scene.panel_action || scene.image_prompt_fragment || scene.scene_description || scene.caption || scene.beat || scene.title || ""); }
+function isProductAdStory(story) { return Boolean(story?.product_ad_contract?.enabled || story?.puzzle_state?.ad_mode); }
+function isProductOverlayState(state) { return /publishing|product|workflow|overlay/i.test(tidy(state)); }
 function sanitizeStoryText(value) {
   return tidy(value)
     .replace(/supporting[_ -]?life[_ -]?trigger\s*[:=][^.;,]+[.;,]?/gi, "")
@@ -40,6 +43,7 @@ function stripPriorLocks(text) {
     .replace(/POSE FAMILY LOCK:[^,]+(?:,[^,]+){0,10}/gi, "")
     .replace(/SCREEN STATE LOCK:[^,]+(?:,[^,]+){0,12}/gi, "")
     .replace(/DIGITAL PUZZLE LOCK:[^,]+(?:,[^,]+){0,12}/gi, "")
+    .replace(/PRODUCT WORKFLOW OVERLAY LOCK:[^,]+(?:,[^,]+){0,20}/gi, "")
     .replace(/READABLE PROP TEXT PACK:[^,]+(?:,[^,]+){0,16}/gi, "")
     .replace(/VISUAL STORY LOCK:[^,]+(?:,[^,]+){0,16}/gi, "")
     .replace(/TEXT MINIMISE LOCK:[^,]+(?:,[^,]+){0,18}/gi, "")
@@ -66,6 +70,7 @@ function sceneLock(scene, index) {
   const pose = tidy(scene.panel_pose_family || "");
   const screen = tidy(scene.panel_screen_state || "");
   const lower = `${setting} ${pose} ${screen}`.toLowerCase();
+  if (isProductOverlayState(screen)) return `PANEL ${index + 1} LOCATION LOCK: ${setting}, creator publishing workspace, laptop open and angled toward Isla and viewer, blank screen for compositor overlay, tidy folders and blank pages only, no generated text`;
   if (pose === "standing_packing") return `PANEL ${index + 1} LOCATION LOCK: ${setting}, unmistakable home kitchen or entry area, domestic cupboards or hallway surface, travel mug and rucksack visible, not seated, not office, not train, no active puzzle`;
   if (pose === "standing_waiting") return `PANEL ${index + 1} LOCATION LOCK: ${setting}, unmistakable railway platform, platform edge markings, station canopy, platform bench or rail cues, bag over shoulder, not train interior, not office, no active puzzle`;
   if (pose === "seated_train_start") return `PANEL ${index + 1} LOCATION LOCK: ${setting}, unmistakable train interior, train window, seat backs, compact train table, passing view outside, not platform, not generic desk`;
@@ -89,6 +94,7 @@ function poseLock(scene) {
 }
 function screenLock(scene) {
   const state = tidy(scene.panel_screen_state || "active_puzzle");
+  if (isProductOverlayState(state)) return `SCREEN STATE LOCK: ${state}, open laptop with large blank pale screen and dark bezel, screen faces both Isla and viewer at 30 to 45 degrees, no generated text, no generated puzzle grid, no numbers, all product and workflow copy added by compositor overlay`;
   const rules = {
     no_puzzle: "no puzzle visible, no laptop puzzle screen, no grid, no numbers, no solving action",
     closed_device: "device closed or mostly closed, no puzzle visible",
@@ -102,11 +108,12 @@ function screenLock(scene) {
 
 const story = readJson(path.join(root, "daily", `${date}.json`));
 const scenes = Array.isArray(story.scenes) ? story.scenes : [];
+const productAd = isProductAdStory(story);
 const promptKey = "pro" + "mpt";
 const promptFileKey = "pro" + "mpt_file";
 const promptDir = "art-" + "prompts";
 const calendar = calendarLock();
-const negativeText = "visible model or trigger text, visible Isla_v2 text, visible ISLA_SP text, visible LoRA text, visible prompt text, supporting life trigger text, workday anchor text, calendar metadata labels, readable poster quotes, readable book spine titles, signage text, large titles, diary paragraphs, fake paragraphs, gibberish writing, notebook wallpaper, page collage background";
+const negativeText = "visible model or trigger text, visible Isla_v2 text, visible ISLA_SP text, visible LoRA text, visible prompt text, supporting life trigger text, workday anchor text, calendar metadata labels, readable poster quotes, readable book spine titles, signage text, large titles, diary paragraphs, fake paragraphs, gibberish writing, notebook wallpaper, page collage background, fake product page text, fake web page text, fake KDP text, Amazon logo, KDP logo";
 
 for (const dir of [path.join(root, promptDir, date), path.join(root, promptDir, "latest")]) {
   const file = path.join(dir, "prompts.json");
@@ -115,7 +122,8 @@ for (const dir of [path.join(root, promptDir, date), path.join(root, promptDir, 
   for (const [index, panel] of (data.panels || []).entries()) {
     const scene = scenes[index] || {};
     const beat = cleanStoryBeat(sceneStoryBeat(scene));
-    const locks = [calendar, sceneLock(scene, index), actionLock(scene), poseLock(scene), screenLock(scene), DIGITAL_GRID_LOCK, VISUAL_STORY_LOCK, TEXT_MINIMISE_LOCK];
+    const overlayLock = productAd ? PRODUCT_WORKFLOW_LOCK : DIGITAL_GRID_LOCK;
+    const locks = [calendar, sceneLock(scene, index), actionLock(scene), poseLock(scene), screenLock(scene), overlayLock, VISUAL_STORY_LOCK, TEXT_MINIMISE_LOCK];
     panel.arc_role = scene.arc_role || panel.arc_role || "";
     panel.story_beat = beat;
     panel.story_beat_enabled = Boolean(beat);
@@ -132,14 +140,16 @@ for (const dir of [path.join(root, promptDir, date), path.join(root, promptDir, 
     panel.panel_scene_lock = locks[1];
     panel.panel_pose_lock = locks[3];
     panel.screen_state_lock = locks[4];
-    panel.digital_grid_lock = DIGITAL_GRID_LOCK;
+    panel.digital_grid_lock = productAd ? "disabled_for_product_workflow_ad" : DIGITAL_GRID_LOCK;
+    panel.product_workflow_overlay_lock = productAd ? PRODUCT_WORKFLOW_LOCK : "";
     panel.readable_prop_text_pack = "disabled_story_first";
     panel.prop_text = "disabled_before_fal_generation";
     panel.location_flow_id = story.location_flow_id || "unknown";
     panel.scene_truth_contract = story.scene_truth_contract || {};
     panel.scene_lock_front_loaded = true;
     panel.jigsaw_ban_enabled = true;
-    panel.negative_prompt = tidy([panel.negative_prompt || "", NEGATIVE_PROPS, negativeText, "same seated laptop pose in every panel, generic indoor desk, wrong location, train interior when platform requested, platform when train interior requested"].filter(Boolean).join(", "));
+    panel.product_ad_prompt_mode = productAd;
+    panel.negative_prompt = tidy([panel.negative_prompt || "", NEGATIVE_PROPS, negativeText, "same seated laptop pose in every panel, generic indoor desk, wrong location, generated product text, generated checklist text, generated shop URL"].filter(Boolean).join(", "));
     const current = stripPriorLocks(panel[promptKey]);
     const front = locks.filter(Boolean).join(", ");
     const withBeat = beat && !current.includes(beat) ? `${current}, ${beat}` : current;
@@ -150,7 +160,9 @@ for (const dir of [path.join(root, promptDir, date), path.join(root, promptDir, 
   data.calendar_consequence_enabled = true;
   data.scene_lock_front_loaded = true;
   data.jigsaw_ban_enabled = true;
-  data.digital_grid_lock = DIGITAL_GRID_LOCK;
+  data.digital_grid_lock = productAd ? "disabled_for_product_workflow_ad" : DIGITAL_GRID_LOCK;
+  data.product_workflow_overlay_lock = productAd ? PRODUCT_WORKFLOW_LOCK : "";
+  data.product_ad_prompt_mode = productAd;
   data.readable_prop_text_enabled = false;
   data.readable_prop_text_pack = "disabled_story_first";
   data.scene_truth_contract = story.scene_truth_contract || {};
@@ -164,4 +176,4 @@ for (const dir of [path.join(root, promptDir, date), path.join(root, promptDir, 
   data.storyboard_quality = story.storyboard_quality || {};
   writeJson(file, data);
 }
-console.log(`Story/narration beats applied as visual-only fal prompt locks: ${story.location_flow_id || "unknown"}`);
+console.log(`Story/narration beats applied as visual-only fal prompt locks: ${story.location_flow_id || "unknown"}${productAd ? " (product workflow ad mode)" : ""}`);
