@@ -587,7 +587,7 @@
       "final_prompt_composer": "audience_facing_laptop_bee_only_wall_art_v9_positive_prompt_clean"
     }
   ],
-  "generated_at": "2026-06-09T16:11:55.018Z",
+  "generated_at": "2026-06-09T16:38:47.755Z",
   "story_beat_enabled": true,
   "calendar_consequence_enabled": true,
   "scene_lock_front_loaded": true,
@@ -684,12 +684,12 @@
       "LOCK, TRUTH, BANS, mandatory, panel text, prompt text, readable prop text, machine instruction, labels, arrows, numbered panel, contact sheet, split-screen collage, LOCATION text prefix",
       "closed laptop, absent device, hidden screen, screen facing away, hand covering screen, reflections hiding screen, tiny unreadable screen"
     ],
-    "checked_at": "2026-06-09T16:11:55.190Z"
+    "checked_at": "2026-06-09T16:38:47.937Z"
   },
   "model_registry_version": 1,
   "model_registry_path": "config/image-model-registry.json",
   "model_routing_enabled": true,
-  "model_routed_at": "2026-06-09T16:11:55.263Z",
+  "model_routed_at": "2026-06-09T16:38:48.010Z",
   "final_fal_prompt_composer": "audience_facing_laptop_bee_only_wall_art_v9_positive_prompt_clean",
   "overlay_surface_contract": {
     "screen_surface_priority": "equal_to_isla_identity",

@@ -226,8 +226,8 @@
           "02_panel-02.png"
         ],
         "story_so_far_before": "Story opens here.",
-        "pass_expansion_brief": "Bookshop corner. Today has its own little rule-set — check the constraint before rushing.",
-        "story_so_far_after": "Bookshop corner. Today has its own little rule-set — check the constraint before rushing."
+        "pass_expansion_brief": "A clean start. Today has its own little rule-set — check the constraint before rushing.",
+        "story_so_far_after": "A clean start. Today has its own little rule-set — check the constraint before rushing."
       },
       {
         "pass_index": 2,
@@ -239,9 +239,9 @@
           "03_panel-03.png",
           "04_panel-04.png"
         ],
-        "story_so_far_before": "Bookshop corner. Today has its own little rule-set — check the constraint before rushing.",
-        "pass_expansion_brief": "Pause there. That was it.",
-        "story_so_far_after": "Bookshop corner. Today has its own little rule-set — check the constraint before rushing. Pause there."
+        "story_so_far_before": "A clean start. Today has its own little rule-set — check the constraint before rushing.",
+        "pass_expansion_brief": "Check it twice. That opens it.",
+        "story_so_far_after": "A clean start. Today has its own little rule-set — check the constraint before rushing. Check it twice."
       },
       {
         "pass_index": 3,
@@ -253,9 +253,9 @@
           "05_panel-05.png",
           "06_panel-06.png"
         ],
-        "story_so_far_before": "Bookshop corner. Today has its own little rule-set — check the constraint before rushing. Pause there.",
-        "pass_expansion_brief": "Nearly home. One more page.",
-        "story_so_far_after": "Bookshop corner. Today has its own little rule-set — check the constraint before rushing. Pause there."
+        "story_so_far_before": "A clean start. Today has its own little rule-set — check the constraint before rushing. Check it twice.",
+        "pass_expansion_brief": "Nearly set. Leave it tidy.",
+        "story_so_far_after": "A clean start. Today has its own little rule-set — check the constraint before rushing. Check it twice."
       }
     ]
   },
@@ -440,14 +440,14 @@
     "source_stage": "openai",
     "caption": "Daily Sandwich Sudoku | Sapiver Press changes this move, so Isla checks that constraint before she trusts it.",
     "dialogue": "Today has its own little rule-set — check the constraint before rushing.",
-    "image_prompt_fragment": "face brightening with a clean deduction",
-    "captured_at": "2026-06-09T16:11:38.517Z"
+    "image_prompt_fragment": "small realisation, calm confidence",
+    "captured_at": "2026-06-09T16:38:34.786Z"
   },
   "storyboard_copy_model": "gpt-4o-mini",
   "openai_storyboard_status": "ok",
   "openai_storyboard_model": "gpt-4o-mini",
   "openai_storyboard_fallback_reason": null,
-  "openai_storyboard_checked_at": "2026-06-09T16:11:38.427Z",
+  "openai_storyboard_checked_at": "2026-06-09T16:38:34.693Z",
   "storyboard_arc_title": "Isla Learns to Publish Puzzle Books",
   "storyboard_locations": [
     "home desk before work",
@@ -525,7 +525,7 @@
     "mode": "work_pressure_day",
     "selection_reason": "calendar_preferred_flow",
     "score": 50,
-    "applied_at": "2026-06-09T16:11:54.631Z",
+    "applied_at": "2026-06-09T16:38:47.341Z",
     "fixed_sequence": false,
     "story_led": true,
     "continuity_aware": true,
@@ -745,7 +745,7 @@
       "repaired_negation_aware": true
     },
     "variant_copy_mode": "exact_variant",
-    "checked_at": "2026-06-09T16:11:54.859Z"
+    "checked_at": "2026-06-09T16:38:47.578Z"
   },
   "post_ready_contract": {
     "story_coherence_passed": true,
@@ -757,14 +757,14 @@
     "generated_art_panel_count": 6,
     "fallback_template_panel_count": 0,
     "ran": true,
-    "checked_at": "2026-06-09T16:12:36.109Z"
+    "checked_at": "2026-06-09T16:40:04.368Z"
   },
   "proof_hardening": {
     "ran": true,
     "removed_cafe_default": true,
     "removed_coffee_default": true,
     "fixed_bad_replacement_phrases": true,
-    "checked_at": "2026-06-09T16:11:54.749Z"
+    "checked_at": "2026-06-09T16:38:47.464Z"
   },
   "active_campaign_id": "isla_puzzle_book_publisher",
   "campaign_strategy": {
@@ -977,6 +977,6 @@
     "no_puzzle_contradictions_stripped": true,
     "location_prefix_garbage_stripped": true,
     "screen_contract_rule": "Open usable screen means puzzle required; no-puzzle panel means no open blank laptop screen.",
-    "checked_at": "2026-06-09T16:11:55.198Z"
+    "checked_at": "2026-06-09T16:38:47.945Z"
   }
 }

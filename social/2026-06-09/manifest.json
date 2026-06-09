@@ -1,27 +1,23 @@
 {
   "date": "2026-06-09",
   "character": "isla",
-  "format": "eight_image_daily_set_storyboard_text",
+  "format": "six_panel_product_ad_story",
   "montage": false,
   "files": [
-    "00_start-grid.png",
     "01_panel-01.png",
     "02_panel-02.png",
     "03_panel-03.png",
     "04_panel-04.png",
     "05_panel-05.png",
-    "06_panel-06.png",
-    "07_finished-grid.png"
+    "06_panel-06.png"
   ],
   "post_order": [
-    "00_start-grid.png",
     "01_panel-01.png",
     "02_panel-02.png",
     "03_panel-03.png",
     "04_panel-04.png",
     "05_panel-05.png",
-    "06_panel-06.png",
-    "07_finished-grid.png"
+    "06_panel-06.png"
   ],
   "archive_dir": "social/2026-06-09",
   "latest_dir": "social/latest",
@@ -104,7 +100,7 @@
     "generated_art_panel_count": 6,
     "fallback_template_panel_count": 0,
     "ran": true,
-    "checked_at": "2026-06-09T16:12:36.109Z"
+    "checked_at": "2026-06-09T16:40:04.368Z"
   },
   "openai_storyboard_status": "ok",
   "openai_storyboard_model": "gpt-4o-mini",
@@ -114,7 +110,7 @@
     "frames": "array:6"
   },
   "openai_storyboard_fallback_reason": null,
-  "openai_storyboard_checked_at": "2026-06-09T16:11:38.427Z",
+  "openai_storyboard_checked_at": "2026-06-09T16:38:34.693Z",
   "gemini_allowed_fields": [
     "caption",
     "dialogue"
@@ -177,20 +173,20 @@
       "output": "social/2026-06-09/01_panel-01.png",
       "screen_quad": [
         [
-          60,
-          547
+          547,
+          512
         ],
         [
-          540,
-          550
+          1085,
+          514
         ],
         [
-          612,
-          949
+          1087,
+          967
         ],
         [
-          58,
-          1004
+          492,
+          891
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -225,20 +221,20 @@
       "output": "social/2026-06-09/02_panel-02.png",
       "screen_quad": [
         [
-          163,
-          541
+          651,
+          517
         ],
         [
-          730,
-          502
+          1084,
+          553
         ],
         [
-          792,
-          895
+          1084,
+          984
         ],
         [
-          232,
-          987
+          585,
+          881
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -273,20 +269,20 @@
       "output": "social/2026-06-09/03_panel-03.png",
       "screen_quad": [
         [
-          601,
-          749
+          58,
+          726
         ],
         [
-          1087,
-          756
+          583,
+          732
         ],
         [
-          1088,
-          1120
+          649,
+          1084
         ],
         [
-          532,
-          1059
+          58,
+          1136
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -321,20 +317,20 @@
       "output": "social/2026-06-09/04_panel-04.png",
       "screen_quad": [
         [
-          644,
-          641
+          650,
+          697
         ],
         [
-          1086,
-          662
+          1085,
+          700
         ],
         [
-          1081,
-          1047
+          1083,
+          1159
         ],
         [
-          577,
-          966
+          569,
+          1078
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -369,20 +365,20 @@
       "output": "social/2026-06-09/05_panel-05.png",
       "screen_quad": [
         [
-          629,
-          626
+          620,
+          512
         ],
         [
-          1085,
-          642
+          1087,
+          538
         ],
         [
-          1083,
-          1080
+          1067,
+          900
         ],
         [
-          562,
-          984
+          569,
+          836
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -417,20 +413,20 @@
       "output": "social/2026-06-09/06_panel-06.png",
       "screen_quad": [
         [
-          505,
-          488
+          342,
+          589
         ],
         [
-          1085,
-          508
+          999,
+          594
         ],
         [
-          1075,
-          925
+          988,
+          1028
         ],
         [
-          469,
-          846
+          331,
+          992
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -687,7 +683,7 @@
     "intentional_no_puzzle_panels": [],
     "failures": [],
     "recoveries": [],
-    "checked_at": "2026-06-09T16:12:36.007Z"
+    "checked_at": "2026-06-09T16:40:04.208Z"
   },
   "posting_allowed": true,
   "puzzle_moment_copy_snapshot": {
@@ -695,8 +691,8 @@
     "source_stage": "openai",
     "caption": "Daily Sandwich Sudoku | Sapiver Press changes this move, so Isla checks that constraint before she trusts it.",
     "dialogue": "Today has its own little rule-set — check the constraint before rushing.",
-    "image_prompt_fragment": "face brightening with a clean deduction",
-    "captured_at": "2026-06-09T16:11:38.517Z"
+    "image_prompt_fragment": "small realisation, calm confidence",
+    "captured_at": "2026-06-09T16:38:34.786Z"
   },
   "puzzle_moment_copy_protection": {
     "ran": true,
@@ -758,7 +754,7 @@
       "repaired_negation_aware": true
     },
     "variant_copy_mode": "exact_variant",
-    "checked_at": "2026-06-09T16:11:54.859Z"
+    "checked_at": "2026-06-09T16:38:47.578Z"
   },
   "prompt_lint": {
     "ran": true,
@@ -772,7 +768,7 @@
     "no_puzzle_contradictions_stripped": true,
     "location_prefix_garbage_stripped": true,
     "screen_contract_rule": "Open usable screen means puzzle required; no-puzzle panel means no open blank laptop screen.",
-    "checked_at": "2026-06-09T16:11:55.198Z"
+    "checked_at": "2026-06-09T16:38:47.945Z"
   },
   "location_flow_id": "isla_learns_puzzle_book_publishing",
   "location_flow_method": "fixed_campaign_story_contract",
@@ -1112,5 +1108,8 @@
       "storyboard_dialogue": "Start with the files. Build the book from there."
     }
   ],
-  "supporting_life_overlay_drawn": false
+  "supporting_life_overlay_drawn": false,
+  "product_ad_output_mode": "six_panel_ad_only",
+  "puzzle_clips_removed": true,
+  "puzzle_clip_removal_reason": "Product-ad campaign uses Isla publishing story only; daily start/finished puzzle clips would contradict the advert."
 }
