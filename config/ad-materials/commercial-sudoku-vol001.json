@@ -1,0 +1,85 @@
+{
+  "id": "commercial_sudoku_vol001",
+  "status": "active_ad_material",
+  "created_for": "Sapiver Press daily comic / advertising system",
+  "product_line": "Commercial Sudoku Publisher Starter Pack",
+  "volume": "Vol_001",
+  "listing": {
+    "etsy_listing_id": "4517497640",
+    "shop_url": "https://sapiverpress.etsy.com",
+    "title_from_run_report": "Commercial Sudoku Publisher Starter Pack, 900 Puzzles & Solutions, KDP Ready Interiors",
+    "state_seen_in_original_create_report": "draft",
+    "buyer_purchase_reported_by_owner": true,
+    "price_copy_allowed_in_ads": false
+  },
+  "core_facts_allowed_in_ads": [
+    "Commercial-use Sudoku publishing pack",
+    "900 puzzles + 900 solutions",
+    "Interiors plus matching covers",
+    "Useful for Sudoku book and low-content puzzle-book publishing workflows",
+    "Designed as a practical starting structure for creators who want to build Sudoku books"
+  ],
+  "copy_positioning": {
+    "main_angle": "Isla wants to publish Sudoku books but does not know where to start; Vol.001 becomes the practical shortcut/source material.",
+    "tone": "helpful, practical, non-scammy, creator journey, soft product discovery",
+    "preferred_phrases": [
+      "Commercial-use Sudoku Publisher Starter Pack",
+      "900 puzzles + 900 solutions",
+      "Interiors and matching covers",
+      "Start with the files. Build the book from there.",
+      "A practical starting point for Sudoku book publishers.",
+      "For creators who want to publish puzzle books without building every grid from scratch."
+    ],
+    "banned_claims": [
+      "guaranteed sales",
+      "guaranteed KDP approval",
+      "passive income",
+      "Amazon affiliation",
+      "KDP affiliation",
+      "official KDP template",
+      "income results"
+    ]
+  },
+  "drive_evidence": {
+    "update_report_file_id": "12jpmNHEUWSST8EDh7xskCNzQ0VblVRXY",
+    "update_report_title": "update_vol001_assets.txt",
+    "file_list_report_id": "1dgamaHVlZ3KphLp2ASsE4JZYAiymVMTe",
+    "file_list_report_title": "report_files.txt",
+    "report_created_at": "2026-06-07T06:42:57.889Z"
+  },
+  "ad_safe_source_materials": {
+    "listing_images": [
+      "GO_LIVE_REPAIR_REPORT/ETSY_LISTING_IMAGES/commercial_900/01_main_thumbnail.png",
+      "GO_LIVE_REPAIR_REPORT/ETSY_LISTING_IMAGES/commercial_900/02_whats_included.png",
+      "GO_LIVE_REPAIR_REPORT/ETSY_LISTING_IMAGES/commercial_900/03_included_formats.png",
+      "GO_LIVE_REPAIR_REPORT/ETSY_LISTING_IMAGES/commercial_900/04_sudoku_types.png",
+      "GO_LIVE_REPAIR_REPORT/ETSY_LISTING_IMAGES/commercial_900/05_font_styles.png",
+      "GO_LIVE_REPAIR_REPORT/ETSY_LISTING_IMAGES/commercial_900/06_delivery_flow.png",
+      "GO_LIVE_REPAIR_REPORT/ETSY_LISTING_IMAGES/commercial_900/07_built_for_publishers.png",
+      "GO_LIVE_REPAIR_REPORT/ETSY_LISTING_IMAGES/commercial_900/08_what_you_receive.png"
+    ],
+    "customer_docs_for_copy_reference_only": [
+      "GO_LIVE_REPAIR_REPORT/ETSY_DELIVERY_REPAIRED/Vol_001/ETSY_DELIVERY_PACK/01_START_HERE/WHAT_YOU_BOUGHT.txt",
+      "GO_LIVE_REPAIR_REPORT/ETSY_DELIVERY_REPAIRED/Vol_001/ETSY_DELIVERY_PACK/01_START_HERE/FASTEST_WAY_TO_START.txt",
+      "GO_LIVE_REPAIR_REPORT/ETSY_DELIVERY_REPAIRED/Vol_001/ETSY_DELIVERY_PACK/01_START_HERE/CUSTOMER_DOWNLOAD_CHECKLIST.txt",
+      "GO_LIVE_REPAIR_REPORT/ETSY_DELIVERY_REPAIRED/Vol_001/ETSY_DELIVERY_PACK/03_SAPIVER_PRESS_RESOURCES/PUBLISHER_NEXT_STEPS.txt"
+    ],
+    "free_sample_material": [
+      "GO_LIVE_REPAIR_REPORT/ETSY_DELIVERY_REPAIRED/Vol_001/ETSY_DELIVERY_PACK/02_FREE_SAMPLE/FREE_SAMPLE_PUZZLES_AND_SOLUTIONS.zip",
+      "GO_LIVE_REPAIR_REPORT/ETSY_DELIVERY_REPAIRED/Vol_001/ETSY_DELIVERY_PACK/02_FREE_SAMPLE/FREE_SAMPLE_PNGS/FREE_SAMPLE_README.txt"
+    ]
+  },
+  "do_not_upload_to_public_repo": [
+    "GO_LIVE_REPAIR_REPORT/ETSY_DELIVERY_REPAIRED/Vol_001/ETSY_UPLOAD_DELIVERY_PACK.zip",
+    "Full paid customer delivery ZIP",
+    "Full customer download link",
+    "Any complete buyer-only pack that would replace the Etsy purchase"
+  ],
+  "visual_use_rules": [
+    "Use real Vol.001 listing images or free-sample pages as visual truth when available.",
+    "Do not invent fake Sudoku interiors, fake covers, fake product screenshots, or fake file contents.",
+    "If generated Isla art is used, keep product text as compositor overlay only.",
+    "Laptop screens should receive compositor overlays from this manifest, not generated text.",
+    "Public repo may contain ad previews and sample visuals only, not the paid delivery ZIP."
+  ]
+}
