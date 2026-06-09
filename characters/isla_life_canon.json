@@ -29,12 +29,6 @@
     {
       "date": "2026-05-30",
       "attempt": 31,
-      "setting": "co-working desk near a tall window",
-      "reason": "she has work waiting, so the puzzle has to fit into a short gap"
-    },
-    {
-      "date": "2026-05-30",
-      "attempt": 31,
       "setting": "small kitchen table in warm morning light",
       "reason": "home is still half-asleep and she has a few minutes to herself"
     },
@@ -385,15 +379,15 @@
       "attempt": 1,
       "setting": "rainy window nook with plants",
       "reason": "rain has slowed everything down and she lets it"
+    },
+    {
+      "date": "2026-06-09",
+      "attempt": 2,
+      "setting": "small kitchen table in warm morning light",
+      "reason": "home is still half-asleep and she has a few minutes to herself"
     }
   ],
   "variant_memory": [
-    {
-      "date": "2026-05-30",
-      "attempt": 31,
-      "variant_name": "Trigoku",
-      "panel_index": 4
-    },
     {
       "date": "2026-05-30",
       "attempt": 31,
@@ -747,21 +741,15 @@
       "attempt": 1,
       "variant_name": "Daily Sandwich Sudoku | Sapiver Press",
       "panel_index": 4
+    },
+    {
+      "date": "2026-06-09",
+      "attempt": 2,
+      "variant_name": "Daily Sandwich Sudoku | Sapiver Press",
+      "panel_index": 2
     }
   ],
   "life_memory": [
-    {
-      "date": "2026-05-30",
-      "attempt": 31,
-      "location": "co-working desk near a tall window",
-      "reason_for_location": "she has work waiting, so the puzzle has to fit into a short gap",
-      "life_detail_learned": "Isla often fits her puzzle ritual between work blocks.",
-      "thread_to_continue": "work days make the puzzle a boundary marker",
-      "puzzle_variant_mentioned": "Trigoku",
-      "variant_panel_index": 4,
-      "uk_calendar_date": null,
-      "uk_calendar_panel_index": null
-    },
     {
       "date": "2026-05-30",
       "attempt": 31,
@@ -1467,6 +1455,18 @@
       "thread_to_continue": "rainy days bring out her reflective side",
       "puzzle_variant_mentioned": "Daily Sandwich Sudoku | Sapiver Press",
       "variant_panel_index": 4,
+      "uk_calendar_date": null,
+      "uk_calendar_panel_index": null
+    },
+    {
+      "date": "2026-06-09",
+      "attempt": 2,
+      "location": "small kitchen table in warm morning light",
+      "reason_for_location": "home is still half-asleep and she has a few minutes to herself",
+      "life_detail_learned": "Isla values ordinary domestic quiet as much as beautiful public spaces.",
+      "thread_to_continue": "home mornings reveal her private routine",
+      "puzzle_variant_mentioned": "Daily Sandwich Sudoku | Sapiver Press",
+      "variant_panel_index": 2,
       "uk_calendar_date": null,
       "uk_calendar_panel_index": null
     }

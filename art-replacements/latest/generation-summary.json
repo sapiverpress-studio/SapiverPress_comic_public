@@ -1,0 +1,89 @@
+{
+  "date": "2026-06-09",
+  "generated_at": "2026-06-09T16:03:31.433Z",
+  "route": "fal-ai-z-image-turbo-lora-first",
+  "fal_model": "fal-ai/z-image/turbo/lora",
+  "hf_fallback_model": "stabilityai/stable-diffusion-xl-base-1.0",
+  "lora_file": "Isla_v2_1780410778059.safetensors",
+  "lora_url": "https://huggingface.co/sapiverpress/Isla_v2/resolve/main/Isla_v2_1780410778059.safetensors",
+  "lora_url_mode": "hf_repo_default",
+  "lora_auth": "not_sent_public_repo",
+  "trigger_word": "Isla_v2",
+  "requested_panels": 6,
+  "generated_count": 6,
+  "generated_panels": [
+    {
+      "panel_number": 1,
+      "image_name": "01_panel-01.png",
+      "provider": "fal",
+      "model": "fal-ai/z-image/turbo/lora",
+      "output": "art-replacements/2026-06-09/01_panel-01.png",
+      "remote_url": "https://v3b.fal.media/files/b/0a9d9f55/AO32OIz6qFnrCkzRrwmjX_F0uMqzGB.png",
+      "fal_error": ""
+    },
+    {
+      "panel_number": 2,
+      "image_name": "02_panel-02.png",
+      "provider": "fal",
+      "model": "fal-ai/z-image/turbo/lora",
+      "output": "art-replacements/2026-06-09/02_panel-02.png",
+      "remote_url": "https://v3b.fal.media/files/b/0a9d9f56/dmfcNXVxqIHDBg5B0PjrO_wtQfG2Wj.png",
+      "fal_error": ""
+    },
+    {
+      "panel_number": 3,
+      "image_name": "03_panel-03.png",
+      "provider": "fal",
+      "model": "fal-ai/z-image/turbo/lora",
+      "output": "art-replacements/2026-06-09/03_panel-03.png",
+      "remote_url": "https://v3b.fal.media/files/b/0a9d9f57/UZSePBkTLITv8S0C8v1cz_OVDOcpfC.png",
+      "fal_error": ""
+    },
+    {
+      "panel_number": 4,
+      "image_name": "04_panel-04.png",
+      "provider": "fal",
+      "model": "fal-ai/z-image/turbo/lora",
+      "output": "art-replacements/2026-06-09/04_panel-04.png",
+      "remote_url": "https://v3b.fal.media/files/b/0a9d9f57/urUzNvP6J0nU4cPad-y6g_KkqeGz5c.png",
+      "fal_error": ""
+    },
+    {
+      "panel_number": 5,
+      "image_name": "05_panel-05.png",
+      "provider": "fal",
+      "model": "fal-ai/z-image/turbo/lora",
+      "output": "art-replacements/2026-06-09/05_panel-05.png",
+      "remote_url": "https://v3b.fal.media/files/b/0a9d9f58/ukaQ_GYx1UnYL5q1QHLEU_yMtQCYy9.png",
+      "fal_error": ""
+    },
+    {
+      "panel_number": 6,
+      "image_name": "06_panel-06.png",
+      "provider": "fal",
+      "model": "fal-ai/z-image/turbo/lora",
+      "output": "art-replacements/2026-06-09/06_panel-06.png",
+      "remote_url": "https://v3b.fal.media/files/b/0a9d9f59/lW0lYJMS7e85M-_4F3DPN_imxSxhCe.png",
+      "fal_error": ""
+    }
+  ],
+  "fallback_template_panels": [],
+  "errors": [],
+  "preflight": {
+    "hf_token": {
+      "ok": true,
+      "status": 200,
+      "status_text": "OK",
+      "name": "sapiverpress",
+      "error": ""
+    },
+    "hf_lora_repo": {
+      "ok": true,
+      "status": 200,
+      "status_text": "OK",
+      "id": "sapiverpress/Isla_v2",
+      "private": false,
+      "error": ""
+    }
+  }
+}
