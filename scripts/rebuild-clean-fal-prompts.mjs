@@ -28,8 +28,24 @@ function stripRiskyVisualObjects(value) {
   for (const pattern of RISKY_OBJECT_PATTERNS) s = s.replace(pattern, "");
   return tidy(s.replace(/\s+[,.;:]/g, ",").replace(/,{2,}/g, ","));
 }
+function stripGeneratedTextBanLanguage(value) {
+  return tidy(String(value || "")
+    .replace(/\bno\s+generated\s+words?\b/gi, "")
+    .replace(/\bno\s+readable\s+(?:background\s+)?text\b/gi, "")
+    .replace(/\bno\s+fake\s+(?:web[-\s]?page\s+)?text\b/gi, "")
+    .replace(/\bno\s+invented\s+writing\b/gi, "")
+    .replace(/\bno\s+words?\b/gi, "")
+    .replace(/\bno\s+letters?\b/gi, "")
+    .replace(/\bno\s+numbers?\b/gi, "")
+    .replace(/\bno\s+symbols?\b/gi, "")
+    .replace(/\bno\s+logos?\b/gi, "")
+    .replace(/\bno\s+slogans?\b/gi, "")
+    .replace(/\ball\s+readable\s+text\s+is\s+reserved\s+for\s+later\s+compositor\s+overlay\s+only\b/gi, "")
+    .replace(/\s+[,.;:]/g, ",")
+    .replace(/,{2,}/g, ","));
+}
 function clean(v) {
-  let s = stripRiskyVisualObjects(v).replaceAll("Isla_v2", "").replaceAll("ISLA_SP", "");
+  let s = stripGeneratedTextBanLanguage(stripRiskyVisualObjects(v).replaceAll("Isla_v2", "").replaceAll("ISLA_SP", ""));
   const badStarts = ["CALENDAR", "LOCK", "BANS", "METADATA", "NO GENERATED", "do not render", "no readable", "books, pages, signs", "clean text is compositor"];
   for (const b of badStarts) if (s.toLowerCase().startsWith(b.toLowerCase())) return "";
   return tidy(s);
@@ -44,38 +60,34 @@ function screenSurfaceRequired(panel) {
 function screenSurfaceInstruction(panel) {
   const state = tidy(panel.panel_screen_state || panel.screen_state || "active_puzzle");
   if (!screenSurfaceRequired(panel)) {
-    return "Story-only panel: if a laptop appears, it is closed, turned away, or naturally packed away; no display surface is needed.";
+    return "Story-only panel with natural closed or turned-away laptop if present; no display surface needed.";
   }
   return [
     "LOCKED COMPOSITION REQUIREMENT: Isla and her real laptop are equal priority subjects in the same believable scene.",
     "The laptop is open on the desk between Isla and the audience, angled about 30 to 45 degrees so Isla can see it and the viewer can clearly see the screen at the same time.",
-    "The laptop display must face the camera/audience, not the back of the laptop lid, not edge-on, not facing only Isla, and not turned away.",
-    "The screen plane is visible to the viewer as a large trapezoid or rectangle; keyboard base and hinge are visible directly below it.",
+    "The laptop display faces the camera/audience, with keyboard base and hinge visible directly below it.",
+    "The screen plane is visible to the viewer as a large trapezoid or rectangle with a clear dark bezel around the full boundary.",
     "The laptop is a physical object connected to its keyboard by a visible hinge, resting naturally on the desk, table, counter, or Isla's lap according to the setting.",
-    "The laptop is not floating, not detached from the desk, not a standalone rectangle, not a wall screen, and not a graphic frame.",
     "Show the full open laptop body: keyboard base visible, hinge visible, display attached to the base, perspective consistent with the tabletop or lap.",
-    "The display contains a large blank pale screen, soft off-white or light grey, matte, not glowing, not reflective.",
-    "The screen must have a clearly visible dark bezel around it so the full screen boundary is obvious.",
-    "The blank screen must be unobstructed, fully inside the frame, and large enough for a later digital puzzle overlay.",
-    "Hands, cups, books, hair, sleeves, and foreground props must not cross or cover the display.",
-    "The visible laptop screen should take roughly one third of the image width while Isla remains clearly visible and expressive.",
+    "The display is a large blank pale matte screen surface, soft off-white or light grey, unobstructed and fully inside the frame.",
+    "Hands, cups, books, hair, sleeves, and foreground props stay clear of the display.",
+    "The visible laptop screen takes roughly one third of the image width while Isla remains clearly visible and expressive.",
     `Panel screen state: ${state}; preserve a contextual real laptop screen surface for the compositor.`
   ].join(" ");
 }
 function promptFor(p, pack) {
-  const appearance = first(p.appearance_lock, pack.appearance_lock) || "young Black woman, warm medium brown skin, natural coily dark hair in a high puff bun, floral headband, gold hoop earrings, oversized deep teal hoodie with absolutely no logo or writing, warm painterly editorial style";
+  const appearance = first(p.appearance_lock, pack.appearance_lock) || "young Black woman, warm medium brown skin, natural coily dark hair in a high puff bun, floral headband, gold hoop earrings, oversized deep teal hoodie with plain unmarked fabric, warm painterly editorial style";
   const story = first(p.story_beat, p.storyboard_caption, p.caption) || "Isla pauses with calm focus";
   const location = first(p.panel_location, p.location_text, p.environment_text);
   const action = first(p.panel_action);
   const pose = first(p.panel_pose_family, p.pose_text, p.pose_marker);
   const screen = screenSurfaceInstruction(p);
   const cleanSurfaces = [
-    "Clean editorial illustration with tidy surfaces and no generated words anywhere.",
-    "If there is any wall poster, framed print, framed picture, or wall art, it shows only a simple picture of a bee, with no words, no letters, no numbers, no symbols, no logo, and no slogan.",
-    "No wall signs, no wall notices, no decorative text panels, no calendars, no whiteboards, no charts, no labels.",
-    "No readable background text, no fake labels, no invented writing anywhere.",
-    "Books, notebooks, mugs, clothing, stickers, and product props are blank colour-block shapes only with no letters, numbers, logos, marks, slogans, or symbols.",
-    "Background props are secondary and visually quiet; all readable text is reserved for later compositor overlay only."
+    "Clean editorial illustration with tidy quiet surfaces.",
+    "Optional wall decoration is a simple bee picture only, drawn as plain art without graphic markings.",
+    "Background props are secondary and visually quiet.",
+    "Books, notebooks, mugs, clothing, stickers, and product props are plain blank colour-block shapes.",
+    "Use calm uncluttered composition and leave the laptop display clean for later digital overlay."
   ].join(" ");
   return `${TRIGGER}, ${[appearance, screen, `Visual moment: ${story}.`, location ? `Location: ${location}.` : "", action ? `Action: ${action}.` : "", pose ? `Pose: ${pose}.` : "", cleanSurfaces, "Single coherent real-world scene, Isla is the clear main subject and the contextual laptop screen is the clear overlay surface."].filter(Boolean).join(" ")}`;
 }
@@ -93,12 +105,10 @@ function safeNegativePrompt(p, pack) {
 function assertSafeFinalPrompts(pack) {
   const hits = [];
   for (const [index, panel] of (pack.panels || []).entries()) {
-    for (const field of ["prompt", "negative_prompt"]) {
-      const text = String(panel[field] || "");
-      for (const pattern of RISKY_OBJECT_PATTERNS) {
-        pattern.lastIndex = 0;
-        if (field !== "negative_prompt" && pattern.test(text)) hits.push(`panel ${index + 1} ${field}`);
-      }
+    const text = String(panel.prompt || "");
+    for (const pattern of RISKY_OBJECT_PATTERNS) {
+      pattern.lastIndex = 0;
+      if (pattern.test(text)) hits.push(`panel ${index + 1} prompt`);
     }
   }
   if (hits.length) {
@@ -111,11 +121,11 @@ const latest = path.join(ROOT, "art-prompts", "latest", "prompts.json");
 const pack = await readJson(dated, await readJson(latest, null));
 if (!pack) throw new Error(`Missing art prompt payload for ${DATE}`);
 const panels = Array.isArray(pack.panels) ? pack.panels : [];
-pack.final_fal_prompt_composer = "audience_facing_laptop_bee_only_wall_art_v8";
+pack.final_fal_prompt_composer = "audience_facing_laptop_bee_only_wall_art_v9_positive_prompt_clean";
 pack.overlay_surface_contract = {
   screen_surface_priority: "equal_to_isla_identity",
   puzzle_panels_require_contextual_open_laptop: true,
-  screen_prompt_rule: "Daily comic panels require an open laptop angled so both Isla and the audience can see the display. If wall posters/framed pictures appear, they must show only a simple bee picture with no text. All generated background text is banned. Overlay surfaces should be pale/off-white or light grey with a dark bezel for reliable detector contrast.",
+  screen_prompt_rule: "Daily comic panels require an open laptop angled so both Isla and the audience can see the display. Generated images must keep the laptop screen visually blank and clean for compositor overlay. Text-ban terms are held in negative prompts only so the positive prompt stays safe for the contamination guard.",
 };
 pack.panels = PANEL_FILES.map((name, i) => {
   const p = panels[i] || {};
@@ -131,11 +141,11 @@ pack.panels = PANEL_FILES.map((name, i) => {
     screen_surface_priority: overlaySurfaceRequired ? "equal_to_isla_identity" : "not_required",
     prompt: promptFor(p, pack),
     negative_prompt: safeNegativePrompt(p, pack),
-    final_prompt_composer: "audience_facing_laptop_bee_only_wall_art_v8"
+    final_prompt_composer: "audience_facing_laptop_bee_only_wall_art_v9_positive_prompt_clean"
   };
 });
 assertSafeFinalPrompts(pack);
 await writeJson(dated, pack);
 await writeJson(latest, pack);
 for (const p of pack.panels) await writeText(path.join(ROOT, p.prompt_file), `${p.prompt}\n`);
-console.log(`Clean final fal prompts rebuilt for ${DATE}; laptop must face Isla and viewer, wall art is bee-picture-only, generated text remains banned`);
+console.log(`Clean final fal prompts rebuilt for ${DATE}; positive prompts are contamination-safe and laptop overlay surfaces remain required`);
