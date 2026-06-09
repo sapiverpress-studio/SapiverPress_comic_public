@@ -104,7 +104,7 @@
     "generated_art_panel_count": 6,
     "fallback_template_panel_count": 0,
     "ran": true,
-    "checked_at": "2026-06-09T16:04:23.060Z"
+    "checked_at": "2026-06-09T16:12:36.109Z"
   },
   "openai_storyboard_status": "ok",
   "openai_storyboard_model": "gpt-4o-mini",
@@ -114,7 +114,7 @@
     "frames": "array:6"
   },
   "openai_storyboard_fallback_reason": null,
-  "openai_storyboard_checked_at": "2026-06-09T16:03:19.759Z",
+  "openai_storyboard_checked_at": "2026-06-09T16:11:38.427Z",
   "gemini_allowed_fields": [
     "caption",
     "dialogue"
@@ -142,8 +142,8 @@
     "no_children": true
   },
   "supporting_life_trigger_story_locked": true,
-  "puzzle_product": "Trigoku Daily Lock",
-  "puzzle_url": "https://suite.sapiverpress.co.uk",
+  "puzzle_product": "Commercial Sudoku Publisher Starter Pack",
+  "puzzle_url": "https://sapiverpress.etsy.com",
   "captions": [
     "Could I make my own Sudoku book?\nThe idea is exciting. The starting point is not obvious.",
     "It is more than one puzzle page.\nPuzzles, solutions, interiors, covers, rights, and file organisation all matter.",
@@ -177,20 +177,20 @@
       "output": "social/2026-06-09/01_panel-01.png",
       "screen_quad": [
         [
-          74,
-          680
+          60,
+          547
         ],
         [
-          615,
-          669
+          540,
+          550
         ],
         [
-          684,
-          1011
+          612,
+          949
         ],
         [
-          147,
-          1097
+          58,
+          1004
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -225,20 +225,20 @@
       "output": "social/2026-06-09/02_panel-02.png",
       "screen_quad": [
         [
-          57,
-          811
+          163,
+          541
         ],
         [
-          521,
-          826
+          730,
+          502
         ],
         [
-          588,
-          1216
+          792,
+          895
         ],
         [
-          63,
-          1157
+          232,
+          987
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -273,20 +273,20 @@
       "output": "social/2026-06-09/03_panel-03.png",
       "screen_quad": [
         [
+          601,
+          749
+        ],
+        [
+          1087,
+          756
+        ],
+        [
+          1088,
+          1120
+        ],
+        [
           532,
-          500
-        ],
-        [
-          1083,
-          516
-        ],
-        [
-          1059,
-          1011
-        ],
-        [
-          470,
-          922
+          1059
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -321,20 +321,20 @@
       "output": "social/2026-06-09/04_panel-04.png",
       "screen_quad": [
         [
-          546,
-          706
+          644,
+          641
         ],
         [
-          1064,
-          737
+          1086,
+          662
         ],
         [
-          1025,
-          1098
+          1081,
+          1047
         ],
         [
-          506,
-          1025
+          577,
+          966
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -369,20 +369,20 @@
       "output": "social/2026-06-09/05_panel-05.png",
       "screen_quad": [
         [
-          62,
-          485
+          629,
+          626
         ],
         [
-          537,
-          463
+          1085,
+          642
         ],
         [
-          604,
-          890
+          1083,
+          1080
         ],
         [
-          63,
-          965
+          562,
+          984
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -417,20 +417,20 @@
       "output": "social/2026-06-09/06_panel-06.png",
       "screen_quad": [
         [
-          600,
-          537
+          505,
+          488
         ],
         [
-          1083,
-          559
+          1085,
+          508
         ],
         [
-          1087,
-          1025
+          1075,
+          925
         ],
         [
-          540,
-          927
+          469,
+          846
         ]
       ],
       "screen_quad_mode": "detected_replacement_screen",
@@ -687,7 +687,7 @@
     "intentional_no_puzzle_panels": [],
     "failures": [],
     "recoveries": [],
-    "checked_at": "2026-06-09T16:04:22.947Z"
+    "checked_at": "2026-06-09T16:12:36.007Z"
   },
   "posting_allowed": true,
   "puzzle_moment_copy_snapshot": {
@@ -695,8 +695,8 @@
     "source_stage": "openai",
     "caption": "Daily Sandwich Sudoku | Sapiver Press changes this move, so Isla checks that constraint before she trusts it.",
     "dialogue": "Today has its own little rule-set — check the constraint before rushing.",
-    "image_prompt_fragment": "gentle nod, pattern opens",
-    "captured_at": "2026-06-09T16:03:19.841Z"
+    "image_prompt_fragment": "face brightening with a clean deduction",
+    "captured_at": "2026-06-09T16:11:38.517Z"
   },
   "puzzle_moment_copy_protection": {
     "ran": true,
@@ -758,7 +758,7 @@
       "repaired_negation_aware": true
     },
     "variant_copy_mode": "exact_variant",
-    "checked_at": "2026-06-09T16:03:30.724Z"
+    "checked_at": "2026-06-09T16:11:54.859Z"
   },
   "prompt_lint": {
     "ran": true,
@@ -772,7 +772,7 @@
     "no_puzzle_contradictions_stripped": true,
     "location_prefix_garbage_stripped": true,
     "screen_contract_rule": "Open usable screen means puzzle required; no-puzzle panel means no open blank laptop screen.",
-    "checked_at": "2026-06-09T16:03:31.079Z"
+    "checked_at": "2026-06-09T16:11:55.198Z"
   },
   "location_flow_id": "isla_learns_puzzle_book_publishing",
   "location_flow_method": "fixed_campaign_story_contract",
@@ -801,6 +801,237 @@
     "tomorrow_setup": "Tomorrow can show recovery from work pressure or preparation before the next meeting.",
     "weekend_logic": "weekday"
   },
+  "active_campaign_id": "isla_puzzle_book_publisher",
+  "campaign_strategy": {
+    "id": "isla_puzzle_book_publisher",
+    "title": "Isla Learns to Publish Puzzle Books",
+    "funnel": "Free puzzle world -> creator problem -> product discovery -> factual proof -> practical next step",
+    "content_pillars": [
+      {
+        "id": "where_do_i_start",
+        "label": "I did not know where to start",
+        "ad_angle": "Beginner creator overwhelm; the pack provides structure."
+      },
+      {
+        "id": "what_goes_into_a_sudoku_book",
+        "label": "What actually goes into a Sudoku book",
+        "ad_angle": "Puzzles, solutions, variants, difficulty, interiors, covers, licence, and organised files."
+      },
+      {
+        "id": "one_book_at_a_time",
+        "label": "One book at a time",
+        "ad_angle": "Choose one variant, one difficulty, and one style per book instead of dumping everything into one paperback."
+      },
+      {
+        "id": "real_files_not_mockups",
+        "label": "Real files, not fake mockups",
+        "ad_angle": "Use Vol.001 listing previews and free-sample material as the visual truth; do not invent fake product screenshots."
+      },
+      {
+        "id": "commercial_use_not_get_rich",
+        "label": "Commercial-use, not get-rich",
+        "ad_angle": "Avoid income claims, guaranteed approval, or Amazon/KDP affiliation claims."
+      }
+    ],
+    "main_message": "Want to make a Sudoku book but do not know where to start? Start with structured commercial-use files from Sapiver Press.",
+    "cta": "Start with the files. Build the book from there.",
+    "url": "https://sapiverpress.etsy.com"
+  },
+  "active_ad_material_id": "commercial_sudoku_vol001",
+  "active_ad_material": {
+    "id": "commercial_sudoku_vol001",
+    "status": "active_ad_material",
+    "product_line": "Commercial Sudoku Publisher Starter Pack",
+    "volume": "Vol_001",
+    "listing": {
+      "etsy_listing_id": "4517497640",
+      "shop_url": "https://sapiverpress.etsy.com",
+      "title_from_run_report": "Commercial Sudoku Publisher Starter Pack, 900 Puzzles & Solutions, KDP Ready Interiors",
+      "state_seen_in_original_create_report": "draft",
+      "buyer_purchase_reported_by_owner": true,
+      "price_copy_allowed_in_ads": false
+    },
+    "core_facts_allowed_in_ads": [
+      "Commercial-use Sudoku publishing pack",
+      "900 puzzles + 900 solutions",
+      "Interiors plus matching covers",
+      "Useful for Sudoku book and low-content puzzle-book publishing workflows",
+      "Designed as a practical starting structure for creators who want to build Sudoku books"
+    ],
+    "copy_positioning": {
+      "main_angle": "Isla wants to publish Sudoku books but does not know where to start; Vol.001 becomes the practical shortcut/source material.",
+      "tone": "helpful, practical, non-scammy, creator journey, soft product discovery",
+      "preferred_phrases": [
+        "Commercial-use Sudoku Publisher Starter Pack",
+        "900 puzzles + 900 solutions",
+        "Interiors and matching covers",
+        "Start with the files. Build the book from there.",
+        "A practical starting point for Sudoku book publishers.",
+        "For creators who want to publish puzzle books without building every grid from scratch."
+      ],
+      "banned_claims": [
+        "guaranteed sales",
+        "guaranteed KDP approval",
+        "passive income",
+        "Amazon affiliation",
+        "KDP affiliation",
+        "official KDP template",
+        "income results"
+      ]
+    },
+    "drive_evidence": {
+      "update_report_file_id": "12jpmNHEUWSST8EDh7xskCNzQ0VblVRXY",
+      "update_report_title": "update_vol001_assets.txt",
+      "file_list_report_id": "1dgamaHVlZ3KphLp2ASsE4JZYAiymVMTe",
+      "file_list_report_title": "report_files.txt",
+      "report_created_at": "2026-06-07T06:42:57.889Z"
+    },
+    "ad_safe_source_materials": {
+      "listing_images": [
+        "GO_LIVE_REPAIR_REPORT/ETSY_LISTING_IMAGES/commercial_900/01_main_thumbnail.png",
+        "GO_LIVE_REPAIR_REPORT/ETSY_LISTING_IMAGES/commercial_900/02_whats_included.png",
+        "GO_LIVE_REPAIR_REPORT/ETSY_LISTING_IMAGES/commercial_900/03_included_formats.png",
+        "GO_LIVE_REPAIR_REPORT/ETSY_LISTING_IMAGES/commercial_900/04_sudoku_types.png",
+        "GO_LIVE_REPAIR_REPORT/ETSY_LISTING_IMAGES/commercial_900/05_font_styles.png",
+        "GO_LIVE_REPAIR_REPORT/ETSY_LISTING_IMAGES/commercial_900/06_delivery_flow.png",
+        "GO_LIVE_REPAIR_REPORT/ETSY_LISTING_IMAGES/commercial_900/07_built_for_publishers.png",
+        "GO_LIVE_REPAIR_REPORT/ETSY_LISTING_IMAGES/commercial_900/08_what_you_receive.png"
+      ],
+      "customer_docs_for_copy_reference_only": [
+        "GO_LIVE_REPAIR_REPORT/ETSY_DELIVERY_REPAIRED/Vol_001/ETSY_DELIVERY_PACK/01_START_HERE/WHAT_YOU_BOUGHT.txt",
+        "GO_LIVE_REPAIR_REPORT/ETSY_DELIVERY_REPAIRED/Vol_001/ETSY_DELIVERY_PACK/01_START_HERE/FASTEST_WAY_TO_START.txt",
+        "GO_LIVE_REPAIR_REPORT/ETSY_DELIVERY_REPAIRED/Vol_001/ETSY_DELIVERY_PACK/01_START_HERE/CUSTOMER_DOWNLOAD_CHECKLIST.txt",
+        "GO_LIVE_REPAIR_REPORT/ETSY_DELIVERY_REPAIRED/Vol_001/ETSY_DELIVERY_PACK/03_SAPIVER_PRESS_RESOURCES/PUBLISHER_NEXT_STEPS.txt"
+      ],
+      "free_sample_material": [
+        "GO_LIVE_REPAIR_REPORT/ETSY_DELIVERY_REPAIRED/Vol_001/ETSY_DELIVERY_PACK/02_FREE_SAMPLE/FREE_SAMPLE_PUZZLES_AND_SOLUTIONS.zip",
+        "GO_LIVE_REPAIR_REPORT/ETSY_DELIVERY_REPAIRED/Vol_001/ETSY_DELIVERY_PACK/02_FREE_SAMPLE/FREE_SAMPLE_PNGS/FREE_SAMPLE_README.txt"
+      ]
+    },
+    "do_not_upload_to_public_repo": [
+      "GO_LIVE_REPAIR_REPORT/ETSY_DELIVERY_REPAIRED/Vol_001/ETSY_UPLOAD_DELIVERY_PACK.zip",
+      "Full paid customer delivery ZIP",
+      "Full customer download link",
+      "Any complete buyer-only pack that would replace the Etsy purchase"
+    ],
+    "visual_use_rules": [
+      "Use real Vol.001 listing images or free-sample pages as visual truth when available.",
+      "Do not invent fake Sudoku interiors, fake covers, fake product screenshots, or fake file contents.",
+      "If generated Isla art is used, keep product text as compositor overlay only.",
+      "Laptop screens should receive compositor overlays from this manifest, not generated text.",
+      "Public repo may contain ad previews and sample visuals only, not the paid delivery ZIP."
+    ]
+  },
+  "product_ad_contract": {
+    "enabled": true,
+    "mode": "isla_learns_puzzle_book_publishing",
+    "campaign_id": "isla_puzzle_book_publisher",
+    "shop_url": "https://sapiverpress.etsy.com",
+    "product_name": "Commercial Sudoku Publisher Starter Pack",
+    "product_short": "900 Commercial Sudoku Pack",
+    "readable_text_compositor_only": true,
+    "generated_art_must_not_include_text": true,
+    "laptop_screen_overlay_required": true,
+    "daily_puzzle_solving_angle_paused": true,
+    "tone": "helpful practical creator journey soft product discovery",
+    "claims_banned": [
+      "guaranteed sales",
+      "guaranteed KDP approval",
+      "passive income",
+      "Amazon affiliation",
+      "KDP affiliation",
+      "official KDP template",
+      "income results",
+      "upload once and make money"
+    ],
+    "content_pillars": [
+      {
+        "id": "where_do_i_start",
+        "label": "I did not know where to start",
+        "ad_angle": "Beginner creator overwhelm; the pack provides structure."
+      },
+      {
+        "id": "what_goes_into_a_sudoku_book",
+        "label": "What actually goes into a Sudoku book",
+        "ad_angle": "Puzzles, solutions, variants, difficulty, interiors, covers, licence, and organised files."
+      },
+      {
+        "id": "one_book_at_a_time",
+        "label": "One book at a time",
+        "ad_angle": "Choose one variant, one difficulty, and one style per book instead of dumping everything into one paperback."
+      },
+      {
+        "id": "real_files_not_mockups",
+        "label": "Real files, not fake mockups",
+        "ad_angle": "Use Vol.001 listing previews and free-sample material as the visual truth; do not invent fake product screenshots."
+      },
+      {
+        "id": "commercial_use_not_get_rich",
+        "label": "Commercial-use, not get-rich",
+        "ad_angle": "Avoid income claims, guaranteed approval, or Amazon/KDP affiliation claims."
+      }
+    ],
+    "volume": "Vol_001",
+    "etsy_listing_id": "4517497640",
+    "ad_material_manifest": "config/ad-materials/commercial-sudoku-vol001.json",
+    "use_real_vol001_material_where_available": true,
+    "do_not_upload_paid_zip_to_public_repo": true
+  },
+  "product_referenced": {
+    "key": "sapiver_commercial_sudoku_publisher_pack",
+    "name": "Commercial Sudoku Publisher Starter Pack",
+    "short_name": "900 Commercial Sudoku Pack",
+    "url": "https://sapiverpress.etsy.com",
+    "natural_reference": "a practical commercial-use Sudoku publishing starter pack",
+    "facts_used_in_copy": [
+      "Commercial-use Sudoku publishing pack",
+      "900 puzzles + 900 solutions",
+      "Classic, Hyper, and Diagonal Sudoku",
+      "Easy, Medium, and Hard difficulty groups",
+      "Structured publishing files for puzzle-book creators",
+      "Interiors plus matching covers where included in the current customer pack"
+    ],
+    "claims_not_made": [
+      "guaranteed sales",
+      "guaranteed KDP approval",
+      "passive income",
+      "Amazon affiliation",
+      "KDP affiliation",
+      "official KDP template",
+      "income results",
+      "upload once and make money"
+    ],
+    "one_pack_per_buyer_unique_volume_claim_allowed": false,
+    "volume": "Vol_001",
+    "etsy_listing_id": "4517497640",
+    "ad_material_id": "commercial_sudoku_vol001",
+    "ad_safe_source_materials": {
+      "listing_images": [
+        "GO_LIVE_REPAIR_REPORT/ETSY_LISTING_IMAGES/commercial_900/01_main_thumbnail.png",
+        "GO_LIVE_REPAIR_REPORT/ETSY_LISTING_IMAGES/commercial_900/02_whats_included.png",
+        "GO_LIVE_REPAIR_REPORT/ETSY_LISTING_IMAGES/commercial_900/03_included_formats.png",
+        "GO_LIVE_REPAIR_REPORT/ETSY_LISTING_IMAGES/commercial_900/04_sudoku_types.png",
+        "GO_LIVE_REPAIR_REPORT/ETSY_LISTING_IMAGES/commercial_900/05_font_styles.png",
+        "GO_LIVE_REPAIR_REPORT/ETSY_LISTING_IMAGES/commercial_900/06_delivery_flow.png",
+        "GO_LIVE_REPAIR_REPORT/ETSY_LISTING_IMAGES/commercial_900/07_built_for_publishers.png",
+        "GO_LIVE_REPAIR_REPORT/ETSY_LISTING_IMAGES/commercial_900/08_what_you_receive.png"
+      ],
+      "customer_docs_for_copy_reference_only": [
+        "GO_LIVE_REPAIR_REPORT/ETSY_DELIVERY_REPAIRED/Vol_001/ETSY_DELIVERY_PACK/01_START_HERE/WHAT_YOU_BOUGHT.txt",
+        "GO_LIVE_REPAIR_REPORT/ETSY_DELIVERY_REPAIRED/Vol_001/ETSY_DELIVERY_PACK/01_START_HERE/FASTEST_WAY_TO_START.txt",
+        "GO_LIVE_REPAIR_REPORT/ETSY_DELIVERY_REPAIRED/Vol_001/ETSY_DELIVERY_PACK/01_START_HERE/CUSTOMER_DOWNLOAD_CHECKLIST.txt",
+        "GO_LIVE_REPAIR_REPORT/ETSY_DELIVERY_REPAIRED/Vol_001/ETSY_DELIVERY_PACK/03_SAPIVER_PRESS_RESOURCES/PUBLISHER_NEXT_STEPS.txt"
+      ],
+      "free_sample_material": [
+        "GO_LIVE_REPAIR_REPORT/ETSY_DELIVERY_REPAIRED/Vol_001/ETSY_DELIVERY_PACK/02_FREE_SAMPLE/FREE_SAMPLE_PUZZLES_AND_SOLUTIONS.zip",
+        "GO_LIVE_REPAIR_REPORT/ETSY_DELIVERY_REPAIRED/Vol_001/ETSY_DELIVERY_PACK/02_FREE_SAMPLE/FREE_SAMPLE_PNGS/FREE_SAMPLE_README.txt"
+      ]
+    },
+    "public_repo_material_policy": "listing previews/free samples only; never full paid ZIP"
+  },
+  "product_name": "Commercial Sudoku Publisher Starter Pack",
+  "product_url": "https://sapiverpress.etsy.com",
+  "daily_puzzle_solving_angle_paused": true,
   "scene_truth_rows": [
     {
       "panel": 1,
