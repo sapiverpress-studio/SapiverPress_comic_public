@@ -5,7 +5,8 @@ const ROOT = process.cwd();
 const SHOP_URL = "https://sapiverpress.etsy.com";
 const PRODUCT_NAME = "Commercial Sudoku Publisher Starter Pack";
 const PRODUCT_SHORT = "900 Commercial Sudoku Pack";
-const CONTRACT_MODE = "kdp_learner_to_sapiver_commercial_pack";
+const CAMPAIGN_ID = "isla_puzzle_book_publisher";
+const CONTRACT_MODE = "isla_learns_puzzle_book_publishing";
 
 function dateString() {
   const override = process.env.DATE_OVERRIDE || "";
@@ -22,10 +23,6 @@ function weekdayName(date) {
   return new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/London", weekday: "long" }).format(new Date(`${date}T12:00:00Z`));
 }
 
-function clean(value) {
-  return String(value || "").replace(/\s+/g, " ").trim();
-}
-
 async function readJson(rel, fallback = null) {
   try {
     return JSON.parse(await fs.readFile(path.join(ROOT, rel), "utf8"));
@@ -40,76 +37,130 @@ async function writeJson(rel, data) {
   await fs.writeFile(file, `${JSON.stringify(data, null, 2)}\n`, "utf8");
 }
 
+const FACTS_USED_IN_COPY = [
+  "Commercial-use Sudoku publishing pack",
+  "900 puzzles + 900 solutions",
+  "Classic, Hyper, and Diagonal Sudoku",
+  "Easy, Medium, and Hard difficulty groups",
+  "Structured publishing files for puzzle-book creators",
+  "Interiors plus matching covers where included in the current customer pack",
+];
+
+const CLAIMS_NOT_MADE = [
+  "guaranteed sales",
+  "guaranteed KDP approval",
+  "passive income",
+  "Amazon affiliation",
+  "KDP affiliation",
+  "official KDP template",
+  "income results",
+  "upload once and make money",
+];
+
+const CONTENT_PILLARS = [
+  {
+    id: "where_do_i_start",
+    label: "I did not know where to start",
+    ad_angle: "Beginner creator overwhelm; the pack provides structure.",
+  },
+  {
+    id: "what_goes_into_a_sudoku_book",
+    label: "What actually goes into a Sudoku book",
+    ad_angle: "Puzzles, solutions, variants, difficulty, interiors, covers, licence, and organised files.",
+  },
+  {
+    id: "one_book_at_a_time",
+    label: "One book at a time",
+    ad_angle: "Choose one variant, one difficulty, and one style per book instead of dumping everything into one paperback.",
+  },
+  {
+    id: "real_files_not_mockups",
+    label: "Real files, not fake mockups",
+    ad_angle: "Use Vol.001 listing previews and free-sample material as the visual truth; do not invent fake product screenshots.",
+  },
+  {
+    id: "commercial_use_not_get_rich",
+    label: "Commercial-use, not get-rich",
+    ad_angle: "Avoid income claims, guaranteed approval, or Amazon/KDP affiliation claims.",
+  },
+];
+
 const PANELS = [
   {
     id: "scene_01",
-    title: "Starting from zero",
+    title: "The idea",
     arc_role: "setup",
+    pillar_id: "where_do_i_start",
     location: "home publishing desk with open laptop, blank notebook, tidy folders, no wall text",
-    action: "Isla sits at an open laptop with a blank planning notebook, unsure how to begin a Sudoku book project",
-    pose: "seated three-quarter view, thoughtful expression, one hand near notebook, laptop screen open toward Isla and viewer",
-    dialogue: "I want to make a Sudoku book.",
-    caption: "But I do not know where to start.",
-    visual: "learning and planning moment, blank notebook, organised desk, open laptop with empty screen surface",
-    screenLines: ["Sudoku book idea", "Where do I start?"],
+    action: "Isla enjoys puzzles at her desk, then wonders whether she could make a Sudoku book herself",
+    pose: "seated three-quarter view, curious expression, one hand near notebook, laptop screen open toward Isla and viewer",
+    dialogue: "Could I make my own Sudoku book?",
+    caption: "The idea is exciting. The starting point is not obvious.",
+    visual: "curious creator moment, blank notebook, organised desk, open laptop with empty screen surface",
+    screenLines: ["Puzzle book idea", "Where do I start?"],
   },
   {
     id: "scene_02",
-    title: "Workflow overwhelm",
+    title: "The moving parts",
     arc_role: "disruption",
+    pillar_id: "what_goes_into_a_sudoku_book",
     location: "same publishing desk with blank papers, file folders, and laptop angled to the viewer",
-    action: "Isla sorts blank sheets and folders while realising the book needs more parts than expected",
+    action: "Isla realises a puzzle book needs far more than a single Sudoku grid",
     pose: "standing or half-seated organising folders, different body angle from panel one, laptop still visible",
-    dialogue: "Puzzles, solutions, layouts, covers, licences.",
-    caption: "It is a whole workflow, not one file.",
+    dialogue: "It is more than one puzzle page.",
+    caption: "Puzzles, solutions, interiors, covers, rights, and file organisation all matter.",
     visual: "workflow overwhelm shown through tidy blank papers and folders, no readable labels, laptop screen kept blank",
-    screenLines: ["Puzzle book workflow", "Puzzles", "Solutions", "Interiors", "Covers", "Rights"],
+    screenLines: ["Puzzle-book workflow", "Puzzles", "Solutions", "Interiors", "Covers", "Rights"],
   },
   {
     id: "scene_03",
-    title: "Product discovery",
+    title: "The practical starting point",
     arc_role: "choice",
+    pillar_id: "real_files_not_mockups",
     location: "desk research scene with laptop screen visible for later product-page overlay, simple bee picture on wall if any art appears",
-    action: "Isla researches practical starting points and notices a commercial-use starter pack on the laptop",
+    action: "Isla searches for a practical starting structure and discovers the Sapiver Press commercial-use pack",
     pose: "leaning forward with finger near trackpad, face visible in three-quarter view, screen unobstructed",
-    dialogue: "Then I found a commercial-use starter pack.",
-    caption: "Sapiver Press gives me a practical starting point.",
+    dialogue: "This gives me a structure.",
+    caption: "Sapiver Press turns the blank start into a file-led workflow.",
     visual: "soft product discovery moment, laptop open to blank product-page surface, no generated website text",
-    screenLines: ["Sapiver Press", "Commercial Sudoku Publisher Starter Pack", SHOP_URL],
+    screenLines: ["Sapiver Press", PRODUCT_NAME, SHOP_URL],
   },
   {
     id: "scene_04",
-    title: "What the pack contains",
+    title: "The proof",
     arc_role: "product_proof",
+    pillar_id: "what_goes_into_a_sudoku_book",
     location: "clean desk with laptop, organised folders, blank product-file thumbnails for overlay only",
-    action: "Isla checks the pack structure on the laptop and compares the included publishing files",
+    action: "Isla checks the pack structure and sees the product facts that make it useful for puzzle-book creators",
     pose: "active checking posture, laptop between Isla and viewer, screen large and clear, hands away from display",
     dialogue: "900 puzzles. 900 solutions.",
-    caption: "Interiors and matching covers are included.",
+    caption: "Classic, Hyper, Diagonal. Easy, Medium, Hard.",
     visual: "file-checking moment, blank file shapes, no fake puzzle pages, no readable generated text",
-    screenLines: ["900 puzzles", "900 solutions", "Interiors + matching covers", "Commercial-use pack"],
+    screenLines: ["900 puzzles", "900 solutions", "Classic / Hyper / Diagonal", "Easy / Medium / Hard"],
   },
   {
     id: "scene_05",
-    title: "Publishing plan",
+    title: "One book at a time",
     arc_role: "consequence",
+    pillar_id: "one_book_at_a_time",
     location: "planning desk with open laptop, blank notebook, tidy folder stack, no logos except compositor overlays",
-    action: "Isla turns the discovery into a practical KDP-style publishing workflow plan",
+    action: "Isla turns the pack into a sensible one-book-at-a-time publishing plan",
     pose: "calmer side-angle planning pose, writing in a blank notebook beside the open laptop, screen still visible",
-    dialogue: "Now I can build the book workflow.",
-    caption: "I am not building every grid from scratch.",
+    dialogue: "I do not need to build every grid from scratch.",
+    caption: "Pick one variant, one difficulty, one style. Build from there.",
     visual: "calmer planning mood, blank checklist shapes, no Amazon or KDP logos, no generated words",
-    screenLines: ["Publish-ready workflow", "Build the book", "Check files", "Format", "Upload when ready"],
+    screenLines: ["One book at a time", "Choose variant", "Choose difficulty", "Choose style", "Build from there"],
   },
   {
     id: "scene_06",
-    title: "First step CTA",
+    title: "The next step",
     arc_role: "resolution",
+    pillar_id: "commercial_use_not_get_rich",
     location: "finished planning desk with laptop facing viewer, notebook closed, tidy folders ready",
-    action: "Isla finishes with a practical first step and the shop link appears only as compositor overlay",
+    action: "Isla ends with a practical next step and the shop link appears only as compositor overlay",
     pose: "clear ending gesture, relaxed shoulders, one hand near folder stack, laptop open toward viewer",
-    dialogue: "Start with the files. Build from there.",
-    caption: "Find it at sapiverpress.etsy.com",
+    dialogue: "Start with the files. Build the book from there.",
+    caption: "Find the pack at Sapiver Press on Etsy.",
     visual: "practical next-step moment, creator workflow complete for today, blank screen reserved for CTA overlay",
     screenLines: ["Start with the files", "Build the book from there", SHOP_URL],
   },
@@ -122,6 +173,7 @@ function makeScene(panel, index) {
     id: sceneId,
     title: panel.title,
     arc_role: panel.arc_role,
+    pillar_id: panel.pillar_id,
     beat: panel.title,
     pose_id: ["pose_01_back_again", "pose_02_first_moves", "pose_03_stuck", "pose_04_thinking", "pose_05_coffee", "pose_06_leaving"][index],
     panel_location: panel.location,
@@ -144,7 +196,7 @@ function makeScene(panel, index) {
     screen_overlay: {
       enabled: true,
       type: index === 2 ? "product_discovery" : index === 3 ? "product_proof" : index === 5 ? "cta" : "publishing_workflow",
-      title: index === 2 ? PRODUCT_NAME : index === 3 ? PRODUCT_SHORT : index === 5 ? "Sapiver Press" : "Publishing workflow",
+      title: index === 2 ? PRODUCT_NAME : index === 3 ? PRODUCT_SHORT : index === 5 ? "Sapiver Press" : "Puzzle-book workflow",
       lines: panel.screenLines,
       cta: index === 5 ? SHOP_URL : "",
       readable_text_compositor_only: true,
@@ -155,6 +207,7 @@ function makeScene(panel, index) {
       "All readable words are added later by the compositor.",
       "Laptop screen must face both Isla and the viewer at about 30 to 45 degrees.",
       "No fake web-page text, no fake Sudoku pages, no Amazon/KDP logos, no posters with text.",
+      "Use real Vol.001 listing/free-sample material only where it is available and safe to expose.",
     ],
   };
 }
@@ -168,20 +221,18 @@ function buildStory(previous, date) {
     short_name: PRODUCT_SHORT,
     url: SHOP_URL,
     natural_reference: "a practical commercial-use Sudoku publishing starter pack",
-    facts_used_in_copy: [
-      "Commercial-use Sudoku publishing pack",
-      "900 puzzles + 900 solutions",
-      "Interiors plus matching covers",
-      "Useful for Sudoku book and low-content puzzle-book publishing workflows",
-    ],
-    claims_not_made: [
-      "guaranteed sales",
-      "guaranteed KDP approval",
-      "passive income",
-      "Amazon or KDP affiliation",
-      "official KDP template",
-    ],
+    facts_used_in_copy: FACTS_USED_IN_COPY,
+    claims_not_made: CLAIMS_NOT_MADE,
     one_pack_per_buyer_unique_volume_claim_allowed: false,
+  };
+  const campaign = {
+    id: CAMPAIGN_ID,
+    title: "Isla Learns to Publish Puzzle Books",
+    funnel: "Free puzzle world -> creator problem -> product discovery -> factual proof -> practical next step",
+    content_pillars: CONTENT_PILLARS,
+    main_message: "Want to make a Sudoku book but do not know where to start? Start with structured commercial-use files from Sapiver Press.",
+    cta: "Start with the files. Build the book from there.",
+    url: SHOP_URL,
   };
   return {
     ...(previous || {}),
@@ -191,8 +242,10 @@ function buildStory(previous, date) {
     character_name: "Isla",
     trigger_word: "Isla_v2",
     render_mode: "illustrated_comic_panels",
-    story_source: "kdp_learner_ad_contract",
+    story_source: "isla_puzzle_book_publisher_campaign",
     story_source_used: `daily/${date}.json`,
+    active_campaign_id: CAMPAIGN_ID,
+    campaign_strategy: campaign,
     product_referenced: product,
     puzzle_state: {
       ...(previous?.puzzle_state || {}),
@@ -200,18 +253,18 @@ function buildStory(previous, date) {
       product_url: SHOP_URL,
       ad_mode: true,
       puzzle_capture_required: false,
-      summary: "Daily puzzle-solving angle is paused; this preview promotes the commercial Sudoku publishing pack through Isla's creator journey.",
+      summary: "Daily puzzle-solving angle is paused; this preview promotes the commercial Sudoku publishing pack through Isla's puzzle-book creator journey.",
     },
     selected_setting: "home publishing desk with audience-facing laptop",
-    story_note: "Isla starts from zero as a would-be Sudoku book publisher, feels the workflow expand, then finds the Sapiver Press commercial-use pack as a practical starting structure.",
-    continuation_note: "Paused old daily puzzle-solving angle. Keep the story helpful and practical: creator/publisher journey first, soft product discovery second, no income or approval claims.",
-    facebook_post_text: `Starting a Sudoku book from zero is easier when the files are already structured. ${SHOP_URL}`,
-    storyboard_arc_title: "Isla finds a practical starting point for Sudoku book publishing",
-    storyboard_board_caption: "A six-panel creator journey from blank page to Sapiver Press commercial pack discovery.",
-    storyboard_arc_type: "kdp_learner_product_discovery_ad",
+    story_note: "Isla starts from the real customer problem: she wants to make a Sudoku book but does not know where to start. She learns the moving parts, finds the Sapiver Press commercial-use pack, and uses it as a practical file-led starting point.",
+    continuation_note: "Keep the story helpful and practical: puzzle-book creator journey first, soft product discovery second, no income or approval claims.",
+    facebook_post_text: `Want to make a Sudoku book but do not know where to start? Start with structured commercial-use files from Sapiver Press. ${SHOP_URL}`,
+    storyboard_arc_title: "Isla Learns to Publish Puzzle Books",
+    storyboard_board_caption: "A six-panel creator journey from puzzle-book idea to structured Sapiver Press commercial pack discovery.",
+    storyboard_arc_type: "isla_puzzle_book_publisher_product_discovery_ad",
     storyboard_arc: storyboardArc,
     storyboard_copy_refined: true,
-    storyboard_copy_source: "kdp_learner_ad_contract",
+    storyboard_copy_source: "deterministic_isla_campaign_strategy",
     storyboard_copy_model: "deterministic_contract",
     storyboard_quality: {
       location_sequence_only: false,
@@ -225,17 +278,20 @@ function buildStory(previous, date) {
       no_fake_income_claims: true,
       no_kdp_affiliation_claims: true,
       text_overlay_only: true,
+      campaign_strategy_applied: true,
+      vol001_material_strategy_ready: true,
     },
-    quality_gate_action: "kdp_learner_ad_contract_applied",
-    quality_gate_repair_reasons: ["strategic_pivot_from_daily_puzzle_to_kdp_learner_ad"],
+    quality_gate_action: "isla_puzzle_book_publisher_campaign_applied",
+    quality_gate_repair_reasons: ["strategic_pivot_from_daily_puzzle_to_puzzle_book_publisher_campaign"],
     scenes,
     storyboard_locations: scenes.map((scene) => scene.panel_location),
     location_flow_id: CONTRACT_MODE,
-    location_flow_method: "fixed_ad_story_contract",
+    location_flow_method: "fixed_campaign_story_contract",
     location_flow: scenes.map((scene) => scene.panel_location.split(" ").slice(0, 4).join(" ")),
     scene_truth_contract: {
       enabled: true,
       mode: CONTRACT_MODE,
+      campaign_id: CAMPAIGN_ID,
       fixed_sequence: true,
       story_led: true,
       flow_enforced: true,
@@ -245,10 +301,13 @@ function buildStory(previous, date) {
       no_posters_except_bee_picture: true,
       no_children: true,
       no_shower_or_half_naked: true,
+      use_real_product_material_where_available: true,
+      paid_zip_public_exposure_blocked: true,
     },
     product_ad_contract: {
       enabled: true,
       mode: CONTRACT_MODE,
+      campaign_id: CAMPAIGN_ID,
       shop_url: SHOP_URL,
       product_name: PRODUCT_NAME,
       product_short: PRODUCT_SHORT,
@@ -257,7 +316,8 @@ function buildStory(previous, date) {
       laptop_screen_overlay_required: true,
       daily_puzzle_solving_angle_paused: true,
       tone: "helpful practical creator journey soft product discovery",
-      claims_banned: product.claims_not_made,
+      claims_banned: CLAIMS_NOT_MADE,
+      content_pillars: CONTENT_PILLARS,
     },
     supporting_life_trigger: { enabled: false, reason: "disabled_for_product_ad_story" },
     supporting_cast_policy: {
@@ -281,6 +341,7 @@ function buildStory(previous, date) {
       posting_allowed: true,
       posting_block_reasons: [],
       product_ad_contract_passed: true,
+      campaign_strategy_applied: true,
     },
     image_manifest: {
       ...(previous?.image_manifest || {}),
@@ -288,10 +349,13 @@ function buildStory(previous, date) {
       character_name: "Isla",
       trigger_word: "Isla_v2",
       render_mode: "illustrated_comic_panels",
+      active_campaign_id: CAMPAIGN_ID,
+      campaign_strategy: campaign,
       product_referenced: product,
       product_ad_contract: {
         enabled: true,
         mode: CONTRACT_MODE,
+        campaign_id: CAMPAIGN_ID,
         readable_text_compositor_only: true,
         laptop_screen_overlay_required: true,
       },
@@ -305,10 +369,12 @@ function buildStory(previous, date) {
         text_overlay_only: true,
         no_fake_income_claims: true,
         no_kdp_affiliation_claims: true,
+        campaign_strategy_applied: true,
       },
       scenes: scenes.map((scene, index) => ({
         panel: index + 1,
         arc_role: scene.arc_role,
+        pillar_id: scene.pillar_id,
         panel_location: scene.panel_location,
         panel_action: scene.panel_action,
         panel_pose_family: scene.panel_pose_family,
@@ -321,6 +387,7 @@ function buildStory(previous, date) {
         prompt: scene.image_prompt_fragment,
         readable_text_compositor_only: true,
         screen_overlay: scene.screen_overlay,
+        pillar_id: scene.pillar_id,
       })),
       style_rules: [
         "Isla remains the main character.",
@@ -330,6 +397,7 @@ function buildStory(previous, date) {
         "Laptop screen must face both Isla and the viewer at roughly 30-45 degrees.",
         "If wall art appears, it is a simple bee picture with no words, letters, logos, or symbols.",
         "No children. No shower or half-naked scenes. No Amazon/KDP logos or affiliation claims.",
+        "Use Vol.001 listing/free-sample material as visual truth where available; never expose the full paid ZIP.",
       ],
     },
     kdp_learner_contract_applied_at: new Date().toISOString(),
@@ -347,6 +415,7 @@ async function updateCharacterHistory(story) {
     setting: story.selected_setting,
     story_note: story.story_note,
     continuation_note: story.continuation_note,
+    active_campaign_id: story.active_campaign_id,
     product_ad_contract: story.product_ad_contract,
     captions: story.scenes.map((scene) => scene.caption),
     pose_order: story.scenes.map((scene) => scene.pose_id),
@@ -357,7 +426,7 @@ async function updateCharacterHistory(story) {
     trigger_word: "Isla_v2",
     story_history: updated,
     weeks: updated,
-    current_strategy: "Isla learns KDP-style Sudoku book publishing and discovers the Sapiver Press commercial pack.",
+    current_strategy: "Isla learns puzzle-book publishing and discovers the Sapiver Press commercial Sudoku pack as a practical starting point.",
     last_updated: story.date,
   };
   await writeJson(rel, next);
@@ -371,7 +440,7 @@ async function main() {
   await writeJson("latest.json", story);
   await writeJson(`image-manifests/${date}.json`, story.image_manifest);
   await updateCharacterHistory(story);
-  console.log(`KDP learner ad contract applied for ${date}: ${PRODUCT_NAME}`);
+  console.log(`Isla puzzle-book publisher campaign applied for ${date}: ${PRODUCT_NAME}`);
   console.log(`CTA: ${SHOP_URL}`);
 }
 
