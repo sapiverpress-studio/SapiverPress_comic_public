@@ -8,7 +8,7 @@
     "url": "https://suite.sapiverpress.co.uk",
     "play_url": "https://suite.sapiverpress.co.uk/play/trigoku/"
   },
-  "trigger_word": "ISLA_SP",
+  "trigger_word": "Isla_v2",
   "visual_identity": {
     "age_read": "young adult",
     "skin": "warm medium brown skin",
@@ -105,51 +105,6 @@
     {
       "date": "2026-06-02",
       "weekday": "Tuesday",
-      "same_day_attempt": 8,
-      "setting": "quiet public library reading table",
-      "puzzle_phase": "early-week",
-      "story_note": "Isla spends this entry at the quiet public library reading table because the library gives her a borrowed pocket of quiet. The puzzle stays as a light thread inside the day.",
-      "continuation_note": "Remember: Isla uses libraries as reset spaces, not just work spaces. Continue the thread: library visits become her backup calm place.",
-      "stuck_moment": "patient pause at a shared table",
-      "life_memory_entry": {
-        "date": "2026-06-02",
-        "attempt": 8,
-        "location": "quiet public library reading table",
-        "reason_for_location": "the library gives her a borrowed pocket of quiet",
-        "life_detail_learned": "Isla uses libraries as reset spaces, not just work spaces.",
-        "thread_to_continue": "library visits become her backup calm place",
-        "puzzle_variant_mentioned": "Anti-Knight",
-        "variant_panel_index": 2,
-        "uk_calendar_date": null,
-        "uk_calendar_panel_index": null
-      },
-      "variant_recap": {
-        "variant_name": "Anti-Knight",
-        "short_rule": "Anti-Knight today — knight moves block matching numbers.",
-        "panel_index": 2,
-        "line": "Anti-Knight today — knight moves block matching numbers."
-      },
-      "uk_calendar_date": null,
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "A clean start.",
-        "Anti-Knight today — knight moves block matching numbers.",
-        "Check it twice.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly set.",
-        "Leave it tidy."
-      ]
-    },
-    {
-      "date": "2026-06-02",
-      "weekday": "Tuesday",
       "same_day_attempt": 9,
       "setting": "train table by the window",
       "puzzle_phase": "early-week",
@@ -1450,6 +1405,80 @@
         "Trigoku â€¢ Daily Lock | Sapiver Press changes the move, so Isla checks the rule before trusting it.",
         "Almost there.",
         "Next stop."
+      ]
+    },
+    {
+      "date": "2026-06-09",
+      "weekday": "Tuesday",
+      "setting": "home publishing desk with audience-facing laptop",
+      "story_note": "Isla starts from the real customer problem: she wants to make a Sudoku book but does not know where to start. She learns the moving parts, finds the Sapiver Press commercial-use pack, and uses it as a practical file-led starting point.",
+      "continuation_note": "Keep the story helpful and practical: puzzle-book creator journey first, soft product discovery second, no income or approval claims.",
+      "active_campaign_id": "isla_puzzle_book_publisher",
+      "product_ad_contract": {
+        "enabled": true,
+        "mode": "isla_learns_puzzle_book_publishing",
+        "campaign_id": "isla_puzzle_book_publisher",
+        "shop_url": "https://sapiverpress.etsy.com",
+        "product_name": "Commercial Sudoku Publisher Starter Pack",
+        "product_short": "900 Commercial Sudoku Pack",
+        "readable_text_compositor_only": true,
+        "generated_art_must_not_include_text": true,
+        "laptop_screen_overlay_required": true,
+        "daily_puzzle_solving_angle_paused": true,
+        "tone": "helpful practical creator journey soft product discovery",
+        "claims_banned": [
+          "guaranteed sales",
+          "guaranteed KDP approval",
+          "passive income",
+          "Amazon affiliation",
+          "KDP affiliation",
+          "official KDP template",
+          "income results",
+          "upload once and make money"
+        ],
+        "content_pillars": [
+          {
+            "id": "where_do_i_start",
+            "label": "I did not know where to start",
+            "ad_angle": "Beginner creator overwhelm; the pack provides structure."
+          },
+          {
+            "id": "what_goes_into_a_sudoku_book",
+            "label": "What actually goes into a Sudoku book",
+            "ad_angle": "Puzzles, solutions, variants, difficulty, interiors, covers, licence, and organised files."
+          },
+          {
+            "id": "one_book_at_a_time",
+            "label": "One book at a time",
+            "ad_angle": "Choose one variant, one difficulty, and one style per book instead of dumping everything into one paperback."
+          },
+          {
+            "id": "real_files_not_mockups",
+            "label": "Real files, not fake mockups",
+            "ad_angle": "Use Vol.001 listing previews and free-sample material as the visual truth; do not invent fake product screenshots."
+          },
+          {
+            "id": "commercial_use_not_get_rich",
+            "label": "Commercial-use, not get-rich",
+            "ad_angle": "Avoid income claims, guaranteed approval, or Amazon/KDP affiliation claims."
+          }
+        ]
+      },
+      "captions": [
+        "The idea is exciting. The starting point is not obvious.",
+        "Puzzles, solutions, interiors, covers, rights, and file organisation all matter.",
+        "Sapiver Press turns the blank start into a file-led workflow.",
+        "Classic, Hyper, Diagonal. Easy, Medium, Hard.",
+        "Pick one variant, one difficulty, one style. Build from there.",
+        "Find the pack at Sapiver Press on Etsy."
+      ],
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
       ]
     }
   ],
@@ -1457,51 +1486,6 @@
     {
       "date": "2026-06-02",
       "weekday": "Tuesday",
-      "same_day_attempt": 8,
-      "setting": "quiet public library reading table",
-      "puzzle_phase": "early-week",
-      "story_note": "Isla spends this entry at the quiet public library reading table because the library gives her a borrowed pocket of quiet. The puzzle stays as a light thread inside the day.",
-      "continuation_note": "Remember: Isla uses libraries as reset spaces, not just work spaces. Continue the thread: library visits become her backup calm place.",
-      "stuck_moment": "patient pause at a shared table",
-      "life_memory_entry": {
-        "date": "2026-06-02",
-        "attempt": 8,
-        "location": "quiet public library reading table",
-        "reason_for_location": "the library gives her a borrowed pocket of quiet",
-        "life_detail_learned": "Isla uses libraries as reset spaces, not just work spaces.",
-        "thread_to_continue": "library visits become her backup calm place",
-        "puzzle_variant_mentioned": "Anti-Knight",
-        "variant_panel_index": 2,
-        "uk_calendar_date": null,
-        "uk_calendar_panel_index": null
-      },
-      "variant_recap": {
-        "variant_name": "Anti-Knight",
-        "short_rule": "Anti-Knight today — knight moves block matching numbers.",
-        "panel_index": 2,
-        "line": "Anti-Knight today — knight moves block matching numbers."
-      },
-      "uk_calendar_date": null,
-      "pose_order": [
-        "pose_01_back_again",
-        "pose_02_first_moves",
-        "pose_03_stuck",
-        "pose_04_thinking",
-        "pose_05_coffee",
-        "pose_06_leaving"
-      ],
-      "captions": [
-        "A clean start.",
-        "Anti-Knight today — knight moves block matching numbers.",
-        "Check it twice.",
-        "Anti-Knight changes the move, so Isla checks the rule before trusting it.",
-        "Nearly set.",
-        "Leave it tidy."
-      ]
-    },
-    {
-      "date": "2026-06-02",
-      "weekday": "Tuesday",
       "same_day_attempt": 9,
       "setting": "train table by the window",
       "puzzle_phase": "early-week",
@@ -2803,10 +2787,85 @@
         "Almost there.",
         "Next stop."
       ]
+    },
+    {
+      "date": "2026-06-09",
+      "weekday": "Tuesday",
+      "setting": "home publishing desk with audience-facing laptop",
+      "story_note": "Isla starts from the real customer problem: she wants to make a Sudoku book but does not know where to start. She learns the moving parts, finds the Sapiver Press commercial-use pack, and uses it as a practical file-led starting point.",
+      "continuation_note": "Keep the story helpful and practical: puzzle-book creator journey first, soft product discovery second, no income or approval claims.",
+      "active_campaign_id": "isla_puzzle_book_publisher",
+      "product_ad_contract": {
+        "enabled": true,
+        "mode": "isla_learns_puzzle_book_publishing",
+        "campaign_id": "isla_puzzle_book_publisher",
+        "shop_url": "https://sapiverpress.etsy.com",
+        "product_name": "Commercial Sudoku Publisher Starter Pack",
+        "product_short": "900 Commercial Sudoku Pack",
+        "readable_text_compositor_only": true,
+        "generated_art_must_not_include_text": true,
+        "laptop_screen_overlay_required": true,
+        "daily_puzzle_solving_angle_paused": true,
+        "tone": "helpful practical creator journey soft product discovery",
+        "claims_banned": [
+          "guaranteed sales",
+          "guaranteed KDP approval",
+          "passive income",
+          "Amazon affiliation",
+          "KDP affiliation",
+          "official KDP template",
+          "income results",
+          "upload once and make money"
+        ],
+        "content_pillars": [
+          {
+            "id": "where_do_i_start",
+            "label": "I did not know where to start",
+            "ad_angle": "Beginner creator overwhelm; the pack provides structure."
+          },
+          {
+            "id": "what_goes_into_a_sudoku_book",
+            "label": "What actually goes into a Sudoku book",
+            "ad_angle": "Puzzles, solutions, variants, difficulty, interiors, covers, licence, and organised files."
+          },
+          {
+            "id": "one_book_at_a_time",
+            "label": "One book at a time",
+            "ad_angle": "Choose one variant, one difficulty, and one style per book instead of dumping everything into one paperback."
+          },
+          {
+            "id": "real_files_not_mockups",
+            "label": "Real files, not fake mockups",
+            "ad_angle": "Use Vol.001 listing previews and free-sample material as the visual truth; do not invent fake product screenshots."
+          },
+          {
+            "id": "commercial_use_not_get_rich",
+            "label": "Commercial-use, not get-rich",
+            "ad_angle": "Avoid income claims, guaranteed approval, or Amazon/KDP affiliation claims."
+          }
+        ]
+      },
+      "captions": [
+        "The idea is exciting. The starting point is not obvious.",
+        "Puzzles, solutions, interiors, covers, rights, and file organisation all matter.",
+        "Sapiver Press turns the blank start into a file-led workflow.",
+        "Classic, Hyper, Diagonal. Easy, Medium, Hard.",
+        "Pick one variant, one difficulty, one style. Build from there.",
+        "Find the pack at Sapiver Press on Etsy."
+      ],
+      "pose_order": [
+        "pose_01_back_again",
+        "pose_02_first_moves",
+        "pose_03_stuck",
+        "pose_04_thinking",
+        "pose_05_coffee",
+        "pose_06_leaving"
+      ]
     }
   ],
   "ongoing_threads": [],
-  "last_updated": "2026-06-08",
+  "last_updated": "2026-06-09",
   "same_day_attempts_kept": true,
-  "life_canon_file": "characters/isla_life_canon.json"
+  "life_canon_file": "characters/isla_life_canon.json",
+  "current_strategy": "Isla learns puzzle-book publishing and discovers the Sapiver Press commercial Sudoku pack as a practical starting point."
 }

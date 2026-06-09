@@ -1,0 +1,25 @@
+{
+  "date": "2026-06-09",
+  "source_url": "https://suite.sapiverpress.co.uk/play/sandwich-sudoku/?sapiver_export=1",
+  "json_date": "2026-06-09",
+  "week": "2026-06-08",
+  "today": "2026-06-09",
+  "mode": "Daily Sandwich Sudoku | Sapiver Press",
+  "source_id": "sandwich-sudoku",
+  "source_name": "Daily Sandwich Sudoku | Sapiver Press",
+  "stage_method": "suite_v9_export_rendered_states",
+  "note": "Rendered from live Suite SAPIVER_FINAL_EXPORT_V9 export. No compositor or model-generation changes.",
+  "files": [
+    "01_fresh_daily_grid.png",
+    "02_first_moves.png",
+    "03_stuck_moment.png",
+    "04_breakthrough.png",
+    "05_nearly_complete.png",
+    "06_complete_solution.png"
+  ],
+  "source_export_url": "https://suite.sapiverpress.co.uk/play/sandwich-sudoku/?sapiver_export=1",
+  "selected_source": {
+    "id": "sandwich-sudoku",
+    "url": "https://suite.sapiverpress.co.uk/play/sandwich-sudoku/"
+  }
+}
