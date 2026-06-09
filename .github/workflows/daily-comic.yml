@@ -20,11 +20,15 @@ on:
       supporting_life_trigger:
         description: "Supporting-life trigger mode: auto, force, or off"
         required: false
-        default: "auto"
+        default: "off"
       force_paid_api_run:
         description: "Override spend guard and allow paid API calls outside posting window"
         required: false
         default: "false"
+      post_to_pinterest:
+        description: "Post approved daily Isla advert image to Pinterest"
+        required: false
+        default: "true"
 
 permissions:
   contents: write
@@ -59,7 +63,7 @@ jobs:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
           GITHUB_EVENT_NAME: ${{ github.event_name }}
           POST_TO_FACEBOOK: "false"
-          POST_TO_PINTEREST: "false"
+          POST_TO_PINTEREST: ${{ github.event_name == 'schedule' && 'true' || github.event.inputs.post_to_pinterest }}
           FORCE_GENERATE_IMAGES: ${{ github.event.inputs.force_paid_api_run }}
           IMAGE_GENERATION_WINDOW_START: "07:00"
           IMAGE_GENERATION_WINDOW_END: "08:30"
@@ -181,7 +185,6 @@ jobs:
         env:
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
           SUITE_URL: "https://suite.sapiverpress.co.uk"
-          COMIC_SCREEN_BOX: ${{ secrets.COMIC_SCREEN_BOX }}
         run: npm run compose
 
       - name: Upload preview and rejection assets
@@ -236,6 +239,32 @@ jobs:
               sleep 8
               git pull --rebase --autostash origin main || true
             done
+          fi
+
+      - name: Post approved daily advert to Pinterest
+        if: steps.api_guard.outputs.generate_images == 'true' && steps.compose_preview.outcome == 'success' && (github.event_name == 'schedule' || github.event.inputs.post_to_pinterest == 'true')
+        env:
+          DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+          POST_TO_PINTEREST: ${{ github.event_name == 'schedule' && 'true' || github.event.inputs.post_to_pinterest }}
+          PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
+          PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
+          PINTEREST_LINK_URL: "https://sapiverpress.etsy.com"
+        run: npm run pinterest-post
+
+      - name: Commit Pinterest post state
+        if: steps.api_guard.outputs.generate_images == 'true' && always()
+        run: |
+          set -e
+          git config user.name "sapiver-comic-bot"
+          git config user.email "sapiver-comic-bot@users.noreply.github.com"
+          git add pinterest-posts.json || true
+          if git diff --cached --quiet; then
+            echo "No Pinterest state changes"
+          else
+            git commit -m "Update Pinterest post state"
+            git pull --rebase --autostash origin main || true
+            git push
           fi
 
       - name: Fail if compose failed
