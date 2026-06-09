@@ -1,0 +1,96 @@
+{
+  "id": "isla_puzzle_book_publisher",
+  "title": "Isla Learns to Publish Puzzle Books",
+  "status": "active",
+  "primary_product_material_id": "commercial_sudoku_vol001",
+  "primary_cta": "https://sapiverpress.etsy.com",
+  "core_story": "Isla enjoys puzzles, then tries to understand how Sudoku books are actually made. She starts overwhelmed by puzzles, solutions, layouts, interiors, covers, rights, and file organisation. The Sapiver Press Commercial Sudoku Publisher Starter Pack becomes the practical starting point: start with structured files, then build one book at a time.",
+  "funnel": [
+    {
+      "stage": "free_puzzle_world",
+      "message": "Sapiver Press makes playable and printable puzzles, so the brand has a visible puzzle base before selling publishing files."
+    },
+    {
+      "stage": "creator_problem",
+      "message": "The customer wants to create Sudoku books but does not know where to start or how many moving parts are involved."
+    },
+    {
+      "stage": "product_discovery",
+      "message": "Isla discovers the commercial-use starter pack as a structured way into puzzle-book publishing."
+    },
+    {
+      "stage": "proof",
+      "message": "Show factual pack contents: 900 puzzles, 900 solutions, Classic/Hyper/Diagonal, Easy/Medium/Hard, publishing files, and real sample/listing visuals where available."
+    },
+    {
+      "stage": "next_step",
+      "message": "The practical action is not 'get rich'; it is 'start with the files and build the book from there'."
+    }
+  ],
+  "content_pillars": [
+    {
+      "id": "where_do_i_start",
+      "label": "I did not know where to start",
+      "ad_angle": "Beginner creator overwhelm; the pack provides structure."
+    },
+    {
+      "id": "what_goes_into_a_sudoku_book",
+      "label": "What actually goes into a Sudoku book",
+      "ad_angle": "Puzzles, solutions, variants, difficulty, interiors, covers, licence, and organised files."
+    },
+    {
+      "id": "one_book_at_a_time",
+      "label": "One book at a time",
+      "ad_angle": "Choose one variant, one difficulty, and one style per book instead of dumping everything into one paperback."
+    },
+    {
+      "id": "real_files_not_mockups",
+      "label": "Real files, not fake mockups",
+      "ad_angle": "Use Vol.001 listing previews and free-sample material as the visual truth; do not invent fake product screenshots."
+    },
+    {
+      "id": "commercial_use_not_get_rich",
+      "label": "Commercial-use, not get-rich",
+      "ad_angle": "Avoid income claims, guaranteed approval, or Amazon/KDP affiliation claims."
+    }
+  ],
+  "safe_claims": [
+    "Commercial-use Sudoku publishing pack",
+    "900 puzzles + 900 solutions",
+    "Classic, Hyper, and Diagonal Sudoku",
+    "Easy, Medium, and Hard difficulty groups",
+    "Structured publishing files for puzzle-book creators",
+    "Start with the files. Build the book from there."
+  ],
+  "claims_to_avoid": [
+    "guaranteed sales",
+    "guaranteed KDP approval",
+    "passive income",
+    "Amazon affiliation",
+    "KDP affiliation",
+    "official KDP template",
+    "income results",
+    "upload once and make money"
+  ],
+  "default_six_panel_arc": [
+    "Isla enjoys puzzles and wonders if she could make a Sudoku book.",
+    "She realises a book needs puzzles, matching solutions, layouts, covers, rights, and organisation.",
+    "She finds the Sapiver Press Commercial Sudoku Publisher Starter Pack.",
+    "She checks the factual contents: 900 puzzles, 900 solutions, Classic/Hyper/Diagonal, Easy/Medium/Hard.",
+    "She plans one book at a time: one variant, one difficulty, one style.",
+    "She ends with the practical CTA: start with the files, build the book from there."
+  ],
+  "visual_rules": [
+    "Isla remains the main character.",
+    "Use generated art for Isla and the workspace only; use compositor overlays for readable product text.",
+    "Laptop screens must be visible and angled toward Isla and the viewer.",
+    "Generated scenes must not include readable text, fake product pages, fake KDP pages, fake Sudoku pages, fake covers, or fake screenshots.",
+    "Use real Vol.001 listing/free-sample material only where it is available and safe to expose.",
+    "Never put the full paid delivery ZIP or customer download link into the public repo or public ad previews."
+  ],
+  "cta_copy": {
+    "short": "Start with the files. Build the book from there.",
+    "medium": "Want to make a Sudoku book but do not know where to start? Start with structured commercial-use files from Sapiver Press.",
+    "url": "https://sapiverpress.etsy.com"
+  }
+}
