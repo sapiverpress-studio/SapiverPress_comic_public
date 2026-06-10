@@ -20,7 +20,7 @@
     "validate": "node scripts/validate-project.mjs && node scripts/validate-isla-calendar-coherence.mjs",
     "facebook-post": "node scripts/facebook-post.mjs",
     "pinterest-post": "node scripts/pinterest-post.mjs",
-    "preview:build": "node scripts/build-preview-index.mjs && node scripts/build-rejected-preview-addon.mjs"
+    "preview:build": "node -e \"console.log('Preview build disabled; use GitHub Actions artifacts or social/ folder downloads')\""
   },
   "dependencies": {
     "@octokit/rest": "^21.0.0",
