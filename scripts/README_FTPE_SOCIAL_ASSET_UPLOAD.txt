@@ -1,0 +1,1 @@
+Temporary note: the ChatGPT GitHub connector used in this session cannot stream the prepared 1.55 MB binary ZIP from the sandbox directly into the repository without embedding a 2 MB base64 string in the chat payload. The workflow is prepared to consume assets/ftpe/social_master/FTPE_social_master_assets.zip or .zip.b64 once uploaded/mirrored.
