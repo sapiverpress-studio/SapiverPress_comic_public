@@ -1,0 +1,129 @@
+{
+  "version": "ftpe_social_campaign_v1",
+  "product": "First-Time Sudoku Publisher Edition / FTPE",
+  "brand": "Sapiver Press",
+  "main_cta": "https://sapiverpress.etsy.com",
+  "upgrade_cta": "https://sapiverpress.etsy.com?coupon=FTPE2COMMERCIAL",
+  "positioning": "A guided beginner-friendly first KDP paperback upload starter pack for people who want to make their first Sudoku paperback.",
+  "compliance_rules": [
+    "Do not claim guaranteed income.",
+    "Do not claim guaranteed Amazon/KDP approval.",
+    "Do not imply Amazon/KDP affiliation.",
+    "Use real product assets only.",
+    "Do not invent fake Sudoku books, fake KDP screenshots, fake covers, fake product mockups, or fake income screenshots.",
+    "Commercial 900 upgrade must not appear inside produced books, interiors, covers, or mock book pages. It may appear only in guide/help/promo campaign material."
+  ],
+  "master_assets": [
+    {
+      "file": "01_why_this_edition_is_different.png",
+      "angle": "limited-volume / why different",
+      "preferred_platforms": ["pinterest", "facebook"]
+    },
+    {
+      "file": "02_first_time_sudoku_publisher_edition.png",
+      "angle": "hero / first-time publisher",
+      "preferred_platforms": ["pinterest", "facebook", "tiktok"]
+    },
+    {
+      "file": "03_whats_included.png",
+      "angle": "what is included",
+      "preferred_platforms": ["pinterest", "facebook"]
+    },
+    {
+      "file": "04_how_your_download_works.png",
+      "angle": "download journey",
+      "preferred_platforms": ["pinterest", "facebook", "tiktok"]
+    },
+    {
+      "file": "05_guided_support_first_time_publishers.png",
+      "angle": "guided support",
+      "preferred_platforms": ["pinterest", "facebook", "tiktok"]
+    }
+  ],
+  "daily_rotation": [
+    {
+      "id": "first_kdp_upload",
+      "asset": "02_first_time_sudoku_publisher_edition.png",
+      "pin_title": "Start Your First KDP Sudoku Paperback",
+      "headline": "Start Your First KDP Sudoku Paperback",
+      "description": "A guided beginner-friendly Sudoku publishing starter pack for your first KDP paperback upload workflow. Start with the Easy files first.",
+      "cta": "Find it at Sapiver Press on Etsy",
+      "platforms": ["pinterest", "facebook", "tiktok"]
+    },
+    {
+      "id": "easy_previewer_goal",
+      "asset": "04_how_your_download_works.png",
+      "pin_title": "Your First Goal: Pass KDP Previewer",
+      "headline": "Your First Goal: Pass KDP Previewer",
+      "description": "Your first goal is not to publish today. Your first goal is to upload the Easy interior and Easy cover into KDP Previewer and check that the preview passes.",
+      "cta": "Start with the FTPE starter pack",
+      "platforms": ["pinterest", "facebook", "tiktok"]
+    },
+    {
+      "id": "whats_included",
+      "asset": "03_whats_included.png",
+      "pin_title": "What’s Included in FTPE",
+      "headline": "What’s Included in the Pack",
+      "description": "Guides, worksheets, Drive access, Easy/Medium/Hard upload files, matching full-spread covers, cover specs, and beginner checklist support.",
+      "cta": "Visit Sapiver Press on Etsy",
+      "platforms": ["pinterest", "facebook"]
+    },
+    {
+      "id": "guided_support",
+      "asset": "05_guided_support_first_time_publishers.png",
+      "pin_title": "Guided Support for First-Time Publishers",
+      "headline": "Guided Support for First-Time Publishers",
+      "description": "KDP account setup, identity/tax/W-8BEN guide, upload walkthrough, book details worksheet, AI-content note, checklist, mistakes guide, and next steps.",
+      "cta": "Find it at Sapiver Press on Etsy",
+      "platforms": ["pinterest", "facebook", "tiktok"]
+    },
+    {
+      "id": "limited_volume",
+      "asset": "01_why_this_edition_is_different.png",
+      "pin_title": "Why This Edition Is Different",
+      "headline": "Why This Edition Is Different",
+      "description": "A limited-volume beginner starter pack designed for first-time KDP publishers who want a guided first-upload workflow, not a guaranteed-income promise.",
+      "cta": "Start with FTPE",
+      "platforms": ["pinterest", "facebook"]
+    },
+    {
+      "id": "commercial_900_next_step",
+      "asset": "01_why_this_edition_is_different.png",
+      "pin_title": "Ready for More? Commercial 900 Is the Next Step",
+      "headline": "Ready for More? Upgrade Later",
+      "description": "FTPE is the beginner first-upload starter pack. When ready, use the Commercial 900 upgrade link as an optional next step.",
+      "cta": "Use the FTPE2COMMERCIAL upgrade coupon",
+      "platforms": ["pinterest", "facebook"]
+    }
+  ],
+  "keywords": [
+    "KDP",
+    "Amazon KDP",
+    "Kindle Direct Publishing",
+    "paperback publishing",
+    "puzzle book publishing",
+    "Sudoku book",
+    "Sudoku paperback",
+    "KDP starter pack",
+    "KDP beginner guide",
+    "publish a puzzle book",
+    "KDP Previewer",
+    "book interior PDF",
+    "full spread cover",
+    "Sapiver Press"
+  ],
+  "hashtags": [
+    "#AmazonKDP",
+    "#KDPPublishing",
+    "#SelfPublishing",
+    "#PuzzleBooks",
+    "#Sudoku",
+    "#SudokuBooks",
+    "#EtsyDigitalDownload",
+    "#KDPBeginners",
+    "#PaperbackPublishing",
+    "#PuzzlePublishing",
+    "#KDPTools",
+    "#SapiverPress"
+  ]
+}
