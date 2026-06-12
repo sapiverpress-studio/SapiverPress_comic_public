@@ -20,6 +20,9 @@
     "validate": "node scripts/validate-project.mjs && node scripts/validate-isla-calendar-coherence.mjs",
     "facebook-post": "node scripts/facebook-post.mjs",
     "pinterest-post": "node scripts/pinterest-post.mjs",
+    "ftpe:social": "node scripts/build-ftpe-daily-social.mjs && node scripts/post-ftpe-social.mjs",
+    "ftpe:social:build": "node scripts/build-ftpe-daily-social.mjs",
+    "ftpe:social:post": "node scripts/post-ftpe-social.mjs",
     "preview:build": "node -e \"console.log('Preview build disabled; use GitHub Actions artifacts or social/ folder downloads')\""
   },
   "dependencies": {
