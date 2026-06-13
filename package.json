@@ -23,6 +23,9 @@
     "ftpe:social": "node scripts/build-ftpe-daily-social.mjs && node scripts/post-ftpe-social.mjs",
     "ftpe:social:build": "node scripts/build-ftpe-daily-social.mjs",
     "ftpe:social:post": "node scripts/post-ftpe-social.mjs",
+    "ftpe:pin-carousel": "node scripts/build-ftpe-pin-and-fb-carousel.mjs && node scripts/post-ftpe-pin-and-fb-carousel.mjs",
+    "ftpe:pin-carousel:build": "node scripts/build-ftpe-pin-and-fb-carousel.mjs",
+    "ftpe:pin-carousel:post": "node scripts/post-ftpe-pin-and-fb-carousel.mjs",
     "preview:build": "node -e \"console.log('Preview build disabled; use GitHub Actions artifacts or social/ folder downloads')\""
   },
   "dependencies": {
