@@ -93,6 +93,7 @@ async function uploadVideoToPinterest({ token, boardId, videoPath, title, descri
       media_source: {
         source_type: "video_id",
         media_id: media.media_id,
+        cover_image_key_frame_time: 0,
       },
     }),
   });
