@@ -16,6 +16,8 @@ on:
   push:
     paths:
       - ".github/workflows/ftpe-daily-social.yml"
+      - "scripts/build-ftpe-pin-and-fb-carousel.mjs"
+      - "scripts/post-ftpe-pin-and-fb-carousel.mjs"
 
 permissions:
   contents: write
@@ -44,41 +46,80 @@ jobs:
             echo "FTPE_SOCIAL_POST_MODE=dry_run" >> "$GITHUB_ENV"
           fi
 
-      - name: Import fallback FTPE social assets from Drive
+      - name: Pull FTPE advertising assets from shared Google Drive
         shell: bash
         env:
           FTPE_SOCIAL_DRIVE_FILE_ID: "17Qbd8Q6xICtKvpV0ZWtUuXv94nBWrXbc"
         run: |
           set -euo pipefail
           mkdir -p assets/ftpe/social_master assets/ftpe/social_sets assets/ftpe/bonus_sets
-          ASSET_ZIP="assets/ftpe/social_master/FTPE_social_master_assets.zip"
 
           if find assets/ftpe/social_master assets/ftpe/social_sets assets/ftpe/bonus_sets -type f \( -iname '*.png' -o -iname '*.zip' -o -iname '*.zip.b64' \) 2>/dev/null | grep -q .; then
-            echo "FTPE social assets already present in repo workspace."
+            echo "FTPE social assets already present in this runner workspace."
             exit 0
           fi
 
-          echo "Importing FTPE social assets from Google Drive file ${FTPE_SOCIAL_DRIVE_FILE_ID}."
-          TMP_ZIP="$(mktemp)"
-          curl -L --fail --retry 3 "https://drive.google.com/uc?export=download&id=${FTPE_SOCIAL_DRIVE_FILE_ID}" -o "$TMP_ZIP"
+          echo "Downloading FTPE social asset bundle from shared Google Drive file ${FTPE_SOCIAL_DRIVE_FILE_ID}."
+          TMP_DIR="$(mktemp -d)"
+          COOKIE_FILE="${TMP_DIR}/cookies.txt"
+          FIRST_RESPONSE="${TMP_DIR}/drive-first-response"
+          ASSET_ZIP="${TMP_DIR}/ftpe-drive-assets.zip"
+          EXTRACT_DIR="${TMP_DIR}/extract"
 
-          if ! unzip -t "$TMP_ZIP" >/tmp/ftpe-social-unzip-test.txt 2>&1; then
-            echo "Downloaded file is not a valid ZIP. First bytes:"
-            head -c 300 "$TMP_ZIP" || true
+          curl -L --fail --retry 3 -c "$COOKIE_FILE" \
+            "https://drive.google.com/uc?export=download&id=${FTPE_SOCIAL_DRIVE_FILE_ID}" \
+            -o "$FIRST_RESPONSE"
+
+          CONFIRM_TOKEN="$(grep -oE 'confirm=([0-9A-Za-z_-]+)' "$FIRST_RESPONSE" | head -n 1 | cut -d= -f2 || true)"
+          if [ -n "$CONFIRM_TOKEN" ]; then
+            echo "Google Drive confirmation token detected; downloading confirmed file."
+            curl -L --fail --retry 3 -b "$COOKIE_FILE" \
+              "https://drive.google.com/uc?export=download&confirm=${CONFIRM_TOKEN}&id=${FTPE_SOCIAL_DRIVE_FILE_ID}" \
+              -o "$ASSET_ZIP"
+          else
+            mv "$FIRST_RESPONSE" "$ASSET_ZIP"
+          fi
+
+          if ! unzip -t "$ASSET_ZIP" >/tmp/ftpe-social-unzip-test.txt 2>&1; then
+            echo "Google Drive download did not produce a valid ZIP. First 500 bytes follow:"
+            head -c 500 "$ASSET_ZIP" || true
             echo ""
             cat /tmp/ftpe-social-unzip-test.txt || true
             exit 1
           fi
 
-          PNG_COUNT="$(unzip -Z1 "$TMP_ZIP" | grep -Eic '\.png$' || true)"
-          if [ "$PNG_COUNT" -lt 5 ]; then
-            echo "Expected at least 5 PNGs in the Drive ZIP, found ${PNG_COUNT}."
-            unzip -Z1 "$TMP_ZIP" | sed -n '1,120p'
+          mkdir -p "$EXTRACT_DIR"
+          unzip -q "$ASSET_ZIP" -d "$EXTRACT_DIR"
+
+          DIRECT_PNG_COUNT="$(find "$EXTRACT_DIR" -type f -iname '*.png' | wc -l | tr -d ' ')"
+          NESTED_ZIP_COUNT="$(find "$EXTRACT_DIR" -type f \( -iname '*.zip' -o -iname '*.zip.b64' \) | wc -l | tr -d ' ')"
+
+          if [ "$NESTED_ZIP_COUNT" -gt 0 ]; then
+            echo "Repo-ready or nested ZIP bundle detected; copying nested ZIP sets into assets/ftpe/."
+            while IFS= read -r nested; do
+              name="$(basename "$nested")"
+              case "$name" in
+                UK_Publishing_Admin_Starter_Guide_PNGs.zip|UK_Publishing_Admin_Starter_Guide_PNGs.zip.b64)
+                  cp -f "$nested" "assets/ftpe/bonus_sets/$name"
+                  ;;
+                *)
+                  cp -f "$nested" "assets/ftpe/social_sets/$name"
+                  ;;
+              esac
+            done < <(find "$EXTRACT_DIR" -type f \( -iname '*.zip' -o -iname '*.zip.b64' \))
+          elif [ "$DIRECT_PNG_COUNT" -ge 5 ]; then
+            echo "Direct PNG ZIP detected; storing it as the runner social master archive."
+            cp -f "$ASSET_ZIP" assets/ftpe/social_master/FTPE_social_master_assets.zip
+          else
+            echo "The Drive ZIP must contain either at least five PNG files or nested social-set ZIP files."
+            echo "Direct PNG count: ${DIRECT_PNG_COUNT}; nested ZIP count: ${NESTED_ZIP_COUNT}."
+            echo "Top-level archive listing:"
+            unzip -Z1 "$ASSET_ZIP" | sed -n '1,160p'
             exit 1
           fi
 
-          cp "$TMP_ZIP" "$ASSET_ZIP"
-          echo "Imported ${PNG_COUNT} PNGs into ${ASSET_ZIP}."
+          echo "Imported FTPE asset files for this workflow run:"
+          find assets/ftpe/social_master assets/ftpe/social_sets assets/ftpe/bonus_sets -type f \( -iname '*.png' -o -iname '*.zip' -o -iname '*.zip.b64' \) | sort | sed -n '1,200p'
 
       - name: Build one Pinterest pin and one Facebook carousel
         run: node scripts/build-ftpe-pin-and-fb-carousel.mjs
@@ -91,16 +132,14 @@ jobs:
           FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
           FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
 
-      - name: Commit generated FTPE social records and imported assets
+      - name: Commit generated FTPE social records
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add social/ftpe
-          git add -f assets/ftpe/social_master/FTPE_social_master_assets.zip 2>/dev/null || true
-          git add -f assets/ftpe/social_sets/*.zip assets/ftpe/social_sets/*.zip.b64 assets/ftpe/bonus_sets/*.zip assets/ftpe/bonus_sets/*.zip.b64 2>/dev/null || true
           if git diff --cached --quiet; then
-            echo "No FTPE social output or asset changes to commit."
+            echo "No FTPE social output changes to commit."
           else
             git commit -m "Build FTPE pin and Facebook carousel for ${DATE_OVERRIDE}"
             git push
