@@ -9,6 +9,10 @@ const MANIFEST = path.join(ROOT, "social", "ftpe", DATE, "manifest.json");
 
 function abs(rel) { return path.join(ROOT, rel); }
 async function read(rel) { return fs.readFile(abs(rel), "utf8"); }
+async function readOptional(rel, fallback = "") {
+  if (!rel) return fallback;
+  try { return await read(rel); } catch { return fallback; }
+}
 function b64(file) { return fssync.readFileSync(file).toString("base64"); }
 async function jsonFetch(url, options) {
   const res = await fetch(url, options);
@@ -24,13 +28,14 @@ async function postPinterest(manifest) {
   const boardId = process.env.PINTEREST_BOARD_ID;
   if (!token || !boardId) throw new Error("Missing PINTEREST_ACCESS_TOKEN or PINTEREST_BOARD_ID");
   const imagePath = abs(manifest.pinterest.image);
+  const title = (await readOptional(manifest.pinterest.title, "First-Time Sudoku Publisher Edition")).trim().slice(0, 100);
   const description = await read(manifest.pinterest.caption);
   return jsonFetch("https://api.pinterest.com/v5/pins", {
     method: "POST",
     headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
     body: JSON.stringify({
       board_id: boardId,
-      title: "First-Time Sudoku Publisher Edition",
+      title,
       description,
       link: manifest.cta,
       media_source: { source_type: "image_base64", content_type: "image/png", data: b64(imagePath) },
@@ -38,13 +43,24 @@ async function postPinterest(manifest) {
   });
 }
 
-async function uploadFacebookPhoto(pageId, token, relImage) {
+async function uploadFacebookPhoto(pageId, token, relImage, relCaption) {
   const form = new FormData();
   form.append("published", "false");
   form.append("access_token", token);
+  const caption = await readOptional(relCaption, "");
+  if (caption.trim()) form.append("caption", caption);
   const bytes = fssync.readFileSync(abs(relImage));
   form.append("source", new Blob([bytes], { type: "image/png" }), path.basename(relImage));
   return jsonFetch(`https://graph.facebook.com/v20.0/${pageId}/photos`, { method: "POST", body: form });
+}
+
+async function postFacebookFirstComment(token, postId, relComment) {
+  const message = await readOptional(relComment, "");
+  if (!message.trim() || !postId) return null;
+  const body = new URLSearchParams();
+  body.set("message", message);
+  body.set("access_token", token);
+  return jsonFetch(`https://graph.facebook.com/v20.0/${postId}/comments`, { method: "POST", body });
 }
 
 async function postFacebookCarousel(manifest) {
@@ -52,19 +68,34 @@ async function postFacebookCarousel(manifest) {
   const pageId = process.env.FACEBOOK_PAGE_ID;
   if (!token || !pageId) throw new Error("Missing FACEBOOK_PAGE_ACCESS_TOKEN or FACEBOOK_PAGE_ID");
   const uploaded = [];
-  for (const rel of manifest.facebook.images) uploaded.push(await uploadFacebookPhoto(pageId, token, rel));
+  const captions = manifest.facebook.image_captions || [];
+  for (let i = 0; i < manifest.facebook.images.length; i++) uploaded.push(await uploadFacebookPhoto(pageId, token, manifest.facebook.images[i], captions[i]));
   const body = new URLSearchParams();
   body.set("message", await read(manifest.facebook.post_caption));
   body.set("access_token", token);
   uploaded.forEach((photo, i) => body.append(`attached_media[${i}]`, JSON.stringify({ media_fbid: photo.id })));
-  return jsonFetch(`https://graph.facebook.com/v20.0/${pageId}/feed`, { method: "POST", body });
+  const post = await jsonFetch(`https://graph.facebook.com/v20.0/${pageId}/feed`, { method: "POST", body });
+  const firstComment = await postFacebookFirstComment(token, post.id, manifest.facebook.first_comment);
+  return { ...post, first_comment: firstComment };
 }
 
 const manifest = JSON.parse(await fs.readFile(MANIFEST, "utf8"));
 const out = { date: DATE, mode: MODE, type: manifest.type, cta: manifest.cta };
 if (MODE !== "live") {
-  out.pinterest = { dry_run: true, image: manifest.pinterest.image, caption: await read(manifest.pinterest.caption) };
-  out.facebook = { dry_run: true, images: manifest.facebook.images, caption: await read(manifest.facebook.post_caption) };
+  out.pinterest = {
+    dry_run: true,
+    image: manifest.pinterest.image,
+    title: await readOptional(manifest.pinterest.title, "First-Time Sudoku Publisher Edition"),
+    caption: await read(manifest.pinterest.caption),
+    first_comment: await readOptional(manifest.pinterest.first_comment, ""),
+  };
+  out.facebook = {
+    dry_run: true,
+    images: manifest.facebook.images,
+    image_captions: await Promise.all((manifest.facebook.image_captions || []).map((rel) => readOptional(rel, ""))),
+    caption: await read(manifest.facebook.post_caption),
+    first_comment: await readOptional(manifest.facebook.first_comment, ""),
+  };
 } else {
   out.pinterest = await postPinterest(manifest);
   out.facebook = await postFacebookCarousel(manifest);
