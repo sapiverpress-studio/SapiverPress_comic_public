@@ -6,9 +6,20 @@ const ROOT = process.cwd();
 const DATE = process.env.DATE_OVERRIDE || new Intl.DateTimeFormat("sv-SE", { timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
 const MODE = (process.env.FTPE_SOCIAL_POST_MODE || "dry_run").toLowerCase();
 const MANIFEST = path.join(ROOT, "social", "ftpe", DATE, "manifest.json");
+const MANIFEST_DIR = path.dirname(MANIFEST);
 
-function abs(rel) { return path.join(ROOT, rel); }
-async function read(rel) { return fs.readFile(abs(rel), "utf8"); }
+function absRoot(rel) {
+  return path.isAbsolute(rel) ? rel : path.join(ROOT, rel);
+}
+
+function absManifest(rel) {
+  if (!rel) return rel;
+  if (path.isAbsolute(rel)) return rel;
+  if (rel.startsWith("social/") || rel.startsWith("assets/")) return path.join(ROOT, rel);
+  return path.join(MANIFEST_DIR, rel);
+}
+
+async function read(rel) { return fs.readFile(absManifest(rel), "utf8"); }
 async function readOptional(rel, fallback = "") {
   if (!rel) return fallback;
   try { return await read(rel); } catch { return fallback; }
@@ -27,7 +38,7 @@ async function postPinterest(manifest) {
   const token = process.env.PINTEREST_ACCESS_TOKEN;
   const boardId = process.env.PINTEREST_BOARD_ID;
   if (!token || !boardId) throw new Error("Missing PINTEREST_ACCESS_TOKEN or PINTEREST_BOARD_ID");
-  const imagePath = abs(manifest.pinterest.image);
+  const imagePath = absRoot(manifest.pinterest.image);
   const title = (await readOptional(manifest.pinterest.title, "First-Time Sudoku Publisher Edition")).trim().slice(0, 100);
   const description = await read(manifest.pinterest.caption);
   return jsonFetch("https://api.pinterest.com/v5/pins", {
@@ -49,7 +60,7 @@ async function uploadFacebookPhoto(pageId, token, relImage, relCaption) {
   form.append("access_token", token);
   const caption = await readOptional(relCaption, "");
   if (caption.trim()) form.append("caption", caption);
-  const bytes = fssync.readFileSync(abs(relImage));
+  const bytes = fssync.readFileSync(absRoot(relImage));
   form.append("source", new Blob([bytes], { type: "image/png" }), path.basename(relImage));
   return jsonFetch(`https://graph.facebook.com/v20.0/${pageId}/photos`, { method: "POST", body: form });
 }
