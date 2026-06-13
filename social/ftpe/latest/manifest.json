@@ -1,0 +1,29 @@
+{
+  "type": "ftpe_daily_pin_and_fb_carousel_v2",
+  "date": "2026-06-13",
+  "cta": "https://sapiverpress.etsy.com",
+  "pinterest": {
+    "image": "social/ftpe/2026-06-13/pinterest_pin/01_03_how_your_download_works.png",
+    "title": "pinterest_pin/title.txt",
+    "caption": "pinterest_pin/caption.txt",
+    "first_comment": "pinterest_pin/first-comment.txt"
+  },
+  "facebook": {
+    "images": [
+      "social/ftpe/2026-06-13/facebook_carousel/01_04_guided_support_for_first_time_publishers.png",
+      "social/ftpe/2026-06-13/facebook_carousel/02_05_why_this_edition_is_different.png",
+      "social/ftpe/2026-06-13/facebook_carousel/03_01_main_hero_first_time_sudoku_publisher_edition.png",
+      "social/ftpe/2026-06-13/facebook_carousel/04_02_whats_included.png",
+      "social/ftpe/2026-06-13/facebook_carousel/05_03_how_your_download_works.png"
+    ],
+    "image_captions": [
+      "facebook_carousel/01_caption.txt",
+      "facebook_carousel/02_caption.txt",
+      "facebook_carousel/03_caption.txt",
+      "facebook_carousel/04_caption.txt",
+      "facebook_carousel/05_caption.txt"
+    ],
+    "post_caption": "facebook_carousel/post-caption.txt",
+    "first_comment": "facebook_carousel/first-comment.txt"
+  }
+}
