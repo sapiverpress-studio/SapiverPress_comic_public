@@ -3,6 +3,8 @@
   "mode": "dry_run",
   "type": "ftpe_daily_pin_fb_carousel_and_pinterest_video_v1",
   "cta": "https://sapiverpress.etsy.com",
+  "pinterest_board_id": "1038924276479876865",
+  "pinterest_board_name": "Sapiver Press Comic",
   "pinterest": {
     "dry_run": true,
     "image": "social/ftpe/2026-06-13/pinterest_pin/01_03_how_your_download_works.png",
@@ -13,7 +15,9 @@
   "pinterest_video": {
     "prepared": true,
     "posted": false,
-    "note": "Pinterest-ready MP4 generated from the same five images used in the Facebook carousel. Automatic video-pin upload is not enabled in this workflow yet.",
+    "note": "Pinterest-ready MP4 generated from the same five images used in the Facebook carousel. Automatic video-pin upload runs in the delayed Pinterest video workflow.",
+    "board_id": "1038924276479876865",
+    "board_name": "Sapiver Press Comic",
     "video": "social/ftpe/2026-06-13/pinterest_video/pinterest_video.mp4",
     "source_images": [
       "social/ftpe/2026-06-13/pinterest_video/01_04_guided_support_for_first_time_publishers.png",
