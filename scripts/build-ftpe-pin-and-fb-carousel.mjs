@@ -19,18 +19,33 @@ const DISCOVERY_KEYWORDS = [
   "Amazon KDP",
   "Kindle Direct Publishing",
   "paperback publishing",
+  "puzzle book publishing",
   "Sudoku book",
   "Sudoku paperback",
   "KDP starter pack",
   "KDP beginner guide",
   "publish a puzzle book",
+  "printable puzzle book",
+  "low content books",
+  "puzzle book creator",
   "KDP upload files",
   "KDP cover PDF",
   "KDP interior PDF",
-  "KDP metadata",
-  "KDP Previewer",
-  "AI content declaration",
+  "commercial use Sudoku",
+  "Sudoku publishing",
+  "beginner publishing",
   "Etsy digital download",
+  "printable business tools",
+  "puzzle seller resources",
+  "self publishing tools",
+  "Amazon paperback",
+  "KDP Previewer",
+  "book interior",
+  "full spread cover",
+  "book cover template",
+  "ISBN",
+  "KDP metadata",
+  "AI content declaration",
   "Sapiver Press",
 ];
 
@@ -50,6 +65,11 @@ const HASHTAGS = [
   "#KDPTools",
   "#SapiverPress",
 ];
+
+const PRODUCT_LINE = "First-Time Sudoku Publisher Edition from Sapiver Press";
+const PRODUCT_POSITIONING = "a £15 beginner-friendly Etsy digital download for people learning how to attempt their first Amazon KDP Sudoku paperback upload";
+const WORKFLOW_TERMS = "KDP-ready interior PDF, full-spread cover PDF, KDP metadata worksheet, KDP Previewer checks, ISBN/admin prompts, AI content declaration guidance and beginner publishing checklist";
+const SAFETY_LINE = "No guaranteed KDP approval, no guaranteed sales, no guaranteed income, and no Amazon affiliation.";
 
 function exists(p) { return fssync.existsSync(p); }
 async function ensureDir(p) { await fs.mkdir(p, { recursive: true }); }
@@ -106,27 +126,27 @@ function copyList(images, dir) {
 
 function pinTitle(title) {
   const topic = title ? ` | ${title}` : "";
-  return `KDP Sudoku Starter Pack${topic}`.slice(0, 100);
+  return `KDP Sudoku Paperback Starter Pack${topic}`.slice(0, 100);
 }
 
 function caption(kind, title) {
   const clean = title || "First-Time Sudoku Publisher Edition";
   if (kind === "pin") {
-    return `First-Time Sudoku Publisher Edition from Sapiver Press: a £15 beginner-friendly KDP Sudoku paperback starter pack for people learning the first upload workflow. Includes practical guidance around KDP upload files, an interior PDF, a full-spread cover PDF, KDP metadata, KDP Previewer checks and beginner publishing admin.\n\nNo guaranteed KDP approval, no guaranteed sales, and no Amazon affiliation — just a clearer way to attempt your first Sudoku paperback.\n\nShop Sapiver Press: ${CTA}\n\nKeywords: ${keywordLine(12)}\n\n${hashtags(10)}\n`;
+    return `${PRODUCT_LINE}: ${PRODUCT_POSITIONING}.\n\nUse it to understand the first-upload workflow: ${WORKFLOW_TERMS}.\n\n${SAFETY_LINE} This is practical workflow support, not a get-rich-quick product.\n\nShop Sapiver Press: ${CTA}\n\nSearch terms: ${keywordLine(18)}\n\n${hashtags(12)}\n`;
   }
-  return `${clean}\n\nFirst-Time Sudoku Publisher Edition helps beginners approach a first KDP Sudoku paperback upload with less guesswork. Use the guide, worksheet and KDP-ready file set to understand the book interior PDF, full-spread cover PDF, metadata, upload checks and KDP Previewer step.\n\nShop Sapiver Press: ${CTA}\n\n${hashtags(8)}\n`;
+  return `${clean}\n\nPart of the ${PRODUCT_LINE} campaign: ${PRODUCT_POSITIONING}. This image connects to the practical first-upload workflow: KDP upload files, book interior PDF, full-spread cover PDF, KDP metadata, KDP Previewer and beginner publishing admin.\n\n${SAFETY_LINE}\n\nShop Sapiver Press: ${CTA}\n\n${hashtags(10)}\n`;
 }
 
 function pinterestFirstComment() {
-  return `More KDP beginner tools from Sapiver Press: ${CTA}\n\nUseful search terms: KDP beginner guide, Sudoku book publishing, KDP interior PDF, KDP cover PDF, paperback publishing, puzzle book publishing, Etsy digital download.\n\n${hashtags(8)}\n`;
+  return `More beginner publishing tools from Sapiver Press: ${CTA}\n\nUseful search terms: KDP beginner guide, Amazon KDP, Sudoku paperback publishing, KDP upload files, KDP interior PDF, KDP cover PDF, full spread cover, KDP metadata, KDP Previewer, AI content declaration, Etsy digital download.\n\n${hashtags(10)}\n`;
 }
 
 function facebookPostCaption() {
-  return `Thinking about trying your first KDP Sudoku paperback?\n\nThis five-image carousel shows practical angles from the First-Time Sudoku Publisher Edition: a £15 starter pack for beginners who want a clearer route through KDP upload files, book interior PDFs, full-spread cover PDFs, metadata, KDP Previewer checks, ISBN/admin choices and the AI content declaration step.\n\nIt is a practical publishing workflow resource, not a promise of KDP approval, sales, passive income or Amazon affiliation.\n\nStart here: ${CTA}\n\nKeywords: ${keywordLine()}\n\n${hashtags()}\n`;
+  return `Thinking about trying your first KDP Sudoku paperback?\n\nThis five-image carousel shows practical angles from ${PRODUCT_LINE}: ${PRODUCT_POSITIONING}. It is built around real KDP upload files and beginner guidance: ${WORKFLOW_TERMS}.\n\n${SAFETY_LINE} It is a guided starter pack for learning the process, not a promise of passive income or Amazon/KDP affiliation.\n\nStart here: ${CTA}\n\nSearch terms: ${keywordLine()}\n\n${hashtags()}\n`;
 }
 
 function facebookFirstComment() {
-  return `Direct link to the Sapiver Press shop: ${CTA}\n\nSearch-friendly summary: KDP starter pack, Amazon KDP beginner guide, Sudoku paperback publishing, KDP upload files, KDP interior PDF, KDP cover PDF, KDP metadata, KDP Previewer, puzzle book publishing, Etsy digital download.\n\n${hashtags()}\n`;
+  return `Direct link to the Sapiver Press shop: ${CTA}\n\nSearch-friendly summary: KDP starter pack, Amazon KDP beginner guide, Kindle Direct Publishing, Sudoku paperback publishing, puzzle book publishing, KDP upload files, KDP interior PDF, KDP cover PDF, KDP metadata, KDP Previewer, book cover template, ISBN, AI content declaration, Etsy digital download.\n\n${hashtags()}\n`;
 }
 
 unzipAssets();
