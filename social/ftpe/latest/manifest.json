@@ -1,5 +1,5 @@
 {
-  "type": "ftpe_daily_pin_and_fb_carousel_v2",
+  "type": "ftpe_daily_pin_fb_carousel_and_pinterest_video_v1",
   "date": "2026-06-13",
   "cta": "https://sapiverpress.etsy.com",
   "pinterest": {
@@ -7,6 +7,20 @@
     "title": "pinterest_pin/title.txt",
     "caption": "pinterest_pin/caption.txt",
     "first_comment": "pinterest_pin/first-comment.txt"
+  },
+  "pinterest_video": {
+    "video": "social/ftpe/2026-06-13/pinterest_video/pinterest_video.mp4",
+    "source_images": [
+      "social/ftpe/2026-06-13/pinterest_video/01_04_guided_support_for_first_time_publishers.png",
+      "social/ftpe/2026-06-13/pinterest_video/02_05_why_this_edition_is_different.png",
+      "social/ftpe/2026-06-13/pinterest_video/03_01_main_hero_first_time_sudoku_publisher_edition.png",
+      "social/ftpe/2026-06-13/pinterest_video/04_02_whats_included.png",
+      "social/ftpe/2026-06-13/pinterest_video/05_03_how_your_download_works.png"
+    ],
+    "title": "pinterest_video/title.txt",
+    "caption": "pinterest_video/caption.txt",
+    "first_comment": "pinterest_video/first-comment.txt",
+    "seconds_per_image": 3
   },
   "facebook": {
     "images": [
