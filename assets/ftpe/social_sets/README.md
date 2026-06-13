@@ -12,7 +12,7 @@ Expected ZIP files:
 - `FTPE_SET_06_OBJECTION_HANDLING_PNGS.zip`
 - `FTPE_SET_15_UK_PUBLISHING_PITFALLS_PNGS.zip`
 
-The daily FTPE social builder can extract ZIPs from this folder and use matching PNG assets by filename.
+Current status: this folder is the intake location for the set ZIPs. The actual binary ZIPs still need to be uploaded or mirrored into the repository.
 
 Rules:
 
