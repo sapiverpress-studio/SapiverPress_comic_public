@@ -13,6 +13,9 @@ on:
         default: "dry_run"
   schedule:
     - cron: "15 8 * * *"
+  push:
+    paths:
+      - ".github/workflows/ftpe-daily-social.yml"
 
 permissions:
   contents: write
@@ -27,16 +30,55 @@ jobs:
       - name: Set run options
         shell: bash
         run: |
-          if [ -n "${{ github.event.inputs.date_override }}" ]; then
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ github.event.inputs.date_override }}" ]; then
             echo "DATE_OVERRIDE=${{ github.event.inputs.date_override }}" >> "$GITHUB_ENV"
           else
             echo "DATE_OVERRIDE=$(TZ=Europe/London date +%F)" >> "$GITHUB_ENV"
           fi
+
           if [ "${{ github.event_name }}" = "schedule" ]; then
             echo "FTPE_SOCIAL_POST_MODE=live" >> "$GITHUB_ENV"
-          else
+          elif [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "FTPE_SOCIAL_POST_MODE=${{ github.event.inputs.post_mode || 'dry_run' }}" >> "$GITHUB_ENV"
+          else
+            echo "FTPE_SOCIAL_POST_MODE=dry_run" >> "$GITHUB_ENV"
           fi
+
+      - name: Import fallback FTPE social assets from Drive
+        shell: bash
+        env:
+          FTPE_SOCIAL_DRIVE_FILE_ID: "17Qbd8Q6xICtKvpV0ZWtUuXv94nBWrXbc"
+        run: |
+          set -euo pipefail
+          mkdir -p assets/ftpe/social_master assets/ftpe/social_sets assets/ftpe/bonus_sets
+          ASSET_ZIP="assets/ftpe/social_master/FTPE_social_master_assets.zip"
+
+          if find assets/ftpe/social_master assets/ftpe/social_sets assets/ftpe/bonus_sets -type f \( -iname '*.png' -o -iname '*.zip' -o -iname '*.zip.b64' \) 2>/dev/null | grep -q .; then
+            echo "FTPE social assets already present in repo workspace."
+            exit 0
+          fi
+
+          echo "Importing FTPE social assets from Google Drive file ${FTPE_SOCIAL_DRIVE_FILE_ID}."
+          TMP_ZIP="$(mktemp)"
+          curl -L --fail --retry 3 "https://drive.google.com/uc?export=download&id=${FTPE_SOCIAL_DRIVE_FILE_ID}" -o "$TMP_ZIP"
+
+          if ! unzip -t "$TMP_ZIP" >/tmp/ftpe-social-unzip-test.txt 2>&1; then
+            echo "Downloaded file is not a valid ZIP. First bytes:"
+            head -c 300 "$TMP_ZIP" || true
+            echo ""
+            cat /tmp/ftpe-social-unzip-test.txt || true
+            exit 1
+          fi
+
+          PNG_COUNT="$(unzip -Z1 "$TMP_ZIP" | grep -Eic '\.png$' || true)"
+          if [ "$PNG_COUNT" -lt 5 ]; then
+            echo "Expected at least 5 PNGs in the Drive ZIP, found ${PNG_COUNT}."
+            unzip -Z1 "$TMP_ZIP" | sed -n '1,120p'
+            exit 1
+          fi
+
+          cp "$TMP_ZIP" "$ASSET_ZIP"
+          echo "Imported ${PNG_COUNT} PNGs into ${ASSET_ZIP}."
 
       - name: Build one Pinterest pin and one Facebook carousel
         run: node scripts/build-ftpe-pin-and-fb-carousel.mjs
@@ -49,14 +91,16 @@ jobs:
           FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
           FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
 
-      - name: Commit generated FTPE social records
+      - name: Commit generated FTPE social records and imported assets
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add social/ftpe
+          git add -f assets/ftpe/social_master/FTPE_social_master_assets.zip 2>/dev/null || true
+          git add -f assets/ftpe/social_sets/*.zip assets/ftpe/social_sets/*.zip.b64 assets/ftpe/bonus_sets/*.zip assets/ftpe/bonus_sets/*.zip.b64 2>/dev/null || true
           if git diff --cached --quiet; then
-            echo "No FTPE social output changes to commit."
+            echo "No FTPE social output or asset changes to commit."
           else
             git commit -m "Build FTPE pin and Facebook carousel for ${DATE_OVERRIDE}"
             git push
