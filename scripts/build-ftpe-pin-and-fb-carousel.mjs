@@ -13,6 +13,7 @@ const ASSET_ROOTS = [
   path.join(ROOT, "assets", "ftpe", "bonus_sets"),
 ];
 const CTA = "https://sapiverpress.etsy.com";
+const VIDEO_SECONDS_PER_IMAGE = 3;
 
 const DISCOVERY_KEYWORDS = [
   "KDP",
@@ -76,6 +77,7 @@ async function ensureDir(p) { await fs.mkdir(p, { recursive: true }); }
 function dayIndex() { return Math.floor(Date.parse(`${DATE}T00:00:00Z`) / 86400000); }
 function hashtags(limit = HASHTAGS.length) { return HASHTAGS.slice(0, limit).join(" "); }
 function keywordLine(limit = DISCOVERY_KEYWORDS.length) { return DISCOVERY_KEYWORDS.slice(0, limit).join(" · "); }
+function rel(p) { return path.relative(ROOT, p).replaceAll("\\", "/"); }
 
 function unzipAssets() {
   for (const root of ASSET_ROOTS) {
@@ -120,8 +122,42 @@ function copyList(images, dir) {
   return images.map((src, i) => {
     const dst = path.join(dir, `${String(i + 1).padStart(2, "0")}_${path.basename(src)}`);
     fssync.copyFileSync(src, dst);
-    return path.relative(ROOT, dst).replaceAll("\\", "/");
+    return rel(dst);
   });
+}
+
+function ffmpegEscape(file) {
+  return file.replace(/'/g, "'\\''");
+}
+
+function buildVideo(images, dir) {
+  fssync.mkdirSync(dir, { recursive: true });
+  const copied = copyList(images, dir);
+  const copiedAbs = copied.map((p) => path.join(ROOT, p));
+  const listPath = path.join(dir, "ffmpeg-input.txt");
+  const lines = [];
+  for (const img of copiedAbs) {
+    lines.push(`file '${ffmpegEscape(img)}'`);
+    lines.push(`duration ${VIDEO_SECONDS_PER_IMAGE}`);
+  }
+  lines.push(`file '${ffmpegEscape(copiedAbs[copiedAbs.length - 1])}'`);
+  fssync.writeFileSync(listPath, `${lines.join("\n")}\n`, "utf8");
+
+  const videoPath = path.join(dir, "pinterest_video.mp4");
+  execFileSync("ffmpeg", [
+    "-y",
+    "-f", "concat",
+    "-safe", "0",
+    "-i", listPath,
+    "-vf", "scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2,format=yuv420p",
+    "-r", "30",
+    "-c:v", "libx264",
+    "-pix_fmt", "yuv420p",
+    "-movflags", "+faststart",
+    videoPath,
+  ], { stdio: "inherit" });
+
+  return { images: copied, video: rel(videoPath) };
 }
 
 function pinTitle(title) {
@@ -129,10 +165,17 @@ function pinTitle(title) {
   return `KDP Sudoku Paperback Starter Pack${topic}`.slice(0, 100);
 }
 
+function videoTitle() {
+  return "KDP Sudoku Starter Pack | 5-image Pinterest video".slice(0, 100);
+}
+
 function caption(kind, title) {
   const clean = title || "First-Time Sudoku Publisher Edition";
   if (kind === "pin") {
     return `${PRODUCT_LINE}: ${PRODUCT_POSITIONING}.\n\nUse it to understand the first-upload workflow: ${WORKFLOW_TERMS}.\n\n${SAFETY_LINE} This is practical workflow support, not a get-rich-quick product.\n\nShop Sapiver Press: ${CTA}\n\nSearch terms: ${keywordLine(18)}\n\n${hashtags(12)}\n`;
+  }
+  if (kind === "video") {
+    return `A five-image Pinterest video version of today's FTPE carousel. ${PRODUCT_LINE} is ${PRODUCT_POSITIONING}.\n\nCovers KDP upload files, Sudoku paperback publishing, KDP interior PDF, full-spread cover PDF, metadata, KDP Previewer checks and beginner publishing admin.\n\n${SAFETY_LINE}\n\nShop Sapiver Press: ${CTA}\n\n${hashtags(12)}\n`;
   }
   return `${clean}\n\nPart of the ${PRODUCT_LINE} campaign: ${PRODUCT_POSITIONING}. This image connects to the practical first-upload workflow: KDP upload files, book interior PDF, full-spread cover PDF, KDP metadata, KDP Previewer and beginner publishing admin.\n\n${SAFETY_LINE}\n\nShop Sapiver Press: ${CTA}\n\n${hashtags(10)}\n`;
 }
@@ -162,8 +205,10 @@ const carouselImages = chosen.slice(1, 6);
 
 const pinDir = path.join(OUT, "pinterest_pin");
 const fbDir = path.join(OUT, "facebook_carousel");
+const videoDir = path.join(OUT, "pinterest_video");
 const pinOut = copyList([pinImage], pinDir)[0];
 const fbOut = copyList(carouselImages, fbDir);
+const videoOut = buildVideo(carouselImages, videoDir);
 const fbCaptionFiles = carouselImages.map((_, i) => `facebook_carousel/${String(i + 1).padStart(2, "0")}_caption.txt`);
 
 await fs.writeFile(path.join(pinDir, "title.txt"), pinTitle(cleanTitle(pinImage)) + "\n", "utf8");
@@ -171,10 +216,13 @@ await fs.writeFile(path.join(pinDir, "caption.txt"), caption("pin", cleanTitle(p
 await fs.writeFile(path.join(pinDir, "first-comment.txt"), pinterestFirstComment(), "utf8");
 await fs.writeFile(path.join(fbDir, "post-caption.txt"), facebookPostCaption(), "utf8");
 await fs.writeFile(path.join(fbDir, "first-comment.txt"), facebookFirstComment(), "utf8");
+await fs.writeFile(path.join(videoDir, "title.txt"), videoTitle() + "\n", "utf8");
+await fs.writeFile(path.join(videoDir, "caption.txt"), caption("video", "Pinterest video"), "utf8");
+await fs.writeFile(path.join(videoDir, "first-comment.txt"), pinterestFirstComment(), "utf8");
 for (let i = 0; i < carouselImages.length; i++) await fs.writeFile(path.join(fbDir, `${String(i + 1).padStart(2, "0")}_caption.txt`), caption("fb", cleanTitle(carouselImages[i])), "utf8");
 
 const manifest = {
-  type: "ftpe_daily_pin_and_fb_carousel_v2",
+  type: "ftpe_daily_pin_fb_carousel_and_pinterest_video_v1",
   date: DATE,
   cta: CTA,
   pinterest: {
@@ -182,6 +230,14 @@ const manifest = {
     title: "pinterest_pin/title.txt",
     caption: "pinterest_pin/caption.txt",
     first_comment: "pinterest_pin/first-comment.txt",
+  },
+  pinterest_video: {
+    video: videoOut.video,
+    source_images: videoOut.images,
+    title: "pinterest_video/title.txt",
+    caption: "pinterest_video/caption.txt",
+    first_comment: "pinterest_video/first-comment.txt",
+    seconds_per_image: VIDEO_SECONDS_PER_IMAGE,
   },
   facebook: {
     images: fbOut,
@@ -194,4 +250,4 @@ await fs.writeFile(path.join(OUT, "manifest.json"), JSON.stringify(manifest, nul
 if (exists(LATEST)) await fs.rm(LATEST, { recursive: true, force: true });
 await ensureDir(path.dirname(LATEST));
 await fs.cp(OUT, LATEST, { recursive: true });
-console.log(`Built daily FTPE pin + Facebook carousel for ${DATE}`);
+console.log(`Built daily FTPE pin + Facebook carousel + Pinterest video for ${DATE}`);
