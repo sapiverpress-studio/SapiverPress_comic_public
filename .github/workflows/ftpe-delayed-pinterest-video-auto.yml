@@ -1,0 +1,40 @@
+name: FTPE Delayed Pinterest Video Auto
+
+on:
+  schedule:
+    - cron: "15 10 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  delayed-pinterest-video:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set run options
+        shell: bash
+        run: |
+          echo "DATE_OVERRIDE=$(TZ=Europe/London date +%F)" >> "$GITHUB_ENV"
+          echo "FTPE_PINTEREST_VIDEO_POST_MODE=live" >> "$GITHUB_ENV"
+
+      - name: Post delayed Pinterest video
+        run: node scripts/post-ftpe-pinterest-video.mjs
+        env:
+          PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
+          PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
+
+      - name: Commit delayed Pinterest video result
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add social/ftpe
+          if git diff --cached --quiet; then
+            echo "No delayed Pinterest video result changes to commit."
+          else
+            git commit -m "Post delayed FTPE Pinterest video for ${DATE_OVERRIDE}"
+            git push
+          fi
