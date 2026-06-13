@@ -28,6 +28,13 @@ async function readOptional(rel, fallback = "") {
 }
 function b64(file) { return fssync.readFileSync(file).toString("base64"); }
 function pinterestBoardId() { return (process.env.PINTEREST_BOARD_ID || "").trim() || DEFAULT_PINTEREST_BOARD_ID; }
+function pinterestDescription(text) {
+  return String(text || "")
+    .replace(/\s+/g, " ")
+    .replace(/[\u0000-\u001f\u007f]/g, "")
+    .trim()
+    .slice(0, 480);
+}
 async function jsonFetch(url, options) {
   const res = await fetch(url, options);
   const text = await res.text();
@@ -43,7 +50,7 @@ async function postPinterest(manifest) {
   if (!token) throw new Error("Missing PINTEREST_ACCESS_TOKEN");
   const imagePath = absRoot(manifest.pinterest.image);
   const title = (await readOptional(manifest.pinterest.title, "First-Time Sudoku Publisher Edition")).trim().slice(0, 100);
-  const description = await read(manifest.pinterest.caption);
+  const description = pinterestDescription(await read(manifest.pinterest.caption));
   return jsonFetch("https://api.pinterest.com/v5/pins", {
     method: "POST",
     headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
@@ -80,7 +87,13 @@ async function postFacebookFirstComment(token, postId, relComment) {
 async function postFacebookCarousel(manifest) {
   const token = process.env.FACEBOOK_PAGE_ACCESS_TOKEN;
   const pageId = process.env.FACEBOOK_PAGE_ID;
-  if (!token || !pageId) throw new Error("Missing FACEBOOK_PAGE_ACCESS_TOKEN or FACEBOOK_PAGE_ID");
+  if (!token || !pageId) {
+    return {
+      skipped: true,
+      reason: "Missing FACEBOOK_PAGE_ACCESS_TOKEN or FACEBOOK_PAGE_ID",
+      note: "Pinterest side can still run. Add Facebook secrets to enable carousel posting.",
+    };
+  }
   const uploaded = [];
   const captions = manifest.facebook.image_captions || [];
   for (let i = 0; i < manifest.facebook.images.length; i++) uploaded.push(await uploadFacebookPhoto(pageId, token, manifest.facebook.images[i], captions[i]));
@@ -104,7 +117,7 @@ async function pinterestVideoRecord(manifest) {
     video: manifest.pinterest_video.video,
     source_images: manifest.pinterest_video.source_images || [],
     title: await readOptional(manifest.pinterest_video.title, "KDP Sudoku Starter Pack video"),
-    caption: await readOptional(manifest.pinterest_video.caption, ""),
+    caption: pinterestDescription(await readOptional(manifest.pinterest_video.caption, "")),
     first_comment: await readOptional(manifest.pinterest_video.first_comment, ""),
   };
 }
@@ -116,7 +129,7 @@ if (MODE !== "live") {
     dry_run: true,
     image: manifest.pinterest.image,
     title: await readOptional(manifest.pinterest.title, "First-Time Sudoku Publisher Edition"),
-    caption: await read(manifest.pinterest.caption),
+    caption: pinterestDescription(await read(manifest.pinterest.caption)),
     first_comment: await readOptional(manifest.pinterest.first_comment, ""),
   };
   out.pinterest_video = await pinterestVideoRecord(manifest);
