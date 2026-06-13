@@ -28,6 +28,8 @@ async function readOptional(rel, fallback = "") {
 }
 function b64(file) { return fssync.readFileSync(file).toString("base64"); }
 function pinterestBoardId() { return (process.env.PINTEREST_BOARD_ID || "").trim() || DEFAULT_PINTEREST_BOARD_ID; }
+function facebookToken() { return (process.env.FACEBOOK_PAGE_ACCESS_TOKEN || process.env.FB_PAGE_TOKEN || "").trim(); }
+function facebookPageId() { return (process.env.FACEBOOK_PAGE_ID || process.env.FB_PAGE_ID || "").trim(); }
 function pinterestDescription(text) {
   return String(text || "")
     .replace(/\s+/g, " ")
@@ -85,13 +87,14 @@ async function postFacebookFirstComment(token, postId, relComment) {
 }
 
 async function postFacebookCarousel(manifest) {
-  const token = process.env.FACEBOOK_PAGE_ACCESS_TOKEN;
-  const pageId = process.env.FACEBOOK_PAGE_ID;
+  const token = facebookToken();
+  const pageId = facebookPageId();
   if (!token || !pageId) {
     return {
       skipped: true,
-      reason: "Missing FACEBOOK_PAGE_ACCESS_TOKEN or FACEBOOK_PAGE_ID",
-      note: "Pinterest side can still run. Add Facebook secrets to enable carousel posting.",
+      reason: "Missing Facebook token or page ID",
+      expected_secret_names: ["FB_PAGE_TOKEN", "FB_PAGE_ID", "FACEBOOK_PAGE_ACCESS_TOKEN", "FACEBOOK_PAGE_ID"],
+      note: "Pinterest side can still run. Add/pass Facebook secrets to enable carousel posting.",
     };
   }
   const uploaded = [];
