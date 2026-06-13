@@ -29,6 +29,13 @@ async function readOptional(rel, fallback = "") {
 }
 
 function sleep(ms) { return new Promise((resolve) => setTimeout(resolve, ms)); }
+function pinterestDescription(text) {
+  return String(text || "")
+    .replace(/\s+/g, " ")
+    .replace(/[\u0000-\u001f\u007f]/g, "")
+    .trim()
+    .slice(0, 480);
+}
 
 async function jsonFetch(url, options = {}) {
   const res = await fetch(url, options);
@@ -81,7 +88,7 @@ async function uploadVideoToPinterest({ token, boardId, videoPath, title, descri
     body: JSON.stringify({
       board_id: boardId,
       title: title.trim().slice(0, 100),
-      description,
+      description: pinterestDescription(description),
       link,
       media_source: {
         source_type: "video_id",
@@ -100,7 +107,7 @@ const videoPath = absRoot(manifest.pinterest_video.video);
 if (!fssync.existsSync(videoPath)) throw new Error(`Pinterest video file not found: ${videoPath}`);
 
 const title = await readOptional(manifest.pinterest_video.title, "KDP Sudoku Starter Pack video");
-const caption = await readOptional(manifest.pinterest_video.caption, "");
+const caption = pinterestDescription(await readOptional(manifest.pinterest_video.caption, ""));
 const firstComment = await readOptional(manifest.pinterest_video.first_comment, "");
 const boardId = pinterestBoardId();
 
