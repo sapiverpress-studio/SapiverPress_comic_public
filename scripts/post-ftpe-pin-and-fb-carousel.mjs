@@ -86,6 +86,24 @@ async function postFacebookFirstComment(token, postId, relComment) {
   return jsonFetch(`https://graph.facebook.com/v20.0/${postId}/comments`, { method: "POST", body });
 }
 
+async function resolveFacebookPageAccessToken(token, pageId) {
+  try {
+    const url = new URL("https://graph.facebook.com/v20.0/me/accounts");
+    url.searchParams.set("fields", "id,name,access_token");
+    url.searchParams.set("access_token", token);
+    const accounts = await jsonFetch(url.toString());
+    const page = (accounts.data || []).find((item) => String(item.id) === String(pageId));
+    if (page?.access_token) {
+      console.log(`Resolved Facebook page access token for page ${pageId}.`);
+      return { token: page.access_token, resolved: true, page_name: page.name || null };
+    }
+    console.log(`Could not find page ${pageId} in /me/accounts; using supplied Facebook token.`);
+  } catch (err) {
+    console.log(`Could not resolve Facebook page token from /me/accounts; using supplied token. ${String(err.message || err).slice(0, 300)}`);
+  }
+  return { token, resolved: false, page_name: null };
+}
+
 async function postFacebookCarousel(manifest) {
   const token = facebookToken();
   const pageId = facebookPageId();
@@ -97,16 +115,18 @@ async function postFacebookCarousel(manifest) {
       note: "Pinterest side can still run. Add/pass Facebook secrets to enable carousel posting.",
     };
   }
+  const resolvedPage = await resolveFacebookPageAccessToken(token, pageId);
+  const pageToken = resolvedPage.token;
   const uploaded = [];
   const captions = manifest.facebook.image_captions || [];
-  for (let i = 0; i < manifest.facebook.images.length; i++) uploaded.push(await uploadFacebookPhoto(pageId, token, manifest.facebook.images[i], captions[i]));
+  for (let i = 0; i < manifest.facebook.images.length; i++) uploaded.push(await uploadFacebookPhoto(pageId, pageToken, manifest.facebook.images[i], captions[i]));
   const body = new URLSearchParams();
   body.set("message", await read(manifest.facebook.post_caption));
-  body.set("access_token", token);
+  body.set("access_token", pageToken);
   uploaded.forEach((photo, i) => body.append(`attached_media[${i}]`, JSON.stringify({ media_fbid: photo.id })));
   const post = await jsonFetch(`https://graph.facebook.com/v20.0/${pageId}/feed`, { method: "POST", body });
-  const firstComment = await postFacebookFirstComment(token, post.id, manifest.facebook.first_comment);
-  return { ...post, first_comment: firstComment };
+  const firstComment = await postFacebookFirstComment(pageToken, post.id, manifest.facebook.first_comment);
+  return { ...post, first_comment: firstComment, used_resolved_page_token: resolvedPage.resolved, page_name: resolvedPage.page_name };
 }
 
 async function pinterestVideoRecord(manifest) {
@@ -144,9 +164,9 @@ if (MODE !== "live") {
     first_comment: await readOptional(manifest.facebook.first_comment, ""),
   };
 } else {
+  out.facebook = await postFacebookCarousel(manifest);
   out.pinterest = await postPinterest(manifest);
   out.pinterest_video = await pinterestVideoRecord(manifest);
-  out.facebook = await postFacebookCarousel(manifest);
 }
 const recordPath = path.join(ROOT, "social", "ftpe", DATE, "post-result.json");
 await fs.writeFile(recordPath, JSON.stringify(out, null, 2) + "\n", "utf8");
