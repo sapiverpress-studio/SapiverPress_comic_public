@@ -1,0 +1,21 @@
+{
+  "date": "2026-06-13",
+  "mode": "dry_run",
+  "type": "ftpe_delayed_pinterest_video_post_v1",
+  "cta": "https://sapiverpress.etsy.com",
+  "board_id": "1038924276479876865",
+  "board_name": "Sapiver Press Comic",
+  "video": "social/ftpe/2026-06-13/pinterest_video/pinterest_video.mp4",
+  "source_images": [
+    "social/ftpe/2026-06-13/pinterest_video/01_04_guided_support_for_first_time_publishers.png",
+    "social/ftpe/2026-06-13/pinterest_video/02_05_why_this_edition_is_different.png",
+    "social/ftpe/2026-06-13/pinterest_video/03_01_main_hero_first_time_sudoku_publisher_edition.png",
+    "social/ftpe/2026-06-13/pinterest_video/04_02_whats_included.png",
+    "social/ftpe/2026-06-13/pinterest_video/05_03_how_your_download_works.png"
+  ],
+  "title": "KDP Sudoku Starter Pack | 5-image Pinterest video\n",
+  "caption": "A five-image Pinterest video version of today's FTPE carousel. First-Time Sudoku Publisher Edition from Sapiver Press is a £15 beginner-friendly Etsy digital download for people learning how to attempt their first Amazon KDP Sudoku paperback upload.\n\nCovers KDP upload files, Sudoku paperback publishing, KDP interior PDF, full-spread cover PDF, metadata, KDP Previewer checks and beginner publishing admin.\n\nNo guaranteed KDP approval, no guaranteed sales, no guaranteed income, and no Amazon affiliation.\n\nShop Sapiver Press: https://sapiverpress.etsy.com\n\n#AmazonKDP #KDPPublishing #SelfPublishing #PuzzleBooks #Sudoku #SudokuBooks #PrintableBusiness #EtsyDigitalDownload #KDPBeginners #BookPublishing #PaperbackPublishing #PuzzlePublishing\n",
+  "first_comment": "More beginner publishing tools from Sapiver Press: https://sapiverpress.etsy.com\n\nUseful search terms: KDP beginner guide, Amazon KDP, Sudoku paperback publishing, KDP upload files, KDP interior PDF, KDP cover PDF, full spread cover, KDP metadata, KDP Previewer, AI content declaration, Etsy digital download.\n\n#AmazonKDP #KDPPublishing #SelfPublishing #PuzzleBooks #Sudoku #SudokuBooks #PrintableBusiness #EtsyDigitalDownload #KDPBeginners #BookPublishing\n",
+  "dry_run": true,
+  "note": "Prepared delayed Pinterest video post. Set FTPE_PINTEREST_VIDEO_POST_MODE=live to upload."
+}
