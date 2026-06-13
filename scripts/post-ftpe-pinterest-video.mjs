@@ -9,6 +9,8 @@ const OUT = path.join(ROOT, "social", "ftpe", DATE);
 const MANIFEST = path.join(OUT, "manifest.json");
 const RESULT = path.join(OUT, "pinterest_video", "post-result.json");
 const CTA = "https://sapiverpress.etsy.com";
+const DEFAULT_PINTEREST_BOARD_ID = "1038924276479876865";
+const DEFAULT_PINTEREST_BOARD_NAME = "Sapiver Press Comic";
 
 function absRoot(rel) {
   return path.isAbsolute(rel) ? rel : path.join(ROOT, rel);
@@ -35,6 +37,10 @@ async function jsonFetch(url, options = {}) {
   try { data = text ? JSON.parse(text) : {}; } catch { data = { raw: text }; }
   if (!res.ok) throw new Error(`${res.status} ${res.statusText}: ${JSON.stringify(data).slice(0, 1600)}`);
   return data;
+}
+
+function pinterestBoardId() {
+  return (process.env.PINTEREST_BOARD_ID || "").trim() || DEFAULT_PINTEREST_BOARD_ID;
 }
 
 async function uploadVideoToPinterest({ token, boardId, videoPath, title, description, link }) {
@@ -96,12 +102,15 @@ if (!fssync.existsSync(videoPath)) throw new Error(`Pinterest video file not fou
 const title = await readOptional(manifest.pinterest_video.title, "KDP Sudoku Starter Pack video");
 const caption = await readOptional(manifest.pinterest_video.caption, "");
 const firstComment = await readOptional(manifest.pinterest_video.first_comment, "");
+const boardId = pinterestBoardId();
 
 const out = {
   date: DATE,
   mode: MODE,
   type: "ftpe_delayed_pinterest_video_post_v1",
   cta: manifest.cta || CTA,
+  board_id: boardId,
+  board_name: DEFAULT_PINTEREST_BOARD_NAME,
   video: manifest.pinterest_video.video,
   source_images: manifest.pinterest_video.source_images || [],
   title,
@@ -114,8 +123,7 @@ if (MODE !== "live") {
   out.note = "Prepared delayed Pinterest video post. Set FTPE_PINTEREST_VIDEO_POST_MODE=live to upload.";
 } else {
   const token = process.env.PINTEREST_ACCESS_TOKEN;
-  const boardId = process.env.PINTEREST_BOARD_ID;
-  if (!token || !boardId) throw new Error("Missing PINTEREST_ACCESS_TOKEN or PINTEREST_BOARD_ID");
+  if (!token) throw new Error("Missing PINTEREST_ACCESS_TOKEN");
   out.dry_run = false;
   out.pinterest = await uploadVideoToPinterest({
     token,
@@ -129,4 +137,4 @@ if (MODE !== "live") {
 
 await fs.mkdir(path.dirname(RESULT), { recursive: true });
 await fs.writeFile(RESULT, JSON.stringify(out, null, 2) + "\n", "utf8");
-console.log(`${MODE === "live" ? "Posted" : "Prepared"} delayed FTPE Pinterest video for ${DATE}`);
+console.log(`${MODE === "live" ? "Posted" : "Prepared"} delayed FTPE Pinterest video for ${DATE} to ${DEFAULT_PINTEREST_BOARD_NAME}`);
