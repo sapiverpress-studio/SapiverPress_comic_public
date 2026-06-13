@@ -90,6 +90,20 @@ async function postFacebookCarousel(manifest) {
   return { ...post, first_comment: firstComment };
 }
 
+async function pinterestVideoRecord(manifest) {
+  if (!manifest.pinterest_video) return null;
+  return {
+    prepared: true,
+    posted: false,
+    note: "Pinterest-ready MP4 generated from the same five images used in the Facebook carousel. Automatic video-pin upload is not enabled in this workflow yet.",
+    video: manifest.pinterest_video.video,
+    source_images: manifest.pinterest_video.source_images || [],
+    title: await readOptional(manifest.pinterest_video.title, "KDP Sudoku Starter Pack video"),
+    caption: await readOptional(manifest.pinterest_video.caption, ""),
+    first_comment: await readOptional(manifest.pinterest_video.first_comment, ""),
+  };
+}
+
 const manifest = JSON.parse(await fs.readFile(MANIFEST, "utf8"));
 const out = { date: DATE, mode: MODE, type: manifest.type, cta: manifest.cta };
 if (MODE !== "live") {
@@ -100,6 +114,7 @@ if (MODE !== "live") {
     caption: await read(manifest.pinterest.caption),
     first_comment: await readOptional(manifest.pinterest.first_comment, ""),
   };
+  out.pinterest_video = await pinterestVideoRecord(manifest);
   out.facebook = {
     dry_run: true,
     images: manifest.facebook.images,
@@ -109,8 +124,9 @@ if (MODE !== "live") {
   };
 } else {
   out.pinterest = await postPinterest(manifest);
+  out.pinterest_video = await pinterestVideoRecord(manifest);
   out.facebook = await postFacebookCarousel(manifest);
 }
 const recordPath = path.join(ROOT, "social", "ftpe", DATE, "post-result.json");
 await fs.writeFile(recordPath, JSON.stringify(out, null, 2) + "\n", "utf8");
-console.log(`${MODE === "live" ? "Posted" : "Prepared"} FTPE Pinterest pin and Facebook carousel for ${DATE}`);
+console.log(`${MODE === "live" ? "Posted" : "Prepared"} FTPE Pinterest pin, Pinterest video asset and Facebook carousel for ${DATE}`);
