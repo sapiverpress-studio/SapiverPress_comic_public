@@ -133,6 +133,28 @@ jobs:
       - name: Build one Pinterest pin, one Facebook carousel, and one Pinterest video
         run: node scripts/build-ftpe-pin-and-fb-carousel.mjs
 
+      - name: Upload generated FTPE video artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ftpe-social-video-${{ env.DATE_OVERRIDE }}
+          path: |
+            social/ftpe/${{ env.DATE_OVERRIDE }}/pinterest_video/pinterest_video.mp4
+            social/ftpe/${{ env.DATE_OVERRIDE }}/manifest.json
+          if-no-files-found: warn
+
+      - name: Commit generated FTPE video and social assets before posting
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add social/ftpe
+          if git diff --cached --quiet; then
+            echo "No pre-post FTPE social assets to commit."
+          else
+            git commit -m "Save FTPE social video and assets for ${DATE_OVERRIDE}"
+            git push
+          fi
+
       - name: Post or prepare social outputs
         run: node scripts/post-ftpe-pin-and-fb-carousel.mjs
         env:
@@ -142,6 +164,7 @@ jobs:
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
 
       - name: Commit generated FTPE social records
+        if: always()
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
