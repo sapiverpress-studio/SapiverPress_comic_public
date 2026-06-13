@@ -1,57 +1,16 @@
 {
   "date": "2026-06-13",
-  "mode": "live",
+  "mode": "dry_run",
   "type": "ftpe_daily_pin_fb_carousel_and_pinterest_video_v1",
   "cta": "https://sapiverpress.etsy.com",
   "pinterest_board_id": "1038924276479876865",
   "pinterest_board_name": "Sapiver Press Comic",
   "pinterest": {
-    "title": "KDP Sudoku Paperback Starter Pack | how your download works",
-    "description": "First-Time Sudoku Publisher Edition from Sapiver Press: a £15 beginner-friendly Etsy digital download for people learning how to attempt their first Amazon KDP Sudoku paperback upload. Use it to understand the first-upload workflow: KDP-ready interior PDF, full-spread cover PDF, KDP metadata worksheet, KDP Previewer checks, ISBN/admin prompts, AI content declaration guidance and beginner publishing checklist. No guaranteed KDP approval, no guaranteed sales, no guaranteed inco",
-    "pin_metrics": null,
-    "parent_pin_id": null,
-    "is_owner": true,
-    "created_at": "2026-06-13T11:54:10",
-    "id": "1038924207808507612",
-    "board_section_id": null,
-    "dominant_color": null,
-    "product_tags": [],
-    "link": "https://sapiverpress.etsy.com/",
-    "alt_text": null,
-    "is_product": false,
-    "board_id": "1038924276479876865",
-    "board_owner": {
-      "username": "sapiver"
-    },
-    "has_been_promoted": false,
-    "media": {
-      "media_type": "image",
-      "images": {
-        "150x150": {
-          "width": 150,
-          "height": 150,
-          "url": "https://i.pinimg.com/150x150/34/ef/f1/34eff11e3ae00c795bff5e6f0a6bfa69.jpg"
-        },
-        "400x300": {
-          "width": 400,
-          "height": 300,
-          "url": "https://i.pinimg.com/400x300/34/ef/f1/34eff11e3ae00c795bff5e6f0a6bfa69.jpg"
-        },
-        "600x": {
-          "width": 564,
-          "height": 451,
-          "url": "https://i.pinimg.com/564x/34/ef/f1/34eff11e3ae00c795bff5e6f0a6bfa69.jpg"
-        },
-        "1200x": {
-          "width": 1200,
-          "height": 960,
-          "url": "https://i.pinimg.com/1200x/34/ef/f1/34eff11e3ae00c795bff5e6f0a6bfa69.jpg"
-        }
-      }
-    },
-    "is_removable": false,
-    "is_standard": true,
-    "creative_type": "REGULAR"
+    "dry_run": true,
+    "image": "social/ftpe/2026-06-13/pinterest_pin/01_03_how_your_download_works.png",
+    "title": "KDP Sudoku Paperback Starter Pack | how your download works\n",
+    "caption": "First-Time Sudoku Publisher Edition from Sapiver Press: a £15 beginner-friendly Etsy digital download for people learning how to attempt their first Amazon KDP Sudoku paperback upload. Use it to understand the first-upload workflow: KDP-ready interior PDF, full-spread cover PDF, KDP metadata worksheet, KDP Previewer checks, ISBN/admin prompts, AI content declaration guidance and beginner publishing checklist. No guaranteed KDP approval, no guaranteed sales, no guaranteed inco",
+    "first_comment": "More beginner publishing tools from Sapiver Press: https://sapiverpress.etsy.com\n\nUseful search terms: KDP beginner guide, Amazon KDP, Sudoku paperback publishing, KDP upload files, KDP interior PDF, KDP cover PDF, full spread cover, KDP metadata, KDP Previewer, AI content declaration, Etsy digital download.\n\n#AmazonKDP #KDPPublishing #SelfPublishing #PuzzleBooks #Sudoku #SudokuBooks #PrintableBusiness #EtsyDigitalDownload #KDPBeginners #BookPublishing\n"
   },
   "pinterest_video": {
     "prepared": true,
@@ -72,8 +31,22 @@
     "first_comment": "More beginner publishing tools from Sapiver Press: https://sapiverpress.etsy.com\n\nUseful search terms: KDP beginner guide, Amazon KDP, Sudoku paperback publishing, KDP upload files, KDP interior PDF, KDP cover PDF, full spread cover, KDP metadata, KDP Previewer, AI content declaration, Etsy digital download.\n\n#AmazonKDP #KDPPublishing #SelfPublishing #PuzzleBooks #Sudoku #SudokuBooks #PrintableBusiness #EtsyDigitalDownload #KDPBeginners #BookPublishing\n"
   },
   "facebook": {
-    "skipped": true,
-    "reason": "Missing FACEBOOK_PAGE_ACCESS_TOKEN or FACEBOOK_PAGE_ID",
-    "note": "Pinterest side can still run. Add Facebook secrets to enable carousel posting."
+    "dry_run": true,
+    "images": [
+      "social/ftpe/2026-06-13/facebook_carousel/01_04_guided_support_for_first_time_publishers.png",
+      "social/ftpe/2026-06-13/facebook_carousel/02_05_why_this_edition_is_different.png",
+      "social/ftpe/2026-06-13/facebook_carousel/03_01_main_hero_first_time_sudoku_publisher_edition.png",
+      "social/ftpe/2026-06-13/facebook_carousel/04_02_whats_included.png",
+      "social/ftpe/2026-06-13/facebook_carousel/05_03_how_your_download_works.png"
+    ],
+    "image_captions": [
+      "guided support for first time publishers\n\nPart of the First-Time Sudoku Publisher Edition from Sapiver Press campaign: a £15 beginner-friendly Etsy digital download for people learning how to attempt their first Amazon KDP Sudoku paperback upload. This image connects to the practical first-upload workflow: KDP upload files, book interior PDF, full-spread cover PDF, KDP metadata, KDP Previewer and beginner publishing admin.\n\nNo guaranteed KDP approval, no guaranteed sales, no guaranteed income, and no Amazon affiliation.\n\nShop Sapiver Press: https://sapiverpress.etsy.com\n\n#AmazonKDP #KDPPublishing #SelfPublishing #PuzzleBooks #Sudoku #SudokuBooks #PrintableBusiness #EtsyDigitalDownload #KDPBeginners #BookPublishing\n",
+      "why this edition is different\n\nPart of the First-Time Sudoku Publisher Edition from Sapiver Press campaign: a £15 beginner-friendly Etsy digital download for people learning how to attempt their first Amazon KDP Sudoku paperback upload. This image connects to the practical first-upload workflow: KDP upload files, book interior PDF, full-spread cover PDF, KDP metadata, KDP Previewer and beginner publishing admin.\n\nNo guaranteed KDP approval, no guaranteed sales, no guaranteed income, and no Amazon affiliation.\n\nShop Sapiver Press: https://sapiverpress.etsy.com\n\n#AmazonKDP #KDPPublishing #SelfPublishing #PuzzleBooks #Sudoku #SudokuBooks #PrintableBusiness #EtsyDigitalDownload #KDPBeginners #BookPublishing\n",
+      "main hero first time sudoku publisher edition\n\nPart of the First-Time Sudoku Publisher Edition from Sapiver Press campaign: a £15 beginner-friendly Etsy digital download for people learning how to attempt their first Amazon KDP Sudoku paperback upload. This image connects to the practical first-upload workflow: KDP upload files, book interior PDF, full-spread cover PDF, KDP metadata, KDP Previewer and beginner publishing admin.\n\nNo guaranteed KDP approval, no guaranteed sales, no guaranteed income, and no Amazon affiliation.\n\nShop Sapiver Press: https://sapiverpress.etsy.com\n\n#AmazonKDP #KDPPublishing #SelfPublishing #PuzzleBooks #Sudoku #SudokuBooks #PrintableBusiness #EtsyDigitalDownload #KDPBeginners #BookPublishing\n",
+      "whats included\n\nPart of the First-Time Sudoku Publisher Edition from Sapiver Press campaign: a £15 beginner-friendly Etsy digital download for people learning how to attempt their first Amazon KDP Sudoku paperback upload. This image connects to the practical first-upload workflow: KDP upload files, book interior PDF, full-spread cover PDF, KDP metadata, KDP Previewer and beginner publishing admin.\n\nNo guaranteed KDP approval, no guaranteed sales, no guaranteed income, and no Amazon affiliation.\n\nShop Sapiver Press: https://sapiverpress.etsy.com\n\n#AmazonKDP #KDPPublishing #SelfPublishing #PuzzleBooks #Sudoku #SudokuBooks #PrintableBusiness #EtsyDigitalDownload #KDPBeginners #BookPublishing\n",
+      "how your download works\n\nPart of the First-Time Sudoku Publisher Edition from Sapiver Press campaign: a £15 beginner-friendly Etsy digital download for people learning how to attempt their first Amazon KDP Sudoku paperback upload. This image connects to the practical first-upload workflow: KDP upload files, book interior PDF, full-spread cover PDF, KDP metadata, KDP Previewer and beginner publishing admin.\n\nNo guaranteed KDP approval, no guaranteed sales, no guaranteed income, and no Amazon affiliation.\n\nShop Sapiver Press: https://sapiverpress.etsy.com\n\n#AmazonKDP #KDPPublishing #SelfPublishing #PuzzleBooks #Sudoku #SudokuBooks #PrintableBusiness #EtsyDigitalDownload #KDPBeginners #BookPublishing\n"
+    ],
+    "caption": "Thinking about trying your first KDP Sudoku paperback?\n\nThis five-image carousel shows practical angles from First-Time Sudoku Publisher Edition from Sapiver Press: a £15 beginner-friendly Etsy digital download for people learning how to attempt their first Amazon KDP Sudoku paperback upload. It is built around real KDP upload files and beginner guidance: KDP-ready interior PDF, full-spread cover PDF, KDP metadata worksheet, KDP Previewer checks, ISBN/admin prompts, AI content declaration guidance and beginner publishing checklist.\n\nNo guaranteed KDP approval, no guaranteed sales, no guaranteed income, and no Amazon affiliation. It is a guided starter pack for learning the process, not a promise of passive income or Amazon/KDP affiliation.\n\nStart here: https://sapiverpress.etsy.com\n\nSearch terms: KDP · Amazon KDP · Kindle Direct Publishing · paperback publishing · puzzle book publishing · Sudoku book · Sudoku paperback · KDP starter pack · KDP beginner guide · publish a puzzle book · printable puzzle book · low content books · puzzle book creator · KDP upload files · KDP cover PDF · KDP interior PDF · commercial use Sudoku · Sudoku publishing · beginner publishing · Etsy digital download · printable business tools · puzzle seller resources · self publishing tools · Amazon paperback · KDP Previewer · book interior · full spread cover · book cover template · ISBN · KDP metadata · AI content declaration · Sapiver Press\n\n#AmazonKDP #KDPPublishing #SelfPublishing #PuzzleBooks #Sudoku #SudokuBooks #PrintableBusiness #EtsyDigitalDownload #KDPBeginners #BookPublishing #PaperbackPublishing #PuzzlePublishing #KDPTools #SapiverPress\n",
+    "first_comment": "Direct link to the Sapiver Press shop: https://sapiverpress.etsy.com\n\nSearch-friendly summary: KDP starter pack, Amazon KDP beginner guide, Kindle Direct Publishing, Sudoku paperback publishing, puzzle book publishing, KDP upload files, KDP interior PDF, KDP cover PDF, KDP metadata, KDP Previewer, book cover template, ISBN, AI content declaration, Etsy digital download.\n\n#AmazonKDP #KDPPublishing #SelfPublishing #PuzzleBooks #Sudoku #SudokuBooks #PrintableBusiness #EtsyDigitalDownload #KDPBeginners #BookPublishing #PaperbackPublishing #PuzzlePublishing #KDPTools #SapiverPress\n"
   }
 }
