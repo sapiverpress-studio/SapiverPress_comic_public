@@ -14,9 +14,48 @@ const ASSET_ROOTS = [
 ];
 const CTA = "https://sapiverpress.etsy.com";
 
+const DISCOVERY_KEYWORDS = [
+  "KDP",
+  "Amazon KDP",
+  "Kindle Direct Publishing",
+  "paperback publishing",
+  "Sudoku book",
+  "Sudoku paperback",
+  "KDP starter pack",
+  "KDP beginner guide",
+  "publish a puzzle book",
+  "KDP upload files",
+  "KDP cover PDF",
+  "KDP interior PDF",
+  "KDP metadata",
+  "KDP Previewer",
+  "AI content declaration",
+  "Etsy digital download",
+  "Sapiver Press",
+];
+
+const HASHTAGS = [
+  "#AmazonKDP",
+  "#KDPPublishing",
+  "#SelfPublishing",
+  "#PuzzleBooks",
+  "#Sudoku",
+  "#SudokuBooks",
+  "#PrintableBusiness",
+  "#EtsyDigitalDownload",
+  "#KDPBeginners",
+  "#BookPublishing",
+  "#PaperbackPublishing",
+  "#PuzzlePublishing",
+  "#KDPTools",
+  "#SapiverPress",
+];
+
 function exists(p) { return fssync.existsSync(p); }
 async function ensureDir(p) { await fs.mkdir(p, { recursive: true }); }
 function dayIndex() { return Math.floor(Date.parse(`${DATE}T00:00:00Z`) / 86400000); }
+function hashtags(limit = HASHTAGS.length) { return HASHTAGS.slice(0, limit).join(" "); }
+function keywordLine(limit = DISCOVERY_KEYWORDS.length) { return DISCOVERY_KEYWORDS.slice(0, limit).join(" · "); }
 
 function unzipAssets() {
   for (const root of ASSET_ROOTS) {
@@ -65,9 +104,29 @@ function copyList(images, dir) {
   });
 }
 
+function pinTitle(title) {
+  const topic = title ? ` | ${title}` : "";
+  return `KDP Sudoku Starter Pack${topic}`.slice(0, 100);
+}
+
 function caption(kind, title) {
-  if (kind === "pin") return `First-Time Sudoku Publisher Edition from Sapiver Press. A practical starter workflow for your first KDP Sudoku paperback upload. Start with the Easy files first and build confidence before publishing.\n\nFind it here: ${CTA}`;
-  return `${title}\n\nFirst-Time Sudoku Publisher Edition: beginner-friendly guides, worksheets, upload files and a clear first-upload workflow.\n\nFind it here: ${CTA}`;
+  const clean = title || "First-Time Sudoku Publisher Edition";
+  if (kind === "pin") {
+    return `First-Time Sudoku Publisher Edition from Sapiver Press: a £15 beginner-friendly KDP Sudoku paperback starter pack for people learning the first upload workflow. Includes practical guidance around KDP upload files, an interior PDF, a full-spread cover PDF, KDP metadata, KDP Previewer checks and beginner publishing admin.\n\nNo guaranteed KDP approval, no guaranteed sales, and no Amazon affiliation — just a clearer way to attempt your first Sudoku paperback.\n\nShop Sapiver Press: ${CTA}\n\nKeywords: ${keywordLine(12)}\n\n${hashtags(10)}\n`;
+  }
+  return `${clean}\n\nFirst-Time Sudoku Publisher Edition helps beginners approach a first KDP Sudoku paperback upload with less guesswork. Use the guide, worksheet and KDP-ready file set to understand the book interior PDF, full-spread cover PDF, metadata, upload checks and KDP Previewer step.\n\nShop Sapiver Press: ${CTA}\n\n${hashtags(8)}\n`;
+}
+
+function pinterestFirstComment() {
+  return `More KDP beginner tools from Sapiver Press: ${CTA}\n\nUseful search terms: KDP beginner guide, Sudoku book publishing, KDP interior PDF, KDP cover PDF, paperback publishing, puzzle book publishing, Etsy digital download.\n\n${hashtags(8)}\n`;
+}
+
+function facebookPostCaption() {
+  return `Thinking about trying your first KDP Sudoku paperback?\n\nThis five-image carousel shows practical angles from the First-Time Sudoku Publisher Edition: a £15 starter pack for beginners who want a clearer route through KDP upload files, book interior PDFs, full-spread cover PDFs, metadata, KDP Previewer checks, ISBN/admin choices and the AI content declaration step.\n\nIt is a practical publishing workflow resource, not a promise of KDP approval, sales, passive income or Amazon affiliation.\n\nStart here: ${CTA}\n\nKeywords: ${keywordLine()}\n\n${hashtags()}\n`;
+}
+
+function facebookFirstComment() {
+  return `Direct link to the Sapiver Press shop: ${CTA}\n\nSearch-friendly summary: KDP starter pack, Amazon KDP beginner guide, Sudoku paperback publishing, KDP upload files, KDP interior PDF, KDP cover PDF, KDP metadata, KDP Previewer, puzzle book publishing, Etsy digital download.\n\n${hashtags()}\n`;
 }
 
 unzipAssets();
@@ -85,14 +144,32 @@ const pinDir = path.join(OUT, "pinterest_pin");
 const fbDir = path.join(OUT, "facebook_carousel");
 const pinOut = copyList([pinImage], pinDir)[0];
 const fbOut = copyList(carouselImages, fbDir);
+const fbCaptionFiles = carouselImages.map((_, i) => `facebook_carousel/${String(i + 1).padStart(2, "0")}_caption.txt`);
 
+await fs.writeFile(path.join(pinDir, "title.txt"), pinTitle(cleanTitle(pinImage)) + "\n", "utf8");
 await fs.writeFile(path.join(pinDir, "caption.txt"), caption("pin", cleanTitle(pinImage)), "utf8");
-await fs.writeFile(path.join(pinDir, "first-comment.txt"), CTA + "\n", "utf8");
-await fs.writeFile(path.join(fbDir, "post-caption.txt"), `First-Time Sudoku Publisher Edition: five quick reasons this starter pack helps new KDP Sudoku publishers begin with less guesswork.\n\n${CTA}\n`, "utf8");
-await fs.writeFile(path.join(fbDir, "first-comment.txt"), `Start with the FTPE starter pack: ${CTA}\n`, "utf8");
+await fs.writeFile(path.join(pinDir, "first-comment.txt"), pinterestFirstComment(), "utf8");
+await fs.writeFile(path.join(fbDir, "post-caption.txt"), facebookPostCaption(), "utf8");
+await fs.writeFile(path.join(fbDir, "first-comment.txt"), facebookFirstComment(), "utf8");
 for (let i = 0; i < carouselImages.length; i++) await fs.writeFile(path.join(fbDir, `${String(i + 1).padStart(2, "0")}_caption.txt`), caption("fb", cleanTitle(carouselImages[i])), "utf8");
 
-const manifest = { type: "ftpe_daily_pin_and_fb_carousel_v1", date: DATE, cta: CTA, pinterest: { image: pinOut, caption: "pinterest_pin/caption.txt", first_comment: "pinterest_pin/first-comment.txt" }, facebook: { images: fbOut, post_caption: "facebook_carousel/post-caption.txt", first_comment: "facebook_carousel/first-comment.txt" } };
+const manifest = {
+  type: "ftpe_daily_pin_and_fb_carousel_v2",
+  date: DATE,
+  cta: CTA,
+  pinterest: {
+    image: pinOut,
+    title: "pinterest_pin/title.txt",
+    caption: "pinterest_pin/caption.txt",
+    first_comment: "pinterest_pin/first-comment.txt",
+  },
+  facebook: {
+    images: fbOut,
+    image_captions: fbCaptionFiles,
+    post_caption: "facebook_carousel/post-caption.txt",
+    first_comment: "facebook_carousel/first-comment.txt",
+  },
+};
 await fs.writeFile(path.join(OUT, "manifest.json"), JSON.stringify(manifest, null, 2) + "\n", "utf8");
 if (exists(LATEST)) await fs.rm(LATEST, { recursive: true, force: true });
 await ensureDir(path.dirname(LATEST));
