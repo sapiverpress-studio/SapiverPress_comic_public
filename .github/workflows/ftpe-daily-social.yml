@@ -121,7 +121,16 @@ jobs:
           echo "Imported FTPE asset files for this workflow run:"
           find assets/ftpe/social_master assets/ftpe/social_sets assets/ftpe/bonus_sets -type f \( -iname '*.png' -o -iname '*.zip' -o -iname '*.zip.b64' \) | sort | sed -n '1,200p'
 
-      - name: Build one Pinterest pin and one Facebook carousel
+      - name: Ensure ffmpeg is available
+        shell: bash
+        run: |
+          if ! command -v ffmpeg >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y ffmpeg
+          fi
+          ffmpeg -version | head -n 1
+
+      - name: Build one Pinterest pin, one Facebook carousel, and one Pinterest video
         run: node scripts/build-ftpe-pin-and-fb-carousel.mjs
 
       - name: Post or prepare social outputs
@@ -141,6 +150,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No FTPE social output changes to commit."
           else
-            git commit -m "Build FTPE pin and Facebook carousel for ${DATE_OVERRIDE}"
+            git commit -m "Build FTPE pin, carousel and video for ${DATE_OVERRIDE}"
             git push
           fi
