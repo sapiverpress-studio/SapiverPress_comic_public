@@ -7,6 +7,8 @@ const DATE = process.env.DATE_OVERRIDE || new Intl.DateTimeFormat("sv-SE", { tim
 const MODE = (process.env.FTPE_SOCIAL_POST_MODE || "dry_run").toLowerCase();
 const MANIFEST = path.join(ROOT, "social", "ftpe", DATE, "manifest.json");
 const MANIFEST_DIR = path.dirname(MANIFEST);
+const DEFAULT_PINTEREST_BOARD_ID = "1038924276479876865";
+const DEFAULT_PINTEREST_BOARD_NAME = "Sapiver Press Comic";
 
 function absRoot(rel) {
   return path.isAbsolute(rel) ? rel : path.join(ROOT, rel);
@@ -25,6 +27,7 @@ async function readOptional(rel, fallback = "") {
   try { return await read(rel); } catch { return fallback; }
 }
 function b64(file) { return fssync.readFileSync(file).toString("base64"); }
+function pinterestBoardId() { return (process.env.PINTEREST_BOARD_ID || "").trim() || DEFAULT_PINTEREST_BOARD_ID; }
 async function jsonFetch(url, options) {
   const res = await fetch(url, options);
   const text = await res.text();
@@ -36,8 +39,8 @@ async function jsonFetch(url, options) {
 
 async function postPinterest(manifest) {
   const token = process.env.PINTEREST_ACCESS_TOKEN;
-  const boardId = process.env.PINTEREST_BOARD_ID;
-  if (!token || !boardId) throw new Error("Missing PINTEREST_ACCESS_TOKEN or PINTEREST_BOARD_ID");
+  const boardId = pinterestBoardId();
+  if (!token) throw new Error("Missing PINTEREST_ACCESS_TOKEN");
   const imagePath = absRoot(manifest.pinterest.image);
   const title = (await readOptional(manifest.pinterest.title, "First-Time Sudoku Publisher Edition")).trim().slice(0, 100);
   const description = await read(manifest.pinterest.caption);
@@ -95,7 +98,9 @@ async function pinterestVideoRecord(manifest) {
   return {
     prepared: true,
     posted: false,
-    note: "Pinterest-ready MP4 generated from the same five images used in the Facebook carousel. Automatic video-pin upload is not enabled in this workflow yet.",
+    note: "Pinterest-ready MP4 generated from the same five images used in the Facebook carousel. Automatic video-pin upload runs in the delayed Pinterest video workflow.",
+    board_id: pinterestBoardId(),
+    board_name: DEFAULT_PINTEREST_BOARD_NAME,
     video: manifest.pinterest_video.video,
     source_images: manifest.pinterest_video.source_images || [],
     title: await readOptional(manifest.pinterest_video.title, "KDP Sudoku Starter Pack video"),
@@ -105,7 +110,7 @@ async function pinterestVideoRecord(manifest) {
 }
 
 const manifest = JSON.parse(await fs.readFile(MANIFEST, "utf8"));
-const out = { date: DATE, mode: MODE, type: manifest.type, cta: manifest.cta };
+const out = { date: DATE, mode: MODE, type: manifest.type, cta: manifest.cta, pinterest_board_id: pinterestBoardId(), pinterest_board_name: DEFAULT_PINTEREST_BOARD_NAME };
 if (MODE !== "live") {
   out.pinterest = {
     dry_run: true,
@@ -129,4 +134,4 @@ if (MODE !== "live") {
 }
 const recordPath = path.join(ROOT, "social", "ftpe", DATE, "post-result.json");
 await fs.writeFile(recordPath, JSON.stringify(out, null, 2) + "\n", "utf8");
-console.log(`${MODE === "live" ? "Posted" : "Prepared"} FTPE Pinterest pin, Pinterest video asset and Facebook carousel for ${DATE}`);
+console.log(`${MODE === "live" ? "Posted" : "Prepared"} FTPE Pinterest pin, Pinterest video asset and Facebook carousel for ${DATE} to ${DEFAULT_PINTEREST_BOARD_NAME}`);
