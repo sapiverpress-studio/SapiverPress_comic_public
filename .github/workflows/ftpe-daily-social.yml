@@ -156,6 +156,7 @@ jobs:
           fi
 
       - name: Post or prepare social outputs
+        continue-on-error: true
         run: node scripts/post-ftpe-pin-and-fb-carousel.mjs
         env:
           PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
