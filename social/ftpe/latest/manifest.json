@@ -19,8 +19,7 @@
     ],
     "title": "pinterest_video/title.txt",
     "caption": "pinterest_video/caption.txt",
-    "first_comment": "pinterest_video/first-comment.txt",
-    "seconds_per_image": 3
+    "first_comment": "pinterest_video/first-comment.txt"
   },
   "facebook": {
     "images": [
@@ -39,5 +38,10 @@
     ],
     "post_caption": "facebook_carousel/post-caption.txt",
     "first_comment": "facebook_carousel/first-comment.txt"
-  }
+  },
+  "notes": [
+    "FTPE is a beginner-friendly starter pack, not a guaranteed income product.",
+    "Do not imply Amazon/KDP affiliation, guaranteed KDP approval, guaranteed sales, or passive income.",
+    "All traffic points to https://sapiverpress.etsy.com."
+  ]
 }
