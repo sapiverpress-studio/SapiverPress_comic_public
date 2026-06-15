@@ -1,4 +1,4 @@
-name: FTPE Delayed Pinterest Video
+name: FTPE Pinterest Video Manual Rescue
 
 on:
   workflow_dispatch:
@@ -8,9 +8,9 @@ on:
         required: false
         default: ""
       post_mode:
-        description: "dry_run or live"
+        description: "live or dry_run"
         required: false
-        default: "dry_run"
+        default: "live"
 
 permissions:
   contents: write
@@ -30,23 +30,23 @@ jobs:
           else
             echo "DATE_OVERRIDE=$(TZ=Europe/London date +%F)" >> "$GITHUB_ENV"
           fi
-          echo "FTPE_PINTEREST_VIDEO_POST_MODE=${{ github.event.inputs.post_mode || 'dry_run' }}" >> "$GITHUB_ENV"
+          echo "FTPE_PINTEREST_VIDEO_POST_MODE=${{ github.event.inputs.post_mode || 'live' }}" >> "$GITHUB_ENV"
 
-      - name: Post or prepare delayed Pinterest video
+      - name: Post or prepare Pinterest video
         run: node scripts/post-ftpe-pinterest-video.mjs
         env:
           PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
           PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
 
-      - name: Commit delayed Pinterest video result
+      - name: Commit Pinterest video result
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add social/ftpe
           if git diff --cached --quiet; then
-            echo "No delayed Pinterest video result changes to commit."
+            echo "No Pinterest video result changes to commit."
           else
-            git commit -m "Post delayed FTPE Pinterest video for ${DATE_OVERRIDE}"
+            git commit -m "Post FTPE Pinterest video for ${DATE_OVERRIDE}"
             git push
           fi
