@@ -2,6 +2,9 @@
   "type": "ftpe_daily_pin_fb_carousel_and_pinterest_video_v1",
   "date": "2026-06-15",
   "cta": "https://sapiverpress.etsy.com",
+  "asset_group": "assets/ftpe/social_master/_extracted/FTPE_social_master_assets",
+  "asset_group_count": 1,
+  "asset_group_image_count": 5,
   "pinterest": {
     "image": "social/ftpe/2026-06-15/pinterest_pin/01_05_why_this_edition_is_different.png",
     "title": "pinterest_pin/title.txt",
@@ -11,11 +14,11 @@
   "pinterest_video": {
     "video": "social/ftpe/2026-06-15/pinterest_video/pinterest_video.mp4",
     "source_images": [
-      "social/ftpe/2026-06-15/pinterest_video/01_01_main_hero_first_time_sudoku_publisher_edition.png",
-      "social/ftpe/2026-06-15/pinterest_video/02_02_whats_included.png",
-      "social/ftpe/2026-06-15/pinterest_video/03_03_how_your_download_works.png",
-      "social/ftpe/2026-06-15/pinterest_video/04_04_guided_support_for_first_time_publishers.png",
-      "social/ftpe/2026-06-15/pinterest_video/05_05_why_this_edition_is_different.png"
+      "social/ftpe/2026-06-15/pinterest_video/01_05_why_this_edition_is_different.png",
+      "social/ftpe/2026-06-15/pinterest_video/02_01_main_hero_first_time_sudoku_publisher_edition.png",
+      "social/ftpe/2026-06-15/pinterest_video/03_02_whats_included.png",
+      "social/ftpe/2026-06-15/pinterest_video/04_03_how_your_download_works.png",
+      "social/ftpe/2026-06-15/pinterest_video/05_04_guided_support_for_first_time_publishers.png"
     ],
     "title": "pinterest_video/title.txt",
     "caption": "pinterest_video/caption.txt",
@@ -23,11 +26,11 @@
   },
   "facebook": {
     "images": [
-      "social/ftpe/2026-06-15/facebook_carousel/01_01_main_hero_first_time_sudoku_publisher_edition.png",
-      "social/ftpe/2026-06-15/facebook_carousel/02_02_whats_included.png",
-      "social/ftpe/2026-06-15/facebook_carousel/03_03_how_your_download_works.png",
-      "social/ftpe/2026-06-15/facebook_carousel/04_04_guided_support_for_first_time_publishers.png",
-      "social/ftpe/2026-06-15/facebook_carousel/05_05_why_this_edition_is_different.png"
+      "social/ftpe/2026-06-15/facebook_carousel/01_05_why_this_edition_is_different.png",
+      "social/ftpe/2026-06-15/facebook_carousel/02_01_main_hero_first_time_sudoku_publisher_edition.png",
+      "social/ftpe/2026-06-15/facebook_carousel/03_02_whats_included.png",
+      "social/ftpe/2026-06-15/facebook_carousel/04_03_how_your_download_works.png",
+      "social/ftpe/2026-06-15/facebook_carousel/05_04_guided_support_for_first_time_publishers.png"
     ],
     "image_captions": [
       "facebook_carousel/01_caption.txt",
