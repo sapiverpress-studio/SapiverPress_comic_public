@@ -4,7 +4,7 @@ import path from "path";
 
 const ROOT = process.cwd();
 const DATE = process.env.DATE_OVERRIDE || new Intl.DateTimeFormat("sv-SE", { timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
-const MODE = (process.env.FTPE_PINTEREST_VIDEO_POST_MODE || "dry_run").toLowerCase();
+const MODE = (process.env.FTPE_PINTEREST_VIDEO_POST_MODE || "live").toLowerCase();
 const OUT = path.join(ROOT, "social", "ftpe", DATE);
 const MANIFEST = path.join(OUT, "manifest.json");
 const RESULT = path.join(OUT, "pinterest_video", "post-result.json");
@@ -26,6 +26,14 @@ function absManifest(rel) {
 async function readOptional(rel, fallback = "") {
   if (!rel) return fallback;
   try { return await fs.readFile(absManifest(rel), "utf8"); } catch { return fallback; }
+}
+
+async function readJsonOptional(filePath) {
+  try { return JSON.parse(await fs.readFile(filePath, "utf8")); } catch { return null; }
+}
+
+function isTruthy(value) {
+  return ["1", "true", "yes", "y", "on"].includes(String(value || "").trim().toLowerCase());
 }
 
 function sleep(ms) { return new Promise((resolve) => setTimeout(resolve, ms)); }
@@ -125,6 +133,15 @@ const out = {
   caption,
   first_comment: firstComment,
 };
+
+const existing = await readJsonOptional(RESULT);
+const alreadyPosted = Boolean(existing?.pinterest?.pin?.id || existing?.pinterest?.pin?.board_id);
+const force = isTruthy(process.env.FORCE_PINTEREST_VIDEO_POST || "");
+
+if (MODE === "live" && alreadyPosted && !force) {
+  console.log(`Pinterest video already has a live post result for ${DATE}; skipping duplicate upload. Set FORCE_PINTEREST_VIDEO_POST=1 to override.`);
+  process.exit(0);
+}
 
 if (MODE !== "live") {
   out.dry_run = true;
