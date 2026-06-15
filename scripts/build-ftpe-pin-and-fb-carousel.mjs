@@ -162,16 +162,66 @@ function facebookFirstComment() {
   return `Direct link: ${CTA}\n\nUseful for: ${keywordLine(8)}.\n\n${hashtags(4)}\n`;
 }
 
+function assetGroupKey(file) {
+  const r = rel(file);
+  const parts = r.split("/");
+  const extractedIndex = parts.indexOf("_extracted");
+  if (extractedIndex >= 0 && parts[extractedIndex + 1]) {
+    return parts.slice(0, extractedIndex + 2).join("/");
+  }
+  return path.dirname(r).replaceAll("\\", "/");
+}
+
+function rotateList(items, offset) {
+  if (!items.length) return [];
+  const o = ((offset % items.length) + items.length) % items.length;
+  return [...items.slice(o), ...items.slice(0, o)];
+}
+
+function pickDailyAssets(images) {
+  const uniqueByPath = [...new Map(images.map((p) => [rel(p).toLowerCase(), p])).values()].sort();
+  const grouped = new Map();
+  for (const img of uniqueByPath) {
+    const key = assetGroupKey(img);
+    if (!grouped.has(key)) grouped.set(key, []);
+    grouped.get(key).push(img);
+  }
+
+  const usableGroups = [...grouped.entries()]
+    .map(([key, files]) => ({ key, files: files.sort() }))
+    .filter((group) => group.files.length >= 5)
+    .sort((a, b) => a.key.localeCompare(b.key));
+
+  if (usableGroups.length) {
+    const group = usableGroups[dayIndex() % usableGroups.length];
+    const rotated = rotateList(group.files, Math.floor(dayIndex() / usableGroups.length));
+    return {
+      assetGroup: group.key,
+      groupCount: usableGroups.length,
+      imageCount: group.files.length,
+      pinImage: rotated[0],
+      carouselImages: rotated.slice(0, 5),
+    };
+  }
+
+  if (uniqueByPath.length < 5) throw new Error(`Need at least five FTPE PNG assets in assets/ftpe/social_master, social_sets, or bonus_sets. Found ${uniqueByPath.length}.`);
+  const rotated = rotateList(uniqueByPath, dayIndex());
+  return {
+    assetGroup: "all_assets_fallback",
+    groupCount: 0,
+    imageCount: uniqueByPath.length,
+    pinImage: rotated[0],
+    carouselImages: rotated.slice(0, 5),
+  };
+}
+
 unzipAssets();
 const all = ASSET_ROOTS.flatMap((r) => walk(r)).filter((p) => !p.includes(`${path.sep}_extracted${path.sep}_extracted${path.sep}`));
-const images = [...new Map(all.map((p) => [path.basename(p).toLowerCase(), p])).values()].sort();
-if (images.length < 5) throw new Error(`Need at least five FTPE PNG assets in assets/ftpe/social_master, social_sets, or bonus_sets. Found ${images.length}.`);
+const picked = pickDailyAssets(all);
 
 await ensureDir(OUT);
-const start = dayIndex() % images.length;
-const chosen = Array.from({ length: 6 }, (_, i) => images[(start + i) % images.length]);
-const pinImage = chosen[0];
-const carouselImages = chosen.slice(1, 6);
+const pinImage = picked.pinImage;
+const carouselImages = picked.carouselImages;
 
 const pinDir = path.join(OUT, "pinterest_pin");
 const fbDir = path.join(OUT, "facebook_carousel");
@@ -195,6 +245,9 @@ const manifest = {
   type: "ftpe_daily_pin_fb_carousel_and_pinterest_video_v1",
   date: DATE,
   cta: CTA,
+  asset_group: picked.assetGroup,
+  asset_group_count: picked.groupCount,
+  asset_group_image_count: picked.imageCount,
   pinterest: { image: pinOut, title: "pinterest_pin/title.txt", caption: "pinterest_pin/caption.txt", first_comment: "pinterest_pin/first-comment.txt" },
   pinterest_video: { video: videoOut.video, source_images: videoOut.images, title: "pinterest_video/title.txt", caption: "pinterest_video/caption.txt", first_comment: "pinterest_video/first-comment.txt" },
   facebook: { images: fbOut, image_captions: fbCaptionFiles, post_caption: "facebook_carousel/post-caption.txt", first_comment: "facebook_carousel/first-comment.txt" },
@@ -208,6 +261,7 @@ await fs.writeFile(path.join(OUT, "manifest.json"), JSON.stringify(manifest, nul
 await fs.rm(LATEST, { recursive: true, force: true });
 await fs.cp(OUT, LATEST, { recursive: true });
 console.log(`Built FTPE daily Pinterest pin, Facebook carousel, and Pinterest video for ${DATE}`);
+console.log(`Selected asset group: ${picked.assetGroup} (${picked.groupCount || "fallback"} groups, ${picked.imageCount} images in chosen group)`);
 console.log(`Pinterest image: ${pinOut}`);
 console.log(`Facebook carousel images: ${fbOut.join(", ")}`);
 console.log(`Pinterest video: ${videoOut.video}`);
