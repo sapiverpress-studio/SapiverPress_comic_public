@@ -153,6 +153,13 @@ jobs:
             echo "No pre-post FTPE social assets to commit."
           else
             git commit -m "Save FTPE social video and assets for ${DATE_OVERRIDE}"
+            for attempt in 1 2 3; do
+              if git push; then
+                exit 0
+              fi
+              echo "Push failed on attempt ${attempt}; rebasing onto origin/main and retrying."
+              git pull --rebase origin main
+            done
             git push
           fi
 
@@ -184,5 +191,12 @@ jobs:
             echo "No FTPE social output changes to commit."
           else
             git commit -m "Build FTPE pin, carousel and video for ${DATE_OVERRIDE}"
+            for attempt in 1 2 3; do
+              if git push; then
+                exit 0
+              fi
+              echo "Push failed on attempt ${attempt}; rebasing onto origin/main and retrying."
+              git pull --rebase origin main
+            done
             git push
           fi
