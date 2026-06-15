@@ -16,37 +16,15 @@ const CTA = "https://sapiverpress.etsy.com";
 const VIDEO_SECONDS_PER_IMAGE = 3;
 
 const DISCOVERY_KEYWORDS = [
-  "KDP",
-  "Amazon KDP",
-  "Kindle Direct Publishing",
-  "paperback publishing",
-  "puzzle book publishing",
-  "Sudoku book",
-  "Sudoku paperback",
-  "KDP starter pack",
   "KDP beginner guide",
-  "publish a puzzle book",
-  "printable puzzle book",
-  "low content books",
-  "puzzle book creator",
+  "Amazon KDP",
+  "Sudoku paperback publishing",
   "KDP upload files",
-  "KDP cover PDF",
   "KDP interior PDF",
-  "commercial use Sudoku",
-  "Sudoku publishing",
-  "beginner publishing",
-  "Etsy digital download",
-  "printable business tools",
-  "puzzle seller resources",
-  "self publishing tools",
-  "Amazon paperback",
-  "KDP Previewer",
-  "book interior",
-  "full spread cover",
-  "book cover template",
-  "ISBN",
+  "KDP cover PDF",
   "KDP metadata",
-  "AI content declaration",
+  "KDP Previewer",
+  "Etsy digital download",
   "Sapiver Press",
 ];
 
@@ -54,23 +32,15 @@ const HASHTAGS = [
   "#AmazonKDP",
   "#KDPPublishing",
   "#SelfPublishing",
-  "#PuzzleBooks",
-  "#Sudoku",
   "#SudokuBooks",
-  "#PrintableBusiness",
-  "#EtsyDigitalDownload",
-  "#KDPBeginners",
-  "#BookPublishing",
-  "#PaperbackPublishing",
-  "#PuzzlePublishing",
-  "#KDPTools",
+  "#PuzzleBooks",
   "#SapiverPress",
 ];
 
 const PRODUCT_LINE = "First-Time Sudoku Publisher Edition from Sapiver Press";
-const PRODUCT_POSITIONING = "a £15 beginner-friendly Etsy digital download for people learning how to attempt their first Amazon KDP Sudoku paperback upload";
-const WORKFLOW_TERMS = "KDP-ready interior PDF, full-spread cover PDF, KDP metadata worksheet, KDP Previewer checks, ISBN/admin prompts, AI content declaration guidance and beginner publishing checklist";
-const SAFETY_LINE = "No guaranteed KDP approval, no guaranteed sales, no guaranteed income, and no Amazon affiliation.";
+const PRODUCT_POSITIONING = "a beginner-friendly Etsy digital download for people learning how to attempt their first Amazon KDP Sudoku paperback upload";
+const WORKFLOW_TERMS = "KDP-ready interior PDF, matching full-spread cover PDF, metadata worksheet, KDP Previewer checks, AI content declaration guidance and beginner checklist";
+const SAFETY_LINE = "Digital download only. No guaranteed KDP approval, sales or income. Not affiliated with Amazon/KDP.";
 
 function exists(p) { return fssync.existsSync(p); }
 async function ensureDir(p) { await fs.mkdir(p, { recursive: true }); }
@@ -172,24 +142,24 @@ function videoTitle() {
 function caption(kind, title) {
   const clean = title || "First-Time Sudoku Publisher Edition";
   if (kind === "pin") {
-    return `${PRODUCT_LINE}: ${PRODUCT_POSITIONING}.\n\nUse it to understand the first-upload workflow: ${WORKFLOW_TERMS}.\n\n${SAFETY_LINE} This is practical workflow support, not a get-rich-quick product.\n\nShop Sapiver Press: ${CTA}\n\nSearch terms: ${keywordLine(18)}\n\n${hashtags(12)}\n`;
+    return `${PRODUCT_LINE}: ${PRODUCT_POSITIONING}.\n\nIncludes ${WORKFLOW_TERMS}.\n\n${SAFETY_LINE}\n\nStart here: ${CTA}\n\nSearch terms: ${keywordLine(8)}\n\n${hashtags(6)}\n`;
   }
   if (kind === "video") {
-    return `A five-image Pinterest video version of today's FTPE carousel. ${PRODUCT_LINE} is ${PRODUCT_POSITIONING}.\n\nCovers KDP upload files, Sudoku paperback publishing, KDP interior PDF, full-spread cover PDF, metadata, KDP Previewer checks and beginner publishing admin.\n\n${SAFETY_LINE}\n\nShop Sapiver Press: ${CTA}\n\n${hashtags(12)}\n`;
+    return `A five-image video version of today's FTPE carousel. ${PRODUCT_LINE} is ${PRODUCT_POSITIONING}.\n\n${SAFETY_LINE}\n\nStart here: ${CTA}\n\n${hashtags(6)}\n`;
   }
-  return `${clean}\n\nPart of the ${PRODUCT_LINE} campaign: ${PRODUCT_POSITIONING}. This image connects to the practical first-upload workflow: KDP upload files, book interior PDF, full-spread cover PDF, KDP metadata, KDP Previewer and beginner publishing admin.\n\n${SAFETY_LINE}\n\nShop Sapiver Press: ${CTA}\n\n${hashtags(10)}\n`;
+  return `${clean}\n\nPart of the ${PRODUCT_LINE} campaign. ${PRODUCT_POSITIONING}.\n\n${SAFETY_LINE}\n\nStart here: ${CTA}\n\n${hashtags(5)}\n`;
 }
 
 function pinterestFirstComment() {
-  return `More beginner publishing tools from Sapiver Press: ${CTA}\n\nUseful search terms: KDP beginner guide, Amazon KDP, Sudoku paperback publishing, KDP upload files, KDP interior PDF, KDP cover PDF, full spread cover, KDP metadata, KDP Previewer, AI content declaration, Etsy digital download.\n\n${hashtags(10)}\n`;
+  return `More beginner publishing tools from Sapiver Press: ${CTA}\n\nUseful search terms: ${keywordLine(8)}\n\n${hashtags(6)}\n`;
 }
 
 function facebookPostCaption() {
-  return `Thinking about trying your first KDP Sudoku paperback?\n\nThis five-image carousel shows practical angles from ${PRODUCT_LINE}: ${PRODUCT_POSITIONING}. It is built around real KDP upload files and beginner guidance: ${WORKFLOW_TERMS}.\n\n${SAFETY_LINE} It is a guided starter pack for learning the process, not a promise of passive income or Amazon/KDP affiliation.\n\nStart here: ${CTA}\n\nSearch terms: ${keywordLine()}\n\n${hashtags()}\n`;
+  return `Thinking about trying your first KDP Sudoku paperback?\n\nFTPE is a beginner-friendly Sapiver Press starter pack for learning the first upload process.\n\nIt includes:\n• KDP-ready Sudoku interior PDF\n• matching full-spread cover PDF\n• metadata worksheet\n• KDP Previewer checklist\n• beginner guidance for common upload/admin steps\n\n${SAFETY_LINE}\n\nStart here: ${CTA}\n\n${hashtags(6)}\n`;
 }
 
 function facebookFirstComment() {
-  return `Direct link to the Sapiver Press shop: ${CTA}\n\nSearch-friendly summary: KDP starter pack, Amazon KDP beginner guide, Kindle Direct Publishing, Sudoku paperback publishing, puzzle book publishing, KDP upload files, KDP interior PDF, KDP cover PDF, KDP metadata, KDP Previewer, book cover template, ISBN, AI content declaration, Etsy digital download.\n\n${hashtags()}\n`;
+  return `Direct link: ${CTA}\n\nUseful for: ${keywordLine(8)}.\n\n${hashtags(4)}\n`;
 }
 
 unzipAssets();
@@ -219,35 +189,25 @@ await fs.writeFile(path.join(fbDir, "first-comment.txt"), facebookFirstComment()
 await fs.writeFile(path.join(videoDir, "title.txt"), videoTitle() + "\n", "utf8");
 await fs.writeFile(path.join(videoDir, "caption.txt"), caption("video", "Pinterest video"), "utf8");
 await fs.writeFile(path.join(videoDir, "first-comment.txt"), pinterestFirstComment(), "utf8");
-for (let i = 0; i < carouselImages.length; i++) await fs.writeFile(path.join(fbDir, `${String(i + 1).padStart(2, "0")}_caption.txt`), caption("fb", cleanTitle(carouselImages[i])), "utf8");
+for (let i = 0; i < fbCaptionFiles.length; i++) await fs.writeFile(path.join(OUT, fbCaptionFiles[i]), caption("facebook_image", cleanTitle(carouselImages[i])), "utf8");
 
 const manifest = {
   type: "ftpe_daily_pin_fb_carousel_and_pinterest_video_v1",
   date: DATE,
   cta: CTA,
-  pinterest: {
-    image: pinOut,
-    title: "pinterest_pin/title.txt",
-    caption: "pinterest_pin/caption.txt",
-    first_comment: "pinterest_pin/first-comment.txt",
-  },
-  pinterest_video: {
-    video: videoOut.video,
-    source_images: videoOut.images,
-    title: "pinterest_video/title.txt",
-    caption: "pinterest_video/caption.txt",
-    first_comment: "pinterest_video/first-comment.txt",
-    seconds_per_image: VIDEO_SECONDS_PER_IMAGE,
-  },
-  facebook: {
-    images: fbOut,
-    image_captions: fbCaptionFiles,
-    post_caption: "facebook_carousel/post-caption.txt",
-    first_comment: "facebook_carousel/first-comment.txt",
-  },
+  pinterest: { image: pinOut, title: "pinterest_pin/title.txt", caption: "pinterest_pin/caption.txt", first_comment: "pinterest_pin/first-comment.txt" },
+  pinterest_video: { video: videoOut.video, source_images: videoOut.images, title: "pinterest_video/title.txt", caption: "pinterest_video/caption.txt", first_comment: "pinterest_video/first-comment.txt" },
+  facebook: { images: fbOut, image_captions: fbCaptionFiles, post_caption: "facebook_carousel/post-caption.txt", first_comment: "facebook_carousel/first-comment.txt" },
+  notes: [
+    "FTPE is a beginner-friendly starter pack, not a guaranteed income product.",
+    "Do not imply Amazon/KDP affiliation, guaranteed KDP approval, guaranteed sales, or passive income.",
+    "All traffic points to https://sapiverpress.etsy.com.",
+  ],
 };
 await fs.writeFile(path.join(OUT, "manifest.json"), JSON.stringify(manifest, null, 2) + "\n", "utf8");
-if (exists(LATEST)) await fs.rm(LATEST, { recursive: true, force: true });
-await ensureDir(path.dirname(LATEST));
+await fs.rm(LATEST, { recursive: true, force: true });
 await fs.cp(OUT, LATEST, { recursive: true });
-console.log(`Built daily FTPE pin + Facebook carousel + Pinterest video for ${DATE}`);
+console.log(`Built FTPE daily Pinterest pin, Facebook carousel, and Pinterest video for ${DATE}`);
+console.log(`Pinterest image: ${pinOut}`);
+console.log(`Facebook carousel images: ${fbOut.join(", ")}`);
+console.log(`Pinterest video: ${videoOut.video}`);
