@@ -1,5 +1,5 @@
 {
-  "version": "ftpe_social_required_zips_v2",
+  "version": "ftpe_social_required_zips_v2_1",
   "source_of_truth": "config/ftpe-social-drive-zips.json",
   "asset_roots": [
     "assets/ftpe/social_master",
@@ -86,18 +86,23 @@
       "description": "UK publishing pitfalls / compliance lead-magnet PNGs."
     }
   ],
-  "not_yet_present_in_drive": [
+  "missing_or_unlocated": [
     {
       "set": 10,
-      "reason": "No FTPE_SET_10 ZIP was visible in the source Drive folder at audit time."
-    },
+      "status": "unlocated",
+      "reason": "No FTPE_SET_10 or obvious FTPE pack 10 ZIP was visible in Drive search or the source folder at audit time."
+    }
+  ],
+  "in_progress_not_configured_yet": [
     {
       "set": 13,
-      "reason": "No FTPE_SET_13 ZIP was visible in the source Drive folder at audit time."
+      "status": "in_progress",
+      "reason": "User confirmed this pack is being worked on; do not treat as missing until a finished ZIP is added to Drive."
     },
     {
       "set": 14,
-      "reason": "No FTPE_SET_14 ZIP was visible in the source Drive folder at audit time."
+      "status": "in_progress",
+      "reason": "User confirmed this pack is being worked on; do not treat as missing until a finished ZIP is added to Drive."
     }
   ],
   "rules": [
