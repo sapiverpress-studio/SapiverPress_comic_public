@@ -1,0 +1,142 @@
+name: Indie Publishing Daily Tip
+
+on:
+  workflow_dispatch:
+    inputs:
+      date_override:
+        description: "Optional date override YYYY-MM-DD"
+        required: false
+        default: ""
+      tip_day_override:
+        description: "Optional tip day 1-365"
+        required: false
+        default: ""
+      post_mode:
+        description: "live or dry_run"
+        required: false
+        default: "live"
+      post_to_pinterest:
+        description: "Post daily indie publishing tip to Pinterest"
+        required: false
+        default: "true"
+  schedule:
+    - cron: "45 8 * * *"
+  push:
+    paths:
+      - ".github/workflows/indie-publishing-daily-tip.yml"
+      - "content/indie-publishing-daily-tips.csv"
+      - "scripts/build-indie-publishing-daily-post.mjs"
+      - "scripts/post-indie-publishing-tip-pinterest.mjs"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: indie-publishing-daily-tip
+  cancel-in-progress: true
+
+jobs:
+  build-and-post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          persist-credentials: true
+
+      - name: Set run options
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ github.event.inputs.date_override }}" ]; then
+            echo "DATE_OVERRIDE=${{ github.event.inputs.date_override }}" >> "$GITHUB_ENV"
+          else
+            echo "DATE_OVERRIDE=$(TZ=Europe/London date +%F)" >> "$GITHUB_ENV"
+          fi
+
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ github.event.inputs.tip_day_override }}" ]; then
+            echo "TIP_DAY_OVERRIDE=${{ github.event.inputs.tip_day_override }}" >> "$GITHUB_ENV"
+          fi
+
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            echo "INDIE_TIP_POST_MODE=live" >> "$GITHUB_ENV"
+            echo "POST_TO_PINTEREST=true" >> "$GITHUB_ENV"
+          elif [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "INDIE_TIP_POST_MODE=${{ github.event.inputs.post_mode || 'live' }}" >> "$GITHUB_ENV"
+            echo "POST_TO_PINTEREST=${{ github.event.inputs.post_to_pinterest || 'true' }}" >> "$GITHUB_ENV"
+          else
+            echo "INDIE_TIP_POST_MODE=dry_run" >> "$GITHUB_ENV"
+            echo "POST_TO_PINTEREST=false" >> "$GITHUB_ENV"
+          fi
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build daily indie publishing tip image and manifest
+        env:
+          DATE_OVERRIDE: ${{ env.DATE_OVERRIDE }}
+          TIP_DAY_OVERRIDE: ${{ env.TIP_DAY_OVERRIDE }}
+          INDIE_TIP_LINK_URL: "https://sapiverpress.etsy.com"
+        run: node scripts/build-indie-publishing-daily-post.mjs
+
+      - name: Upload daily tip artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: indie-publishing-daily-tip-${{ env.DATE_OVERRIDE }}
+          path: |
+            social/indie-publishing-tips/${{ env.DATE_OVERRIDE }}/*.png
+            social/indie-publishing-tips/${{ env.DATE_OVERRIDE }}/manifest.json
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Commit generated daily tip assets
+        shell: bash
+        run: |
+          git config user.name "sapiver-comic-bot"
+          git config user.email "sapiver-comic-bot@users.noreply.github.com"
+          git add social/indie-publishing-tips
+          if git diff --cached --quiet; then
+            echo "No indie publishing daily tip assets to commit."
+          else
+            git commit -m "Build indie publishing daily tip for ${DATE_OVERRIDE}"
+            for attempt in 1 2 3; do
+              if git push; then
+                exit 0
+              fi
+              echo "Push failed on attempt ${attempt}; rebasing onto origin/main and retrying."
+              git pull --rebase --autostash origin main || true
+            done
+            git push
+          fi
+
+      - name: Post daily indie publishing tip to Pinterest
+        if: env.POST_TO_PINTEREST == 'true'
+        continue-on-error: true
+        env:
+          DATE_OVERRIDE: ${{ env.DATE_OVERRIDE }}
+          INDIE_TIP_POST_MODE: ${{ env.INDIE_TIP_POST_MODE }}
+          POST_TO_PINTEREST: ${{ env.POST_TO_PINTEREST }}
+          PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
+          PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
+          PINTEREST_BOARD_NAME: "Sapiver Press Indie Publishing Tips"
+          PINTEREST_LINK_URL: "https://sapiverpress.etsy.com"
+        run: node scripts/post-indie-publishing-tip-pinterest.mjs
+
+      - name: Commit Pinterest post state
+        if: always()
+        shell: bash
+        run: |
+          git config user.name "sapiver-comic-bot"
+          git config user.email "sapiver-comic-bot@users.noreply.github.com"
+          git add indie-publishing-tip-pinterest-posts.json || true
+          if git diff --cached --quiet; then
+            echo "No indie publishing Pinterest state changes."
+          else
+            git commit -m "Update indie publishing daily tip Pinterest state"
+            git pull --rebase --autostash origin main || true
+            git push
+          fi
