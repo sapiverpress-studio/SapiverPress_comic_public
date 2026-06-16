@@ -50,16 +50,17 @@ function buildTitle(rawTitle) {
 
 function buildDescription(rawCaption) {
   const base = cleanText(rawCaption, 2200);
-  const footer = [
+  const alreadyHasDisclaimer = /no guaranteed/i.test(base) || /not affiliated/i.test(base);
+  const footerLines = [
     "",
     "Sapiver Press:",
     CTA,
     "",
-    "Digital download only. No guaranteed KDP approval, sales or income. Not affiliated with Amazon/KDP.",
-    "",
-    "#SelfPublishing #AmazonKDP #SudokuBooks #PuzzleBooks #SapiverPress",
-  ].join("\n");
-  return cleanText(`${base}${footer}`, 4500);
+  ];
+  if (!alreadyHasDisclaimer) footerLines.push("Digital download only. No guaranteed KDP approval, sales or income. Not affiliated with Amazon/KDP.", "");
+  footerLines.push("#Shorts #SelfPublishing #AmazonKDP #SudokuBooks #PuzzleBooks #SapiverPress");
+  const footer = footerLines.join("\n");
+  return cleanText(`${base}\n${footer}`, 4500);
 }
 
 function requireManifestVideo(manifest) {
