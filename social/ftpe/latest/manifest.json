@@ -4,19 +4,24 @@
   "cta": "https://sapiverpress.etsy.com",
   "asset_group": "mixed_subjects",
   "asset_groups": [
-    "assets/ftpe/social_master/_extracted/FTPE_social_master_assets"
+    "assets/ftpe/social_sets/_extracted/FTPE_Batch_04_trust_quality_angles_PNGs",
+    "assets/ftpe/social_sets/_extracted/FTPE_SET_05_beginner_journey_FLAT_PNGS_v2",
+    "assets/ftpe/social_sets/_extracted/FTPE_SET_06_objection_handling_FLAT_PNGS_v2",
+    "assets/ftpe/social_sets/_extracted/FTPE_SET_07_FIXED_CROPS_PNGS-1",
+    "assets/ftpe/social_sets/_extracted/FTPE_SET_08_PREMIUM_DELIVERY_WORKFLOW_PNGS",
+    "assets/ftpe/social_sets/_extracted/FTPE_SET_09_FIRST_UPLOAD_CONFIDENCE_10_PNGS_WITH_POST_COPY"
   ],
-  "asset_group_count": 1,
-  "asset_group_image_count": 5,
+  "asset_group_count": 12,
+  "asset_group_image_count": 115,
   "subjects": [
-    "main hero first time sudoku publisher edition",
-    "whats included",
-    "how your download works",
-    "guided support for first time publishers",
-    "why this edition is different"
+    "publishing guide marketing poster",
+    "digital starter pack for sudoku creators",
+    "first time sudoku publisher edition flyer",
+    "read first upload smarter guide",
+    "start your kdp journey today"
   ],
   "pinterest": {
-    "image": "social/ftpe/2026-06-16/pinterest_pin/01_01_main_hero_first_time_sudoku_publisher_edition.png",
+    "image": "social/ftpe/2026-06-16/pinterest_pin/01_publishing_starter_pack_guide_in_style.png",
     "title": "pinterest_pin/title.txt",
     "caption": "pinterest_pin/caption.txt",
     "first_comment": "pinterest_pin/first-comment.txt"
@@ -24,11 +29,11 @@
   "pinterest_video": {
     "video": "social/ftpe/2026-06-16/pinterest_video/pinterest_video.mp4",
     "source_images": [
-      "social/ftpe/2026-06-16/pinterest_video/01_01_main_hero_first_time_sudoku_publisher_edition.png",
-      "social/ftpe/2026-06-16/pinterest_video/02_02_whats_included.png",
-      "social/ftpe/2026-06-16/pinterest_video/03_03_how_your_download_works.png",
-      "social/ftpe/2026-06-16/pinterest_video/04_04_guided_support_for_first_time_publishers.png",
-      "social/ftpe/2026-06-16/pinterest_video/05_05_why_this_edition_is_different.png"
+      "social/ftpe/2026-06-16/pinterest_video/01_FTPE_SET_05_09_publishing_guide_marketing_poster.png",
+      "social/ftpe/2026-06-16/pinterest_video/02_FTPE_SET_06_09_digital_starter_pack_for_sudoku_creators.png",
+      "social/ftpe/2026-06-16/pinterest_video/03_FTPE_SET_07_09_first_time_sudoku_publisher_edition_flyer.png",
+      "social/ftpe/2026-06-16/pinterest_video/04_FTPE_SET_08_09_read_first_upload_smarter_guide.png",
+      "social/ftpe/2026-06-16/pinterest_video/05_FTPE_SET_09_09_start_your_kdp_journey_today.png"
     ],
     "title": "pinterest_video/title.txt",
     "caption": "pinterest_video/caption.txt",
@@ -36,11 +41,11 @@
   },
   "facebook": {
     "images": [
-      "social/ftpe/2026-06-16/facebook_carousel/01_01_main_hero_first_time_sudoku_publisher_edition.png",
-      "social/ftpe/2026-06-16/facebook_carousel/02_02_whats_included.png",
-      "social/ftpe/2026-06-16/facebook_carousel/03_03_how_your_download_works.png",
-      "social/ftpe/2026-06-16/facebook_carousel/04_04_guided_support_for_first_time_publishers.png",
-      "social/ftpe/2026-06-16/facebook_carousel/05_05_why_this_edition_is_different.png"
+      "social/ftpe/2026-06-16/facebook_carousel/01_FTPE_SET_05_09_publishing_guide_marketing_poster.png",
+      "social/ftpe/2026-06-16/facebook_carousel/02_FTPE_SET_06_09_digital_starter_pack_for_sudoku_creators.png",
+      "social/ftpe/2026-06-16/facebook_carousel/03_FTPE_SET_07_09_first_time_sudoku_publisher_edition_flyer.png",
+      "social/ftpe/2026-06-16/facebook_carousel/04_FTPE_SET_08_09_read_first_upload_smarter_guide.png",
+      "social/ftpe/2026-06-16/facebook_carousel/05_FTPE_SET_09_09_start_your_kdp_journey_today.png"
     ],
     "image_captions": [
       "facebook_carousel/01_caption.txt",

@@ -1,6 +1,6 @@
 {
   "date": "2026-06-16",
-  "mode": "live",
+  "mode": "dry_run",
   "type": "ftpe_pinterest_video_post_v1",
   "cta": "https://sapiverpress.etsy.com",
   "board_id": "1038924276479876865",
@@ -13,84 +13,9 @@
     "social/ftpe/2026-06-16/pinterest_video/04_04_guided_support_for_first_time_publishers.png",
     "social/ftpe/2026-06-16/pinterest_video/05_05_why_this_edition_is_different.png"
   ],
-  "title": "KDP Sudoku Starter Pack | 5-image Pinterest video\n",
-  "caption": "A five-image video version of today's FTPE carousel. First-Time Sudoku Publisher Edition from Sapiver Press is a beginner-friendly Etsy digital download for people learning how to attempt their first Amazon KDP Sudoku paperback upload. Digital download only. No guaranteed KDP approval, sales or income. Not affiliated with Amazon/KDP. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks #SapiverPress",
-  "first_comment": "More beginner publishing tools from Sapiver Press: https://sapiverpress.etsy.com\n\nUseful search terms: KDP beginner guide · Amazon KDP · Sudoku paperback publishing · KDP upload files · KDP interior PDF · KDP cover PDF · KDP metadata · KDP Previewer\n\n#AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks #SapiverPress\n",
-  "dry_run": false,
-  "pinterest": {
-    "media": {
-      "media_id": "3596193939110835392",
-      "media_type": "video",
-      "upload_url": "https://pinterest-media-upload.s3-accelerate.amazonaws.com/",
-      "upload_parameters": {
-        "x-amz-date": "20260616T104851Z",
-        "x-amz-signature": "9e85783ddf80c62d9e196e2cdaba8d2f59bd4d0704a16fa4c05d9619e5f96afd",
-        "x-amz-security-token": "IQoJb3JpZ2luX2VjEKv//////////wEaCXVzLWVhc3QtMSJIMEYCIQD+FdhorB7VRz3Uh16UNUPi2EgwfhHOLcKnnPT5P/UCKQIhALZnvHe3Aql7acs4QQheoFhFnZMx5WGxv5Us9vQwqQl0KrMFCHMQABoMOTk4MTMxMDMyOTkwIgxZWcOcGtGVMcBpxgQqkAVlj6okFo+k3MpgPgTYHibHMnKvLOQoSrLer6SYTLqgcrn75wcfIBTaVUlsxTuNhk6sBjKkHHpC3tAttG02kax+1obT7baS3UVlMWoC8tJHth1DIlAhjU7RugQ2Ut6OuM6hA0mw5kO2m5n2gnK9QFkmf+AKihLJva5MSTxsKTYfVosParMqqWyqoXNYa/ZN1KA/qDqybYgLNR//vuCMD+NEJaXbTDo5man3uPUXwjZdpRod4vx0tt3sU9NqUmYZ1qAWx5gwmWlvyE9ALAmu/n8aUPgirSeGCj5F8WFFipkZ9M3CMsAOAlQy5BW3wp7RgurAzveK4+Cqv3GsJV7Omum3ZorQ5av8vNYHvfADJDDMDPQT0xtBhvJQY8PehZsTfQNaERyxa2rtmK/Op0sL9JBqEkMhWjgvhB3VmDOHm5hiBp7+h+EC2rb6mU+8XHqwWE3B1AhJtxiq/w7zLDAG5pSfrZRH8/iU9VR/9xGNulwH5aQTtAhiCq/R5bjYccSGsMKchRP1XTJc1RZDDyniSeCHLHi8TeK/ggQnVP9JF7+n7Gb3YifxChaWhuELjkG3PF/TQSK/BdjilEu1Gz0iafnneBDi8XMafEf0JkgGijh4ZQd3POOofYl3Mhq4gmO0EjQ6VuqACEoS2whlYYCYAGfK3SbATQOYCgtj/M5KJWe1mcCkpQXPMMeBAUn6eoptX6QCC4sXdH37wVrSNZniewZ62YXAJ8BAUkNgdw2PDBn07Se6FS1n4HWC1bZ9UAI8btfgJTx81NlQW8S7HdQ3DGUEyXUyDMOS5yI9tdSqiv4qCykutuJm3hYTz+O7YvsqSypuB9IVygZV1JLrNMV9TyBusH4mYBJzt+tNxiXQOLOWKzDtw8TRBjqwAU/7S3f6TVB44DcpTylORG97xbKLQTnb3MTEdtW2rDh3vTZcQ9yAPNsWBPJuGksBaNxaNQvoUI2pYw8ODXggZu/CkqO1NC/2wkxrcEzQ9ywnkgrgdGNAv6T3oLycQbM+0gyHzd8b5fSk3uJs20ndivQ0y/vNJx+8vaGrTWMQQOcGjzQarZpAcDMHdCqr65xXYGhoJFc3mxvqs+M+qvU+w+sZys9XKBhnmgC8DHiLfhUx",
-        "x-amz-algorithm": "AWS4-HMAC-SHA256",
-        "key": "uploads/f2/fe/97/2:video:1038924345197779616:3596193939110835392:vipEl0JGqgTpQvroVtCyN4",
-        "policy": "eyJleHBpcmF0aW9uIjoiMjAyNi0wNi0xOFQxMDo0ODo1MS4wMDBaIiwiY29uZGl0aW9ucyI6W3siYnVja2V0IjoicGludGVyZXN0LW1lZGlhLXVwbG9hZCJ9LFsic3RhcnRzLXdpdGgiLCIka2V5IiwidXBsb2Fkcy9mMi9mZS85NyJdLHsieC1hbXotY3JlZGVudGlhbCI6IkFTSUE2UVpKNjRPUEsyRFk0Q01SLzIwMjYwNjE2L3VzLWVhc3QtMS9zMy9hd3M0X3JlcXVlc3QifSx7IngtYW16LWFsZ29yaXRobSI6IkFXUzQtSE1BQy1TSEEyNTYifSx7IngtYW16LWRhdGUiOiIyMDI2MDYxNlQxMDQ4NTFaIn0sWyJjb250ZW50LWxlbmd0aC1yYW5nZSIsMCw1MzY4NzA5MTIwXSxbImVxIiwiJENvbnRlbnQtVHlwZSIsIm11bHRpcGFydC9mb3JtLWRhdGEiXSx7IngtYW16LXNlY3VyaXR5LXRva2VuIjoiSVFvSmIzSnBaMmx1WDJWakVLdi8vLy8vLy8vLy93RWFDWFZ6TFdWaGMzUXRNU0pJTUVZQ0lRRCtGZGhvckI3VlJ6M1VoMTZVTlVQaTJFZ3dmaEhPTGNLbm5QVDVQL1VDS1FJaEFMWm52SGUzQXFsN2FjczRRUWhlb0ZoRm5aTXg1V0d4djVVczl2UXdxUWwwS3JNRkNITVFBQm9NT1RrNE1UTXhNRE15T1Rrd0lneFpXY09jR3RHVk1jQnB4Z1Fxa0FWbGo2b2tGbytrM01wZ1BnVFlIaWJITW5LdkxPUW9TckxlcjZTWVRMcWdjcm43NXdjZklCVGFWVWxzeFR1TmhrNnNCaktrSEhwQzN0QXR0RzAya2F4KzFvYlQ3YmFTM1VWbE1Xb0M4dEpIdGgxRElsQWhqVTdSdWdRMlV0Nk91TTZoQTBtdzVrTzJtNW4yZ25LOVFGa21mK0FLaWhMSnZhNU1TVHhzS1RZZlZvc1Bhck1xcVd5cW9YTllhL1pOMUtBL3FEcXliWWdMTlIvL3Z1Q01EK05FSmFYYlREbzVtYW4zdVBVWHdqWmRwUm9kNHZ4MHR0M3NVOU5xVW1ZWjFxQVd4NWd3bVdsdnlFOUFMQW11L244YVVQZ2lyU2VHQ2o1RjhXRkZpcGtaOU0zQ01zQU9BbFF5NUJXM3dwN1JndXJBenZlSzQrQ3F2M0dzSlY3T211bTNab3JRNWF2OHZOWUh2ZkFESkRETURQUVQweHRCaHZKUVk4UGVoWnNUZlFOYUVSeXhhMnJ0bUsvT3Awc0w5SkJxRWtNaFdqZ3ZoQjNWbURPSG01aGlCcDcraCtFQzJyYjZtVSs4WEhxd1dFM0IxQWhKdHhpcS93N3pMREFHNXBTZnJaUkg4L2lVOVZSLzl4R051bHdINWFRVHRBaGlDcS9SNWJqWWNjU0dzTUtjaFJQMVhUSmMxUlpERHluaVNlQ0hMSGk4VGVLL2dnUW5WUDlKRjcrbjdHYjNZaWZ4Q2hhV2h1RUxqa0czUEYvVFFTSy9CZGppbEV1MUd6MGlhZm5uZUJEaThYTWFmRWYwSmtnR2lqaDRaUWQzUE9Pb2ZZbDNNaHE0Z21PMEVqUTZWdXFBQ0VvUzJ3aGxZWUNZQUdmSzNTYkFUUU9ZQ2d0ai9NNUtKV2UxbWNDa3BRWFBNTWVCQVVuNmVvcHRYNlFDQzRzWGRIMzd3VnJTTlpuaWV3WjYyWVhBSjhCQVVrTmdkdzJQREJuMDdTZTZGUzFuNEhXQzFiWjlVQUk4YnRmZ0pUeDgxTmxRVzhTN0hkUTNER1VFeVhVeURNT1M1eUk5dGRTcWl2NHFDeWt1dHVKbTNoWVR6K083WXZzcVN5cHVCOUlWeWdaVjFKTHJOTVY5VHlCdXNING1ZQkp6dCt0TnhpWFFPTE9XS3pEdHc4VFJCanF3QVUvN1MzZjZUVkI0NERjcFR5bE9SRzk3eGJLTFFUbmIzTVRFZHRXMnJEaDN2VFpjUTl5QVBOc1dCUEp1R2tzQmFOeGFOUXZvVUkycFl3OE9EWGdnWnUvQ2txTzFOQy8yd2t4cmNFelE5eXdua2dyZ2RHTkF2NlQzb0x5Y1FiTSswZ3lIemQ4YjVmU2szdUpzMjBuZGl2UTB5L3ZOSngrOHZhR3JUV01RUU9jR2p6UWFyWnBBY0RNSGRDcXI2NXhYWUdob0pGYzNteHZxcytNK3F2VSt3K3NaeXM5WEtCaG5tZ0M4REhpTGZoVXgifV19",
-        "x-amz-credential": "ASIA6QZJ64OPK2DY4CMR/20260616/us-east-1/s3/aws4_request",
-        "Content-Type": "multipart/form-data"
-      }
-    },
-    "last_status": {
-      "media_id": "3596193939110835392",
-      "media_type": "video",
-      "status": "succeeded"
-    },
-    "pin": {
-      "creative_type": "VIDEO",
-      "created_at": "2026-06-16T10:49:01",
-      "parent_pin_id": null,
-      "product_tags": [],
-      "has_been_promoted": false,
-      "is_product": false,
-      "is_owner": true,
-      "link": "https://sapiverpress.etsy.com/",
-      "is_standard": true,
-      "dominant_color": "#000000",
-      "board_owner": {
-        "username": "sapiver"
-      },
-      "board_section_id": null,
-      "board_id": "1038924276479876865",
-      "title": "KDP Sudoku Starter Pack | 5-image Pinterest video",
-      "pin_metrics": null,
-      "id": "1038924207808612107",
-      "description": "A five-image video version of today's FTPE carousel. First-Time Sudoku Publisher Edition from Sapiver Press is a beginner-friendly Etsy digital download for people learning how to attempt their first Amazon KDP Sudoku paperback upload. Digital download only. No guaranteed KDP approval, sales or income. Not affiliated with Amazon/KDP. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks #SapiverPress",
-      "media": {
-        "media_type": "video",
-        "cover_image_url": "https://i.pinimg.com/1200x/22/63/fe/2263fee1b63fd936b28752e695fe1d1d.jpg",
-        "video_url": null,
-        "video_url_hls": null,
-        "duration": null,
-        "height": null,
-        "width": null,
-        "images": {
-          "150x150": {
-            "width": 150,
-            "height": 150,
-            "url": "https://i.pinimg.com/150x150/22/63/fe/2263fee1b63fd936b28752e695fe1d1d.jpg"
-          },
-          "400x300": {
-            "width": 400,
-            "height": 300,
-            "url": "https://i.pinimg.com/400x300/22/63/fe/2263fee1b63fd936b28752e695fe1d1d.jpg"
-          },
-          "600x": {
-            "width": 564,
-            "height": 1002,
-            "url": "https://i.pinimg.com/564x/22/63/fe/2263fee1b63fd936b28752e695fe1d1d.jpg"
-          },
-          "1200x": {
-            "width": 1080,
-            "height": 1920,
-            "url": "https://i.pinimg.com/1200x/22/63/fe/2263fee1b63fd936b28752e695fe1d1d.jpg"
-          }
-        }
-      },
-      "is_removable": false,
-      "alt_text": null
-    }
-  }
+  "title": "KDP Sudoku Starter Pack | Mixed FTPE preview | main hero first time sudoku publisher edition\n",
+  "caption": "A mixed-topic five-image video preview from today's FTPE campaign. Subjects covered: main hero first time sudoku publisher edition; whats included; how your download works; guided support for first time publishers; why this edition is different. First-Time Sudoku Publisher Edition from Sapiver Press is a beginner-friendly Etsy digital download for people learning how to attempt their first Amazon KDP Sudoku paperback upload. Digital download only. No guaranteed KDP approval, ",
+  "first_comment": "More beginner publishing tools from Sapiver Press: https://sapiverpress.etsy.com\n\nSubjects covered: main hero first time sudoku publisher edition; whats included; how your download works; guided support for first time publishers; why this edition is different.\n\nUseful search terms: KDP beginner guide · Amazon KDP · Sudoku paperback publishing · KDP upload files · KDP interior PDF · KDP cover PDF · KDP metadata · KDP Previewer\n\n#AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks #SapiverPress\n",
+  "dry_run": true,
+  "note": "Prepared Pinterest video post. Set FTPE_PINTEREST_VIDEO_POST_MODE=live to upload."
 }
