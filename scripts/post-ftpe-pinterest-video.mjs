@@ -123,7 +123,7 @@ const boardId = pinterestBoardId();
 const out = {
   date: DATE,
   mode: MODE,
-  type: "ftpe_delayed_pinterest_video_post_v1",
+  type: "ftpe_pinterest_video_post_v1",
   cta: manifest.cta || CTA,
   board_id: boardId,
   board_name: DEFAULT_PINTEREST_BOARD_NAME,
@@ -145,7 +145,7 @@ if (MODE === "live" && alreadyPosted && !force) {
 
 if (MODE !== "live") {
   out.dry_run = true;
-  out.note = "Prepared delayed Pinterest video post. Set FTPE_PINTEREST_VIDEO_POST_MODE=live to upload.";
+  out.note = "Prepared Pinterest video post. Set FTPE_PINTEREST_VIDEO_POST_MODE=live to upload.";
 } else {
   const token = process.env.PINTEREST_ACCESS_TOKEN;
   if (!token) throw new Error("Missing PINTEREST_ACCESS_TOKEN");
@@ -162,4 +162,4 @@ if (MODE !== "live") {
 
 await fs.mkdir(path.dirname(RESULT), { recursive: true });
 await fs.writeFile(RESULT, JSON.stringify(out, null, 2) + "\n", "utf8");
-console.log(`${MODE === "live" ? "Posted" : "Prepared"} delayed FTPE Pinterest video for ${DATE} to ${DEFAULT_PINTEREST_BOARD_NAME}`);
+console.log(`${MODE === "live" ? "Posted" : "Prepared"} FTPE Pinterest video for ${DATE} to ${DEFAULT_PINTEREST_BOARD_NAME}`);
