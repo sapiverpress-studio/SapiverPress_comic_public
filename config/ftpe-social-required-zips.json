@@ -1,53 +1,109 @@
 {
-  "version": "ftpe_social_required_zips_v1",
-  "asset_root": "assets/ftpe/social_sets",
+  "version": "ftpe_social_required_zips_v2",
+  "source_of_truth": "config/ftpe-social-drive-zips.json",
+  "asset_roots": [
+    "assets/ftpe/social_master",
+    "assets/ftpe/social_sets",
+    "assets/ftpe/bonus_sets"
+  ],
   "sets": [
+    {
+      "set": "master",
+      "id": "etsy_master_images",
+      "zip": "FTPE_Etsy_Master_Images.zip",
+      "description": "Original FTPE Etsy/master image bundle used before the individual Drive ZIP source list was added."
+    },
     {
       "set": 1,
       "id": "core_product",
-      "zip": "FTPE_SET_01_CORE_PRODUCT_PNGS.zip",
-      "description": "Core product / main FTPE offer PNGs"
+      "zip": "FTPE_Batch_01_individual_PNGs.zip",
+      "description": "Core individual FTPE advert PNGs."
     },
     {
       "set": 2,
-      "id": "drive_workflow",
-      "zip": "FTPE_SET_02_DRIVE_WORKFLOW_PNGS.zip",
-      "description": "Drive workflow and customer delivery PNGs"
+      "id": "github_google_drive_campaign",
+      "zip": "FTPE_Batch_02_GitHub_GoogleDrive_campaign_PNGs.zip",
+      "description": "GitHub and Google Drive delivery campaign PNGs."
     },
     {
       "set": 3,
-      "id": "features_deliverables",
-      "zip": "FTPE_SET_03_FEATURES_DELIVERABLES_PNGS.zip",
-      "description": "Features and deliverables PNGs"
+      "id": "official_logo",
+      "zip": "FTPE_Batch_03_official_logo_PNGs.zip",
+      "description": "Official Sapiver Press logo advert PNGs."
     },
     {
       "set": 4,
-      "id": "trust_quality",
-      "zip": "FTPE_SET_04_TRUST_QUALITY_PNGS.zip",
-      "description": "Trust and quality proof PNGs"
+      "id": "trust_quality_angles",
+      "zip": "FTPE_Batch_04_trust_quality_angles_PNGs.zip",
+      "description": "Trust and quality proof/positioning PNGs."
     },
     {
       "set": 5,
       "id": "beginner_journey",
-      "zip": "FTPE_SET_05_BEGINNER_JOURNEY_PNGS.zip",
-      "description": "Beginner journey / first upload path PNGs"
+      "zip": "FTPE_SET_05_beginner_journey_FLAT_PNGS_v2.zip",
+      "description": "Beginner journey / first-upload path PNGs."
     },
     {
       "set": 6,
       "id": "objection_handling",
-      "zip": "FTPE_SET_06_OBJECTION_HANDLING_PNGS.zip",
-      "description": "Objection handling and reassurance PNGs"
+      "zip": "FTPE_SET_06_objection_handling_FLAT_PNGS_v2.zip",
+      "description": "Objection handling and reassurance PNGs."
+    },
+    {
+      "set": 7,
+      "id": "fixed_crops",
+      "zip": "FTPE_SET_07_FIXED_CROPS_PNGS-1.zip",
+      "description": "Set 7 fixed-crop PNGs; newer duplicate upload selected."
+    },
+    {
+      "set": 8,
+      "id": "premium_delivery_workflow",
+      "zip": "FTPE_SET_08_PREMIUM_DELIVERY_WORKFLOW_PNGS.zip",
+      "description": "Premium delivery workflow PNGs."
+    },
+    {
+      "set": 9,
+      "id": "first_upload_confidence",
+      "zip": "FTPE_SET_09_FIRST_UPLOAD_CONFIDENCE_10_PNGS_WITH_POST_COPY.zip",
+      "description": "First upload confidence PNGs with post copy; newest duplicate upload selected."
+    },
+    {
+      "set": 11,
+      "id": "safe_first_upload",
+      "zip": "FTPE_SET_11_SAFE_FIRST_UPLOAD_10_PNGS_WITH_POST_COPY.zip",
+      "description": "Safe first upload PNGs with post copy."
+    },
+    {
+      "set": 12,
+      "id": "etsy_to_kdp_route",
+      "zip": "FTPE_SET_12_ETSY_TO_KDP_ROUTE_10_PNGS_WITH_TEXT.zip",
+      "description": "Etsy to KDP route PNGs with text."
     },
     {
       "set": 15,
       "id": "uk_publishing_pitfalls",
-      "zip": "FTPE_SET_15_UK_PUBLISHING_PITFALLS_PNGS.zip",
-      "description": "UK publishing pitfalls / compliance lead-magnet PNGs"
+      "zip": "FTPE_SET_15_UK_PUBLISHING_PITFALLS_FLAT_PNGS.zip",
+      "description": "UK publishing pitfalls / compliance lead-magnet PNGs."
+    }
+  ],
+  "not_yet_present_in_drive": [
+    {
+      "set": 10,
+      "reason": "No FTPE_SET_10 ZIP was visible in the source Drive folder at audit time."
+    },
+    {
+      "set": 13,
+      "reason": "No FTPE_SET_13 ZIP was visible in the source Drive folder at audit time."
+    },
+    {
+      "set": 14,
+      "reason": "No FTPE_SET_14 ZIP was visible in the source Drive folder at audit time."
     }
   ],
   "rules": [
     "Use real FTPE/Sapiver Press assets only.",
     "Do not invent fake KDP screenshots, fake income screenshots, fake books, or fake covers.",
+    "Do not imply guaranteed KDP approval, sales, income, passive income, or Amazon/KDP affiliation.",
     "Commercial 900 upgrade content belongs only in help, guide, or promo materials, never inside book interiors/covers/mock pages."
   ]
 }
