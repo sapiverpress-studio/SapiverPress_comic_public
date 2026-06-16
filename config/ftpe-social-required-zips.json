@@ -1,5 +1,5 @@
 {
-  "version": "ftpe_social_required_zips_v2_2",
+  "version": "ftpe_social_required_zips_v2_3",
   "source_of_truth": "config/ftpe-social-drive-zips.json",
   "asset_roots": [
     "assets/ftpe/social_master",
@@ -68,6 +68,12 @@
       "description": "First upload confidence PNGs with post copy; newest duplicate upload selected."
     },
     {
+      "set": 10,
+      "id": "value_stack",
+      "zip": "FTPE_SET_10_VALUE_STACK_10_PNGS.zip",
+      "description": "Value stack PNGs."
+    },
+    {
       "set": 11,
       "id": "safe_first_upload",
       "zip": "FTPE_SET_11_SAFE_FIRST_UPLOAD_10_PNGS_WITH_POST_COPY.zip",
@@ -78,6 +84,18 @@
       "id": "etsy_to_kdp_route",
       "zip": "FTPE_SET_12_ETSY_TO_KDP_ROUTE_10_PNGS_WITH_TEXT.zip",
       "description": "Etsy to KDP route PNGs with text."
+    },
+    {
+      "set": 13,
+      "id": "first_upload_checks",
+      "zip": "FTPE_SET_13_FIRST_UPLOAD_CHECKS_10_PNGS_WITH_TXT.zip",
+      "description": "First upload checks PNGs with text files."
+    },
+    {
+      "set": 14,
+      "id": "buyer_fit",
+      "zip": "FTPE_SET_14_BUYER_FIT_10_PNGS_WITH_TXT.zip",
+      "description": "Buyer fit PNGs with text files."
     }
   ],
   "disabled_until_reuploaded": [
@@ -86,25 +104,6 @@
       "id": "uk_publishing_pitfalls",
       "zip": "FTPE_SET_15_UK_PUBLISHING_PITFALLS_FLAT_PNGS.zip",
       "reason": "GitHub Actions downloaded this Drive file but unzip -t failed. Reupload a fresh clean ZIP before enabling."
-    }
-  ],
-  "missing_or_unlocated": [
-    {
-      "set": 10,
-      "status": "unlocated",
-      "reason": "No FTPE_SET_10 or obvious FTPE pack 10 ZIP was visible in Drive search or the source folder at audit time."
-    }
-  ],
-  "in_progress_not_configured_yet": [
-    {
-      "set": 13,
-      "status": "in_progress",
-      "reason": "User confirmed this pack is being worked on; do not treat as missing until a finished ZIP is added to Drive."
-    },
-    {
-      "set": 14,
-      "status": "in_progress",
-      "reason": "User confirmed this pack is being worked on; do not treat as missing until a finished ZIP is added to Drive."
     }
   ],
   "rules": [
