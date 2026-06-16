@@ -19,6 +19,7 @@ on:
       - "scripts/build-ftpe-pin-and-fb-carousel.mjs"
       - "scripts/post-ftpe-pin-and-fb-carousel.mjs"
       - "scripts/post-ftpe-pinterest-video.mjs"
+      - "scripts/post-ftpe-youtube-short.mjs"
 
 permissions:
   contents: write
@@ -179,6 +180,17 @@ jobs:
           FTPE_PINTEREST_VIDEO_POST_MODE: ${{ env.FTPE_SOCIAL_POST_MODE }}
           PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
           PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
+
+      - name: Post or prepare YouTube Short
+        continue-on-error: true
+        run: node scripts/post-ftpe-youtube-short.mjs
+        env:
+          YOUTUBE_POST_MODE: ${{ env.FTPE_SOCIAL_POST_MODE }}
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          YOUTUBE_PRIVACY_STATUS: ${{ secrets.YOUTUBE_PRIVACY_STATUS }}
+          YOUTUBE_CATEGORY_ID: ${{ secrets.YOUTUBE_CATEGORY_ID }}
 
       - name: Commit generated FTPE social records
         if: always()
