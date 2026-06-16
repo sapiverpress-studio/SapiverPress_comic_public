@@ -1,5 +1,5 @@
 {
-  "version": "ftpe_social_drive_zips_v2_1",
+  "version": "ftpe_social_drive_zips_v2_2",
   "source_folder_id": "1KoatgsUcaWd9zfer_xTjWgyAzz_shvns",
   "source_folder_url": "https://drive.google.com/drive/folders/1KoatgsUcaWd9zfer_xTjWgyAzz_shvns",
   "import_mode": "download_individual_drive_zip_files",
@@ -90,6 +90,14 @@
       "description": "First upload confidence PNGs with post copy. Uses the newest duplicate upload."
     },
     {
+      "set": 10,
+      "id": "value_stack",
+      "file_name": "FTPE_SET_10_VALUE_STACK_10_PNGS.zip",
+      "drive_file_id": "1VyLR6D4sQ0fjtz8KnP-DQdIWmbCioL3d",
+      "target_dir": "assets/ftpe/social_sets",
+      "description": "Value stack PNGs."
+    },
+    {
       "set": 11,
       "id": "safe_first_upload",
       "file_name": "FTPE_SET_11_SAFE_FIRST_UPLOAD_10_PNGS_WITH_POST_COPY.zip",
@@ -104,6 +112,22 @@
       "drive_file_id": "1fuO8aoD5bvW35Pn9s3H7gvnz1e66nzgJ",
       "target_dir": "assets/ftpe/social_sets",
       "description": "Etsy to KDP route PNGs with text."
+    },
+    {
+      "set": 13,
+      "id": "first_upload_checks",
+      "file_name": "FTPE_SET_13_FIRST_UPLOAD_CHECKS_10_PNGS_WITH_TXT.zip",
+      "drive_file_id": "1oTRU4yLIR-XLyY6KtT6374iQpCghoO4e",
+      "target_dir": "assets/ftpe/social_sets",
+      "description": "First upload checks PNGs with text files."
+    },
+    {
+      "set": 14,
+      "id": "buyer_fit",
+      "file_name": "FTPE_SET_14_BUYER_FIT_10_PNGS_WITH_TXT.zip",
+      "drive_file_id": "1dnMSmkB6WV1PZaCNHLVcXKfKPr4eeMnP",
+      "target_dir": "assets/ftpe/social_sets",
+      "description": "Buyer fit PNGs with text files."
     }
   ],
   "disabled_until_reuploaded": [
