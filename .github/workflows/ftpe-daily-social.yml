@@ -16,6 +16,8 @@ on:
   push:
     paths:
       - ".github/workflows/ftpe-daily-social.yml"
+      - "config/ftpe-social-drive-zips.json"
+      - "config/ftpe-social-required-zips.json"
       - "scripts/build-ftpe-pin-and-fb-carousel.mjs"
       - "scripts/post-ftpe-pin-and-fb-carousel.mjs"
       - "scripts/post-ftpe-pinterest-video.mjs"
@@ -58,10 +60,81 @@ jobs:
 
           if find assets/ftpe/social_master assets/ftpe/social_sets assets/ftpe/bonus_sets -type f \( -iname '*.png' -o -iname '*.zip' -o -iname '*.zip.b64' \) 2>/dev/null | grep -q .; then
             echo "FTPE social assets already present in this runner workspace."
+            find assets/ftpe/social_master assets/ftpe/social_sets assets/ftpe/bonus_sets -type f \( -iname '*.png' -o -iname '*.zip' -o -iname '*.zip.b64' \) | sort | sed -n '1,240p'
             exit 0
           fi
 
-          echo "Downloading FTPE social asset bundle from shared Google Drive file ${FTPE_SOCIAL_DRIVE_FILE_ID}."
+          download_drive_zip() {
+            local file_id="$1"
+            local out_file="$2"
+            local tmp_dir cookie_file first_response confirm_token
+            tmp_dir="$(mktemp -d)"
+            cookie_file="${tmp_dir}/cookies.txt"
+            first_response="${tmp_dir}/drive-first-response"
+
+            curl -L --fail --retry 3 -c "$cookie_file" \
+              "https://drive.google.com/uc?export=download&id=${file_id}" \
+              -o "$first_response"
+
+            confirm_token="$(grep -oE 'confirm=([0-9A-Za-z_-]+)' "$first_response" | head -n 1 | cut -d= -f2 || true)"
+            if [ -n "$confirm_token" ]; then
+              curl -L --fail --retry 3 -b "$cookie_file" \
+                "https://drive.google.com/uc?export=download&confirm=${confirm_token}&id=${file_id}" \
+                -o "$out_file"
+            else
+              mv "$first_response" "$out_file"
+            fi
+
+            if ! unzip -t "$out_file" >/tmp/ftpe-social-unzip-test.txt 2>&1; then
+              echo "Downloaded file is not a valid ZIP: ${out_file}"
+              echo "First 500 bytes follow:"
+              head -c 500 "$out_file" || true
+              echo ""
+              cat /tmp/ftpe-social-unzip-test.txt || true
+              return 1
+            fi
+          }
+
+          DRIVE_CONFIG="config/ftpe-social-drive-zips.json"
+          if [ -f "$DRIVE_CONFIG" ]; then
+            echo "Downloading FTPE ZIPs listed in ${DRIVE_CONFIG}."
+            configured_count=0
+            downloaded_count=0
+
+            while IFS=$'\t' read -r file_id file_name target_dir; do
+              configured_count=$((configured_count + 1))
+              mkdir -p "$target_dir"
+              out_file="${target_dir}/${file_name}"
+              echo "Downloading ${file_name} from Drive file ${file_id} -> ${out_file}"
+              if download_drive_zip "$file_id" "$out_file"; then
+                downloaded_count=$((downloaded_count + 1))
+              else
+                echo "::error::Failed to download a configured FTPE social ZIP: ${file_name} (${file_id})"
+              fi
+            done < <(node --input-type=module - <<'NODE'
+          import fs from "fs";
+          const cfg = JSON.parse(fs.readFileSync("config/ftpe-social-drive-zips.json", "utf8"));
+          for (const item of cfg.files || []) {
+            const target = item.target_dir || "assets/ftpe/social_sets";
+            console.log([item.drive_file_id, item.file_name, target].join("\t"));
+          }
+          NODE
+            )
+
+            echo "Configured FTPE Drive ZIPs: ${configured_count}; downloaded valid ZIPs: ${downloaded_count}."
+            if [ "$configured_count" -gt 0 ]; then
+              if [ "$downloaded_count" -ne "$configured_count" ]; then
+                echo "::error::Configured Drive source is incomplete. Failing rather than silently reusing old assets."
+                exit 1
+              fi
+
+              echo "Imported FTPE asset ZIPs for this workflow run:"
+              find assets/ftpe/social_master assets/ftpe/social_sets assets/ftpe/bonus_sets -type f \( -iname '*.png' -o -iname '*.zip' -o -iname '*.zip.b64' \) | sort | sed -n '1,240p'
+              exit 0
+            fi
+          fi
+
+          echo "No configured Drive ZIP list found; falling back to legacy FTPE bundle ${FTPE_SOCIAL_DRIVE_FILE_ID}."
           TMP_DIR="$(mktemp -d)"
           COOKIE_FILE="${TMP_DIR}/cookies.txt"
           FIRST_RESPONSE="${TMP_DIR}/drive-first-response"
@@ -121,7 +194,7 @@ jobs:
           fi
 
           echo "Imported FTPE asset files for this workflow run:"
-          find assets/ftpe/social_master assets/ftpe/social_sets assets/ftpe/bonus_sets -type f \( -iname '*.png' -o -iname '*.zip' -o -iname '*.zip.b64' \) | sort | sed -n '1,200p'
+          find assets/ftpe/social_master assets/ftpe/social_sets assets/ftpe/bonus_sets -type f \( -iname '*.png' -o -iname '*.zip' -o -iname '*.zip.b64' \) | sort | sed -n '1,240p'
 
       - name: Ensure ffmpeg is available
         shell: bash
