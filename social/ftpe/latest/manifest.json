@@ -2,9 +2,19 @@
   "type": "ftpe_daily_pin_fb_carousel_and_pinterest_video_v1",
   "date": "2026-06-16",
   "cta": "https://sapiverpress.etsy.com",
-  "asset_group": "assets/ftpe/social_master/_extracted/FTPE_social_master_assets",
+  "asset_group": "mixed_subjects",
+  "asset_groups": [
+    "assets/ftpe/social_master/_extracted/FTPE_social_master_assets"
+  ],
   "asset_group_count": 1,
   "asset_group_image_count": 5,
+  "subjects": [
+    "main hero first time sudoku publisher edition",
+    "whats included",
+    "how your download works",
+    "guided support for first time publishers",
+    "why this edition is different"
+  ],
   "pinterest": {
     "image": "social/ftpe/2026-06-16/pinterest_pin/01_01_main_hero_first_time_sudoku_publisher_edition.png",
     "title": "pinterest_pin/title.txt",
