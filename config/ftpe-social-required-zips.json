@@ -1,12 +1,12 @@
 {
-  "version": "ftpe_social_required_zips_v2_1",
+  "version": "ftpe_social_required_zips_v2_2",
   "source_of_truth": "config/ftpe-social-drive-zips.json",
   "asset_roots": [
     "assets/ftpe/social_master",
     "assets/ftpe/social_sets",
     "assets/ftpe/bonus_sets"
   ],
-  "sets": [
+  "active_sets": [
     {
       "set": "master",
       "id": "etsy_master_images",
@@ -78,12 +78,14 @@
       "id": "etsy_to_kdp_route",
       "zip": "FTPE_SET_12_ETSY_TO_KDP_ROUTE_10_PNGS_WITH_TEXT.zip",
       "description": "Etsy to KDP route PNGs with text."
-    },
+    }
+  ],
+  "disabled_until_reuploaded": [
     {
       "set": 15,
       "id": "uk_publishing_pitfalls",
       "zip": "FTPE_SET_15_UK_PUBLISHING_PITFALLS_FLAT_PNGS.zip",
-      "description": "UK publishing pitfalls / compliance lead-magnet PNGs."
+      "reason": "GitHub Actions downloaded this Drive file but unzip -t failed. Reupload a fresh clean ZIP before enabling."
     }
   ],
   "missing_or_unlocated": [
