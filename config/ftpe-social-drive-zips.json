@@ -1,0 +1,147 @@
+{
+  "version": "ftpe_social_drive_zips_v2",
+  "source_folder_id": "1KoatgsUcaWd9zfer_xTjWgyAzz_shvns",
+  "source_folder_url": "https://drive.google.com/drive/folders/1KoatgsUcaWd9zfer_xTjWgyAzz_shvns",
+  "import_mode": "download_individual_drive_zip_files",
+  "target_roots": [
+    "assets/ftpe/social_master",
+    "assets/ftpe/social_sets",
+    "assets/ftpe/bonus_sets"
+  ],
+  "files": [
+    {
+      "set": "master",
+      "id": "etsy_master_images",
+      "file_name": "FTPE_Etsy_Master_Images.zip",
+      "drive_file_id": "17Qbd8Q6xICtKvpV0ZWtUuXv94nBWrXbc",
+      "target_dir": "assets/ftpe/social_master",
+      "description": "Original FTPE Etsy/master image bundle previously consumed by the workflow."
+    },
+    {
+      "set": 1,
+      "id": "core_product",
+      "file_name": "FTPE_Batch_01_individual_PNGs.zip",
+      "drive_file_id": "19X8Dxcj6ZzIWeuriKFVy0q9RmKHivf_1",
+      "target_dir": "assets/ftpe/social_sets",
+      "description": "Core individual FTPE advert PNGs."
+    },
+    {
+      "set": 2,
+      "id": "github_google_drive_campaign",
+      "file_name": "FTPE_Batch_02_GitHub_GoogleDrive_campaign_PNGs.zip",
+      "drive_file_id": "1xVIMbkEUD1YK2mSPru_2YAzyR4O4OcHp",
+      "target_dir": "assets/ftpe/social_sets",
+      "description": "GitHub and Google Drive delivery campaign PNGs."
+    },
+    {
+      "set": 3,
+      "id": "official_logo",
+      "file_name": "FTPE_Batch_03_official_logo_PNGs.zip",
+      "drive_file_id": "1uWP_FdP1j3IQddZ-Q4g5paZOZ-OeiGNp",
+      "target_dir": "assets/ftpe/social_sets",
+      "description": "Official Sapiver Press logo advert PNGs."
+    },
+    {
+      "set": 4,
+      "id": "trust_quality_angles",
+      "file_name": "FTPE_Batch_04_trust_quality_angles_PNGs.zip",
+      "drive_file_id": "1VTHJrjvUyKSWOXwDK5j4h5W6h2WFmbmH",
+      "target_dir": "assets/ftpe/social_sets",
+      "description": "Trust and quality angle PNGs."
+    },
+    {
+      "set": 5,
+      "id": "beginner_journey",
+      "file_name": "FTPE_SET_05_beginner_journey_FLAT_PNGS_v2.zip",
+      "drive_file_id": "1ina7IhDxr1kg99Z8cZQrB1mx-9ONdKUY",
+      "target_dir": "assets/ftpe/social_sets",
+      "description": "Beginner journey / first-upload path PNGs."
+    },
+    {
+      "set": 6,
+      "id": "objection_handling",
+      "file_name": "FTPE_SET_06_objection_handling_FLAT_PNGS_v2.zip",
+      "drive_file_id": "1sfyS_HO4EScPaVK_XyUHoqz4rkYQZtCP",
+      "target_dir": "assets/ftpe/social_sets",
+      "description": "Objection handling and reassurance PNGs."
+    },
+    {
+      "set": 7,
+      "id": "fixed_crops",
+      "file_name": "FTPE_SET_07_FIXED_CROPS_PNGS-1.zip",
+      "drive_file_id": "19IVYkVzIABmYSl5GYaoRu9snEjNlxK8m",
+      "target_dir": "assets/ftpe/social_sets",
+      "description": "Set 7 fixed-crop PNGs. Uses the newer duplicate upload."
+    },
+    {
+      "set": 8,
+      "id": "premium_delivery_workflow",
+      "file_name": "FTPE_SET_08_PREMIUM_DELIVERY_WORKFLOW_PNGS.zip",
+      "drive_file_id": "1Ds1KSXEyweZP4UkKyJxe-eyWUM4Gwxes",
+      "target_dir": "assets/ftpe/social_sets",
+      "description": "Premium delivery workflow PNGs."
+    },
+    {
+      "set": 9,
+      "id": "first_upload_confidence",
+      "file_name": "FTPE_SET_09_FIRST_UPLOAD_CONFIDENCE_10_PNGS_WITH_POST_COPY.zip",
+      "drive_file_id": "1TGywf5CGduqqsl9Yu3TqX9g0mmbU87o3",
+      "target_dir": "assets/ftpe/social_sets",
+      "description": "First upload confidence PNGs with post copy. Uses the newest duplicate upload."
+    },
+    {
+      "set": 11,
+      "id": "safe_first_upload",
+      "file_name": "FTPE_SET_11_SAFE_FIRST_UPLOAD_10_PNGS_WITH_POST_COPY.zip",
+      "drive_file_id": "12ORR2RJeeZu7aKC21tvt9By-Ww0SmYP3",
+      "target_dir": "assets/ftpe/social_sets",
+      "description": "Safe first upload PNGs with post copy."
+    },
+    {
+      "set": 12,
+      "id": "etsy_to_kdp_route",
+      "file_name": "FTPE_SET_12_ETSY_TO_KDP_ROUTE_10_PNGS_WITH_TEXT.zip",
+      "drive_file_id": "1fuO8aoD5bvW35Pn9s3H7gvnz1e66nzgJ",
+      "target_dir": "assets/ftpe/social_sets",
+      "description": "Etsy to KDP route PNGs with text."
+    },
+    {
+      "set": 15,
+      "id": "uk_publishing_pitfalls",
+      "file_name": "FTPE_SET_15_UK_PUBLISHING_PITFALLS_FLAT_PNGS.zip",
+      "drive_file_id": "12J_SKZObqXkkt3iSWFmyqixX75M0tqsm",
+      "target_dir": "assets/ftpe/social_sets",
+      "description": "UK publishing pitfalls / compliance PNGs."
+    }
+  ],
+  "duplicates_ignored": [
+    {
+      "file_name": "FTPE_SET_07_FIXED_CROPS_PNGS.zip",
+      "drive_file_id": "1SOwueVdKnSRuhr3cNP4YN0fV1cyn0azO",
+      "reason": "Older duplicate in the source folder; the newer -1 upload is selected."
+    },
+    {
+      "file_name": "FTPE_SET_09_FIRST_UPLOAD_CONFIDENCE_10_PNGS_WITH_POST_COPY.zip",
+      "drive_file_id": "118jIh5lrFZhbQNV5Wg-SMlCbWU4khu8p",
+      "reason": "Older duplicate in the source folder; the newer 2026-06-16 upload is selected."
+    }
+  ],
+  "excluded_from_ftpe_social": [
+    "Product_Dump_OS_v0_6.zip",
+    "Sapiver_UK_KDP_Admin_Checklist_NETLIFY_DROPIN_v1_1-1.zip",
+    "Sapiver_Admin_Toolkit_10_PNG_Ad_Campaign.zip",
+    "Sapiver_Admin_Toolkit_Ad_Campaign_Set2_With_Captions.zip",
+    "UK_Publishing_Admin_Starter_Guide_PNGs.zip",
+    "index-15.html",
+    "set_1.mp3",
+    "FTPE_001_CUSTOMER_DELIVERY_RELEASE_CANDIDATE_V3.zip",
+    "FTPE_001_CUSTOMER_DELIVERY_RELEASE_CANDIDATE_V3_QA_REPORT.json",
+    "KDP guide PDFs and browser print-view captures"
+  ],
+  "rules": [
+    "Use real FTPE/Sapiver Press assets only.",
+    "Do not imply guaranteed KDP approval, sales, income, passive income, or Amazon/KDP affiliation.",
+    "Use official Sapiver Press branding only.",
+    "Keep copy practical and educational."
+  ]
+}
