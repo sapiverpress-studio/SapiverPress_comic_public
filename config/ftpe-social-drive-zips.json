@@ -1,5 +1,5 @@
 {
-  "version": "ftpe_social_drive_zips_v2",
+  "version": "ftpe_social_drive_zips_v2_1",
   "source_folder_id": "1KoatgsUcaWd9zfer_xTjWgyAzz_shvns",
   "source_folder_url": "https://drive.google.com/drive/folders/1KoatgsUcaWd9zfer_xTjWgyAzz_shvns",
   "import_mode": "download_individual_drive_zip_files",
@@ -104,14 +104,16 @@
       "drive_file_id": "1fuO8aoD5bvW35Pn9s3H7gvnz1e66nzgJ",
       "target_dir": "assets/ftpe/social_sets",
       "description": "Etsy to KDP route PNGs with text."
-    },
+    }
+  ],
+  "disabled_until_reuploaded": [
     {
       "set": 15,
       "id": "uk_publishing_pitfalls",
       "file_name": "FTPE_SET_15_UK_PUBLISHING_PITFALLS_FLAT_PNGS.zip",
       "drive_file_id": "12J_SKZObqXkkt3iSWFmyqixX75M0tqsm",
       "target_dir": "assets/ftpe/social_sets",
-      "description": "UK publishing pitfalls / compliance PNGs."
+      "reason": "GitHub Actions downloaded this file but unzip -t failed: end-of-central-directory signature not found. Treat as corrupted or truncated in Drive and reupload a fresh ZIP before enabling."
     }
   ],
   "duplicates_ignored": [
