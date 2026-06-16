@@ -87,6 +87,15 @@ function cleanTitle(file) {
     .trim();
 }
 
+function subjectList(images) {
+  return [...new Set(images.map((img) => cleanTitle(img)).filter(Boolean))].slice(0, 8);
+}
+
+function subjectText(subjects) {
+  if (!subjects.length) return "";
+  return `Subjects covered: ${subjects.join("; ")}.`;
+}
+
 function copyList(images, dir) {
   fssync.mkdirSync(dir, { recursive: true });
   return images.map((src, i) => {
@@ -135,31 +144,37 @@ function pinTitle(title) {
   return `KDP Sudoku Paperback Starter Pack${topic}`.slice(0, 100);
 }
 
-function videoTitle() {
-  return "KDP Sudoku Starter Pack | 5-image Pinterest video".slice(0, 100);
+function videoTitle(subjects = []) {
+  const suffix = subjects.length ? ` | ${subjects[0]}` : "";
+  return `KDP Sudoku Starter Pack | Mixed FTPE preview${suffix}`.slice(0, 100);
 }
 
-function caption(kind, title) {
+function caption(kind, title, subjects = []) {
   const clean = title || "First-Time Sudoku Publisher Edition";
+  const subjectsLine = subjectText(subjects);
+  const subjectsBlock = subjectsLine ? `${subjectsLine}\n\n` : "";
   if (kind === "pin") {
-    return `${PRODUCT_LINE}: ${PRODUCT_POSITIONING}.\n\nIncludes ${WORKFLOW_TERMS}.\n\n${SAFETY_LINE}\n\nStart here: ${CTA}\n\nSearch terms: ${keywordLine(8)}\n\n${hashtags(6)}\n`;
+    return `${PRODUCT_LINE}: ${PRODUCT_POSITIONING}.\n\n${subjectsBlock}Includes ${WORKFLOW_TERMS}.\n\n${SAFETY_LINE}\n\nStart here: ${CTA}\n\nSearch terms: ${keywordLine(8)}\n\n${hashtags(6)}\n`;
   }
   if (kind === "video") {
-    return `A five-image video version of today's FTPE carousel. ${PRODUCT_LINE} is ${PRODUCT_POSITIONING}.\n\n${SAFETY_LINE}\n\nStart here: ${CTA}\n\n${hashtags(6)}\n`;
+    return `A mixed-topic five-image video preview from today's FTPE campaign.\n\n${subjectsBlock}${PRODUCT_LINE} is ${PRODUCT_POSITIONING}.\n\n${SAFETY_LINE}\n\nStart here: ${CTA}\n\n${hashtags(6)}\n`;
   }
-  return `${clean}\n\nPart of the ${PRODUCT_LINE} campaign. ${PRODUCT_POSITIONING}.\n\n${SAFETY_LINE}\n\nStart here: ${CTA}\n\n${hashtags(5)}\n`;
+  return `${clean}\n\nPart of the ${PRODUCT_LINE} campaign. ${PRODUCT_POSITIONING}.\n\n${subjectsBlock}${SAFETY_LINE}\n\nStart here: ${CTA}\n\n${hashtags(5)}\n`;
 }
 
-function pinterestFirstComment() {
-  return `More beginner publishing tools from Sapiver Press: ${CTA}\n\nUseful search terms: ${keywordLine(8)}\n\n${hashtags(6)}\n`;
+function pinterestFirstComment(subjects = []) {
+  const subjectsLine = subjectText(subjects);
+  return `More beginner publishing tools from Sapiver Press: ${CTA}\n\n${subjectsLine ? `${subjectsLine}\n\n` : ""}Useful search terms: ${keywordLine(8)}\n\n${hashtags(6)}\n`;
 }
 
-function facebookPostCaption() {
-  return `Thinking about trying your first KDP Sudoku paperback?\n\nFTPE is a beginner-friendly Sapiver Press starter pack for learning the first upload process.\n\nIt includes:\n• KDP-ready Sudoku interior PDF\n• matching full-spread cover PDF\n• metadata worksheet\n• KDP Previewer checklist\n• beginner guidance for common upload/admin steps\n\n${SAFETY_LINE}\n\nStart here: ${CTA}\n\n${hashtags(6)}\n`;
+function facebookPostCaption(subjects = []) {
+  const subjectsLine = subjectText(subjects);
+  return `Thinking about trying your first KDP Sudoku paperback?\n\nFTPE is a beginner-friendly Sapiver Press starter pack for learning the first upload process.\n\n${subjectsLine ? `${subjectsLine}\n\n` : ""}It includes:\n• KDP-ready Sudoku interior PDF\n• matching full-spread cover PDF\n• metadata worksheet\n• KDP Previewer checklist\n• beginner guidance for common upload/admin steps\n\n${SAFETY_LINE}\n\nStart here: ${CTA}\n\n${hashtags(6)}\n`;
 }
 
-function facebookFirstComment() {
-  return `Direct link: ${CTA}\n\nUseful for: ${keywordLine(8)}.\n\n${hashtags(4)}\n`;
+function facebookFirstComment(subjects = []) {
+  const subjectsLine = subjectText(subjects);
+  return `Direct link: ${CTA}\n\n${subjectsLine ? `${subjectsLine}\n\n` : ""}Useful for: ${keywordLine(8)}.\n\n${hashtags(4)}\n`;
 }
 
 function assetGroupKey(file) {
@@ -178,7 +193,7 @@ function rotateList(items, offset) {
   return [...items.slice(o), ...items.slice(0, o)];
 }
 
-function pickDailyAssets(images) {
+function groupedAssets(images) {
   const uniqueByPath = [...new Map(images.map((p) => [rel(p).toLowerCase(), p])).values()].sort();
   const grouped = new Map();
   for (const img of uniqueByPath) {
@@ -186,32 +201,55 @@ function pickDailyAssets(images) {
     if (!grouped.has(key)) grouped.set(key, []);
     grouped.get(key).push(img);
   }
-
-  const usableGroups = [...grouped.entries()]
+  const groups = [...grouped.entries()]
     .map(([key, files]) => ({ key, files: files.sort() }))
-    .filter((group) => group.files.length >= 5)
+    .filter((group) => group.files.length >= 1)
     .sort((a, b) => a.key.localeCompare(b.key));
+  return { uniqueByPath, groups };
+}
 
-  if (usableGroups.length) {
-    const group = usableGroups[dayIndex() % usableGroups.length];
-    const rotated = rotateList(group.files, Math.floor(dayIndex() / usableGroups.length));
-    return {
-      assetGroup: group.key,
-      groupCount: usableGroups.length,
-      imageCount: group.files.length,
-      pinImage: rotated[0],
-      carouselImages: rotated.slice(0, 5),
-    };
+function pickDailyAssets(images) {
+  const { uniqueByPath, groups } = groupedAssets(images);
+  if (uniqueByPath.length < 5) throw new Error(`Need at least five FTPE PNG assets in assets/ftpe/social_master, social_sets, or bonus_sets. Found ${uniqueByPath.length}.`);
+
+  const selected = [];
+  const used = new Set();
+  const rotatedGroups = rotateList(groups, dayIndex());
+  const innerOffset = Math.floor(dayIndex() / Math.max(groups.length, 1));
+
+  for (let round = 0; selected.length < 6 && round < 10; round++) {
+    for (const group of rotatedGroups) {
+      const groupFiles = rotateList(group.files, innerOffset + round);
+      const candidate = groupFiles.find((img) => !used.has(rel(img).toLowerCase()));
+      if (!candidate) continue;
+      selected.push(candidate);
+      used.add(rel(candidate).toLowerCase());
+      if (selected.length >= 6) break;
+    }
   }
 
-  if (uniqueByPath.length < 5) throw new Error(`Need at least five FTPE PNG assets in assets/ftpe/social_master, social_sets, or bonus_sets. Found ${uniqueByPath.length}.`);
-  const rotated = rotateList(uniqueByPath, dayIndex());
+  if (selected.length < 6) {
+    for (const candidate of rotateList(uniqueByPath, dayIndex() * 7)) {
+      if (used.has(rel(candidate).toLowerCase())) continue;
+      selected.push(candidate);
+      used.add(rel(candidate).toLowerCase());
+      if (selected.length >= 6) break;
+    }
+  }
+
+  const carouselImages = selected.length >= 6 ? selected.slice(1, 6) : selected.slice(0, 5);
+  const pinImage = selected[0] || carouselImages[0];
+  const subjects = subjectList(carouselImages);
+  const selectedGroups = [...new Set(selected.map(assetGroupKey))];
+
   return {
-    assetGroup: "all_assets_fallback",
-    groupCount: 0,
+    assetGroup: "mixed_subjects",
+    assetGroups: selectedGroups,
+    groupCount: groups.length,
     imageCount: uniqueByPath.length,
-    pinImage: rotated[0],
-    carouselImages: rotated.slice(0, 5),
+    pinImage,
+    carouselImages,
+    subjects,
   };
 }
 
@@ -222,6 +260,7 @@ const picked = pickDailyAssets(all);
 await ensureDir(OUT);
 const pinImage = picked.pinImage;
 const carouselImages = picked.carouselImages;
+const subjects = picked.subjects;
 
 const pinDir = path.join(OUT, "pinterest_pin");
 const fbDir = path.join(OUT, "facebook_carousel");
@@ -232,22 +271,24 @@ const videoOut = buildVideo(carouselImages, videoDir);
 const fbCaptionFiles = carouselImages.map((_, i) => `facebook_carousel/${String(i + 1).padStart(2, "0")}_caption.txt`);
 
 await fs.writeFile(path.join(pinDir, "title.txt"), pinTitle(cleanTitle(pinImage)) + "\n", "utf8");
-await fs.writeFile(path.join(pinDir, "caption.txt"), caption("pin", cleanTitle(pinImage)), "utf8");
-await fs.writeFile(path.join(pinDir, "first-comment.txt"), pinterestFirstComment(), "utf8");
-await fs.writeFile(path.join(fbDir, "post-caption.txt"), facebookPostCaption(), "utf8");
-await fs.writeFile(path.join(fbDir, "first-comment.txt"), facebookFirstComment(), "utf8");
-await fs.writeFile(path.join(videoDir, "title.txt"), videoTitle() + "\n", "utf8");
-await fs.writeFile(path.join(videoDir, "caption.txt"), caption("video", "Pinterest video"), "utf8");
-await fs.writeFile(path.join(videoDir, "first-comment.txt"), pinterestFirstComment(), "utf8");
-for (let i = 0; i < fbCaptionFiles.length; i++) await fs.writeFile(path.join(OUT, fbCaptionFiles[i]), caption("facebook_image", cleanTitle(carouselImages[i])), "utf8");
+await fs.writeFile(path.join(pinDir, "caption.txt"), caption("pin", cleanTitle(pinImage), subjects), "utf8");
+await fs.writeFile(path.join(pinDir, "first-comment.txt"), pinterestFirstComment(subjects), "utf8");
+await fs.writeFile(path.join(fbDir, "post-caption.txt"), facebookPostCaption(subjects), "utf8");
+await fs.writeFile(path.join(fbDir, "first-comment.txt"), facebookFirstComment(subjects), "utf8");
+await fs.writeFile(path.join(videoDir, "title.txt"), videoTitle(subjects) + "\n", "utf8");
+await fs.writeFile(path.join(videoDir, "caption.txt"), caption("video", "Pinterest video", subjects), "utf8");
+await fs.writeFile(path.join(videoDir, "first-comment.txt"), pinterestFirstComment(subjects), "utf8");
+for (let i = 0; i < fbCaptionFiles.length; i++) await fs.writeFile(path.join(OUT, fbCaptionFiles[i]), caption("facebook_image", cleanTitle(carouselImages[i]), subjects), "utf8");
 
 const manifest = {
   type: "ftpe_daily_pin_fb_carousel_and_pinterest_video_v1",
   date: DATE,
   cta: CTA,
   asset_group: picked.assetGroup,
+  asset_groups: picked.assetGroups,
   asset_group_count: picked.groupCount,
   asset_group_image_count: picked.imageCount,
+  subjects,
   pinterest: { image: pinOut, title: "pinterest_pin/title.txt", caption: "pinterest_pin/caption.txt", first_comment: "pinterest_pin/first-comment.txt" },
   pinterest_video: { video: videoOut.video, source_images: videoOut.images, title: "pinterest_video/title.txt", caption: "pinterest_video/caption.txt", first_comment: "pinterest_video/first-comment.txt" },
   facebook: { images: fbOut, image_captions: fbCaptionFiles, post_caption: "facebook_carousel/post-caption.txt", first_comment: "facebook_carousel/first-comment.txt" },
@@ -261,7 +302,8 @@ await fs.writeFile(path.join(OUT, "manifest.json"), JSON.stringify(manifest, nul
 await fs.rm(LATEST, { recursive: true, force: true });
 await fs.cp(OUT, LATEST, { recursive: true });
 console.log(`Built FTPE daily Pinterest pin, Facebook carousel, and Pinterest video for ${DATE}`);
-console.log(`Selected asset group: ${picked.assetGroup} (${picked.groupCount || "fallback"} groups, ${picked.imageCount} images in chosen group)`);
+console.log(`Selected asset mode: ${picked.assetGroup} (${picked.groupCount} groups, ${picked.imageCount} total images)`);
+console.log(`Subjects covered: ${subjects.join("; ")}`);
 console.log(`Pinterest image: ${pinOut}`);
 console.log(`Facebook carousel images: ${fbOut.join(", ")}`);
 console.log(`Pinterest video: ${videoOut.video}`);
