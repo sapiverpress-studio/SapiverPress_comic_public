@@ -1,0 +1,202 @@
+import fs from "fs/promises";
+import fssync from "fs";
+import path from "path";
+
+const ROOT = process.cwd();
+const DATE = process.env.DATE_OVERRIDE || new Intl.DateTimeFormat("sv-SE", { timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
+const MODE = (process.env.YOUTUBE_POST_MODE || process.env.FTPE_SOCIAL_POST_MODE || "dry_run").toLowerCase();
+const OUT = path.join(ROOT, "social", "ftpe", DATE);
+const MANIFEST = path.join(OUT, "manifest.json");
+const RESULT = path.join(OUT, "youtube", "post-result.json");
+const CTA = "https://sapiverpress.etsy.com";
+
+function absRoot(rel) {
+  return path.isAbsolute(rel) ? rel : path.join(ROOT, rel);
+}
+
+function absManifest(rel) {
+  if (!rel) return rel;
+  if (path.isAbsolute(rel)) return rel;
+  if (rel.startsWith("social/") || rel.startsWith("assets/")) return path.join(ROOT, rel);
+  return path.join(OUT, rel);
+}
+
+async function readOptional(rel, fallback = "") {
+  if (!rel) return fallback;
+  try { return await fs.readFile(absManifest(rel), "utf8"); } catch { return fallback; }
+}
+
+async function readJsonOptional(filePath) {
+  try { return JSON.parse(await fs.readFile(filePath, "utf8")); } catch { return null; }
+}
+
+function isTruthy(value) {
+  return ["1", "true", "yes", "y", "on"].includes(String(value || "").trim().toLowerCase());
+}
+
+function cleanText(text, limit) {
+  return String(text || "")
+    .replace(/[\u0000-\u001f\u007f]/g, "")
+    .replace(/[ \t]+/g, " ")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim()
+    .slice(0, limit);
+}
+
+function buildTitle(rawTitle) {
+  const title = cleanText(rawTitle || "First-Time Sudoku Publisher Edition | KDP Sudoku Starter Pack", 95);
+  return title || "First-Time Sudoku Publisher Edition | KDP Sudoku Starter Pack";
+}
+
+function buildDescription(rawCaption) {
+  const base = cleanText(rawCaption, 2200);
+  const footer = [
+    "",
+    "Sapiver Press:",
+    CTA,
+    "",
+    "Digital download only. No guaranteed KDP approval, sales or income. Not affiliated with Amazon/KDP.",
+    "",
+    "#SelfPublishing #AmazonKDP #SudokuBooks #PuzzleBooks #SapiverPress",
+  ].join("\n");
+  return cleanText(`${base}${footer}`, 4500);
+}
+
+function requireManifestVideo(manifest) {
+  const relVideo = manifest?.pinterest_video?.video;
+  if (!relVideo) throw new Error(`No pinterest_video.video found in ${MANIFEST}`);
+  const videoPath = absRoot(relVideo);
+  if (!fssync.existsSync(videoPath)) throw new Error(`YouTube video file not found: ${videoPath}`);
+  return { relVideo, videoPath };
+}
+
+function missingYouTubeSecrets() {
+  return [
+    "YOUTUBE_CLIENT_ID",
+    "YOUTUBE_CLIENT_SECRET",
+    "YOUTUBE_REFRESH_TOKEN",
+  ].filter((name) => !String(process.env[name] || "").trim());
+}
+
+async function jsonFetch(url, options = {}) {
+  const res = await fetch(url, options);
+  const text = await res.text();
+  let data = {};
+  try { data = text ? JSON.parse(text) : {}; } catch { data = { raw: text }; }
+  if (!res.ok) throw new Error(`${res.status} ${res.statusText}: ${JSON.stringify(data).slice(0, 1600)}`);
+  return data;
+}
+
+async function refreshAccessToken() {
+  const body = new URLSearchParams({
+    client_id: process.env.YOUTUBE_CLIENT_ID,
+    client_secret: process.env.YOUTUBE_CLIENT_SECRET,
+    refresh_token: process.env.YOUTUBE_REFRESH_TOKEN,
+    grant_type: "refresh_token",
+  });
+  const data = await jsonFetch("https://oauth2.googleapis.com/token", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body,
+  });
+  if (!data.access_token) throw new Error(`YouTube token refresh did not return access_token: ${JSON.stringify(data).slice(0, 1600)}`);
+  return data.access_token;
+}
+
+async function uploadYouTubeVideo({ accessToken, videoPath, title, description }) {
+  const bytes = fssync.readFileSync(videoPath);
+  const metadata = {
+    snippet: {
+      title,
+      description,
+      tags: ["self publishing", "Amazon KDP", "Sudoku books", "puzzle books", "Sapiver Press"],
+      categoryId: process.env.YOUTUBE_CATEGORY_ID || "27",
+      defaultLanguage: "en-GB",
+    },
+    status: {
+      privacyStatus: process.env.YOUTUBE_PRIVACY_STATUS || "unlisted",
+      selfDeclaredMadeForKids: false,
+      containsSyntheticMedia: false,
+    },
+  };
+
+  const initRes = await fetch("https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+      "Content-Type": "application/json; charset=UTF-8",
+      "X-Upload-Content-Type": "video/mp4",
+      "X-Upload-Content-Length": String(bytes.length),
+    },
+    body: JSON.stringify(metadata),
+  });
+
+  const initText = await initRes.text();
+  const uploadUrl = initRes.headers.get("location");
+  if (!initRes.ok || !uploadUrl) {
+    let data = {};
+    try { data = initText ? JSON.parse(initText) : {}; } catch { data = { raw: initText }; }
+    throw new Error(`YouTube resumable upload init failed: ${initRes.status} ${initRes.statusText}: ${JSON.stringify(data).slice(0, 1600)}`);
+  }
+
+  const uploadRes = await fetch(uploadUrl, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "video/mp4",
+      "Content-Length": String(bytes.length),
+    },
+    body: bytes,
+  });
+
+  const uploadText = await uploadRes.text();
+  let data = {};
+  try { data = uploadText ? JSON.parse(uploadText) : {}; } catch { data = { raw: uploadText }; }
+  if (!uploadRes.ok) throw new Error(`YouTube video upload failed: ${uploadRes.status} ${uploadRes.statusText}: ${JSON.stringify(data).slice(0, 1600)}`);
+  return data;
+}
+
+const manifest = JSON.parse(await fs.readFile(MANIFEST, "utf8"));
+const { relVideo, videoPath } = requireManifestVideo(manifest);
+const title = buildTitle(await readOptional(manifest.pinterest_video?.title, ""));
+const description = buildDescription(await readOptional(manifest.pinterest_video?.caption, ""));
+const existing = await readJsonOptional(RESULT);
+const alreadyPosted = Boolean(existing?.youtube?.id || existing?.youtube?.video_id);
+const force = isTruthy(process.env.FORCE_YOUTUBE_POST || "");
+
+const out = {
+  date: DATE,
+  mode: MODE,
+  type: "ftpe_youtube_short_upload_v1",
+  cta: manifest.cta || CTA,
+  video: relVideo,
+  title,
+  description,
+  privacy_status: process.env.YOUTUBE_PRIVACY_STATUS || "unlisted",
+};
+
+if (MODE === "live" && alreadyPosted && !force) {
+  console.log(`YouTube upload already has a live result for ${DATE}; skipping duplicate upload. Set FORCE_YOUTUBE_POST=1 to override.`);
+  process.exit(0);
+}
+
+if (MODE !== "live") {
+  out.dry_run = true;
+  out.note = "Prepared YouTube Shorts upload. Set YOUTUBE_POST_MODE=live and add YouTube OAuth secrets to upload.";
+} else {
+  const missing = missingYouTubeSecrets();
+  if (missing.length) {
+    out.skipped = true;
+    out.missing_secrets = missing;
+    out.note = "YouTube upload skipped because required GitHub secrets are missing.";
+    console.warn(out.note, missing.join(", "));
+  } else {
+    out.dry_run = false;
+    const accessToken = await refreshAccessToken();
+    out.youtube = await uploadYouTubeVideo({ accessToken, videoPath, title, description });
+    out.youtube_url = out.youtube?.id ? `https://www.youtube.com/watch?v=${out.youtube.id}` : null;
+  }
+}
+
+await fs.mkdir(path.dirname(RESULT), { recursive: true });
+await fs.writeFile(RESULT, JSON.stringify(out, null, 2) + "\n", "utf8");
+console.log(`${out.youtube ? "Posted" : out.skipped ? "Skipped" : "Prepared"} FTPE YouTube Short for ${DATE}`);
