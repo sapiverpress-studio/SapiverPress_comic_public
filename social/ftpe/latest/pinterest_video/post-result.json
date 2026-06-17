@@ -1,21 +1,96 @@
 {
   "date": "2026-06-17",
-  "mode": "dry_run",
+  "mode": "live",
   "type": "ftpe_pinterest_video_post_v1",
   "cta": "https://sapiverpress.etsy.com",
   "board_id": "1038924276479876865",
   "board_name": "Sapiver Press Comic",
   "video": "social/ftpe/2026-06-17/pinterest_video/pinterest_video.mp4",
   "source_images": [
-    "social/ftpe/2026-06-17/pinterest_video/01_FTPE_SET_09_01_first_time_sudoku_publisher_pack_layout.png",
-    "social/ftpe/2026-06-17/pinterest_video/02_FTPE_SET_09_02_beginner_friendly_kdp_sudoku_starter_pack.png",
-    "social/ftpe/2026-06-17/pinterest_video/03_FTPE_SET_09_03_buy_on_etsy_first_time_sudoku_publisher.png",
-    "social/ftpe/2026-06-17/pinterest_video/04_FTPE_SET_09_04_digital_guide_for_kdp_beginners.png",
-    "social/ftpe/2026-06-17/pinterest_video/05_FTPE_SET_09_05_digital_starter_pack_for_publishers.png"
+    "social/ftpe/2026-06-17/pinterest_video/01_FTPE_SET_09_07_plan_your_upload_with_sapiver_press.png",
+    "social/ftpe/2026-06-17/pinterest_video/02_FTPE_SET_09_08_ready_to_publish_your_first_kdp_sudoku.png",
+    "social/ftpe/2026-06-17/pinterest_video/03_FTPE_SET_09_09_start_your_kdp_journey_today.png",
+    "social/ftpe/2026-06-17/pinterest_video/04_FTPE_SET_09_10_what_happens_after_you_buy.png",
+    "social/ftpe/2026-06-17/pinterest_video/05_beginner_friendly_first_upload_guide.png"
   ],
-  "title": "Sapiver Press daily carousel | first time sudoku publisher pack layout\n",
-  "caption": "We love the feel of pen on paper. From printable Sudoku packs to paperback puzzle books, Sapiver Press designs resources for people who value clear layouts, calm solving time, and puzzles that are easy to print, use, and enjoy. Browse the collection at https://sapiverpress.etsy.com Publishing fact: The right niche can beat a broad market. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks",
-  "first_comment": "More from Sapiver Press: https://sapiverpress.etsy.com\n\nFact source: Publishing Facts 184\n\n#AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks\n",
-  "dry_run": true,
-  "note": "Prepared Pinterest video post. Set FTPE_PINTEREST_VIDEO_POST_MODE=live to upload."
+  "title": "Sapiver Press daily carousel | plan your upload with sapiver press\n",
+  "caption": "Life is busy enough, so our puzzles and games are built to be ready when you are. Play online, print a fresh set of grids, or pick up a puzzle pack without digging through clutter. Find your next puzzle at https://sapiverpress.etsy.com Publishing fact: Good publishing is often packaging, timing, and distribution—not just content. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks",
+  "first_comment": "More from Sapiver Press: https://sapiverpress.etsy.com\n\nFact source: Publishing Facts 185\n\n#AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks\n",
+  "dry_run": false,
+  "pinterest": {
+    "media": {
+      "media_id": "3598561396085269504",
+      "media_type": "video",
+      "upload_url": "https://pinterest-media-upload.s3-accelerate.amazonaws.com/",
+      "upload_parameters": {
+        "x-amz-date": "20260617T062446Z",
+        "x-amz-signature": "a949cbad653b5a831833e60926be9692260df78bfb147d40c41a755e69c08885",
+        "x-amz-security-token": "IQoJb3JpZ2luX2VjEL7//////////wEaCXVzLWVhc3QtMSJHMEUCIEQ+4Xg/iMvJXUh5sXgAQB/RddTAdKP98WAi28E6o84WAiEAlpLJYdrryYTyRTsoVkjtK0WQKF5ZjfZx/vP2Di3ae0UquQUIh///////////ARAAGgw5OTgxMzEwMzI5OTAiDLyhArMGPT5Ny/Mj7CqNBdriRO5T6Jqp4AjprMBYFHe0lIojGGa/6BC0Nd5x6EqCjtpGFhiNK7zEihhGYZoWoQzXRW1jkt0+H+vD7Nb/TqyPPS5YMxLw9vJeqCG1i7Cy02TKAILri7SuTiSQ3KEFqy1IDS+CX2SXNioayQLbCNn61FODtmnvqoapbZgQ7MI8jnM8tt4qmUjqHJahSKLCndjrDCy9G3YEt+YrN5VGI69OESK0UFMaXgj2b/W794sHOhMdw9rarp63g3/3qQoA3pqdQmx9bqdrNvl8qJWHO4c0zQ1Wlql4DWeVb/vttUBjGBjPdbouyDWHQi8r04MChneHpW1UBMBk21YzRVeyHP/QGM0aFPV09zwzshgUObehY5WB7t1cgA8Up7EwmnP7yBwzhBH1UQ189fv4qpcrnd+HaRst+DAAz13HeMR4a0mOZOwokSooi9JSdWCDOkqUVlt/GjEV1H8Y1YsRALxAFV+YWQa3uL0v+irDpBAquOrsh73g60vuGjv0T1esSXqxeBZZTnLZQtSQ/zX5qAD2efTdTuJBT8HkyEWphH+1qVMpuT5SCS0E02a8vSJc4/QvApT+viyPxNhFPYEi0SYSvCbNsJKBwbF5GEqcqk05xp6EaoE6tIYs3c9IPCXC/VoZeaqhTpBSuYLD0N82lVFdFnXfYioNtV6PH+9AeamJ9GnMKQDlr9QJs8NYBQZUypWu1ag5byQPGYWxqecdEZnc5b9+WhFAKQWeAnGX/l1vx2DHAQsagz3aH5oO99bPB1OvuCKKYR+kxtsvzADXV28ASif+i8tItHu8yyUYLYxAtKgbPHOKXCcTNNGDromOPhhcvc8d2lmLDZgkkGNAZSSDx6TPSXSC44YL5BlAAtBaMLTxyNEGOrEB/g073TAglTd1uibfYXlrD8uRaWRBxaF+8mskeEmWg2GN6/LHsKYtKqRzH1GGecRR62DKrvx8SSzqsLec4EEsMIir3IAWSMj2VH1BzaD7hvIIqkKz18vwSHWUH6WbO020JTJZaJ1f1q3DYeIxnrrQ8ECf2JUbR/hQpiKP2ji0Ja4wqLWfdmaNVLir1JtAwwU63TwG5WBl6VM4hXCco6iMFlj4R4Y9mxvfH/Nsd5ge+8Mt",
+        "x-amz-algorithm": "AWS4-HMAC-SHA256",
+        "key": "uploads/82/12/2b/2:video:1038924345197779616:3598561396085269504:vipQjQ1g-0A5ziWndfIABH",
+        "policy": "eyJleHBpcmF0aW9uIjoiMjAyNi0wNi0xOVQwNjoyNDo0Ni4wMDBaIiwiY29uZGl0aW9ucyI6W3siYnVja2V0IjoicGludGVyZXN0LW1lZGlhLXVwbG9hZCJ9LFsic3RhcnRzLXdpdGgiLCIka2V5IiwidXBsb2Fkcy84Mi8xMi8yYiJdLHsieC1hbXotY3JlZGVudGlhbCI6IkFTSUE2UVpKNjRPUE9YQlpSS1pOLzIwMjYwNjE3L3VzLWVhc3QtMS9zMy9hd3M0X3JlcXVlc3QifSx7IngtYW16LWFsZ29yaXRobSI6IkFXUzQtSE1BQy1TSEEyNTYifSx7IngtYW16LWRhdGUiOiIyMDI2MDYxN1QwNjI0NDZaIn0sWyJjb250ZW50LWxlbmd0aC1yYW5nZSIsMCw1MzY4NzA5MTIwXSxbImVxIiwiJENvbnRlbnQtVHlwZSIsIm11bHRpcGFydC9mb3JtLWRhdGEiXSx7IngtYW16LXNlY3VyaXR5LXRva2VuIjoiSVFvSmIzSnBaMmx1WDJWakVMNy8vLy8vLy8vLy93RWFDWFZ6TFdWaGMzUXRNU0pITUVVQ0lFUSs0WGcvaU12SlhVaDVzWGdBUUIvUmRkVEFkS1A5OFdBaTI4RTZvODRXQWlFQWxwTEpZZHJyeVlUeVJUc29Wa2p0SzBXUUtGNVpqZlp4L3ZQMkRpM2FlMFVxdVFVSWgvLy8vLy8vLy8vL0FSQUFHZ3c1T1RneE16RXdNekk1T1RBaURMeWhBck1HUFQ1TnkvTWo3Q3FOQmRyaVJPNVQ2SnFwNEFqcHJNQllGSGUwbElvakdHYS82QkMwTmQ1eDZFcUNqdHBHRmhpTks3ekVpaGhHWVpvV29RelhSVzFqa3QwK0grdkQ3TmIvVHF5UFBTNVlNeEx3OXZKZXFDRzFpN0N5MDJUS0FJTHJpN1N1VGlTUTNLRUZxeTFJRFMrQ1gyU1hOaW9heVFMYkNObjYxRk9EdG1udnFvYXBiWmdRN01JOGpuTTh0dDRxbVVqcUhKYWhTS0xDbmRqckRDeTlHM1lFdCtZck41VkdJNjlPRVNLMFVGTWFYZ2oyYi9XNzk0c0hPaE1kdzlyYXJwNjNnMy8zcVFvQTNwcWRRbXg5YnFkck52bDhxSldITzRjMHpRMVdscWw0RFdlVmIvdnR0VUJqR0JqUGRib3V5RFdIUWk4cjA0TUNobmVIcFcxVUJNQmsyMVl6UlZleUhQL1FHTTBhRlBWMDl6d3pzaGdVT2JlaFk1V0I3dDFjZ0E4VXA3RXdtblA3eUJ3emhCSDFVUTE4OWZ2NHFwY3JuZCtIYVJzdCtEQUF6MTNIZU1SNGEwbU9aT3dva1Nvb2k5SlNkV0NET2txVVZsdC9HakVWMUg4WTFZc1JBTHhBRlYrWVdRYTN1TDB2K2lyRHBCQXF1T3JzaDczZzYwdnVHanYwVDFlc1NYcXhlQlpaVG5MWlF0U1Evelg1cUFEMmVmVGRUdUpCVDhIa3lFV3BoSCsxcVZNcHVUNVNDUzBFMDJhOHZTSmM0L1F2QXBUK3ZpeVB4TmhGUFlFaTBTWVN2Q2JOc0pLQndiRjVHRXFjcWswNXhwNkVhb0U2dElZczNjOUlQQ1hDL1ZvWmVhcWhUcEJTdVlMRDBOODJsVkZkRm5YZllpb050VjZQSCs5QWVhbUo5R25NS1FEbHI5UUpzOE5ZQlFaVXlwV3UxYWc1YnlRUEdZV3hxZWNkRVpuYzViOStXaEZBS1FXZUFuR1gvbDF2eDJESEFRc2FnejNhSDVvTzk5YlBCMU92dUNLS1lSK2t4dHN2ekFEWFYyOEFTaWYraTh0SXRIdTh5eVVZTFl4QXRLZ2JQSE9LWENjVE5OR0Ryb21PUGhoY3ZjOGQybG1MRFpna2tHTkFaU1NEeDZUUFNYU0M0NFlMNUJsQUF0QmFNTFR4eU5FR09yRUIvZzA3M1RBZ2xUZDF1aWJmWVhsckQ4dVJhV1JCeGFGKzhtc2tlRW1XZzJHTjYvTEhzS1l0S3FSekgxR0dlY1JSNjJES3J2eDhTU3pxc0xlYzRFRXNNSWlyM0lBV1NNajJWSDFCemFEN2h2SUlxa0t6MTh2d1NIV1VINldiTzAyMEpUSlphSjFmMXEzRFllSXhucnJROEVDZjJKVWJSL2hRcGlLUDJqaTBKYTR3cUxXZmRtYU5WTGlyMUp0QXd3VTYzVHdHNVdCbDZWTTRoWENjbzZpTUZsajRSNFk5bXh2ZkgvTnNkNWdlKzhNdCJ9XX0=",
+        "x-amz-credential": "ASIA6QZJ64OPOXBZRKZN/20260617/us-east-1/s3/aws4_request",
+        "Content-Type": "multipart/form-data"
+      }
+    },
+    "last_status": {
+      "media_id": "3598561396085269504",
+      "media_type": "video",
+      "status": "succeeded"
+    },
+    "pin": {
+      "media": {
+        "media_type": "video",
+        "cover_image_url": "https://i.pinimg.com/1200x/31/ea/35/31ea356c2ba80c69c187eeaf2c1a8c1f.jpg",
+        "video_url": null,
+        "video_url_hls": null,
+        "duration": null,
+        "height": null,
+        "width": null,
+        "images": {
+          "150x150": {
+            "width": 150,
+            "height": 150,
+            "url": "https://i.pinimg.com/150x150/31/ea/35/31ea356c2ba80c69c187eeaf2c1a8c1f.jpg"
+          },
+          "400x300": {
+            "width": 400,
+            "height": 300,
+            "url": "https://i.pinimg.com/400x300/31/ea/35/31ea356c2ba80c69c187eeaf2c1a8c1f.jpg"
+          },
+          "600x": {
+            "width": 564,
+            "height": 1002,
+            "url": "https://i.pinimg.com/564x/31/ea/35/31ea356c2ba80c69c187eeaf2c1a8c1f.jpg"
+          },
+          "1200x": {
+            "width": 1080,
+            "height": 1920,
+            "url": "https://i.pinimg.com/1200x/31/ea/35/31ea356c2ba80c69c187eeaf2c1a8c1f.jpg"
+          }
+        }
+      },
+      "is_owner": true,
+      "id": "1038924207808641276",
+      "parent_pin_id": null,
+      "created_at": "2026-06-17T06:25:58",
+      "has_been_promoted": false,
+      "link": "https://sapiverpress.etsy.com/",
+      "is_removable": false,
+      "creative_type": "VIDEO",
+      "board_id": "1038924276479876865",
+      "board_section_id": null,
+      "alt_text": null,
+      "board_owner": {
+        "username": "sapiver"
+      },
+      "description": "Life is busy enough, so our puzzles and games are built to be ready when you are. Play online, print a fresh set of grids, or pick up a puzzle pack without digging through clutter. Find your next puzzle at https://sapiverpress.etsy.com Publishing fact: Good publishing is often packaging, timing, and distribution—not just content. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks",
+      "product_tags": [],
+      "title": "Sapiver Press daily carousel | plan your upload with sapiver press",
+      "is_standard": true,
+      "is_product": false,
+      "pin_metrics": null,
+      "dominant_color": null
+    }
+  }
 }
