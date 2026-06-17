@@ -1,0 +1,76 @@
+name: Publishing Fact Daily Post
+on:
+  workflow_dispatch:
+    inputs:
+      date_override: { description: "Optional date override YYYY-MM-DD", required: false, default: "" }
+      fact_day_override: { description: "Optional fact day 1-365", required: false, default: "" }
+      about_copy_id_override: { description: "Optional Sapiver Press about-copy id override", required: false, default: "" }
+      post_mode: { description: "live or dry_run", required: false, default: "live" }
+      post_to_pinterest: { description: "Post daily publishing fact to Pinterest", required: false, default: "true" }
+  schedule:
+    - cron: "15 9 * * *"
+  push:
+    paths:
+      - ".github/workflows/publishing-fact-daily-post.yml"
+      - "content/publishing-facts-daily-posts.csv"
+      - "copy/sapiver_press_about_copy.csv"
+      - "scripts/build-publishing-fact-daily-post.mjs"
+      - "scripts/post-publishing-fact-pinterest.mjs"
+permissions: { contents: write }
+concurrency: { group: publishing-fact-daily-post, cancel-in-progress: true }
+jobs:
+  build-and-post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with: { persist-credentials: true }
+      - name: Set run options
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ github.event.inputs.date_override }}" ]; then echo "DATE_OVERRIDE=${{ github.event.inputs.date_override }}" >> "$GITHUB_ENV"; else echo "DATE_OVERRIDE=$(TZ=Europe/London date +%F)" >> "$GITHUB_ENV"; fi
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ github.event.inputs.fact_day_override }}" ]; then echo "FACT_DAY_OVERRIDE=${{ github.event.inputs.fact_day_override }}" >> "$GITHUB_ENV"; fi
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ github.event.inputs.about_copy_id_override }}" ]; then echo "ABOUT_COPY_ID_OVERRIDE=${{ github.event.inputs.about_copy_id_override }}" >> "$GITHUB_ENV"; fi
+          if [ "${{ github.event_name }}" = "schedule" ]; then echo "PUBLISHING_FACT_POST_MODE=live" >> "$GITHUB_ENV"; echo "POST_TO_PINTEREST=true" >> "$GITHUB_ENV"; elif [ "${{ github.event_name }}" = "workflow_dispatch" ]; then echo "PUBLISHING_FACT_POST_MODE=${{ github.event.inputs.post_mode || 'live' }}" >> "$GITHUB_ENV"; echo "POST_TO_PINTEREST=${{ github.event.inputs.post_to_pinterest || 'true' }}" >> "$GITHUB_ENV"; else echo "PUBLISHING_FACT_POST_MODE=dry_run" >> "$GITHUB_ENV"; echo "POST_TO_PINTEREST=false" >> "$GITHUB_ENV"; fi
+      - uses: actions/setup-node@v5
+        with: { node-version: "22" }
+      - run: npm install
+      - name: Build daily publishing fact image and manifest
+        env:
+          DATE_OVERRIDE: ${{ env.DATE_OVERRIDE }}
+          FACT_DAY_OVERRIDE: ${{ env.FACT_DAY_OVERRIDE }}
+          ABOUT_COPY_ID_OVERRIDE: ${{ env.ABOUT_COPY_ID_OVERRIDE }}
+        run: node scripts/build-publishing-fact-daily-post.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: publishing-fact-daily-post-${{ env.DATE_OVERRIDE }}
+          path: |
+            social/publishing-facts/${{ env.DATE_OVERRIDE }}/*.png
+            social/publishing-facts/${{ env.DATE_OVERRIDE }}/manifest.json
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Commit generated publishing fact assets
+        shell: bash
+        run: |
+          git config user.name "sapiver-comic-bot"
+          git config user.email "sapiver-comic-bot@users.noreply.github.com"
+          git add social/publishing-facts
+          if git diff --cached --quiet; then echo "No publishing fact assets to commit."; else git commit -m "Build publishing fact daily post for ${DATE_OVERRIDE}"; for attempt in 1 2 3; do if git push; then exit 0; fi; echo "Push failed on attempt ${attempt}; rebasing onto origin/main and retrying."; git pull --rebase --autostash origin main || true; done; git push; fi
+      - name: Post daily publishing fact to Pinterest
+        if: env.POST_TO_PINTEREST == 'true'
+        continue-on-error: true
+        env:
+          DATE_OVERRIDE: ${{ env.DATE_OVERRIDE }}
+          PUBLISHING_FACT_POST_MODE: ${{ env.PUBLISHING_FACT_POST_MODE }}
+          POST_TO_PINTEREST: ${{ env.POST_TO_PINTEREST }}
+          PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
+          PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
+          PINTEREST_BOARD_NAME: "Sapiver Press Publishing Facts"
+        run: node scripts/post-publishing-fact-pinterest.mjs
+      - name: Commit Pinterest post state
+        if: always()
+        shell: bash
+        run: |
+          git config user.name "sapiver-comic-bot"
+          git config user.email "sapiver-comic-bot@users.noreply.github.com"
+          git add publishing-fact-pinterest-posts.json || true
+          if git diff --cached --quiet; then echo "No publishing fact Pinterest state changes."; else git commit -m "Update publishing fact Pinterest state"; git pull --rebase --autostash origin main || true; git push; fi
