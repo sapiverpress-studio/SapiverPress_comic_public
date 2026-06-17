@@ -1,0 +1,85 @@
+{
+  "version": "ftpe_rotation_state_v1",
+  "pools": {
+    "images": {
+      "cycle": 1,
+      "pool_size": 145,
+      "used_count": 6,
+      "used": [
+        "assets/ftpe/social_sets/_extracted/ftpe_set_07_fixed_crops_pngs-1/ftpe_set_07_08_first_time_sudoku_publisher_edition_preview.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_set_07_fixed_crops_pngs-1/ftpe_set_07_09_first_time_sudoku_publisher_edition_flyer.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_set_07_fixed_crops_pngs-1/ftpe_set_07_10_sophisticated_sudoku_publisher_promotional_design.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_set_08_premium_delivery_workflow_pngs/ftpe_set_08_01_everything_organised_in_one_route.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_set_08_premium_delivery_workflow_pngs/ftpe_set_08_02_etsy_digital_product_journey_guide.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_set_08_premium_delivery_workflow_pngs/ftpe_set_08_03_organised_workflow_for_digital_downloads.png"
+      ],
+      "exhausted_this_run": false,
+      "last_selected": [
+        "assets/ftpe/social_sets/_extracted/ftpe_set_07_fixed_crops_pngs-1/ftpe_set_07_08_first_time_sudoku_publisher_edition_preview.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_set_07_fixed_crops_pngs-1/ftpe_set_07_09_first_time_sudoku_publisher_edition_flyer.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_set_07_fixed_crops_pngs-1/ftpe_set_07_10_sophisticated_sudoku_publisher_promotional_design.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_set_08_premium_delivery_workflow_pngs/ftpe_set_08_01_everything_organised_in_one_route.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_set_08_premium_delivery_workflow_pngs/ftpe_set_08_02_etsy_digital_product_journey_guide.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_set_08_premium_delivery_workflow_pngs/ftpe_set_08_03_organised_workflow_for_digital_downloads.png"
+      ],
+      "updated_at": "2026-06-17T05:59:55.075Z"
+    },
+    "about": {
+      "cycle": 1,
+      "pool_size": 7,
+      "used_count": 1,
+      "used": [
+        "studio_identity"
+      ],
+      "exhausted_this_run": false,
+      "last_selected": [
+        "studio_identity"
+      ],
+      "updated_at": "2026-06-17T05:59:55.153Z"
+    },
+    "facts": {
+      "cycle": 1,
+      "pool_size": 365,
+      "used_count": 1,
+      "used": [
+        "182"
+      ],
+      "exhausted_this_run": false,
+      "last_selected": [
+        "182"
+      ],
+      "updated_at": "2026-06-17T05:59:55.153Z"
+    }
+  },
+  "history": [
+    {
+      "date": "2026-06-17",
+      "images": [
+        "assets/ftpe/social_sets/_extracted/FTPE_SET_07_FIXED_CROPS_PNGS-1/FTPE_SET_07_08_first_time_sudoku_publisher_edition_preview.png",
+        "assets/ftpe/social_sets/_extracted/FTPE_SET_07_FIXED_CROPS_PNGS-1/FTPE_SET_07_09_first_time_sudoku_publisher_edition_flyer.png",
+        "assets/ftpe/social_sets/_extracted/FTPE_SET_07_FIXED_CROPS_PNGS-1/FTPE_SET_07_10_sophisticated_sudoku_publisher_promotional_design.png",
+        "assets/ftpe/social_sets/_extracted/FTPE_SET_08_PREMIUM_DELIVERY_WORKFLOW_PNGS/FTPE_SET_08_01_everything_organised_in_one_route.png",
+        "assets/ftpe/social_sets/_extracted/FTPE_SET_08_PREMIUM_DELIVERY_WORKFLOW_PNGS/FTPE_SET_08_02_etsy_digital_product_journey_guide.png",
+        "assets/ftpe/social_sets/_extracted/FTPE_SET_08_PREMIUM_DELIVERY_WORKFLOW_PNGS/FTPE_SET_08_03_organised_workflow_for_digital_downloads.png"
+      ],
+      "about": "studio_identity",
+      "fact": "182",
+      "anecdote": null
+    }
+  ],
+  "updated_at": "2026-06-17T05:59:55.153Z",
+  "last_run": {
+    "date": "2026-06-17",
+    "images": [
+      "assets/ftpe/social_sets/_extracted/FTPE_SET_07_FIXED_CROPS_PNGS-1/FTPE_SET_07_08_first_time_sudoku_publisher_edition_preview.png",
+      "assets/ftpe/social_sets/_extracted/FTPE_SET_07_FIXED_CROPS_PNGS-1/FTPE_SET_07_09_first_time_sudoku_publisher_edition_flyer.png",
+      "assets/ftpe/social_sets/_extracted/FTPE_SET_07_FIXED_CROPS_PNGS-1/FTPE_SET_07_10_sophisticated_sudoku_publisher_promotional_design.png",
+      "assets/ftpe/social_sets/_extracted/FTPE_SET_08_PREMIUM_DELIVERY_WORKFLOW_PNGS/FTPE_SET_08_01_everything_organised_in_one_route.png",
+      "assets/ftpe/social_sets/_extracted/FTPE_SET_08_PREMIUM_DELIVERY_WORKFLOW_PNGS/FTPE_SET_08_02_etsy_digital_product_journey_guide.png",
+      "assets/ftpe/social_sets/_extracted/FTPE_SET_08_PREMIUM_DELIVERY_WORKFLOW_PNGS/FTPE_SET_08_03_organised_workflow_for_digital_downloads.png"
+    ],
+    "about": "studio_identity",
+    "fact": "182",
+    "anecdote": null
+  }
+}
