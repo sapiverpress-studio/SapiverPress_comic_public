@@ -4,51 +4,59 @@
     "images": {
       "cycle": 1,
       "pool_size": 145,
-      "used_count": 6,
+      "used_count": 12,
       "used": [
         "assets/ftpe/social_sets/_extracted/ftpe_set_07_fixed_crops_pngs-1/ftpe_set_07_08_first_time_sudoku_publisher_edition_preview.png",
         "assets/ftpe/social_sets/_extracted/ftpe_set_07_fixed_crops_pngs-1/ftpe_set_07_09_first_time_sudoku_publisher_edition_flyer.png",
         "assets/ftpe/social_sets/_extracted/ftpe_set_07_fixed_crops_pngs-1/ftpe_set_07_10_sophisticated_sudoku_publisher_promotional_design.png",
         "assets/ftpe/social_sets/_extracted/ftpe_set_08_premium_delivery_workflow_pngs/ftpe_set_08_01_everything_organised_in_one_route.png",
         "assets/ftpe/social_sets/_extracted/ftpe_set_08_premium_delivery_workflow_pngs/ftpe_set_08_02_etsy_digital_product_journey_guide.png",
-        "assets/ftpe/social_sets/_extracted/ftpe_set_08_premium_delivery_workflow_pngs/ftpe_set_08_03_organised_workflow_for_digital_downloads.png"
+        "assets/ftpe/social_sets/_extracted/ftpe_set_08_premium_delivery_workflow_pngs/ftpe_set_08_03_organised_workflow_for_digital_downloads.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_set_08_premium_delivery_workflow_pngs/ftpe_set_08_04_luxurious_sudoku_digital_bundle_promotion.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_set_08_premium_delivery_workflow_pngs/ftpe_set_08_05_premium_digital_starter_pack_advert.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_set_08_premium_delivery_workflow_pngs/ftpe_set_08_06_premium_digital_publishing_starter_pack.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_set_08_premium_delivery_workflow_pngs/ftpe_set_08_07_sophisticated_digital_product_bundle_mockup.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_set_08_premium_delivery_workflow_pngs/ftpe_set_08_08_publishing_guide_promotional_layout.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_set_08_premium_delivery_workflow_pngs/ftpe_set_08_09_read_first_upload_smarter_guide.png"
       ],
       "exhausted_this_run": false,
       "last_selected": [
-        "assets/ftpe/social_sets/_extracted/ftpe_set_07_fixed_crops_pngs-1/ftpe_set_07_08_first_time_sudoku_publisher_edition_preview.png",
-        "assets/ftpe/social_sets/_extracted/ftpe_set_07_fixed_crops_pngs-1/ftpe_set_07_09_first_time_sudoku_publisher_edition_flyer.png",
-        "assets/ftpe/social_sets/_extracted/ftpe_set_07_fixed_crops_pngs-1/ftpe_set_07_10_sophisticated_sudoku_publisher_promotional_design.png",
-        "assets/ftpe/social_sets/_extracted/ftpe_set_08_premium_delivery_workflow_pngs/ftpe_set_08_01_everything_organised_in_one_route.png",
-        "assets/ftpe/social_sets/_extracted/ftpe_set_08_premium_delivery_workflow_pngs/ftpe_set_08_02_etsy_digital_product_journey_guide.png",
-        "assets/ftpe/social_sets/_extracted/ftpe_set_08_premium_delivery_workflow_pngs/ftpe_set_08_03_organised_workflow_for_digital_downloads.png"
+        "assets/ftpe/social_sets/_extracted/ftpe_set_08_premium_delivery_workflow_pngs/ftpe_set_08_04_luxurious_sudoku_digital_bundle_promotion.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_set_08_premium_delivery_workflow_pngs/ftpe_set_08_05_premium_digital_starter_pack_advert.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_set_08_premium_delivery_workflow_pngs/ftpe_set_08_06_premium_digital_publishing_starter_pack.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_set_08_premium_delivery_workflow_pngs/ftpe_set_08_07_sophisticated_digital_product_bundle_mockup.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_set_08_premium_delivery_workflow_pngs/ftpe_set_08_08_publishing_guide_promotional_layout.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_set_08_premium_delivery_workflow_pngs/ftpe_set_08_09_read_first_upload_smarter_guide.png"
       ],
-      "updated_at": "2026-06-17T05:59:55.075Z"
+      "updated_at": "2026-06-17T06:03:49.490Z"
     },
     "about": {
       "cycle": 1,
       "pool_size": 7,
-      "used_count": 1,
+      "used_count": 2,
       "used": [
+        "accessible_approach",
         "studio_identity"
       ],
       "exhausted_this_run": false,
       "last_selected": [
-        "studio_identity"
+        "accessible_approach"
       ],
-      "updated_at": "2026-06-17T05:59:55.153Z"
+      "updated_at": "2026-06-17T06:03:49.499Z"
     },
     "facts": {
       "cycle": 1,
       "pool_size": 365,
-      "used_count": 1,
+      "used_count": 2,
       "used": [
-        "182"
+        "182",
+        "183"
       ],
       "exhausted_this_run": false,
       "last_selected": [
-        "182"
+        "183"
       ],
-      "updated_at": "2026-06-17T05:59:55.153Z"
+      "updated_at": "2026-06-17T06:03:49.500Z"
     }
   },
   "history": [
@@ -65,21 +73,35 @@
       "about": "studio_identity",
       "fact": "182",
       "anecdote": null
+    },
+    {
+      "date": "2026-06-17",
+      "images": [
+        "assets/ftpe/social_sets/_extracted/FTPE_SET_08_PREMIUM_DELIVERY_WORKFLOW_PNGS/FTPE_SET_08_04_luxurious_sudoku_digital_bundle_promotion.png",
+        "assets/ftpe/social_sets/_extracted/FTPE_SET_08_PREMIUM_DELIVERY_WORKFLOW_PNGS/FTPE_SET_08_05_premium_digital_starter_pack_advert.png",
+        "assets/ftpe/social_sets/_extracted/FTPE_SET_08_PREMIUM_DELIVERY_WORKFLOW_PNGS/FTPE_SET_08_06_premium_digital_publishing_starter_pack.png",
+        "assets/ftpe/social_sets/_extracted/FTPE_SET_08_PREMIUM_DELIVERY_WORKFLOW_PNGS/FTPE_SET_08_07_sophisticated_digital_product_bundle_mockup.png",
+        "assets/ftpe/social_sets/_extracted/FTPE_SET_08_PREMIUM_DELIVERY_WORKFLOW_PNGS/FTPE_SET_08_08_publishing_guide_promotional_layout.png",
+        "assets/ftpe/social_sets/_extracted/FTPE_SET_08_PREMIUM_DELIVERY_WORKFLOW_PNGS/FTPE_SET_08_09_read_first_upload_smarter_guide.png"
+      ],
+      "about": "accessible_approach",
+      "fact": "183",
+      "anecdote": null
     }
   ],
-  "updated_at": "2026-06-17T05:59:55.153Z",
+  "updated_at": "2026-06-17T06:03:49.500Z",
   "last_run": {
     "date": "2026-06-17",
     "images": [
-      "assets/ftpe/social_sets/_extracted/FTPE_SET_07_FIXED_CROPS_PNGS-1/FTPE_SET_07_08_first_time_sudoku_publisher_edition_preview.png",
-      "assets/ftpe/social_sets/_extracted/FTPE_SET_07_FIXED_CROPS_PNGS-1/FTPE_SET_07_09_first_time_sudoku_publisher_edition_flyer.png",
-      "assets/ftpe/social_sets/_extracted/FTPE_SET_07_FIXED_CROPS_PNGS-1/FTPE_SET_07_10_sophisticated_sudoku_publisher_promotional_design.png",
-      "assets/ftpe/social_sets/_extracted/FTPE_SET_08_PREMIUM_DELIVERY_WORKFLOW_PNGS/FTPE_SET_08_01_everything_organised_in_one_route.png",
-      "assets/ftpe/social_sets/_extracted/FTPE_SET_08_PREMIUM_DELIVERY_WORKFLOW_PNGS/FTPE_SET_08_02_etsy_digital_product_journey_guide.png",
-      "assets/ftpe/social_sets/_extracted/FTPE_SET_08_PREMIUM_DELIVERY_WORKFLOW_PNGS/FTPE_SET_08_03_organised_workflow_for_digital_downloads.png"
+      "assets/ftpe/social_sets/_extracted/FTPE_SET_08_PREMIUM_DELIVERY_WORKFLOW_PNGS/FTPE_SET_08_04_luxurious_sudoku_digital_bundle_promotion.png",
+      "assets/ftpe/social_sets/_extracted/FTPE_SET_08_PREMIUM_DELIVERY_WORKFLOW_PNGS/FTPE_SET_08_05_premium_digital_starter_pack_advert.png",
+      "assets/ftpe/social_sets/_extracted/FTPE_SET_08_PREMIUM_DELIVERY_WORKFLOW_PNGS/FTPE_SET_08_06_premium_digital_publishing_starter_pack.png",
+      "assets/ftpe/social_sets/_extracted/FTPE_SET_08_PREMIUM_DELIVERY_WORKFLOW_PNGS/FTPE_SET_08_07_sophisticated_digital_product_bundle_mockup.png",
+      "assets/ftpe/social_sets/_extracted/FTPE_SET_08_PREMIUM_DELIVERY_WORKFLOW_PNGS/FTPE_SET_08_08_publishing_guide_promotional_layout.png",
+      "assets/ftpe/social_sets/_extracted/FTPE_SET_08_PREMIUM_DELIVERY_WORKFLOW_PNGS/FTPE_SET_08_09_read_first_upload_smarter_guide.png"
     ],
-    "about": "studio_identity",
-    "fact": "182",
+    "about": "accessible_approach",
+    "fact": "183",
     "anecdote": null
   }
 }
