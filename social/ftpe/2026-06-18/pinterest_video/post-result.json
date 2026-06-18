@@ -1,0 +1,96 @@
+{
+  "date": "2026-06-18",
+  "mode": "live",
+  "type": "ftpe_pinterest_video_post_v1",
+  "cta": "https://sapiverpress.etsy.com",
+  "board_id": "1038924276479876865",
+  "board_name": "Sapiver Press Comic",
+  "video": "social/ftpe/2026-06-18/pinterest_video/pinterest_video.mp4",
+  "source_images": [
+    "social/ftpe/2026-06-18/pinterest_video/01_sapiver_press_sudoku_product_launch.png",
+    "social/ftpe/2026-06-18/pinterest_video/02_tidy_starter_pack_for_sudoku_publishers.png",
+    "social/ftpe/2026-06-18/pinterest_video/03_digital_product_ad_for_sudoku_publishers.png",
+    "social/ftpe/2026-06-18/pinterest_video/04_digital_sudoku_publishing_made_easy.png",
+    "social/ftpe/2026-06-18/pinterest_video/05_first_time_sudoku_publishing_guide.png"
+  ],
+  "title": "Sapiver Press daily carousel | sapiver press sudoku product launch\n",
+  "caption": "Sapiver Press is more than a shop. It is a growing system for puzzles, publishing workflows, useful downloads, and creator tools. If you want cleaner files, clearer records, and more confidence around your publishing assets, this is the place to start. Visit https://suite.sapiverpress.co.uk Publishing fact: Spine design matters because books often sit spine-out. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks",
+  "first_comment": "More from Sapiver Press: https://sapiverpress.etsy.com\n\nFact source: Publishing Facts 187\n\n#AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks\n",
+  "dry_run": false,
+  "pinterest": {
+    "media": {
+      "media_id": "3602055968409227392",
+      "media_type": "video",
+      "upload_url": "https://pinterest-media-upload.s3-accelerate.amazonaws.com/",
+      "upload_parameters": {
+        "x-amz-date": "20260618T112033Z",
+        "x-amz-signature": "422e568e3724a3e822563b70092c9f2825fabe2eddb7f246e7c9755f2a9ad804",
+        "x-amz-security-token": "IQoJb3JpZ2luX2VjENr//////////wEaCXVzLWVhc3QtMSJIMEYCIQD1u+qsHILah/SmEG6rTgUvJtK7fbEK+s+YtPkbzObx8gIhALc7yoPRTFySBPV7dnY26mAPzPlF0bl9FYFvq02NXOVpKroFCKP//////////wEQABoMOTk4MTMxMDMyOTkwIgw32/QXKA2DQNiR4igqjgV1Lq8rGNyYmbbTMWMN9WX7QUJBO1qoo8dDceKBYz1DfeoGuRyongbvkssLI6tqI/IpuVEntXUnyHD4WTxLfThV+3D8xaTry4vW8HZsjut/0Y65XIIEaepoGl/KFplvvounxqCsWVVhLdd07h1C90pqZDkNBokl9ceDDNA2WzC2eLa5s8/i4wqH++r90XvG3fpgbcoUFNoYvFJJFQoTLmsNOGqrPYmXKXkApxXz1MUaokAbyIbb5UdMzQFwzVffNw5Nqf8XhZjT7UScLagT58y8/oQ4vmXndJyR+1p2KRG8SvRU0ELnPEro//jR2lnj7sVSgDofQVNAwyO0dlYvanvUB7e7SUtarZShJAksb+iMq2vl4rCuPuL3p1HgvXiZZhvjXkqqicMt6PCe5H/tS+OVAHcdEE3DmIWAfMEqDXO2PyF8bH19yZXyMoj5ZSOihnMN63rVYZpNKvT21w0xOZdQjPpAUMvhLmvp06xF0Zo1AfmxopWtxLe3nHiP/gTt539fmMyRgM0GUVhljT7dJoJOJMK2c43cERK3Up/JQayw4q6fUtk6blYyNGT3hcZohFzRl68PC/LwfGsYDXzjMx2n7o3+pE4tazgsZ0vDmDKCc910POMZ/XUHOwqgwypm+/UsxeymLXaY2wtauh1e9oymCWTL7odQ7JG8PB1qavrhKB2fK4Sevz7XemybexpddvpWfpBLknPOPr1/qwXSM40LYun1R1KKx/zaJQpDQwSdWQ7kLVokAf0vaSoHx2aXIUqNQbz4YjuXm9aoSNNbYHi4j+eREgBIAmCHdNohghrx/+Fajljmcp+qOmGww1vL/wcMABhkWkyvTkINcFgTHvcdOzWxy7zk9vhfFeYa0s0wgPrO0QY6sAH2djZ1mgCt+uOV+3KF5ese9/UmDdWwNESMEpEe/RuHKHmnh0c1dDOHmpNpAr3cll+zfkOxC34SAYIr6aAyAszwL8uWeD6v01z2Urhjsnkg48I2PC76Iznq8e2rLJ3LTrvESJJUNKpfwiCv9yzkl6z4NFf9L4LKLpmPB/JYG/7uJqvgxgttqnTGr+jRthh3HGtqSfK0xATf211HCBO18RaeXVxPzhLHjI8WITE0UsNCGg==",
+        "x-amz-algorithm": "AWS4-HMAC-SHA256",
+        "key": "uploads/d1/60/40/2:video:1038924345197779616:3602055968409227392:vipsROeR4PpvmF7TVC3QS7",
+        "policy": "eyJleHBpcmF0aW9uIjoiMjAyNi0wNi0yMFQxMToyMDozMy4wMDBaIiwiY29uZGl0aW9ucyI6W3siYnVja2V0IjoicGludGVyZXN0LW1lZGlhLXVwbG9hZCJ9LFsic3RhcnRzLXdpdGgiLCIka2V5IiwidXBsb2Fkcy9kMS82MC80MCJdLHsieC1hbXotY3JlZGVudGlhbCI6IkFTSUE2UVpKNjRPUFBVWjRUUjdZLzIwMjYwNjE4L3VzLWVhc3QtMS9zMy9hd3M0X3JlcXVlc3QifSx7IngtYW16LWFsZ29yaXRobSI6IkFXUzQtSE1BQy1TSEEyNTYifSx7IngtYW16LWRhdGUiOiIyMDI2MDYxOFQxMTIwMzNaIn0sWyJjb250ZW50LWxlbmd0aC1yYW5nZSIsMCw1MzY4NzA5MTIwXSxbImVxIiwiJENvbnRlbnQtVHlwZSIsIm11bHRpcGFydC9mb3JtLWRhdGEiXSx7IngtYW16LXNlY3VyaXR5LXRva2VuIjoiSVFvSmIzSnBaMmx1WDJWakVOci8vLy8vLy8vLy93RWFDWFZ6TFdWaGMzUXRNU0pJTUVZQ0lRRDF1K3FzSElMYWgvU21FRzZyVGdVdkp0SzdmYkVLK3MrWXRQa2J6T2J4OGdJaEFMYzd5b1BSVEZ5U0JQVjdkblkyNm1BUHpQbEYwYmw5RllGdnEwMk5YT1ZwS3JvRkNLUC8vLy8vLy8vLy93RVFBQm9NT1RrNE1UTXhNRE15T1Rrd0lndzMyL1FYS0EyRFFOaVI0aWdxamdWMUxxOHJHTnlZbWJiVE1XTU45V1g3UVVKQk8xcW9vOGREY2VLQll6MURmZW9HdVJ5b25nYnZrc3NMSTZ0cUkvSXB1VkVudFhVbnlIRDRXVHhMZlRoViszRDh4YVRyeTR2VzhIWnNqdXQvMFk2NVhJSUVhZXBvR2wvS0ZwbHZ2b3VueHFDc1dWVmhMZGQwN2gxQzkwcHFaRGtOQm9rbDljZURETkEyV3pDMmVMYTVzOC9pNHdxSCsrcjkwWHZHM2ZwZ2Jjb1VGTm9ZdkZKSkZRb1RMbXNOT0dxclBZbVhLWGtBcHhYejFNVWFva0FieUliYjVVZE16UUZ3elZmZk53NU5xZjhYaFpqVDdVU2NMYWdUNTh5OC9vUTR2bVhuZEp5UisxcDJLUkc4U3ZSVTBFTG5QRXJvLy9qUjJsbmo3c1ZTZ0RvZlFWTkF3eU8wZGxZdmFudlVCN2U3U1V0YXJaU2hKQWtzYitpTXEydmw0ckN1UHVMM3AxSGd2WGlaWmh2alhrcXFpY010NlBDZTVIL3RTK09WQUhjZEVFM0RtSVdBZk1FcURYTzJQeUY4YkgxOXlaWHlNb2o1WlNPaWhuTU42M3JWWVpwTkt2VDIxdzB4T1pkUWpQcEFVTXZoTG12cDA2eEYwWm8xQWZteG9wV3R4TGUzbkhpUC9nVHQ1MzlmbU15UmdNMEdVVmhsalQ3ZEpvSk9KTUsyYzQzY0VSSzNVcC9KUWF5dzRxNmZVdGs2YmxZeU5HVDNoY1pvaEZ6Umw2OFBDL0x3ZkdzWURYempNeDJuN28zK3BFNHRhemdzWjB2RG1ES0NjOTEwUE9NWi9YVUhPd3Fnd3lwbSsvVXN4ZXltTFhhWTJ3dGF1aDFlOW95bUNXVEw3b2RRN0pHOFBCMXFhdnJoS0IyZks0U2V2ejdYZW15YmV4cGRkdnBXZnBCTGtuUE9QcjEvcXdYU000MExZdW4xUjFLS3gvemFKUXBEUXdTZFdRN2tMVm9rQWYwdmFTb0h4MmFYSVVxTlFiejRZanVYbTlhb1NOTmJZSGk0aitlUkVnQklBbUNIZE5vaGdocngvK0ZhamxqbWNwK3FPbUd3dzF2TC93Y01BQmhrV2t5dlRrSU5jRmdUSHZjZE96V3h5N3prOXZoZkZlWWEwczB3Z1ByTzBRWTZzQUgyZGpaMW1nQ3QrdU9WKzNLRjVlc2U5L1VtRGRXd05FU01FcEVlL1J1SEtIbW5oMGMxZERPSG1wTnBBcjNjbGwremZrT3hDMzRTQVlJcjZhQXlBc3p3TDh1V2VENnYwMXoyVXJoanNua2c0OEkyUEM3Nkl6bnE4ZTJyTEozTFRydkVTSkpVTktwZndpQ3Y5eXprbDZ6NE5GZjlMNExLTHBtUEIvSllHLzd1SnF2Z3hndHRxblRHcitqUnRoaDNIR3RxU2ZLMHhBVGYyMTFIQ0JPMThSYWVYVnhQemhMSGpJOFdJVEUwVXNOQ0dnPT0ifV19",
+        "x-amz-credential": "ASIA6QZJ64OPPUZ4TR7Y/20260618/us-east-1/s3/aws4_request",
+        "Content-Type": "multipart/form-data"
+      }
+    },
+    "last_status": {
+      "media_id": "3602055968409227392",
+      "media_type": "video",
+      "status": "succeeded"
+    },
+    "pin": {
+      "is_standard": true,
+      "board_section_id": null,
+      "dominant_color": null,
+      "is_product": false,
+      "title": "Sapiver Press daily carousel | sapiver press sudoku product launch",
+      "is_owner": true,
+      "creative_type": "VIDEO",
+      "link": "https://sapiverpress.etsy.com/",
+      "board_id": "1038924276479876865",
+      "is_removable": false,
+      "created_at": "2026-06-18T11:21:04",
+      "pin_metrics": null,
+      "has_been_promoted": false,
+      "media": {
+        "media_type": "video",
+        "cover_image_url": "https://i.pinimg.com/1200x/2b/c2/83/2bc2835cbb920ec0965ce964c2300f6b.jpg",
+        "video_url": null,
+        "video_url_hls": null,
+        "duration": null,
+        "height": null,
+        "width": null,
+        "images": {
+          "150x150": {
+            "width": 150,
+            "height": 150,
+            "url": "https://i.pinimg.com/150x150/2b/c2/83/2bc2835cbb920ec0965ce964c2300f6b.jpg"
+          },
+          "400x300": {
+            "width": 400,
+            "height": 300,
+            "url": "https://i.pinimg.com/400x300/2b/c2/83/2bc2835cbb920ec0965ce964c2300f6b.jpg"
+          },
+          "600x": {
+            "width": 564,
+            "height": 1002,
+            "url": "https://i.pinimg.com/564x/2b/c2/83/2bc2835cbb920ec0965ce964c2300f6b.jpg"
+          },
+          "1200x": {
+            "width": 1080,
+            "height": 1920,
+            "url": "https://i.pinimg.com/1200x/2b/c2/83/2bc2835cbb920ec0965ce964c2300f6b.jpg"
+          }
+        }
+      },
+      "parent_pin_id": null,
+      "id": "1038924207808679431",
+      "alt_text": null,
+      "board_owner": {
+        "username": "sapiver"
+      },
+      "product_tags": [],
+      "description": "Sapiver Press is more than a shop. It is a growing system for puzzles, publishing workflows, useful downloads, and creator tools. If you want cleaner files, clearer records, and more confidence around your publishing assets, this is the place to start. Visit https://suite.sapiverpress.co.uk Publishing fact: Spine design matters because books often sit spine-out. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks"
+    }
+  }
+}
