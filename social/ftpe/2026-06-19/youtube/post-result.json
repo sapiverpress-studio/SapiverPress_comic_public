@@ -1,64 +1,12 @@
 {
   "date": "2026-06-19",
-  "mode": "live",
+  "mode": "dry_run",
   "type": "ftpe_youtube_short_upload_v1",
   "cta": "https://sapiverpress.etsy.com",
   "video": "social/ftpe/2026-06-19/pinterest_video/pinterest_video.mp4",
-  "title": "Sapiver Press daily carousel | digital product for kdp beginners",
-  "description": "We love the feel of pen on paper. From printable Sudoku packs to paperback puzzle books, Sapiver Press designs resources for people who value clear layouts, calm solving time, and puzzles that are easy to print, use, and enjoy. Browse the collection at https://sapiverpress.etsy.comPublishing fact: Libraries use cataloguing systems as discovery systems.Start here: https://sapiverpress.etsy.com#AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooksSapiver Press:https://sapiverpress.etsy.comDigital download only. No guaranteed KDP approval, sales or income. Not affiliated with Amazon/KDP.#Shorts #SelfPublishing #AmazonKDP #SudokuBooks #PuzzleBooks #SapiverPress",
+  "title": "Sapiver Press daily carousel | promotional digital sudoku starter pack",
+  "description": "Life is busy enough, so our puzzles and games are built to be ready when you are. Play online, print a fresh set of grids, or pick up a puzzle pack without digging through clutter. Find your next puzzle at https://sapiverpress.etsy.comPublishing fact: The Library of Congress prepares CIP data for some books before publication.Start here: https://sapiverpress.etsy.com#AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooksSapiver Press:https://sapiverpress.etsy.comDigital download only. No guaranteed KDP approval, sales or income. Not affiliated with Amazon/KDP.#Shorts #SelfPublishing #AmazonKDP #SudokuBooks #PuzzleBooks #SapiverPress",
   "privacy_status": "public",
-  "dry_run": false,
-  "youtube": {
-    "kind": "youtube#video",
-    "etag": "SwcgnNzL85urkwEdi-AY4Aca6-Y",
-    "id": "vrU_eGl1R40",
-    "snippet": {
-      "publishedAt": "2026-06-19T03:47:06Z",
-      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
-      "title": "Sapiver Press daily carousel | digital product for kdp beginners",
-      "description": "We love the feel of pen on paper. From printable Sudoku packs to paperback puzzle books, Sapiver Press designs resources for people who value clear layouts, calm solving time, and puzzles that are easy to print, use, and enjoy. Browse the collection at https://sapiverpress.etsy.comPublishing fact: Libraries use cataloguing systems as discovery systems.Start here: https://sapiverpress.etsy.com#AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooksSapiver Press:https://sapiverpress.etsy.comDigital download only. No guaranteed KDP approval, sales or income. Not affiliated with Amazon/KDP.#Shorts #SelfPublishing #AmazonKDP #SudokuBooks #PuzzleBooks #SapiverPress",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/vrU_eGl1R40/default.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/vrU_eGl1R40/mqdefault.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/vrU_eGl1R40/hqdefault.jpg",
-          "width": 480,
-          "height": 360
-        }
-      },
-      "channelTitle": "Sapiver Press",
-      "tags": [
-        "Amazon KDP",
-        "Sapiver Press",
-        "Sudoku books",
-        "puzzle books",
-        "self publishing"
-      ],
-      "categoryId": "27",
-      "liveBroadcastContent": "none",
-      "defaultLanguage": "en-GB",
-      "localized": {
-        "title": "Sapiver Press daily carousel | digital product for kdp beginners",
-        "description": "We love the feel of pen on paper. From printable Sudoku packs to paperback puzzle books, Sapiver Press designs resources for people who value clear layouts, calm solving time, and puzzles that are easy to print, use, and enjoy. Browse the collection at https://sapiverpress.etsy.comPublishing fact: Libraries use cataloguing systems as discovery systems.Start here: https://sapiverpress.etsy.com#AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooksSapiver Press:https://sapiverpress.etsy.comDigital download only. No guaranteed KDP approval, sales or income. Not affiliated with Amazon/KDP.#Shorts #SelfPublishing #AmazonKDP #SudokuBooks #PuzzleBooks #SapiverPress"
-      }
-    },
-    "status": {
-      "uploadStatus": "uploaded",
-      "privacyStatus": "public",
-      "license": "youtube",
-      "embeddable": true,
-      "publicStatsViewable": true,
-      "selfDeclaredMadeForKids": false,
-      "containsSyntheticMedia": false
-    }
-  },
-  "youtube_url": "https://www.youtube.com/watch?v=vrU_eGl1R40"
+  "dry_run": true,
+  "note": "Prepared YouTube Shorts upload. Set YOUTUBE_POST_MODE=live and add YouTube OAuth secrets to upload."
 }
