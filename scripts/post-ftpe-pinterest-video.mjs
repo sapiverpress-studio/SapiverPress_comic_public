@@ -82,9 +82,11 @@ function uniqueList(values) {
 }
 
 function imagePinSources(manifest) {
-  const raw = manifest.pinterest_video?.source_images?.length
-    ? manifest.pinterest_video.source_images
-    : [manifest.pinterest?.image].filter(Boolean);
+  const raw = manifest.facebook?.images?.length
+    ? manifest.facebook.images
+    : manifest.pinterest_video?.source_images?.length
+      ? manifest.pinterest_video.source_images
+      : [manifest.pinterest?.image].filter(Boolean);
   const images = uniqueList(raw);
   const limit = Math.min(images.length, toPositiveInteger(process.env.PINTEREST_IMAGE_PIN_LIMIT, DEFAULT_IMAGE_PIN_LIMIT));
   return images.slice(0, limit);
