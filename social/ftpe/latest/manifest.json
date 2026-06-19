@@ -4,50 +4,51 @@
   "cta": "https://sapiverpress.etsy.com",
   "asset_group": "mixed_subjects_no_repeat",
   "asset_groups": [
-    "assets/ftpe/social_sets/_extracted/FTPE_SET_13_FIRST_UPLOAD_CHECKS_10_PNGS_WITH_TXT"
+    "assets/ftpe/social_sets/_extracted/FTPE_SET_13_FIRST_UPLOAD_CHECKS_10_PNGS_WITH_TXT",
+    "assets/ftpe/social_sets/_extracted/FTPE_SET_14_BUYER_FIT_10_PNGS_WITH_TXT"
   ],
   "asset_group_count": 15,
   "asset_group_image_count": 145,
   "subjects": [
-    "digital product marketing for kdp upload",
-    "ftpe starter pack promotional design",
-    "ftpe starter pack promotional mockup",
-    "organised publishing made easy",
-    "plan your kdp upload checklist"
+    "product mockup for kdp upload guide",
+    "sapiver press product and planner layout",
+    "first time sudoku publishers",
+    "beginners who want structure",
+    "publish under your own account"
   ],
   "daily_material": {
     "about": {
-      "id": "efficiency_angle",
-      "text": "Publishing should not feel like a maze of friction and messy files. Sapiver Press builds practical tools for small publishers, from KDP starter resources to admin systems that help keep products, assets, rights, and records organised. Explore the creator tools at https://suite.sapiverpress.co.uk",
+      "id": "system_first_philosophy",
+      "text": "Sapiver Press is more than a shop. It is a growing system for puzzles, publishing workflows, useful downloads, and creator tools. If you want cleaner files, clearer records, and more confidence around your publishing assets, this is the place to start. Visit https://suite.sapiverpress.co.uk",
       "audience": "Creators and publishers",
-      "angle": "Efficiency angle",
-      "use_case": "Creator-facing post footer",
+      "angle": "System-first philosophy",
+      "use_case": "Brand positioning post footer",
       "primary_url": "https://suite.sapiverpress.co.uk",
       "secondary_url": "",
       "source": "about_copy",
       "raw": {
-        "id": "efficiency_angle",
+        "id": "system_first_philosophy",
         "audience": "Creators and publishers",
-        "angle": "Efficiency angle",
-        "copy": "Publishing should not feel like a maze of friction and messy files. Sapiver Press builds practical tools for small publishers, from KDP starter resources to admin systems that help keep products, assets, rights, and records organised. Explore the creator tools at https://suite.sapiverpress.co.uk",
+        "angle": "System-first philosophy",
+        "copy": "Sapiver Press is more than a shop. It is a growing system for puzzles, publishing workflows, useful downloads, and creator tools. If you want cleaner files, clearer records, and more confidence around your publishing assets, this is the place to start. Visit https://suite.sapiverpress.co.uk",
         "primary_url": "https://suite.sapiverpress.co.uk",
         "secondary_url": "",
-        "use_case": "Creator-facing post footer"
+        "use_case": "Brand positioning post footer"
       }
     },
     "fact": {
-      "id": "191",
-      "text": "CIP data helps libraries and book dealers process new books.",
+      "id": "192",
+      "text": "MARC records are machine-readable catalogue records.",
       "source": "publishing_facts",
       "raw": {
-        "day": "191",
+        "day": "192",
         "theme": "Libraries & Collecting",
-        "fact": "CIP data helps libraries and book dealers process new books."
+        "fact": "MARC records are machine-readable catalogue records."
       }
     },
     "anecdote": null,
     "anecdote_source_file": null,
-    "caption": "Publishing should not feel like a maze of friction and messy files. Sapiver Press builds practical tools for small publishers, from KDP starter resources to admin systems that help keep products, assets, rights, and records organised. Explore the creator tools at https://suite.sapiverpress.co.uk\n\nPublishing fact: CIP data helps libraries and book dealers process new books.\n\nStart here: https://sapiverpress.etsy.com\n\n#AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks\n"
+    "caption": "Sapiver Press is more than a shop. It is a growing system for puzzles, publishing workflows, useful downloads, and creator tools. If you want cleaner files, clearer records, and more confidence around your publishing assets, this is the place to start. Visit https://suite.sapiverpress.co.uk\n\nPublishing fact: MARC records are machine-readable catalogue records.\n\nStart here: https://sapiverpress.etsy.com\n\n#AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks\n"
   },
   "rotation": {
     "state_file": "social/ftpe/rotation-state.json",
@@ -55,7 +56,7 @@
       "images": {
         "cycle": 1,
         "pool_size": 145,
-        "used_count": 60,
+        "used_count": 66,
         "used": [
           "assets/ftpe/social_sets/_extracted/ftpe_set_07_fixed_crops_pngs-1/ftpe_set_07_08_first_time_sudoku_publisher_edition_preview.png",
           "assets/ftpe/social_sets/_extracted/ftpe_set_07_fixed_crops_pngs-1/ftpe_set_07_09_first_time_sudoku_publisher_edition_flyer.png",
@@ -116,38 +117,45 @@
           "assets/ftpe/social_sets/_extracted/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_starter_pack_promotional_design.png",
           "assets/ftpe/social_sets/_extracted/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_starter_pack_promotional_mockup.png",
           "assets/ftpe/social_sets/_extracted/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_set_13_first_upload_checks_10_pngs_with_txt/organised_publishing_made_easy.png",
-          "assets/ftpe/social_sets/_extracted/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_set_13_first_upload_checks_10_pngs_with_txt/plan_your_kdp_upload_checklist.png"
+          "assets/ftpe/social_sets/_extracted/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_set_13_first_upload_checks_10_pngs_with_txt/plan_your_kdp_upload_checklist.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_set_13_first_upload_checks_10_pngs_with_txt/preview_check_and_publish_with_confidence.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_set_13_first_upload_checks_10_pngs_with_txt/product_mockup_for_kdp_upload_guide.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_set_13_first_upload_checks_10_pngs_with_txt/sapiver_press_product_and_planner_layout.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_set_14_buyer_fit_10_pngs_with_txt/ftpe_set_14_buyer_fit_10_pngs_with_txt/pngs/ftpe_set_14_01_first_time_sudoku_publishers.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_set_14_buyer_fit_10_pngs_with_txt/ftpe_set_14_buyer_fit_10_pngs_with_txt/pngs/ftpe_set_14_02_beginners_who_want_structure.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_set_14_buyer_fit_10_pngs_with_txt/ftpe_set_14_buyer_fit_10_pngs_with_txt/pngs/ftpe_set_14_03_publish_under_your_own_account.png"
         ],
         "exhausted_this_run": false,
         "last_selected": [
-          "assets/ftpe/social_sets/_extracted/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_set_13_first_upload_checks_10_pngs_with_txt/boost_your_sudoku_publishing_workflow.png",
-          "assets/ftpe/social_sets/_extracted/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_set_13_first_upload_checks_10_pngs_with_txt/digital_product_marketing_for_kdp_upload.png",
-          "assets/ftpe/social_sets/_extracted/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_starter_pack_promotional_design.png",
-          "assets/ftpe/social_sets/_extracted/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_starter_pack_promotional_mockup.png",
-          "assets/ftpe/social_sets/_extracted/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_set_13_first_upload_checks_10_pngs_with_txt/organised_publishing_made_easy.png",
-          "assets/ftpe/social_sets/_extracted/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_set_13_first_upload_checks_10_pngs_with_txt/plan_your_kdp_upload_checklist.png"
+          "assets/ftpe/social_sets/_extracted/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_set_13_first_upload_checks_10_pngs_with_txt/preview_check_and_publish_with_confidence.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_set_13_first_upload_checks_10_pngs_with_txt/product_mockup_for_kdp_upload_guide.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_set_13_first_upload_checks_10_pngs_with_txt/sapiver_press_product_and_planner_layout.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_set_14_buyer_fit_10_pngs_with_txt/ftpe_set_14_buyer_fit_10_pngs_with_txt/pngs/ftpe_set_14_01_first_time_sudoku_publishers.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_set_14_buyer_fit_10_pngs_with_txt/ftpe_set_14_buyer_fit_10_pngs_with_txt/pngs/ftpe_set_14_02_beginners_who_want_structure.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_set_14_buyer_fit_10_pngs_with_txt/ftpe_set_14_buyer_fit_10_pngs_with_txt/pngs/ftpe_set_14_03_publish_under_your_own_account.png"
         ],
-        "updated_at": "2026-06-19T04:26:18.062Z"
+        "updated_at": "2026-06-19T12:20:36.642Z"
       },
       "about": {
         "cycle": 2,
         "pool_size": 7,
-        "used_count": 3,
+        "used_count": 4,
         "used": [
           "efficiency_angle",
           "print_ready_focus",
-          "ready_to_use_vibe"
+          "ready_to_use_vibe",
+          "system_first_philosophy"
         ],
         "exhausted_this_run": false,
         "last_selected": [
-          "efficiency_angle"
+          "system_first_philosophy"
         ],
-        "updated_at": "2026-06-19T04:26:18.210Z"
+        "updated_at": "2026-06-19T12:20:36.719Z"
       },
       "facts": {
         "cycle": 1,
         "pool_size": 365,
-        "used_count": 10,
+        "used_count": 11,
         "used": [
           "182",
           "183",
@@ -158,13 +166,14 @@
           "188",
           "189",
           "190",
-          "191"
+          "191",
+          "192"
         ],
         "exhausted_this_run": false,
         "last_selected": [
-          "191"
+          "192"
         ],
-        "updated_at": "2026-06-19T04:26:18.211Z"
+        "updated_at": "2026-06-19T12:20:36.719Z"
       }
     },
     "rule": "No image, about snippet, fact, or anecdote is reused until its own pool is exhausted; then that pool loops."
@@ -176,7 +185,7 @@
     "limitation": "This removes ordinary metadata; it cannot guarantee removal of invisible AI watermarks embedded in pixels."
   },
   "pinterest": {
-    "image": "social/ftpe/2026-06-19/pinterest_pin/01_boost_your_sudoku_publishing_workflow.png",
+    "image": "social/ftpe/2026-06-19/pinterest_pin/01_preview_check_and_publish_with_confidence.png",
     "title": "pinterest_pin/title.txt",
     "caption": "pinterest_pin/caption.txt",
     "first_comment": "pinterest_pin/first-comment.txt"
@@ -184,11 +193,11 @@
   "pinterest_video": {
     "video": "social/ftpe/2026-06-19/pinterest_video/pinterest_video.mp4",
     "source_images": [
-      "social/ftpe/2026-06-19/pinterest_video/01_digital_product_marketing_for_kdp_upload.png",
-      "social/ftpe/2026-06-19/pinterest_video/02_ftpe_starter_pack_promotional_design.png",
-      "social/ftpe/2026-06-19/pinterest_video/03_ftpe_starter_pack_promotional_mockup.png",
-      "social/ftpe/2026-06-19/pinterest_video/04_organised_publishing_made_easy.png",
-      "social/ftpe/2026-06-19/pinterest_video/05_plan_your_kdp_upload_checklist.png"
+      "social/ftpe/2026-06-19/pinterest_video/01_product_mockup_for_kdp_upload_guide.png",
+      "social/ftpe/2026-06-19/pinterest_video/02_sapiver_press_product_and_planner_layout.png",
+      "social/ftpe/2026-06-19/pinterest_video/03_FTPE_SET_14_01_first_time_sudoku_publishers.png",
+      "social/ftpe/2026-06-19/pinterest_video/04_FTPE_SET_14_02_beginners_who_want_structure.png",
+      "social/ftpe/2026-06-19/pinterest_video/05_FTPE_SET_14_03_publish_under_your_own_account.png"
     ],
     "title": "pinterest_video/title.txt",
     "caption": "pinterest_video/caption.txt",
@@ -196,11 +205,11 @@
   },
   "facebook": {
     "images": [
-      "social/ftpe/2026-06-19/facebook_carousel/01_digital_product_marketing_for_kdp_upload.png",
-      "social/ftpe/2026-06-19/facebook_carousel/02_ftpe_starter_pack_promotional_design.png",
-      "social/ftpe/2026-06-19/facebook_carousel/03_ftpe_starter_pack_promotional_mockup.png",
-      "social/ftpe/2026-06-19/facebook_carousel/04_organised_publishing_made_easy.png",
-      "social/ftpe/2026-06-19/facebook_carousel/05_plan_your_kdp_upload_checklist.png"
+      "social/ftpe/2026-06-19/facebook_carousel/01_product_mockup_for_kdp_upload_guide.png",
+      "social/ftpe/2026-06-19/facebook_carousel/02_sapiver_press_product_and_planner_layout.png",
+      "social/ftpe/2026-06-19/facebook_carousel/03_FTPE_SET_14_01_first_time_sudoku_publishers.png",
+      "social/ftpe/2026-06-19/facebook_carousel/04_FTPE_SET_14_02_beginners_who_want_structure.png",
+      "social/ftpe/2026-06-19/facebook_carousel/05_FTPE_SET_14_03_publish_under_your_own_account.png"
     ],
     "image_captions": [
       "facebook_carousel/01_caption.txt",

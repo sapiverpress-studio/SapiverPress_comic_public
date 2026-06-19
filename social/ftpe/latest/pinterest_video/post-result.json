@@ -7,22 +7,22 @@
   "board_name": "Sapiver Press Comic",
   "video": "social/ftpe/2026-06-19/pinterest_video/pinterest_video.mp4",
   "source_images": [
-    "social/ftpe/2026-06-19/pinterest_video/01_promotional_digital_sudoku_starter_pack.png",
-    "social/ftpe/2026-06-19/pinterest_video/02_sapiver_press_beginner_publishing_made_simple.png",
-    "social/ftpe/2026-06-19/pinterest_video/03_starter_pack_for_first_time_publishers.png",
-    "social/ftpe/2026-06-19/pinterest_video/04_sudoku_book_sets_for_first_time_publishers.png",
-    "social/ftpe/2026-06-19/pinterest_video/05_before_you_upload_your_sudoku_book.png"
+    "social/ftpe/2026-06-19/pinterest_video/01_digital_product_marketing_for_kdp_upload.png",
+    "social/ftpe/2026-06-19/pinterest_video/02_ftpe_starter_pack_promotional_design.png",
+    "social/ftpe/2026-06-19/pinterest_video/03_ftpe_starter_pack_promotional_mockup.png",
+    "social/ftpe/2026-06-19/pinterest_video/04_organised_publishing_made_easy.png",
+    "social/ftpe/2026-06-19/pinterest_video/05_plan_your_kdp_upload_checklist.png"
   ],
   "image_pin_sources": [
-    "social/ftpe/2026-06-19/pinterest_video/01_promotional_digital_sudoku_starter_pack.png",
-    "social/ftpe/2026-06-19/pinterest_video/02_sapiver_press_beginner_publishing_made_simple.png",
-    "social/ftpe/2026-06-19/pinterest_video/03_starter_pack_for_first_time_publishers.png",
-    "social/ftpe/2026-06-19/pinterest_video/04_sudoku_book_sets_for_first_time_publishers.png",
-    "social/ftpe/2026-06-19/pinterest_video/05_before_you_upload_your_sudoku_book.png"
+    "social/ftpe/2026-06-19/facebook_carousel/01_digital_product_marketing_for_kdp_upload.png",
+    "social/ftpe/2026-06-19/facebook_carousel/02_ftpe_starter_pack_promotional_design.png",
+    "social/ftpe/2026-06-19/facebook_carousel/03_ftpe_starter_pack_promotional_mockup.png",
+    "social/ftpe/2026-06-19/facebook_carousel/04_organised_publishing_made_easy.png",
+    "social/ftpe/2026-06-19/facebook_carousel/05_plan_your_kdp_upload_checklist.png"
   ],
-  "title": "Sapiver Press daily carousel | promotional digital sudoku starter pack\n",
-  "caption": "Life is busy enough, so our puzzles and games are built to be ready when you are. Play online, print a fresh set of grids, or pick up a puzzle pack without digging through clutter. Find your next puzzle at https://sapiverpress.etsy.com Publishing fact: The Library of Congress prepares CIP data for some books before publication. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks",
-  "first_comment": "More from Sapiver Press: https://sapiverpress.etsy.com\n\nFact source: Publishing Facts 190\n\n#AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks\n",
+  "title": "Sapiver Press daily carousel | digital product marketing for kdp upload\n",
+  "caption": "Publishing should not feel like a maze of friction and messy files. Sapiver Press builds practical tools for small publishers, from KDP starter resources to admin systems that help keep products, assets, rights, and records organised. Explore the creator tools at https://suite.sapiverpress.co.uk Publishing fact: CIP data helps libraries and book dealers process new books. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleB",
+  "first_comment": "More from Sapiver Press: https://sapiverpress.etsy.com\n\nFact source: Publishing Facts 191\n\n#AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks\n",
   "dry_run": true,
   "note": "Prepared Pinterest image pins and video post. Set FTPE_PINTEREST_VIDEO_POST_MODE=live to upload.",
   "image_pins": {
@@ -31,24 +31,24 @@
     "limit": 5,
     "pins": [
       {
-        "source_image": "social/ftpe/2026-06-19/pinterest_video/01_promotional_digital_sudoku_starter_pack.png",
-        "title": "Sapiver Press daily image 1/5 | promotional digital sudoku starter pack"
+        "source_image": "social/ftpe/2026-06-19/facebook_carousel/01_digital_product_marketing_for_kdp_upload.png",
+        "title": "Sapiver Press daily image 1/5 | digital product marketing for kdp upload"
       },
       {
-        "source_image": "social/ftpe/2026-06-19/pinterest_video/02_sapiver_press_beginner_publishing_made_simple.png",
-        "title": "Sapiver Press daily image 2/5 | sapiver press beginner publishing made simple"
+        "source_image": "social/ftpe/2026-06-19/facebook_carousel/02_ftpe_starter_pack_promotional_design.png",
+        "title": "Sapiver Press daily image 2/5 | ftpe starter pack promotional design"
       },
       {
-        "source_image": "social/ftpe/2026-06-19/pinterest_video/03_starter_pack_for_first_time_publishers.png",
-        "title": "Sapiver Press daily image 3/5 | starter pack for first time publishers"
+        "source_image": "social/ftpe/2026-06-19/facebook_carousel/03_ftpe_starter_pack_promotional_mockup.png",
+        "title": "Sapiver Press daily image 3/5 | ftpe starter pack promotional mockup"
       },
       {
-        "source_image": "social/ftpe/2026-06-19/pinterest_video/04_sudoku_book_sets_for_first_time_publishers.png",
-        "title": "Sapiver Press daily image 4/5 | sudoku book sets for first time publishers"
+        "source_image": "social/ftpe/2026-06-19/facebook_carousel/04_organised_publishing_made_easy.png",
+        "title": "Sapiver Press daily image 4/5 | organised publishing made easy"
       },
       {
-        "source_image": "social/ftpe/2026-06-19/pinterest_video/05_before_you_upload_your_sudoku_book.png",
-        "title": "Sapiver Press daily image 5/5 | before you upload your sudoku book"
+        "source_image": "social/ftpe/2026-06-19/facebook_carousel/05_plan_your_kdp_upload_checklist.png",
+        "title": "Sapiver Press daily image 5/5 | plan your kdp upload checklist"
       }
     ]
   }
