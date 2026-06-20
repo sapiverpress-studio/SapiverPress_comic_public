@@ -4,50 +4,51 @@
   "cta": "https://sapiverpress.etsy.com",
   "asset_group": "mixed_subjects_no_repeat",
   "asset_groups": [
-    "assets/ftpe/social_sets/_extracted/FTPE_SET_14_BUYER_FIT_10_PNGS_WITH_TXT"
+    "assets/ftpe/social_sets/_extracted/FTPE_SET_14_BUYER_FIT_10_PNGS_WITH_TXT",
+    "assets/ftpe/social_master/_extracted/FTPE_Etsy_Master_Images"
   ],
   "asset_group_count": 15,
   "asset_group_image_count": 145,
   "subjects": [
-    "first attempt starter pack",
-    "third party workflow pack",
-    "organised beginners",
-    "testing the route",
-    "built to keep upload organised"
+    "main hero first time sudoku publisher edition",
+    "whats included",
+    "how your download works",
+    "guided support for first time publishers",
+    "why this edition is different"
   ],
   "daily_material": {
     "about": {
-      "id": "direct_practical_pitch",
-      "text": "No hype. No overcomplication. Sapiver Press creates practical building blocks for solvers and independent creators, including printable puzzles, commercial-use interiors, admin templates, and tidy publishing resources. See the latest resources at https://suite.sapiverpress.co.uk",
-      "audience": "Creators and publishers",
-      "angle": "Direct and practical pitch",
-      "use_case": "Sales/creator post footer",
-      "primary_url": "https://suite.sapiverpress.co.uk",
-      "secondary_url": "",
+      "id": "studio_identity",
+      "text": "Part puzzle studio, part publishing toolkit, Sapiver Press exists to make solving, making, and organising a little easier. Whether you want to play a puzzle, print a pack, browse a book, or build your next publishing project, there is something ready for you. Visit https://sapiverpress.etsy.com or https://suite.sapiverpress.co.uk",
+      "audience": "General engagement",
+      "angle": "Studio identity",
+      "use_case": "General bio/about post footer",
+      "primary_url": "https://sapiverpress.etsy.com",
+      "secondary_url": "https://suite.sapiverpress.co.uk",
       "source": "about_copy",
       "raw": {
-        "id": "direct_practical_pitch",
-        "audience": "Creators and publishers",
-        "angle": "Direct and practical pitch",
-        "copy": "No hype. No overcomplication. Sapiver Press creates practical building blocks for solvers and independent creators, including printable puzzles, commercial-use interiors, admin templates, and tidy publishing resources. See the latest resources at https://suite.sapiverpress.co.uk",
-        "primary_url": "https://suite.sapiverpress.co.uk",
-        "secondary_url": "",
-        "use_case": "Sales/creator post footer"
+        "id": "studio_identity",
+        "audience": "General engagement",
+        "angle": "Studio identity",
+        "copy": "Part puzzle studio, part publishing toolkit, Sapiver Press exists to make solving, making, and organising a little easier. Whether you want to play a puzzle, print a pack, browse a book, or build your next publishing project, there is something ready for you. Visit https://sapiverpress.etsy.com or https://suite.sapiverpress.co.uk",
+        "primary_url": "https://sapiverpress.etsy.com",
+        "secondary_url": "https://suite.sapiverpress.co.uk",
+        "use_case": "General bio/about post footer"
       }
     },
     "fact": {
-      "id": "193",
-      "text": "Subject headings help readers find books by topic.",
+      "id": "194",
+      "text": "Keywords and subject headings are not the same thing.",
       "source": "publishing_facts",
       "raw": {
-        "day": "193",
+        "day": "194",
         "theme": "Libraries & Collecting",
-        "fact": "Subject headings help readers find books by topic."
+        "fact": "Keywords and subject headings are not the same thing."
       }
     },
     "anecdote": null,
     "anecdote_source_file": null,
-    "caption": "No hype. No overcomplication. Sapiver Press creates practical building blocks for solvers and independent creators, including printable puzzles, commercial-use interiors, admin templates, and tidy publishing resources. See the latest resources at https://suite.sapiverpress.co.uk\n\nPublishing fact: Subject headings help readers find books by topic.\n\nStart here: https://sapiverpress.etsy.com\n\n#AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks\n"
+    "caption": "Part puzzle studio, part publishing toolkit, Sapiver Press exists to make solving, making, and organising a little easier. Whether you want to play a puzzle, print a pack, browse a book, or build your next publishing project, there is something ready for you. Visit https://sapiverpress.etsy.com or https://suite.sapiverpress.co.uk\n\nPublishing fact: Keywords and subject headings are not the same thing.\n\nStart here: https://sapiverpress.etsy.com\n\n#AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks\n"
   },
   "rotation": {
     "state_file": "social/ftpe/rotation-state.json",
@@ -55,8 +56,13 @@
       "images": {
         "cycle": 1,
         "pool_size": 145,
-        "used_count": 72,
+        "used_count": 78,
         "used": [
+          "assets/ftpe/social_master/_extracted/ftpe_etsy_master_images/ftpe_etsy_master_images/01_main_hero_first_time_sudoku_publisher_edition.png",
+          "assets/ftpe/social_master/_extracted/ftpe_etsy_master_images/ftpe_etsy_master_images/02_whats_included.png",
+          "assets/ftpe/social_master/_extracted/ftpe_etsy_master_images/ftpe_etsy_master_images/03_how_your_download_works.png",
+          "assets/ftpe/social_master/_extracted/ftpe_etsy_master_images/ftpe_etsy_master_images/04_guided_support_for_first_time_publishers.png",
+          "assets/ftpe/social_master/_extracted/ftpe_etsy_master_images/ftpe_etsy_master_images/05_why_this_edition_is_different.png",
           "assets/ftpe/social_sets/_extracted/ftpe_set_07_fixed_crops_pngs-1/ftpe_set_07_08_first_time_sudoku_publisher_edition_preview.png",
           "assets/ftpe/social_sets/_extracted/ftpe_set_07_fixed_crops_pngs-1/ftpe_set_07_09_first_time_sudoku_publisher_edition_flyer.png",
           "assets/ftpe/social_sets/_extracted/ftpe_set_07_fixed_crops_pngs-1/ftpe_set_07_10_sophisticated_sudoku_publisher_promotional_design.png",
@@ -128,40 +134,42 @@
           "assets/ftpe/social_sets/_extracted/ftpe_set_14_buyer_fit_10_pngs_with_txt/ftpe_set_14_buyer_fit_10_pngs_with_txt/pngs/ftpe_set_14_06_third_party_workflow_pack.png",
           "assets/ftpe/social_sets/_extracted/ftpe_set_14_buyer_fit_10_pngs_with_txt/ftpe_set_14_buyer_fit_10_pngs_with_txt/pngs/ftpe_set_14_07_organised_beginners.png",
           "assets/ftpe/social_sets/_extracted/ftpe_set_14_buyer_fit_10_pngs_with_txt/ftpe_set_14_buyer_fit_10_pngs_with_txt/pngs/ftpe_set_14_08_testing_the_route.png",
-          "assets/ftpe/social_sets/_extracted/ftpe_set_14_buyer_fit_10_pngs_with_txt/ftpe_set_14_buyer_fit_10_pngs_with_txt/pngs/ftpe_set_14_09_built_to_keep_upload_organised.png"
+          "assets/ftpe/social_sets/_extracted/ftpe_set_14_buyer_fit_10_pngs_with_txt/ftpe_set_14_buyer_fit_10_pngs_with_txt/pngs/ftpe_set_14_09_built_to_keep_upload_organised.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_set_14_buyer_fit_10_pngs_with_txt/ftpe_set_14_buyer_fit_10_pngs_with_txt/pngs/ftpe_set_14_10_built_to_help_first_publishing_step.png"
         ],
         "exhausted_this_run": false,
         "last_selected": [
-          "assets/ftpe/social_sets/_extracted/ftpe_set_14_buyer_fit_10_pngs_with_txt/ftpe_set_14_buyer_fit_10_pngs_with_txt/pngs/ftpe_set_14_04_digital_product_not_shipped.png",
-          "assets/ftpe/social_sets/_extracted/ftpe_set_14_buyer_fit_10_pngs_with_txt/ftpe_set_14_buyer_fit_10_pngs_with_txt/pngs/ftpe_set_14_05_first_attempt_starter_pack.png",
-          "assets/ftpe/social_sets/_extracted/ftpe_set_14_buyer_fit_10_pngs_with_txt/ftpe_set_14_buyer_fit_10_pngs_with_txt/pngs/ftpe_set_14_06_third_party_workflow_pack.png",
-          "assets/ftpe/social_sets/_extracted/ftpe_set_14_buyer_fit_10_pngs_with_txt/ftpe_set_14_buyer_fit_10_pngs_with_txt/pngs/ftpe_set_14_07_organised_beginners.png",
-          "assets/ftpe/social_sets/_extracted/ftpe_set_14_buyer_fit_10_pngs_with_txt/ftpe_set_14_buyer_fit_10_pngs_with_txt/pngs/ftpe_set_14_08_testing_the_route.png",
-          "assets/ftpe/social_sets/_extracted/ftpe_set_14_buyer_fit_10_pngs_with_txt/ftpe_set_14_buyer_fit_10_pngs_with_txt/pngs/ftpe_set_14_09_built_to_keep_upload_organised.png"
+          "assets/ftpe/social_sets/_extracted/ftpe_set_14_buyer_fit_10_pngs_with_txt/ftpe_set_14_buyer_fit_10_pngs_with_txt/pngs/ftpe_set_14_10_built_to_help_first_publishing_step.png",
+          "assets/ftpe/social_master/_extracted/ftpe_etsy_master_images/ftpe_etsy_master_images/01_main_hero_first_time_sudoku_publisher_edition.png",
+          "assets/ftpe/social_master/_extracted/ftpe_etsy_master_images/ftpe_etsy_master_images/02_whats_included.png",
+          "assets/ftpe/social_master/_extracted/ftpe_etsy_master_images/ftpe_etsy_master_images/03_how_your_download_works.png",
+          "assets/ftpe/social_master/_extracted/ftpe_etsy_master_images/ftpe_etsy_master_images/04_guided_support_for_first_time_publishers.png",
+          "assets/ftpe/social_master/_extracted/ftpe_etsy_master_images/ftpe_etsy_master_images/05_why_this_edition_is_different.png"
         ],
-        "updated_at": "2026-06-20T06:59:15.842Z"
+        "updated_at": "2026-06-20T10:43:31.089Z"
       },
       "about": {
         "cycle": 2,
         "pool_size": 7,
-        "used_count": 5,
+        "used_count": 6,
         "used": [
           "direct_practical_pitch",
           "efficiency_angle",
           "print_ready_focus",
           "ready_to_use_vibe",
+          "studio_identity",
           "system_first_philosophy"
         ],
         "exhausted_this_run": false,
         "last_selected": [
-          "direct_practical_pitch"
+          "studio_identity"
         ],
-        "updated_at": "2026-06-20T06:59:15.857Z"
+        "updated_at": "2026-06-20T10:43:31.099Z"
       },
       "facts": {
         "cycle": 1,
         "pool_size": 365,
-        "used_count": 12,
+        "used_count": 13,
         "used": [
           "182",
           "183",
@@ -174,13 +182,14 @@
           "190",
           "191",
           "192",
-          "193"
+          "193",
+          "194"
         ],
         "exhausted_this_run": false,
         "last_selected": [
-          "193"
+          "194"
         ],
-        "updated_at": "2026-06-20T06:59:15.857Z"
+        "updated_at": "2026-06-20T10:43:31.099Z"
       }
     },
     "rule": "No image, about snippet, fact, or anecdote is reused until its own pool is exhausted; then that pool loops."
@@ -192,7 +201,7 @@
     "limitation": "This removes ordinary metadata; it cannot guarantee removal of invisible AI watermarks embedded in pixels."
   },
   "pinterest": {
-    "image": "social/ftpe/2026-06-20/pinterest_pin/01_FTPE_SET_14_04_digital_product_not_shipped.png",
+    "image": "social/ftpe/2026-06-20/pinterest_pin/01_FTPE_SET_14_10_built_to_help_first_publishing_step.png",
     "title": "pinterest_pin/title.txt",
     "caption": "pinterest_pin/caption.txt",
     "first_comment": "pinterest_pin/first-comment.txt"
@@ -200,11 +209,11 @@
   "pinterest_video": {
     "video": "social/ftpe/2026-06-20/pinterest_video/pinterest_video.mp4",
     "source_images": [
-      "social/ftpe/2026-06-20/pinterest_video/01_FTPE_SET_14_05_first_attempt_starter_pack.png",
-      "social/ftpe/2026-06-20/pinterest_video/02_FTPE_SET_14_06_third_party_workflow_pack.png",
-      "social/ftpe/2026-06-20/pinterest_video/03_FTPE_SET_14_07_organised_beginners.png",
-      "social/ftpe/2026-06-20/pinterest_video/04_FTPE_SET_14_08_testing_the_route.png",
-      "social/ftpe/2026-06-20/pinterest_video/05_FTPE_SET_14_09_built_to_keep_upload_organised.png"
+      "social/ftpe/2026-06-20/pinterest_video/01_01_main_hero_first_time_sudoku_publisher_edition.png",
+      "social/ftpe/2026-06-20/pinterest_video/02_02_whats_included.png",
+      "social/ftpe/2026-06-20/pinterest_video/03_03_how_your_download_works.png",
+      "social/ftpe/2026-06-20/pinterest_video/04_04_guided_support_for_first_time_publishers.png",
+      "social/ftpe/2026-06-20/pinterest_video/05_05_why_this_edition_is_different.png"
     ],
     "title": "pinterest_video/title.txt",
     "caption": "pinterest_video/caption.txt",
@@ -212,11 +221,11 @@
   },
   "facebook": {
     "images": [
-      "social/ftpe/2026-06-20/facebook_carousel/01_FTPE_SET_14_05_first_attempt_starter_pack.png",
-      "social/ftpe/2026-06-20/facebook_carousel/02_FTPE_SET_14_06_third_party_workflow_pack.png",
-      "social/ftpe/2026-06-20/facebook_carousel/03_FTPE_SET_14_07_organised_beginners.png",
-      "social/ftpe/2026-06-20/facebook_carousel/04_FTPE_SET_14_08_testing_the_route.png",
-      "social/ftpe/2026-06-20/facebook_carousel/05_FTPE_SET_14_09_built_to_keep_upload_organised.png"
+      "social/ftpe/2026-06-20/facebook_carousel/01_01_main_hero_first_time_sudoku_publisher_edition.png",
+      "social/ftpe/2026-06-20/facebook_carousel/02_02_whats_included.png",
+      "social/ftpe/2026-06-20/facebook_carousel/03_03_how_your_download_works.png",
+      "social/ftpe/2026-06-20/facebook_carousel/04_04_guided_support_for_first_time_publishers.png",
+      "social/ftpe/2026-06-20/facebook_carousel/05_05_why_this_edition_is_different.png"
     ],
     "image_captions": [
       "facebook_carousel/01_caption.txt",
