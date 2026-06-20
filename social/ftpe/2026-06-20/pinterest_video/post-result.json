@@ -7,22 +7,22 @@
   "board_name": "Sapiver Press Comic",
   "video": "social/ftpe/2026-06-20/pinterest_video/pinterest_video.mp4",
   "source_images": [
-    "social/ftpe/2026-06-20/pinterest_video/01_01_main_hero_first_time_sudoku_publisher_edition.png",
-    "social/ftpe/2026-06-20/pinterest_video/02_02_whats_included.png",
-    "social/ftpe/2026-06-20/pinterest_video/03_03_how_your_download_works.png",
-    "social/ftpe/2026-06-20/pinterest_video/04_04_guided_support_for_first_time_publishers.png",
-    "social/ftpe/2026-06-20/pinterest_video/05_05_why_this_edition_is_different.png"
+    "social/ftpe/2026-06-20/pinterest_video/01_02_everything_you_need_to_publish_sudoku.png",
+    "social/ftpe/2026-06-20/pinterest_video/02_03_first_time_sudoku_publisher_guide.png",
+    "social/ftpe/2026-06-20/pinterest_video/03_04_guided_publishing_support_for_beginners.png",
+    "social/ftpe/2026-06-20/pinterest_video/04_05_why_this_edition_is_different.png",
+    "social/ftpe/2026-06-20/pinterest_video/05_06_start_with_the_easy_book_first.png"
   ],
   "image_pin_sources": [
-    "social/ftpe/2026-06-20/facebook_carousel/01_01_main_hero_first_time_sudoku_publisher_edition.png",
-    "social/ftpe/2026-06-20/facebook_carousel/02_02_whats_included.png",
-    "social/ftpe/2026-06-20/facebook_carousel/03_03_how_your_download_works.png",
-    "social/ftpe/2026-06-20/facebook_carousel/04_04_guided_support_for_first_time_publishers.png",
-    "social/ftpe/2026-06-20/facebook_carousel/05_05_why_this_edition_is_different.png"
+    "social/ftpe/2026-06-20/facebook_carousel/01_02_everything_you_need_to_publish_sudoku.png",
+    "social/ftpe/2026-06-20/facebook_carousel/02_03_first_time_sudoku_publisher_guide.png",
+    "social/ftpe/2026-06-20/facebook_carousel/03_04_guided_publishing_support_for_beginners.png",
+    "social/ftpe/2026-06-20/facebook_carousel/04_05_why_this_edition_is_different.png",
+    "social/ftpe/2026-06-20/facebook_carousel/05_06_start_with_the_easy_book_first.png"
   ],
-  "title": "Sapiver Press daily carousel | main hero first time sudoku publisher edition\n",
-  "caption": "Part puzzle studio, part publishing toolkit, Sapiver Press exists to make solving, making, and organising a little easier. Whether you want to play a puzzle, print a pack, browse a book, or build your next publishing project, there is something ready for you. Visit https://sapiverpress.etsy.com or https://suite.sapiverpress.co.uk Publishing fact: Keywords and subject headings are not the same thing. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPubl",
-  "first_comment": "More from Sapiver Press: https://sapiverpress.etsy.com\n\nFact source: Publishing Facts 194\n\n#AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks\n",
+  "title": "Sapiver Press daily carousel | everything you need to publish sudoku\n",
+  "caption": "At Sapiver Press, we believe in the simple joy of a well-made puzzle. Whether you want a quick daily challenge or a longer screen-free session, we create clean, tidy resources that are ready to use. Come see what we’re solving today at https://sapiverpress.etsy.com Publishing fact: A library catalogue is a metadata machine. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks",
+  "first_comment": "More from Sapiver Press: https://sapiverpress.etsy.com\n\nFact source: Publishing Facts 195\n\n#AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks\n",
   "dry_run": false,
   "image_pins": {
     "dry_run": false,
@@ -30,9 +30,29 @@
     "limit": 5,
     "pins": [
       {
-        "source_image": "social/ftpe/2026-06-20/facebook_carousel/01_01_main_hero_first_time_sudoku_publisher_edition.png",
-        "title": "Sapiver Press daily image 1/5 | 01 main hero first time sudoku publisher edition",
+        "source_image": "social/ftpe/2026-06-20/facebook_carousel/01_02_everything_you_need_to_publish_sudoku.png",
+        "title": "Sapiver Press daily image 1/5 | 02 everything you need to publish sudoku",
         "pin": {
+          "board_owner": {
+            "username": "sapiver"
+          },
+          "parent_pin_id": null,
+          "has_been_promoted": false,
+          "created_at": "2026-06-20T19:12:32",
+          "pin_metrics": null,
+          "board_id": "1038924276479876865",
+          "is_product": false,
+          "board_section_id": null,
+          "product_tags": [],
+          "description": "At Sapiver Press, we believe in the simple joy of a well-made puzzle. Whether you want a quick daily challenge or a longer screen-free session, we create clean, tidy resources that are ready to use. Come see what we’re solving today at https://sapiverpress.etsy.com Publishing fact: A library catalogue is a metadata machine. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks",
+          "creative_type": "REGULAR",
+          "title": "Sapiver Press daily image 1/5 | 02 everything you need to publish sudoku",
+          "is_removable": false,
+          "dominant_color": null,
+          "is_owner": true,
+          "alt_text": null,
+          "id": "1038924207808762514",
+          "link": "https://sapiverpress.etsy.com/",
           "is_standard": true,
           "media": {
             "media_type": "image",
@@ -40,253 +60,233 @@
               "150x150": {
                 "width": 150,
                 "height": 150,
-                "url": "https://i.pinimg.com/150x150/2b/93/73/2b93738a08c4973aad8759f865526465.jpg"
+                "url": "https://i.pinimg.com/150x150/3d/ed/8f/3ded8f17695b5c39e870fec7cbe41fd7.jpg"
               },
               "400x300": {
                 "width": 400,
                 "height": 300,
-                "url": "https://i.pinimg.com/400x300/2b/93/73/2b93738a08c4973aad8759f865526465.jpg"
+                "url": "https://i.pinimg.com/400x300/3d/ed/8f/3ded8f17695b5c39e870fec7cbe41fd7.jpg"
               },
               "600x": {
                 "width": 564,
-                "height": 451,
-                "url": "https://i.pinimg.com/564x/2b/93/73/2b93738a08c4973aad8759f865526465.jpg"
+                "height": 846,
+                "url": "https://i.pinimg.com/564x/3d/ed/8f/3ded8f17695b5c39e870fec7cbe41fd7.jpg"
               },
               "1200x": {
-                "width": 1200,
-                "height": 960,
-                "url": "https://i.pinimg.com/1200x/2b/93/73/2b93738a08c4973aad8759f865526465.jpg"
+                "width": 1024,
+                "height": 1536,
+                "url": "https://i.pinimg.com/1200x/3d/ed/8f/3ded8f17695b5c39e870fec7cbe41fd7.jpg"
               }
             }
-          },
-          "dominant_color": null,
-          "description": "Part puzzle studio, part publishing toolkit, Sapiver Press exists to make solving, making, and organising a little easier. Whether you want to play a puzzle, print a pack, browse a book, or build your next publishing project, there is something ready for you. Visit https://sapiverpress.etsy.com or https://suite.sapiverpress.co.uk Publishing fact: Keywords and subject headings are not the same thing. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPubl",
-          "has_been_promoted": false,
-          "id": "1038924207808748775",
-          "board_owner": {
-            "username": "sapiver"
-          },
-          "is_product": false,
-          "creative_type": "REGULAR",
-          "board_id": "1038924276479876865",
-          "pin_metrics": null,
-          "alt_text": null,
-          "created_at": "2026-06-20T10:44:09",
-          "board_section_id": null,
-          "is_owner": true,
-          "parent_pin_id": null,
-          "product_tags": [],
-          "link": "https://sapiverpress.etsy.com/",
-          "title": "Sapiver Press daily image 1/5 | 01 main hero first time sudoku publisher edition",
-          "is_removable": false
+          }
         }
       },
       {
-        "source_image": "social/ftpe/2026-06-20/facebook_carousel/02_02_whats_included.png",
-        "title": "Sapiver Press daily image 2/5 | 02 whats included",
+        "source_image": "social/ftpe/2026-06-20/facebook_carousel/02_03_first_time_sudoku_publisher_guide.png",
+        "title": "Sapiver Press daily image 2/5 | 03 first time sudoku publisher guide",
         "pin": {
-          "product_tags": [],
-          "parent_pin_id": null,
-          "title": "Sapiver Press daily image 2/5 | 02 whats included",
-          "board_section_id": null,
-          "alt_text": null,
-          "creative_type": "REGULAR",
-          "is_owner": true,
-          "board_id": "1038924276479876865",
-          "created_at": "2026-06-20T10:44:10",
-          "dominant_color": null,
+          "description": "At Sapiver Press, we believe in the simple joy of a well-made puzzle. Whether you want a quick daily challenge or a longer screen-free session, we create clean, tidy resources that are ready to use. Come see what we’re solving today at https://sapiverpress.etsy.com Publishing fact: A library catalogue is a metadata machine. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks",
           "is_removable": false,
-          "pin_metrics": null,
-          "link": "https://sapiverpress.etsy.com/",
-          "is_standard": true,
+          "board_id": "1038924276479876865",
           "has_been_promoted": false,
-          "description": "Part puzzle studio, part publishing toolkit, Sapiver Press exists to make solving, making, and organising a little easier. Whether you want to play a puzzle, print a pack, browse a book, or build your next publishing project, there is something ready for you. Visit https://sapiverpress.etsy.com or https://suite.sapiverpress.co.uk Publishing fact: Keywords and subject headings are not the same thing. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPubl",
+          "board_owner": {
+            "username": "sapiver"
+          },
+          "id": "1038924207808762515",
+          "title": "Sapiver Press daily image 2/5 | 03 first time sudoku publisher guide",
+          "link": "https://sapiverpress.etsy.com/",
           "media": {
             "media_type": "image",
             "images": {
               "150x150": {
                 "width": 150,
                 "height": 150,
-                "url": "https://i.pinimg.com/150x150/29/2a/c3/292ac30fcfba71c671a9f706b329e3b7.jpg"
+                "url": "https://i.pinimg.com/150x150/02/77/69/02776939d030eda69b5e41291c3a73ab.jpg"
               },
               "400x300": {
                 "width": 400,
                 "height": 300,
-                "url": "https://i.pinimg.com/400x300/29/2a/c3/292ac30fcfba71c671a9f706b329e3b7.jpg"
+                "url": "https://i.pinimg.com/400x300/02/77/69/02776939d030eda69b5e41291c3a73ab.jpg"
               },
               "600x": {
                 "width": 564,
-                "height": 451,
-                "url": "https://i.pinimg.com/564x/29/2a/c3/292ac30fcfba71c671a9f706b329e3b7.jpg"
+                "height": 846,
+                "url": "https://i.pinimg.com/564x/02/77/69/02776939d030eda69b5e41291c3a73ab.jpg"
               },
               "1200x": {
-                "width": 1200,
-                "height": 960,
-                "url": "https://i.pinimg.com/1200x/29/2a/c3/292ac30fcfba71c671a9f706b329e3b7.jpg"
+                "width": 1024,
+                "height": 1536,
+                "url": "https://i.pinimg.com/1200x/02/77/69/02776939d030eda69b5e41291c3a73ab.jpg"
               }
             }
           },
-          "id": "1038924207808748776",
-          "board_owner": {
-            "username": "sapiver"
-          },
+          "product_tags": [],
+          "board_section_id": null,
+          "is_owner": true,
+          "is_standard": true,
+          "parent_pin_id": null,
+          "pin_metrics": null,
+          "dominant_color": null,
+          "creative_type": "REGULAR",
+          "alt_text": null,
+          "created_at": "2026-06-20T19:12:33",
           "is_product": false
         }
       },
       {
-        "source_image": "social/ftpe/2026-06-20/facebook_carousel/03_03_how_your_download_works.png",
-        "title": "Sapiver Press daily image 3/5 | 03 how your download works",
+        "source_image": "social/ftpe/2026-06-20/facebook_carousel/03_04_guided_publishing_support_for_beginners.png",
+        "title": "Sapiver Press daily image 3/5 | 04 guided publishing support for beginners",
         "pin": {
+          "board_section_id": null,
           "board_owner": {
             "username": "sapiver"
           },
-          "created_at": "2026-06-20T10:44:10",
-          "link": "https://sapiverpress.etsy.com/",
-          "title": "Sapiver Press daily image 3/5 | 03 how your download works",
           "board_id": "1038924276479876865",
-          "id": "1038924207808748778",
-          "pin_metrics": null,
-          "is_removable": false,
+          "is_standard": true,
           "creative_type": "REGULAR",
-          "description": "Part puzzle studio, part publishing toolkit, Sapiver Press exists to make solving, making, and organising a little easier. Whether you want to play a puzzle, print a pack, browse a book, or build your next publishing project, there is something ready for you. Visit https://sapiverpress.etsy.com or https://suite.sapiverpress.co.uk Publishing fact: Keywords and subject headings are not the same thing. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPubl",
-          "board_section_id": null,
+          "title": "Sapiver Press daily image 3/5 | 04 guided publishing support for beginners",
+          "is_product": false,
+          "pin_metrics": null,
+          "created_at": "2026-06-20T19:12:35",
+          "alt_text": null,
+          "dominant_color": null,
+          "has_been_promoted": false,
+          "id": "1038924207808762517",
           "product_tags": [],
+          "is_owner": true,
+          "parent_pin_id": null,
+          "is_removable": false,
+          "link": "https://sapiverpress.etsy.com/",
           "media": {
             "media_type": "image",
             "images": {
               "150x150": {
                 "width": 150,
                 "height": 150,
-                "url": "https://i.pinimg.com/150x150/97/8f/5a/978f5a4259bef87c2c14f994042c9ecb.jpg"
+                "url": "https://i.pinimg.com/150x150/f4/86/9a/f4869a799c46b4682a2fe8d64d98dea8.jpg"
               },
               "400x300": {
                 "width": 400,
                 "height": 300,
-                "url": "https://i.pinimg.com/400x300/97/8f/5a/978f5a4259bef87c2c14f994042c9ecb.jpg"
+                "url": "https://i.pinimg.com/400x300/f4/86/9a/f4869a799c46b4682a2fe8d64d98dea8.jpg"
               },
               "600x": {
                 "width": 564,
-                "height": 451,
-                "url": "https://i.pinimg.com/564x/97/8f/5a/978f5a4259bef87c2c14f994042c9ecb.jpg"
+                "height": 846,
+                "url": "https://i.pinimg.com/564x/f4/86/9a/f4869a799c46b4682a2fe8d64d98dea8.jpg"
               },
               "1200x": {
-                "width": 1200,
-                "height": 960,
-                "url": "https://i.pinimg.com/1200x/97/8f/5a/978f5a4259bef87c2c14f994042c9ecb.jpg"
+                "width": 1024,
+                "height": 1536,
+                "url": "https://i.pinimg.com/1200x/f4/86/9a/f4869a799c46b4682a2fe8d64d98dea8.jpg"
               }
             }
           },
-          "dominant_color": null,
-          "is_owner": true,
-          "is_standard": true,
-          "parent_pin_id": null,
-          "has_been_promoted": false,
-          "is_product": false,
-          "alt_text": null
+          "description": "At Sapiver Press, we believe in the simple joy of a well-made puzzle. Whether you want a quick daily challenge or a longer screen-free session, we create clean, tidy resources that are ready to use. Come see what we’re solving today at https://sapiverpress.etsy.com Publishing fact: A library catalogue is a metadata machine. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks"
         }
       },
       {
-        "source_image": "social/ftpe/2026-06-20/facebook_carousel/04_04_guided_support_for_first_time_publishers.png",
-        "title": "Sapiver Press daily image 4/5 | 04 guided support for first time publishers",
+        "source_image": "social/ftpe/2026-06-20/facebook_carousel/04_05_why_this_edition_is_different.png",
+        "title": "Sapiver Press daily image 4/5 | 05 why this edition is different",
         "pin": {
-          "title": "Sapiver Press daily image 4/5 | 04 guided support for first time publishers",
-          "is_removable": false,
-          "created_at": "2026-06-20T10:44:11",
-          "link": "https://sapiverpress.etsy.com/",
-          "board_section_id": null,
-          "has_been_promoted": false,
-          "alt_text": null,
-          "id": "1038924207808748779",
-          "is_product": false,
           "media": {
             "media_type": "image",
             "images": {
               "150x150": {
                 "width": 150,
                 "height": 150,
-                "url": "https://i.pinimg.com/150x150/e6/b7/c0/e6b7c0fd65c5c50407740bc424f4a8e7.jpg"
+                "url": "https://i.pinimg.com/150x150/e1/11/d5/e111d5e703fe91ee2e97d499340ee0fa.jpg"
               },
               "400x300": {
                 "width": 400,
                 "height": 300,
-                "url": "https://i.pinimg.com/400x300/e6/b7/c0/e6b7c0fd65c5c50407740bc424f4a8e7.jpg"
+                "url": "https://i.pinimg.com/400x300/e1/11/d5/e111d5e703fe91ee2e97d499340ee0fa.jpg"
               },
               "600x": {
                 "width": 564,
-                "height": 451,
-                "url": "https://i.pinimg.com/564x/e6/b7/c0/e6b7c0fd65c5c50407740bc424f4a8e7.jpg"
+                "height": 846,
+                "url": "https://i.pinimg.com/564x/e1/11/d5/e111d5e703fe91ee2e97d499340ee0fa.jpg"
               },
               "1200x": {
-                "width": 1200,
-                "height": 960,
-                "url": "https://i.pinimg.com/1200x/e6/b7/c0/e6b7c0fd65c5c50407740bc424f4a8e7.jpg"
+                "width": 1024,
+                "height": 1536,
+                "url": "https://i.pinimg.com/1200x/e1/11/d5/e111d5e703fe91ee2e97d499340ee0fa.jpg"
               }
             }
           },
-          "parent_pin_id": null,
           "creative_type": "REGULAR",
-          "pin_metrics": null,
-          "description": "Part puzzle studio, part publishing toolkit, Sapiver Press exists to make solving, making, and organising a little easier. Whether you want to play a puzzle, print a pack, browse a book, or build your next publishing project, there is something ready for you. Visit https://sapiverpress.etsy.com or https://suite.sapiverpress.co.uk Publishing fact: Keywords and subject headings are not the same thing. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPubl",
-          "is_owner": true,
+          "is_product": false,
+          "has_been_promoted": false,
+          "is_standard": true,
           "board_owner": {
             "username": "sapiver"
           },
+          "board_section_id": null,
+          "id": "1038924207808762521",
           "dominant_color": null,
-          "is_standard": true,
+          "description": "At Sapiver Press, we believe in the simple joy of a well-made puzzle. Whether you want a quick daily challenge or a longer screen-free session, we create clean, tidy resources that are ready to use. Come see what we’re solving today at https://sapiverpress.etsy.com Publishing fact: A library catalogue is a metadata machine. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks",
+          "product_tags": [],
+          "created_at": "2026-06-20T19:12:36",
+          "is_owner": true,
+          "parent_pin_id": null,
+          "alt_text": null,
+          "pin_metrics": null,
+          "title": "Sapiver Press daily image 4/5 | 05 why this edition is different",
+          "link": "https://sapiverpress.etsy.com/",
           "board_id": "1038924276479876865",
-          "product_tags": []
+          "is_removable": false
         }
       },
       {
-        "source_image": "social/ftpe/2026-06-20/facebook_carousel/05_05_why_this_edition_is_different.png",
-        "title": "Sapiver Press daily image 5/5 | 05 why this edition is different",
+        "source_image": "social/ftpe/2026-06-20/facebook_carousel/05_06_start_with_the_easy_book_first.png",
+        "title": "Sapiver Press daily image 5/5 | 06 start with the easy book first",
         "pin": {
+          "title": "Sapiver Press daily image 5/5 | 06 start with the easy book first",
+          "product_tags": [],
           "is_product": false,
-          "board_section_id": null,
+          "description": "At Sapiver Press, we believe in the simple joy of a well-made puzzle. Whether you want a quick daily challenge or a longer screen-free session, we create clean, tidy resources that are ready to use. Come see what we’re solving today at https://sapiverpress.etsy.com Publishing fact: A library catalogue is a metadata machine. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks",
           "media": {
             "media_type": "image",
             "images": {
               "150x150": {
                 "width": 150,
                 "height": 150,
-                "url": "https://i.pinimg.com/150x150/af/6f/13/af6f13f8be4dd6793fd530f159083f6b.jpg"
+                "url": "https://i.pinimg.com/150x150/70/79/a3/7079a38d2805f11dbfb9720ff3366f81.jpg"
               },
               "400x300": {
                 "width": 400,
                 "height": 300,
-                "url": "https://i.pinimg.com/400x300/af/6f/13/af6f13f8be4dd6793fd530f159083f6b.jpg"
+                "url": "https://i.pinimg.com/400x300/70/79/a3/7079a38d2805f11dbfb9720ff3366f81.jpg"
               },
               "600x": {
                 "width": 564,
-                "height": 451,
-                "url": "https://i.pinimg.com/564x/af/6f/13/af6f13f8be4dd6793fd530f159083f6b.jpg"
+                "height": 846,
+                "url": "https://i.pinimg.com/564x/70/79/a3/7079a38d2805f11dbfb9720ff3366f81.jpg"
               },
               "1200x": {
-                "width": 1200,
-                "height": 960,
-                "url": "https://i.pinimg.com/1200x/af/6f/13/af6f13f8be4dd6793fd530f159083f6b.jpg"
+                "width": 1024,
+                "height": 1536,
+                "url": "https://i.pinimg.com/1200x/70/79/a3/7079a38d2805f11dbfb9720ff3366f81.jpg"
               }
             }
           },
-          "alt_text": null,
-          "link": "https://sapiverpress.etsy.com/",
+          "is_owner": true,
+          "created_at": "2026-06-20T19:12:37",
+          "board_id": "1038924276479876865",
           "parent_pin_id": null,
-          "title": "Sapiver Press daily image 5/5 | 05 why this edition is different",
-          "creative_type": "REGULAR",
-          "created_at": "2026-06-20T10:44:11",
-          "description": "Part puzzle studio, part publishing toolkit, Sapiver Press exists to make solving, making, and organising a little easier. Whether you want to play a puzzle, print a pack, browse a book, or build your next publishing project, there is something ready for you. Visit https://sapiverpress.etsy.com or https://suite.sapiverpress.co.uk Publishing fact: Keywords and subject headings are not the same thing. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPubl",
           "has_been_promoted": false,
-          "id": "1038924207808748780",
+          "creative_type": "REGULAR",
+          "id": "1038924207808762522",
+          "pin_metrics": null,
+          "link": "https://sapiverpress.etsy.com/",
+          "is_standard": true,
+          "dominant_color": null,
+          "board_section_id": null,
+          "alt_text": null,
           "board_owner": {
             "username": "sapiver"
           },
-          "is_removable": false,
-          "is_owner": true,
-          "board_id": "1038924276479876865",
-          "pin_metrics": null,
-          "dominant_color": null,
-          "product_tags": [],
-          "is_standard": true
+          "is_removable": false
         }
       }
     ]
