@@ -1,0 +1,10 @@
+name: Book Content OS Social
+
+on:
+  workflow_dispatch:
+
+jobs:
+  note:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Book Content OS workflow placeholder"
