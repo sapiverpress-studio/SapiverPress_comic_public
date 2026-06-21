@@ -4,51 +4,50 @@
   "cta": "https://sapiverpress.etsy.com",
   "asset_group": "mixed_subjects_no_repeat",
   "asset_groups": [
-    "assets/ftpe/social_sets/_extracted/FTPE_Batch_01_individual_PNGs",
     "assets/ftpe/social_sets/_extracted/FTPE_Batch_02_GitHub_GoogleDrive_campaign_PNGs"
   ],
   "asset_group_count": 15,
   "asset_group_image_count": 145,
   "subjects": [
-    "premium kdp publishing toolkit guide",
-    "limited edition sudoku publisher starter pack",
-    "publish your first book with confidence",
-    "google drive files organized",
-    "first goal kdp previewer"
+    "real guides real workflow",
+    "easy medium hard included",
+    "covers and specs included",
+    "beginner mistakes flagged",
+    "metadata without guesswork"
   ],
   "daily_material": {
     "about": {
-      "id": "efficiency_angle",
-      "text": "Publishing should not feel like a maze of friction and messy files. Sapiver Press builds practical tools for small publishers, from KDP starter resources to admin systems that help keep products, assets, rights, and records organised. Explore the creator tools at https://suite.sapiverpress.co.uk",
+      "id": "system_first_philosophy",
+      "text": "Sapiver Press is more than a shop. It is a growing system for puzzles, publishing workflows, useful downloads, and creator tools. If you want cleaner files, clearer records, and more confidence around your publishing assets, this is the place to start. Visit https://suite.sapiverpress.co.uk",
       "audience": "Creators and publishers",
-      "angle": "Efficiency angle",
-      "use_case": "Creator-facing post footer",
+      "angle": "System-first philosophy",
+      "use_case": "Brand positioning post footer",
       "primary_url": "https://suite.sapiverpress.co.uk",
       "secondary_url": "",
       "source": "about_copy",
       "raw": {
-        "id": "efficiency_angle",
+        "id": "system_first_philosophy",
         "audience": "Creators and publishers",
-        "angle": "Efficiency angle",
-        "copy": "Publishing should not feel like a maze of friction and messy files. Sapiver Press builds practical tools for small publishers, from KDP starter resources to admin systems that help keep products, assets, rights, and records organised. Explore the creator tools at https://suite.sapiverpress.co.uk",
+        "angle": "System-first philosophy",
+        "copy": "Sapiver Press is more than a shop. It is a growing system for puzzles, publishing workflows, useful downloads, and creator tools. If you want cleaner files, clearer records, and more confidence around your publishing assets, this is the place to start. Visit https://suite.sapiverpress.co.uk",
         "primary_url": "https://suite.sapiverpress.co.uk",
         "secondary_url": "",
-        "use_case": "Creator-facing post footer"
+        "use_case": "Brand positioning post footer"
       }
     },
     "fact": {
-      "id": "196",
-      "text": "Legal deposit preserves a nation’s publishing output.",
+      "id": "197",
+      "text": "UK legal deposit has existed in English law since 1662.",
       "source": "publishing_facts",
       "raw": {
-        "day": "196",
+        "day": "197",
         "theme": "Libraries & Collecting",
-        "fact": "Legal deposit preserves a nation’s publishing output."
+        "fact": "UK legal deposit has existed in English law since 1662."
       }
     },
     "anecdote": null,
     "anecdote_source_file": null,
-    "caption": "Publishing should not feel like a maze of friction and messy files. Sapiver Press builds practical tools for small publishers, from KDP starter resources to admin systems that help keep products, assets, rights, and records organised. Explore the creator tools at https://suite.sapiverpress.co.uk\n\nPublishing fact: Legal deposit preserves a nation’s publishing output.\n\nStart here: https://sapiverpress.etsy.com\n\n#AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks\n"
+    "caption": "Sapiver Press is more than a shop. It is a growing system for puzzles, publishing workflows, useful downloads, and creator tools. If you want cleaner files, clearer records, and more confidence around your publishing assets, this is the place to start. Visit https://suite.sapiverpress.co.uk\n\nPublishing fact: UK legal deposit has existed in English law since 1662.\n\nStart here: https://sapiverpress.etsy.com\n\n#AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks\n"
   },
   "rotation": {
     "state_file": "social/ftpe/rotation-state.json",
@@ -56,7 +55,7 @@
       "images": {
         "cycle": 1,
         "pool_size": 145,
-        "used_count": 90,
+        "used_count": 96,
         "used": [
           "assets/ftpe/social_master/_extracted/ftpe_etsy_master_images/ftpe_etsy_master_images/01_main_hero_first_time_sudoku_publisher_edition.png",
           "assets/ftpe/social_master/_extracted/ftpe_etsy_master_images/ftpe_etsy_master_images/02_whats_included.png",
@@ -75,6 +74,12 @@
           "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/10_publish_your_first_book_with_confidence.png",
           "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/01_google_drive_files_organized.png",
           "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/02_first_goal_kdp_previewer.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/03_from_etsy_zip_to_drive_folder.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/04_real_guides_real_workflow.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/05_easy_medium_hard_included.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/06_covers_and_specs_included.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/07_beginner_mistakes_flagged.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/08_metadata_without_guesswork.png",
           "assets/ftpe/social_sets/_extracted/ftpe_set_07_fixed_crops_pngs-1/ftpe_set_07_08_first_time_sudoku_publisher_edition_preview.png",
           "assets/ftpe/social_sets/_extracted/ftpe_set_07_fixed_crops_pngs-1/ftpe_set_07_09_first_time_sudoku_publisher_edition_flyer.png",
           "assets/ftpe/social_sets/_extracted/ftpe_set_07_fixed_crops_pngs-1/ftpe_set_07_10_sophisticated_sudoku_publisher_promotional_design.png",
@@ -151,32 +156,33 @@
         ],
         "exhausted_this_run": false,
         "last_selected": [
-          "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/07_publishing_starter_pack_guide.png",
-          "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/08_premium_kdp_publishing_toolkit_guide.png",
-          "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/09_limited_edition_sudoku_publisher_starter_pack.png",
-          "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/10_publish_your_first_book_with_confidence.png",
-          "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/01_google_drive_files_organized.png",
-          "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/02_first_goal_kdp_previewer.png"
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/03_from_etsy_zip_to_drive_folder.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/04_real_guides_real_workflow.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/05_easy_medium_hard_included.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/06_covers_and_specs_included.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/07_beginner_mistakes_flagged.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/08_metadata_without_guesswork.png"
         ],
-        "updated_at": "2026-06-21T03:17:28.184Z"
+        "updated_at": "2026-06-21T10:16:17.112Z"
       },
       "about": {
         "cycle": 3,
         "pool_size": 7,
-        "used_count": 1,
+        "used_count": 2,
         "used": [
-          "efficiency_angle"
+          "efficiency_angle",
+          "system_first_philosophy"
         ],
-        "exhausted_this_run": true,
+        "exhausted_this_run": false,
         "last_selected": [
-          "efficiency_angle"
+          "system_first_philosophy"
         ],
-        "updated_at": "2026-06-21T03:17:28.261Z"
+        "updated_at": "2026-06-21T10:16:17.123Z"
       },
       "facts": {
         "cycle": 1,
         "pool_size": 365,
-        "used_count": 15,
+        "used_count": 16,
         "used": [
           "182",
           "183",
@@ -192,13 +198,14 @@
           "193",
           "194",
           "195",
-          "196"
+          "196",
+          "197"
         ],
         "exhausted_this_run": false,
         "last_selected": [
-          "196"
+          "197"
         ],
-        "updated_at": "2026-06-21T03:17:28.261Z"
+        "updated_at": "2026-06-21T10:16:17.123Z"
       }
     },
     "rule": "No image, about snippet, fact, or anecdote is reused until its own pool is exhausted; then that pool loops."
@@ -210,7 +217,7 @@
     "limitation": "This removes ordinary metadata; it cannot guarantee removal of invisible AI watermarks embedded in pixels."
   },
   "pinterest": {
-    "image": "social/ftpe/2026-06-21/pinterest_pin/01_07_publishing_starter_pack_guide.png",
+    "image": "social/ftpe/2026-06-21/pinterest_pin/01_03_from_etsy_zip_to_drive_folder.png",
     "title": "pinterest_pin/title.txt",
     "caption": "pinterest_pin/caption.txt",
     "first_comment": "pinterest_pin/first-comment.txt"
@@ -218,11 +225,11 @@
   "pinterest_video": {
     "video": "social/ftpe/2026-06-21/pinterest_video/pinterest_video.mp4",
     "source_images": [
-      "social/ftpe/2026-06-21/pinterest_video/01_08_premium_kdp_publishing_toolkit_guide.png",
-      "social/ftpe/2026-06-21/pinterest_video/02_09_limited_edition_sudoku_publisher_starter_pack.png",
-      "social/ftpe/2026-06-21/pinterest_video/03_10_publish_your_first_book_with_confidence.png",
-      "social/ftpe/2026-06-21/pinterest_video/04_01_google_drive_files_organized.png",
-      "social/ftpe/2026-06-21/pinterest_video/05_02_first_goal_kdp_previewer.png"
+      "social/ftpe/2026-06-21/pinterest_video/01_04_real_guides_real_workflow.png",
+      "social/ftpe/2026-06-21/pinterest_video/02_05_easy_medium_hard_included.png",
+      "social/ftpe/2026-06-21/pinterest_video/03_06_covers_and_specs_included.png",
+      "social/ftpe/2026-06-21/pinterest_video/04_07_beginner_mistakes_flagged.png",
+      "social/ftpe/2026-06-21/pinterest_video/05_08_metadata_without_guesswork.png"
     ],
     "title": "pinterest_video/title.txt",
     "caption": "pinterest_video/caption.txt",
@@ -230,11 +237,11 @@
   },
   "facebook": {
     "images": [
-      "social/ftpe/2026-06-21/facebook_carousel/01_08_premium_kdp_publishing_toolkit_guide.png",
-      "social/ftpe/2026-06-21/facebook_carousel/02_09_limited_edition_sudoku_publisher_starter_pack.png",
-      "social/ftpe/2026-06-21/facebook_carousel/03_10_publish_your_first_book_with_confidence.png",
-      "social/ftpe/2026-06-21/facebook_carousel/04_01_google_drive_files_organized.png",
-      "social/ftpe/2026-06-21/facebook_carousel/05_02_first_goal_kdp_previewer.png"
+      "social/ftpe/2026-06-21/facebook_carousel/01_04_real_guides_real_workflow.png",
+      "social/ftpe/2026-06-21/facebook_carousel/02_05_easy_medium_hard_included.png",
+      "social/ftpe/2026-06-21/facebook_carousel/03_06_covers_and_specs_included.png",
+      "social/ftpe/2026-06-21/facebook_carousel/04_07_beginner_mistakes_flagged.png",
+      "social/ftpe/2026-06-21/facebook_carousel/05_08_metadata_without_guesswork.png"
     ],
     "image_captions": [
       "facebook_carousel/01_caption.txt",
