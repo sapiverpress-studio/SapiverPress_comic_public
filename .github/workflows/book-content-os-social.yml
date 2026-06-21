@@ -41,6 +41,9 @@ jobs:
           find assets/book-content-os/social_sets -type f | sort | sed -n '1,200p' || true
           ffmpeg -version | head -n 1
 
+      - name: Decode Book Content OS base64 image assets
+        run: node scripts/decode-book-content-os-base64-assets.mjs
+
       - name: Build Book Content OS social assets
         run: node scripts/build-book-content-os-pin-and-fb-carousel.mjs
 
