@@ -2,9 +2,73 @@ name: Book Content OS Social
 
 on:
   workflow_dispatch:
+    inputs:
+      date_override:
+        description: "Optional date override YYYY-MM-DD"
+        required: false
+        default: ""
+      post_mode:
+        description: "dry_run or live"
+        required: false
+        default: "dry_run"
+
+permissions:
+  contents: write
 
 jobs:
-  note:
+  book-content-os-social:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Book Content OS workflow placeholder"
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set run options
+        shell: bash
+        run: |
+          if [ -n "${{ github.event.inputs.date_override }}" ]; then
+            echo "DATE_OVERRIDE=${{ github.event.inputs.date_override }}" >> "$GITHUB_ENV"
+          else
+            echo "DATE_OVERRIDE=$(TZ=Europe/London date +%F)" >> "$GITHUB_ENV"
+          fi
+          echo "BOOK_CONTENT_OS_SOCIAL_POST_MODE=${{ github.event.inputs.post_mode || 'dry_run' }}" >> "$GITHUB_ENV"
+          echo "BOOK_CONTENT_OS_PINTEREST_VIDEO_POST_MODE=${{ github.event.inputs.post_mode || 'dry_run' }}" >> "$GITHUB_ENV"
+
+      - name: Check assets and tools
+        shell: bash
+        run: |
+          mkdir -p assets/book-content-os/social_sets
+          echo "Book Content OS assets:"
+          find assets/book-content-os/social_sets -type f | sort | sed -n '1,200p' || true
+          ffmpeg -version | head -n 1
+
+      - name: Build Book Content OS social assets
+        run: node scripts/build-book-content-os-pin-and-fb-carousel.mjs
+
+      - name: Prepare Book Content OS Pinterest and Facebook records
+        run: node scripts/post-book-content-os-pin-and-fb-carousel.mjs
+
+      - name: Prepare Book Content OS Pinterest video records
+        run: node scripts/post-book-content-os-pinterest-video.mjs
+
+      - name: Prepare Book Content OS YouTube Short records
+        run: node scripts/post-book-content-os-youtube-short.mjs
+
+      - name: Upload Book Content OS social artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: book-content-os-social-${{ env.DATE_OVERRIDE }}
+          path: social/book-content-os/${{ env.DATE_OVERRIDE }}/**/*
+          if-no-files-found: error
+
+      - name: Commit generated Book Content OS social files
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add social/book-content-os
+          if git diff --cached --quiet; then
+            echo "No Book Content OS generated changes to commit."
+          else
+            git commit -m "Save Book Content OS social run for ${DATE_OVERRIDE}"
+            git push
+          fi
