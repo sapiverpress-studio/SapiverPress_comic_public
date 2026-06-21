@@ -7,22 +7,22 @@
   "board_name": "Sapiver Press Comic",
   "video": "social/ftpe/2026-06-21/pinterest_video/pinterest_video.mp4",
   "source_images": [
-    "social/ftpe/2026-06-21/pinterest_video/01_08_premium_kdp_publishing_toolkit_guide.png",
-    "social/ftpe/2026-06-21/pinterest_video/02_09_limited_edition_sudoku_publisher_starter_pack.png",
-    "social/ftpe/2026-06-21/pinterest_video/03_10_publish_your_first_book_with_confidence.png",
-    "social/ftpe/2026-06-21/pinterest_video/04_01_google_drive_files_organized.png",
-    "social/ftpe/2026-06-21/pinterest_video/05_02_first_goal_kdp_previewer.png"
+    "social/ftpe/2026-06-21/pinterest_video/01_04_real_guides_real_workflow.png",
+    "social/ftpe/2026-06-21/pinterest_video/02_05_easy_medium_hard_included.png",
+    "social/ftpe/2026-06-21/pinterest_video/03_06_covers_and_specs_included.png",
+    "social/ftpe/2026-06-21/pinterest_video/04_07_beginner_mistakes_flagged.png",
+    "social/ftpe/2026-06-21/pinterest_video/05_08_metadata_without_guesswork.png"
   ],
   "image_pin_sources": [
-    "social/ftpe/2026-06-21/facebook_carousel/01_08_premium_kdp_publishing_toolkit_guide.png",
-    "social/ftpe/2026-06-21/facebook_carousel/02_09_limited_edition_sudoku_publisher_starter_pack.png",
-    "social/ftpe/2026-06-21/facebook_carousel/03_10_publish_your_first_book_with_confidence.png",
-    "social/ftpe/2026-06-21/facebook_carousel/04_01_google_drive_files_organized.png",
-    "social/ftpe/2026-06-21/facebook_carousel/05_02_first_goal_kdp_previewer.png"
+    "social/ftpe/2026-06-21/facebook_carousel/01_04_real_guides_real_workflow.png",
+    "social/ftpe/2026-06-21/facebook_carousel/02_05_easy_medium_hard_included.png",
+    "social/ftpe/2026-06-21/facebook_carousel/03_06_covers_and_specs_included.png",
+    "social/ftpe/2026-06-21/facebook_carousel/04_07_beginner_mistakes_flagged.png",
+    "social/ftpe/2026-06-21/facebook_carousel/05_08_metadata_without_guesswork.png"
   ],
-  "title": "Sapiver Press daily carousel | premium kdp publishing toolkit guide\n",
-  "caption": "Publishing should not feel like a maze of friction and messy files. Sapiver Press builds practical tools for small publishers, from KDP starter resources to admin systems that help keep products, assets, rights, and records organised. Explore the creator tools at https://suite.sapiverpress.co.uk Publishing fact: Legal deposit preserves a nation’s publishing output. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks",
-  "first_comment": "More from Sapiver Press: https://sapiverpress.etsy.com\n\nFact source: Publishing Facts 196\n\n#AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks\n",
+  "title": "Sapiver Press daily carousel | real guides real workflow\n",
+  "caption": "Sapiver Press is more than a shop. It is a growing system for puzzles, publishing workflows, useful downloads, and creator tools. If you want cleaner files, clearer records, and more confidence around your publishing assets, this is the place to start. Visit https://suite.sapiverpress.co.uk Publishing fact: UK legal deposit has existed in English law since 1662. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks",
+  "first_comment": "More from Sapiver Press: https://sapiverpress.etsy.com\n\nFact source: Publishing Facts 197\n\n#AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks\n",
   "dry_run": false,
   "image_pins": {
     "dry_run": false,
@@ -30,129 +30,15 @@
     "limit": 5,
     "pins": [
       {
-        "source_image": "social/ftpe/2026-06-21/facebook_carousel/01_08_premium_kdp_publishing_toolkit_guide.png",
-        "title": "Sapiver Press daily image 1/5 | 08 premium kdp publishing toolkit guide",
+        "source_image": "social/ftpe/2026-06-21/facebook_carousel/01_04_real_guides_real_workflow.png",
+        "title": "Sapiver Press daily image 1/5 | 04 real guides real workflow",
         "pin": {
-          "board_section_id": null,
-          "board_id": "1038924276479876865",
-          "is_owner": true,
-          "created_at": "2026-06-21T03:18:06",
-          "description": "Publishing should not feel like a maze of friction and messy files. Sapiver Press builds practical tools for small publishers, from KDP starter resources to admin systems that help keep products, assets, rights, and records organised. Explore the creator tools at https://suite.sapiverpress.co.uk Publishing fact: Legal deposit preserves a nation’s publishing output. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks",
-          "link": "https://sapiverpress.etsy.com/",
+          "title": "Sapiver Press daily image 1/5 | 04 real guides real workflow",
+          "is_standard": true,
           "parent_pin_id": null,
-          "is_product": false,
-          "pin_metrics": null,
-          "media": {
-            "media_type": "image",
-            "images": {
-              "150x150": {
-                "width": 150,
-                "height": 150,
-                "url": "https://i.pinimg.com/150x150/72/a5/cf/72a5cfc92c1155d8828bbc1950604e64.jpg"
-              },
-              "400x300": {
-                "width": 400,
-                "height": 300,
-                "url": "https://i.pinimg.com/400x300/72/a5/cf/72a5cfc92c1155d8828bbc1950604e64.jpg"
-              },
-              "600x": {
-                "width": 564,
-                "height": 846,
-                "url": "https://i.pinimg.com/564x/72/a5/cf/72a5cfc92c1155d8828bbc1950604e64.jpg"
-              },
-              "1200x": {
-                "width": 1024,
-                "height": 1536,
-                "url": "https://i.pinimg.com/1200x/72/a5/cf/72a5cfc92c1155d8828bbc1950604e64.jpg"
-              }
-            }
-          },
-          "dominant_color": null,
-          "board_owner": {
-            "username": "sapiver"
-          },
-          "id": "1038924207808776022",
-          "is_removable": false,
-          "creative_type": "REGULAR",
-          "has_been_promoted": false,
           "alt_text": null,
-          "title": "Sapiver Press daily image 1/5 | 08 premium kdp publishing toolkit guide",
-          "is_standard": true,
-          "product_tags": []
-        }
-      },
-      {
-        "source_image": "social/ftpe/2026-06-21/facebook_carousel/02_09_limited_edition_sudoku_publisher_starter_pack.png",
-        "title": "Sapiver Press daily image 2/5 | 09 limited edition sudoku publisher starter pack",
-        "pin": {
-          "is_product": false,
-          "is_standard": true,
-          "creative_type": "REGULAR",
+          "description": "Sapiver Press is more than a shop. It is a growing system for puzzles, publishing workflows, useful downloads, and creator tools. If you want cleaner files, clearer records, and more confidence around your publishing assets, this is the place to start. Visit https://suite.sapiverpress.co.uk Publishing fact: UK legal deposit has existed in English law since 1662. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks",
           "link": "https://sapiverpress.etsy.com/",
-          "is_removable": false,
-          "description": "Publishing should not feel like a maze of friction and messy files. Sapiver Press builds practical tools for small publishers, from KDP starter resources to admin systems that help keep products, assets, rights, and records organised. Explore the creator tools at https://suite.sapiverpress.co.uk Publishing fact: Legal deposit preserves a nation’s publishing output. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks",
-          "alt_text": null,
-          "board_owner": {
-            "username": "sapiver"
-          },
-          "id": "1038924207808776023",
-          "title": "Sapiver Press daily image 2/5 | 09 limited edition sudoku publisher starter pack",
-          "created_at": "2026-06-21T03:18:07",
-          "is_owner": true,
-          "dominant_color": null,
-          "has_been_promoted": false,
-          "pin_metrics": null,
-          "parent_pin_id": null,
-          "board_section_id": null,
-          "board_id": "1038924276479876865",
-          "media": {
-            "media_type": "image",
-            "images": {
-              "150x150": {
-                "width": 150,
-                "height": 150,
-                "url": "https://i.pinimg.com/150x150/96/8f/36/968f366f87cabba5349e3e5d442e1a4f.jpg"
-              },
-              "400x300": {
-                "width": 400,
-                "height": 300,
-                "url": "https://i.pinimg.com/400x300/96/8f/36/968f366f87cabba5349e3e5d442e1a4f.jpg"
-              },
-              "600x": {
-                "width": 564,
-                "height": 846,
-                "url": "https://i.pinimg.com/564x/96/8f/36/968f366f87cabba5349e3e5d442e1a4f.jpg"
-              },
-              "1200x": {
-                "width": 1024,
-                "height": 1536,
-                "url": "https://i.pinimg.com/1200x/96/8f/36/968f366f87cabba5349e3e5d442e1a4f.jpg"
-              }
-            }
-          },
-          "product_tags": []
-        }
-      },
-      {
-        "source_image": "social/ftpe/2026-06-21/facebook_carousel/03_10_publish_your_first_book_with_confidence.png",
-        "title": "Sapiver Press daily image 3/5 | 10 publish your first book with confidence",
-        "pin": {
-          "link": "https://sapiverpress.etsy.com/",
-          "is_standard": true,
-          "title": "Sapiver Press daily image 3/5 | 10 publish your first book with confidence",
-          "creative_type": "REGULAR",
-          "pin_metrics": null,
-          "has_been_promoted": false,
-          "description": "Publishing should not feel like a maze of friction and messy files. Sapiver Press builds practical tools for small publishers, from KDP starter resources to admin systems that help keep products, assets, rights, and records organised. Explore the creator tools at https://suite.sapiverpress.co.uk Publishing fact: Legal deposit preserves a nation’s publishing output. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks",
-          "is_product": false,
-          "board_section_id": null,
-          "board_owner": {
-            "username": "sapiver"
-          },
-          "alt_text": null,
-          "dominant_color": null,
-          "board_id": "1038924276479876865",
-          "created_at": "2026-06-21T03:18:08",
           "product_tags": [],
           "media": {
             "media_type": "image",
@@ -160,133 +46,247 @@
               "150x150": {
                 "width": 150,
                 "height": 150,
-                "url": "https://i.pinimg.com/150x150/7d/53/16/7d5316d0af1ef6f409940fadc757b586.jpg"
+                "url": "https://i.pinimg.com/150x150/43/c3/85/43c38506f9d2879162a88ee650d0fcc9.jpg"
               },
               "400x300": {
                 "width": 400,
                 "height": 300,
-                "url": "https://i.pinimg.com/400x300/7d/53/16/7d5316d0af1ef6f409940fadc757b586.jpg"
+                "url": "https://i.pinimg.com/400x300/43/c3/85/43c38506f9d2879162a88ee650d0fcc9.jpg"
               },
               "600x": {
                 "width": 564,
                 "height": 846,
-                "url": "https://i.pinimg.com/564x/7d/53/16/7d5316d0af1ef6f409940fadc757b586.jpg"
-              },
-              "1200x": {
-                "width": 1024,
-                "height": 1536,
-                "url": "https://i.pinimg.com/1200x/7d/53/16/7d5316d0af1ef6f409940fadc757b586.jpg"
-              }
-            }
-          },
-          "parent_pin_id": null,
-          "id": "1038924207808776024",
-          "is_owner": true,
-          "is_removable": false
-        }
-      },
-      {
-        "source_image": "social/ftpe/2026-06-21/facebook_carousel/04_01_google_drive_files_organized.png",
-        "title": "Sapiver Press daily image 4/5 | 01 google drive files organized",
-        "pin": {
-          "is_owner": true,
-          "created_at": "2026-06-21T03:18:09",
-          "description": "Publishing should not feel like a maze of friction and messy files. Sapiver Press builds practical tools for small publishers, from KDP starter resources to admin systems that help keep products, assets, rights, and records organised. Explore the creator tools at https://suite.sapiverpress.co.uk Publishing fact: Legal deposit preserves a nation’s publishing output. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks",
-          "is_removable": false,
-          "board_section_id": null,
-          "is_standard": true,
-          "alt_text": null,
-          "media": {
-            "media_type": "image",
-            "images": {
-              "150x150": {
-                "width": 150,
-                "height": 150,
-                "url": "https://i.pinimg.com/150x150/fe/9e/fb/fe9efbd03e0c56ed9ea55fcfb3abbb1c.jpg"
-              },
-              "400x300": {
-                "width": 400,
-                "height": 300,
-                "url": "https://i.pinimg.com/400x300/fe/9e/fb/fe9efbd03e0c56ed9ea55fcfb3abbb1c.jpg"
-              },
-              "600x": {
-                "width": 564,
-                "height": 846,
-                "url": "https://i.pinimg.com/564x/fe/9e/fb/fe9efbd03e0c56ed9ea55fcfb3abbb1c.jpg"
+                "url": "https://i.pinimg.com/564x/43/c3/85/43c38506f9d2879162a88ee650d0fcc9.jpg"
               },
               "1200x": {
                 "width": 1000,
                 "height": 1500,
-                "url": "https://i.pinimg.com/1200x/fe/9e/fb/fe9efbd03e0c56ed9ea55fcfb3abbb1c.jpg"
+                "url": "https://i.pinimg.com/1200x/43/c3/85/43c38506f9d2879162a88ee650d0fcc9.jpg"
               }
             }
           },
-          "is_product": false,
-          "pin_metrics": null,
-          "link": "https://sapiverpress.etsy.com/",
-          "title": "Sapiver Press daily image 4/5 | 01 google drive files organized",
-          "id": "1038924207808776026",
+          "id": "1038924207808786161",
+          "board_section_id": null,
+          "is_removable": false,
+          "board_id": "1038924276479876865",
+          "dominant_color": null,
+          "has_been_promoted": false,
+          "creative_type": "REGULAR",
           "board_owner": {
             "username": "sapiver"
           },
-          "has_been_promoted": false,
-          "parent_pin_id": null,
-          "dominant_color": null,
-          "board_id": "1038924276479876865",
-          "product_tags": [],
-          "creative_type": "REGULAR"
+          "is_product": false,
+          "is_owner": true,
+          "pin_metrics": null,
+          "created_at": "2026-06-21T10:16:41"
         }
       },
       {
-        "source_image": "social/ftpe/2026-06-21/facebook_carousel/05_02_first_goal_kdp_previewer.png",
-        "title": "Sapiver Press daily image 5/5 | 02 first goal kdp previewer",
+        "source_image": "social/ftpe/2026-06-21/facebook_carousel/02_05_easy_medium_hard_included.png",
+        "title": "Sapiver Press daily image 2/5 | 05 easy medium hard included",
         "pin": {
-          "is_product": false,
-          "board_section_id": null,
-          "has_been_promoted": false,
+          "is_owner": true,
+          "title": "Sapiver Press daily image 2/5 | 05 easy medium hard included",
+          "alt_text": null,
+          "pin_metrics": null,
+          "created_at": "2026-06-21T10:16:42",
+          "dominant_color": null,
           "media": {
             "media_type": "image",
             "images": {
               "150x150": {
                 "width": 150,
                 "height": 150,
-                "url": "https://i.pinimg.com/150x150/83/e4/ba/83e4ba2a4469abeb060bea26f79643be.jpg"
+                "url": "https://i.pinimg.com/150x150/62/73/42/62734265325217c483ab552aa2f575a6.jpg"
               },
               "400x300": {
                 "width": 400,
                 "height": 300,
-                "url": "https://i.pinimg.com/400x300/83/e4/ba/83e4ba2a4469abeb060bea26f79643be.jpg"
+                "url": "https://i.pinimg.com/400x300/62/73/42/62734265325217c483ab552aa2f575a6.jpg"
               },
               "600x": {
                 "width": 564,
                 "height": 846,
-                "url": "https://i.pinimg.com/564x/83/e4/ba/83e4ba2a4469abeb060bea26f79643be.jpg"
+                "url": "https://i.pinimg.com/564x/62/73/42/62734265325217c483ab552aa2f575a6.jpg"
               },
               "1200x": {
                 "width": 1000,
                 "height": 1500,
-                "url": "https://i.pinimg.com/1200x/83/e4/ba/83e4ba2a4469abeb060bea26f79643be.jpg"
+                "url": "https://i.pinimg.com/1200x/62/73/42/62734265325217c483ab552aa2f575a6.jpg"
               }
             }
           },
-          "description": "Publishing should not feel like a maze of friction and messy files. Sapiver Press builds practical tools for small publishers, from KDP starter resources to admin systems that help keep products, assets, rights, and records organised. Explore the creator tools at https://suite.sapiverpress.co.uk Publishing fact: Legal deposit preserves a nation’s publishing output. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks",
-          "alt_text": null,
+          "product_tags": [],
+          "link": "https://sapiverpress.etsy.com/",
+          "is_removable": false,
           "board_owner": {
             "username": "sapiver"
           },
-          "id": "1038924207808776027",
-          "product_tags": [],
-          "pin_metrics": null,
-          "dominant_color": null,
-          "created_at": "2026-06-21T03:18:10",
-          "link": "https://sapiverpress.etsy.com/",
           "board_id": "1038924276479876865",
-          "parent_pin_id": null,
+          "id": "1038924207808786163",
+          "board_section_id": null,
           "creative_type": "REGULAR",
-          "is_owner": true,
-          "title": "Sapiver Press daily image 5/5 | 02 first goal kdp previewer",
-          "is_removable": false,
+          "parent_pin_id": null,
+          "has_been_promoted": false,
+          "is_product": false,
+          "description": "Sapiver Press is more than a shop. It is a growing system for puzzles, publishing workflows, useful downloads, and creator tools. If you want cleaner files, clearer records, and more confidence around your publishing assets, this is the place to start. Visit https://suite.sapiverpress.co.uk Publishing fact: UK legal deposit has existed in English law since 1662. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks",
           "is_standard": true
+        }
+      },
+      {
+        "source_image": "social/ftpe/2026-06-21/facebook_carousel/03_06_covers_and_specs_included.png",
+        "title": "Sapiver Press daily image 3/5 | 06 covers and specs included",
+        "pin": {
+          "board_section_id": null,
+          "creative_type": "REGULAR",
+          "id": "1038924207808786164",
+          "is_owner": true,
+          "board_owner": {
+            "username": "sapiver"
+          },
+          "board_id": "1038924276479876865",
+          "pin_metrics": null,
+          "dominant_color": null,
+          "is_standard": true,
+          "title": "Sapiver Press daily image 3/5 | 06 covers and specs included",
+          "created_at": "2026-06-21T10:16:42",
+          "link": "https://sapiverpress.etsy.com/",
+          "media": {
+            "media_type": "image",
+            "images": {
+              "150x150": {
+                "width": 150,
+                "height": 150,
+                "url": "https://i.pinimg.com/150x150/a1/a2/9b/a1a29b8c3575d5e65b8cbc3a21c2e636.jpg"
+              },
+              "400x300": {
+                "width": 400,
+                "height": 300,
+                "url": "https://i.pinimg.com/400x300/a1/a2/9b/a1a29b8c3575d5e65b8cbc3a21c2e636.jpg"
+              },
+              "600x": {
+                "width": 564,
+                "height": 846,
+                "url": "https://i.pinimg.com/564x/a1/a2/9b/a1a29b8c3575d5e65b8cbc3a21c2e636.jpg"
+              },
+              "1200x": {
+                "width": 1000,
+                "height": 1500,
+                "url": "https://i.pinimg.com/1200x/a1/a2/9b/a1a29b8c3575d5e65b8cbc3a21c2e636.jpg"
+              }
+            }
+          },
+          "alt_text": null,
+          "has_been_promoted": false,
+          "is_removable": false,
+          "product_tags": [],
+          "description": "Sapiver Press is more than a shop. It is a growing system for puzzles, publishing workflows, useful downloads, and creator tools. If you want cleaner files, clearer records, and more confidence around your publishing assets, this is the place to start. Visit https://suite.sapiverpress.co.uk Publishing fact: UK legal deposit has existed in English law since 1662. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks",
+          "parent_pin_id": null,
+          "is_product": false
+        }
+      },
+      {
+        "source_image": "social/ftpe/2026-06-21/facebook_carousel/04_07_beginner_mistakes_flagged.png",
+        "title": "Sapiver Press daily image 4/5 | 07 beginner mistakes flagged",
+        "pin": {
+          "board_owner": {
+            "username": "sapiver"
+          },
+          "dominant_color": null,
+          "description": "Sapiver Press is more than a shop. It is a growing system for puzzles, publishing workflows, useful downloads, and creator tools. If you want cleaner files, clearer records, and more confidence around your publishing assets, this is the place to start. Visit https://suite.sapiverpress.co.uk Publishing fact: UK legal deposit has existed in English law since 1662. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks",
+          "board_section_id": null,
+          "is_removable": false,
+          "created_at": "2026-06-21T10:16:43",
+          "id": "1038924207808786165",
+          "is_product": false,
+          "is_owner": true,
+          "board_id": "1038924276479876865",
+          "product_tags": [],
+          "link": "https://sapiverpress.etsy.com/",
+          "has_been_promoted": false,
+          "media": {
+            "media_type": "image",
+            "images": {
+              "150x150": {
+                "width": 150,
+                "height": 150,
+                "url": "https://i.pinimg.com/150x150/b1/ea/67/b1ea6798fdcae0ba25feae1859136b80.jpg"
+              },
+              "400x300": {
+                "width": 400,
+                "height": 300,
+                "url": "https://i.pinimg.com/400x300/b1/ea/67/b1ea6798fdcae0ba25feae1859136b80.jpg"
+              },
+              "600x": {
+                "width": 564,
+                "height": 846,
+                "url": "https://i.pinimg.com/564x/b1/ea/67/b1ea6798fdcae0ba25feae1859136b80.jpg"
+              },
+              "1200x": {
+                "width": 1000,
+                "height": 1500,
+                "url": "https://i.pinimg.com/1200x/b1/ea/67/b1ea6798fdcae0ba25feae1859136b80.jpg"
+              }
+            }
+          },
+          "title": "Sapiver Press daily image 4/5 | 07 beginner mistakes flagged",
+          "is_standard": true,
+          "pin_metrics": null,
+          "creative_type": "REGULAR",
+          "parent_pin_id": null,
+          "alt_text": null
+        }
+      },
+      {
+        "source_image": "social/ftpe/2026-06-21/facebook_carousel/05_08_metadata_without_guesswork.png",
+        "title": "Sapiver Press daily image 5/5 | 08 metadata without guesswork",
+        "pin": {
+          "has_been_promoted": false,
+          "id": "1038924207808786166",
+          "is_removable": false,
+          "parent_pin_id": null,
+          "pin_metrics": null,
+          "product_tags": [],
+          "is_owner": true,
+          "alt_text": null,
+          "dominant_color": null,
+          "board_owner": {
+            "username": "sapiver"
+          },
+          "created_at": "2026-06-21T10:16:43",
+          "is_standard": true,
+          "title": "Sapiver Press daily image 5/5 | 08 metadata without guesswork",
+          "board_id": "1038924276479876865",
+          "creative_type": "REGULAR",
+          "board_section_id": null,
+          "description": "Sapiver Press is more than a shop. It is a growing system for puzzles, publishing workflows, useful downloads, and creator tools. If you want cleaner files, clearer records, and more confidence around your publishing assets, this is the place to start. Visit https://suite.sapiverpress.co.uk Publishing fact: UK legal deposit has existed in English law since 1662. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks",
+          "is_product": false,
+          "link": "https://sapiverpress.etsy.com/",
+          "media": {
+            "media_type": "image",
+            "images": {
+              "150x150": {
+                "width": 150,
+                "height": 150,
+                "url": "https://i.pinimg.com/150x150/5d/0c/22/5d0c224f19ff7b4f52f3150da2fcf3de.jpg"
+              },
+              "400x300": {
+                "width": 400,
+                "height": 300,
+                "url": "https://i.pinimg.com/400x300/5d/0c/22/5d0c224f19ff7b4f52f3150da2fcf3de.jpg"
+              },
+              "600x": {
+                "width": 564,
+                "height": 846,
+                "url": "https://i.pinimg.com/564x/5d/0c/22/5d0c224f19ff7b4f52f3150da2fcf3de.jpg"
+              },
+              "1200x": {
+                "width": 1000,
+                "height": 1500,
+                "url": "https://i.pinimg.com/1200x/5d/0c/22/5d0c224f19ff7b4f52f3150da2fcf3de.jpg"
+              }
+            }
+          }
         }
       }
     ]
@@ -365,6 +365,8 @@
       "board_owner": {
         "username": "sapiver"
       }
-    }
+    },
+    "skipped": true,
+    "reason": "already_posted"
   }
 }
