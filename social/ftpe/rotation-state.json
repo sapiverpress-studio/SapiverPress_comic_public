@@ -4,7 +4,7 @@
     "images": {
       "cycle": 1,
       "pool_size": 145,
-      "used_count": 84,
+      "used_count": 90,
       "used": [
         "assets/ftpe/social_master/_extracted/ftpe_etsy_master_images/ftpe_etsy_master_images/01_main_hero_first_time_sudoku_publisher_edition.png",
         "assets/ftpe/social_master/_extracted/ftpe_etsy_master_images/ftpe_etsy_master_images/02_whats_included.png",
@@ -17,6 +17,12 @@
         "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/04_guided_publishing_support_for_beginners.png",
         "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/05_why_this_edition_is_different.png",
         "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/06_start_with_the_easy_book_first.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/07_publishing_starter_pack_guide.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/08_premium_kdp_publishing_toolkit_guide.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/09_limited_edition_sudoku_publisher_starter_pack.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/10_publish_your_first_book_with_confidence.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/01_google_drive_files_organized.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/02_first_goal_kdp_previewer.png",
         "assets/ftpe/social_sets/_extracted/ftpe_set_07_fixed_crops_pngs-1/ftpe_set_07_08_first_time_sudoku_publisher_edition_preview.png",
         "assets/ftpe/social_sets/_extracted/ftpe_set_07_fixed_crops_pngs-1/ftpe_set_07_09_first_time_sudoku_publisher_edition_flyer.png",
         "assets/ftpe/social_sets/_extracted/ftpe_set_07_fixed_crops_pngs-1/ftpe_set_07_10_sophisticated_sudoku_publisher_promotional_design.png",
@@ -93,38 +99,32 @@
       ],
       "exhausted_this_run": false,
       "last_selected": [
-        "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/01_your_first_kdp_upload_starter_pack.png",
-        "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/02_everything_you_need_to_publish_sudoku.png",
-        "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/03_first_time_sudoku_publisher_guide.png",
-        "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/04_guided_publishing_support_for_beginners.png",
-        "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/05_why_this_edition_is_different.png",
-        "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/06_start_with_the_easy_book_first.png"
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/07_publishing_starter_pack_guide.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/08_premium_kdp_publishing_toolkit_guide.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/09_limited_edition_sudoku_publisher_starter_pack.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/10_publish_your_first_book_with_confidence.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/01_google_drive_files_organized.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/02_first_goal_kdp_previewer.png"
       ],
-      "updated_at": "2026-06-20T19:11:53.658Z"
+      "updated_at": "2026-06-21T03:17:28.184Z"
     },
     "about": {
-      "cycle": 2,
+      "cycle": 3,
       "pool_size": 7,
-      "used_count": 7,
+      "used_count": 1,
       "used": [
-        "accessible_approach",
-        "direct_practical_pitch",
-        "efficiency_angle",
-        "print_ready_focus",
-        "ready_to_use_vibe",
-        "studio_identity",
-        "system_first_philosophy"
+        "efficiency_angle"
       ],
-      "exhausted_this_run": false,
+      "exhausted_this_run": true,
       "last_selected": [
-        "accessible_approach"
+        "efficiency_angle"
       ],
-      "updated_at": "2026-06-20T19:11:53.758Z"
+      "updated_at": "2026-06-21T03:17:28.261Z"
     },
     "facts": {
       "cycle": 1,
       "pool_size": 365,
-      "used_count": 14,
+      "used_count": 15,
       "used": [
         "182",
         "183",
@@ -139,13 +139,14 @@
         "192",
         "193",
         "194",
-        "195"
+        "195",
+        "196"
       ],
       "exhausted_this_run": false,
       "last_selected": [
-        "195"
+        "196"
       ],
-      "updated_at": "2026-06-20T19:11:53.758Z"
+      "updated_at": "2026-06-21T03:17:28.261Z"
     }
   },
   "history": [
@@ -344,21 +345,35 @@
       "about": "accessible_approach",
       "fact": "195",
       "anecdote": null
+    },
+    {
+      "date": "2026-06-21",
+      "images": [
+        "assets/ftpe/social_sets/_extracted/FTPE_Batch_01_individual_PNGs/FTPE_Batch_01_individual_pngs/07_publishing_starter_pack_guide.png",
+        "assets/ftpe/social_sets/_extracted/FTPE_Batch_01_individual_PNGs/FTPE_Batch_01_individual_pngs/08_premium_kdp_publishing_toolkit_guide.png",
+        "assets/ftpe/social_sets/_extracted/FTPE_Batch_01_individual_PNGs/FTPE_Batch_01_individual_pngs/09_limited_edition_sudoku_publisher_starter_pack.png",
+        "assets/ftpe/social_sets/_extracted/FTPE_Batch_01_individual_PNGs/FTPE_Batch_01_individual_pngs/10_publish_your_first_book_with_confidence.png",
+        "assets/ftpe/social_sets/_extracted/FTPE_Batch_02_GitHub_GoogleDrive_campaign_PNGs/FTPE_Batch_02_GitHub_GoogleDrive/01_google_drive_files_organized.png",
+        "assets/ftpe/social_sets/_extracted/FTPE_Batch_02_GitHub_GoogleDrive_campaign_PNGs/FTPE_Batch_02_GitHub_GoogleDrive/02_first_goal_kdp_previewer.png"
+      ],
+      "about": "efficiency_angle",
+      "fact": "196",
+      "anecdote": null
     }
   ],
-  "updated_at": "2026-06-20T19:11:53.758Z",
+  "updated_at": "2026-06-21T03:17:28.261Z",
   "last_run": {
-    "date": "2026-06-20",
+    "date": "2026-06-21",
     "images": [
-      "assets/ftpe/social_sets/_extracted/FTPE_Batch_01_individual_PNGs/FTPE_Batch_01_individual_pngs/01_your_first_kdp_upload_starter_pack.png",
-      "assets/ftpe/social_sets/_extracted/FTPE_Batch_01_individual_PNGs/FTPE_Batch_01_individual_pngs/02_everything_you_need_to_publish_sudoku.png",
-      "assets/ftpe/social_sets/_extracted/FTPE_Batch_01_individual_PNGs/FTPE_Batch_01_individual_pngs/03_first_time_sudoku_publisher_guide.png",
-      "assets/ftpe/social_sets/_extracted/FTPE_Batch_01_individual_PNGs/FTPE_Batch_01_individual_pngs/04_guided_publishing_support_for_beginners.png",
-      "assets/ftpe/social_sets/_extracted/FTPE_Batch_01_individual_PNGs/FTPE_Batch_01_individual_pngs/05_why_this_edition_is_different.png",
-      "assets/ftpe/social_sets/_extracted/FTPE_Batch_01_individual_PNGs/FTPE_Batch_01_individual_pngs/06_start_with_the_easy_book_first.png"
+      "assets/ftpe/social_sets/_extracted/FTPE_Batch_01_individual_PNGs/FTPE_Batch_01_individual_pngs/07_publishing_starter_pack_guide.png",
+      "assets/ftpe/social_sets/_extracted/FTPE_Batch_01_individual_PNGs/FTPE_Batch_01_individual_pngs/08_premium_kdp_publishing_toolkit_guide.png",
+      "assets/ftpe/social_sets/_extracted/FTPE_Batch_01_individual_PNGs/FTPE_Batch_01_individual_pngs/09_limited_edition_sudoku_publisher_starter_pack.png",
+      "assets/ftpe/social_sets/_extracted/FTPE_Batch_01_individual_PNGs/FTPE_Batch_01_individual_pngs/10_publish_your_first_book_with_confidence.png",
+      "assets/ftpe/social_sets/_extracted/FTPE_Batch_02_GitHub_GoogleDrive_campaign_PNGs/FTPE_Batch_02_GitHub_GoogleDrive/01_google_drive_files_organized.png",
+      "assets/ftpe/social_sets/_extracted/FTPE_Batch_02_GitHub_GoogleDrive_campaign_PNGs/FTPE_Batch_02_GitHub_GoogleDrive/02_first_goal_kdp_previewer.png"
     ],
-    "about": "accessible_approach",
-    "fact": "195",
+    "about": "efficiency_angle",
+    "fact": "196",
     "anecdote": null
   }
 }
