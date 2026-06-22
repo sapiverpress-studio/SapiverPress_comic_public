@@ -136,10 +136,18 @@ jobs:
             fi
           fi
 
+          echo "BOOK_CONTENT_OS_DRIVE_ZIPS_DOWNLOADED=${downloaded_count}" >> "$GITHUB_ENV"
+          if [ "$downloaded_count" -gt 0 ]; then
+            echo "Drive ZIPs downloaded; disabling repo fallback .b64 image assets for this run."
+            find assets/book-content-os/social_sets -type f \( -iname '*.png.b64' -o -iname '*.jpg.b64' -o -iname '*.jpeg.b64' -o -iname '*.zip.b64' \) -delete || true
+            rm -rf assets/book-content-os/social_sets/_decoded_base64 || true
+          fi
+
           echo "Book Content OS asset files available in this runner workspace:"
           find assets/book-content-os/social_sets -type f \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.zip' -o -iname '*.zip.b64' -o -iname '*.b64' \) | sort | sed -n '1,240p' || true
 
       - name: Decode Book Content OS base64 image assets
+        if: env.BOOK_CONTENT_OS_DRIVE_ZIPS_DOWNLOADED == '0'
         run: node scripts/decode-book-content-os-base64-assets.mjs
 
       - name: Build one Pinterest pin, one Facebook carousel, one Pinterest video and one YouTube Short
