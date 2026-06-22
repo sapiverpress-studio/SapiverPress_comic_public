@@ -1,16 +1,63 @@
 {
   "date": "2026-06-22",
-  "mode": "dry_run",
+  "mode": "live",
   "type": "book_content_os_social_manual_run_v1",
   "cta_text": "link in bio",
   "pinterest_board_id": "1038924276479876865",
   "pinterest_board_name": "Sapiver Press Comic",
+  "facebook": {
+    "failed": true,
+    "channel": "Facebook",
+    "error": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AnOCVxlRZiplsFwTmxGOe92\"}}",
+    "note": "Facebook live posting failed. Check token permissions/settings for this channel."
+  },
   "pinterest": {
-    "dry_run": true,
-    "image": "social/book-content-os/2026-06-22/pinterest_pin/01_08_08_private_tracker_public_bookshelf.png",
-    "title": "Plan book content the tidy way\n",
-    "caption": "Capture book projects, review notes and short-form content ideas in one focused browser app. Start with Lite and build the habit before moving to Pro. link in bio #BookReviewers #ARCReaders #BookTok #Bookstagram #BookContent",
-    "first_comment": "link in bio\n\n#BookReviewers #ARCReaders #BookTok #Bookstagram\n"
+    "is_standard": true,
+    "is_removable": false,
+    "title": "Built for reviewers",
+    "dominant_color": null,
+    "is_product": false,
+    "pin_metrics": null,
+    "has_been_promoted": false,
+    "created_at": "2026-06-22T06:33:17",
+    "board_section_id": null,
+    "alt_text": null,
+    "board_id": "1038924276479876865",
+    "creative_type": "REGULAR",
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/56/0c/8f/560c8f051e71312bc94483792bf69ce8.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/56/0c/8f/560c8f051e71312bc94483792bf69ce8.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 564,
+          "url": "https://i.pinimg.com/564x/56/0c/8f/560c8f051e71312bc94483792bf69ce8.jpg"
+        },
+        "1200x": {
+          "width": 1200,
+          "height": 1200,
+          "url": "https://i.pinimg.com/1200x/56/0c/8f/560c8f051e71312bc94483792bf69ce8.jpg"
+        }
+      }
+    },
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "is_owner": true,
+    "parent_pin_id": null,
+    "description": "Book Content OS Lite is for ARC readers, reviewers and book-content creators who need a simple place to keep review notes and content plans together. link in bio #BookReviewers #ARCReaders #BookTok #Bookstagram #BookContent",
+    "id": "1038924207808816015",
+    "link": null,
+    "product_tags": []
   },
   "pinterest_video": {
     "prepared": true,
@@ -20,33 +67,14 @@
     "board_name": "Sapiver Press Comic",
     "video": "social/book-content-os/2026-06-22/pinterest_video/book_content_os_video.mp4",
     "source_images": [
-      "social/book-content-os/2026-06-22/pinterest_video/01_09_09_book_links_deserve_better.png",
-      "social/book-content-os/2026-06-22/pinterest_video/02_11_11_33512.png",
-      "social/book-content-os/2026-06-22/pinterest_video/03_12_12_33511.png",
-      "social/book-content-os/2026-06-22/pinterest_video/04_13_14_33509.png",
-      "social/book-content-os/2026-06-22/pinterest_video/05_14_15_33508.png"
+      "social/book-content-os/2026-06-22/pinterest_video/01_10_33469.png",
+      "social/book-content-os/2026-06-22/pinterest_video/02_01_33462.png",
+      "social/book-content-os/2026-06-22/pinterest_video/03_02_33463.png",
+      "social/book-content-os/2026-06-22/pinterest_video/04_03_33464.png",
+      "social/book-content-os/2026-06-22/pinterest_video/05_04_33465.png"
     ],
-    "title": "Plan book content the tidy way | Book Content OS\n",
-    "caption": "Capture book projects, review notes and short-form content ideas in one focused browser app. Start with Lite and build the habit before moving to Pro. link in bio #BookReviewers #ARCReaders #BookTok #Bookstagram #BookContent",
-    "first_comment": "link in bio\n\n#BookReviewers #ARCReaders #BookTok #Bookstagram\n"
-  },
-  "facebook": {
-    "dry_run": true,
-    "images": [
-      "social/book-content-os/2026-06-22/facebook_carousel/01_09_09_book_links_deserve_better.png",
-      "social/book-content-os/2026-06-22/facebook_carousel/02_11_11_33512.png",
-      "social/book-content-os/2026-06-22/facebook_carousel/03_12_12_33511.png",
-      "social/book-content-os/2026-06-22/facebook_carousel/04_13_14_33509.png",
-      "social/book-content-os/2026-06-22/facebook_carousel/05_14_15_33508.png"
-    ],
-    "image_captions": [
-      "Capture book projects, review notes and short-form content ideas in one focused browser app. Start with Lite and build the habit before moving to Pro.\n\nlink in bio\n\n#BookReviewers #ARCReaders #BookTok #Bookstagram #BookContent\n",
-      "Capture book projects, review notes and short-form content ideas in one focused browser app. Start with Lite and build the habit before moving to Pro.\n\nlink in bio\n\n#BookReviewers #ARCReaders #BookTok #Bookstagram #BookContent\n",
-      "Capture book projects, review notes and short-form content ideas in one focused browser app. Start with Lite and build the habit before moving to Pro.\n\nlink in bio\n\n#BookReviewers #ARCReaders #BookTok #Bookstagram #BookContent\n",
-      "Capture book projects, review notes and short-form content ideas in one focused browser app. Start with Lite and build the habit before moving to Pro.\n\nlink in bio\n\n#BookReviewers #ARCReaders #BookTok #Bookstagram #BookContent\n",
-      "Capture book projects, review notes and short-form content ideas in one focused browser app. Start with Lite and build the habit before moving to Pro.\n\nlink in bio\n\n#BookReviewers #ARCReaders #BookTok #Bookstagram #BookContent\n"
-    ],
-    "caption": "Capture book projects, review notes and short-form content ideas in one focused browser app. Start with Lite and build the habit before moving to Pro.\n\nlink in bio\n\n#BookReviewers #ARCReaders #BookTok #Bookstagram #BookContent\n",
+    "title": "Built for reviewers | Book Content OS\n",
+    "caption": "Book Content OS Lite is for ARC readers, reviewers and book-content creators who need a simple place to keep review notes and content plans together. link in bio #BookReviewers #ARCReaders #BookTok #Bookstagram #BookContent",
     "first_comment": "link in bio\n\n#BookReviewers #ARCReaders #BookTok #Bookstagram\n"
   }
 }
