@@ -65,24 +65,33 @@ if (MODE !== "live") {
   out.note = "Prepared Pinterest image pins and video post. Set BOOK_CONTENT_OS_PINTEREST_VIDEO_POST_MODE=live to upload.";
   out.image_pins = { dry_run: true, skipped: skipImages, limit: imageSources.length, pins: imageSources.map((sourceImage, index) => ({ source_image: sourceImage, title: imagePinTitle(title, sourceImage, index, imageSources.length) })) };
 } else {
-  const token = process.env.PINTEREST_ACCESS_TOKEN;
-  if (!token) throw new Error("Missing PINTEREST_ACCESS_TOKEN");
-  out.dry_run = false;
-  out.image_pins = { dry_run: false, skipped: skipImages, limit: imageSources.length, pins: [] };
-  if (!skipImages) {
-    for (let index = 0; index < imageSources.length; index += 1) {
-      const sourceImage = imageSources[index];
-      const existingPin = existingImagePin(existing, sourceImage);
-      const imagePath = absRoot(sourceImage);
-      const pinTitle = imagePinTitle(title, sourceImage, index, imageSources.length);
-      if (!fssync.existsSync(imagePath)) throw new Error(`Pinterest image pin source not found: ${imagePath}`);
-      if (existingPin && !forceImages) out.image_pins.pins.push({ ...existingPin, skipped: true, reason: "already_posted" });
-      else out.image_pins.pins.push({ source_image: sourceImage, title: pinTitle, pin: await postImageToPinterest({ token, boardId, imagePath, title: pinTitle, description: caption }) });
+  const token = (process.env.PINTEREST_ACCESS_TOKEN || "").trim();
+  if (!token) {
+    out.dry_run = false;
+    out.skipped = true;
+    out.missing_secrets = ["PINTEREST_ACCESS_TOKEN"];
+    out.note = "Pinterest image pins and video upload skipped because the GitHub secret PINTEREST_ACCESS_TOKEN is missing.";
+    out.image_pins = { dry_run: false, skipped: true, reason: "missing_pinterest_token", limit: imageSources.length, pins: [] };
+    out.pinterest = { skipped: true, reason: "missing_pinterest_token", expected_secret_names: ["PINTEREST_ACCESS_TOKEN"] };
+    console.warn(out.note);
+  } else {
+    out.dry_run = false;
+    out.image_pins = { dry_run: false, skipped: skipImages, limit: imageSources.length, pins: [] };
+    if (!skipImages) {
+      for (let index = 0; index < imageSources.length; index += 1) {
+        const sourceImage = imageSources[index];
+        const existingPin = existingImagePin(existing, sourceImage);
+        const imagePath = absRoot(sourceImage);
+        const pinTitle = imagePinTitle(title, sourceImage, index, imageSources.length);
+        if (!fssync.existsSync(imagePath)) throw new Error(`Pinterest image pin source not found: ${imagePath}`);
+        if (existingPin && !forceImages) out.image_pins.pins.push({ ...existingPin, skipped: true, reason: "already_posted" });
+        else out.image_pins.pins.push({ source_image: sourceImage, title: pinTitle, pin: await postImageToPinterest({ token, boardId, imagePath, title: pinTitle, description: caption }) });
+      }
     }
+    if (alreadyPostedVideo && !forceVideo) out.pinterest = { ...(existing?.pinterest || {}), skipped: true, reason: "already_posted" };
+    else out.pinterest = await uploadVideoToPinterest({ token, boardId, videoPath, title, description: caption });
   }
-  if (alreadyPostedVideo && !forceVideo) out.pinterest = { ...(existing?.pinterest || {}), skipped: true, reason: "already_posted" };
-  else out.pinterest = await uploadVideoToPinterest({ token, boardId, videoPath, title, description: caption });
 }
 await fs.mkdir(path.dirname(RESULT), { recursive: true });
 await fs.writeFile(RESULT, JSON.stringify(out, null, 2) + "\n", "utf8");
-console.log(`${MODE === "live" ? "Posted" : "Prepared"} Book Content OS Pinterest image pins and video for ${DATE} to ${DEFAULT_PINTEREST_BOARD_NAME}`);
+console.log(`${out.pinterest?.pin || out.pinterest?.media ? "Posted" : out.skipped || out.pinterest?.skipped ? "Skipped" : "Prepared"} Book Content OS Pinterest image pins and video for ${DATE} to ${DEFAULT_PINTEREST_BOARD_NAME}`);
