@@ -21,8 +21,8 @@ async function read(rel) { return fs.readFile(absManifest(rel), "utf8"); }
 async function readOptional(rel, fallback = "") { if (!rel) return fallback; try { return await read(rel); } catch { return fallback; } }
 function b64(file) { return fssync.readFileSync(file).toString("base64"); }
 function pinterestBoardId() { return (process.env.PINTEREST_BOARD_ID || "").trim() || DEFAULT_PINTEREST_BOARD_ID; }
-function facebookToken() { return (process.env.FACEBOOK_PAGE_ACCESS_TOKEN || process.env.FB_PAGE_TOKEN || "").trim(); }
-function facebookPageId() { return (process.env.FACEBOOK_PAGE_ID || process.env.FB_PAGE_ID || "").trim(); }
+function facebookToken() { return (process.env.FB_PAGE_TOKEN || process.env.FACEBOOK_PAGE_ACCESS_TOKEN || "").trim(); }
+function facebookPageId() { return (process.env.FB_PAGE_ID || process.env.FACEBOOK_PAGE_ID || "").trim(); }
 function pinterestDescription(text) { return String(text || "").replace(/\s+/g, " ").replace(/[\u0000-\u001f\u007f]/g, "").trim().slice(0, 480); }
 function compactError(error) { return String(error?.message || error || "Unknown error").replace(/\s+/g, " ").slice(0, 1600); }
 async function safeChannel(channel, fn) {
