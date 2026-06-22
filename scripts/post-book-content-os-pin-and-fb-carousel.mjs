@@ -34,9 +34,18 @@ async function jsonFetch(url, options) {
 }
 
 async function postPinterest(manifest) {
-  const token = process.env.PINTEREST_ACCESS_TOKEN;
+  const token = (process.env.PINTEREST_ACCESS_TOKEN || "").trim();
   const boardId = pinterestBoardId();
-  if (!token) throw new Error("Missing PINTEREST_ACCESS_TOKEN");
+  if (!token) {
+    return {
+      skipped: true,
+      reason: "Missing Pinterest access token",
+      expected_secret_names: ["PINTEREST_ACCESS_TOKEN"],
+      note: "Pinterest posting skipped. Add the GitHub secret PINTEREST_ACCESS_TOKEN to enable live Pinterest posting. Other enabled channels can still run.",
+      board_id: boardId,
+      board_name: DEFAULT_PINTEREST_BOARD_NAME,
+    };
+  }
   const imagePath = absRoot(manifest.pinterest.image);
   const title = (await readOptional(manifest.pinterest.title, "Book Content OS Lite + Pro")).trim().slice(0, 100);
   const description = pinterestDescription(await read(manifest.pinterest.caption));
@@ -87,7 +96,7 @@ async function postFacebookCarousel(manifest) {
   const token = facebookToken();
   const pageId = facebookPageId();
   if (!token || !pageId) {
-    return { skipped: true, reason: "Missing Facebook token or page ID", expected_secret_names: ["FB_PAGE_TOKEN", "FB_PAGE_ID", "FACEBOOK_PAGE_ACCESS_TOKEN", "FACEBOOK_PAGE_ID"], note: "Pinterest side can still run. Add/pass Facebook secrets to enable carousel posting." };
+    return { skipped: true, reason: "Missing Facebook token or page ID", expected_secret_names: ["FB_PAGE_TOKEN", "FB_PAGE_ID", "FACEBOOK_PAGE_ACCESS_TOKEN", "FACEBOOK_PAGE_ID"], note: "Add/pass Facebook secrets to enable carousel posting." };
   }
   const resolvedPage = await resolveFacebookPageAccessToken(token, pageId);
   const pageToken = resolvedPage.token;
@@ -120,4 +129,4 @@ if (MODE !== "live") {
 }
 const recordPath = path.join(ROOT, "social", "book-content-os", DATE, "post-result.json");
 await fs.writeFile(recordPath, JSON.stringify(out, null, 2) + "\n", "utf8");
-console.log(`${MODE === "live" ? "Posted" : "Prepared"} Book Content OS Pinterest pin, Pinterest video asset and Facebook carousel for ${DATE} to ${DEFAULT_PINTEREST_BOARD_NAME}`);
+console.log(`${MODE === "live" ? "Posted or skipped" : "Prepared"} Book Content OS Pinterest pin, Pinterest video asset and Facebook carousel for ${DATE} to ${DEFAULT_PINTEREST_BOARD_NAME}`);
