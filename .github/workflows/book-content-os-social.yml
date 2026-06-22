@@ -34,6 +34,20 @@ jobs:
           echo "BOOK_CONTENT_OS_PINTEREST_VIDEO_POST_MODE=${{ github.event.inputs.post_mode || 'live' }}" >> "$GITHUB_ENV"
           echo "YOUTUBE_POST_MODE=${{ github.event.inputs.post_mode || 'live' }}" >> "$GITHUB_ENV"
 
+      - name: Ensure media tools are available
+        shell: bash
+        run: |
+          if ! command -v ffmpeg >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y ffmpeg
+          fi
+          if ! command -v unzip >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y unzip
+          fi
+          ffmpeg -version | head -n 1
+          unzip -v | head -n 1
+
       - name: Pull Book Content OS assets from shared Google Drive
         shell: bash
         run: |
@@ -72,10 +86,17 @@ jobs:
           }
 
           DRIVE_CONFIG="config/book-content-os-social-drive-zips.json"
-          if [ -f "$DRIVE_CONFIG" ]; then
+          configured_count=0
+          downloaded_count=0
+
+          if [ ! -f "$DRIVE_CONFIG" ]; then
+            if [ "${BOOK_CONTENT_OS_SOCIAL_POST_MODE}" = "live" ]; then
+              echo "::error::Missing ${DRIVE_CONFIG}. Live Book Content OS posting requires a project-owned full-size Drive ZIP."
+              exit 1
+            fi
+            echo "::warning::No ${DRIVE_CONFIG}; dry run may use repo fallback assets only."
+          else
             echo "Checking Book Content OS ZIPs listed in ${DRIVE_CONFIG}."
-            configured_count=0
-            downloaded_count=0
 
             while IFS=$'\t' read -r file_id file_name target_dir; do
               configured_count=$((configured_count + 1))
@@ -100,6 +121,15 @@ jobs:
             )
 
             echo "Configured Book Content OS Drive ZIPs with IDs: ${configured_count}; downloaded valid ZIPs: ${downloaded_count}."
+
+            if [ "$configured_count" -eq 0 ]; then
+              if [ "${BOOK_CONTENT_OS_SOCIAL_POST_MODE}" = "live" ]; then
+                echo "::error::No project-owned Drive ZIP is configured for Book Content OS live posting. Refusing to use repo fallback assets."
+                exit 1
+              fi
+              echo "::warning::No project-owned Drive ZIP configured; dry run may use repo fallback assets only."
+            fi
+
             if [ "$configured_count" -gt 0 ] && [ "$downloaded_count" -ne "$configured_count" ]; then
               echo "::error::Configured Drive source is incomplete. Failing rather than silently using partial assets."
               exit 1
@@ -108,20 +138,6 @@ jobs:
 
           echo "Book Content OS asset files available in this runner workspace:"
           find assets/book-content-os/social_sets -type f \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.zip' -o -iname '*.zip.b64' -o -iname '*.b64' \) | sort | sed -n '1,240p' || true
-
-      - name: Ensure media tools are available
-        shell: bash
-        run: |
-          if ! command -v ffmpeg >/dev/null 2>&1; then
-            sudo apt-get update
-            sudo apt-get install -y ffmpeg
-          fi
-          if ! command -v unzip >/dev/null 2>&1; then
-            sudo apt-get update
-            sudo apt-get install -y unzip
-          fi
-          ffmpeg -version | head -n 1
-          unzip -v | head -n 1
 
       - name: Decode Book Content OS base64 image assets
         run: node scripts/decode-book-content-os-base64-assets.mjs
