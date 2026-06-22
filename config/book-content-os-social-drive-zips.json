@@ -5,39 +5,16 @@
   "target_dir_default": "assets/book-content-os/social_sets",
   "files": [
     {
-      "drive_file_id": "",
-      "file_name": "BCOS_SET_01_social_images.zip",
+      "drive_file_id": "1gTvrYhBXlJRBsXvLs6D0xIo0MffgWO1_",
+      "file_name": "BCOS_ALL_social_images_optimized_pngs.zip",
       "target_dir": "assets/book-content-os/social_sets",
-      "source_zip_created_in_chat": "sapiver_book_content_os_social_images.zip"
-    },
-    {
-      "drive_file_id": "",
-      "file_name": "BCOS_SET_02_social_images.zip",
-      "target_dir": "assets/book-content-os/social_sets",
-      "source_zip_created_in_chat": "sapiver_book_content_os_social_images_set_2.zip"
-    },
-    {
-      "drive_file_id": "",
-      "file_name": "BCOS_SET_03_social_images.zip",
-      "target_dir": "assets/book-content-os/social_sets",
-      "source_zip_created_in_chat": "sapiver_book_content_os_social_images_set_3.zip"
-    },
-    {
-      "drive_file_id": "",
-      "file_name": "BCOS_SET_04_square_social_images.zip",
-      "target_dir": "assets/book-content-os/social_sets",
-      "source_zip_created_in_chat": "sapiver_book_content_os_square_social_images.zip"
-    },
-    {
-      "drive_file_id": "",
-      "file_name": "BCOS_SET_05_landscape_social_images.zip",
-      "target_dir": "assets/book-content-os/social_sets",
-      "source_zip_created_in_chat": "sapiver_book_content_os_landscape_social_images.zip"
+      "source_zip_created_in_chat": "BCOS_ALL_social_images_optimized_pngs.zip",
+      "contains": "48 full-size PNG social images"
     }
   ],
   "notes": [
     "This mirrors the existing FTPE Drive-ZIP pattern instead of committing large binary ZIPs directly into the repo.",
-    "Populate drive_file_id values after the five ZIPs are uploaded to the shared asset folder.",
-    "The Book Content OS workflow is manual-only by design."
+    "Workflow downloads this ZIP from Drive at run time and uses the full-size PNG assets for live social posting.",
+    "Public copy remains link in bio only."
   ]
 }
