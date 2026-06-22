@@ -1,0 +1,122 @@
+{
+  "type": "book_content_os_social_manual_run_v1",
+  "date": "2026-06-22",
+  "cta_text": "link in bio",
+  "product": "Book Content OS Lite + Pro",
+  "asset_group": "mixed_book_content_os_assets_no_repeat",
+  "asset_groups": [
+    "assets/book-content-os/social_sets/_decoded_base64"
+  ],
+  "asset_group_count": 1,
+  "asset_group_image_count": 26,
+  "subjects": [
+    "09 book links deserve better",
+    "11 33512",
+    "12 33511",
+    "14 33509",
+    "15 33508"
+  ],
+  "copy": {
+    "id": "bcos_017",
+    "title": "Plan book content the tidy way",
+    "caption": "Capture book projects, review notes and short-form content ideas in one focused browser app. Start with Lite and build the habit before moving to Pro.",
+    "first_comment": "link in bio",
+    "source": "book_content_os_social_posts",
+    "raw": {
+      "id": "bcos_017",
+      "title": "Plan book content the tidy way",
+      "caption": "Capture book projects, review notes and short-form content ideas in one focused browser app. Start with Lite and build the habit before moving to Pro.",
+      "first_comment": "link in bio"
+    }
+  },
+  "rotation": {
+    "state_file": "social/book-content-os/rotation-state.json",
+    "pools": {
+      "images": {
+        "cycle": 1,
+        "pool_size": 26,
+        "used_count": 6,
+        "used": [
+          "assets/book-content-os/social_sets/_decoded_base64/08_08_private_tracker_public_bookshelf.png",
+          "assets/book-content-os/social_sets/_decoded_base64/09_09_book_links_deserve_better.png",
+          "assets/book-content-os/social_sets/_decoded_base64/11_11_33512.png",
+          "assets/book-content-os/social_sets/_decoded_base64/12_12_33511.png",
+          "assets/book-content-os/social_sets/_decoded_base64/13_14_33509.png",
+          "assets/book-content-os/social_sets/_decoded_base64/14_15_33508.png"
+        ],
+        "exhausted_this_run": false,
+        "last_selected": [
+          "assets/book-content-os/social_sets/_decoded_base64/08_08_private_tracker_public_bookshelf.png",
+          "assets/book-content-os/social_sets/_decoded_base64/09_09_book_links_deserve_better.png",
+          "assets/book-content-os/social_sets/_decoded_base64/11_11_33512.png",
+          "assets/book-content-os/social_sets/_decoded_base64/12_12_33511.png",
+          "assets/book-content-os/social_sets/_decoded_base64/13_14_33509.png",
+          "assets/book-content-os/social_sets/_decoded_base64/14_15_33508.png"
+        ],
+        "updated_at": "2026-06-22T05:12:26.843Z"
+      },
+      "copy": {
+        "cycle": 1,
+        "pool_size": 30,
+        "used_count": 1,
+        "used": [
+          "bcos_017"
+        ],
+        "exhausted_this_run": false,
+        "last_selected": [
+          "bcos_017"
+        ],
+        "updated_at": "2026-06-22T05:12:26.900Z"
+      }
+    },
+    "rule": "No image or copy row is reused until its own pool is exhausted; then that pool loops."
+  },
+  "media_cleaning": {
+    "ordinary_metadata_stripped": true,
+    "image_method": "ffmpeg re-encode with -map_metadata -1",
+    "video_method": "ffmpeg concat/re-encode with -map_metadata -1",
+    "limitation": "This removes ordinary metadata; it cannot guarantee removal of invisible AI watermarks embedded in pixels."
+  },
+  "pinterest": {
+    "image": "social/book-content-os/2026-06-22/pinterest_pin/01_08_08_private_tracker_public_bookshelf.png",
+    "title": "pinterest_pin/title.txt",
+    "caption": "pinterest_pin/caption.txt",
+    "first_comment": "pinterest_pin/first-comment.txt"
+  },
+  "pinterest_video": {
+    "video": "social/book-content-os/2026-06-22/pinterest_video/book_content_os_video.mp4",
+    "source_images": [
+      "social/book-content-os/2026-06-22/pinterest_video/01_09_09_book_links_deserve_better.png",
+      "social/book-content-os/2026-06-22/pinterest_video/02_11_11_33512.png",
+      "social/book-content-os/2026-06-22/pinterest_video/03_12_12_33511.png",
+      "social/book-content-os/2026-06-22/pinterest_video/04_13_14_33509.png",
+      "social/book-content-os/2026-06-22/pinterest_video/05_14_15_33508.png"
+    ],
+    "title": "pinterest_video/title.txt",
+    "caption": "pinterest_video/caption.txt",
+    "first_comment": "pinterest_video/first-comment.txt"
+  },
+  "facebook": {
+    "images": [
+      "social/book-content-os/2026-06-22/facebook_carousel/01_09_09_book_links_deserve_better.png",
+      "social/book-content-os/2026-06-22/facebook_carousel/02_11_11_33512.png",
+      "social/book-content-os/2026-06-22/facebook_carousel/03_12_12_33511.png",
+      "social/book-content-os/2026-06-22/facebook_carousel/04_13_14_33509.png",
+      "social/book-content-os/2026-06-22/facebook_carousel/05_14_15_33508.png"
+    ],
+    "image_captions": [
+      "facebook_carousel/01_caption.txt",
+      "facebook_carousel/02_caption.txt",
+      "facebook_carousel/03_caption.txt",
+      "facebook_carousel/04_caption.txt",
+      "facebook_carousel/05_caption.txt"
+    ],
+    "post_caption": "facebook_carousel/post-caption.txt",
+    "first_comment": "facebook_carousel/first-comment.txt"
+  },
+  "notes": [
+    "Separate Book Content OS run; does not use FTPE copy or FTPE rotation state.",
+    "Public social text uses link in bio only and does not print raw URLs.",
+    "Image/video outputs are re-encoded to strip ordinary metadata before posting."
+  ]
+}

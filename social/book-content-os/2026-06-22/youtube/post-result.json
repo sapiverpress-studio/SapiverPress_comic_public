@@ -1,0 +1,12 @@
+{
+  "date": "2026-06-22",
+  "mode": "dry_run",
+  "type": "book_content_os_youtube_short_upload_v1",
+  "cta_text": "link in bio",
+  "video": "social/book-content-os/2026-06-22/pinterest_video/book_content_os_video.mp4",
+  "title": "Plan book content the tidy way | Book Content OS",
+  "description": "Capture book projects, review notes and short-form content ideas in one focused browser app. Start with Lite and build the habit before moving to Pro.link in bio#BookReviewers #ARCReaders #BookTok #Bookstagram #BookContentSapiver Presslink in bioLocal-first browser app. Manual backup/import. Not cloud sync.#Shorts #BookReviewers #ARCReaders #BookContent #BookTok #SapiverPress",
+  "privacy_status": "unlisted",
+  "dry_run": true,
+  "note": "Prepared YouTube Shorts upload. Set YOUTUBE_POST_MODE=live and add YouTube OAuth secrets to upload."
+}

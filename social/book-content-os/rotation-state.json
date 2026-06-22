@@ -1,0 +1,68 @@
+{
+  "version": "book_content_os_rotation_state_v1",
+  "pools": {
+    "images": {
+      "cycle": 1,
+      "pool_size": 26,
+      "used_count": 6,
+      "used": [
+        "assets/book-content-os/social_sets/_decoded_base64/08_08_private_tracker_public_bookshelf.png",
+        "assets/book-content-os/social_sets/_decoded_base64/09_09_book_links_deserve_better.png",
+        "assets/book-content-os/social_sets/_decoded_base64/11_11_33512.png",
+        "assets/book-content-os/social_sets/_decoded_base64/12_12_33511.png",
+        "assets/book-content-os/social_sets/_decoded_base64/13_14_33509.png",
+        "assets/book-content-os/social_sets/_decoded_base64/14_15_33508.png"
+      ],
+      "exhausted_this_run": false,
+      "last_selected": [
+        "assets/book-content-os/social_sets/_decoded_base64/08_08_private_tracker_public_bookshelf.png",
+        "assets/book-content-os/social_sets/_decoded_base64/09_09_book_links_deserve_better.png",
+        "assets/book-content-os/social_sets/_decoded_base64/11_11_33512.png",
+        "assets/book-content-os/social_sets/_decoded_base64/12_12_33511.png",
+        "assets/book-content-os/social_sets/_decoded_base64/13_14_33509.png",
+        "assets/book-content-os/social_sets/_decoded_base64/14_15_33508.png"
+      ],
+      "updated_at": "2026-06-22T05:12:26.843Z"
+    },
+    "copy": {
+      "cycle": 1,
+      "pool_size": 30,
+      "used_count": 1,
+      "used": [
+        "bcos_017"
+      ],
+      "exhausted_this_run": false,
+      "last_selected": [
+        "bcos_017"
+      ],
+      "updated_at": "2026-06-22T05:12:26.900Z"
+    }
+  },
+  "history": [
+    {
+      "date": "2026-06-22",
+      "images": [
+        "assets/book-content-os/social_sets/_decoded_base64/08_08_private_tracker_public_bookshelf.png",
+        "assets/book-content-os/social_sets/_decoded_base64/09_09_book_links_deserve_better.png",
+        "assets/book-content-os/social_sets/_decoded_base64/11_11_33512.png",
+        "assets/book-content-os/social_sets/_decoded_base64/12_12_33511.png",
+        "assets/book-content-os/social_sets/_decoded_base64/13_14_33509.png",
+        "assets/book-content-os/social_sets/_decoded_base64/14_15_33508.png"
+      ],
+      "copy": "bcos_017"
+    }
+  ],
+  "updated_at": "2026-06-22T05:12:26.901Z",
+  "last_run": {
+    "date": "2026-06-22",
+    "images": [
+      "assets/book-content-os/social_sets/_decoded_base64/08_08_private_tracker_public_bookshelf.png",
+      "assets/book-content-os/social_sets/_decoded_base64/09_09_book_links_deserve_better.png",
+      "assets/book-content-os/social_sets/_decoded_base64/11_11_33512.png",
+      "assets/book-content-os/social_sets/_decoded_base64/12_12_33511.png",
+      "assets/book-content-os/social_sets/_decoded_base64/13_14_33509.png",
+      "assets/book-content-os/social_sets/_decoded_base64/14_15_33508.png"
+    ],
+    "copy": "bcos_017"
+  }
+}
