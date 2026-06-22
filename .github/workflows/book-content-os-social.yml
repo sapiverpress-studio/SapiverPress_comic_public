@@ -8,9 +8,9 @@ on:
         required: false
         default: ""
       post_mode:
-        description: "dry_run or live"
+        description: "live or dry_run"
         required: false
-        default: "dry_run"
+        default: "live"
 
 permissions:
   contents: write
@@ -30,7 +30,7 @@ jobs:
       YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
       YOUTUBE_CATEGORY_ID: ${{ secrets.YOUTUBE_CATEGORY_ID }}
       YOUTUBE_PRIVACY_STATUS: ${{ secrets.YOUTUBE_PRIVACY_STATUS }}
-      YOUTUBE_POST_MODE: ${{ github.event.inputs.post_mode || 'dry_run' }}
+      YOUTUBE_POST_MODE: ${{ github.event.inputs.post_mode || 'live' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -49,8 +49,8 @@ jobs:
           else
             echo "DATE_OVERRIDE=$(TZ=Europe/London date +%F)" >> "$GITHUB_ENV"
           fi
-          echo "BOOK_CONTENT_OS_SOCIAL_POST_MODE=${{ github.event.inputs.post_mode || 'dry_run' }}" >> "$GITHUB_ENV"
-          echo "BOOK_CONTENT_OS_PINTEREST_VIDEO_POST_MODE=${{ github.event.inputs.post_mode || 'dry_run' }}" >> "$GITHUB_ENV"
+          echo "BOOK_CONTENT_OS_SOCIAL_POST_MODE=${{ github.event.inputs.post_mode || 'live' }}" >> "$GITHUB_ENV"
+          echo "BOOK_CONTENT_OS_PINTEREST_VIDEO_POST_MODE=${{ github.event.inputs.post_mode || 'live' }}" >> "$GITHUB_ENV"
 
       - name: Check assets and tools
         shell: bash
