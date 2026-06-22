@@ -18,28 +18,9 @@ permissions:
 jobs:
   book-content-os-social:
     runs-on: ubuntu-latest
-    env:
-      PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
-      PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
-      FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
-      FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
-      FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
-      FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
-      YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
-      YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
-      YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
-      YOUTUBE_CATEGORY_ID: ${{ secrets.YOUTUBE_CATEGORY_ID }}
-      YOUTUBE_PRIVACY_STATUS: ${{ secrets.YOUTUBE_PRIVACY_STATUS }}
-      YOUTUBE_POST_MODE: ${{ github.event.inputs.post_mode || 'live' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Install media tools
-        shell: bash
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y ffmpeg unzip
 
       - name: Set run options
         shell: bash
@@ -51,46 +32,177 @@ jobs:
           fi
           echo "BOOK_CONTENT_OS_SOCIAL_POST_MODE=${{ github.event.inputs.post_mode || 'live' }}" >> "$GITHUB_ENV"
           echo "BOOK_CONTENT_OS_PINTEREST_VIDEO_POST_MODE=${{ github.event.inputs.post_mode || 'live' }}" >> "$GITHUB_ENV"
+          echo "YOUTUBE_POST_MODE=${{ github.event.inputs.post_mode || 'live' }}" >> "$GITHUB_ENV"
 
-      - name: Check assets and tools
+      - name: Pull Book Content OS assets from shared Google Drive
         shell: bash
         run: |
+          set -euo pipefail
           mkdir -p assets/book-content-os/social_sets
-          echo "Book Content OS assets:"
-          find assets/book-content-os/social_sets -type f | sort | sed -n '1,200p' || true
+
+          download_drive_zip() {
+            local file_id="$1"
+            local out_file="$2"
+            local tmp_dir cookie_file first_response confirm_token
+            tmp_dir="$(mktemp -d)"
+            cookie_file="${tmp_dir}/cookies.txt"
+            first_response="${tmp_dir}/drive-first-response"
+
+            curl -L --fail --retry 3 -c "$cookie_file" \
+              "https://drive.google.com/uc?export=download&id=${file_id}" \
+              -o "$first_response"
+
+            confirm_token="$(grep -oE 'confirm=([0-9A-Za-z_-]+)' "$first_response" | head -n 1 | cut -d= -f2 || true)"
+            if [ -n "$confirm_token" ]; then
+              curl -L --fail --retry 3 -b "$cookie_file" \
+                "https://drive.google.com/uc?export=download&confirm=${confirm_token}&id=${file_id}" \
+                -o "$out_file"
+            else
+              mv "$first_response" "$out_file"
+            fi
+
+            if ! unzip -t "$out_file" >/tmp/book-content-os-social-unzip-test.txt 2>&1; then
+              echo "Downloaded file is not a valid ZIP: ${out_file}"
+              echo "First 500 bytes follow:"
+              head -c 500 "$out_file" || true
+              echo ""
+              cat /tmp/book-content-os-social-unzip-test.txt || true
+              return 1
+            fi
+          }
+
+          DRIVE_CONFIG="config/book-content-os-social-drive-zips.json"
+          if [ -f "$DRIVE_CONFIG" ]; then
+            echo "Checking Book Content OS ZIPs listed in ${DRIVE_CONFIG}."
+            configured_count=0
+            downloaded_count=0
+
+            while IFS=$'\t' read -r file_id file_name target_dir; do
+              configured_count=$((configured_count + 1))
+              mkdir -p "$target_dir"
+              out_file="${target_dir}/${file_name}"
+              echo "Downloading ${file_name} from Drive file ${file_id} -> ${out_file}"
+              if download_drive_zip "$file_id" "$out_file"; then
+                downloaded_count=$((downloaded_count + 1))
+              else
+                echo "::error::Failed to download a configured Book Content OS social ZIP: ${file_name} (${file_id})"
+              fi
+            done < <(node --input-type=module - <<'NODE'
+          import fs from "fs";
+          const cfg = JSON.parse(fs.readFileSync("config/book-content-os-social-drive-zips.json", "utf8"));
+          for (const item of cfg.files || []) {
+            const id = String(item.drive_file_id || "").trim();
+            if (!id) continue;
+            const target = item.target_dir || cfg.target_dir_default || "assets/book-content-os/social_sets";
+            console.log([id, item.file_name, target].join("\t"));
+          }
+          NODE
+            )
+
+            echo "Configured Book Content OS Drive ZIPs with IDs: ${configured_count}; downloaded valid ZIPs: ${downloaded_count}."
+            if [ "$configured_count" -gt 0 ] && [ "$downloaded_count" -ne "$configured_count" ]; then
+              echo "::error::Configured Drive source is incomplete. Failing rather than silently using partial assets."
+              exit 1
+            fi
+          fi
+
+          echo "Book Content OS asset files available in this runner workspace:"
+          find assets/book-content-os/social_sets -type f \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.zip' -o -iname '*.zip.b64' -o -iname '*.b64' \) | sort | sed -n '1,240p' || true
+
+      - name: Ensure media tools are available
+        shell: bash
+        run: |
+          if ! command -v ffmpeg >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y ffmpeg
+          fi
+          if ! command -v unzip >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y unzip
+          fi
           ffmpeg -version | head -n 1
+          unzip -v | head -n 1
 
       - name: Decode Book Content OS base64 image assets
         run: node scripts/decode-book-content-os-base64-assets.mjs
 
-      - name: Build Book Content OS social assets
+      - name: Build one Pinterest pin, one Facebook carousel, one Pinterest video and one YouTube Short
         run: node scripts/build-book-content-os-pin-and-fb-carousel.mjs
 
-      - name: Prepare Book Content OS Pinterest and Facebook records
-        run: node scripts/post-book-content-os-pin-and-fb-carousel.mjs
-
-      - name: Prepare Book Content OS Pinterest video records
-        run: node scripts/post-book-content-os-pinterest-video.mjs
-
-      - name: Prepare Book Content OS YouTube Short records
-        run: node scripts/post-book-content-os-youtube-short.mjs
-
-      - name: Upload Book Content OS social artifact
+      - name: Upload generated Book Content OS social artifact
         uses: actions/upload-artifact@v4
         with:
           name: book-content-os-social-${{ env.DATE_OVERRIDE }}
-          path: social/book-content-os/${{ env.DATE_OVERRIDE }}/**/*
-          if-no-files-found: error
+          path: |
+            social/book-content-os/${{ env.DATE_OVERRIDE }}/**/*
+          if-no-files-found: warn
 
-      - name: Commit generated Book Content OS social files
+      - name: Commit generated Book Content OS social assets before posting
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add social/book-content-os
           if git diff --cached --quiet; then
-            echo "No Book Content OS generated changes to commit."
+            echo "No pre-post Book Content OS social assets to commit."
           else
-            git commit -m "Save Book Content OS social run for ${DATE_OVERRIDE}"
+            git commit -m "Save Book Content OS social assets for ${DATE_OVERRIDE}"
+            for attempt in 1 2 3; do
+              if git push; then
+                exit 0
+              fi
+              echo "Push failed on attempt ${attempt}; rebasing onto origin/main and retrying."
+              git pull --rebase origin main
+            done
+            git push
+          fi
+
+      - name: Post or prepare Pinterest pin and Facebook carousel
+        continue-on-error: true
+        run: node scripts/post-book-content-os-pin-and-fb-carousel.mjs
+        env:
+          BOOK_CONTENT_OS_SOCIAL_POST_MODE: ${{ env.BOOK_CONTENT_OS_SOCIAL_POST_MODE }}
+          PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
+          PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+
+      - name: Post or prepare Pinterest video
+        continue-on-error: true
+        run: node scripts/post-book-content-os-pinterest-video.mjs
+        env:
+          BOOK_CONTENT_OS_PINTEREST_VIDEO_POST_MODE: ${{ env.BOOK_CONTENT_OS_PINTEREST_VIDEO_POST_MODE }}
+          PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
+          PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
+
+      - name: Post or prepare YouTube Short
+        continue-on-error: true
+        run: node scripts/post-book-content-os-youtube-short.mjs
+        env:
+          YOUTUBE_POST_MODE: ${{ env.YOUTUBE_POST_MODE }}
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          YOUTUBE_PRIVACY_STATUS: ${{ secrets.YOUTUBE_PRIVACY_STATUS }}
+          YOUTUBE_CATEGORY_ID: ${{ secrets.YOUTUBE_CATEGORY_ID }}
+
+      - name: Commit generated Book Content OS social records
+        if: always()
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add social/book-content-os
+          if git diff --cached --quiet; then
+            echo "No Book Content OS social output changes to commit."
+          else
+            git commit -m "Build Book Content OS pin, carousel and video for ${DATE_OVERRIDE}"
+            for attempt in 1 2 3; do
+              if git push; then
+                exit 0
+              fi
+              echo "Push failed on attempt ${attempt}; rebasing onto origin/main and retrying."
+              git pull --rebase origin main
+            done
             git push
           fi
