@@ -4,50 +4,50 @@
   "cta": "https://sapiverpress.etsy.com",
   "asset_group": "mixed_subjects_no_repeat",
   "asset_groups": [
-    "assets/ftpe/social_sets/_extracted/FTPE_Batch_03_official_logo_PNGs"
+    "assets/ftpe/social_sets/_extracted/FTPE_Batch_04_trust_quality_angles_PNGs"
   ],
   "asset_group_count": 15,
   "asset_group_image_count": 145,
   "subjects": [
-    "final checklist for first time publishers",
-    "first time sudoku publishing guide",
-    "metadata profiles publish with confidence",
-    "promotional sudoku book collection flyer",
-    "sudoku publisher edition planning tools"
+    "clear guidance for first time publishers",
+    "fresh replacement volume announcement poster",
+    "limited edition starter pack design",
+    "organised starter pack for publishers",
+    "premium publishing starter pack advertisement"
   ],
   "daily_material": {
     "about": {
-      "id": "studio_identity",
-      "text": "Part puzzle studio, part publishing toolkit, Sapiver Press exists to make solving, making, and organising a little easier. Whether you want to play a puzzle, print a pack, browse a book, or build your next publishing project, there is something ready for you. Visit https://sapiverpress.etsy.com or https://suite.sapiverpress.co.uk",
-      "audience": "General engagement",
-      "angle": "Studio identity",
-      "use_case": "General bio/about post footer",
+      "id": "accessible_approach",
+      "text": "At Sapiver Press, we believe in the simple joy of a well-made puzzle. Whether you want a quick daily challenge or a longer screen-free session, we create clean, tidy resources that are ready to use. Come see what we’re solving today at https://sapiverpress.etsy.com",
+      "audience": "Puzzle solvers",
+      "angle": "Accessible approach",
+      "use_case": "General puzzle-facing post footer",
       "primary_url": "https://sapiverpress.etsy.com",
-      "secondary_url": "https://suite.sapiverpress.co.uk",
+      "secondary_url": "",
       "source": "about_copy",
       "raw": {
-        "id": "studio_identity",
-        "audience": "General engagement",
-        "angle": "Studio identity",
-        "copy": "Part puzzle studio, part publishing toolkit, Sapiver Press exists to make solving, making, and organising a little easier. Whether you want to play a puzzle, print a pack, browse a book, or build your next publishing project, there is something ready for you. Visit https://sapiverpress.etsy.com or https://suite.sapiverpress.co.uk",
+        "id": "accessible_approach",
+        "audience": "Puzzle solvers",
+        "angle": "Accessible approach",
+        "copy": "At Sapiver Press, we believe in the simple joy of a well-made puzzle. Whether you want a quick daily challenge or a longer screen-free session, we create clean, tidy resources that are ready to use. Come see what we’re solving today at https://sapiverpress.etsy.com",
         "primary_url": "https://sapiverpress.etsy.com",
-        "secondary_url": "https://suite.sapiverpress.co.uk",
-        "use_case": "General bio/about post footer"
+        "secondary_url": "",
+        "use_case": "General puzzle-facing post footer"
       }
     },
     "fact": {
-      "id": "199",
-      "text": "Legal deposit is about cultural preservation, not sales.",
+      "id": "200",
+      "text": "National libraries are memory institutions.",
       "source": "publishing_facts",
       "raw": {
-        "day": "199",
+        "day": "200",
         "theme": "Libraries & Collecting",
-        "fact": "Legal deposit is about cultural preservation, not sales."
+        "fact": "National libraries are memory institutions."
       }
     },
     "anecdote": null,
     "anecdote_source_file": null,
-    "caption": "Part puzzle studio, part publishing toolkit, Sapiver Press exists to make solving, making, and organising a little easier. Whether you want to play a puzzle, print a pack, browse a book, or build your next publishing project, there is something ready for you. Visit https://sapiverpress.etsy.com or https://suite.sapiverpress.co.uk\n\nPublishing fact: Legal deposit is about cultural preservation, not sales.\n\nStart here: https://sapiverpress.etsy.com\n\n#AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks\n"
+    "caption": "At Sapiver Press, we believe in the simple joy of a well-made puzzle. Whether you want a quick daily challenge or a longer screen-free session, we create clean, tidy resources that are ready to use. Come see what we’re solving today at https://sapiverpress.etsy.com\n\nPublishing fact: National libraries are memory institutions.\n\nStart here: https://sapiverpress.etsy.com\n\n#AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks\n"
   },
   "rotation": {
     "state_file": "social/ftpe/rotation-state.json",
@@ -55,7 +55,7 @@
       "images": {
         "cycle": 1,
         "pool_size": 145,
-        "used_count": 108,
+        "used_count": 114,
         "used": [
           "assets/ftpe/social_master/_extracted/ftpe_etsy_master_images/ftpe_etsy_master_images/01_main_hero_first_time_sudoku_publisher_edition.png",
           "assets/ftpe/social_master/_extracted/ftpe_etsy_master_images/ftpe_etsy_master_images/02_whats_included.png",
@@ -92,6 +92,12 @@
           "assets/ftpe/social_sets/_extracted/ftpe_batch_03_official_logo_pngs/ftpe_batch_03_official_logo/metadata_profiles_publish_with_confidence.png",
           "assets/ftpe/social_sets/_extracted/ftpe_batch_03_official_logo_pngs/ftpe_batch_03_official_logo/promotional_sudoku_book_collection_flyer.png",
           "assets/ftpe/social_sets/_extracted/ftpe_batch_03_official_logo_pngs/ftpe_batch_03_official_logo/sudoku_publisher_edition_planning_tools.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_04_trust_quality_angles_pngs/ftpe_batch_04_trust_quality_angles/beginner_publishing_starter_pack_ad.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_04_trust_quality_angles_pngs/ftpe_batch_04_trust_quality_angles/clear_guidance_for_first_time_publishers.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_04_trust_quality_angles_pngs/ftpe_batch_04_trust_quality_angles/fresh_replacement_volume_announcement_poster.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_04_trust_quality_angles_pngs/ftpe_batch_04_trust_quality_angles/limited_edition_starter_pack_design.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_04_trust_quality_angles_pngs/ftpe_batch_04_trust_quality_angles/organised_starter_pack_for_publishers.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_04_trust_quality_angles_pngs/ftpe_batch_04_trust_quality_angles/premium_publishing_starter_pack_advertisement.png",
           "assets/ftpe/social_sets/_extracted/ftpe_set_07_fixed_crops_pngs-1/ftpe_set_07_08_first_time_sudoku_publisher_edition_preview.png",
           "assets/ftpe/social_sets/_extracted/ftpe_set_07_fixed_crops_pngs-1/ftpe_set_07_09_first_time_sudoku_publisher_edition_flyer.png",
           "assets/ftpe/social_sets/_extracted/ftpe_set_07_fixed_crops_pngs-1/ftpe_set_07_10_sophisticated_sudoku_publisher_promotional_design.png",
@@ -168,20 +174,21 @@
         ],
         "exhausted_this_run": false,
         "last_selected": [
-          "assets/ftpe/social_sets/_extracted/ftpe_batch_03_official_logo_pngs/ftpe_batch_03_official_logo/engage_with_your_first_sudoku_pack.png",
-          "assets/ftpe/social_sets/_extracted/ftpe_batch_03_official_logo_pngs/ftpe_batch_03_official_logo/final_checklist_for_first_time_publishers.png",
-          "assets/ftpe/social_sets/_extracted/ftpe_batch_03_official_logo_pngs/ftpe_batch_03_official_logo/first_time_sudoku_publishing_guide.png",
-          "assets/ftpe/social_sets/_extracted/ftpe_batch_03_official_logo_pngs/ftpe_batch_03_official_logo/metadata_profiles_publish_with_confidence.png",
-          "assets/ftpe/social_sets/_extracted/ftpe_batch_03_official_logo_pngs/ftpe_batch_03_official_logo/promotional_sudoku_book_collection_flyer.png",
-          "assets/ftpe/social_sets/_extracted/ftpe_batch_03_official_logo_pngs/ftpe_batch_03_official_logo/sudoku_publisher_edition_planning_tools.png"
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_04_trust_quality_angles_pngs/ftpe_batch_04_trust_quality_angles/beginner_publishing_starter_pack_ad.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_04_trust_quality_angles_pngs/ftpe_batch_04_trust_quality_angles/clear_guidance_for_first_time_publishers.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_04_trust_quality_angles_pngs/ftpe_batch_04_trust_quality_angles/fresh_replacement_volume_announcement_poster.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_04_trust_quality_angles_pngs/ftpe_batch_04_trust_quality_angles/limited_edition_starter_pack_design.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_04_trust_quality_angles_pngs/ftpe_batch_04_trust_quality_angles/organised_starter_pack_for_publishers.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_04_trust_quality_angles_pngs/ftpe_batch_04_trust_quality_angles/premium_publishing_starter_pack_advertisement.png"
         ],
-        "updated_at": "2026-06-22T12:23:28.142Z"
+        "updated_at": "2026-06-22T13:46:41.467Z"
       },
       "about": {
         "cycle": 3,
         "pool_size": 7,
-        "used_count": 4,
+        "used_count": 5,
         "used": [
+          "accessible_approach",
           "direct_practical_pitch",
           "efficiency_angle",
           "studio_identity",
@@ -189,14 +196,14 @@
         ],
         "exhausted_this_run": false,
         "last_selected": [
-          "studio_identity"
+          "accessible_approach"
         ],
-        "updated_at": "2026-06-22T12:23:28.152Z"
+        "updated_at": "2026-06-22T13:46:41.532Z"
       },
       "facts": {
         "cycle": 1,
         "pool_size": 365,
-        "used_count": 18,
+        "used_count": 19,
         "used": [
           "182",
           "183",
@@ -215,13 +222,14 @@
           "196",
           "197",
           "198",
-          "199"
+          "199",
+          "200"
         ],
         "exhausted_this_run": false,
         "last_selected": [
-          "199"
+          "200"
         ],
-        "updated_at": "2026-06-22T12:23:28.152Z"
+        "updated_at": "2026-06-22T13:46:41.532Z"
       }
     },
     "rule": "No image, about snippet, fact, or anecdote is reused until its own pool is exhausted; then that pool loops."
@@ -233,7 +241,7 @@
     "limitation": "This removes ordinary metadata; it cannot guarantee removal of invisible AI watermarks embedded in pixels."
   },
   "pinterest": {
-    "image": "social/ftpe/2026-06-22/pinterest_pin/01_engage_with_your_first_sudoku_pack.png",
+    "image": "social/ftpe/2026-06-22/pinterest_pin/01_beginner_publishing_starter_pack_ad.png",
     "title": "pinterest_pin/title.txt",
     "caption": "pinterest_pin/caption.txt",
     "first_comment": "pinterest_pin/first-comment.txt"
@@ -241,11 +249,11 @@
   "pinterest_video": {
     "video": "social/ftpe/2026-06-22/pinterest_video/pinterest_video.mp4",
     "source_images": [
-      "social/ftpe/2026-06-22/pinterest_video/01_final_checklist_for_first_time_publishers.png",
-      "social/ftpe/2026-06-22/pinterest_video/02_first_time_sudoku_publishing_guide.png",
-      "social/ftpe/2026-06-22/pinterest_video/03_metadata_profiles_publish_with_confidence.png",
-      "social/ftpe/2026-06-22/pinterest_video/04_promotional_sudoku_book_collection_flyer.png",
-      "social/ftpe/2026-06-22/pinterest_video/05_sudoku_publisher_edition_planning_tools.png"
+      "social/ftpe/2026-06-22/pinterest_video/01_clear_guidance_for_first_time_publishers.png",
+      "social/ftpe/2026-06-22/pinterest_video/02_fresh_replacement_volume_announcement_poster.png",
+      "social/ftpe/2026-06-22/pinterest_video/03_limited_edition_starter_pack_design.png",
+      "social/ftpe/2026-06-22/pinterest_video/04_organised_starter_pack_for_publishers.png",
+      "social/ftpe/2026-06-22/pinterest_video/05_premium_publishing_starter_pack_advertisement.png"
     ],
     "title": "pinterest_video/title.txt",
     "caption": "pinterest_video/caption.txt",
@@ -253,11 +261,11 @@
   },
   "facebook": {
     "images": [
-      "social/ftpe/2026-06-22/facebook_carousel/01_final_checklist_for_first_time_publishers.png",
-      "social/ftpe/2026-06-22/facebook_carousel/02_first_time_sudoku_publishing_guide.png",
-      "social/ftpe/2026-06-22/facebook_carousel/03_metadata_profiles_publish_with_confidence.png",
-      "social/ftpe/2026-06-22/facebook_carousel/04_promotional_sudoku_book_collection_flyer.png",
-      "social/ftpe/2026-06-22/facebook_carousel/05_sudoku_publisher_edition_planning_tools.png"
+      "social/ftpe/2026-06-22/facebook_carousel/01_clear_guidance_for_first_time_publishers.png",
+      "social/ftpe/2026-06-22/facebook_carousel/02_fresh_replacement_volume_announcement_poster.png",
+      "social/ftpe/2026-06-22/facebook_carousel/03_limited_edition_starter_pack_design.png",
+      "social/ftpe/2026-06-22/facebook_carousel/04_organised_starter_pack_for_publishers.png",
+      "social/ftpe/2026-06-22/facebook_carousel/05_premium_publishing_starter_pack_advertisement.png"
     ],
     "image_captions": [
       "facebook_carousel/01_caption.txt",
