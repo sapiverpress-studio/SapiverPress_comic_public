@@ -1,0 +1,55 @@
+{
+  "date": "2026-06-22",
+  "mode": "dry_run",
+  "type": "book_content_os_pinterest_image_pins_and_video_post_v1",
+  "cta_text": "link in bio",
+  "board_id": "1038924276479876865",
+  "board_name": "Sapiver Press Comic",
+  "video": "social/book-content-os/2026-06-22/pinterest_video/book_content_os_video.mp4",
+  "source_images": [
+    "social/book-content-os/2026-06-22/pinterest_video/01_09_09_book_links_deserve_better.png",
+    "social/book-content-os/2026-06-22/pinterest_video/02_11_11_33512.png",
+    "social/book-content-os/2026-06-22/pinterest_video/03_12_12_33511.png",
+    "social/book-content-os/2026-06-22/pinterest_video/04_13_14_33509.png",
+    "social/book-content-os/2026-06-22/pinterest_video/05_14_15_33508.png"
+  ],
+  "image_pin_sources": [
+    "social/book-content-os/2026-06-22/facebook_carousel/01_09_09_book_links_deserve_better.png",
+    "social/book-content-os/2026-06-22/facebook_carousel/02_11_11_33512.png",
+    "social/book-content-os/2026-06-22/facebook_carousel/03_12_12_33511.png",
+    "social/book-content-os/2026-06-22/facebook_carousel/04_13_14_33509.png",
+    "social/book-content-os/2026-06-22/facebook_carousel/05_14_15_33508.png"
+  ],
+  "title": "Plan book content the tidy way | Book Content OS\n",
+  "caption": "Capture book projects, review notes and short-form content ideas in one focused browser app. Start with Lite and build the habit before moving to Pro. link in bio #BookReviewers #ARCReaders #BookTok #Bookstagram #BookContent",
+  "first_comment": "link in bio\n\n#BookReviewers #ARCReaders #BookTok #Bookstagram\n",
+  "dry_run": true,
+  "note": "Prepared Pinterest image pins and video post. Set BOOK_CONTENT_OS_PINTEREST_VIDEO_POST_MODE=live to upload.",
+  "image_pins": {
+    "dry_run": true,
+    "skipped": false,
+    "limit": 5,
+    "pins": [
+      {
+        "source_image": "social/book-content-os/2026-06-22/facebook_carousel/01_09_09_book_links_deserve_better.png",
+        "title": "Book Content OS image 1/5 | 09 09 book links deserve better"
+      },
+      {
+        "source_image": "social/book-content-os/2026-06-22/facebook_carousel/02_11_11_33512.png",
+        "title": "Book Content OS image 2/5 | 11 11 33512"
+      },
+      {
+        "source_image": "social/book-content-os/2026-06-22/facebook_carousel/03_12_12_33511.png",
+        "title": "Book Content OS image 3/5 | 12 12 33511"
+      },
+      {
+        "source_image": "social/book-content-os/2026-06-22/facebook_carousel/04_13_14_33509.png",
+        "title": "Book Content OS image 4/5 | 13 14 33509"
+      },
+      {
+        "source_image": "social/book-content-os/2026-06-22/facebook_carousel/05_14_15_33508.png",
+        "title": "Book Content OS image 5/5 | 14 15 33508"
+      }
+    ]
+  }
+}
