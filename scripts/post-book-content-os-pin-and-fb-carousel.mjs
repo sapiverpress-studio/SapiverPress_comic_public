@@ -24,6 +24,16 @@ function pinterestBoardId() { return (process.env.PINTEREST_BOARD_ID || "").trim
 function facebookToken() { return (process.env.FACEBOOK_PAGE_ACCESS_TOKEN || process.env.FB_PAGE_TOKEN || "").trim(); }
 function facebookPageId() { return (process.env.FACEBOOK_PAGE_ID || process.env.FB_PAGE_ID || "").trim(); }
 function pinterestDescription(text) { return String(text || "").replace(/\s+/g, " ").replace(/[\u0000-\u001f\u007f]/g, "").trim().slice(0, 480); }
+function compactError(error) { return String(error?.message || error || "Unknown error").replace(/\s+/g, " ").slice(0, 1600); }
+async function safeChannel(channel, fn) {
+  try {
+    return await fn();
+  } catch (error) {
+    const message = compactError(error);
+    console.warn(`${channel} failed but workflow will continue: ${message}`);
+    return { failed: true, channel, error: message, note: `${channel} live posting failed. Check token permissions/settings for this channel.` };
+  }
+}
 async function jsonFetch(url, options) {
   const res = await fetch(url, options);
   const text = await res.text();
@@ -123,10 +133,10 @@ if (MODE !== "live") {
   out.pinterest_video = await pinterestVideoRecord(manifest);
   out.facebook = { dry_run: true, images: manifest.facebook.images, image_captions: await Promise.all((manifest.facebook.image_captions || []).map((rel) => readOptional(rel, ""))), caption: await read(manifest.facebook.post_caption), first_comment: await readOptional(manifest.facebook.first_comment, "") };
 } else {
-  out.facebook = await postFacebookCarousel(manifest);
-  out.pinterest = await postPinterest(manifest);
+  out.facebook = await safeChannel("Facebook", () => postFacebookCarousel(manifest));
+  out.pinterest = await safeChannel("Pinterest", () => postPinterest(manifest));
   out.pinterest_video = await pinterestVideoRecord(manifest);
 }
 const recordPath = path.join(ROOT, "social", "book-content-os", DATE, "post-result.json");
 await fs.writeFile(recordPath, JSON.stringify(out, null, 2) + "\n", "utf8");
-console.log(`${MODE === "live" ? "Posted or skipped" : "Prepared"} Book Content OS Pinterest pin, Pinterest video asset and Facebook carousel for ${DATE} to ${DEFAULT_PINTEREST_BOARD_NAME}`);
+console.log(`${MODE === "live" ? "Posted, skipped or recorded channel failure for" : "Prepared"} Book Content OS Pinterest pin, Pinterest video asset and Facebook carousel for ${DATE} to ${DEFAULT_PINTEREST_BOARD_NAME}`);
