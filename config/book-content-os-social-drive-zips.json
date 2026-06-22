@@ -3,18 +3,10 @@
   "product": "Book Content OS Lite + Pro",
   "public_copy_cta_rule": "Use 'link in bio' only; do not print raw URLs in public social text.",
   "target_dir_default": "assets/book-content-os/social_sets",
-  "files": [
-    {
-      "drive_file_id": "1gTvrYhBXlJRBsXvLs6D0xIo0MffgWO1_",
-      "file_name": "BCOS_ALL_social_images_optimized_pngs.zip",
-      "target_dir": "assets/book-content-os/social_sets",
-      "source_zip_created_in_chat": "BCOS_ALL_social_images_optimized_pngs.zip",
-      "contains": "48 full-size PNG social images"
-    }
-  ],
+  "files": [],
   "notes": [
     "This mirrors the existing FTPE Drive-ZIP pattern instead of committing large binary ZIPs directly into the repo.",
-    "Workflow downloads this ZIP from Drive at run time and uses the full-size PNG assets for live social posting.",
+    "No personal-drive asset file is configured here. Add a project-owned/public asset source before relying on Drive downloads for live social posting.",
     "Public copy remains link in bio only."
   ]
 }
