@@ -3,10 +3,42 @@
   "product": "Book Content OS Lite + Pro",
   "public_copy_cta_rule": "Use 'link in bio' only; do not print raw URLs in public social text.",
   "target_dir_default": "assets/book-content-os/social_sets",
-  "files": [],
+  "files": [
+    {
+      "drive_file_id": "1ZC-h1N0bPNQS3URaFabvpnP1suxLuY8h",
+      "file_name": "sapiver_book_content_os_social_images.zip",
+      "target_dir": "assets/book-content-os/social_sets",
+      "contains": "Project Drive ZIP of full-size Book Content OS social images"
+    },
+    {
+      "drive_file_id": "1HRJKT1FWZXxrcpwHNzRzP42M1umTtV5z",
+      "file_name": "sapiver_book_content_os_social_images_set_2.zip",
+      "target_dir": "assets/book-content-os/social_sets",
+      "contains": "Project Drive ZIP of full-size Book Content OS social images, set 2"
+    },
+    {
+      "drive_file_id": "1yck674Y72dAkO7ZdXolzDCBBPuhAPYOL",
+      "file_name": "sapiver_book_content_os_social_images_set_3.zip",
+      "target_dir": "assets/book-content-os/social_sets",
+      "contains": "Project Drive ZIP of full-size Book Content OS social images, set 3"
+    },
+    {
+      "drive_file_id": "1kGFkWyyAuoLw7LAvQ548XbiUn6_KmN3r",
+      "file_name": "sapiver_book_content_os_square_social_images.zip",
+      "target_dir": "assets/book-content-os/social_sets",
+      "contains": "Project Drive ZIP of full-size square Book Content OS social images"
+    },
+    {
+      "drive_file_id": "1mEcSJCiPvYJWMjx6idixd5re-nVixTGm",
+      "file_name": "sapiver_book_content_os_landscape_social_images.zip",
+      "target_dir": "assets/book-content-os/social_sets",
+      "contains": "Project Drive ZIP of full-size landscape Book Content OS social images"
+    }
+  ],
   "notes": [
     "This mirrors the existing FTPE Drive-ZIP pattern instead of committing large binary ZIPs directly into the repo.",
-    "No personal-drive asset file is configured here. Add a project-owned/public asset source before relying on Drive downloads for live social posting.",
+    "All configured files are owned by the Sapiver Press project Drive account and shared as anyone-with-link reader files so GitHub Actions can download them.",
+    "Do not use repo fallback .b64 images for live posting; they are not production assets.",
     "Public copy remains link in bio only."
   ]
 }
