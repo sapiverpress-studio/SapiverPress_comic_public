@@ -7,22 +7,22 @@
   "board_name": "Sapiver Press Comic",
   "video": "social/ftpe/2026-06-22/pinterest_video/pinterest_video.mp4",
   "source_images": [
-    "social/ftpe/2026-06-22/pinterest_video/01_final_checklist_for_first_time_publishers.png",
-    "social/ftpe/2026-06-22/pinterest_video/02_first_time_sudoku_publishing_guide.png",
-    "social/ftpe/2026-06-22/pinterest_video/03_metadata_profiles_publish_with_confidence.png",
-    "social/ftpe/2026-06-22/pinterest_video/04_promotional_sudoku_book_collection_flyer.png",
-    "social/ftpe/2026-06-22/pinterest_video/05_sudoku_publisher_edition_planning_tools.png"
+    "social/ftpe/2026-06-22/pinterest_video/01_clear_guidance_for_first_time_publishers.png",
+    "social/ftpe/2026-06-22/pinterest_video/02_fresh_replacement_volume_announcement_poster.png",
+    "social/ftpe/2026-06-22/pinterest_video/03_limited_edition_starter_pack_design.png",
+    "social/ftpe/2026-06-22/pinterest_video/04_organised_starter_pack_for_publishers.png",
+    "social/ftpe/2026-06-22/pinterest_video/05_premium_publishing_starter_pack_advertisement.png"
   ],
   "image_pin_sources": [
-    "social/ftpe/2026-06-22/facebook_carousel/01_final_checklist_for_first_time_publishers.png",
-    "social/ftpe/2026-06-22/facebook_carousel/02_first_time_sudoku_publishing_guide.png",
-    "social/ftpe/2026-06-22/facebook_carousel/03_metadata_profiles_publish_with_confidence.png",
-    "social/ftpe/2026-06-22/facebook_carousel/04_promotional_sudoku_book_collection_flyer.png",
-    "social/ftpe/2026-06-22/facebook_carousel/05_sudoku_publisher_edition_planning_tools.png"
+    "social/ftpe/2026-06-22/facebook_carousel/01_clear_guidance_for_first_time_publishers.png",
+    "social/ftpe/2026-06-22/facebook_carousel/02_fresh_replacement_volume_announcement_poster.png",
+    "social/ftpe/2026-06-22/facebook_carousel/03_limited_edition_starter_pack_design.png",
+    "social/ftpe/2026-06-22/facebook_carousel/04_organised_starter_pack_for_publishers.png",
+    "social/ftpe/2026-06-22/facebook_carousel/05_premium_publishing_starter_pack_advertisement.png"
   ],
-  "title": "Sapiver Press daily carousel | final checklist for first time publishers\n",
-  "caption": "Part puzzle studio, part publishing toolkit, Sapiver Press exists to make solving, making, and organising a little easier. Whether you want to play a puzzle, print a pack, browse a book, or build your next publishing project, there is something ready for you. Visit https://sapiverpress.etsy.com or https://suite.sapiverpress.co.uk Publishing fact: Legal deposit is about cultural preservation, not sales. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfP",
-  "first_comment": "More from Sapiver Press: https://sapiverpress.etsy.com\n\nFact source: Publishing Facts 199\n\n#AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks\n",
+  "title": "Sapiver Press daily carousel | clear guidance for first time publishers\n",
+  "caption": "At Sapiver Press, we believe in the simple joy of a well-made puzzle. Whether you want a quick daily challenge or a longer screen-free session, we create clean, tidy resources that are ready to use. Come see what we’re solving today at https://sapiverpress.etsy.com Publishing fact: National libraries are memory institutions. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks",
+  "first_comment": "More from Sapiver Press: https://sapiverpress.etsy.com\n\nFact source: Publishing Facts 200\n\n#AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks\n",
   "dry_run": false,
   "image_pins": {
     "dry_run": false,
@@ -30,232 +30,234 @@
     "limit": 5,
     "pins": [
       {
-        "source_image": "social/ftpe/2026-06-22/facebook_carousel/01_final_checklist_for_first_time_publishers.png",
-        "title": "Sapiver Press daily image 1/5 | final checklist for first time publishers",
+        "source_image": "social/ftpe/2026-06-22/facebook_carousel/01_clear_guidance_for_first_time_publishers.png",
+        "title": "Sapiver Press daily image 1/5 | clear guidance for first time publishers",
         "pin": {
-          "creative_type": "REGULAR",
-          "has_been_promoted": false,
-          "dominant_color": null,
-          "alt_text": null,
-          "media": {
-            "media_type": "image",
-            "images": {
-              "150x150": {
-                "width": 150,
-                "height": 150,
-                "url": "https://i.pinimg.com/150x150/b4/07/dc/b407dc251c155980ddddfc7717607304.jpg"
-              },
-              "400x300": {
-                "width": 400,
-                "height": 300,
-                "url": "https://i.pinimg.com/400x300/b4/07/dc/b407dc251c155980ddddfc7717607304.jpg"
-              },
-              "600x": {
-                "width": 564,
-                "height": 846,
-                "url": "https://i.pinimg.com/564x/b4/07/dc/b407dc251c155980ddddfc7717607304.jpg"
-              },
-              "1200x": {
-                "width": 1024,
-                "height": 1536,
-                "url": "https://i.pinimg.com/1200x/b4/07/dc/b407dc251c155980ddddfc7717607304.jpg"
-              }
-            }
-          },
-          "pin_metrics": null,
-          "parent_pin_id": null,
-          "is_product": false,
+          "description": "At Sapiver Press, we believe in the simple joy of a well-made puzzle. Whether you want a quick daily challenge or a longer screen-free session, we create clean, tidy resources that are ready to use. Come see what we’re solving today at https://sapiverpress.etsy.com Publishing fact: National libraries are memory institutions. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks",
           "is_owner": true,
+          "pin_metrics": null,
+          "board_id": "1038924276479876865",
+          "title": "Sapiver Press daily image 1/5 | clear guidance for first time publishers",
           "link": "https://sapiverpress.etsy.com/",
-          "board_section_id": null,
+          "id": "1038924207808826360",
+          "media": {
+            "media_type": "image",
+            "images": {
+              "150x150": {
+                "width": 150,
+                "height": 150,
+                "url": "https://i.pinimg.com/150x150/8c/d9/30/8cd930657cda4575fd6c1086d64d4339.jpg"
+              },
+              "400x300": {
+                "width": 400,
+                "height": 300,
+                "url": "https://i.pinimg.com/400x300/8c/d9/30/8cd930657cda4575fd6c1086d64d4339.jpg"
+              },
+              "600x": {
+                "width": 564,
+                "height": 846,
+                "url": "https://i.pinimg.com/564x/8c/d9/30/8cd930657cda4575fd6c1086d64d4339.jpg"
+              },
+              "1200x": {
+                "width": 1024,
+                "height": 1536,
+                "url": "https://i.pinimg.com/1200x/8c/d9/30/8cd930657cda4575fd6c1086d64d4339.jpg"
+              }
+            }
+          },
+          "dominant_color": null,
+          "alt_text": null,
+          "is_removable": false,
+          "has_been_promoted": false,
+          "is_product": false,
+          "is_standard": true,
+          "parent_pin_id": null,
           "board_owner": {
             "username": "sapiver"
           },
           "product_tags": [],
-          "is_removable": false,
-          "description": "Part puzzle studio, part publishing toolkit, Sapiver Press exists to make solving, making, and organising a little easier. Whether you want to play a puzzle, print a pack, browse a book, or build your next publishing project, there is something ready for you. Visit https://sapiverpress.etsy.com or https://suite.sapiverpress.co.uk Publishing fact: Legal deposit is about cultural preservation, not sales. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfP",
-          "board_id": "1038924276479876865",
-          "is_standard": true,
-          "title": "Sapiver Press daily image 1/5 | final checklist for first time publishers",
-          "created_at": "2026-06-22T12:24:14",
-          "id": "1038924207808824357"
+          "creative_type": "REGULAR",
+          "created_at": "2026-06-22T13:47:18",
+          "board_section_id": null
         }
       },
       {
-        "source_image": "social/ftpe/2026-06-22/facebook_carousel/02_first_time_sudoku_publishing_guide.png",
-        "title": "Sapiver Press daily image 2/5 | first time sudoku publishing guide",
+        "source_image": "social/ftpe/2026-06-22/facebook_carousel/02_fresh_replacement_volume_announcement_poster.png",
+        "title": "Sapiver Press daily image 2/5 | fresh replacement volume announcement poster",
         "pin": {
-          "alt_text": null,
-          "created_at": "2026-06-22T12:24:15",
-          "dominant_color": null,
+          "parent_pin_id": null,
+          "board_id": "1038924276479876865",
+          "is_removable": false,
+          "id": "1038924207808826362",
+          "board_section_id": null,
+          "link": "https://sapiverpress.etsy.com/",
+          "is_product": false,
+          "is_standard": true,
+          "created_at": "2026-06-22T13:47:19",
+          "product_tags": [],
+          "description": "At Sapiver Press, we believe in the simple joy of a well-made puzzle. Whether you want a quick daily challenge or a longer screen-free session, we create clean, tidy resources that are ready to use. Come see what we’re solving today at https://sapiverpress.etsy.com Publishing fact: National libraries are memory institutions. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks",
           "board_owner": {
             "username": "sapiver"
           },
-          "id": "1038924207808824358",
-          "title": "Sapiver Press daily image 2/5 | first time sudoku publishing guide",
-          "is_product": false,
-          "description": "Part puzzle studio, part publishing toolkit, Sapiver Press exists to make solving, making, and organising a little easier. Whether you want to play a puzzle, print a pack, browse a book, or build your next publishing project, there is something ready for you. Visit https://sapiverpress.etsy.com or https://suite.sapiverpress.co.uk Publishing fact: Legal deposit is about cultural preservation, not sales. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfP",
+          "dominant_color": null,
           "is_owner": true,
-          "creative_type": "REGULAR",
+          "has_been_promoted": false,
+          "alt_text": null,
+          "media": {
+            "media_type": "image",
+            "images": {
+              "150x150": {
+                "width": 150,
+                "height": 150,
+                "url": "https://i.pinimg.com/150x150/74/f0/9a/74f09ab485448b94dd8a235c6fbbc58b.jpg"
+              },
+              "400x300": {
+                "width": 400,
+                "height": 300,
+                "url": "https://i.pinimg.com/400x300/74/f0/9a/74f09ab485448b94dd8a235c6fbbc58b.jpg"
+              },
+              "600x": {
+                "width": 564,
+                "height": 846,
+                "url": "https://i.pinimg.com/564x/74/f0/9a/74f09ab485448b94dd8a235c6fbbc58b.jpg"
+              },
+              "1200x": {
+                "width": 1024,
+                "height": 1536,
+                "url": "https://i.pinimg.com/1200x/74/f0/9a/74f09ab485448b94dd8a235c6fbbc58b.jpg"
+              }
+            }
+          },
+          "pin_metrics": null,
+          "title": "Sapiver Press daily image 2/5 | fresh replacement volume announcement poster",
+          "creative_type": "REGULAR"
+        }
+      },
+      {
+        "source_image": "social/ftpe/2026-06-22/facebook_carousel/03_limited_edition_starter_pack_design.png",
+        "title": "Sapiver Press daily image 3/5 | limited edition starter pack design",
+        "pin": {
           "link": "https://sapiverpress.etsy.com/",
           "pin_metrics": null,
-          "parent_pin_id": null,
-          "has_been_promoted": false,
-          "board_id": "1038924276479876865",
-          "media": {
-            "media_type": "image",
-            "images": {
-              "150x150": {
-                "width": 150,
-                "height": 150,
-                "url": "https://i.pinimg.com/150x150/fe/b1/88/feb188ab473dc80bf93a621918583d7a.jpg"
-              },
-              "400x300": {
-                "width": 400,
-                "height": 300,
-                "url": "https://i.pinimg.com/400x300/fe/b1/88/feb188ab473dc80bf93a621918583d7a.jpg"
-              },
-              "600x": {
-                "width": 564,
-                "height": 846,
-                "url": "https://i.pinimg.com/564x/fe/b1/88/feb188ab473dc80bf93a621918583d7a.jpg"
-              },
-              "1200x": {
-                "width": 1024,
-                "height": 1536,
-                "url": "https://i.pinimg.com/1200x/fe/b1/88/feb188ab473dc80bf93a621918583d7a.jpg"
-              }
-            }
-          },
-          "is_standard": true,
-          "board_section_id": null,
-          "is_removable": false,
-          "product_tags": []
-        }
-      },
-      {
-        "source_image": "social/ftpe/2026-06-22/facebook_carousel/03_metadata_profiles_publish_with_confidence.png",
-        "title": "Sapiver Press daily image 3/5 | metadata profiles publish with confidence",
-        "pin": {
-          "title": "Sapiver Press daily image 3/5 | metadata profiles publish with confidence",
-          "pin_metrics": null,
-          "product_tags": [],
-          "is_product": false,
-          "media": {
-            "media_type": "image",
-            "images": {
-              "150x150": {
-                "width": 150,
-                "height": 150,
-                "url": "https://i.pinimg.com/150x150/87/a4/6a/87a46aff0ccbee109269f608d8304d9b.jpg"
-              },
-              "400x300": {
-                "width": 400,
-                "height": 300,
-                "url": "https://i.pinimg.com/400x300/87/a4/6a/87a46aff0ccbee109269f608d8304d9b.jpg"
-              },
-              "600x": {
-                "width": 564,
-                "height": 846,
-                "url": "https://i.pinimg.com/564x/87/a4/6a/87a46aff0ccbee109269f608d8304d9b.jpg"
-              },
-              "1200x": {
-                "width": 1024,
-                "height": 1536,
-                "url": "https://i.pinimg.com/1200x/87/a4/6a/87a46aff0ccbee109269f608d8304d9b.jpg"
-              }
-            }
-          },
-          "is_removable": false,
+          "title": "Sapiver Press daily image 3/5 | limited edition starter pack design",
           "board_owner": {
             "username": "sapiver"
           },
           "has_been_promoted": false,
-          "created_at": "2026-06-22T12:24:16",
-          "alt_text": null,
-          "parent_pin_id": null,
-          "is_owner": true,
-          "is_standard": true,
-          "dominant_color": null,
-          "id": "1038924207808824360",
           "board_id": "1038924276479876865",
-          "creative_type": "REGULAR",
-          "description": "Part puzzle studio, part publishing toolkit, Sapiver Press exists to make solving, making, and organising a little easier. Whether you want to play a puzzle, print a pack, browse a book, or build your next publishing project, there is something ready for you. Visit https://sapiverpress.etsy.com or https://suite.sapiverpress.co.uk Publishing fact: Legal deposit is about cultural preservation, not sales. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfP",
-          "board_section_id": null,
-          "link": "https://sapiverpress.etsy.com/"
-        }
-      },
-      {
-        "source_image": "social/ftpe/2026-06-22/facebook_carousel/04_promotional_sudoku_book_collection_flyer.png",
-        "title": "Sapiver Press daily image 4/5 | promotional sudoku book collection flyer",
-        "pin": {
-          "board_owner": {
-            "username": "sapiver"
-          },
-          "is_removable": false,
-          "dominant_color": null,
-          "is_standard": true,
-          "pin_metrics": null,
-          "has_been_promoted": false,
-          "board_id": "1038924276479876865",
-          "is_owner": true,
+          "is_product": false,
+          "id": "1038924207808826363",
+          "created_at": "2026-06-22T13:47:20",
           "parent_pin_id": null,
           "product_tags": [],
-          "alt_text": null,
-          "description": "Part puzzle studio, part publishing toolkit, Sapiver Press exists to make solving, making, and organising a little easier. Whether you want to play a puzzle, print a pack, browse a book, or build your next publishing project, there is something ready for you. Visit https://sapiverpress.etsy.com or https://suite.sapiverpress.co.uk Publishing fact: Legal deposit is about cultural preservation, not sales. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfP",
+          "creative_type": "REGULAR",
+          "dominant_color": null,
           "media": {
             "media_type": "image",
             "images": {
               "150x150": {
                 "width": 150,
                 "height": 150,
-                "url": "https://i.pinimg.com/150x150/e0/1e/8c/e01e8c14b9e35802bd8ce35bc3d76d94.jpg"
+                "url": "https://i.pinimg.com/150x150/87/b0/38/87b03820554e48a808a36752033c7dce.jpg"
               },
               "400x300": {
                 "width": 400,
                 "height": 300,
-                "url": "https://i.pinimg.com/400x300/e0/1e/8c/e01e8c14b9e35802bd8ce35bc3d76d94.jpg"
+                "url": "https://i.pinimg.com/400x300/87/b0/38/87b03820554e48a808a36752033c7dce.jpg"
               },
               "600x": {
                 "width": 564,
                 "height": 846,
-                "url": "https://i.pinimg.com/564x/e0/1e/8c/e01e8c14b9e35802bd8ce35bc3d76d94.jpg"
+                "url": "https://i.pinimg.com/564x/87/b0/38/87b03820554e48a808a36752033c7dce.jpg"
               },
               "1200x": {
                 "width": 1024,
                 "height": 1536,
-                "url": "https://i.pinimg.com/1200x/e0/1e/8c/e01e8c14b9e35802bd8ce35bc3d76d94.jpg"
+                "url": "https://i.pinimg.com/1200x/87/b0/38/87b03820554e48a808a36752033c7dce.jpg"
               }
             }
           },
+          "description": "At Sapiver Press, we believe in the simple joy of a well-made puzzle. Whether you want a quick daily challenge or a longer screen-free session, we create clean, tidy resources that are ready to use. Come see what we’re solving today at https://sapiverpress.etsy.com Publishing fact: National libraries are memory institutions. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks",
+          "alt_text": null,
+          "is_owner": true,
+          "is_standard": true,
           "board_section_id": null,
-          "id": "1038924207808824361",
-          "title": "Sapiver Press daily image 4/5 | promotional sudoku book collection flyer",
-          "is_product": false,
-          "creative_type": "REGULAR",
-          "created_at": "2026-06-22T12:24:17",
-          "link": "https://sapiverpress.etsy.com/"
+          "is_removable": false
         }
       },
       {
-        "source_image": "social/ftpe/2026-06-22/facebook_carousel/05_sudoku_publisher_edition_planning_tools.png",
-        "title": "Sapiver Press daily image 5/5 | sudoku publisher edition planning tools",
+        "source_image": "social/ftpe/2026-06-22/facebook_carousel/04_organised_starter_pack_for_publishers.png",
+        "title": "Sapiver Press daily image 4/5 | organised starter pack for publishers",
         "pin": {
-          "parent_pin_id": null,
+          "id": "1038924207808826364",
+          "product_tags": [],
+          "is_owner": true,
+          "board_id": "1038924276479876865",
+          "is_removable": false,
+          "is_product": false,
+          "alt_text": null,
+          "media": {
+            "media_type": "image",
+            "images": {
+              "150x150": {
+                "width": 150,
+                "height": 150,
+                "url": "https://i.pinimg.com/150x150/67/dc/42/67dc42ddf04e0054ea0defd404a06dc3.jpg"
+              },
+              "400x300": {
+                "width": 400,
+                "height": 300,
+                "url": "https://i.pinimg.com/400x300/67/dc/42/67dc42ddf04e0054ea0defd404a06dc3.jpg"
+              },
+              "600x": {
+                "width": 564,
+                "height": 846,
+                "url": "https://i.pinimg.com/564x/67/dc/42/67dc42ddf04e0054ea0defd404a06dc3.jpg"
+              },
+              "1200x": {
+                "width": 1024,
+                "height": 1536,
+                "url": "https://i.pinimg.com/1200x/67/dc/42/67dc42ddf04e0054ea0defd404a06dc3.jpg"
+              }
+            }
+          },
+          "is_standard": true,
+          "creative_type": "REGULAR",
           "dominant_color": null,
-          "has_been_promoted": false,
+          "parent_pin_id": null,
+          "title": "Sapiver Press daily image 4/5 | organised starter pack for publishers",
           "link": "https://sapiverpress.etsy.com/",
-          "description": "Part puzzle studio, part publishing toolkit, Sapiver Press exists to make solving, making, and organising a little easier. Whether you want to play a puzzle, print a pack, browse a book, or build your next publishing project, there is something ready for you. Visit https://sapiverpress.etsy.com or https://suite.sapiverpress.co.uk Publishing fact: Legal deposit is about cultural preservation, not sales. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfP",
-          "board_id": "1038924276479876865",
-          "is_removable": false,
-          "id": "1038924207808824363",
-          "alt_text": null,
-          "creative_type": "REGULAR",
-          "is_standard": true,
-          "title": "Sapiver Press daily image 5/5 | sudoku publisher edition planning tools",
-          "created_at": "2026-06-22T12:24:18",
-          "is_product": false,
+          "description": "At Sapiver Press, we believe in the simple joy of a well-made puzzle. Whether you want a quick daily challenge or a longer screen-free session, we create clean, tidy resources that are ready to use. Come see what we’re solving today at https://sapiverpress.etsy.com Publishing fact: National libraries are memory institutions. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks",
           "pin_metrics": null,
+          "board_section_id": null,
+          "has_been_promoted": false,
+          "board_owner": {
+            "username": "sapiver"
+          },
+          "created_at": "2026-06-22T13:47:21"
+        }
+      },
+      {
+        "source_image": "social/ftpe/2026-06-22/facebook_carousel/05_premium_publishing_starter_pack_advertisement.png",
+        "title": "Sapiver Press daily image 5/5 | premium publishing starter pack advertisement",
+        "pin": {
+          "board_owner": {
+            "username": "sapiver"
+          },
+          "board_id": "1038924276479876865",
+          "title": "Sapiver Press daily image 5/5 | premium publishing starter pack advertisement",
+          "description": "At Sapiver Press, we believe in the simple joy of a well-made puzzle. Whether you want a quick daily challenge or a longer screen-free session, we create clean, tidy resources that are ready to use. Come see what we’re solving today at https://sapiverpress.etsy.com Publishing fact: National libraries are memory institutions. Start here: https://sapiverpress.etsy.com #AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks",
+          "is_standard": true,
+          "is_removable": false,
+          "created_at": "2026-06-22T13:47:22",
+          "parent_pin_id": null,
+          "is_owner": true,
+          "pin_metrics": null,
+          "alt_text": null,
+          "id": "1038924207808826365",
+          "link": "https://sapiverpress.etsy.com/",
+          "is_product": false,
+          "dominant_color": null,
           "board_section_id": null,
           "media": {
             "media_type": "image",
@@ -263,30 +265,28 @@
               "150x150": {
                 "width": 150,
                 "height": 150,
-                "url": "https://i.pinimg.com/150x150/16/b0/c3/16b0c353d8c12ea85e174d868d12d05b.jpg"
+                "url": "https://i.pinimg.com/150x150/e6/92/42/e69242db06057363983dcdf6f849e9a4.jpg"
               },
               "400x300": {
                 "width": 400,
                 "height": 300,
-                "url": "https://i.pinimg.com/400x300/16/b0/c3/16b0c353d8c12ea85e174d868d12d05b.jpg"
+                "url": "https://i.pinimg.com/400x300/e6/92/42/e69242db06057363983dcdf6f849e9a4.jpg"
               },
               "600x": {
                 "width": 564,
                 "height": 846,
-                "url": "https://i.pinimg.com/564x/16/b0/c3/16b0c353d8c12ea85e174d868d12d05b.jpg"
+                "url": "https://i.pinimg.com/564x/e6/92/42/e69242db06057363983dcdf6f849e9a4.jpg"
               },
               "1200x": {
                 "width": 1024,
                 "height": 1536,
-                "url": "https://i.pinimg.com/1200x/16/b0/c3/16b0c353d8c12ea85e174d868d12d05b.jpg"
+                "url": "https://i.pinimg.com/1200x/e6/92/42/e69242db06057363983dcdf6f849e9a4.jpg"
               }
             }
           },
-          "board_owner": {
-            "username": "sapiver"
-          },
           "product_tags": [],
-          "is_owner": true
+          "creative_type": "REGULAR",
+          "has_been_promoted": false
         }
       }
     ]
@@ -365,6 +365,8 @@
       "title": "Sapiver Press daily carousel | final checklist for first time publishers",
       "is_standard": true,
       "is_product": false
-    }
+    },
+    "skipped": true,
+    "reason": "already_posted"
   }
 }
