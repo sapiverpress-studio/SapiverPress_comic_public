@@ -1,0 +1,64 @@
+{
+  "date": "2026-06-23",
+  "mode": "live",
+  "type": "book_content_os_youtube_short_upload_v1",
+  "cta_text": "link in bio",
+  "video": "social/book-content-os/2026-06-23/pinterest_video/book_content_os_video.mp4",
+  "title": "Ready for Pro | Book Content OS",
+  "description": "Book Content OS Pro is for deeper workflows: unlimited local book projects, phone/laptop view, duplicate/search tools, undo delete and CSV export.link in bio#BookReviewers #ARCReaders #BookTok #Bookstagram #BookContentSapiver Presslink in bioLocal-first browser app. Manual backup/import. Not cloud sync.#Shorts #BookReviewers #ARCReaders #BookContent #BookTok #SapiverPress",
+  "privacy_status": "public",
+  "dry_run": false,
+  "youtube": {
+    "kind": "youtube#video",
+    "etag": "0xd8VtUQ9rSdHyPLPVcH06mbEjE",
+    "id": "9CUCQ2FTN60",
+    "snippet": {
+      "publishedAt": "2026-06-23T05:18:09Z",
+      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
+      "title": "Ready for Pro | Book Content OS",
+      "description": "Book Content OS Pro is for deeper workflows: unlimited local book projects, phone/laptop view, duplicate/search tools, undo delete and CSV export.link in bio#BookReviewers #ARCReaders #BookTok #Bookstagram #BookContentSapiver Presslink in bioLocal-first browser app. Manual backup/import. Not cloud sync.#Shorts #BookReviewers #ARCReaders #BookContent #BookTok #SapiverPress",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/9CUCQ2FTN60/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/9CUCQ2FTN60/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/9CUCQ2FTN60/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Sapiver Press",
+      "tags": [
+        "ARC readers",
+        "BookTok",
+        "Sapiver Press",
+        "book content",
+        "book reviewers"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "Ready for Pro | Book Content OS",
+        "description": "Book Content OS Pro is for deeper workflows: unlimited local book projects, phone/laptop view, duplicate/search tools, undo delete and CSV export.link in bio#BookReviewers #ARCReaders #BookTok #Bookstagram #BookContentSapiver Presslink in bioLocal-first browser app. Manual backup/import. Not cloud sync.#Shorts #BookReviewers #ARCReaders #BookContent #BookTok #SapiverPress"
+      }
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": false
+    }
+  },
+  "youtube_url": "https://www.youtube.com/watch?v=9CUCQ2FTN60"
+}

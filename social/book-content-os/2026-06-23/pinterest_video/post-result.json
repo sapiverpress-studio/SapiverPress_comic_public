@@ -1,0 +1,370 @@
+{
+  "date": "2026-06-23",
+  "mode": "live",
+  "type": "book_content_os_pinterest_image_pins_and_video_post_v1",
+  "cta_text": "link in bio",
+  "board_id": "1038924276479876865",
+  "board_name": "Sapiver Press Comic",
+  "video": "social/book-content-os/2026-06-23/pinterest_video/book_content_os_video.mp4",
+  "source_images": [
+    "social/book-content-os/2026-06-23/pinterest_video/01_07_33458.png",
+    "social/book-content-os/2026-06-23/pinterest_video/02_08_33459.png",
+    "social/book-content-os/2026-06-23/pinterest_video/03_09_33460.png",
+    "social/book-content-os/2026-06-23/pinterest_video/04_10_33456.png",
+    "social/book-content-os/2026-06-23/pinterest_video/05_01_export_your_bookshelf.png"
+  ],
+  "image_pin_sources": [
+    "social/book-content-os/2026-06-23/facebook_carousel/01_07_33458.png",
+    "social/book-content-os/2026-06-23/facebook_carousel/02_08_33459.png",
+    "social/book-content-os/2026-06-23/facebook_carousel/03_09_33460.png",
+    "social/book-content-os/2026-06-23/facebook_carousel/04_10_33456.png",
+    "social/book-content-os/2026-06-23/facebook_carousel/05_01_export_your_bookshelf.png"
+  ],
+  "title": "Ready for Pro | Book Content OS\n",
+  "caption": "Book Content OS Pro is for deeper workflows: unlimited local book projects, phone/laptop view, duplicate/search tools, undo delete and CSV export. link in bio #BookReviewers #ARCReaders #BookTok #Bookstagram #BookContent",
+  "first_comment": "link in bio\n\n#BookReviewers #ARCReaders #BookTok #Bookstagram\n",
+  "dry_run": false,
+  "image_pins": {
+    "dry_run": false,
+    "skipped": false,
+    "limit": 5,
+    "pins": [
+      {
+        "source_image": "social/book-content-os/2026-06-23/facebook_carousel/01_07_33458.png",
+        "title": "Book Content OS image 1/5 | 07 33458",
+        "pin": {
+          "link": null,
+          "description": "Book Content OS Pro is for deeper workflows: unlimited local book projects, phone/laptop view, duplicate/search tools, undo delete and CSV export. link in bio #BookReviewers #ARCReaders #BookTok #Bookstagram #BookContent",
+          "alt_text": null,
+          "has_been_promoted": false,
+          "dominant_color": null,
+          "title": "Book Content OS image 1/5 | 07 33458",
+          "is_product": false,
+          "is_removable": false,
+          "created_at": "2026-06-23T05:17:33",
+          "is_standard": true,
+          "pin_metrics": null,
+          "product_tags": [],
+          "id": "1038924207808850727",
+          "board_id": "1038924276479876865",
+          "creative_type": "REGULAR",
+          "is_owner": true,
+          "board_owner": {
+            "username": "sapiver"
+          },
+          "media": {
+            "media_type": "image",
+            "images": {
+              "150x150": {
+                "width": 150,
+                "height": 150,
+                "url": "https://i.pinimg.com/150x150/5d/87/eb/5d87eb0e0bca7011d4001c574e486ca0.jpg"
+              },
+              "400x300": {
+                "width": 400,
+                "height": 300,
+                "url": "https://i.pinimg.com/400x300/5d/87/eb/5d87eb0e0bca7011d4001c574e486ca0.jpg"
+              },
+              "600x": {
+                "width": 564,
+                "height": 564,
+                "url": "https://i.pinimg.com/564x/5d/87/eb/5d87eb0e0bca7011d4001c574e486ca0.jpg"
+              },
+              "1200x": {
+                "width": 1200,
+                "height": 1200,
+                "url": "https://i.pinimg.com/1200x/5d/87/eb/5d87eb0e0bca7011d4001c574e486ca0.jpg"
+              }
+            }
+          },
+          "parent_pin_id": null,
+          "board_section_id": null
+        }
+      },
+      {
+        "source_image": "social/book-content-os/2026-06-23/facebook_carousel/02_08_33459.png",
+        "title": "Book Content OS image 2/5 | 08 33459",
+        "pin": {
+          "pin_metrics": null,
+          "creative_type": "REGULAR",
+          "board_section_id": null,
+          "created_at": "2026-06-23T05:17:34",
+          "has_been_promoted": false,
+          "board_owner": {
+            "username": "sapiver"
+          },
+          "parent_pin_id": null,
+          "product_tags": [],
+          "title": "Book Content OS image 2/5 | 08 33459",
+          "is_product": false,
+          "is_removable": false,
+          "dominant_color": null,
+          "description": "Book Content OS Pro is for deeper workflows: unlimited local book projects, phone/laptop view, duplicate/search tools, undo delete and CSV export. link in bio #BookReviewers #ARCReaders #BookTok #Bookstagram #BookContent",
+          "board_id": "1038924276479876865",
+          "id": "1038924207808850728",
+          "link": null,
+          "is_owner": true,
+          "alt_text": null,
+          "media": {
+            "media_type": "image",
+            "images": {
+              "150x150": {
+                "width": 150,
+                "height": 150,
+                "url": "https://i.pinimg.com/150x150/08/76/b4/0876b45522b1a42bfaa98346cf2a460e.jpg"
+              },
+              "400x300": {
+                "width": 400,
+                "height": 300,
+                "url": "https://i.pinimg.com/400x300/08/76/b4/0876b45522b1a42bfaa98346cf2a460e.jpg"
+              },
+              "600x": {
+                "width": 564,
+                "height": 564,
+                "url": "https://i.pinimg.com/564x/08/76/b4/0876b45522b1a42bfaa98346cf2a460e.jpg"
+              },
+              "1200x": {
+                "width": 1200,
+                "height": 1200,
+                "url": "https://i.pinimg.com/1200x/08/76/b4/0876b45522b1a42bfaa98346cf2a460e.jpg"
+              }
+            }
+          },
+          "is_standard": true
+        }
+      },
+      {
+        "source_image": "social/book-content-os/2026-06-23/facebook_carousel/03_09_33460.png",
+        "title": "Book Content OS image 3/5 | 09 33460",
+        "pin": {
+          "board_section_id": null,
+          "alt_text": null,
+          "has_been_promoted": false,
+          "creative_type": "REGULAR",
+          "product_tags": [],
+          "parent_pin_id": null,
+          "board_id": "1038924276479876865",
+          "is_standard": true,
+          "dominant_color": null,
+          "link": null,
+          "id": "1038924207808850729",
+          "is_owner": true,
+          "media": {
+            "media_type": "image",
+            "images": {
+              "150x150": {
+                "width": 150,
+                "height": 150,
+                "url": "https://i.pinimg.com/150x150/55/4b/4e/554b4e84a7642503ecb7e9af26e9b5e0.jpg"
+              },
+              "400x300": {
+                "width": 400,
+                "height": 300,
+                "url": "https://i.pinimg.com/400x300/55/4b/4e/554b4e84a7642503ecb7e9af26e9b5e0.jpg"
+              },
+              "600x": {
+                "width": 564,
+                "height": 564,
+                "url": "https://i.pinimg.com/564x/55/4b/4e/554b4e84a7642503ecb7e9af26e9b5e0.jpg"
+              },
+              "1200x": {
+                "width": 1200,
+                "height": 1200,
+                "url": "https://i.pinimg.com/1200x/55/4b/4e/554b4e84a7642503ecb7e9af26e9b5e0.jpg"
+              }
+            }
+          },
+          "is_product": false,
+          "board_owner": {
+            "username": "sapiver"
+          },
+          "created_at": "2026-06-23T05:17:35",
+          "pin_metrics": null,
+          "is_removable": false,
+          "description": "Book Content OS Pro is for deeper workflows: unlimited local book projects, phone/laptop view, duplicate/search tools, undo delete and CSV export. link in bio #BookReviewers #ARCReaders #BookTok #Bookstagram #BookContent",
+          "title": "Book Content OS image 3/5 | 09 33460"
+        }
+      },
+      {
+        "source_image": "social/book-content-os/2026-06-23/facebook_carousel/04_10_33456.png",
+        "title": "Book Content OS image 4/5 | 10 33456",
+        "pin": {
+          "board_section_id": null,
+          "title": "Book Content OS image 4/5 | 10 33456",
+          "is_removable": false,
+          "link": null,
+          "creative_type": "REGULAR",
+          "is_product": false,
+          "media": {
+            "media_type": "image",
+            "images": {
+              "150x150": {
+                "width": 150,
+                "height": 150,
+                "url": "https://i.pinimg.com/150x150/95/b2/77/95b277d53e630c0aef0983d7fa167a93.jpg"
+              },
+              "400x300": {
+                "width": 400,
+                "height": 300,
+                "url": "https://i.pinimg.com/400x300/95/b2/77/95b277d53e630c0aef0983d7fa167a93.jpg"
+              },
+              "600x": {
+                "width": 564,
+                "height": 564,
+                "url": "https://i.pinimg.com/564x/95/b2/77/95b277d53e630c0aef0983d7fa167a93.jpg"
+              },
+              "1200x": {
+                "width": 1200,
+                "height": 1200,
+                "url": "https://i.pinimg.com/1200x/95/b2/77/95b277d53e630c0aef0983d7fa167a93.jpg"
+              }
+            }
+          },
+          "is_standard": true,
+          "has_been_promoted": false,
+          "created_at": "2026-06-23T05:17:36",
+          "parent_pin_id": null,
+          "alt_text": null,
+          "id": "1038924207808850731",
+          "dominant_color": null,
+          "board_owner": {
+            "username": "sapiver"
+          },
+          "is_owner": true,
+          "description": "Book Content OS Pro is for deeper workflows: unlimited local book projects, phone/laptop view, duplicate/search tools, undo delete and CSV export. link in bio #BookReviewers #ARCReaders #BookTok #Bookstagram #BookContent",
+          "board_id": "1038924276479876865",
+          "product_tags": [],
+          "pin_metrics": null
+        }
+      },
+      {
+        "source_image": "social/book-content-os/2026-06-23/facebook_carousel/05_01_export_your_bookshelf.png",
+        "title": "Book Content OS image 5/5 | 01 export your bookshelf",
+        "pin": {
+          "description": "Book Content OS Pro is for deeper workflows: unlimited local book projects, phone/laptop view, duplicate/search tools, undo delete and CSV export. link in bio #BookReviewers #ARCReaders #BookTok #Bookstagram #BookContent",
+          "title": "Book Content OS image 5/5 | 01 export your bookshelf",
+          "product_tags": [],
+          "pin_metrics": null,
+          "created_at": "2026-06-23T05:17:36",
+          "alt_text": null,
+          "dominant_color": null,
+          "parent_pin_id": null,
+          "board_id": "1038924276479876865",
+          "is_standard": true,
+          "is_owner": true,
+          "link": null,
+          "is_removable": false,
+          "creative_type": "REGULAR",
+          "has_been_promoted": false,
+          "id": "1038924207808850733",
+          "board_owner": {
+            "username": "sapiver"
+          },
+          "media": {
+            "media_type": "image",
+            "images": {
+              "150x150": {
+                "width": 150,
+                "height": 150,
+                "url": "https://i.pinimg.com/150x150/4e/5c/3a/4e5c3a08a5a7116f32555ac758afbcf4.jpg"
+              },
+              "400x300": {
+                "width": 400,
+                "height": 300,
+                "url": "https://i.pinimg.com/400x300/4e/5c/3a/4e5c3a08a5a7116f32555ac758afbcf4.jpg"
+              },
+              "600x": {
+                "width": 564,
+                "height": 704,
+                "url": "https://i.pinimg.com/564x/4e/5c/3a/4e5c3a08a5a7116f32555ac758afbcf4.jpg"
+              },
+              "1200x": {
+                "width": 1200,
+                "height": 1499,
+                "url": "https://i.pinimg.com/1200x/4e/5c/3a/4e5c3a08a5a7116f32555ac758afbcf4.jpg"
+              }
+            }
+          },
+          "board_section_id": null,
+          "is_product": false
+        }
+      }
+    ]
+  },
+  "pinterest": {
+    "media": {
+      "media_id": "3615820800413433792",
+      "media_type": "video",
+      "upload_url": "https://pinterest-media-upload.s3-accelerate.amazonaws.com/",
+      "upload_parameters": {
+        "x-amz-date": "20260623T051737Z",
+        "x-amz-signature": "16ed23f42938e2f59d3e3291b1a8885d91a3328e475ebeaf439ec0306d38c3e8",
+        "x-amz-security-token": "IQoJb3JpZ2luX2VjEEwaCXVzLWVhc3QtMSJHMEUCIQDjPb7oUxfQFIN0T8jUk9xb6zOSSPWKSCQSOnKjo/E+3wIgfwQHGD3DkJ1DqlPxaUgZIrN86TW+FvEfKuDTBnS5N6sqswUIFRAAGgw5OTgxMzEwMzI5OTAiDO3OXAo44Z96XNA9nCqQBfwDwpIwPRhnASyh8Tf8HPZhvqw3wb+3Zh1ZJZFmUQaxe3W31wA72zVH8H2kbQg3prcM1X1OFvgyJ5qxQBa8H8TJBHoCBwUSPQ3L4qu1kKwM99yR4OpzO34ncYwLgRFbswOnSGkQML8045hJMAVRg+oGAv4CUCM930V7v9Z7nS6WYDIVaX4sKPJ7LUPRtdw1kngHEayDduVFx2fOJUSrjvmxHYxJEL0dX+ahI20bMl1/xHXgDeuLzZ7Bv/W9IRhL0ycEat07jMmDNokcOSekUcOjT6T1/mFaxp8AyL91SfYVTJatGjczDEH12YSxhTP6KXh00wta5V+JrJIg/MqsusUvmeaez2u5NleFfoIgENWw0ak/atcE97ixD9kQF+h8HJEQ3SZ21dDb5xcsEdwU3b5aifqUDsav28RHV5j+z9GaPYUgjQv6s5kyrokFFcCIFVJnf7u5Z7lHWbLfz+i+Vr3vgFfitcBxCY6oUw8MbYtDGeNjwZCEsxTDnMlx1ttvyRh1zLXQNkpes9fVUNnqjKd0kXG67+LBxzhaf2D7wOhcJJkm8wVoJo4ayP/aE7OqnYtWLliegkGQ0e0fF+hog6vWGIL6OO3a30FFxaN820qv05MYIWfLyq5S4dqL8HUsnnu72j/3KeHHSp/WXIFHgA+fTndTZrkVxBHTd05tldRaQFfXglMXhJ1YAoWs44EkZIatLPV7I2e9DHGav6WNE0Zgp3HON4l9COyTQzjAPH7xAU7U5AKfyBUVYbnuRPLoYvw+O6N+58DCw6D3/7r0ql+R6s4pPI7+OKSLOkzsvLJ4uTIarJLRpHsCZvSxUMsC8tNP/TDMw5NoYfpcbhggzabUCsPFiGrwxMdOUi48ehqEMK3859EGOrEBNu3OoKhoHVEjLrArN7desIf11ZLoE4UmzYemnudBUh4Vjeg0vMVf6IBjxweGTkwoht3//6/tjoIWnGUUhzKKT82KzN5qkfkVNQxZyQG6e90IR6m9gL56EK1AjsWprfoQCjm6zIx4lyT7wKk7GuSEXSsT/jK+fpX4NkzLUlkDzuHT0ILGsF3espVwopbYy/I1tyT7Y/wYvvQNKo/Tdf6kfHr4+aGkmLeIYM1++j9qnLkl",
+        "x-amz-algorithm": "AWS4-HMAC-SHA256",
+        "key": "uploads/06/a9/c3/2:video:1038924345197779616:3615820800413433792:vippR3Ef2EHaguw06ZsBHy",
+        "policy": "eyJleHBpcmF0aW9uIjoiMjAyNi0wNi0yNVQwNToxNzozNy4wMDBaIiwiY29uZGl0aW9ucyI6W3siYnVja2V0IjoicGludGVyZXN0LW1lZGlhLXVwbG9hZCJ9LFsic3RhcnRzLXdpdGgiLCIka2V5IiwidXBsb2Fkcy8wNi9hOS9jMyJdLHsieC1hbXotY3JlZGVudGlhbCI6IkFTSUE2UVpKNjRPUEJZUEJMUEoyLzIwMjYwNjIzL3VzLWVhc3QtMS9zMy9hd3M0X3JlcXVlc3QifSx7IngtYW16LWFsZ29yaXRobSI6IkFXUzQtSE1BQy1TSEEyNTYifSx7IngtYW16LWRhdGUiOiIyMDI2MDYyM1QwNTE3MzdaIn0sWyJjb250ZW50LWxlbmd0aC1yYW5nZSIsMCw1MzY4NzA5MTIwXSxbImVxIiwiJENvbnRlbnQtVHlwZSIsIm11bHRpcGFydC9mb3JtLWRhdGEiXSx7IngtYW16LXNlY3VyaXR5LXRva2VuIjoiSVFvSmIzSnBaMmx1WDJWakVFd2FDWFZ6TFdWaGMzUXRNU0pITUVVQ0lRRGpQYjdvVXhmUUZJTjBUOGpVazl4YjZ6T1NTUFdLU0NRU09uS2pvL0UrM3dJZ2Z3UUhHRDNEa0oxRHFsUHhhVWdaSXJOODZUVytGdkVmS3VEVEJuUzVONnNxc3dVSUZSQUFHZ3c1T1RneE16RXdNekk1T1RBaURPM09YQW80NFo5NlhOQTluQ3FRQmZ3RHdwSXdQUmhuQVN5aDhUZjhIUFpodnF3M3diKzNaaDFaSlpGbVVRYXhlM1czMXdBNzJ6Vkg4SDJrYlFnM3ByY00xWDFPRnZneUo1cXhRQmE4SDhUSkJIb0NCd1VTUFEzTDRxdTFrS3dNOTl5UjRPcHpPMzRuY1l3TGdSRmJzd09uU0drUU1MODA0NWhKTUFWUmcrb0dBdjRDVUNNOTMwVjd2OVo3blM2V1lESVZhWDRzS1BKN0xVUFJ0ZHcxa25nSEVheURkdVZGeDJmT0pVU3Jqdm14SFl4SkVMMGRYK2FoSTIwYk1sMS94SFhnRGV1THpaN0J2L1c5SVJoTDB5Y0VhdDA3ak1tRE5va2NPU2VrVWNPalQ2VDEvbUZheHA4QXlMOTFTZllWVEphdEdqY3pERUgxMllTeGhUUDZLWGgwMHd0YTVWK0pySklnL01xc3VzVXZtZWFlejJ1NU5sZUZmb0lnRU5XdzBhay9hdGNFOTdpeEQ5a1FGK2g4SEpFUTNTWjIxZERiNXhjc0Vkd1UzYjVhaWZxVURzYXYyOFJIVjVqK3o5R2FQWVVnalF2NnM1a3lyb2tGRmNDSUZWSm5mN3U1WjdsSFdiTGZ6K2krVnIzdmdGZml0Y0J4Q1k2b1V3OE1iWXRER2VOandaQ0VzeFREbk1seDF0dHZ5UmgxekxYUU5rcGVzOWZWVU5ucWpLZDBrWEc2NytMQnh6aGFmMkQ3d09oY0pKa204d1ZvSm80YXlQL2FFN09xbll0V0xsaWVna0dRMGUwZkYraG9nNnZXR0lMNk9PM2EzMEZGeGFOODIwcXYwNU1ZSVdmTHlxNVM0ZHFMOEhVc25udTcyai8zS2VISFNwL1dYSUZIZ0ErZlRuZFRacmtWeEJIVGQwNXRsZFJhUUZmWGdsTVhoSjFZQW9XczQ0RWtaSWF0TFBWN0kyZTlESEdhdjZXTkUwWmdwM0hPTjRsOUNPeVRRempBUEg3eEFVN1U1QUtmeUJVVllibnVSUExvWXZ3K082Tis1OERDdzZEMy83cjBxbCtSNnM0cFBJNytPS1NMT2t6c3ZMSjR1VElhckpMUnBIc0NadlN4VU1zQzh0TlAvVERNdzVOb1lmcGNiaGdnemFiVUNzUEZpR3J3eE1kT1VpNDhlaHFFTUszODU5RUdPckVCTnUzT29LaG9IVkVqTHJBck43ZGVzSWYxMVpMb0U0VW16WWVtbnVkQlVoNFZqZWcwdk1WZjZJQmp4d2VHVGt3b2h0My8vNi90am9JV25HVVVoektLVDgyS3pONXFrZmtWTlF4WnlRRzZlOTBJUjZtOWdMNTZFSzFBanNXcHJmb1FDam02ekl4NGx5VDd3S2s3R3VTRVhTc1QvaksrZnBYNE5rekxVbGtEenVIVDBJTEdzRjNlc3BWd29wYll5L0kxdHlUN1kvd1l2dlFOS28vVGRmNmtmSHI0K2FHa21MZUlZTTErK2o5cW5Ma2wifV19",
+        "x-amz-credential": "ASIA6QZJ64OPBYPBLPJ2/20260623/us-east-1/s3/aws4_request",
+        "Content-Type": "multipart/form-data"
+      }
+    },
+    "last_status": {
+      "media_id": "3615820800413433792",
+      "media_type": "video",
+      "status": "succeeded"
+    },
+    "pin": {
+      "created_at": "2026-06-23T05:18:08",
+      "dominant_color": null,
+      "is_removable": false,
+      "product_tags": [],
+      "link": null,
+      "board_section_id": null,
+      "board_id": "1038924276479876865",
+      "is_owner": true,
+      "is_standard": true,
+      "description": "Book Content OS Pro is for deeper workflows: unlimited local book projects, phone/laptop view, duplicate/search tools, undo delete and CSV export. link in bio #BookReviewers #ARCReaders #BookTok #Bookstagram #BookContent",
+      "parent_pin_id": null,
+      "id": "1038924207808850741",
+      "board_owner": {
+        "username": "sapiver"
+      },
+      "has_been_promoted": false,
+      "media": {
+        "media_type": "video",
+        "cover_image_url": "https://i.pinimg.com/1200x/4f/77/2f/4f772f8ef67c25c718f9a3a8f2f6124e.jpg",
+        "video_url": null,
+        "video_url_hls": null,
+        "duration": null,
+        "height": null,
+        "width": null,
+        "images": {
+          "150x150": {
+            "width": 150,
+            "height": 150,
+            "url": "https://i.pinimg.com/150x150/4f/77/2f/4f772f8ef67c25c718f9a3a8f2f6124e.jpg"
+          },
+          "400x300": {
+            "width": 400,
+            "height": 300,
+            "url": "https://i.pinimg.com/400x300/4f/77/2f/4f772f8ef67c25c718f9a3a8f2f6124e.jpg"
+          },
+          "600x": {
+            "width": 564,
+            "height": 1002,
+            "url": "https://i.pinimg.com/564x/4f/77/2f/4f772f8ef67c25c718f9a3a8f2f6124e.jpg"
+          },
+          "1200x": {
+            "width": 1080,
+            "height": 1920,
+            "url": "https://i.pinimg.com/1200x/4f/77/2f/4f772f8ef67c25c718f9a3a8f2f6124e.jpg"
+          }
+        }
+      },
+      "alt_text": null,
+      "title": "Ready for Pro | Book Content OS",
+      "creative_type": "VIDEO",
+      "pin_metrics": null,
+      "is_product": false
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "date": "2026-06-23",
+  "mode": "live",
+  "type": "book_content_os_social_manual_run_v1",
+  "cta_text": "link in bio",
+  "pinterest_board_id": "1038924276479876865",
+  "pinterest_board_name": "Sapiver Press Comic",
+  "facebook": {
+    "failed": true,
+    "channel": "Facebook",
+    "error": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AeSXF8CzE5ItfxbICmC-Jp_\"}}",
+    "note": "Facebook live posting failed. Check token permissions/settings for this channel."
+  },
+  "pinterest": {
+    "has_been_promoted": false,
+    "dominant_color": null,
+    "title": "Ready for Pro",
+    "alt_text": null,
+    "is_standard": true,
+    "product_tags": [],
+    "creative_type": "REGULAR",
+    "is_owner": true,
+    "description": "Book Content OS Pro is for deeper workflows: unlimited local book projects, phone/laptop view, duplicate/search tools, undo delete and CSV export. link in bio #BookReviewers #ARCReaders #BookTok #Bookstagram #BookContent",
+    "id": "1038924207808850726",
+    "created_at": "2026-06-23T05:17:32",
+    "board_id": "1038924276479876865",
+    "board_section_id": null,
+    "link": null,
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/99/b4/9e/99b49e0968b1baf95da46933330f45b5.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/99/b4/9e/99b49e0968b1baf95da46933330f45b5.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 564,
+          "url": "https://i.pinimg.com/564x/99/b4/9e/99b49e0968b1baf95da46933330f45b5.jpg"
+        },
+        "1200x": {
+          "width": 1200,
+          "height": 1200,
+          "url": "https://i.pinimg.com/1200x/99/b4/9e/99b49e0968b1baf95da46933330f45b5.jpg"
+        }
+      }
+    },
+    "is_product": false,
+    "is_removable": false,
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "pin_metrics": null,
+    "parent_pin_id": null
+  },
+  "pinterest_video": {
+    "prepared": true,
+    "posted": false,
+    "note": "Pinterest-ready MP4 generated from the same five images used in the Facebook carousel. Automatic video-pin upload runs in the Pinterest video workflow.",
+    "board_id": "1038924276479876865",
+    "board_name": "Sapiver Press Comic",
+    "video": "social/book-content-os/2026-06-23/pinterest_video/book_content_os_video.mp4",
+    "source_images": [
+      "social/book-content-os/2026-06-23/pinterest_video/01_07_33458.png",
+      "social/book-content-os/2026-06-23/pinterest_video/02_08_33459.png",
+      "social/book-content-os/2026-06-23/pinterest_video/03_09_33460.png",
+      "social/book-content-os/2026-06-23/pinterest_video/04_10_33456.png",
+      "social/book-content-os/2026-06-23/pinterest_video/05_01_export_your_bookshelf.png"
+    ],
+    "title": "Ready for Pro | Book Content OS\n",
+    "caption": "Book Content OS Pro is for deeper workflows: unlimited local book projects, phone/laptop view, duplicate/search tools, undo delete and CSV export. link in bio #BookReviewers #ARCReaders #BookTok #Bookstagram #BookContent",
+    "first_comment": "link in bio\n\n#BookReviewers #ARCReaders #BookTok #Bookstagram\n"
+  }
+}
