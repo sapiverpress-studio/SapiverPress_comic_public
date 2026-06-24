@@ -1,0 +1,370 @@
+{
+  "date": "2026-06-24",
+  "mode": "live",
+  "type": "book_content_os_pinterest_image_pins_and_video_post_v1",
+  "cta_text": "link in bio",
+  "board_id": "1038924276479876865",
+  "board_name": "Sapiver Press Comic",
+  "video": "social/book-content-os/2026-06-24/pinterest_video/book_content_os_video.mp4",
+  "source_images": [
+    "social/book-content-os/2026-06-24/pinterest_video/01_04_lite_or_pro.png",
+    "social/book-content-os/2026-06-24/pinterest_video/02_05_reviewers_arc_readers.png",
+    "social/book-content-os/2026-06-24/pinterest_video/03_06_stop_losing_arc_dates.png",
+    "social/book-content-os/2026-06-24/pinterest_video/04_07_book_content_os_overview.png",
+    "social/book-content-os/2026-06-24/pinterest_video/05_08_private_tracker_public_bookshelf.png"
+  ],
+  "image_pin_sources": [
+    "social/book-content-os/2026-06-24/facebook_carousel/01_04_lite_or_pro.png",
+    "social/book-content-os/2026-06-24/facebook_carousel/02_05_reviewers_arc_readers.png",
+    "social/book-content-os/2026-06-24/facebook_carousel/03_06_stop_losing_arc_dates.png",
+    "social/book-content-os/2026-06-24/facebook_carousel/04_07_book_content_os_overview.png",
+    "social/book-content-os/2026-06-24/facebook_carousel/05_08_private_tracker_public_bookshelf.png"
+  ],
+  "title": "Notes to posts | Book Content OS\n",
+  "caption": "Turn review notes, content ideas, links and deadlines into a tidy posting workflow. Book Content OS Pro keeps the process moving. link in bio #BookReviewers #ARCReaders #BookTok #Bookstagram #BookContent",
+  "first_comment": "link in bio\n\n#BookReviewers #ARCReaders #BookTok #Bookstagram\n",
+  "dry_run": false,
+  "image_pins": {
+    "dry_run": false,
+    "skipped": false,
+    "limit": 5,
+    "pins": [
+      {
+        "source_image": "social/book-content-os/2026-06-24/facebook_carousel/01_04_lite_or_pro.png",
+        "title": "Book Content OS image 1/5 | 04 lite or pro",
+        "pin": {
+          "board_owner": {
+            "username": "sapiver"
+          },
+          "product_tags": [],
+          "board_section_id": null,
+          "link": null,
+          "title": "Book Content OS image 1/5 | 04 lite or pro",
+          "parent_pin_id": null,
+          "pin_metrics": null,
+          "is_product": false,
+          "is_standard": true,
+          "dominant_color": null,
+          "has_been_promoted": false,
+          "board_id": "1038924276479876865",
+          "is_removable": false,
+          "media": {
+            "media_type": "image",
+            "images": {
+              "150x150": {
+                "width": 150,
+                "height": 150,
+                "url": "https://i.pinimg.com/150x150/13/3f/45/133f45e57829efed1387b3d14b5fccb0.jpg"
+              },
+              "400x300": {
+                "width": 400,
+                "height": 300,
+                "url": "https://i.pinimg.com/400x300/13/3f/45/133f45e57829efed1387b3d14b5fccb0.jpg"
+              },
+              "600x": {
+                "width": 564,
+                "height": 704,
+                "url": "https://i.pinimg.com/564x/13/3f/45/133f45e57829efed1387b3d14b5fccb0.jpg"
+              },
+              "1200x": {
+                "width": 1200,
+                "height": 1499,
+                "url": "https://i.pinimg.com/1200x/13/3f/45/133f45e57829efed1387b3d14b5fccb0.jpg"
+              }
+            }
+          },
+          "alt_text": null,
+          "creative_type": "REGULAR",
+          "is_owner": true,
+          "id": "1038924207808889762",
+          "description": "Turn review notes, content ideas, links and deadlines into a tidy posting workflow. Book Content OS Pro keeps the process moving. link in bio #BookReviewers #ARCReaders #BookTok #Bookstagram #BookContent",
+          "created_at": "2026-06-24T10:16:49"
+        }
+      },
+      {
+        "source_image": "social/book-content-os/2026-06-24/facebook_carousel/02_05_reviewers_arc_readers.png",
+        "title": "Book Content OS image 2/5 | 05 reviewers arc readers",
+        "pin": {
+          "title": "Book Content OS image 2/5 | 05 reviewers arc readers",
+          "link": null,
+          "product_tags": [],
+          "creative_type": "REGULAR",
+          "board_id": "1038924276479876865",
+          "alt_text": null,
+          "parent_pin_id": null,
+          "board_section_id": null,
+          "is_owner": true,
+          "board_owner": {
+            "username": "sapiver"
+          },
+          "is_removable": false,
+          "has_been_promoted": false,
+          "media": {
+            "media_type": "image",
+            "images": {
+              "150x150": {
+                "width": 150,
+                "height": 150,
+                "url": "https://i.pinimg.com/150x150/c0/69/15/c06915e6842c6a1f86b0416ad01df61d.jpg"
+              },
+              "400x300": {
+                "width": 400,
+                "height": 300,
+                "url": "https://i.pinimg.com/400x300/c0/69/15/c06915e6842c6a1f86b0416ad01df61d.jpg"
+              },
+              "600x": {
+                "width": 564,
+                "height": 704,
+                "url": "https://i.pinimg.com/564x/c0/69/15/c06915e6842c6a1f86b0416ad01df61d.jpg"
+              },
+              "1200x": {
+                "width": 1200,
+                "height": 1499,
+                "url": "https://i.pinimg.com/1200x/c0/69/15/c06915e6842c6a1f86b0416ad01df61d.jpg"
+              }
+            }
+          },
+          "is_standard": true,
+          "dominant_color": null,
+          "description": "Turn review notes, content ideas, links and deadlines into a tidy posting workflow. Book Content OS Pro keeps the process moving. link in bio #BookReviewers #ARCReaders #BookTok #Bookstagram #BookContent",
+          "id": "1038924207808889763",
+          "created_at": "2026-06-24T10:16:50",
+          "is_product": false,
+          "pin_metrics": null
+        }
+      },
+      {
+        "source_image": "social/book-content-os/2026-06-24/facebook_carousel/03_06_stop_losing_arc_dates.png",
+        "title": "Book Content OS image 3/5 | 06 stop losing arc dates",
+        "pin": {
+          "creative_type": "REGULAR",
+          "board_section_id": null,
+          "title": "Book Content OS image 3/5 | 06 stop losing arc dates",
+          "dominant_color": null,
+          "link": null,
+          "description": "Turn review notes, content ideas, links and deadlines into a tidy posting workflow. Book Content OS Pro keeps the process moving. link in bio #BookReviewers #ARCReaders #BookTok #Bookstagram #BookContent",
+          "product_tags": [],
+          "is_product": false,
+          "board_id": "1038924276479876865",
+          "created_at": "2026-06-24T10:16:51",
+          "media": {
+            "media_type": "image",
+            "images": {
+              "150x150": {
+                "width": 150,
+                "height": 150,
+                "url": "https://i.pinimg.com/150x150/00/0a/bd/000abdb65f828f9d4685a765e264b959.jpg"
+              },
+              "400x300": {
+                "width": 400,
+                "height": 300,
+                "url": "https://i.pinimg.com/400x300/00/0a/bd/000abdb65f828f9d4685a765e264b959.jpg"
+              },
+              "600x": {
+                "width": 564,
+                "height": 704,
+                "url": "https://i.pinimg.com/564x/00/0a/bd/000abdb65f828f9d4685a765e264b959.jpg"
+              },
+              "1200x": {
+                "width": 1200,
+                "height": 1499,
+                "url": "https://i.pinimg.com/1200x/00/0a/bd/000abdb65f828f9d4685a765e264b959.jpg"
+              }
+            }
+          },
+          "has_been_promoted": false,
+          "alt_text": null,
+          "pin_metrics": null,
+          "id": "1038924207808889764",
+          "is_owner": true,
+          "is_standard": true,
+          "board_owner": {
+            "username": "sapiver"
+          },
+          "parent_pin_id": null,
+          "is_removable": false
+        }
+      },
+      {
+        "source_image": "social/book-content-os/2026-06-24/facebook_carousel/04_07_book_content_os_overview.png",
+        "title": "Book Content OS image 4/5 | 07 book content os overview",
+        "pin": {
+          "has_been_promoted": false,
+          "is_owner": true,
+          "alt_text": null,
+          "creative_type": "REGULAR",
+          "product_tags": [],
+          "is_standard": true,
+          "board_section_id": null,
+          "board_id": "1038924276479876865",
+          "title": "Book Content OS image 4/5 | 07 book content os overview",
+          "parent_pin_id": null,
+          "description": "Turn review notes, content ideas, links and deadlines into a tidy posting workflow. Book Content OS Pro keeps the process moving. link in bio #BookReviewers #ARCReaders #BookTok #Bookstagram #BookContent",
+          "created_at": "2026-06-24T10:16:52",
+          "link": null,
+          "pin_metrics": null,
+          "dominant_color": null,
+          "id": "1038924207808889765",
+          "is_removable": false,
+          "board_owner": {
+            "username": "sapiver"
+          },
+          "media": {
+            "media_type": "image",
+            "images": {
+              "150x150": {
+                "width": 150,
+                "height": 150,
+                "url": "https://i.pinimg.com/150x150/d7/38/a5/d738a534677709632c0c3f90ff151fb4.jpg"
+              },
+              "400x300": {
+                "width": 400,
+                "height": 300,
+                "url": "https://i.pinimg.com/400x300/d7/38/a5/d738a534677709632c0c3f90ff151fb4.jpg"
+              },
+              "600x": {
+                "width": 564,
+                "height": 704,
+                "url": "https://i.pinimg.com/564x/d7/38/a5/d738a534677709632c0c3f90ff151fb4.jpg"
+              },
+              "1200x": {
+                "width": 1200,
+                "height": 1499,
+                "url": "https://i.pinimg.com/1200x/d7/38/a5/d738a534677709632c0c3f90ff151fb4.jpg"
+              }
+            }
+          },
+          "is_product": false
+        }
+      },
+      {
+        "source_image": "social/book-content-os/2026-06-24/facebook_carousel/05_08_private_tracker_public_bookshelf.png",
+        "title": "Book Content OS image 5/5 | 08 private tracker public bookshelf",
+        "pin": {
+          "product_tags": [],
+          "board_id": "1038924276479876865",
+          "media": {
+            "media_type": "image",
+            "images": {
+              "150x150": {
+                "width": 150,
+                "height": 150,
+                "url": "https://i.pinimg.com/150x150/bc/37/f2/bc37f267142275c441407edc489633e3.jpg"
+              },
+              "400x300": {
+                "width": 400,
+                "height": 300,
+                "url": "https://i.pinimg.com/400x300/bc/37/f2/bc37f267142275c441407edc489633e3.jpg"
+              },
+              "600x": {
+                "width": 564,
+                "height": 704,
+                "url": "https://i.pinimg.com/564x/bc/37/f2/bc37f267142275c441407edc489633e3.jpg"
+              },
+              "1200x": {
+                "width": 1200,
+                "height": 1499,
+                "url": "https://i.pinimg.com/1200x/bc/37/f2/bc37f267142275c441407edc489633e3.jpg"
+              }
+            }
+          },
+          "is_owner": true,
+          "dominant_color": null,
+          "description": "Turn review notes, content ideas, links and deadlines into a tidy posting workflow. Book Content OS Pro keeps the process moving. link in bio #BookReviewers #ARCReaders #BookTok #Bookstagram #BookContent",
+          "is_product": false,
+          "link": null,
+          "pin_metrics": null,
+          "creative_type": "REGULAR",
+          "id": "1038924207808889766",
+          "alt_text": null,
+          "title": "Book Content OS image 5/5 | 08 private tracker public bookshelf",
+          "created_at": "2026-06-24T10:16:52",
+          "parent_pin_id": null,
+          "board_section_id": null,
+          "is_standard": true,
+          "is_removable": false,
+          "board_owner": {
+            "username": "sapiver"
+          },
+          "has_been_promoted": false
+        }
+      }
+    ]
+  },
+  "pinterest": {
+    "media": {
+      "media_id": "3619322404336837888",
+      "media_type": "video",
+      "upload_url": "https://pinterest-media-upload.s3-accelerate.amazonaws.com/",
+      "upload_parameters": {
+        "x-amz-date": "20260624T101653Z",
+        "x-amz-signature": "d41fa971ac4bf80e9b1a317cb2229968bbc113e6c1f500731e9d3f8df55f5183",
+        "x-amz-security-token": "IQoJb3JpZ2luX2VjEGkaCXVzLWVhc3QtMSJHMEUCIQDbrA6QLVDzfDDVRswXQY+lFbv1jfliHYeJbkgL9Wj6MQIgUeTXNFj3/GFRCrpEPUCufW3UK5qaCwTBMQsTAlmtafAqsQUIMhAAGgw5OTgxMzEwMzI5OTAiDAY/jW+2ZAm9ys+SniqOBSjZZBVJj9VCFuahBqqRHDXnNBVNy4WfY+tkDOmEuLZvzz8CHEoDaN85QwPb0Dxw1Yxg7dAg3gAAmXlS8vUhMM8mbPkzenMR6++nVPyoBJO/y2ZlxcXDW0dWW+OfydmH+D0/OZCmjUF0Mu8g1vck+Zn3w79Ik75OTVKRko1zFtpQo25dFbMuX2szFJ9jv+ZFLAmzpPMrqGODJjpZuM9yq2egU5JEWuowX+mlDH3VoDZSrYG27G3lMdvPyLd1TnNgrjIN8qWXFp2dkxrWcycDKQEhgbOfR5UkDaXfSHLhsym28ok7cV0iAM0IK1f8QM8XzIPdClzamqij8T0meUPZzyhLYIGdmt8dq39xWIUpNwfzkyYfT5KQn3ZPiBaroKlhi96nVEn6gGnSoCfBjfuIKRuO22Ll8Vq1Dla702C0Tj0A0dfJ6OUwMbUdqclUxszb5PjAu9ciTYzy8cZDt0KOk8ksGE+lOzTlVV4mGzBguKyAWpXBeq+qrV96HNrtF0+T6J0CQeW7/l3ESQPGg30ongNT1tsMKs5WVvauy7M8h0gqLdl6FQZr2QuF2NC36DftUvWgb8qw6+GJqz1Kahu0ZIA+q0L8Brlrkgq4ZECgXpC9ocQhK96SL4cwPdeb1Rw9I5DEghvx1SI8QforDb7s8UDbgiVsolCw61DcM65u9CB/QKCTpFqSnwioPMWwbTjEO4QSwbqgePlXMx1mRS1QrC9ved95NmGR8akHwoomD6ruo4swZe5hIdk5Z/aXGD/rlgqdhAhr2W4YUrTshY3ppdlHvHqtwScrKpJcMvQKT4+he68B8Q4rP6d8rteR3/FpFW/q0o8UhcHMNAcGZjNRy9hxYs/+Fq693Gc4YJxzEjDKse7RBjqxAdc9RCUSP2yX4XCiDIgLzdmnTc8AqUFXqrg6iV5EOBv1rjqfXMHcovOAnol9OyWzg+kpZ9fvV35u47B2Hdf6qD1TYkECD0jlf63E1OTaeMgITE3IYy36M3t0YSLpRmJBePMjeauiUdAcx+uIhQMeb0KIsOj/RW4BTlqzAyUq12o4K1mkOJcSb+vL3KFSPpqBERKh6bWSiqqAMN8oeH5GQjnQj2p6AbPF7R9IT/FV3RpcUg==",
+        "x-amz-algorithm": "AWS4-HMAC-SHA256",
+        "key": "uploads/65/2b/01/2:video:1038924345197779616:3619322404336837888:vipYd17SHYsckLKoQaw8lm",
+        "policy": "eyJleHBpcmF0aW9uIjoiMjAyNi0wNi0yNlQxMDoxNjo1My4wMDBaIiwiY29uZGl0aW9ucyI6W3siYnVja2V0IjoicGludGVyZXN0LW1lZGlhLXVwbG9hZCJ9LFsic3RhcnRzLXdpdGgiLCIka2V5IiwidXBsb2Fkcy82NS8yYi8wMSJdLHsieC1hbXotY3JlZGVudGlhbCI6IkFTSUE2UVpKNjRPUEE0N0hCVEpLLzIwMjYwNjI0L3VzLWVhc3QtMS9zMy9hd3M0X3JlcXVlc3QifSx7IngtYW16LWFsZ29yaXRobSI6IkFXUzQtSE1BQy1TSEEyNTYifSx7IngtYW16LWRhdGUiOiIyMDI2MDYyNFQxMDE2NTNaIn0sWyJjb250ZW50LWxlbmd0aC1yYW5nZSIsMCw1MzY4NzA5MTIwXSxbImVxIiwiJENvbnRlbnQtVHlwZSIsIm11bHRpcGFydC9mb3JtLWRhdGEiXSx7IngtYW16LXNlY3VyaXR5LXRva2VuIjoiSVFvSmIzSnBaMmx1WDJWakVHa2FDWFZ6TFdWaGMzUXRNU0pITUVVQ0lRRGJyQTZRTFZEemZERFZSc3dYUVkrbEZidjFqZmxpSFllSmJrZ0w5V2o2TVFJZ1VlVFhORmozL0dGUkNycEVQVUN1ZlczVUs1cWFDd1RCTVFzVEFsbXRhZkFxc1FVSU1oQUFHZ3c1T1RneE16RXdNekk1T1RBaURBWS9qVysyWkFtOXlzK1NuaXFPQlNqWlpCVkpqOVZDRnVhaEJxcVJIRFhuTkJWTnk0V2ZZK3RrRE9tRXVMWnZ6ejhDSEVvRGFOODVRd1BiMER4dzFZeGc3ZEFnM2dBQW1YbFM4dlVoTU04bWJQa3plbk1SNisrblZQeW9CSk8veTJabHhjWERXMGRXVytPZnlkbUgrRDAvT1pDbWpVRjBNdThnMXZjaytabjN3NzlJazc1T1RWS1JrbzF6RnRwUW8yNWRGYk11WDJzekZKOWp2K1pGTEFtenBQTXJxR09ESmpwWnVNOXlxMmVnVTVKRVd1b3dYK21sREgzVm9EWlNyWUcyN0czbE1kdlB5TGQxVG5OZ3JqSU44cVdYRnAyZGt4cldjeWNES1FFaGdiT2ZSNVVrRGFYZlNITGhzeW0yOG9rN2NWMGlBTTBJSzFmOFFNOFh6SVBkQ2x6YW1xaWo4VDBtZVVQWnp5aExZSUdkbXQ4ZHEzOXhXSVVwTndmemt5WWZUNUtRbjNaUGlCYXJvS2xoaTk2blZFbjZnR25Tb0NmQmpmdUlLUnVPMjJMbDhWcTFEbGE3MDJDMFRqMEEwZGZKNk9Vd01iVWRxY2xVeHN6YjVQakF1OWNpVFl6eThjWkR0MEtPazhrc0dFK2xPelRsVlY0bUd6Qmd1S3lBV3BYQmVxK3FyVjk2SE5ydEYwK1Q2SjBDUWVXNy9sM0VTUVBHZzMwb25nTlQxdHNNS3M1V1Z2YXV5N004aDBncUxkbDZGUVpyMlF1RjJOQzM2RGZ0VXZXZ2I4cXc2K0dKcXoxS2FodTBaSUErcTBMOEJybHJrZ3E0WkVDZ1hwQzlvY1FoSzk2U0w0Y3dQZGViMVJ3OUk1REVnaHZ4MVNJOFFmb3JEYjdzOFVEYmdpVnNvbEN3NjFEY002NXU5Q0IvUUtDVHBGcVNud2lvUE1Xd2JUakVPNFFTd2JxZ2VQbFhNeDFtUlMxUXJDOXZlZDk1Tm1HUjhha0h3b29tRDZydW80c3daZTVoSWRrNVovYVhHRC9ybGdxZGhBaHIyVzRZVXJUc2hZM3BwZGxIdkhxdHdTY3JLcEpjTXZRS1Q0K2hlNjhCOFE0clA2ZDhydGVSMy9GcEZXL3EwbzhVaGNITU5BY0daak5SeTloeFlzLytGcTY5M0djNFlKeHpFakRLc2U3UkJqcXhBZGM5UkNVU1AyeVg0WENpRElnTHpkbW5UYzhBcVVGWHFyZzZpVjVFT0J2MXJqcWZYTUhjb3ZPQW5vbDlPeVd6ZytrcFo5ZnZWMzV1NDdCMkhkZjZxRDFUWWtFQ0QwamxmNjNFMU9UYWVNZ0lURTNJWXkzNk0zdDBZU0xwUm1KQmVQTWplYXVpVWRBY3grdUloUU1lYjBLSXNPai9SVzRCVGxxekF5VXExMm80SzFta09KY1NiK3ZMM0tGU1BwcUJFUktoNmJXU2lxcUFNTjhvZUg1R1FqblFqMnA2QWJQRjdSOUlUL0ZWM1JwY1VnPT0ifV19",
+        "x-amz-credential": "ASIA6QZJ64OPA47HBTJK/20260624/us-east-1/s3/aws4_request",
+        "Content-Type": "multipart/form-data"
+      }
+    },
+    "last_status": {
+      "media_id": "3619322404336837888",
+      "media_type": "video",
+      "status": "succeeded"
+    },
+    "pin": {
+      "is_standard": true,
+      "id": "1038924207808889790",
+      "is_owner": true,
+      "board_id": "1038924276479876865",
+      "title": "Notes to posts | Book Content OS",
+      "media": {
+        "media_type": "video",
+        "cover_image_url": "https://i.pinimg.com/1200x/e4/7e/90/e47e9062bee4036e2f89ca089e9797ab.jpg",
+        "video_url": null,
+        "video_url_hls": null,
+        "duration": null,
+        "height": null,
+        "width": null,
+        "images": {
+          "150x150": {
+            "width": 150,
+            "height": 150,
+            "url": "https://i.pinimg.com/150x150/e4/7e/90/e47e9062bee4036e2f89ca089e9797ab.jpg"
+          },
+          "400x300": {
+            "width": 400,
+            "height": 300,
+            "url": "https://i.pinimg.com/400x300/e4/7e/90/e47e9062bee4036e2f89ca089e9797ab.jpg"
+          },
+          "600x": {
+            "width": 564,
+            "height": 1002,
+            "url": "https://i.pinimg.com/564x/e4/7e/90/e47e9062bee4036e2f89ca089e9797ab.jpg"
+          },
+          "1200x": {
+            "width": 1080,
+            "height": 1920,
+            "url": "https://i.pinimg.com/1200x/e4/7e/90/e47e9062bee4036e2f89ca089e9797ab.jpg"
+          }
+        }
+      },
+      "has_been_promoted": false,
+      "parent_pin_id": null,
+      "description": "Turn review notes, content ideas, links and deadlines into a tidy posting workflow. Book Content OS Pro keeps the process moving. link in bio #BookReviewers #ARCReaders #BookTok #Bookstagram #BookContent",
+      "board_section_id": null,
+      "dominant_color": null,
+      "is_removable": false,
+      "link": null,
+      "is_product": false,
+      "creative_type": "VIDEO",
+      "alt_text": null,
+      "product_tags": [],
+      "created_at": "2026-06-24T10:18:15",
+      "board_owner": {
+        "username": "sapiver"
+      },
+      "pin_metrics": null
+    }
+  }
+}
