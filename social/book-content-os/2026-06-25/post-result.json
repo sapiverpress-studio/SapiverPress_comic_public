@@ -8,56 +8,56 @@
   "facebook": {
     "failed": true,
     "channel": "Facebook",
-    "error": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AsVudAIIw9o0KwCICqSOtLK\"}}",
+    "error": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AG8mAF0Rtz_5KjOeRClsV12\"}}",
     "note": "Facebook live posting failed. Check token permissions/settings for this channel."
   },
   "pinterest": {
-    "is_owner": true,
-    "pin_metrics": null,
-    "description": "Keep private notes, review wording, links, ARC details and post ideas in one tidy workflow so useful reading thoughts can become usable content. Save this if you plan book reviews, ARC notes, BookTok ideas or book-content posts. link in bio",
-    "is_standard": true,
-    "product_tags": [],
-    "title": "How To Turn Book Notes Into Content Ideas",
-    "board_id": "1038924276479876865",
-    "is_product": false,
-    "board_owner": {
-      "username": "sapiver"
-    },
-    "created_at": "2026-06-25T11:19:05",
+    "created_at": "2026-06-25T19:19:09",
     "alt_text": null,
-    "is_removable": false,
-    "has_been_promoted": false,
+    "parent_pin_id": null,
+    "description": "Keep private notes, review wording, links, ARC details and post ideas in one tidy workflow so useful reading thoughts can become usable content. Save this if you plan book reviews, ARC notes, BookTok ideas or book-content posts. link in bio",
+    "is_product": false,
+    "is_standard": true,
+    "id": "1038924207808938003",
+    "product_tags": [],
     "creative_type": "REGULAR",
-    "id": "1038924207808925442",
-    "link": null,
     "board_section_id": null,
-    "dominant_color": null,
     "media": {
       "media_type": "image",
       "images": {
         "150x150": {
           "width": 150,
           "height": 150,
-          "url": "https://i.pinimg.com/150x150/34/a8/f5/34a8f5fc8510d8350d11afc32fb73ed3.jpg"
+          "url": "https://i.pinimg.com/150x150/f5/e5/4f/f5e54f491068bdfffa539e5dd535d8a3.jpg"
         },
         "400x300": {
           "width": 400,
           "height": 300,
-          "url": "https://i.pinimg.com/400x300/34/a8/f5/34a8f5fc8510d8350d11afc32fb73ed3.jpg"
+          "url": "https://i.pinimg.com/400x300/f5/e5/4f/f5e54f491068bdfffa539e5dd535d8a3.jpg"
         },
         "600x": {
           "width": 564,
-          "height": 1002,
-          "url": "https://i.pinimg.com/564x/34/a8/f5/34a8f5fc8510d8350d11afc32fb73ed3.jpg"
+          "height": 564,
+          "url": "https://i.pinimg.com/564x/f5/e5/4f/f5e54f491068bdfffa539e5dd535d8a3.jpg"
         },
         "1200x": {
-          "width": 864,
-          "height": 1536,
-          "url": "https://i.pinimg.com/1200x/34/a8/f5/34a8f5fc8510d8350d11afc32fb73ed3.jpg"
+          "width": 1200,
+          "height": 1200,
+          "url": "https://i.pinimg.com/1200x/f5/e5/4f/f5e54f491068bdfffa539e5dd535d8a3.jpg"
         }
       }
     },
-    "parent_pin_id": null
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "title": "How To Turn Book Notes Into Content Ideas",
+    "has_been_promoted": false,
+    "pin_metrics": null,
+    "is_removable": false,
+    "dominant_color": null,
+    "board_id": "1038924276479876865",
+    "link": null,
+    "is_owner": true
   },
   "pinterest_video": {
     "prepared": true,
@@ -67,11 +67,11 @@
     "board_name": "Sapiver Press Comic",
     "video": "social/book-content-os/2026-06-25/pinterest_video/book_content_os_video.mp4",
     "source_images": [
-      "social/book-content-os/2026-06-25/pinterest_video/01_01_33478.png",
-      "social/book-content-os/2026-06-25/pinterest_video/02_02_33477.png",
-      "social/book-content-os/2026-06-25/pinterest_video/03_03_33476.png",
-      "social/book-content-os/2026-06-25/pinterest_video/04_04_33475.png",
-      "social/book-content-os/2026-06-25/pinterest_video/05_05_33474.png"
+      "social/book-content-os/2026-06-25/pinterest_video/01_07_33472.png",
+      "social/book-content-os/2026-06-25/pinterest_video/02_08_33471.png",
+      "social/book-content-os/2026-06-25/pinterest_video/03_05_33461.png",
+      "social/book-content-os/2026-06-25/pinterest_video/04_02_links_and_disclosures.png",
+      "social/book-content-os/2026-06-25/pinterest_video/05_09_book_links_deserve_better.png"
     ],
     "title": "How To Turn Book Notes Into Content Ideas\n",
     "caption": "Keep private notes, review wording, links, ARC details and post ideas in one tidy workflow so useful reading thoughts can become usable content.Book Content OS helps organise book notes, review wording, ARC details and content ideas.link in bio#Shorts #BookTok #BookReviewers",
