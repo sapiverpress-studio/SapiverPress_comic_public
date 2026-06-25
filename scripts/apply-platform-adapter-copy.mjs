@@ -16,8 +16,8 @@ const LIVE = {
   facebookFirstComment: path.join(OUT, "facebook_carousel", "first-comment.txt"),
   pinterestTitle: path.join(OUT, "pinterest_pin", "title.txt"),
   pinterestCaption: path.join(OUT, "pinterest_pin", "caption.txt"),
-  pinterestVideoTitle: path.join(OUT, "pinterest_video", "title.txt"),
-  pinterestVideoCaption: path.join(OUT, "pinterest_video", "caption.txt")
+  videoTitle: path.join(OUT, "pinterest_video", "title.txt"),
+  videoCaption: path.join(OUT, "pinterest_video", "caption.txt")
 };
 
 function exists(file) { return fssync.existsSync(file); }
@@ -39,8 +39,8 @@ await copyIfExists(path.join(ADAPTER, "facebook", "post-caption.txt"), LIVE.face
 await copyIfExists(path.join(ADAPTER, "facebook", "first-comment.txt"), LIVE.facebookFirstComment, "facebook_first_comment", applied);
 await copyIfExists(path.join(ADAPTER, "pinterest", "pin-01-title.txt"), LIVE.pinterestTitle, "pinterest_pin_title", applied);
 await copyIfExists(path.join(ADAPTER, "pinterest", "pin-01-description.txt"), LIVE.pinterestCaption, "pinterest_pin_caption", applied);
-await copyIfExists(path.join(ADAPTER, "pinterest", "pin-01-title.txt"), LIVE.pinterestVideoTitle, "pinterest_video_title", applied);
-await copyIfExists(path.join(ADAPTER, "pinterest", "pin-01-description.txt"), LIVE.pinterestVideoCaption, "pinterest_video_caption", applied);
+await copyIfExists(path.join(ADAPTER, "youtube_shorts", "title.txt"), LIVE.videoTitle, "short_video_title", applied);
+await copyIfExists(path.join(ADAPTER, "youtube_shorts", "description.txt"), LIVE.videoCaption, "short_video_caption", applied);
 
 const fbCaption = path.join(ADAPTER, "facebook", "post-caption.txt");
 if (exists(fbCaption)) {
@@ -54,14 +54,7 @@ if (exists(fbCaption)) {
   }
 }
 
-const report = {
-  type: "platform_adapter_live_copy_bridge_v1",
-  material: MATERIAL,
-  date: DATE,
-  purpose: "Copy generated platform-adapted text into the existing files used by the live posting scripts, while leaving the posting scripts' fallback behaviour intact.",
-  applied_at: new Date().toISOString(),
-  applied
-};
+const report = { type: "platform_adapter_live_copy_bridge_v1", material: MATERIAL, date: DATE, applied_at: new Date().toISOString(), applied };
 await write(path.join(ADAPTER, "applied-live-copy.json"), JSON.stringify(report, null, 2));
 console.log(`Applied platform adapter copy for ${MATERIAL} ${DATE}`);
 for (const item of applied) console.log(`${item.applied ? "APPLIED" : "SKIPPED"}: ${item.label}`);
