@@ -64,16 +64,16 @@
   "cluster": {
     "id": "book-content-os-2026-06-25",
     "product": "Book Content OS Lite + Pro",
-    "base_idea": "A tidy book-content workflow for 33512",
+    "base_idea": "A tidy book-content workflow for 33506",
     "source_subjects": [
-      "33512",
-      "33511",
-      "33510",
-      "33509",
-      "33508"
+      "33506",
+      "33505",
+      "33504",
+      "33503",
+      "33502"
     ],
-    "source_title": "Keep links and disclosures tidy",
-    "source_caption": "Track affiliate or bookshop links and disclosure-risk checks for each book project before you post. Cleaner admin now, clearer posting later.",
+    "source_title": "Move from Lite to Pro",
+    "source_caption": "Export a JSON backup or transfer code from Lite, then import into Pro and keep going. Start simple, then upgrade the workflow when needed.",
     "cta_text": "link in bio",
     "angles": {
       "list": {
