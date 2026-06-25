@@ -11,6 +11,8 @@ on:
         description: "live or dry_run"
         required: false
         default: "live"
+  schedule:
+    - cron: "15 17 * * *"
 
 permissions:
   contents: write
@@ -25,14 +27,23 @@ jobs:
       - name: Set run options
         shell: bash
         run: |
-          if [ -n "${{ github.event.inputs.date_override }}" ]; then
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ github.event.inputs.date_override }}" ]; then
             echo "DATE_OVERRIDE=${{ github.event.inputs.date_override }}" >> "$GITHUB_ENV"
           else
             echo "DATE_OVERRIDE=$(TZ=Europe/London date +%F)" >> "$GITHUB_ENV"
           fi
-          echo "BOOK_CONTENT_OS_SOCIAL_POST_MODE=${{ github.event.inputs.post_mode || 'live' }}" >> "$GITHUB_ENV"
-          echo "BOOK_CONTENT_OS_PINTEREST_VIDEO_POST_MODE=${{ github.event.inputs.post_mode || 'live' }}" >> "$GITHUB_ENV"
-          echo "YOUTUBE_POST_MODE=${{ github.event.inputs.post_mode || 'live' }}" >> "$GITHUB_ENV"
+
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            MODE="live"
+          elif [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            MODE="${{ github.event.inputs.post_mode || 'live' }}"
+          else
+            MODE="dry_run"
+          fi
+
+          echo "BOOK_CONTENT_OS_SOCIAL_POST_MODE=${MODE}" >> "$GITHUB_ENV"
+          echo "BOOK_CONTENT_OS_PINTEREST_VIDEO_POST_MODE=${MODE}" >> "$GITHUB_ENV"
+          echo "YOUTUBE_POST_MODE=${MODE}" >> "$GITHUB_ENV"
 
       - name: Ensure media tools are available
         shell: bash
