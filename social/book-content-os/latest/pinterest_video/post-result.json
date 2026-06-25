@@ -1,0 +1,55 @@
+{
+  "date": "2026-06-25",
+  "mode": "dry_run",
+  "type": "book_content_os_pinterest_image_pins_and_video_post_v1",
+  "cta_text": "link in bio",
+  "board_id": "1038924276479876865",
+  "board_name": "Sapiver Press Comic",
+  "video": "social/book-content-os/2026-06-25/pinterest_video/book_content_os_video.mp4",
+  "source_images": [
+    "social/book-content-os/2026-06-25/pinterest_video/01_02_33512.png",
+    "social/book-content-os/2026-06-25/pinterest_video/02_03_33511.png",
+    "social/book-content-os/2026-06-25/pinterest_video/03_04_33510.png",
+    "social/book-content-os/2026-06-25/pinterest_video/04_05_33509.png",
+    "social/book-content-os/2026-06-25/pinterest_video/05_06_33508.png"
+  ],
+  "image_pin_sources": [
+    "social/book-content-os/2026-06-25/facebook_carousel/01_02_33512.png",
+    "social/book-content-os/2026-06-25/facebook_carousel/02_03_33511.png",
+    "social/book-content-os/2026-06-25/facebook_carousel/03_04_33510.png",
+    "social/book-content-os/2026-06-25/facebook_carousel/04_05_33509.png",
+    "social/book-content-os/2026-06-25/facebook_carousel/05_06_33508.png"
+  ],
+  "title": "How To Turn Book Notes Into Content Ideas\n",
+  "caption": "Keep private notes, review wording, links, ARC details and post ideas in one tidy workflow so useful reading thoughts can become usable content.Book Content OS helps organise book notes, review wording, ARC details and content ideas.link in bio#Shorts #BookTok #BookReviewers",
+  "first_comment": "link in bio\n\n#BookReviewers #ARCReaders #BookTok #Bookstagram\n",
+  "dry_run": true,
+  "note": "Prepared Pinterest image pins and video post. Set BOOK_CONTENT_OS_PINTEREST_VIDEO_POST_MODE=live to upload.",
+  "image_pins": {
+    "dry_run": true,
+    "skipped": false,
+    "limit": 5,
+    "pins": [
+      {
+        "source_image": "social/book-content-os/2026-06-25/facebook_carousel/01_02_33512.png",
+        "title": "Book Content OS image 1/5 | 02 33512"
+      },
+      {
+        "source_image": "social/book-content-os/2026-06-25/facebook_carousel/02_03_33511.png",
+        "title": "Book Content OS image 2/5 | 03 33511"
+      },
+      {
+        "source_image": "social/book-content-os/2026-06-25/facebook_carousel/03_04_33510.png",
+        "title": "Book Content OS image 3/5 | 04 33510"
+      },
+      {
+        "source_image": "social/book-content-os/2026-06-25/facebook_carousel/04_05_33509.png",
+        "title": "Book Content OS image 4/5 | 05 33509"
+      },
+      {
+        "source_image": "social/book-content-os/2026-06-25/facebook_carousel/05_06_33508.png",
+        "title": "Book Content OS image 5/5 | 06 33508"
+      }
+    ]
+  }
+}
