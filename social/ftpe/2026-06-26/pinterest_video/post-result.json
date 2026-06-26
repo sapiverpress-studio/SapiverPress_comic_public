@@ -1,0 +1,370 @@
+{
+  "date": "2026-06-26",
+  "mode": "live",
+  "type": "ftpe_pinterest_image_pins_and_video_post_v2",
+  "cta": "https://sapiverpress.etsy.com",
+  "board_id": "1038924276479876865",
+  "board_name": "Sapiver Press Comic",
+  "video": "social/ftpe/2026-06-26/pinterest_video/pinterest_video.mp4",
+  "source_images": [
+    "social/ftpe/2026-06-26/pinterest_video/01_FTPE_SET_14_02_beginners_who_want_structure.png",
+    "social/ftpe/2026-06-26/pinterest_video/02_FTPE_SET_14_03_publish_under_your_own_account.png",
+    "social/ftpe/2026-06-26/pinterest_video/03_FTPE_SET_14_04_digital_product_not_shipped.png",
+    "social/ftpe/2026-06-26/pinterest_video/04_FTPE_SET_14_05_first_attempt_starter_pack.png",
+    "social/ftpe/2026-06-26/pinterest_video/05_FTPE_SET_14_06_third_party_workflow_pack.png"
+  ],
+  "image_pin_sources": [
+    "social/ftpe/2026-06-26/facebook_carousel/01_FTPE_SET_14_02_beginners_who_want_structure.png",
+    "social/ftpe/2026-06-26/facebook_carousel/02_FTPE_SET_14_03_publish_under_your_own_account.png",
+    "social/ftpe/2026-06-26/facebook_carousel/03_FTPE_SET_14_04_digital_product_not_shipped.png",
+    "social/ftpe/2026-06-26/facebook_carousel/04_FTPE_SET_14_05_first_attempt_starter_pack.png",
+    "social/ftpe/2026-06-26/facebook_carousel/05_FTPE_SET_14_06_third_party_workflow_pack.png"
+  ],
+  "title": "How To Prepare Your First KDP Sudoku Upload\n",
+  "caption": "Start by organising the interior, cover, preview checks, account setup notes and licence guidance before you move into the upload screens.Sapiver Press: https://sapiverpress.etsy.comDigital download only. No guaranteed KDP approval, sales or income. Not affiliated with Amazon/KDP.#Shorts #SelfPublishing #AmazonKDP",
+  "first_comment": "More from Sapiver Press: https://sapiverpress.etsy.com\n\nFact source: Publishing Facts 207\n\n#AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks\n",
+  "dry_run": false,
+  "image_pins": {
+    "dry_run": false,
+    "skipped": false,
+    "limit": 5,
+    "pins": [
+      {
+        "source_image": "social/ftpe/2026-06-26/facebook_carousel/01_FTPE_SET_14_02_beginners_who_want_structure.png",
+        "title": "Sapiver Press daily image 1/5 | beginners who want structure",
+        "pin": {
+          "board_id": "1038924276479876865",
+          "is_owner": true,
+          "media": {
+            "media_type": "image",
+            "images": {
+              "150x150": {
+                "width": 150,
+                "height": 150,
+                "url": "https://i.pinimg.com/150x150/08/87/d8/0887d8075045e1dec7b5e4349f0ab4b0.jpg"
+              },
+              "400x300": {
+                "width": 400,
+                "height": 300,
+                "url": "https://i.pinimg.com/400x300/08/87/d8/0887d8075045e1dec7b5e4349f0ab4b0.jpg"
+              },
+              "600x": {
+                "width": 564,
+                "height": 846,
+                "url": "https://i.pinimg.com/564x/08/87/d8/0887d8075045e1dec7b5e4349f0ab4b0.jpg"
+              },
+              "1200x": {
+                "width": 1024,
+                "height": 1536,
+                "url": "https://i.pinimg.com/1200x/08/87/d8/0887d8075045e1dec7b5e4349f0ab4b0.jpg"
+              }
+            }
+          },
+          "product_tags": [],
+          "board_owner": {
+            "username": "sapiver"
+          },
+          "link": "https://sapiverpress.etsy.com/",
+          "is_standard": true,
+          "alt_text": null,
+          "parent_pin_id": null,
+          "title": "Sapiver Press daily image 1/5 | beginners who want structure",
+          "board_section_id": null,
+          "dominant_color": "#f1eae9",
+          "creative_type": "REGULAR",
+          "id": "1038924207808955214",
+          "created_at": "2026-06-26T09:03:07",
+          "description": "Start by organising the interior, cover, preview checks, account setup notes and licence guidance before you move into the upload screens.Sapiver Press: https://sapiverpress.etsy.comDigital download only. No guaranteed KDP approval, sales or income. Not affiliated with Amazon/KDP.#Shorts #SelfPublishing #AmazonKDP",
+          "is_removable": false,
+          "has_been_promoted": false,
+          "pin_metrics": null,
+          "is_product": false
+        }
+      },
+      {
+        "source_image": "social/ftpe/2026-06-26/facebook_carousel/02_FTPE_SET_14_03_publish_under_your_own_account.png",
+        "title": "Sapiver Press daily image 2/5 | publish under your own account",
+        "pin": {
+          "product_tags": [],
+          "id": "1038924207808955216",
+          "board_owner": {
+            "username": "sapiver"
+          },
+          "title": "Sapiver Press daily image 2/5 | publish under your own account",
+          "is_owner": true,
+          "creative_type": "REGULAR",
+          "has_been_promoted": false,
+          "parent_pin_id": null,
+          "is_standard": true,
+          "is_removable": false,
+          "link": "https://sapiverpress.etsy.com/",
+          "board_id": "1038924276479876865",
+          "is_product": false,
+          "board_section_id": null,
+          "media": {
+            "media_type": "image",
+            "images": {
+              "150x150": {
+                "width": 150,
+                "height": 150,
+                "url": "https://i.pinimg.com/150x150/b9/ea/9d/b9ea9d505512e18d7a9ca721a3c8ea26.jpg"
+              },
+              "400x300": {
+                "width": 400,
+                "height": 300,
+                "url": "https://i.pinimg.com/400x300/b9/ea/9d/b9ea9d505512e18d7a9ca721a3c8ea26.jpg"
+              },
+              "600x": {
+                "width": 564,
+                "height": 846,
+                "url": "https://i.pinimg.com/564x/b9/ea/9d/b9ea9d505512e18d7a9ca721a3c8ea26.jpg"
+              },
+              "1200x": {
+                "width": 1024,
+                "height": 1536,
+                "url": "https://i.pinimg.com/1200x/b9/ea/9d/b9ea9d505512e18d7a9ca721a3c8ea26.jpg"
+              }
+            }
+          },
+          "created_at": "2026-06-26T09:03:07",
+          "description": "Start by organising the interior, cover, preview checks, account setup notes and licence guidance before you move into the upload screens.Sapiver Press: https://sapiverpress.etsy.comDigital download only. No guaranteed KDP approval, sales or income. Not affiliated with Amazon/KDP.#Shorts #SelfPublishing #AmazonKDP",
+          "pin_metrics": null,
+          "alt_text": null,
+          "dominant_color": "#ede7e5"
+        }
+      },
+      {
+        "source_image": "social/ftpe/2026-06-26/facebook_carousel/03_FTPE_SET_14_04_digital_product_not_shipped.png",
+        "title": "Sapiver Press daily image 3/5 | digital product not shipped",
+        "pin": {
+          "media": {
+            "media_type": "image",
+            "images": {
+              "150x150": {
+                "width": 150,
+                "height": 150,
+                "url": "https://i.pinimg.com/150x150/24/fb/ca/24fbca93f928b99ded1f31eeaba167e7.jpg"
+              },
+              "400x300": {
+                "width": 400,
+                "height": 300,
+                "url": "https://i.pinimg.com/400x300/24/fb/ca/24fbca93f928b99ded1f31eeaba167e7.jpg"
+              },
+              "600x": {
+                "width": 564,
+                "height": 846,
+                "url": "https://i.pinimg.com/564x/24/fb/ca/24fbca93f928b99ded1f31eeaba167e7.jpg"
+              },
+              "1200x": {
+                "width": 1024,
+                "height": 1536,
+                "url": "https://i.pinimg.com/1200x/24/fb/ca/24fbca93f928b99ded1f31eeaba167e7.jpg"
+              }
+            }
+          },
+          "parent_pin_id": null,
+          "link": "https://sapiverpress.etsy.com/",
+          "is_standard": true,
+          "id": "1038924207808955217",
+          "alt_text": null,
+          "created_at": "2026-06-26T09:03:08",
+          "is_removable": false,
+          "description": "Start by organising the interior, cover, preview checks, account setup notes and licence guidance before you move into the upload screens.Sapiver Press: https://sapiverpress.etsy.comDigital download only. No guaranteed KDP approval, sales or income. Not affiliated with Amazon/KDP.#Shorts #SelfPublishing #AmazonKDP",
+          "product_tags": [],
+          "dominant_color": null,
+          "is_product": false,
+          "pin_metrics": null,
+          "creative_type": "REGULAR",
+          "is_owner": true,
+          "board_section_id": null,
+          "title": "Sapiver Press daily image 3/5 | digital product not shipped",
+          "board_id": "1038924276479876865",
+          "has_been_promoted": false,
+          "board_owner": {
+            "username": "sapiver"
+          }
+        }
+      },
+      {
+        "source_image": "social/ftpe/2026-06-26/facebook_carousel/04_FTPE_SET_14_05_first_attempt_starter_pack.png",
+        "title": "Sapiver Press daily image 4/5 | first attempt starter pack",
+        "pin": {
+          "media": {
+            "media_type": "image",
+            "images": {
+              "150x150": {
+                "width": 150,
+                "height": 150,
+                "url": "https://i.pinimg.com/150x150/bc/67/19/bc6719de7cd8bab1ac28dc584871a734.jpg"
+              },
+              "400x300": {
+                "width": 400,
+                "height": 300,
+                "url": "https://i.pinimg.com/400x300/bc/67/19/bc6719de7cd8bab1ac28dc584871a734.jpg"
+              },
+              "600x": {
+                "width": 564,
+                "height": 846,
+                "url": "https://i.pinimg.com/564x/bc/67/19/bc6719de7cd8bab1ac28dc584871a734.jpg"
+              },
+              "1200x": {
+                "width": 1024,
+                "height": 1536,
+                "url": "https://i.pinimg.com/1200x/bc/67/19/bc6719de7cd8bab1ac28dc584871a734.jpg"
+              }
+            }
+          },
+          "is_removable": false,
+          "has_been_promoted": false,
+          "board_id": "1038924276479876865",
+          "is_standard": true,
+          "dominant_color": "#eeebe9",
+          "title": "Sapiver Press daily image 4/5 | first attempt starter pack",
+          "board_owner": {
+            "username": "sapiver"
+          },
+          "product_tags": [],
+          "created_at": "2026-06-26T09:03:09",
+          "creative_type": "REGULAR",
+          "is_owner": true,
+          "is_product": false,
+          "description": "Start by organising the interior, cover, preview checks, account setup notes and licence guidance before you move into the upload screens.Sapiver Press: https://sapiverpress.etsy.comDigital download only. No guaranteed KDP approval, sales or income. Not affiliated with Amazon/KDP.#Shorts #SelfPublishing #AmazonKDP",
+          "id": "1038924207808955219",
+          "alt_text": null,
+          "link": "https://sapiverpress.etsy.com/",
+          "parent_pin_id": null,
+          "board_section_id": null,
+          "pin_metrics": null
+        }
+      },
+      {
+        "source_image": "social/ftpe/2026-06-26/facebook_carousel/05_FTPE_SET_14_06_third_party_workflow_pack.png",
+        "title": "Sapiver Press daily image 5/5 | third party workflow pack",
+        "pin": {
+          "media": {
+            "media_type": "image",
+            "images": {
+              "150x150": {
+                "width": 150,
+                "height": 150,
+                "url": "https://i.pinimg.com/150x150/fb/d0/77/fbd0774faa95e18645a06b67810507ed.jpg"
+              },
+              "400x300": {
+                "width": 400,
+                "height": 300,
+                "url": "https://i.pinimg.com/400x300/fb/d0/77/fbd0774faa95e18645a06b67810507ed.jpg"
+              },
+              "600x": {
+                "width": 564,
+                "height": 846,
+                "url": "https://i.pinimg.com/564x/fb/d0/77/fbd0774faa95e18645a06b67810507ed.jpg"
+              },
+              "1200x": {
+                "width": 1024,
+                "height": 1536,
+                "url": "https://i.pinimg.com/1200x/fb/d0/77/fbd0774faa95e18645a06b67810507ed.jpg"
+              }
+            }
+          },
+          "pin_metrics": null,
+          "is_standard": true,
+          "is_removable": false,
+          "title": "Sapiver Press daily image 5/5 | third party workflow pack",
+          "product_tags": [],
+          "created_at": "2026-06-26T09:03:10",
+          "description": "Start by organising the interior, cover, preview checks, account setup notes and licence guidance before you move into the upload screens.Sapiver Press: https://sapiverpress.etsy.comDigital download only. No guaranteed KDP approval, sales or income. Not affiliated with Amazon/KDP.#Shorts #SelfPublishing #AmazonKDP",
+          "id": "1038924207808955220",
+          "is_product": false,
+          "board_owner": {
+            "username": "sapiver"
+          },
+          "parent_pin_id": null,
+          "board_section_id": null,
+          "creative_type": "REGULAR",
+          "alt_text": null,
+          "has_been_promoted": false,
+          "is_owner": true,
+          "board_id": "1038924276479876865",
+          "link": "https://sapiverpress.etsy.com/",
+          "dominant_color": "#f0ecea"
+        }
+      }
+    ]
+  },
+  "pinterest": {
+    "media": {
+      "media_id": "3624972237822945216",
+      "media_type": "video",
+      "upload_url": "https://pinterest-media-upload.s3-accelerate.amazonaws.com/",
+      "upload_parameters": {
+        "x-amz-date": "20260626T090311Z",
+        "x-amz-signature": "43f5cead62316a9ec956086034f7e7e4bfbc54d16c5902fd3a7dd7ae1c180541",
+        "x-amz-security-token": "IQoJb3JpZ2luX2VjEJn//////////wEaCXVzLWVhc3QtMSJIMEYCIQC4/5Sg9EfrQL2HgIV2eiL7jvU5E+E7afCrsUgD4m7JpQIhAJDvZlPjS47IiczaPRozay3DuBFi8vWd/OT7JJeYu0dEKrMFCGEQABoMOTk4MTMxMDMyOTkwIgz11wZwYmFYBDpnqb4qkAX2IHOkfo35twx6HPHNGYvmtv+AauCpJgCjSHwba0u6qR2B3o8pdGB5thvrCy/XqqRTEK4BYZEgA4VaQQHhBR+urXIZDApzXWaM5cELtQOFCM4D+Og+ElxpYKEP5ETw3Sms/TFczR6WOnbytfOG81WWlKXqlKFzXyfeDelz14B1RQvt9Lc4+//iKswjEegwczivOT/DSc5YPhHAzkY50MDoM98hvf7ZwJ1jAKdDWvI/dAe/9jaLQkPQsWZD0nZz0sh2bkiNw1NmuZjhkQte2RyXafgSAbGomPSdhiMJ1hn3CV2c/KJ6hCvb0eHEYNbyYsLYuqoD+EJTb4/swBk86nhzlN5cuvTZ1cfDuIrzdFRNBDOJBiAXvZAjmAk+Ot/sN/1B7Q10WHTkByQ+fJTurrodEY2XQjoWWiGG33FvOlXPMF0Dj+JdBUpbfCmwj1EthNfmXDPPJKRz0NRs/MeG/0kfn4+6Bi3H51xHowWhfKABWlHee7MDHds1GMnF4RgN79GxZqbLaJrI3xkSme6e+H+WLUSF6xrGS0OFmBSXfgXdkdVe4OiicSPHrtP2wTTsZ5alexYeEWnV5H4l0i8AiUWrBEMJY+smx87Yk5Rrx3U7sgo4eh28i/XyUkIiK6gntkdmDlqpAhYyJKDZiNeisfSXeWWWeR2Hv+HG5mLILX6AB4U/4mdiBA84nTXQu2UmimudKVPICE/VnYPhO2ApgJKoptGgvT29ueOGBNYwivISJcM3+fPkorhfCHRXNqMIgxIQEMD5Oq767NHUvrrkXVvHV+ZsTX4Hzut55mAM0NcJAjqVGHUqLqe7yBu2tVUXgeVJwjZ1tjhk+ShlI21/KR0k+9LeSduZcf899Z7bzIW9QjCN6vjRBjqwAYz5KBHt6wTHOFNKdYEmxpsgZyqUCaQwZYa701QT7hjxOQJxmx9e15XO6k4yd8638apXRRrQDlnoALKrnH6sX2SObSiMuUoszpPen3L5thtAUZAXFym9B9RTc3NyFVCIFwO3N/+r1qD5uITA7Gl+0Syw+8IJqPp10qUH5+cxDWT59K54WUdYJMfpTyNwysQOB2/TcwxjN4fT7qc+PzmyHfkeDMw/+2YPkNU8gGnpMyBC",
+        "x-amz-algorithm": "AWS4-HMAC-SHA256",
+        "key": "uploads/94/56/89/2:video:1038924345197779616:3624972237822945216:vipyt8NgwlFIQQ8of7hbN1",
+        "policy": "eyJleHBpcmF0aW9uIjoiMjAyNi0wNi0yOFQwOTowMzoxMS4wMDBaIiwiY29uZGl0aW9ucyI6W3siYnVja2V0IjoicGludGVyZXN0LW1lZGlhLXVwbG9hZCJ9LFsic3RhcnRzLXdpdGgiLCIka2V5IiwidXBsb2Fkcy85NC81Ni84OSJdLHsieC1hbXotY3JlZGVudGlhbCI6IkFTSUE2UVpKNjRPUEZIN0VaQTc3LzIwMjYwNjI2L3VzLWVhc3QtMS9zMy9hd3M0X3JlcXVlc3QifSx7IngtYW16LWFsZ29yaXRobSI6IkFXUzQtSE1BQy1TSEEyNTYifSx7IngtYW16LWRhdGUiOiIyMDI2MDYyNlQwOTAzMTFaIn0sWyJjb250ZW50LWxlbmd0aC1yYW5nZSIsMCw1MzY4NzA5MTIwXSxbImVxIiwiJENvbnRlbnQtVHlwZSIsIm11bHRpcGFydC9mb3JtLWRhdGEiXSx7IngtYW16LXNlY3VyaXR5LXRva2VuIjoiSVFvSmIzSnBaMmx1WDJWakVKbi8vLy8vLy8vLy93RWFDWFZ6TFdWaGMzUXRNU0pJTUVZQ0lRQzQvNVNnOUVmclFMMkhnSVYyZWlMN2p2VTVFK0U3YWZDcnNVZ0Q0bTdKcFFJaEFKRHZabFBqUzQ3SWljemFQUm96YXkzRHVCRmk4dldkL09UN0pKZVl1MGRFS3JNRkNHRVFBQm9NT1RrNE1UTXhNRE15T1Rrd0lnejExd1p3WW1GWUJEcG5xYjRxa0FYMklIT2tmbzM1dHd4NkhQSE5HWXZtdHYrQWF1Q3BKZ0NqU0h3YmEwdTZxUjJCM284cGRHQjV0aHZyQ3kvWHFxUlRFSzRCWVpFZ0E0VmFRUUhoQlIrdXJYSVpEQXB6WFdhTTVjRUx0UU9GQ000RCtPZytFbHhwWUtFUDVFVHczU21zL1RGY3pSNldPbmJ5dGZPRzgxV1dsS1hxbEtGelh5ZmVEZWx6MTRCMVJRdnQ5TGM0Ky8vaUtzd2pFZWd3Y3ppdk9UL0RTYzVZUGhIQXprWTUwTURvTTk4aHZmN1p3SjFqQUtkRFd2SS9kQWUvOWphTFFrUFFzV1pEMG5aejBzaDJia2lOdzFObXVaamhrUXRlMlJ5WGFmZ1NBYkdvbVBTZGhpTUoxaG4zQ1YyYy9LSjZoQ3ZiMGVIRVlOYnlZc0xZdXFvRCtFSlRiNC9zd0JrODZuaHpsTjVjdXZUWjFjZkR1SXJ6ZEZSTkJET0pCaUFYdlpBam1BaytPdC9zTi8xQjdRMTBXSFRrQnlRK2ZKVHVycm9kRVkyWFFqb1dXaUdHMzNGdk9sWFBNRjBEaitKZEJVcGJmQ213ajFFdGhOZm1YRFBQSktSejBOUnMvTWVHLzBrZm40KzZCaTNINTF4SG93V2hmS0FCV2xIZWU3TURIZHMxR01uRjRSZ043OUd4WnFiTGFKckkzeGtTbWU2ZStIK1dMVVNGNnhyR1MwT0ZtQlNYZmdYZGtkVmU0T2lpY1NQSHJ0UDJ3VFRzWjVhbGV4WWVFV25WNUg0bDBpOEFpVVdyQkVNSlkrc214ODdZazVScngzVTdzZ280ZWgyOGkvWHlVa0lpSzZnbnRrZG1EbHFwQWhZeUpLRFppTmVpc2ZTWGVXV1dlUjJIditIRzVtTElMWDZBQjRVLzRtZGlCQTg0blRYUXUyVW1pbXVkS1ZQSUNFL1ZuWVBoTzJBcGdKS29wdEdndlQyOXVlT0dCTll3aXZJU0pjTTMrZlBrb3JoZkNIUlhOcU1JZ3hJUUVNRDVPcTc2N05IVXZycmtYVnZIVitac1RYNEh6dXQ1NW1BTTBOY0pBanFWR0hVcUxxZTd5QnUydFZVWGdlVkp3aloxdGpoaytTaGxJMjEvS1Iways5TGVTZHVaY2Y4OTlaN2J6SVc5UWpDTjZ2alJCanF3QVl6NUtCSHQ2d1RIT0ZOS2RZRW14cHNnWnlxVUNhUXdaWWE3MDFRVDdoanhPUUp4bXg5ZTE1WE82azR5ZDg2MzhhcFhSUnJRRGxub0FMS3JuSDZzWDJTT2JTaU11VW9zenBQZW4zTDV0aHRBVVpBWEZ5bTlCOVJUYzNOeUZWQ0lGd08zTi8rcjFxRDV1SVRBN0dsKzBTeXcrOElKcVBwMTBxVUg1K2N4RFdUNTlLNTRXVWRZSk1mcFR5Tnd5c1FPQjIvVGN3eGpONGZUN3FjK1B6bXlIZmtlRE13LysyWVBrTlU4Z0ducE15QkMifV19",
+        "x-amz-credential": "ASIA6QZJ64OPFH7EZA77/20260626/us-east-1/s3/aws4_request",
+        "Content-Type": "multipart/form-data"
+      }
+    },
+    "last_status": {
+      "media_id": "3624972237822945216",
+      "media_type": "video",
+      "status": "succeeded"
+    },
+    "pin": {
+      "id": "1038924207808955248",
+      "link": "https://sapiverpress.etsy.com/",
+      "alt_text": null,
+      "board_owner": {
+        "username": "sapiver"
+      },
+      "created_at": "2026-06-26T09:04:12",
+      "is_standard": true,
+      "media": {
+        "media_type": "video",
+        "cover_image_url": "https://i.pinimg.com/1200x/fc/c3/3b/fcc33b55a6b5629dceedfdb67f6a5c18.jpg",
+        "video_url": null,
+        "video_url_hls": null,
+        "duration": null,
+        "height": null,
+        "width": null,
+        "images": {
+          "150x150": {
+            "width": 150,
+            "height": 150,
+            "url": "https://i.pinimg.com/150x150/fc/c3/3b/fcc33b55a6b5629dceedfdb67f6a5c18.jpg"
+          },
+          "400x300": {
+            "width": 400,
+            "height": 300,
+            "url": "https://i.pinimg.com/400x300/fc/c3/3b/fcc33b55a6b5629dceedfdb67f6a5c18.jpg"
+          },
+          "600x": {
+            "width": 564,
+            "height": 1002,
+            "url": "https://i.pinimg.com/564x/fc/c3/3b/fcc33b55a6b5629dceedfdb67f6a5c18.jpg"
+          },
+          "1200x": {
+            "width": 1080,
+            "height": 1920,
+            "url": "https://i.pinimg.com/1200x/fc/c3/3b/fcc33b55a6b5629dceedfdb67f6a5c18.jpg"
+          }
+        }
+      },
+      "dominant_color": null,
+      "is_product": false,
+      "product_tags": [],
+      "board_section_id": null,
+      "has_been_promoted": false,
+      "pin_metrics": null,
+      "board_id": "1038924276479876865",
+      "is_removable": false,
+      "title": "How To Prepare Your First KDP Sudoku Upload",
+      "parent_pin_id": null,
+      "description": "Start by organising the interior, cover, preview checks, account setup notes and licence guidance before you move into the upload screens.Sapiver Press: https://sapiverpress.etsy.comDigital download only. No guaranteed KDP approval, sales or income. Not affiliated with Amazon/KDP.#Shorts #SelfPublishing #AmazonKDP",
+      "is_owner": true,
+      "creative_type": "VIDEO"
+    }
+  }
+}
