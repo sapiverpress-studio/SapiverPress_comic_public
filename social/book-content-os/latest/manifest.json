@@ -5,28 +5,27 @@
   "product": "Book Content OS Lite + Pro",
   "asset_group": "mixed_book_content_os_assets_no_repeat",
   "asset_groups": [
-    "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_2",
     "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3"
   ],
   "asset_group_count": 5,
   "asset_group_image_count": 48,
   "subjects": [
-    "33505",
-    "33504",
-    "33503",
-    "33502",
-    "33501"
+    "33499",
+    "33498",
+    "33497",
+    "33496",
+    "33495"
   ],
   "copy": {
-    "id": "bcos_027",
-    "title": "Simple local workflow",
-    "caption": "Book Content OS is a local-first browser app with manual backup/import. It is made for book content admin without another cloud account.",
+    "id": "bcos_028",
+    "title": "Review workflow reset",
+    "caption": "Use Book Content OS to stop tracking one review across four places. Notes, ARC dates and content ideas should live together.",
     "first_comment": "link in bio",
     "source": "book_content_os_social_posts",
     "raw": {
-      "id": "bcos_027",
-      "title": "Simple local workflow",
-      "caption": "Book Content OS is a local-first browser app with manual backup/import. It is made for book content admin without another cloud account.",
+      "id": "bcos_028",
+      "title": "Review workflow reset",
+      "caption": "Use Book Content OS to stop tracking one review across four places. Notes, ARC dates and content ideas should live together.",
       "first_comment": "link in bio"
     }
   },
@@ -36,7 +35,7 @@
       "images": {
         "cycle": 2,
         "pool_size": 48,
-        "used_count": 12,
+        "used_count": 18,
         "used": [
           "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_2/01_33513.png",
           "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_2/02_33512.png",
@@ -49,23 +48,29 @@
           "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_2/10_33504.png",
           "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/01_33503.png",
           "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/02_33502.png",
-          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/03_33501.png"
+          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/03_33501.png",
+          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/04_33500.png",
+          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/05_33499.png",
+          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/06_33498.png",
+          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/07_33497.png",
+          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/08_33496.png",
+          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/09_33495.png"
         ],
         "exhausted_this_run": false,
         "last_selected": [
-          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_2/08_33506.png",
-          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_2/09_33505.png",
-          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_2/10_33504.png",
-          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/01_33503.png",
-          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/02_33502.png",
-          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/03_33501.png"
+          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/04_33500.png",
+          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/05_33499.png",
+          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/06_33498.png",
+          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/07_33497.png",
+          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/08_33496.png",
+          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/09_33495.png"
         ],
-        "updated_at": "2026-06-26T19:04:26.991Z"
+        "updated_at": "2026-06-26T20:49:10.448Z"
       },
       "copy": {
         "cycle": 1,
         "pool_size": 30,
-        "used_count": 11,
+        "used_count": 12,
         "used": [
           "bcos_017",
           "bcos_018",
@@ -77,13 +82,14 @@
           "bcos_024",
           "bcos_025",
           "bcos_026",
-          "bcos_027"
+          "bcos_027",
+          "bcos_028"
         ],
         "exhausted_this_run": false,
         "last_selected": [
-          "bcos_027"
+          "bcos_028"
         ],
-        "updated_at": "2026-06-26T19:04:27.051Z"
+        "updated_at": "2026-06-26T20:49:10.455Z"
       }
     },
     "rule": "No image or copy row is reused until its own pool is exhausted; then that pool loops."
@@ -95,7 +101,7 @@
     "limitation": "This removes ordinary metadata; it cannot guarantee removal of invisible AI watermarks embedded in pixels."
   },
   "pinterest": {
-    "image": "social/book-content-os/2026-06-26/pinterest_pin/01_08_33506.png",
+    "image": "social/book-content-os/2026-06-26/pinterest_pin/01_04_33500.png",
     "title": "pinterest_pin/title.txt",
     "caption": "pinterest_pin/caption.txt",
     "first_comment": "pinterest_pin/first-comment.txt"
@@ -103,11 +109,11 @@
   "pinterest_video": {
     "video": "social/book-content-os/2026-06-26/pinterest_video/book_content_os_video.mp4",
     "source_images": [
-      "social/book-content-os/2026-06-26/pinterest_video/01_09_33505.png",
-      "social/book-content-os/2026-06-26/pinterest_video/02_10_33504.png",
-      "social/book-content-os/2026-06-26/pinterest_video/03_01_33503.png",
-      "social/book-content-os/2026-06-26/pinterest_video/04_02_33502.png",
-      "social/book-content-os/2026-06-26/pinterest_video/05_03_33501.png"
+      "social/book-content-os/2026-06-26/pinterest_video/01_05_33499.png",
+      "social/book-content-os/2026-06-26/pinterest_video/02_06_33498.png",
+      "social/book-content-os/2026-06-26/pinterest_video/03_07_33497.png",
+      "social/book-content-os/2026-06-26/pinterest_video/04_08_33496.png",
+      "social/book-content-os/2026-06-26/pinterest_video/05_09_33495.png"
     ],
     "title": "pinterest_video/title.txt",
     "caption": "pinterest_video/caption.txt",
@@ -115,11 +121,11 @@
   },
   "facebook": {
     "images": [
-      "social/book-content-os/2026-06-26/facebook_carousel/01_09_33505.png",
-      "social/book-content-os/2026-06-26/facebook_carousel/02_10_33504.png",
-      "social/book-content-os/2026-06-26/facebook_carousel/03_01_33503.png",
-      "social/book-content-os/2026-06-26/facebook_carousel/04_02_33502.png",
-      "social/book-content-os/2026-06-26/facebook_carousel/05_03_33501.png"
+      "social/book-content-os/2026-06-26/facebook_carousel/01_05_33499.png",
+      "social/book-content-os/2026-06-26/facebook_carousel/02_06_33498.png",
+      "social/book-content-os/2026-06-26/facebook_carousel/03_07_33497.png",
+      "social/book-content-os/2026-06-26/facebook_carousel/04_08_33496.png",
+      "social/book-content-os/2026-06-26/facebook_carousel/05_09_33495.png"
     ],
     "image_captions": [
       "facebook_carousel/01_caption.txt",
