@@ -4,51 +4,50 @@
   "cta": "https://sapiverpress.etsy.com",
   "asset_group": "mixed_subjects_no_repeat",
   "asset_groups": [
-    "assets/ftpe/social_master/_extracted/FTPE_Etsy_Master_Images",
     "assets/ftpe/social_sets/_extracted/FTPE_Batch_01_individual_PNGs"
   ],
   "asset_group_count": 15,
   "asset_group_image_count": 145,
   "subjects": [
-    "guided support for first time publishers",
     "why this edition is different",
-    "your first kdp upload starter pack",
-    "everything you need to publish sudoku",
-    "first time sudoku publisher guide"
+    "start with the easy book first",
+    "publishing starter pack guide",
+    "premium kdp publishing toolkit guide",
+    "limited edition sudoku publisher starter pack"
   ],
   "daily_material": {
     "about": {
-      "id": "studio_identity",
-      "text": "Part puzzle studio, part publishing toolkit, Sapiver Press exists to make solving, making, and organising a little easier. Whether you want to play a puzzle, print a pack, browse a book, or build your next publishing project, there is something ready for you. Visit https://sapiverpress.etsy.com or https://suite.sapiverpress.co.uk",
-      "audience": "General engagement",
-      "angle": "Studio identity",
-      "use_case": "General bio/about post footer",
+      "id": "ready_to_use_vibe",
+      "text": "Life is busy enough, so our puzzles and games are built to be ready when you are. Play online, print a fresh set of grids, or pick up a puzzle pack without digging through clutter. Find your next puzzle at https://sapiverpress.etsy.com",
+      "audience": "Puzzle solvers",
+      "angle": "Ready-to-use vibe",
+      "use_case": "Broad puzzle and game post footer",
       "primary_url": "https://sapiverpress.etsy.com",
-      "secondary_url": "https://suite.sapiverpress.co.uk",
+      "secondary_url": "",
       "source": "about_copy",
       "raw": {
-        "id": "studio_identity",
-        "audience": "General engagement",
-        "angle": "Studio identity",
-        "copy": "Part puzzle studio, part publishing toolkit, Sapiver Press exists to make solving, making, and organising a little easier. Whether you want to play a puzzle, print a pack, browse a book, or build your next publishing project, there is something ready for you. Visit https://sapiverpress.etsy.com or https://suite.sapiverpress.co.uk",
+        "id": "ready_to_use_vibe",
+        "audience": "Puzzle solvers",
+        "angle": "Ready-to-use vibe",
+        "copy": "Life is busy enough, so our puzzles and games are built to be ready when you are. Play online, print a fresh set of grids, or pick up a puzzle pack without digging through clutter. Find your next puzzle at https://sapiverpress.etsy.com",
         "primary_url": "https://sapiverpress.etsy.com",
-        "secondary_url": "https://suite.sapiverpress.co.uk",
-        "use_case": "General bio/about post footer"
+        "secondary_url": "",
+        "use_case": "Broad puzzle and game post footer"
       }
     },
     "fact": {
-      "id": "209",
-      "text": "A bookplate marks ownership inside a book.",
+      "id": "210",
+      "text": "Marginalia can make a copy historically interesting.",
       "source": "publishing_facts",
       "raw": {
-        "day": "209",
+        "day": "210",
         "theme": "Libraries & Collecting",
-        "fact": "A bookplate marks ownership inside a book."
+        "fact": "Marginalia can make a copy historically interesting."
       }
     },
     "anecdote": null,
     "anecdote_source_file": null,
-    "caption": "Part puzzle studio, part publishing toolkit, Sapiver Press exists to make solving, making, and organising a little easier. Whether you want to play a puzzle, print a pack, browse a book, or build your next publishing project, there is something ready for you. Visit https://sapiverpress.etsy.com or https://suite.sapiverpress.co.uk\n\nPublishing fact: A bookplate marks ownership inside a book.\n\nStart here: https://sapiverpress.etsy.com\n\n#AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks\n"
+    "caption": "Life is busy enough, so our puzzles and games are built to be ready when you are. Play online, print a fresh set of grids, or pick up a puzzle pack without digging through clutter. Find your next puzzle at https://sapiverpress.etsy.com\n\nPublishing fact: Marginalia can make a copy historically interesting.\n\nStart here: https://sapiverpress.etsy.com\n\n#AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks\n"
   },
   "rotation": {
     "state_file": "social/ftpe/rotation-state.json",
@@ -56,7 +55,7 @@
       "images": {
         "cycle": 2,
         "pool_size": 145,
-        "used_count": 23,
+        "used_count": 29,
         "used": [
           "assets/ftpe/social_master/_extracted/ftpe_etsy_master_images/ftpe_etsy_master_images/01_main_hero_first_time_sudoku_publisher_edition.png",
           "assets/ftpe/social_master/_extracted/ftpe_etsy_master_images/ftpe_etsy_master_images/02_whats_included.png",
@@ -66,6 +65,12 @@
           "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/01_your_first_kdp_upload_starter_pack.png",
           "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/02_everything_you_need_to_publish_sudoku.png",
           "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/03_first_time_sudoku_publisher_guide.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/04_guided_publishing_support_for_beginners.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/05_why_this_edition_is_different.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/06_start_with_the_easy_book_first.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/07_publishing_starter_pack_guide.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/08_premium_kdp_publishing_toolkit_guide.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/09_limited_edition_sudoku_publisher_starter_pack.png",
           "assets/ftpe/social_sets/_extracted/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_starter_pack_promotional_design.png",
           "assets/ftpe/social_sets/_extracted/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_starter_pack_promotional_mockup.png",
           "assets/ftpe/social_sets/_extracted/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_set_13_first_upload_checks_10_pngs_with_txt/organised_publishing_made_easy.png",
@@ -84,38 +89,32 @@
         ],
         "exhausted_this_run": false,
         "last_selected": [
-          "assets/ftpe/social_master/_extracted/ftpe_etsy_master_images/ftpe_etsy_master_images/03_how_your_download_works.png",
-          "assets/ftpe/social_master/_extracted/ftpe_etsy_master_images/ftpe_etsy_master_images/04_guided_support_for_first_time_publishers.png",
-          "assets/ftpe/social_master/_extracted/ftpe_etsy_master_images/ftpe_etsy_master_images/05_why_this_edition_is_different.png",
-          "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/01_your_first_kdp_upload_starter_pack.png",
-          "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/02_everything_you_need_to_publish_sudoku.png",
-          "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/03_first_time_sudoku_publisher_guide.png"
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/04_guided_publishing_support_for_beginners.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/05_why_this_edition_is_different.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/06_start_with_the_easy_book_first.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/07_publishing_starter_pack_guide.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/08_premium_kdp_publishing_toolkit_guide.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_01_individual_pngs/ftpe_batch_01_individual_pngs/09_limited_edition_sudoku_publisher_starter_pack.png"
         ],
-        "updated_at": "2026-06-27T07:05:37.754Z"
+        "updated_at": "2026-06-27T10:26:26.062Z"
       },
       "about": {
-        "cycle": 4,
+        "cycle": 5,
         "pool_size": 7,
-        "used_count": 7,
+        "used_count": 1,
         "used": [
-          "accessible_approach",
-          "direct_practical_pitch",
-          "efficiency_angle",
-          "print_ready_focus",
-          "ready_to_use_vibe",
-          "studio_identity",
-          "system_first_philosophy"
+          "ready_to_use_vibe"
         ],
-        "exhausted_this_run": false,
+        "exhausted_this_run": true,
         "last_selected": [
-          "studio_identity"
+          "ready_to_use_vibe"
         ],
-        "updated_at": "2026-06-27T07:05:37.769Z"
+        "updated_at": "2026-06-27T10:26:26.114Z"
       },
       "facts": {
         "cycle": 1,
         "pool_size": 365,
-        "used_count": 28,
+        "used_count": 29,
         "used": [
           "182",
           "183",
@@ -144,13 +143,14 @@
           "206",
           "207",
           "208",
-          "209"
+          "209",
+          "210"
         ],
         "exhausted_this_run": false,
         "last_selected": [
-          "209"
+          "210"
         ],
-        "updated_at": "2026-06-27T07:05:37.769Z"
+        "updated_at": "2026-06-27T10:26:26.114Z"
       }
     },
     "rule": "No image, about snippet, fact, or anecdote is reused until its own pool is exhausted; then that pool loops."
@@ -162,7 +162,7 @@
     "limitation": "This removes ordinary metadata; it cannot guarantee removal of invisible AI watermarks embedded in pixels."
   },
   "pinterest": {
-    "image": "social/ftpe/2026-06-27/pinterest_pin/01_03_how_your_download_works.png",
+    "image": "social/ftpe/2026-06-27/pinterest_pin/01_04_guided_publishing_support_for_beginners.png",
     "title": "pinterest_pin/title.txt",
     "caption": "pinterest_pin/caption.txt",
     "first_comment": "pinterest_pin/first-comment.txt"
@@ -170,11 +170,11 @@
   "pinterest_video": {
     "video": "social/ftpe/2026-06-27/pinterest_video/pinterest_video.mp4",
     "source_images": [
-      "social/ftpe/2026-06-27/pinterest_video/01_04_guided_support_for_first_time_publishers.png",
-      "social/ftpe/2026-06-27/pinterest_video/02_05_why_this_edition_is_different.png",
-      "social/ftpe/2026-06-27/pinterest_video/03_01_your_first_kdp_upload_starter_pack.png",
-      "social/ftpe/2026-06-27/pinterest_video/04_02_everything_you_need_to_publish_sudoku.png",
-      "social/ftpe/2026-06-27/pinterest_video/05_03_first_time_sudoku_publisher_guide.png"
+      "social/ftpe/2026-06-27/pinterest_video/01_05_why_this_edition_is_different.png",
+      "social/ftpe/2026-06-27/pinterest_video/02_06_start_with_the_easy_book_first.png",
+      "social/ftpe/2026-06-27/pinterest_video/03_07_publishing_starter_pack_guide.png",
+      "social/ftpe/2026-06-27/pinterest_video/04_08_premium_kdp_publishing_toolkit_guide.png",
+      "social/ftpe/2026-06-27/pinterest_video/05_09_limited_edition_sudoku_publisher_starter_pack.png"
     ],
     "title": "pinterest_video/title.txt",
     "caption": "pinterest_video/caption.txt",
@@ -182,11 +182,11 @@
   },
   "facebook": {
     "images": [
-      "social/ftpe/2026-06-27/facebook_carousel/01_04_guided_support_for_first_time_publishers.png",
-      "social/ftpe/2026-06-27/facebook_carousel/02_05_why_this_edition_is_different.png",
-      "social/ftpe/2026-06-27/facebook_carousel/03_01_your_first_kdp_upload_starter_pack.png",
-      "social/ftpe/2026-06-27/facebook_carousel/04_02_everything_you_need_to_publish_sudoku.png",
-      "social/ftpe/2026-06-27/facebook_carousel/05_03_first_time_sudoku_publisher_guide.png"
+      "social/ftpe/2026-06-27/facebook_carousel/01_05_why_this_edition_is_different.png",
+      "social/ftpe/2026-06-27/facebook_carousel/02_06_start_with_the_easy_book_first.png",
+      "social/ftpe/2026-06-27/facebook_carousel/03_07_publishing_starter_pack_guide.png",
+      "social/ftpe/2026-06-27/facebook_carousel/04_08_premium_kdp_publishing_toolkit_guide.png",
+      "social/ftpe/2026-06-27/facebook_carousel/05_09_limited_edition_sudoku_publisher_starter_pack.png"
     ],
     "image_captions": [
       "facebook_carousel/01_caption.txt",
