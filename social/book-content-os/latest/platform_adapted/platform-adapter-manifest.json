@@ -64,16 +64,16 @@
   "cluster": {
     "id": "book-content-os-2026-06-29",
     "product": "Book Content OS Lite + Pro",
-    "base_idea": "A tidy book-content workflow for 33456",
+    "base_idea": "A tidy book-content workflow for stop losing arc dates",
     "source_subjects": [
-      "33456",
-      "export your bookshelf",
-      "links and disclosures",
-      "no login no cloud clutter",
-      "lite or pro"
+      "stop losing arc dates",
+      "book content os overview",
+      "private tracker public bookshelf",
+      "book links deserve better",
+      "33507"
     ],
-    "source_title": "Your review notes deserve a system",
-    "source_caption": "Scattered review notes are easy to lose. Book Content OS keeps book projects, review notes, ARC dates, links and disclosures in one local-first browser workflow.",
+    "source_title": "From notes to posts",
+    "source_caption": "Turn review notes into a repeatable content flow: capture, plan, write and post. Book Content OS Pro is built for reviewers who want less searching and more creating.",
     "cta_text": "link in bio",
     "angles": {
       "list": {

@@ -8,7 +8,7 @@
   "facebook": {
     "failed": true,
     "channel": "Facebook",
-    "error": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"Ai-sARHAmyeLX6z48uuYplR\"}}",
+    "error": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AHcvS9Lo-M3udUEkB15hZ_l\"}}",
     "note": "Facebook live posting failed. Check token permissions/settings for this channel."
   },
   "pinterest": {
@@ -25,11 +25,11 @@
     "board_name": "Sapiver Press Comic",
     "video": "social/book-content-os/2026-06-29/pinterest_video/book_content_os_video.mp4",
     "source_images": [
-      "social/book-content-os/2026-06-29/pinterest_video/01_10_33456.png",
-      "social/book-content-os/2026-06-29/pinterest_video/02_01_export_your_bookshelf.png",
-      "social/book-content-os/2026-06-29/pinterest_video/03_02_links_and_disclosures.png",
-      "social/book-content-os/2026-06-29/pinterest_video/04_03_no_login_no_cloud_clutter.png",
-      "social/book-content-os/2026-06-29/pinterest_video/05_04_lite_or_pro.png"
+      "social/book-content-os/2026-06-29/pinterest_video/01_06_stop_losing_arc_dates.png",
+      "social/book-content-os/2026-06-29/pinterest_video/02_07_book_content_os_overview.png",
+      "social/book-content-os/2026-06-29/pinterest_video/03_08_private_tracker_public_bookshelf.png",
+      "social/book-content-os/2026-06-29/pinterest_video/04_09_book_links_deserve_better.png",
+      "social/book-content-os/2026-06-29/pinterest_video/05_07_33507.png"
     ],
     "title": "How To Turn Book Notes Into Content Ideas\n",
     "caption": "Keep private notes, review wording, links, ARC details and post ideas in one tidy workflow so useful reading thoughts can become usable content.Book Content OS helps organise book notes, review wording, ARC details and content ideas.link in bio#Shorts #BookTok #BookReviewers",
