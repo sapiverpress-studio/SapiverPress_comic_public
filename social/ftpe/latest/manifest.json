@@ -4,50 +4,51 @@
   "cta": "https://sapiverpress.etsy.com",
   "asset_group": "mixed_subjects_no_repeat",
   "asset_groups": [
-    "assets/ftpe/social_sets/_extracted/FTPE_Batch_04_trust_quality_angles_PNGs"
+    "assets/ftpe/social_sets/_extracted/FTPE_Batch_04_trust_quality_angles_PNGs",
+    "assets/ftpe/social_sets/_extracted/FTPE_SET_05_beginner_journey_FLAT_PNGS_v2"
   ],
   "asset_group_count": 15,
   "asset_group_image_count": 145,
   "subjects": [
-    "organised starter pack for publishers",
-    "premium publishing starter pack advertisement",
-    "premium starter toolkit for kdp beginners",
-    "premium sudoku publisher starter pack",
-    "publishing starter pack guide in style"
+    "begin your first sudoku publish journey",
+    "elegant book starter pack promotion",
+    "avoid kdp mistakes with confidence",
+    "start with the right sudoku tools",
+    "first time publisher starter pack ad"
   ],
   "daily_material": {
     "about": {
-      "id": "accessible_approach",
-      "text": "At Sapiver Press, we believe in the simple joy of a well-made puzzle. Whether you want a quick daily challenge or a longer screen-free session, we create clean, tidy resources that are ready to use. Come see what we’re solving today at https://sapiverpress.etsy.com",
+      "id": "print_ready_focus",
+      "text": "We love the feel of pen on paper. From printable Sudoku packs to paperback puzzle books, Sapiver Press designs resources for people who value clear layouts, calm solving time, and puzzles that are easy to print, use, and enjoy. Browse the collection at https://sapiverpress.etsy.com",
       "audience": "Puzzle solvers",
-      "angle": "Accessible approach",
-      "use_case": "General puzzle-facing post footer",
+      "angle": "Print-ready focus",
+      "use_case": "Printable and paperback-focused post footer",
       "primary_url": "https://sapiverpress.etsy.com",
       "secondary_url": "",
       "source": "about_copy",
       "raw": {
-        "id": "accessible_approach",
+        "id": "print_ready_focus",
         "audience": "Puzzle solvers",
-        "angle": "Accessible approach",
-        "copy": "At Sapiver Press, we believe in the simple joy of a well-made puzzle. Whether you want a quick daily challenge or a longer screen-free session, we create clean, tidy resources that are ready to use. Come see what we’re solving today at https://sapiverpress.etsy.com",
+        "angle": "Print-ready focus",
+        "copy": "We love the feel of pen on paper. From printable Sudoku packs to paperback puzzle books, Sapiver Press designs resources for people who value clear layouts, calm solving time, and puzzles that are easy to print, use, and enjoy. Browse the collection at https://sapiverpress.etsy.com",
         "primary_url": "https://sapiverpress.etsy.com",
         "secondary_url": "",
-        "use_case": "General puzzle-facing post footer"
+        "use_case": "Printable and paperback-focused post footer"
       }
     },
     "fact": {
-      "id": "215",
-      "text": "Number lines help identify printings in many modern books.",
+      "id": "216",
+      "text": "A print run is the number of copies printed at one time.",
       "source": "publishing_facts",
       "raw": {
-        "day": "215",
-        "theme": "Libraries & Collecting",
-        "fact": "Number lines help identify printings in many modern books."
+        "day": "216",
+        "theme": "Printing Economics",
+        "fact": "A print run is the number of copies printed at one time."
       }
     },
     "anecdote": null,
     "anecdote_source_file": null,
-    "caption": "At Sapiver Press, we believe in the simple joy of a well-made puzzle. Whether you want a quick daily challenge or a longer screen-free session, we create clean, tidy resources that are ready to use. Come see what we’re solving today at https://sapiverpress.etsy.com\n\nPublishing fact: Number lines help identify printings in many modern books.\n\nStart here: https://sapiverpress.etsy.com\n\n#AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks\n"
+    "caption": "We love the feel of pen on paper. From printable Sudoku packs to paperback puzzle books, Sapiver Press designs resources for people who value clear layouts, calm solving time, and puzzles that are easy to print, use, and enjoy. Browse the collection at https://sapiverpress.etsy.com\n\nPublishing fact: A print run is the number of copies printed at one time.\n\nStart here: https://sapiverpress.etsy.com\n\n#AmazonKDP #KDPPublishing #SelfPublishing #SudokuBooks #PuzzleBooks\n"
   },
   "rotation": {
     "state_file": "social/ftpe/rotation-state.json",
@@ -55,7 +56,7 @@
       "images": {
         "cycle": 2,
         "pool_size": 145,
-        "used_count": 59,
+        "used_count": 65,
         "used": [
           "assets/ftpe/social_master/_extracted/ftpe_etsy_master_images/ftpe_etsy_master_images/01_main_hero_first_time_sudoku_publisher_edition.png",
           "assets/ftpe/social_master/_extracted/ftpe_etsy_master_images/ftpe_etsy_master_images/02_whats_included.png",
@@ -101,6 +102,12 @@
           "assets/ftpe/social_sets/_extracted/ftpe_batch_04_trust_quality_angles_pngs/ftpe_batch_04_trust_quality_angles/premium_starter_toolkit_for_kdp_beginners.png",
           "assets/ftpe/social_sets/_extracted/ftpe_batch_04_trust_quality_angles_pngs/ftpe_batch_04_trust_quality_angles/premium_sudoku_publisher_starter_pack.png",
           "assets/ftpe/social_sets/_extracted/ftpe_batch_04_trust_quality_angles_pngs/ftpe_batch_04_trust_quality_angles/publishing_starter_pack_guide_in_style.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_04_trust_quality_angles_pngs/ftpe_batch_04_trust_quality_angles/trusted_resources_for_new_publishers.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_set_05_beginner_journey_flat_pngs_v2/ftpe_set_05_01_begin_your_first_sudoku_publish_journey.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_set_05_beginner_journey_flat_pngs_v2/ftpe_set_05_02_elegant_book_starter_pack_promotion.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_set_05_beginner_journey_flat_pngs_v2/ftpe_set_05_03_avoid_kdp_mistakes_with_confidence.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_set_05_beginner_journey_flat_pngs_v2/ftpe_set_05_04_start_with_the_right_sudoku_tools.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_set_05_beginner_journey_flat_pngs_v2/ftpe_set_05_05_first_time_publisher_starter_pack_ad.png",
           "assets/ftpe/social_sets/_extracted/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_starter_pack_promotional_design.png",
           "assets/ftpe/social_sets/_extracted/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_starter_pack_promotional_mockup.png",
           "assets/ftpe/social_sets/_extracted/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_set_13_first_upload_checks_10_pngs_with_txt/organised_publishing_made_easy.png",
@@ -119,37 +126,38 @@
         ],
         "exhausted_this_run": false,
         "last_selected": [
-          "assets/ftpe/social_sets/_extracted/ftpe_batch_04_trust_quality_angles_pngs/ftpe_batch_04_trust_quality_angles/limited_edition_starter_pack_design.png",
-          "assets/ftpe/social_sets/_extracted/ftpe_batch_04_trust_quality_angles_pngs/ftpe_batch_04_trust_quality_angles/organised_starter_pack_for_publishers.png",
-          "assets/ftpe/social_sets/_extracted/ftpe_batch_04_trust_quality_angles_pngs/ftpe_batch_04_trust_quality_angles/premium_publishing_starter_pack_advertisement.png",
-          "assets/ftpe/social_sets/_extracted/ftpe_batch_04_trust_quality_angles_pngs/ftpe_batch_04_trust_quality_angles/premium_starter_toolkit_for_kdp_beginners.png",
-          "assets/ftpe/social_sets/_extracted/ftpe_batch_04_trust_quality_angles_pngs/ftpe_batch_04_trust_quality_angles/premium_sudoku_publisher_starter_pack.png",
-          "assets/ftpe/social_sets/_extracted/ftpe_batch_04_trust_quality_angles_pngs/ftpe_batch_04_trust_quality_angles/publishing_starter_pack_guide_in_style.png"
+          "assets/ftpe/social_sets/_extracted/ftpe_batch_04_trust_quality_angles_pngs/ftpe_batch_04_trust_quality_angles/trusted_resources_for_new_publishers.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_set_05_beginner_journey_flat_pngs_v2/ftpe_set_05_01_begin_your_first_sudoku_publish_journey.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_set_05_beginner_journey_flat_pngs_v2/ftpe_set_05_02_elegant_book_starter_pack_promotion.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_set_05_beginner_journey_flat_pngs_v2/ftpe_set_05_03_avoid_kdp_mistakes_with_confidence.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_set_05_beginner_journey_flat_pngs_v2/ftpe_set_05_04_start_with_the_right_sudoku_tools.png",
+          "assets/ftpe/social_sets/_extracted/ftpe_set_05_beginner_journey_flat_pngs_v2/ftpe_set_05_05_first_time_publisher_starter_pack_ad.png"
         ],
-        "updated_at": "2026-06-30T11:24:07.318Z"
+        "updated_at": "2026-06-30T21:23:57.563Z"
       },
       "about": {
         "cycle": 5,
         "pool_size": 7,
-        "used_count": 6,
+        "used_count": 7,
         "used": [
           "accessible_approach",
           "direct_practical_pitch",
           "efficiency_angle",
+          "print_ready_focus",
           "ready_to_use_vibe",
           "studio_identity",
           "system_first_philosophy"
         ],
         "exhausted_this_run": false,
         "last_selected": [
-          "accessible_approach"
+          "print_ready_focus"
         ],
-        "updated_at": "2026-06-30T11:24:07.328Z"
+        "updated_at": "2026-06-30T21:23:57.577Z"
       },
       "facts": {
         "cycle": 1,
         "pool_size": 365,
-        "used_count": 34,
+        "used_count": 35,
         "used": [
           "182",
           "183",
@@ -184,13 +192,14 @@
           "212",
           "213",
           "214",
-          "215"
+          "215",
+          "216"
         ],
         "exhausted_this_run": false,
         "last_selected": [
-          "215"
+          "216"
         ],
-        "updated_at": "2026-06-30T11:24:07.328Z"
+        "updated_at": "2026-06-30T21:23:57.577Z"
       }
     },
     "rule": "No image, about snippet, fact, or anecdote is reused until its own pool is exhausted; then that pool loops."
@@ -202,7 +211,7 @@
     "limitation": "This removes ordinary metadata; it cannot guarantee removal of invisible AI watermarks embedded in pixels."
   },
   "pinterest": {
-    "image": "social/ftpe/2026-06-30/pinterest_pin/01_limited_edition_starter_pack_design.png",
+    "image": "social/ftpe/2026-06-30/pinterest_pin/01_trusted_resources_for_new_publishers.png",
     "title": "pinterest_pin/title.txt",
     "caption": "pinterest_pin/caption.txt",
     "first_comment": "pinterest_pin/first-comment.txt"
@@ -210,11 +219,11 @@
   "pinterest_video": {
     "video": "social/ftpe/2026-06-30/pinterest_video/pinterest_video.mp4",
     "source_images": [
-      "social/ftpe/2026-06-30/pinterest_video/01_organised_starter_pack_for_publishers.png",
-      "social/ftpe/2026-06-30/pinterest_video/02_premium_publishing_starter_pack_advertisement.png",
-      "social/ftpe/2026-06-30/pinterest_video/03_premium_starter_toolkit_for_kdp_beginners.png",
-      "social/ftpe/2026-06-30/pinterest_video/04_premium_sudoku_publisher_starter_pack.png",
-      "social/ftpe/2026-06-30/pinterest_video/05_publishing_starter_pack_guide_in_style.png"
+      "social/ftpe/2026-06-30/pinterest_video/01_FTPE_SET_05_01_begin_your_first_sudoku_publish_journey.png",
+      "social/ftpe/2026-06-30/pinterest_video/02_FTPE_SET_05_02_elegant_book_starter_pack_promotion.png",
+      "social/ftpe/2026-06-30/pinterest_video/03_FTPE_SET_05_03_avoid_kdp_mistakes_with_confidence.png",
+      "social/ftpe/2026-06-30/pinterest_video/04_FTPE_SET_05_04_start_with_the_right_sudoku_tools.png",
+      "social/ftpe/2026-06-30/pinterest_video/05_FTPE_SET_05_05_first_time_publisher_starter_pack_ad.png"
     ],
     "title": "pinterest_video/title.txt",
     "caption": "pinterest_video/caption.txt",
@@ -222,11 +231,11 @@
   },
   "facebook": {
     "images": [
-      "social/ftpe/2026-06-30/facebook_carousel/01_organised_starter_pack_for_publishers.png",
-      "social/ftpe/2026-06-30/facebook_carousel/02_premium_publishing_starter_pack_advertisement.png",
-      "social/ftpe/2026-06-30/facebook_carousel/03_premium_starter_toolkit_for_kdp_beginners.png",
-      "social/ftpe/2026-06-30/facebook_carousel/04_premium_sudoku_publisher_starter_pack.png",
-      "social/ftpe/2026-06-30/facebook_carousel/05_publishing_starter_pack_guide_in_style.png"
+      "social/ftpe/2026-06-30/facebook_carousel/01_FTPE_SET_05_01_begin_your_first_sudoku_publish_journey.png",
+      "social/ftpe/2026-06-30/facebook_carousel/02_FTPE_SET_05_02_elegant_book_starter_pack_promotion.png",
+      "social/ftpe/2026-06-30/facebook_carousel/03_FTPE_SET_05_03_avoid_kdp_mistakes_with_confidence.png",
+      "social/ftpe/2026-06-30/facebook_carousel/04_FTPE_SET_05_04_start_with_the_right_sudoku_tools.png",
+      "social/ftpe/2026-06-30/facebook_carousel/05_FTPE_SET_05_05_first_time_publisher_starter_pack_ad.png"
     ],
     "image_captions": [
       "facebook_carousel/01_caption.txt",
