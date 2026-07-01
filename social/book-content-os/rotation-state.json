@@ -4,35 +4,42 @@
     "images": {
       "cycle": 3,
       "pool_size": 48,
-      "used_count": 6,
+      "used_count": 12,
       "used": [
         "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_landscape_social_images/07_33458.png",
         "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_landscape_social_images/08_33459.png",
         "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_landscape_social_images/09_33460.png",
         "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_landscape_social_images/10_33456.png",
         "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images/01_export_your_bookshelf.png",
-        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images/02_links_and_disclosures.png"
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images/02_links_and_disclosures.png",
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images/04_lite_or_pro.png",
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images/05_reviewers_arc_readers.png",
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images/06_stop_losing_arc_dates.png",
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images/07_book_content_os_overview.png",
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images/08_private_tracker_public_bookshelf.png",
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images/09_book_links_deserve_better.png"
       ],
-      "exhausted_this_run": true,
+      "exhausted_this_run": false,
       "last_selected": [
-        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_landscape_social_images/07_33458.png",
-        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_landscape_social_images/08_33459.png",
-        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_landscape_social_images/09_33460.png",
-        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_landscape_social_images/10_33456.png",
-        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images/01_export_your_bookshelf.png",
-        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images/02_links_and_disclosures.png"
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images/04_lite_or_pro.png",
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images/05_reviewers_arc_readers.png",
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images/06_stop_losing_arc_dates.png",
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images/07_book_content_os_overview.png",
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images/08_private_tracker_public_bookshelf.png",
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images/09_book_links_deserve_better.png"
       ],
-      "updated_at": "2026-06-30T17:55:15.130Z"
+      "updated_at": "2026-07-01T17:55:06.106Z"
     },
     "copy": {
       "cycle": 1,
       "pool_size": 30,
-      "used_count": 18,
+      "used_count": 19,
       "used": [
         "bcos_001",
         "bcos_002",
         "bcos_003",
         "bcos_004",
+        "bcos_005",
         "bcos_017",
         "bcos_018",
         "bcos_019",
@@ -50,9 +57,9 @@
       ],
       "exhausted_this_run": false,
       "last_selected": [
-        "bcos_004"
+        "bcos_005"
       ],
-      "updated_at": "2026-06-30T17:55:15.136Z"
+      "updated_at": "2026-07-01T17:55:06.111Z"
     }
   },
   "history": [
@@ -271,19 +278,31 @@
         "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images/02_links_and_disclosures.png"
       ],
       "copy": "bcos_004"
+    },
+    {
+      "date": "2026-07-01",
+      "images": [
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images/04_lite_or_pro.png",
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images/05_reviewers_arc_readers.png",
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images/06_stop_losing_arc_dates.png",
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images/07_book_content_os_overview.png",
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images/08_private_tracker_public_bookshelf.png",
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images/09_book_links_deserve_better.png"
+      ],
+      "copy": "bcos_005"
     }
   ],
-  "updated_at": "2026-06-30T17:55:15.137Z",
+  "updated_at": "2026-07-01T17:55:06.112Z",
   "last_run": {
-    "date": "2026-06-30",
+    "date": "2026-07-01",
     "images": [
-      "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_landscape_social_images/07_33458.png",
-      "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_landscape_social_images/08_33459.png",
-      "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_landscape_social_images/09_33460.png",
-      "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_landscape_social_images/10_33456.png",
-      "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images/01_export_your_bookshelf.png",
-      "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images/02_links_and_disclosures.png"
+      "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images/04_lite_or_pro.png",
+      "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images/05_reviewers_arc_readers.png",
+      "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images/06_stop_losing_arc_dates.png",
+      "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images/07_book_content_os_overview.png",
+      "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images/08_private_tracker_public_bookshelf.png",
+      "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images/09_book_links_deserve_better.png"
     ],
-    "copy": "bcos_004"
+    "copy": "bcos_005"
   }
 }
