@@ -1,0 +1,38 @@
+{
+  "date": "2026-07-02",
+  "mode": "live",
+  "type": "book_content_os_social_manual_run_v1",
+  "cta_text": "link in bio",
+  "pinterest_board_id": "1038924276479876865",
+  "pinterest_board_name": "Sapiver Press Comic",
+  "facebook": {
+    "failed": true,
+    "channel": "Facebook",
+    "error": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AiMc56bMpxnqW3RJPvVrxyO\"}}",
+    "note": "Facebook live posting failed. Check token permissions/settings for this channel."
+  },
+  "pinterest": {
+    "failed": true,
+    "channel": "Pinterest",
+    "error": "401 Unauthorized: {\"code\":2,\"message\":\"Authentication failed.\",\"status\":\"failure\"}",
+    "note": "Pinterest live posting failed. Check token permissions/settings for this channel."
+  },
+  "pinterest_video": {
+    "prepared": true,
+    "posted": false,
+    "note": "Pinterest-ready MP4 generated from the same five images used in the Facebook carousel. Automatic video-pin upload runs in the Pinterest video workflow.",
+    "board_id": "1038924276479876865",
+    "board_name": "Sapiver Press Comic",
+    "video": "social/book-content-os/2026-07-02/pinterest_video/book_content_os_video.mp4",
+    "source_images": [
+      "social/book-content-os/2026-07-02/pinterest_video/01_08_33506.png",
+      "social/book-content-os/2026-07-02/pinterest_video/02_09_33505.png",
+      "social/book-content-os/2026-07-02/pinterest_video/03_10_33504.png",
+      "social/book-content-os/2026-07-02/pinterest_video/04_01_33503.png",
+      "social/book-content-os/2026-07-02/pinterest_video/05_02_33502.png"
+    ],
+    "title": "How To Turn Book Notes Into Content Ideas\n",
+    "caption": "Keep private notes, review wording, links, ARC details and post ideas in one tidy workflow so useful reading thoughts can become usable content.Book Content OS helps organise book notes, review wording, ARC details and content ideas.link in bio#Shorts #BookTok #BookReviewers",
+    "first_comment": "link in bio\n\n#BookReviewers #ARCReaders #BookTok #Bookstagram\n"
+  }
+}
