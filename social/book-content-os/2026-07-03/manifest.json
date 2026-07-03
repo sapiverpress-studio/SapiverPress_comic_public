@@ -5,27 +5,28 @@
   "product": "Book Content OS Lite + Pro",
   "asset_group": "mixed_book_content_os_assets_no_repeat",
   "asset_groups": [
-    "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3"
+    "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3",
+    "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_square_social_images"
   ],
   "asset_group_count": 5,
   "asset_group_image_count": 48,
   "subjects": [
-    "33500",
-    "33499",
-    "33498",
-    "33497",
-    "33496"
+    "33478",
+    "33477",
+    "33476",
+    "33475",
+    "33474"
   ],
   "copy": {
-    "id": "bcos_008",
-    "title": "Before you post your review",
-    "caption": "Check spoiler-safe notes, clear disclosure, working links and a caption idea before you publish. Keep the moving parts together in Book Content OS.",
+    "id": "bcos_009",
+    "title": "ARC notes everywhere?",
+    "caption": "If ARC notes live across apps, screenshots and scraps, start with one tidy place. Book Content OS Lite helps keep review notes, dates and ideas together.",
     "first_comment": "link in bio",
     "source": "book_content_os_social_posts",
     "raw": {
-      "id": "bcos_008",
-      "title": "Before you post your review",
-      "caption": "Check spoiler-safe notes, clear disclosure, working links and a caption idea before you publish. Keep the moving parts together in Book Content OS.",
+      "id": "bcos_009",
+      "title": "ARC notes everywhere?",
+      "caption": "If ARC notes live across apps, screenshots and scraps, start with one tidy place. Book Content OS Lite helps keep review notes, dates and ideas together.",
       "first_comment": "link in bio"
     }
   },
@@ -35,7 +36,7 @@
       "images": {
         "cycle": 3,
         "pool_size": 48,
-        "used_count": 30,
+        "used_count": 36,
         "used": [
           "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_landscape_social_images/07_33458.png",
           "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_landscape_social_images/08_33459.png",
@@ -66,23 +67,29 @@
           "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/05_33499.png",
           "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/06_33498.png",
           "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/07_33497.png",
-          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/08_33496.png"
+          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/08_33496.png",
+          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/09_33495.png",
+          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_square_social_images/01_33478.png",
+          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_square_social_images/02_33477.png",
+          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_square_social_images/03_33476.png",
+          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_square_social_images/04_33475.png",
+          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_square_social_images/05_33474.png"
         ],
         "exhausted_this_run": false,
         "last_selected": [
-          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/03_33501.png",
-          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/04_33500.png",
-          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/05_33499.png",
-          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/06_33498.png",
-          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/07_33497.png",
-          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/08_33496.png"
+          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/09_33495.png",
+          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_square_social_images/01_33478.png",
+          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_square_social_images/02_33477.png",
+          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_square_social_images/03_33476.png",
+          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_square_social_images/04_33475.png",
+          "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_square_social_images/05_33474.png"
         ],
-        "updated_at": "2026-07-03T04:14:16.767Z"
+        "updated_at": "2026-07-03T18:40:02.856Z"
       },
       "copy": {
         "cycle": 1,
         "pool_size": 30,
-        "used_count": 22,
+        "used_count": 23,
         "used": [
           "bcos_001",
           "bcos_002",
@@ -92,6 +99,7 @@
           "bcos_006",
           "bcos_007",
           "bcos_008",
+          "bcos_009",
           "bcos_017",
           "bcos_018",
           "bcos_019",
@@ -109,9 +117,9 @@
         ],
         "exhausted_this_run": false,
         "last_selected": [
-          "bcos_008"
+          "bcos_009"
         ],
-        "updated_at": "2026-07-03T04:14:16.767Z"
+        "updated_at": "2026-07-03T18:40:02.915Z"
       }
     },
     "rule": "No image or copy row is reused until its own pool is exhausted; then that pool loops."
@@ -123,7 +131,7 @@
     "limitation": "This removes ordinary metadata; it cannot guarantee removal of invisible AI watermarks embedded in pixels."
   },
   "pinterest": {
-    "image": "social/book-content-os/2026-07-03/pinterest_pin/01_03_33501.png",
+    "image": "social/book-content-os/2026-07-03/pinterest_pin/01_09_33495.png",
     "title": "pinterest_pin/title.txt",
     "caption": "pinterest_pin/caption.txt",
     "first_comment": "pinterest_pin/first-comment.txt"
@@ -131,11 +139,11 @@
   "pinterest_video": {
     "video": "social/book-content-os/2026-07-03/pinterest_video/book_content_os_video.mp4",
     "source_images": [
-      "social/book-content-os/2026-07-03/pinterest_video/01_04_33500.png",
-      "social/book-content-os/2026-07-03/pinterest_video/02_05_33499.png",
-      "social/book-content-os/2026-07-03/pinterest_video/03_06_33498.png",
-      "social/book-content-os/2026-07-03/pinterest_video/04_07_33497.png",
-      "social/book-content-os/2026-07-03/pinterest_video/05_08_33496.png"
+      "social/book-content-os/2026-07-03/pinterest_video/01_01_33478.png",
+      "social/book-content-os/2026-07-03/pinterest_video/02_02_33477.png",
+      "social/book-content-os/2026-07-03/pinterest_video/03_03_33476.png",
+      "social/book-content-os/2026-07-03/pinterest_video/04_04_33475.png",
+      "social/book-content-os/2026-07-03/pinterest_video/05_05_33474.png"
     ],
     "title": "pinterest_video/title.txt",
     "caption": "pinterest_video/caption.txt",
@@ -143,11 +151,11 @@
   },
   "facebook": {
     "images": [
-      "social/book-content-os/2026-07-03/facebook_carousel/01_04_33500.png",
-      "social/book-content-os/2026-07-03/facebook_carousel/02_05_33499.png",
-      "social/book-content-os/2026-07-03/facebook_carousel/03_06_33498.png",
-      "social/book-content-os/2026-07-03/facebook_carousel/04_07_33497.png",
-      "social/book-content-os/2026-07-03/facebook_carousel/05_08_33496.png"
+      "social/book-content-os/2026-07-03/facebook_carousel/01_01_33478.png",
+      "social/book-content-os/2026-07-03/facebook_carousel/02_02_33477.png",
+      "social/book-content-os/2026-07-03/facebook_carousel/03_03_33476.png",
+      "social/book-content-os/2026-07-03/facebook_carousel/04_04_33475.png",
+      "social/book-content-os/2026-07-03/facebook_carousel/05_05_33474.png"
     ],
     "image_captions": [
       "facebook_carousel/01_caption.txt",
