@@ -8,7 +8,7 @@
   "facebook": {
     "failed": true,
     "channel": "Facebook",
-    "error": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"APn6UubcDTga-4wtp5GEx7T\"}}",
+    "error": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"ASXHu30moyaS5YhjKpk6hV4\"}}",
     "note": "Facebook live posting failed. Check token permissions/settings for this channel."
   },
   "pinterest": {
@@ -25,11 +25,11 @@
     "board_name": "Sapiver Press Comic",
     "video": "social/book-content-os/2026-07-03/pinterest_video/book_content_os_video.mp4",
     "source_images": [
-      "social/book-content-os/2026-07-03/pinterest_video/01_07_33472.png",
-      "social/book-content-os/2026-07-03/pinterest_video/02_08_33471.png",
-      "social/book-content-os/2026-07-03/pinterest_video/03_09_33470.png",
-      "social/book-content-os/2026-07-03/pinterest_video/04_10_33469.png",
-      "social/book-content-os/2026-07-03/pinterest_video/05_01_33462.png"
+      "social/book-content-os/2026-07-03/pinterest_video/01_03_33464.png",
+      "social/book-content-os/2026-07-03/pinterest_video/02_04_33465.png",
+      "social/book-content-os/2026-07-03/pinterest_video/03_05_33461.png",
+      "social/book-content-os/2026-07-03/pinterest_video/04_06_33457.png",
+      "social/book-content-os/2026-07-03/pinterest_video/05_03_no_login_no_cloud_clutter.png"
     ],
     "title": "How To Turn Book Notes Into Content Ideas\n",
     "caption": "Keep private notes, review wording, links, ARC details and post ideas in one tidy workflow so useful reading thoughts can become usable content.Book Content OS helps organise book notes, review wording, ARC details and content ideas.link in bio#Shorts #BookTok #BookReviewers",
