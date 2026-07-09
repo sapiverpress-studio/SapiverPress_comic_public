@@ -40,6 +40,7 @@ jobs:
             MODE="${{ github.event.inputs.post_mode || 'dry_run' }}"
           fi
           echo "CLEARFORGE_POST_MODE=${MODE}" >> "$GITHUB_ENV"
+          echo "CLEARFORGE_EVENT_NAME=${{ github.event_name }}" >> "$GITHUB_ENV"
 
       - name: Ensure FFmpeg is available
         shell: bash
@@ -52,28 +53,21 @@ jobs:
 
       - name: Pull approved Clearforge bundle
         shell: bash
-        env:
-          CLEARFORGE_REPO_PAT: ${{ secrets.CLEARFORGE_REPO_PAT }}
         run: |
           set -euo pipefail
-          if [ -z "${CLEARFORGE_REPO_PAT:-}" ]; then
-            echo "::error::Missing CLEARFORGE_REPO_PAT secret. It must be able to read sapiverpress-studio/Clearforge."
-            exit 1
-          fi
-
           rm -rf vendor/clearforge
-          git clone --depth 1 "https://x-access-token:${CLEARFORGE_REPO_PAT}@github.com/sapiverpress-studio/Clearforge.git" vendor/clearforge
+          git clone --depth 1 "https://github.com/sapiverpress-studio/Clearforge.git" vendor/clearforge
 
           DATE_DIR="vendor/clearforge/bridge/clearforge/${DATE_OVERRIDE}"
           LATEST_DIR="vendor/clearforge/bridge/clearforge/latest"
 
           if [ -f "${DATE_DIR}/manifest.json" ]; then
             echo "CLEARFORGE_BUNDLE_ROOT=${DATE_DIR}" >> "$GITHUB_ENV"
-          elif [ -f "${LATEST_DIR}/manifest.json" ]; then
-            echo "::warning::No approved bundle for ${DATE_OVERRIDE}; using latest approved Clearforge bundle."
+          elif [ "${CLEARFORGE_EVENT_NAME}" = "workflow_dispatch" ] && [ -f "${LATEST_DIR}/manifest.json" ]; then
+            echo "::warning::No approved bundle for ${DATE_OVERRIDE}; manual run is using latest approved Clearforge bundle."
             echo "CLEARFORGE_BUNDLE_ROOT=${LATEST_DIR}" >> "$GITHUB_ENV"
           else
-            echo "::error::No approved Clearforge bridge bundle found. Approve/export a Clearforge article first."
+            echo "::error::No approved Clearforge bundle for ${DATE_OVERRIDE}. Scheduled runs refuse to reuse stale content."
             exit 1
           fi
 
