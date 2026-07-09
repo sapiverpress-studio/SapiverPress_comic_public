@@ -4,15 +4,62 @@
   "type": "clearforge_ai_news_video_v2",
   "existing_result_detected": false,
   "facebook": {
-    "skipped": true,
-    "reason": "facebook_not_approved"
+    "id": "997877693401171_122132919921198448",
+    "post_supports_client_mutation_id": true
   },
   "pinterest": {
     "skipped": true,
     "reason": "pinterest_not_approved"
   },
   "youtube": {
-    "skipped": true,
-    "reason": "youtube_not_approved"
+    "kind": "youtube#video",
+    "etag": "G5EMEEN3Vj4i3BHodmRuICEm7F8",
+    "id": "VnPUDyto1vs",
+    "snippet": {
+      "publishedAt": "2026-07-09T12:06:10Z",
+      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
+      "title": "OpenAI, Meta, Anthropic, and Microsoft just made AI more practical",
+      "description": "Pick one repetitive task this week — for example, drafting a rough outline, creating a promo image, or summarizing a meeting — and test whether a new AI tool can save 15 minutes without creating extra cleanup work.",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/VnPUDyto1vs/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/VnPUDyto1vs/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/VnPUDyto1vs/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Sapiver Press",
+      "tags": [
+        "AI news",
+        "Clearforge",
+        "practical AI"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "OpenAI, Meta, Anthropic, and Microsoft just made AI more practical",
+        "description": "Pick one repetitive task this week — for example, drafting a rough outline, creating a promo image, or summarizing a meeting — and test whether a new AI tool can save 15 minutes without creating extra cleanup work."
+      }
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": true
+    },
+    "youtube_url": "https://www.youtube.com/watch?v=VnPUDyto1vs"
   }
 }

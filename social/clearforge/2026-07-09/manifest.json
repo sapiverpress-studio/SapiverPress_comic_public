@@ -5,9 +5,9 @@
   "article_url": "",
   "approved": {
     "article": true,
-    "facebook": false,
+    "facebook": true,
     "pinterest": false,
-    "youtube": false
+    "youtube": true
   },
   "ai_generated_media": true,
   "pinterest": {
