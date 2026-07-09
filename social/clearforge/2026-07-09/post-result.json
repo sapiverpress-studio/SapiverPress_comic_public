@@ -1,7 +1,7 @@
 {
   "date": "2026-07-09",
   "mode": "dry_run",
-  "type": "clearforge_social_bundle_v1",
+  "type": "clearforge_ai_news_video_v2",
   "facebook": {
     "dry_run": true,
     "approved": false
