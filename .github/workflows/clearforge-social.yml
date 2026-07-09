@@ -9,12 +9,13 @@ on:
         default: ""
         type: string
       post_mode:
-        description: "Choose whether to test or publish"
+        description: "Choose whether to build, verify credentials, or publish"
         required: true
         default: "dry_run"
         type: choice
         options:
           - dry_run
+          - verify
           - live
   schedule:
     - cron: "30 9 * * *"
@@ -88,7 +89,7 @@ jobs:
             social/clearforge/${{ env.DATE_OVERRIDE }}/**/*
           if-no-files-found: error
 
-      - name: Post or prepare Clearforge social content
+      - name: Post prepare or verify Clearforge social content
         run: node scripts/post-clearforge-social.mjs
         env:
           CLEARFORGE_POST_MODE: ${{ env.CLEARFORGE_POST_MODE }}
@@ -103,6 +104,7 @@ jobs:
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
           YOUTUBE_PRIVACY_STATUS: ${{ secrets.YOUTUBE_PRIVACY_STATUS }}
           YOUTUBE_CATEGORY_ID: ${{ secrets.YOUTUBE_CATEGORY_ID }}
+          FORCE_CLEARFORGE_POST: ${{ secrets.FORCE_CLEARFORGE_POST }}
 
       - name: Commit Clearforge assets and posting records
         if: always()
