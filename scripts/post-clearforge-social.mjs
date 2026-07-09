@@ -48,12 +48,41 @@ async function verifyFacebook() {
   return { ok: true, page_id: page.id, page_name: page.name || resolved.page_name || null, resolved_page_token: resolved.resolved };
 }
 
+async function listPinterestBoards(token) {
+  const boards = [];
+  let bookmark = "";
+  do {
+    const url = new URL("https://api.pinterest.com/v5/boards");
+    url.searchParams.set("page_size", "100");
+    if (bookmark) url.searchParams.set("bookmark", bookmark);
+    const data = await jsonFetch(url.toString(), { headers: { Authorization: `Bearer ${token}` } });
+    boards.push(...(data.items || []));
+    bookmark = data.bookmark || "";
+  } while (bookmark);
+  return boards;
+}
+
+async function resolvePinterestBoard(token) {
+  const explicitId = String(process.env.PINTEREST_BOARD_ID || "").trim();
+  const boardName = String(process.env.PINTEREST_BOARD_NAME || "").trim();
+
+  if (explicitId) {
+    const board = await jsonFetch(`https://api.pinterest.com/v5/boards/${explicitId}`, { headers: { Authorization: `Bearer ${token}` } });
+    return { id: board.id || explicitId, name: board.name || null, source: "board_id" };
+  }
+
+  if (!boardName) throw new Error("Missing PINTEREST_BOARD_ID and PINTEREST_BOARD_NAME.");
+  const boards = await listPinterestBoards(token);
+  const exact = boards.find((board) => String(board.name || "").trim().toLowerCase() === boardName.toLowerCase());
+  if (!exact) throw new Error(`Pinterest board not found by name: ${boardName}`);
+  return { id: exact.id, name: exact.name || boardName, source: "board_name" };
+}
+
 async function verifyPinterest() {
   const token = String(process.env.PINTEREST_ACCESS_TOKEN || "").trim();
-  const boardId = String(process.env.PINTEREST_BOARD_ID || "").trim();
-  if (!token || !boardId) return { ok: false, reason: "missing_pinterest_secrets" };
-  const board = await jsonFetch(`https://api.pinterest.com/v5/boards/${boardId}`, { headers: { Authorization: `Bearer ${token}` } });
-  return { ok: true, board_id: board.id || boardId, board_name: board.name || null };
+  if (!token) return { ok: false, reason: "missing_pinterest_access_token" };
+  const board = await resolvePinterestBoard(token);
+  return { ok: true, board_id: board.id, board_name: board.name, resolved_from: board.source };
 }
 
 async function refreshYouTubeAccessToken() {
@@ -80,21 +109,22 @@ async function verifyYouTube() {
 async function postPinterest(manifest) {
   if (manifest.approved?.pinterest !== true) return { skipped: true, reason: "pinterest_not_approved" };
   const token = String(process.env.PINTEREST_ACCESS_TOKEN || "").trim();
-  const boardId = String(process.env.PINTEREST_BOARD_ID || "").trim();
-  if (!token || !boardId) return { skipped: true, reason: "missing_pinterest_secrets" };
+  if (!token) return { skipped: true, reason: "missing_pinterest_access_token" };
+  const board = await resolvePinterestBoard(token);
   const title = clean(await readRoot(manifest.pinterest.title), 100);
   const description = clean(await readRoot(manifest.pinterest.caption), 480);
-  return jsonFetch("https://api.pinterest.com/v5/pins", {
+  const posted = await jsonFetch("https://api.pinterest.com/v5/pins", {
     method: "POST",
     headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
     body: JSON.stringify({
-      board_id: boardId,
+      board_id: board.id,
       title,
       description,
       link: manifest.article_url || undefined,
       media_source: { source_type: "image_base64", content_type: "image/png", data: b64(manifest.pinterest.image) }
     })
   });
+  return { ...posted, board_id: board.id, board_name: board.name, resolved_from: board.source };
 }
 
 async function uploadFacebookPhoto(pageId, token, relImage) {
