@@ -10,145 +10,145 @@ const DATE = process.env.DATE_OVERRIDE || new Intl.DateTimeFormat("sv-SE", {
 const SOURCE_ROOT = process.env.CLEARFORGE_BUNDLE_ROOT || path.join(ROOT, "vendor", "clearforge", "bridge", "clearforge", DATE);
 const OUT = path.join(ROOT, "social", "clearforge", DATE);
 
-function must(file) {
-  if (!fssync.existsSync(file)) throw new Error(`Missing Clearforge bundle file: ${file}`);
+function must(file) { if (!fssync.existsSync(file)) throw new Error(`Missing required Clearforge file: ${file}`); }
+function run(args) { execFileSync("ffmpeg", ["-hide_banner", "-loglevel", "error", "-y", ...args], { stdio: "inherit" }); }
+function probeDuration(file) {
+  return Number(execFileSync("ffprobe", ["-v", "error", "-show_entries", "format=duration", "-of", "default=nw=1:nk=1", file], { encoding: "utf8" }).trim());
 }
-function run(args) {
-  execFileSync("ffmpeg", ["-hide_banner", "-loglevel", "error", "-y", ...args], { stdio: "inherit" });
-}
-function clean(text, limit = 220) {
-  return String(text || "").replace(/[\u0000-\u001f\u007f]/g, " ").replace(/\s+/g, " ").trim().slice(0, limit);
-}
+function clean(text, limit = 800) { return String(text || "").replace(/[\u0000-\u001f\u007f]/g, " ").replace(/\s+/g, " ").trim().slice(0, limit); }
 function wrapText(text, maxChars) {
-  const words = clean(text, 1200).split(" ").filter(Boolean);
-  const lines = [];
-  let line = "";
+  const words = clean(text, 1400).split(" ").filter(Boolean);
+  const lines = []; let line = "";
   for (const word of words) {
-    const candidate = line ? `${line} ${word}` : word;
-    if (candidate.length <= maxChars) {
-      line = candidate;
-    } else {
-      if (line) lines.push(line);
-      line = word;
-    }
+    const next = line ? `${line} ${word}` : word;
+    if (next.length <= maxChars) line = next;
+    else { if (line) lines.push(line); line = word; }
   }
   if (line) lines.push(line);
   return lines.join("\n");
 }
-function cardCopy({ brand = "CLEARFORGE", body, maxChars }) {
-  return `${brand}\n\n${wrapText(body, maxChars)}`;
-}
 async function write(rel, content) {
-  const file = path.join(OUT, rel);
-  await fs.mkdir(path.dirname(file), { recursive: true });
-  await fs.writeFile(file, content.endsWith("\n") ? content : `${content}\n`, "utf8");
+  const file = path.join(OUT, rel); await fs.mkdir(path.dirname(file), { recursive: true });
+  await fs.writeFile(file, String(content || "").trim() + "\n", "utf8");
   return path.relative(ROOT, file).replaceAll("\\", "/");
 }
 async function textFile(name, content) {
-  const file = path.join(OUT, "text", name);
-  await fs.mkdir(path.dirname(file), { recursive: true });
-  const safe = String(content || "")
-    .replace(/\r/g, "")
-    .replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/g, "")
-    .trim();
-  await fs.writeFile(file, safe, "utf8");
-  return file;
+  const file = path.join(OUT, "text", name); await fs.mkdir(path.dirname(file), { recursive: true });
+  await fs.writeFile(file, String(content || "").replace(/\r/g, "").trim(), "utf8"); return file;
 }
-function drawCard({ size, textFilePath, outFile, fontSize = 56, lineSpacing = 18 }) {
+function src(rel) { return path.isAbsolute(rel) ? rel : path.join(SOURCE_ROOT, rel); }
+function rel(file) { return path.relative(ROOT, file).replaceAll("\\", "/"); }
+function esc(file) { return file.replaceAll("'", "\\'"); }
+
+function renderStill({ input, out, size, titleFile, sourceFile, fontSize = 54 }) {
   const [w, h] = size.split("x").map(Number);
-  const boxX = Math.floor(w * 0.08);
-  const boxY = Math.floor(h * 0.10);
-  const boxW = Math.floor(w * 0.84);
-  const boxH = Math.floor(h * 0.78);
-  const filter = [
-    `drawbox=x=${boxX}:y=${boxY}:w=${boxW}:h=${boxH}:color=#ffffff:t=fill`,
-    `drawtext=fontcolor=#173b35:fontsize=${fontSize}:textfile='${textFilePath.replaceAll("'", "\\'")}':x=(w-text_w)/2:y=(h-text_h)/2:line_spacing=${lineSpacing}`
+  const vf = [
+    `scale=${w}:${h}:force_original_aspect_ratio=increase`,
+    `crop=${w}:${h}`,
+    `drawbox=x=0:y=${Math.floor(h*0.58)}:w=${w}:h=${Math.floor(h*0.42)}:color=black@0.58:t=fill`,
+    `drawtext=fontcolor=#E9C46A:fontsize=30:textfile='${esc(sourceFile)}':x=70:y=${Math.floor(h*0.62)}`,
+    `drawtext=fontcolor=white:fontsize=${fontSize}:textfile='${esc(titleFile)}':x=70:y=${Math.floor(h*0.69)}:line_spacing=18`
   ].join(",");
-  run([
-    "-f", "lavfi", "-i", `color=c=#f4efe3:s=${size}:d=1`,
-    "-vf", filter,
-    "-frames:v", "1", outFile
-  ]);
+  run(["-i", input, "-vf", vf, "-frames:v", "1", out]);
+}
+
+function renderMotion({ input, out, duration, titleFile, sourceFile, index }) {
+  const frames = Math.max(1, Math.round(duration * 30));
+  const vf = [
+    "scale=1200:1920:force_original_aspect_ratio=increase",
+    "crop=1080:1920",
+    `zoompan=z='min(zoom+0.0007,1.07)':d=1:s=1080x1920:fps=30`,
+    "drawbox=x=0:y=1180:w=1080:h=740:color=black@0.56:t=fill",
+    `drawtext=fontcolor=#E9C46A:fontsize=34:text='${String(index).padStart(2,"0")} / 03':x=70:y=105`,
+    `drawtext=fontcolor=#E9C46A:fontsize=30:textfile='${esc(sourceFile)}':x=70:y=1240`,
+    `drawtext=fontcolor=white:fontsize=56:textfile='${esc(titleFile)}':x=70:y=1345:line_spacing=22`,
+    "fade=t=in:st=0:d=0.35",
+    `fade=t=out:st=${Math.max(0.2, duration-0.35).toFixed(2)}:d=0.35`,
+    "format=yuv420p"
+  ].join(",");
+  run(["-loop", "1", "-i", input, "-t", duration.toFixed(3), "-vf", vf, "-frames:v", String(frames), "-c:v", "libx264", "-pix_fmt", "yuv420p", out]);
 }
 
 must(path.join(SOURCE_ROOT, "manifest.json"));
 const bundle = JSON.parse(await fs.readFile(path.join(SOURCE_ROOT, "manifest.json"), "utf8"));
 if (bundle.approved?.article !== true) throw new Error("Clearforge article is not approved.");
+if (bundle.ai_media?.generated !== true) throw new Error("AI media is missing. Run Clearforge 'Generate Clearforge AI Media' before distribution.");
 
+const images = (bundle.ai_media.story_images || []).map(src);
+const narration = src(bundle.ai_media.narration);
+if (images.length < 3) throw new Error("Three AI-generated story images are required.");
+images.forEach(must); must(narration);
+const stories = (bundle.stories || []).slice(0, 3);
+if (stories.length < 3) throw new Error("Three story records are required in the Clearforge bundle.");
+
+await fs.rm(OUT, { recursive: true, force: true });
 await fs.mkdir(OUT, { recursive: true });
 
-const pinTitle = await write("copy/pinterest-title.txt", bundle.pinterest?.title || bundle.article?.headline || "Clearforge Daily AI Brief");
-const pinCaption = await write("copy/pinterest-caption.txt", bundle.pinterest?.description || bundle.article?.dek || "");
+const pinTitle = await write("copy/pinterest-title.txt", bundle.pinterest?.title || bundle.article?.headline);
+const pinCaption = await write("copy/pinterest-caption.txt", bundle.pinterest?.description || bundle.article?.dek);
 const fbCaption = await write("copy/facebook-post.txt", bundle.facebook?.post || "");
 const fbComment = await write("copy/facebook-first-comment.txt", bundle.article?.url ? `Read the full Clearforge brief: ${bundle.article.url}` : "");
-const ytTitle = await write("copy/youtube-title.txt", bundle.youtube?.title || bundle.article?.headline || "Clearforge Daily AI Brief");
+const ytTitle = await write("copy/youtube-title.txt", bundle.youtube?.title || bundle.article?.headline);
 const ytCaption = await write("copy/youtube-description.txt", bundle.youtube?.description || "");
 
-const quotes = (bundle.quote_card_lines || []).slice(0, 5);
-while (quotes.length < 5) quotes.push(bundle.article?.headline || "Clearforge Daily AI Brief");
-
 const fbImages = [];
-const videoImages = [];
-for (let i = 0; i < 5; i++) {
-  const rawBody = i === 0 ? (bundle.article?.headline || quotes[i]) : quotes[i];
-
-  const fbText = cardCopy({ body: rawBody, maxChars: i === 0 ? 26 : 24 });
-  const fbTf = await textFile(`fb-card-${i+1}.txt`, fbText);
-  const fbOut = path.join(OUT, "facebook", `card-${i+1}.png`);
-  await fs.mkdir(path.dirname(fbOut), { recursive: true });
-  drawCard({ size: "1080x1350", textFilePath: fbTf, outFile: fbOut, fontSize: i === 0 ? 48 : 58, lineSpacing: 20 });
-  fbImages.push(path.relative(ROOT, fbOut).replaceAll("\\", "/"));
-
-  const videoText = cardCopy({ body: rawBody, maxChars: i === 0 ? 24 : 22 });
-  const vidTf = await textFile(`video-card-${i+1}.txt`, videoText);
-  const vidOut = path.join(OUT, "video", `card-${i+1}.png`);
-  await fs.mkdir(path.dirname(vidOut), { recursive: true });
-  drawCard({ size: "1080x1920", textFilePath: vidTf, outFile: vidOut, fontSize: i === 0 ? 50 : 62, lineSpacing: 24 });
-  videoImages.push(vidOut);
+for (let i = 0; i < 3; i++) {
+  const title = await textFile(`story-${i+1}-title.txt`, wrapText(stories[i].title, 28));
+  const source = await textFile(`story-${i+1}-source.txt`, clean(stories[i].source_name || bundle.sources?.[i]?.source_name || "Source", 80));
+  const out = path.join(OUT, "facebook", `story-${i+1}.png`); await fs.mkdir(path.dirname(out), { recursive: true });
+  renderStill({ input: images[i], out, size: "1080x1350", titleFile: title, sourceFile: source, fontSize: 50 });
+  fbImages.push(rel(out));
 }
 
-const pinBody = bundle.pinterest?.title || bundle.article?.headline || "What matters in AI today";
-const pinText = await textFile("pin.txt", cardCopy({ body: pinBody, maxChars: 23 }));
-const pinOut = path.join(OUT, "pinterest", "pin.png");
-await fs.mkdir(path.dirname(pinOut), { recursive: true });
-drawCard({ size: "1000x1500", textFilePath: pinText, outFile: pinOut, fontSize: 54, lineSpacing: 22 });
+const pinTitleFile = await textFile("pin-title.txt", wrapText(bundle.pinterest?.title || bundle.article?.headline, 25));
+const pinSourceFile = await textFile("pin-source.txt", "TODAY IN AI • CLEARFORGE");
+const pinOut = path.join(OUT, "pinterest", "pin.png"); await fs.mkdir(path.dirname(pinOut), { recursive: true });
+renderStill({ input: images[0], out: pinOut, size: "1000x1500", titleFile: pinTitleFile, sourceFile: pinSourceFile, fontSize: 52 });
+
+const audioDuration = probeDuration(narration);
+const introDuration = 2.6;
+const outroDuration = 3.4;
+const storyDuration = Math.max(4.5, (audioDuration - introDuration - outroDuration) / 3);
+const segmentDir = path.join(OUT, "video", "segments"); await fs.mkdir(segmentDir, { recursive: true });
+const segments = [];
+
+const hookFile = await textFile("hook.txt", wrapText("Three AI updates that actually matter today", 24));
+const hookSource = await textFile("hook-source.txt", "CLEARFORGE • TODAY IN AI");
+const intro = path.join(segmentDir, "00-intro.mp4");
+renderMotion({ input: images[0], out: intro, duration: introDuration, titleFile: hookFile, sourceFile: hookSource, index: 0 });
+segments.push(intro);
+
+for (let i = 0; i < 3; i++) {
+  const title = await textFile(`video-story-${i+1}.txt`, wrapText(stories[i].title, 25));
+  const source = await textFile(`video-source-${i+1}.txt`, clean(stories[i].source_name || bundle.sources?.[i]?.source_name || "Source", 80));
+  const seg = path.join(segmentDir, `0${i+1}-story.mp4`);
+  renderMotion({ input: images[i], out: seg, duration: storyDuration, titleFile: title, sourceFile: source, index: i+1 });
+  segments.push(seg);
+}
+
+const takeawayFile = await textFile("takeaway.txt", wrapText(bundle.media_metadata?.practical_takeaway || "Focus on what changes your workflow, not what creates the most hype.", 27));
+const takeawaySource = await textFile("takeaway-source.txt", "PRACTICAL TAKEAWAY");
+const outro = path.join(segmentDir, "04-outro.mp4");
+renderMotion({ input: images[2], out: outro, duration: outroDuration, titleFile: takeawayFile, sourceFile: takeawaySource, index: 3 });
+segments.push(outro);
 
 const concatFile = path.join(OUT, "video", "concat.txt");
-await fs.writeFile(
-  concatFile,
-  videoImages.map((file) => `file '${file.replaceAll("'", "'\\''")}'\nduration 5`).join("\n") + `\nfile '${videoImages.at(-1).replaceAll("'", "'\\''")}'\n`,
-  "utf8"
-);
+await fs.writeFile(concatFile, segments.map((file) => `file '${file.replaceAll("'", "'\\''")}'`).join("\n") + "\n", "utf8");
+const silentVideo = path.join(OUT, "video", "clearforge-short-silent.mp4");
+run(["-f", "concat", "-safe", "0", "-i", concatFile, "-c", "copy", silentVideo]);
 const videoOut = path.join(OUT, "video", "clearforge-short.mp4");
-run([
-  "-f", "concat", "-safe", "0", "-i", concatFile,
-  "-vf", "fps=30,fade=t=in:st=0:d=0.4,format=yuv420p",
-  "-c:v", "libx264", "-movflags", "+faststart", videoOut
-]);
+run(["-i", silentVideo, "-i", narration, "-c:v", "copy", "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", videoOut]);
 
 const manifest = {
-  type: "clearforge_social_bundle_v1",
+  type: "clearforge_ai_news_video_v2",
   date: DATE,
   source_repo: "Clearforge",
   article_url: bundle.article?.url || "",
   approved: bundle.approved,
-  pinterest: {
-    image: path.relative(ROOT, pinOut).replaceAll("\\", "/"),
-    title: pinTitle,
-    caption: pinCaption
-  },
-  facebook: {
-    images: fbImages,
-    post_caption: fbCaption,
-    first_comment: fbComment
-  },
-  youtube: {
-    video: path.relative(ROOT, videoOut).replaceAll("\\", "/"),
-    title: ytTitle,
-    caption: ytCaption,
-    script: bundle.youtube?.script || ""
-  }
+  ai_generated_media: true,
+  pinterest: { image: rel(pinOut), title: pinTitle, caption: pinCaption },
+  facebook: { images: fbImages, post_caption: fbCaption, first_comment: fbComment },
+  youtube: { video: rel(videoOut), title: ytTitle, caption: ytCaption, script: bundle.youtube?.script || "", narration_seconds: audioDuration }
 };
-
 await fs.writeFile(path.join(OUT, "manifest.json"), JSON.stringify(manifest, null, 2) + "\n", "utf8");
-console.log(`Built Clearforge social assets for ${DATE}`);
+console.log(`Built AI-led Clearforge news assets for ${DATE}`);
