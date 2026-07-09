@@ -2,11 +2,11 @@
   "type": "clearforge_ai_news_video_v2",
   "date": "2026-07-09",
   "source_repo": "Clearforge",
-  "article_url": "",
+  "article_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-09.html",
   "approved": {
     "article": true,
     "facebook": true,
-    "pinterest": false,
+    "pinterest": true,
     "youtube": true
   },
   "ai_generated_media": true,
@@ -28,7 +28,7 @@
     "video": "social/clearforge/2026-07-09/video/clearforge-short.mp4",
     "title": "social/clearforge/2026-07-09/copy/youtube-title.txt",
     "caption": "social/clearforge/2026-07-09/copy/youtube-description.txt",
-    "script": "Three AI updates matter right now: OpenAI made voice more natural with GPT-Live, Meta launched Muse Image and previewed Muse Video, and Anthropic published a frontier safety roadmap. The takeaway? AI is getting more useful inside everyday workflows, but the winners will be people who test it on one real task at a time.",
-    "narration_seconds": 24.216
+    "script": "Today’s AI story is simple: the industry is moving from chatbots to controlled systems. Prime Intellect raised $130 million for enterprise agent infrastructure. Google updated Android Bench and added cost metrics. Security researchers warned that some agentic tools can be tricked into fetching malicious code. And DeepSeek is reportedly chasing its own chips. The practical lesson: measure cost, add guardrails, and keep humans in the loop.",
+    "narration_seconds": 33.912
   }
 }
