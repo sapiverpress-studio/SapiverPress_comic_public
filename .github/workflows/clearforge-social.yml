@@ -1,0 +1,125 @@
+name: Clearforge Social Distribution
+
+on:
+  workflow_dispatch:
+    inputs:
+      date_override:
+        description: "Optional Clearforge date YYYY-MM-DD"
+        required: false
+        default: ""
+      post_mode:
+        description: "dry_run or live"
+        required: false
+        default: "dry_run"
+  schedule:
+    - cron: "30 9 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  clearforge-social:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout distribution repo
+        uses: actions/checkout@v4
+
+      - name: Set run options
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ github.event.inputs.date_override }}" ]; then
+            echo "DATE_OVERRIDE=${{ github.event.inputs.date_override }}" >> "$GITHUB_ENV"
+          else
+            echo "DATE_OVERRIDE=$(TZ=Europe/London date +%F)" >> "$GITHUB_ENV"
+          fi
+
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            MODE="dry_run"
+          else
+            MODE="${{ github.event.inputs.post_mode || 'dry_run' }}"
+          fi
+          echo "CLEARFORGE_POST_MODE=${MODE}" >> "$GITHUB_ENV"
+
+      - name: Ensure FFmpeg is available
+        shell: bash
+        run: |
+          if ! command -v ffmpeg >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y ffmpeg
+          fi
+          ffmpeg -version | head -n 1
+
+      - name: Pull approved Clearforge bundle
+        shell: bash
+        env:
+          CLEARFORGE_REPO_PAT: ${{ secrets.CLEARFORGE_REPO_PAT }}
+        run: |
+          set -euo pipefail
+          if [ -z "${CLEARFORGE_REPO_PAT:-}" ]; then
+            echo "::error::Missing CLEARFORGE_REPO_PAT secret. It must be able to read sapiverpress-studio/Clearforge."
+            exit 1
+          fi
+
+          rm -rf vendor/clearforge
+          git clone --depth 1 "https://x-access-token:${CLEARFORGE_REPO_PAT}@github.com/sapiverpress-studio/Clearforge.git" vendor/clearforge
+
+          DATE_DIR="vendor/clearforge/bridge/clearforge/${DATE_OVERRIDE}"
+          LATEST_DIR="vendor/clearforge/bridge/clearforge/latest"
+
+          if [ -f "${DATE_DIR}/manifest.json" ]; then
+            echo "CLEARFORGE_BUNDLE_ROOT=${DATE_DIR}" >> "$GITHUB_ENV"
+          elif [ -f "${LATEST_DIR}/manifest.json" ]; then
+            echo "::warning::No approved bundle for ${DATE_OVERRIDE}; using latest approved Clearforge bundle."
+            echo "CLEARFORGE_BUNDLE_ROOT=${LATEST_DIR}" >> "$GITHUB_ENV"
+          else
+            echo "::error::No approved Clearforge bridge bundle found. Approve/export a Clearforge article first."
+            exit 1
+          fi
+
+      - name: Build Clearforge Facebook Pinterest and YouTube assets
+        run: node scripts/build-clearforge-social.mjs
+
+      - name: Upload Clearforge social artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: clearforge-social-${{ env.DATE_OVERRIDE }}
+          path: |
+            social/clearforge/${{ env.DATE_OVERRIDE }}/**/*
+          if-no-files-found: error
+
+      - name: Post or prepare Clearforge social content
+        run: node scripts/post-clearforge-social.mjs
+        env:
+          CLEARFORGE_POST_MODE: ${{ env.CLEARFORGE_POST_MODE }}
+          PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
+          PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
+          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          YOUTUBE_PRIVACY_STATUS: ${{ secrets.YOUTUBE_PRIVACY_STATUS }}
+          YOUTUBE_CATEGORY_ID: ${{ secrets.YOUTUBE_CATEGORY_ID }}
+
+      - name: Commit Clearforge assets and posting records
+        if: always()
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add social/clearforge
+          if git diff --cached --quiet; then
+            echo "No Clearforge social changes to commit."
+          else
+            git commit -m "Build Clearforge social assets for ${DATE_OVERRIDE}"
+            for attempt in 1 2 3; do
+              if git push; then
+                exit 0
+              fi
+              git pull --rebase origin main
+            done
+            git push
+          fi
