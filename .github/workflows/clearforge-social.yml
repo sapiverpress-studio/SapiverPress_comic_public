@@ -18,7 +18,8 @@ on:
           - verify
           - live
   schedule:
-    - cron: "30 9 * * *"
+    - cron: "15 4 * * *"
+    - cron: "15 5 * * *"
 
 permissions:
   contents: write
@@ -28,10 +29,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Decide whether this is the 05:15 UK distribution run
+        id: gate
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          LOCAL_TIME="$(TZ=Europe/London date +%H:%M)"
+          echo "Europe/London local time: ${LOCAL_TIME}"
+          if [ "${LOCAL_TIME}" = "05:15" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Checkout distribution repo
+        if: steps.gate.outputs.run == 'true'
         uses: actions/checkout@v4
 
       - name: Set run options
+        if: steps.gate.outputs.run == 'true'
         shell: bash
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ github.event.inputs.date_override }}" ]; then
@@ -41,7 +61,7 @@ jobs:
           fi
 
           if [ "${{ github.event_name }}" = "schedule" ]; then
-            MODE="dry_run"
+            MODE="live"
           else
             MODE="${{ github.event.inputs.post_mode }}"
           fi
@@ -50,6 +70,7 @@ jobs:
           echo "CLEARFORGE_EVENT_NAME=${{ github.event_name }}" >> "$GITHUB_ENV"
 
       - name: Ensure FFmpeg is available
+        if: steps.gate.outputs.run == 'true'
         shell: bash
         run: |
           if ! command -v ffmpeg >/dev/null 2>&1; then
@@ -59,6 +80,7 @@ jobs:
           ffmpeg -version | head -n 1
 
       - name: Pull approved Clearforge bundle
+        if: steps.gate.outputs.run == 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -79,6 +101,7 @@ jobs:
           fi
 
       - name: Sync latest Clearforge approval flags
+        if: steps.gate.outputs.run == 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -106,9 +129,11 @@ jobs:
           NODE
 
       - name: Build Clearforge Facebook Pinterest and YouTube assets
+        if: steps.gate.outputs.run == 'true'
         run: node scripts/build-clearforge-social.mjs
 
       - name: Upload Clearforge social artifact
+        if: steps.gate.outputs.run == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: clearforge-social-${{ env.DATE_OVERRIDE }}
@@ -117,6 +142,7 @@ jobs:
           if-no-files-found: error
 
       - name: Post prepare or verify Clearforge social content
+        if: steps.gate.outputs.run == 'true'
         run: node scripts/post-clearforge-social.mjs
         env:
           CLEARFORGE_POST_MODE: ${{ env.CLEARFORGE_POST_MODE }}
@@ -135,7 +161,7 @@ jobs:
           FORCE_CLEARFORGE_POST: ${{ secrets.FORCE_CLEARFORGE_POST }}
 
       - name: Commit Clearforge assets and posting records
-        if: always()
+        if: steps.gate.outputs.run == 'true' && always()
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
