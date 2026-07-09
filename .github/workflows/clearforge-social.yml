@@ -18,8 +18,8 @@ on:
           - verify
           - live
   schedule:
-    - cron: "15 4 * * *"
-    - cron: "15 5 * * *"
+    - cron: "0 5 * * *"
+    - cron: "0 6 * * *"
 
 permissions:
   contents: write
@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Decide whether this is the 05:15 UK distribution run
+      - name: Decide whether this is the 06:00 UK distribution run
         id: gate
         shell: bash
         run: |
@@ -40,7 +40,7 @@ jobs:
 
           LOCAL_TIME="$(TZ=Europe/London date +%H:%M)"
           echo "Europe/London local time: ${LOCAL_TIME}"
-          if [ "${LOCAL_TIME}" = "05:15" ]; then
+          if [ "${LOCAL_TIME}" = "06:00" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
           else
             echo "run=false" >> "$GITHUB_OUTPUT"
