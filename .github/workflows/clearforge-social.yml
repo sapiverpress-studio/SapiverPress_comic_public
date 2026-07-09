@@ -78,6 +78,33 @@ jobs:
             exit 1
           fi
 
+      - name: Sync latest Clearforge approval flags
+        shell: bash
+        run: |
+          set -euo pipefail
+          APPROVAL_FILE="vendor/clearforge/drafts/${DATE_OVERRIDE}/approval.json"
+          MANIFEST_FILE="${CLEARFORGE_BUNDLE_ROOT}/manifest.json"
+
+          if [ ! -f "${APPROVAL_FILE}" ]; then
+            echo "::error::Missing latest approval file: ${APPROVAL_FILE}"
+            exit 1
+          fi
+
+          node - "${APPROVAL_FILE}" "${MANIFEST_FILE}" <<'NODE'
+          const fs = require('fs');
+          const [approvalPath, manifestPath] = process.argv.slice(2);
+          const approval = JSON.parse(fs.readFileSync(approvalPath, 'utf8'));
+          const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+          manifest.approved = {
+            article: approval.article_approved === true,
+            facebook: approval.facebook_approved === true,
+            pinterest: approval.pinterest_approved === true,
+            youtube: approval.youtube_approved === true
+          };
+          fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + '\n');
+          console.log('Synced approvals:', manifest.approved);
+          NODE
+
       - name: Build Clearforge Facebook Pinterest and YouTube assets
         run: node scripts/build-clearforge-social.mjs
 
