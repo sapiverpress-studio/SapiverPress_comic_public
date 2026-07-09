@@ -10,6 +10,7 @@ const MODE = (process.env.CLEARFORGE_POST_MODE || "dry_run").toLowerCase();
 const OUT = path.join(ROOT, "social", "clearforge", DATE);
 const MANIFEST = path.join(OUT, "manifest.json");
 const RESULT = path.join(OUT, "post-result.json");
+const DEFAULT_PINTEREST_BOARD_NAME = "Sapiver Press Comic";
 
 function abs(rel) { return path.isAbsolute(rel) ? rel : path.join(ROOT, rel); }
 async function readRoot(rel) { return fs.readFile(abs(rel), "utf8"); }
@@ -62,20 +63,30 @@ async function listPinterestBoards(token) {
   return boards;
 }
 
+async function createPinterestBoard(token, name) {
+  return jsonFetch("https://api.pinterest.com/v5/boards", {
+    method: "POST",
+    headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
+    body: JSON.stringify({ name, description: "Daily Sapiver Press and Clearforge pins." })
+  });
+}
+
 async function resolvePinterestBoard(token) {
   const explicitId = String(process.env.PINTEREST_BOARD_ID || "").trim();
-  const boardName = String(process.env.PINTEREST_BOARD_NAME || "").trim();
+  const boardName = String(process.env.PINTEREST_BOARD_NAME || DEFAULT_PINTEREST_BOARD_NAME).trim();
 
   if (explicitId) {
     const board = await jsonFetch(`https://api.pinterest.com/v5/boards/${explicitId}`, { headers: { Authorization: `Bearer ${token}` } });
-    return { id: board.id || explicitId, name: board.name || null, source: "board_id" };
+    return { id: board.id || explicitId, name: board.name || boardName, source: "board_id" };
   }
 
-  if (!boardName) throw new Error("Missing PINTEREST_BOARD_ID and PINTEREST_BOARD_NAME.");
   const boards = await listPinterestBoards(token);
   const exact = boards.find((board) => String(board.name || "").trim().toLowerCase() === boardName.toLowerCase());
-  if (!exact) throw new Error(`Pinterest board not found by name: ${boardName}`);
-  return { id: exact.id, name: exact.name || boardName, source: "board_name" };
+  if (exact?.id) return { id: exact.id, name: exact.name || boardName, source: "board_name" };
+
+  const created = await createPinterestBoard(token, boardName);
+  if (!created?.id) throw new Error(`Pinterest board creation returned no id for ${boardName}`);
+  return { id: created.id, name: created.name || boardName, source: "created_board" };
 }
 
 async function verifyPinterest() {
@@ -168,7 +179,7 @@ async function postYouTube(manifest) {
   const description = clean(await readRoot(manifest.youtube.caption), 4500);
   const metadata = {
     snippet: { title, description, tags: ["AI news", "practical AI", "Clearforge"], categoryId: process.env.YOUTUBE_CATEGORY_ID || "27", defaultLanguage: "en-GB" },
-    status: { privacyStatus: process.env.YOUTUBE_PRIVACY_STATUS || "unlisted", selfDeclaredMadeForKids: false, containsSyntheticMedia: true }
+    status: { privacyStatus: process.env.YOUTUBE_PRIVACY_STATUS || "public", selfDeclaredMadeForKids: false, containsSyntheticMedia: true }
   };
   const initRes = await fetch("https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status", {
     method: "POST",
