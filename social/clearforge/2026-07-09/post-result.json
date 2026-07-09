@@ -1,17 +1,21 @@
 {
   "date": "2026-07-09",
-  "mode": "dry_run",
+  "mode": "verify",
   "type": "clearforge_ai_news_video_v2",
+  "existing_result_detected": false,
   "facebook": {
-    "dry_run": true,
-    "approved": false
+    "ok": true,
+    "page_id": "997877693401171",
+    "page_name": "Sapiver Press",
+    "resolved_page_token": true
   },
   "pinterest": {
-    "dry_run": true,
-    "approved": false
+    "ok": false,
+    "reason": "missing_pinterest_secrets"
   },
   "youtube": {
-    "dry_run": true,
-    "approved": false
+    "failed": true,
+    "channel": "youtube",
+    "error": "403 Forbidden: {\"error\":{\"code\":403,\"message\":\"Request had insufficient authentication scopes.\",\"errors\":[{\"message\":\"Insufficient Permission\",\"domain\":\"global\",\"reason\":\"insufficientPermissions\"}],\"status\":\"PERMISSION_DENIED\",\"details\":[{\"@type\":\"type.googleapis.com/google.rpc.ErrorInfo\",\"reason\":\"ACCESS_TOKEN_SCOPE_INSUFFICIENT\",\"domain\":\"googleapis.com\",\"metadata\":{\"service\":\"youtube.googleapis.com\",\"method\":\"youtube.api.v3.V3DataChannelService.List\"}}]}}"
   }
 }
