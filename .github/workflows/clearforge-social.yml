@@ -17,6 +17,9 @@ on:
           - dry_run
           - verify
           - live
+  repository_dispatch:
+    types:
+      - clearforge_publish
   schedule:
     - cron: "0 5 * * *"
     - cron: "0 6 * * *"
@@ -29,11 +32,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Decide whether this is the 06:00 UK distribution run
+      - name: Decide whether this run should execute
         id: gate
         shell: bash
         run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "${{ github.event_name }}" = "repository_dispatch" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
             exit 0
           fi
@@ -54,18 +57,26 @@ jobs:
         if: steps.gate.outputs.run == 'true'
         shell: bash
         run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ github.event.inputs.date_override }}" ]; then
-            echo "DATE_OVERRIDE=${{ github.event.inputs.date_override }}" >> "$GITHUB_ENV"
-          else
-            echo "DATE_OVERRIDE=$(TZ=Europe/London date +%F)" >> "$GITHUB_ENV"
-          fi
-
-          if [ "${{ github.event_name }}" = "schedule" ]; then
+          if [ "${{ github.event_name }}" = "repository_dispatch" ]; then
+            DATE_VALUE="${{ github.event.client_payload.date }}"
             MODE="live"
-          else
+          elif [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ github.event.inputs.date_override }}" ]; then
+            DATE_VALUE="${{ github.event.inputs.date_override }}"
             MODE="${{ github.event.inputs.post_mode }}"
+          else
+            DATE_VALUE="$(TZ=Europe/London date +%F)"
+            if [ "${{ github.event_name }}" = "schedule" ]; then
+              MODE="live"
+            else
+              MODE="${{ github.event.inputs.post_mode }}"
+            fi
           fi
 
+          if [ -z "${DATE_VALUE}" ]; then
+            DATE_VALUE="$(TZ=Europe/London date +%F)"
+          fi
+
+          echo "DATE_OVERRIDE=${DATE_VALUE}" >> "$GITHUB_ENV"
           echo "CLEARFORGE_POST_MODE=${MODE}" >> "$GITHUB_ENV"
           echo "CLEARFORGE_EVENT_NAME=${{ github.event_name }}" >> "$GITHUB_ENV"
 
@@ -96,7 +107,7 @@ jobs:
             echo "::warning::No approved bundle for ${DATE_OVERRIDE}; manual run is using latest approved Clearforge bundle."
             echo "CLEARFORGE_BUNDLE_ROOT=${LATEST_DIR}" >> "$GITHUB_ENV"
           else
-            echo "::error::No approved Clearforge bundle for ${DATE_OVERRIDE}. Scheduled runs refuse to reuse stale content."
+            echo "::error::No approved Clearforge bundle for ${DATE_OVERRIDE}. Automated runs refuse to reuse stale content."
             exit 1
           fi
 
