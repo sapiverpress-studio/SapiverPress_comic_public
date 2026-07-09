@@ -1,0 +1,33 @@
+{
+  "type": "clearforge_social_bundle_v1",
+  "date": "2026-07-09",
+  "source_repo": "Clearforge",
+  "article_url": "",
+  "approved": {
+    "article": true,
+    "facebook": false,
+    "pinterest": false,
+    "youtube": false
+  },
+  "pinterest": {
+    "image": "social/clearforge/2026-07-09/pinterest/pin.png",
+    "title": "social/clearforge/2026-07-09/copy/pinterest-title.txt",
+    "caption": "social/clearforge/2026-07-09/copy/pinterest-caption.txt"
+  },
+  "facebook": {
+    "images": [
+      "social/clearforge/2026-07-09/facebook/card-1.png",
+      "social/clearforge/2026-07-09/facebook/card-2.png",
+      "social/clearforge/2026-07-09/facebook/card-3.png",
+      "social/clearforge/2026-07-09/facebook/card-4.png",
+      "social/clearforge/2026-07-09/facebook/card-5.png"
+    ],
+    "post_caption": "social/clearforge/2026-07-09/copy/facebook-post.txt",
+    "first_comment": "social/clearforge/2026-07-09/copy/facebook-first-comment.txt"
+  },
+  "youtube": {
+    "video": "social/clearforge/2026-07-09/video/clearforge-short.mp4",
+    "title": "social/clearforge/2026-07-09/copy/youtube-title.txt",
+    "caption": "social/clearforge/2026-07-09/copy/youtube-description.txt"
+  }
+}

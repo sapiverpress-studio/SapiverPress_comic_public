@@ -1,0 +1,17 @@
+{
+  "date": "2026-07-09",
+  "mode": "dry_run",
+  "type": "clearforge_social_bundle_v1",
+  "facebook": {
+    "dry_run": true,
+    "approved": false
+  },
+  "pinterest": {
+    "dry_run": true,
+    "approved": false
+  },
+  "youtube": {
+    "dry_run": true,
+    "approved": false
+  }
+}
