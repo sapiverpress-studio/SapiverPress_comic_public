@@ -7,10 +7,15 @@ on:
         description: "Optional Clearforge date YYYY-MM-DD"
         required: false
         default: ""
+        type: string
       post_mode:
-        description: "dry_run or live"
-        required: false
+        description: "Choose whether to test or publish"
+        required: true
         default: "dry_run"
+        type: choice
+        options:
+          - dry_run
+          - live
   schedule:
     - cron: "30 9 * * *"
 
@@ -37,8 +42,9 @@ jobs:
           if [ "${{ github.event_name }}" = "schedule" ]; then
             MODE="dry_run"
           else
-            MODE="${{ github.event.inputs.post_mode || 'dry_run' }}"
+            MODE="${{ github.event.inputs.post_mode }}"
           fi
+
           echo "CLEARFORGE_POST_MODE=${MODE}" >> "$GITHUB_ENV"
           echo "CLEARFORGE_EVENT_NAME=${{ github.event_name }}" >> "$GITHUB_ENV"
 
