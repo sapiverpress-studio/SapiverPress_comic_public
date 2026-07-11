@@ -12,15 +12,44 @@ const MANIFEST = path.join(OUT, "manifest.json");
 const RESULT = path.join(OUT, "post-result.json");
 const DEFAULT_PINTEREST_BOARD_NAME = "Sapiver Press Comic";
 
+let pinterestAccessTokenCache = "";
+
 function abs(rel) { return path.isAbsolute(rel) ? rel : path.join(ROOT, rel); }
 async function readRoot(rel) { return fs.readFile(abs(rel), "utf8"); }
 function b64(file) { return fssync.readFileSync(abs(file)).toString("base64"); }
 function clean(text, limit) { return String(text || "").replace(/[\u0000-\u001f\u007f]/g, "").replace(/[ \t]+/g, " ").replace(/\n{3,}/g, "\n\n").trim().slice(0, limit); }
 function compactError(error) { return String(error?.message || error || "Unknown error").replace(/\s+/g, " ").slice(0, 2200); }
 function truthy(value) { return ["1", "true", "yes", "y", "on"].includes(String(value || "").toLowerCase()); }
+function firstEnv(...names) { for (const name of names) { const value = String(process.env[name] || "").trim(); if (value) return value; } return ""; }
+function pinterestStaticToken() { return firstEnv("PINTEREST_ACCESS_TOKEN", "PINTEREST_TOKEN", "PINTEREST_API_TOKEN", "PINTEREST_OAUTH_TOKEN"); }
 async function jsonFetch(url, options = {}) { const res = await fetch(url, options); const text = await res.text(); let data = {}; try { data = text ? JSON.parse(text) : {}; } catch { data = { raw: text }; } if (!res.ok) throw new Error(`${res.status} ${res.statusText}: ${JSON.stringify(data).slice(0, 1600)}`); return data; }
 async function safe(name, fn) { try { return await fn(); } catch (error) { return { failed: true, channel: name, error: compactError(error) }; } }
 async function readExisting() { try { return JSON.parse(await fs.readFile(RESULT, "utf8")); } catch { return {}; } }
+
+async function pinterestToken() {
+  if (pinterestAccessTokenCache) return pinterestAccessTokenCache;
+  const staticToken = pinterestStaticToken();
+  if (staticToken) {
+    pinterestAccessTokenCache = staticToken;
+    return pinterestAccessTokenCache;
+  }
+
+  const refreshToken = firstEnv("PINTEREST_REFRESH_TOKEN");
+  const clientId = firstEnv("PINTEREST_CLIENT_ID", "PINTEREST_APP_ID");
+  const clientSecret = firstEnv("PINTEREST_CLIENT_SECRET", "PINTEREST_APP_SECRET");
+  if (!refreshToken || !clientId || !clientSecret) return "";
+
+  const basic = Buffer.from(`${clientId}:${clientSecret}`).toString("base64");
+  const body = new URLSearchParams({ grant_type: "refresh_token", refresh_token: refreshToken });
+  const data = await jsonFetch("https://api.pinterest.com/v5/oauth/token", {
+    method: "POST",
+    headers: { Authorization: `Basic ${basic}`, "Content-Type": "application/x-www-form-urlencoded" },
+    body
+  });
+  if (!data.access_token) throw new Error("Pinterest refresh token flow returned no access_token.");
+  pinterestAccessTokenCache = data.access_token;
+  return pinterestAccessTokenCache;
+}
 
 function facebookToken() { return String(process.env.FB_PAGE_TOKEN || process.env.FACEBOOK_PAGE_ACCESS_TOKEN || "").trim(); }
 function facebookPageId() { return String(process.env.FB_PAGE_ID || process.env.FACEBOOK_PAGE_ID || "").trim(); }
@@ -90,8 +119,8 @@ async function resolvePinterestBoard(token) {
 }
 
 async function verifyPinterest() {
-  const token = String(process.env.PINTEREST_ACCESS_TOKEN || "").trim();
-  if (!token) return { ok: false, reason: "missing_pinterest_access_token" };
+  const token = await pinterestToken();
+  if (!token) return { ok: false, reason: "missing_pinterest_credentials", accepted_secret_names: ["PINTEREST_ACCESS_TOKEN", "PINTEREST_TOKEN", "PINTEREST_API_TOKEN", "PINTEREST_OAUTH_TOKEN", "PINTEREST_REFRESH_TOKEN+PINTEREST_CLIENT_ID+PINTEREST_CLIENT_SECRET"] };
   const board = await resolvePinterestBoard(token);
   return { ok: true, board_id: board.id, board_name: board.name, resolved_from: board.source };
 }
@@ -119,8 +148,8 @@ async function verifyYouTube() {
 
 async function postPinterest(manifest) {
   if (manifest.approved?.pinterest !== true) return { skipped: true, reason: "pinterest_not_approved" };
-  const token = String(process.env.PINTEREST_ACCESS_TOKEN || "").trim();
-  if (!token) return { skipped: true, reason: "missing_pinterest_access_token" };
+  const token = await pinterestToken();
+  if (!token) return { skipped: true, reason: "missing_pinterest_credentials" };
   const board = await resolvePinterestBoard(token);
   const title = clean(await readRoot(manifest.pinterest.title), 100);
   const description = clean(await readRoot(manifest.pinterest.caption), 480);
