@@ -1,0 +1,34 @@
+{
+  "type": "clearforge_ai_news_video_v2",
+  "date": "2026-07-11",
+  "source_repo": "Clearforge",
+  "article_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-11.html",
+  "approved": {
+    "article": true,
+    "facebook": true,
+    "pinterest": true,
+    "youtube": true
+  },
+  "ai_generated_media": true,
+  "pinterest": {
+    "image": "social/clearforge/2026-07-11/pinterest/pin.png",
+    "title": "social/clearforge/2026-07-11/copy/pinterest-title.txt",
+    "caption": "social/clearforge/2026-07-11/copy/pinterest-caption.txt"
+  },
+  "facebook": {
+    "images": [
+      "social/clearforge/2026-07-11/facebook/story-1.png",
+      "social/clearforge/2026-07-11/facebook/story-2.png",
+      "social/clearforge/2026-07-11/facebook/story-3.png"
+    ],
+    "post_caption": "social/clearforge/2026-07-11/copy/facebook-post.txt",
+    "first_comment": "social/clearforge/2026-07-11/copy/facebook-first-comment.txt"
+  },
+  "youtube": {
+    "video": "social/clearforge/2026-07-11/video/clearforge-short.mp4",
+    "title": "social/clearforge/2026-07-11/copy/youtube-title.txt",
+    "caption": "social/clearforge/2026-07-11/copy/youtube-description.txt",
+    "script": "Three AI updates worth caring about: OpenAI launched GPT-5.6, OpenAI introduced ChatGPT Work, and Anthropic put Claude directly into Slack. The real story is workflow, not hype. If AI can help with reports, briefs, and repetitive admin, small teams get the most value. ([openai.com](https://openai.com/index/gpt-5-6/))",
+    "narration_seconds": 24.216
+  }
+}
