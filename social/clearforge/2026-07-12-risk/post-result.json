@@ -1,0 +1,67 @@
+{
+  "date": "2026-07-12-risk",
+  "mode": "live",
+  "type": "clearforge_ai_news_video_v2",
+  "existing_result_detected": false,
+  "facebook": {
+    "failed": true,
+    "channel": "facebook",
+    "error": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AoulDPhpST9YRioSz_furET\"}}"
+  },
+  "pinterest": {
+    "failed": true,
+    "channel": "pinterest",
+    "error": "401 Unauthorized: {\"code\":2,\"message\":\"Authentication failed.\",\"status\":\"failure\"}"
+  },
+  "youtube": {
+    "kind": "youtube#video",
+    "etag": "SbkVvHUiIbHnvvhY5kUNBxLsHQQ",
+    "id": "DP2yok_HHnc",
+    "snippet": {
+      "publishedAt": "2026-07-12T16:48:01Z",
+      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
+      "title": "AI is getting useful, but the real work is setting limits",
+      "description": "Use AI where the risk is low and the review step is clear. Keep humans in the loop for image use, ad claims, family/shared accounts, and any public-facing output.Read the full brief: https://clearforge-daily-brief.netlify.app/posts/2026-07-12-risk.html",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/DP2yok_HHnc/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/DP2yok_HHnc/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/DP2yok_HHnc/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Sapiver Press",
+      "tags": [
+        "AI news",
+        "Clearforge",
+        "practical AI"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "AI is getting useful, but the real work is setting limits",
+        "description": "Use AI where the risk is low and the review step is clear. Keep humans in the loop for image use, ad claims, family/shared accounts, and any public-facing output.Read the full brief: https://clearforge-daily-brief.netlify.app/posts/2026-07-12-risk.html"
+      }
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": true
+    },
+    "youtube_url": "https://www.youtube.com/watch?v=DP2yok_HHnc"
+  }
+}
