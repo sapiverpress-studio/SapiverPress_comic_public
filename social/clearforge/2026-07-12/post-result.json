@@ -1,0 +1,67 @@
+{
+  "date": "2026-07-12",
+  "mode": "live",
+  "type": "clearforge_ai_news_video_v2",
+  "existing_result_detected": false,
+  "facebook": {
+    "failed": true,
+    "channel": "facebook",
+    "error": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"A3wgq2H8SjC05X3w9neyMZa\"}}"
+  },
+  "pinterest": {
+    "failed": true,
+    "channel": "pinterest",
+    "error": "401 Unauthorized: {\"code\":2,\"message\":\"Authentication failed.\",\"status\":\"failure\"}"
+  },
+  "youtube": {
+    "kind": "youtube#video",
+    "etag": "BrQDxhj7nZ2YAr9qDEukLBdl31Y",
+    "id": "cPKEMICnP-g",
+    "snippet": {
+      "publishedAt": "2026-07-12T05:58:00Z",
+      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
+      "title": "AI’s new phase is about trust, not just bigger models",
+      "description": "Treat AI as a trust and workflow issue, not just a content generator: use clear consent for images, label synthetic ad assets, and test one local or open-source tool for a private task this week. ([techcrunch.com](https://techcrunch.com/2026/07/10/meta-removes-controversial-ai-feature-on-instagram-after-backlash/))Read the full brief: https://clearforge-daily-brief.netlify.app/posts/2026-07-12.html",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/cPKEMICnP-g/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/cPKEMICnP-g/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/cPKEMICnP-g/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Sapiver Press",
+      "tags": [
+        "AI news",
+        "Clearforge",
+        "practical AI"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "AI’s new phase is about trust, not just bigger models",
+        "description": "Treat AI as a trust and workflow issue, not just a content generator: use clear consent for images, label synthetic ad assets, and test one local or open-source tool for a private task this week. ([techcrunch.com](https://techcrunch.com/2026/07/10/meta-removes-controversial-ai-feature-on-instagram-after-backlash/))Read the full brief: https://clearforge-daily-brief.netlify.app/posts/2026-07-12.html"
+      }
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": true
+    },
+    "youtube_url": "https://www.youtube.com/watch?v=cPKEMICnP-g"
+  }
+}

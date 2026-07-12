@@ -1,0 +1,34 @@
+{
+  "type": "clearforge_ai_news_video_v2",
+  "date": "2026-07-12",
+  "source_repo": "Clearforge",
+  "article_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-12.html",
+  "approved": {
+    "article": true,
+    "facebook": true,
+    "pinterest": true,
+    "youtube": true
+  },
+  "ai_generated_media": true,
+  "pinterest": {
+    "image": "social/clearforge/2026-07-12/pinterest/pin.png",
+    "title": "social/clearforge/2026-07-12/copy/pinterest-title.txt",
+    "caption": "social/clearforge/2026-07-12/copy/pinterest-caption.txt"
+  },
+  "facebook": {
+    "images": [
+      "social/clearforge/2026-07-12/facebook/story-1.png",
+      "social/clearforge/2026-07-12/facebook/story-2.png",
+      "social/clearforge/2026-07-12/facebook/story-3.png"
+    ],
+    "post_caption": "social/clearforge/2026-07-12/copy/facebook-post.txt",
+    "first_comment": "social/clearforge/2026-07-12/copy/facebook-first-comment.txt"
+  },
+  "youtube": {
+    "video": "social/clearforge/2026-07-12/video/clearforge-short.mp4",
+    "title": "social/clearforge/2026-07-12/copy/youtube-title.txt",
+    "caption": "social/clearforge/2026-07-12/copy/youtube-description.txt",
+    "script": "Here’s the AI trend most people missed: it’s moving from flashy demos to practical guardrails. OpenAI is hiring for families and caregivers, Meta removed an Instagram AI feature after backlash, Google is adding AI ad disclosure, and Ollama just raised $65 million as local AI keeps growing. The big shift is trust, not hype. ([techcrunch.com](https://techcrunch.com/2026/07/11/openai-bets-on-families-as-chatgpt-goes-deeper-into-households/))",
+    "narration_seconds": 37.008
+  }
+}
