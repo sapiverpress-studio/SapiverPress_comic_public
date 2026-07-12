@@ -1,0 +1,67 @@
+{
+  "date": "2026-07-12-alt",
+  "mode": "live",
+  "type": "clearforge_ai_news_video_v2",
+  "existing_result_detected": false,
+  "facebook": {
+    "failed": true,
+    "channel": "facebook",
+    "error": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AL2HVAfFnhtUUDwGKqL8gAF\"}}"
+  },
+  "pinterest": {
+    "failed": true,
+    "channel": "pinterest",
+    "error": "401 Unauthorized: {\"code\":2,\"message\":\"Authentication failed.\",\"status\":\"failure\"}"
+  },
+  "youtube": {
+    "kind": "youtube#video",
+    "etag": "F5i0MdD8-30yRe1lw2hqwJjTWvI",
+    "id": "cecFD5oyKvc",
+    "snippet": {
+      "publishedAt": "2026-07-12T11:36:36Z",
+      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
+      "title": "A creator’s AI workflow now needs permission, disclosure, and a local backup",
+      "description": "Choose one real workflow this week and tighten it: add a consent check for image use, a disclosure note for AI-made assets, and one local/open-source test for a private or repetitive task. If it saves time without creating review problems, keep it.Read the full brief: https://clearforge-daily-brief.netlify.app/posts/2026-07-12-alt.html",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/cecFD5oyKvc/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/cecFD5oyKvc/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/cecFD5oyKvc/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Sapiver Press",
+      "tags": [
+        "AI news",
+        "Clearforge",
+        "practical AI"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "A creator’s AI workflow now needs permission, disclosure, and a local backup",
+        "description": "Choose one real workflow this week and tighten it: add a consent check for image use, a disclosure note for AI-made assets, and one local/open-source test for a private or repetitive task. If it saves time without creating review problems, keep it.Read the full brief: https://clearforge-daily-brief.netlify.app/posts/2026-07-12-alt.html"
+      }
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": true
+    },
+    "youtube_url": "https://www.youtube.com/watch?v=cecFD5oyKvc"
+  }
+}
