@@ -10,7 +10,7 @@ const MODE = (process.env.CLEARFORGE_POST_MODE || "dry_run").toLowerCase();
 const OUT = path.join(ROOT, "social", "clearforge", DATE);
 const MANIFEST = path.join(OUT, "manifest.json");
 const RESULT = path.join(OUT, "post-result.json");
-const DEFAULT_PINTEREST_BOARD_NAME = "Sapiver Press Comic";
+const DEFAULT_PINTEREST_BOARD_NAME = "Clearforge";
 
 let pinterestAccessTokenCache = "";
 
@@ -96,7 +96,7 @@ async function createPinterestBoard(token, name) {
   return jsonFetch("https://api.pinterest.com/v5/boards", {
     method: "POST",
     headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ name, description: "Daily Sapiver Press and Clearforge pins." })
+    body: JSON.stringify({ name, description: "Daily Clearforge AI briefing pins." })
   });
 }
 
@@ -176,27 +176,46 @@ async function uploadFacebookPhoto(pageId, token, relImage) {
   return jsonFetch(`https://graph.facebook.com/v20.0/${pageId}/photos`, { method: "POST", body: form });
 }
 
+async function postFacebookFeed(pageId, token, manifest, attachedPhotos = []) {
+  const body = new URLSearchParams();
+  body.set("message", await readRoot(manifest.facebook.post_caption));
+  body.set("access_token", token);
+  if (!attachedPhotos.length && manifest.article_url) body.set("link", manifest.article_url);
+  attachedPhotos.forEach((photo, i) => body.append(`attached_media[${i}]`, JSON.stringify({ media_fbid: photo.id })));
+  return jsonFetch(`https://graph.facebook.com/v20.0/${pageId}/feed`, { method: "POST", body });
+}
+
 async function postFacebook(manifest) {
   if (manifest.approved?.facebook !== true) return { skipped: true, reason: "facebook_not_approved" };
   const rawToken = facebookToken();
   const pageId = facebookPageId();
   if (!rawToken || !pageId) return { skipped: true, reason: "missing_facebook_secrets" };
   const resolved = await resolveFacebookPageAccessToken(rawToken, pageId);
-  const uploaded = [];
-  for (const image of manifest.facebook.images || []) uploaded.push(await uploadFacebookPhoto(pageId, resolved.token, image));
-  const body = new URLSearchParams();
-  body.set("message", await readRoot(manifest.facebook.post_caption));
-  body.set("access_token", resolved.token);
-  uploaded.forEach((photo, i) => body.append(`attached_media[${i}]`, JSON.stringify({ media_fbid: photo.id })));
-  const post = await jsonFetch(`https://graph.facebook.com/v20.0/${pageId}/feed`, { method: "POST", body });
   const firstCommentText = clean(await readRoot(manifest.facebook.first_comment), 8000);
-  if (firstCommentText && post.id) {
-    const commentBody = new URLSearchParams();
-    commentBody.set("message", firstCommentText);
-    commentBody.set("access_token", resolved.token);
-    post.first_comment = await jsonFetch(`https://graph.facebook.com/v20.0/${post.id}/comments`, { method: "POST", body: commentBody });
+  const uploaded = [];
+  let imagePostError = null;
+
+  try {
+    for (const image of manifest.facebook.images || []) uploaded.push(await uploadFacebookPhoto(pageId, resolved.token, image));
+    const post = await postFacebookFeed(pageId, resolved.token, manifest, uploaded);
+    if (firstCommentText && post.id) {
+      const commentBody = new URLSearchParams();
+      commentBody.set("message", firstCommentText);
+      commentBody.set("access_token", resolved.token);
+      post.first_comment = await jsonFetch(`https://graph.facebook.com/v20.0/${post.id}/comments`, { method: "POST", body: commentBody });
+    }
+    return { ...post, posting_format: "image_feed", resolved_page_token: resolved.resolved };
+  } catch (error) {
+    imagePostError = compactError(error);
   }
-  return post;
+
+  const fallback = await postFacebookFeed(pageId, resolved.token, manifest, []);
+  return {
+    ...fallback,
+    posting_format: "text_link_fallback",
+    resolved_page_token: resolved.resolved,
+    fallback_reason: imagePostError
+  };
 }
 
 async function postYouTube(manifest) {
