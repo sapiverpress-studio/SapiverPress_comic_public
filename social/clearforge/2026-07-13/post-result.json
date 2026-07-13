@@ -4,9 +4,10 @@
   "type": "clearforge_ai_news_video_v2",
   "existing_result_detected": false,
   "facebook": {
-    "failed": true,
-    "channel": "facebook",
-    "error": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"Aog_2ICSJkZcREuX8YtvZ4X\"}}"
+    "id": "997877693401171_122133446217198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AJJ9IYHqwbgVyWaXMB4j5q6\"}}"
   },
   "pinterest": {
     "failed": true,
@@ -15,26 +16,26 @@
   },
   "youtube": {
     "kind": "youtube#video",
-    "etag": "FXPpvVbv1JuDq8llD5nZtY_HTIc",
-    "id": "V8s6EG3ePb0",
+    "etag": "3M6aLSllNC9wvR6hFNsb_MtunYM",
+    "id": "zCZbIV9XPfI",
     "snippet": {
-      "publishedAt": "2026-07-13T08:21:15Z",
+      "publishedAt": "2026-07-13T08:33:53Z",
       "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
       "title": "AI is moving from demos to daily work",
       "description": "Pick one repetitive weekly task — drafting, research, note-taking, or support replies — and test whether a faster model or the new voice workflow saves you time without adding cleanup.Read the full brief: https://clearforge-daily-brief.netlify.app/posts/2026-07-13.html",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/V8s6EG3ePb0/default.jpg",
+          "url": "https://i.ytimg.com/vi/zCZbIV9XPfI/default.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/V8s6EG3ePb0/mqdefault.jpg",
+          "url": "https://i.ytimg.com/vi/zCZbIV9XPfI/mqdefault.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/V8s6EG3ePb0/hqdefault.jpg",
+          "url": "https://i.ytimg.com/vi/zCZbIV9XPfI/hqdefault.jpg",
           "width": 480,
           "height": 360
         }
@@ -62,6 +63,6 @@
       "selfDeclaredMadeForKids": false,
       "containsSyntheticMedia": true
     },
-    "youtube_url": "https://www.youtube.com/watch?v=V8s6EG3ePb0"
+    "youtube_url": "https://www.youtube.com/watch?v=zCZbIV9XPfI"
   }
 }
