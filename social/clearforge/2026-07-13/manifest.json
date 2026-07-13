@@ -1,0 +1,34 @@
+{
+  "type": "clearforge_ai_news_video_v2",
+  "date": "2026-07-13",
+  "source_repo": "Clearforge",
+  "article_url": "https://clearforge-daily-brief.netlify.app/posts/2026-07-13.html",
+  "approved": {
+    "article": true,
+    "facebook": true,
+    "pinterest": true,
+    "youtube": true
+  },
+  "ai_generated_media": true,
+  "pinterest": {
+    "image": "social/clearforge/2026-07-13/pinterest/pin.png",
+    "title": "social/clearforge/2026-07-13/copy/pinterest-title.txt",
+    "caption": "social/clearforge/2026-07-13/copy/pinterest-caption.txt"
+  },
+  "facebook": {
+    "images": [
+      "social/clearforge/2026-07-13/facebook/story-1.png",
+      "social/clearforge/2026-07-13/facebook/story-2.png",
+      "social/clearforge/2026-07-13/facebook/story-3.png"
+    ],
+    "post_caption": "social/clearforge/2026-07-13/copy/facebook-post.txt",
+    "first_comment": "social/clearforge/2026-07-13/copy/facebook-first-comment.txt"
+  },
+  "youtube": {
+    "video": "social/clearforge/2026-07-13/video/clearforge-short.mp4",
+    "title": "social/clearforge/2026-07-13/copy/youtube-title.txt",
+    "caption": "social/clearforge/2026-07-13/copy/youtube-description.txt",
+    "script": "Big AI update: the story is shifting from model hype to real-world guardrails. Apple sued OpenAI, Meta removed an Instagram AI feature after backlash, OpenAI is shutting down Atlas, and Google is adding AI ad disclosure. For creators and small businesses, the lesson is simple: use AI to speed up work, but keep human control over content, consent, and final approval.",
+    "narration_seconds": 26.856
+  }
+}
