@@ -6,7 +6,7 @@
   "facebook": {
     "failed": true,
     "channel": "facebook",
-    "error": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AAOzkN93QSR4ZEJK6yAayJS\"}}"
+    "error": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"Aog_2ICSJkZcREuX8YtvZ4X\"}}"
   },
   "pinterest": {
     "failed": true,
@@ -15,26 +15,26 @@
   },
   "youtube": {
     "kind": "youtube#video",
-    "etag": "vIu7Tus7cFCCRaA_jygxOeakdbc",
-    "id": "JxRpbC82Ngs",
+    "etag": "FXPpvVbv1JuDq8llD5nZtY_HTIc",
+    "id": "V8s6EG3ePb0",
     "snippet": {
-      "publishedAt": "2026-07-13T06:29:33Z",
+      "publishedAt": "2026-07-13T08:21:15Z",
       "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
-      "title": "AI moves from hype to guardrails as major platforms tighten the rules",
-      "description": "Before adopting a new AI feature, ask three questions: Does it use my content or customer data? Does it disclose that AI was involved? Can I turn it off or export my work if the product changes?Read the full brief: https://clearforge-daily-brief.netlify.app/posts/2026-07-13.html",
+      "title": "AI is moving from demos to daily work",
+      "description": "Pick one repetitive weekly task — drafting, research, note-taking, or support replies — and test whether a faster model or the new voice workflow saves you time without adding cleanup.Read the full brief: https://clearforge-daily-brief.netlify.app/posts/2026-07-13.html",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/JxRpbC82Ngs/default.jpg",
+          "url": "https://i.ytimg.com/vi/V8s6EG3ePb0/default.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/JxRpbC82Ngs/mqdefault.jpg",
+          "url": "https://i.ytimg.com/vi/V8s6EG3ePb0/mqdefault.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/JxRpbC82Ngs/hqdefault.jpg",
+          "url": "https://i.ytimg.com/vi/V8s6EG3ePb0/hqdefault.jpg",
           "width": 480,
           "height": 360
         }
@@ -49,8 +49,8 @@
       "liveBroadcastContent": "none",
       "defaultLanguage": "en-GB",
       "localized": {
-        "title": "AI moves from hype to guardrails as major platforms tighten the rules",
-        "description": "Before adopting a new AI feature, ask three questions: Does it use my content or customer data? Does it disclose that AI was involved? Can I turn it off or export my work if the product changes?Read the full brief: https://clearforge-daily-brief.netlify.app/posts/2026-07-13.html"
+        "title": "AI is moving from demos to daily work",
+        "description": "Pick one repetitive weekly task — drafting, research, note-taking, or support replies — and test whether a faster model or the new voice workflow saves you time without adding cleanup.Read the full brief: https://clearforge-daily-brief.netlify.app/posts/2026-07-13.html"
       }
     },
     "status": {
@@ -62,6 +62,6 @@
       "selfDeclaredMadeForKids": false,
       "containsSyntheticMedia": true
     },
-    "youtube_url": "https://www.youtube.com/watch?v=JxRpbC82Ngs"
+    "youtube_url": "https://www.youtube.com/watch?v=V8s6EG3ePb0"
   }
 }
