@@ -1,0 +1,68 @@
+{
+  "date": "2026-07-14",
+  "mode": "live",
+  "type": "clearforge_ai_news_video_v2",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122133556539198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AtegD_hvrr8DfvA8SAjoCHA\"}}"
+  },
+  "pinterest": {
+    "failed": true,
+    "channel": "pinterest",
+    "error": "401 Unauthorized: {\"code\":2,\"message\":\"Authentication failed.\",\"status\":\"failure\"}"
+  },
+  "youtube": {
+    "kind": "youtube#video",
+    "etag": "KXhNgX3lUPUdYa8Uz2IGFn93l2Q",
+    "id": "bnz_d0NdTIA",
+    "snippet": {
+      "publishedAt": "2026-07-14T04:17:04Z",
+      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
+      "title": "AI becomes more useful for everyday life: work, ads, and family settings",
+      "description": "Use AI for one boring admin task today — a weekly plan, a meeting summary, or a draft checklist — then spend your time checking and improving the result rather than starting from scratch.Read the full brief: https://clearforge-daily-brief.netlify.app/posts/2026-07-14.html",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/bnz_d0NdTIA/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/bnz_d0NdTIA/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/bnz_d0NdTIA/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Sapiver Press",
+      "tags": [
+        "AI news",
+        "Clearforge",
+        "practical AI"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "AI becomes more useful for everyday life: work, ads, and family settings",
+        "description": "Use AI for one boring admin task today — a weekly plan, a meeting summary, or a draft checklist — then spend your time checking and improving the result rather than starting from scratch.Read the full brief: https://clearforge-daily-brief.netlify.app/posts/2026-07-14.html"
+      }
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": true
+    },
+    "youtube_url": "https://www.youtube.com/watch?v=bnz_d0NdTIA"
+  }
+}
