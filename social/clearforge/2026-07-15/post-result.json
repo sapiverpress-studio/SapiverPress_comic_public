@@ -1,0 +1,68 @@
+{
+  "date": "2026-07-15",
+  "mode": "live",
+  "type": "clearforge_ai_news_video_v2",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122133683715198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AJ0bST4pUSAqlG8YbGgjYIu\"}}"
+  },
+  "pinterest": {
+    "failed": true,
+    "channel": "pinterest",
+    "error": "401 Unauthorized: {\"code\":2,\"message\":\"Authentication failed.\",\"status\":\"failure\"}"
+  },
+  "youtube": {
+    "kind": "youtube#video",
+    "etag": "cZadOzYiTyt8_I41oMr1MFmabgc",
+    "id": "JgmEFITC6DU",
+    "snippet": {
+      "publishedAt": "2026-07-15T06:37:52Z",
+      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
+      "title": "AI is becoming a systems problem, not just a model problem",
+      "description": "Automate the drafting, sorting and monitoring — but keep a human approval step for anything that changes money, access, customers or production systems.Read the full brief: https://clearforge-daily-brief.netlify.app/posts/2026-07-15.html",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/JgmEFITC6DU/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/JgmEFITC6DU/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/JgmEFITC6DU/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Sapiver Press",
+      "tags": [
+        "AI news",
+        "Clearforge",
+        "practical AI"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "AI is becoming a systems problem, not just a model problem",
+        "description": "Automate the drafting, sorting and monitoring — but keep a human approval step for anything that changes money, access, customers or production systems.Read the full brief: https://clearforge-daily-brief.netlify.app/posts/2026-07-15.html"
+      }
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": true
+    },
+    "youtube_url": "https://www.youtube.com/watch?v=JgmEFITC6DU"
+  }
+}
