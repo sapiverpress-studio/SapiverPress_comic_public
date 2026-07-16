@@ -85,7 +85,7 @@ function renderCta({ input, out, duration, titleFile, sourceFile }) {
     "boxblur=8:2",
     "drawbox=x=0:y=0:w=1080:h=1920:color=#061525@0.78:t=fill",
     `drawtext=fontcolor=#E9C46A:fontsize=38:textfile='${esc(sourceFile)}':x=(w-text_w)/2:y=540`,
-    `drawtext=fontcolor=white:fontsize=58:textfile='${esc(titleFile)}':x=(w-text_w)/2:y=690:line_spacing=30:align=center`,
+    `drawtext=fontcolor=white:fontsize=58:textfile='${esc(titleFile)}':x=(w-text_w)/2:y=690:line_spacing=30`,
     "fade=t=in:st=0:d=0.3",
     `fade=t=out:st=${Math.max(0.2, duration-0.3).toFixed(2)}:d=0.3`,
     "format=yuv420p"
