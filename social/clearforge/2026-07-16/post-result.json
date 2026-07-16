@@ -1,0 +1,68 @@
+{
+  "date": "2026-07-16",
+  "mode": "live",
+  "type": "clearforge_ai_news_video_v3",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122133791865198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AhJd0CHtO7u7aSJKDqK8hI9\"}}"
+  },
+  "pinterest": {
+    "failed": true,
+    "channel": "pinterest",
+    "error": "401 Unauthorized: {\"code\":2,\"message\":\"Authentication failed.\",\"status\":\"failure\"}"
+  },
+  "youtube": {
+    "kind": "youtube#video",
+    "etag": "Pqwp-ipO8A7dEC0qV20ebuz_wG0",
+    "id": "ebpXqa_gPEY",
+    "snippet": {
+      "publishedAt": "2026-07-16T06:04:30Z",
+      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
+      "title": "AI is becoming a workflow layer: the tools finally start talking to each other",
+      "description": "Map one recurring workflow you repeat every week, then assign AI to draft the first pass, organize the context, and leave approval to a human.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/ebpXqa_gPEY/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/ebpXqa_gPEY/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/ebpXqa_gPEY/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Sapiver Press",
+      "tags": [
+        "AI news",
+        "Clearforge",
+        "practical AI"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "AI is becoming a workflow layer: the tools finally start talking to each other",
+        "description": "Map one recurring workflow you repeat every week, then assign AI to draft the first pass, organize the context, and leave approval to a human.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider."
+      }
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": true
+    },
+    "youtube_url": "https://www.youtube.com/watch?v=ebpXqa_gPEY"
+  }
+}
