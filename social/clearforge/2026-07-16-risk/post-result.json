@@ -1,0 +1,68 @@
+{
+  "date": "2026-07-16-risk",
+  "mode": "live",
+  "type": "clearforge_ai_news_video_v3",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122133828867198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"ASskldJnCfiR2DiYDo3_L0h\"}}"
+  },
+  "pinterest": {
+    "failed": true,
+    "channel": "pinterest",
+    "error": "401 Unauthorized: {\"code\":2,\"message\":\"Authentication failed.\",\"status\":\"failure\"}"
+  },
+  "youtube": {
+    "kind": "youtube#video",
+    "etag": "tzK0thWq-wRexYz0kDnq8lIXg5w",
+    "id": "2kj8ajEdKUU",
+    "snippet": {
+      "publishedAt": "2026-07-16T12:38:01Z",
+      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
+      "title": "AI workflow stacks are getting useful — and easier to audit",
+      "description": "Map one recurring workflow and make the review step explicit: AI can draft or organize, but the final sign-off should stay visible and human-controlled.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/2kj8ajEdKUU/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/2kj8ajEdKUU/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/2kj8ajEdKUU/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Sapiver Press",
+      "tags": [
+        "AI news",
+        "Clearforge",
+        "practical AI"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "AI workflow stacks are getting useful — and easier to audit",
+        "description": "Map one recurring workflow and make the review step explicit: AI can draft or organize, but the final sign-off should stay visible and human-controlled.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider."
+      }
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": true
+    },
+    "youtube_url": "https://www.youtube.com/watch?v=2kj8ajEdKUU"
+  }
+}
