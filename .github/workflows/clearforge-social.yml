@@ -149,7 +149,7 @@ jobs:
         with:
           name: clearforge-social-${{ env.DATE_OVERRIDE }}
           path: |
-            social/clearforge/${{ env.DATE_OVERRIDE }}/***
+            social/clearforge/${{ env.DATE_OVERRIDE }}/**/*
           if-no-files-found: error
 
       - name: Post prepare or verify Clearforge social content
