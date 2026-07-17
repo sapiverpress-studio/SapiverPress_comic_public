@@ -1,0 +1,68 @@
+{
+  "date": "2026-07-17",
+  "mode": "live",
+  "type": "clearforge_ai_news_video_v3",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122133902511198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"A_LivCnfbNVKMNG_QpF8DrI\"}}"
+  },
+  "pinterest": {
+    "failed": true,
+    "channel": "pinterest",
+    "error": "401 Unauthorized: {\"code\":2,\"message\":\"Authentication failed.\",\"status\":\"failure\"}"
+  },
+  "youtube": {
+    "kind": "youtube#video",
+    "etag": "xMX8VtONKp92Jz4-XVrjOshpRj8",
+    "id": "Ijx7y39d5rA",
+    "snippet": {
+      "publishedAt": "2026-07-17T04:13:30Z",
+      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
+      "title": "Friday watchlist: the new AI tools worth testing now",
+      "description": "Test one controllable AI workflow this week: either fine-tune an open-weight model on a small internal task, or add AI-assisted review to one approval step and measure whether it reduces errors without slowing you down.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/Ijx7y39d5rA/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/Ijx7y39d5rA/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/Ijx7y39d5rA/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Sapiver Press",
+      "tags": [
+        "AI news",
+        "Clearforge",
+        "practical AI"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "Friday watchlist: the new AI tools worth testing now",
+        "description": "Test one controllable AI workflow this week: either fine-tune an open-weight model on a small internal task, or add AI-assisted review to one approval step and measure whether it reduces errors without slowing you down.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider."
+      }
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": true
+    },
+    "youtube_url": "https://www.youtube.com/watch?v=Ijx7y39d5rA"
+  }
+}
