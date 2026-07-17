@@ -1,0 +1,113 @@
+{
+  "date": "2026-07-17-systems",
+  "mode": "live",
+  "type": "clearforge_ai_news_video_v3",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122133932775198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"ABqmz-itqinBdmwcTNsisb8\"}}"
+  },
+  "pinterest": {
+    "board_id": "1038924276479917183",
+    "board_section_id": null,
+    "creative_type": "REGULAR",
+    "is_removable": false,
+    "parent_pin_id": null,
+    "is_owner": true,
+    "product_tags": [],
+    "title": "AI Systems Checklist: What to Test, Gate, and Budget For",
+    "created_at": "2026-07-17T10:36:54",
+    "is_product": false,
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/8c/e8/cf/8ce8cf63f6fa0eb1806fe06cecbbd53f.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/8c/e8/cf/8ce8cf63f6fa0eb1806fe06cecbbd53f.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 846,
+          "url": "https://i.pinimg.com/564x/8c/e8/cf/8ce8cf63f6fa0eb1806fe06cecbbd53f.jpg"
+        },
+        "1200x": {
+          "width": 1000,
+          "height": 1500,
+          "url": "https://i.pinimg.com/1200x/8c/e8/cf/8ce8cf63f6fa0eb1806fe06cecbbd53f.jpg"
+        }
+      }
+    },
+    "alt_text": null,
+    "link": "https://clearforge-daily-brief.netlify.app/posts/2026-07-17-systems.html",
+    "id": "1038924207809660929",
+    "description": "A practical checklist for teams evaluating new AI tools: test for repeatability, add review where it matters, and budget for infrastructure and availability. Use this saveable guide to decide what to adopt now and what to watch.",
+    "pin_metrics": null,
+    "dominant_color": null,
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "is_standard": true,
+    "has_been_promoted": false,
+    "board_name": "Clearforge",
+    "resolved_from": "board_name"
+  },
+  "youtube": {
+    "kind": "youtube#video",
+    "etag": "YVT1s15xQk4wlS_CZPjhEDlhsRI",
+    "id": "_Mowut4Ib4w",
+    "snippet": {
+      "publishedAt": "2026-07-17T10:36:54Z",
+      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
+      "title": "Friday watchlist: the AI systems worth testing, gating and budgeting for",
+      "description": "Pick one system change to test: either a customizable open-weight model for a narrow task, or an AI-assisted review step for one existing approval. Track whether it improves repeatability without adding maintenance overhead.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/_Mowut4Ib4w/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/_Mowut4Ib4w/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/_Mowut4Ib4w/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Sapiver Press",
+      "tags": [
+        "AI news",
+        "Clearforge",
+        "practical AI"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "Friday watchlist: the AI systems worth testing, gating and budgeting for",
+        "description": "Pick one system change to test: either a customizable open-weight model for a narrow task, or an AI-assisted review step for one existing approval. Track whether it improves repeatability without adding maintenance overhead.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider."
+      }
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": true
+    },
+    "youtube_url": "https://www.youtube.com/watch?v=_Mowut4Ib4w"
+  }
+}
