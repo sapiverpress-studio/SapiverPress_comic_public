@@ -149,7 +149,7 @@ jobs:
         with:
           name: clearforge-social-${{ env.DATE_OVERRIDE }}
           path: |
-            social/clearforge/${{ env.DATE_OVERRIDE }}/**/*
+            social/clearforge/${{ env.DATE_OVERRIDE }}/***
           if-no-files-found: error
 
       - name: Post prepare or verify Clearforge social content
@@ -178,6 +178,17 @@ jobs:
           YOUTUBE_PRIVACY_STATUS: ${{ secrets.YOUTUBE_PRIVACY_STATUS }}
           YOUTUBE_CATEGORY_ID: ${{ secrets.YOUTUBE_CATEGORY_ID }}
           FORCE_CLEARFORGE_POST: ${{ secrets.FORCE_CLEARFORGE_POST }}
+
+      - name: Show Clearforge posting result
+        if: steps.gate.outputs.run == 'true' && always()
+        shell: bash
+        run: |
+          RESULT_FILE="social/clearforge/${DATE_OVERRIDE}/post-result.json"
+          if [ -f "$RESULT_FILE" ]; then
+            cat "$RESULT_FILE"
+          else
+            echo "::warning::No post-result.json was produced."
+          fi
 
       - name: Commit Clearforge assets and posting records
         if: steps.gate.outputs.run == 'true' && always()
