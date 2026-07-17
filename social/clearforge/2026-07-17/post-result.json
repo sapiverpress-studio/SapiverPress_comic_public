@@ -10,9 +10,10 @@
     "resolved_page_token": true
   },
   "pinterest": {
-    "failed": true,
-    "channel": "pinterest",
-    "error": "401 Unauthorized: {\"code\":3,\"message\":\"Your token does not have sufficient permissions to perform this operation. Please ensure your token is authorized with the correct set of scopes. Missing: ['boards:write']\"}"
+    "ok": true,
+    "board_id": "1038924276479917183",
+    "board_name": "Clearforge",
+    "resolved_from": "created_board"
   },
   "youtube": {
     "failed": true,
