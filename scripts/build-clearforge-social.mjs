@@ -266,4 +266,5 @@ const manifest = {
   }
 };
 await fs.writeFile(path.join(OUT, "manifest.json"), JSON.stringify(manifest, null, 2) + "\n", "utf8");
-console.log(`Built AI-led Clearforge news assets for ${DATE} with link-free blog and podcast CTA`);
+await fs.writeFile(path.join(ROOT, "social", "clearforge", "latest.json"), JSON.stringify(manifest, null, 2) + "\n", "utf8");
+console.log(`Built AI-led Clearforge news assets for ${DATE} with public TikTok and YouTube publishing pack`);
