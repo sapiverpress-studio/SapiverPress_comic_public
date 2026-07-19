@@ -1,0 +1,113 @@
+{
+  "date": "2026-07-19-risk",
+  "mode": "live",
+  "type": "clearforge_ai_news_video_v4",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122134186857198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"ATIXPd6j_9i5srv5OA-Ek_k\"}}"
+  },
+  "pinterest": {
+    "creative_type": "REGULAR",
+    "is_standard": true,
+    "is_product": false,
+    "has_been_promoted": false,
+    "description": "Before moving sensitive notes into Gemini Notebook, decide what data can go in, who can approve uploads, and what must stay human-controlled. The benefit is simpler risk review before a tool that can execute code and sync across Gemini and Search gets your data. Save this checklist, and comment with one rule your team uses.",
+    "created_at": "2026-07-19T14:29:37",
+    "alt_text": null,
+    "is_owner": true,
+    "board_section_id": null,
+    "board_id": "1038924276479917183",
+    "title": "Checklist before you upload notes to Gemini Notebook",
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/4c/fb/cf/4cfbcfd149ef10f84d7e48b9dd258bc8.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/4c/fb/cf/4cfbcfd149ef10f84d7e48b9dd258bc8.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 846,
+          "url": "https://i.pinimg.com/564x/4c/fb/cf/4cfbcfd149ef10f84d7e48b9dd258bc8.jpg"
+        },
+        "1200x": {
+          "width": 1000,
+          "height": 1500,
+          "url": "https://i.pinimg.com/1200x/4c/fb/cf/4cfbcfd149ef10f84d7e48b9dd258bc8.jpg"
+        }
+      }
+    },
+    "dominant_color": null,
+    "is_removable": false,
+    "link": "https://clearforge-daily-brief.netlify.app/posts/2026-07-19-risk.html",
+    "id": "1038924207809733692",
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "parent_pin_id": null,
+    "product_tags": [],
+    "pin_metrics": null,
+    "board_name": "Clearforge",
+    "resolved_from": "board_name"
+  },
+  "youtube": {
+    "kind": "youtube#video",
+    "etag": "TtOIUMpLKdDiZMz28Txx0RybxLw",
+    "id": "2vWYDkYf35E",
+    "snippet": {
+      "publishedAt": "2026-07-19T14:29:38Z",
+      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
+      "title": "Sunday reset: AI is getting more guarded, more measurable, and harder to treat casually",
+      "description": "Before expanding any AI workflow, define the finish line, the human review step, and the data you will not upload.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/2vWYDkYf35E/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/2vWYDkYf35E/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/2vWYDkYf35E/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Sapiver Press",
+      "tags": [
+        "AI news",
+        "Clearforge",
+        "practical AI"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "Sunday reset: AI is getting more guarded, more measurable, and harder to treat casually",
+        "description": "Before expanding any AI workflow, define the finish line, the human review step, and the data you will not upload.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider."
+      }
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": true
+    },
+    "youtube_url": "https://www.youtube.com/watch?v=2vWYDkYf35E"
+  }
+}
