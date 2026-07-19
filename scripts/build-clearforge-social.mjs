@@ -77,6 +77,22 @@ function renderMotion({ input, out, duration, titleFile, sourceFile, index }) {
   run(["-loop", "1", "-i", input, "-t", duration.toFixed(3), "-vf", vf, "-frames:v", String(frames), "-c:v", "libx264", "-pix_fmt", "yuv420p", out]);
 }
 
+function renderTikTokPhase({ input, out, duration, titleFile, labelFile, zoomStep = 0.0014 }) {
+  const frames = Math.max(1, Math.round(duration * 30));
+  const vf = [
+    "scale=1200:1920:force_original_aspect_ratio=increase",
+    "crop=1080:1920",
+    `zoompan=z='min(zoom+${zoomStep},1.11)':d=1:s=1080x1920:fps=30`,
+    "drawbox=x=0:y=1130:w=1080:h=790:color=black@0.62:t=fill",
+    `drawtext=fontcolor=#E9C46A:fontsize=28:textfile='${esc(labelFile)}':x=58:y=1190`,
+    `drawtext=fontcolor=white:fontsize=60:textfile='${esc(titleFile)}':x=58:y=1300:line_spacing=20`,
+    "fade=t=in:st=0:d=0.12",
+    `fade=t=out:st=${Math.max(0.12, duration-0.12).toFixed(2)}:d=0.12`,
+    "format=yuv420p"
+  ].join(",");
+  run(["-loop", "1", "-i", input, "-t", duration.toFixed(3), "-vf", vf, "-frames:v", String(frames), "-c:v", "libx264", "-pix_fmt", "yuv420p", out]);
+}
+
 function renderCta({ input, out, duration, titleFile, sourceFile }) {
   const frames = Math.max(1, Math.round(duration * 30));
   const vf = [
@@ -125,6 +141,7 @@ const fbComment = await write("copy/facebook-first-comment.txt", "Full Clearforg
 const ytTitle = await write("copy/youtube-title.txt", bundle.youtube?.title || bundle.article?.headline);
 const ytBase = stripDirectLinks(bundle.youtube?.description || "");
 const ytCaption = await write("copy/youtube-description.txt", `${ytBase}\n\n${captionCta}`);
+const tiktokCaption = await write("copy/tiktok-caption.txt", `${clean(bundle.ai_media?.tiktok?.response_prompt || bundle.ai_media?.tiktok?.hook || "", 180)}\n\n#AIWorkflow #PracticalAI #Clearforge`);
 
 const fbImages = [];
 for (let i = 0; i < 3; i++) {
@@ -181,8 +198,49 @@ run(["-f", "concat", "-safe", "0", "-i", concatFile, "-c", "copy", silentVideo])
 const videoOut = path.join(OUT, "video", "clearforge-short.mp4");
 run(["-i", silentVideo, "-i", narration, "-c:v", "copy", "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", videoOut]);
 
+const tiktok = bundle.ai_media?.tiktok;
+const tiktokNarration = bundle.ai_media?.tiktok_narration ? src(bundle.ai_media.tiktok_narration) : "";
+if (!tiktok || !tiktokNarration) throw new Error("TikTok-specific narration and scene metadata are required.");
+must(tiktokNarration);
+const tiktokAudioDuration = probeDuration(tiktokNarration);
+if (tiktokAudioDuration < 9 || tiktokAudioDuration > 22) {
+  throw new Error(`TikTok narration must render close to 12–18 seconds; received ${tiktokAudioDuration.toFixed(1)} seconds.`);
+}
+const tiktokStoryIndex = Math.min(2, Math.max(0, Number(tiktok.story_index) || 0));
+const responseDuration = Math.min(3.8, Math.max(2.5, tiktokAudioDuration * 0.24));
+const hookDuration = Math.min(3.4, Math.max(2.2, tiktokAudioDuration * 0.2));
+const payoffDuration = Math.max(3.5, tiktokAudioDuration - hookDuration - responseDuration);
+const tiktokSegmentDir = path.join(OUT, "video", "tiktok-segments");
+await fs.mkdir(tiktokSegmentDir, { recursive: true });
+const tiktokLabel = await textFile("tiktok-label.txt", "CLEARFORGE • PRACTICAL AI");
+const tiktokPhaseData = [
+  { name: "01-hook", duration: hookDuration, text: tiktok.hook, zoomStep: 0.0018 },
+  { name: "02-payoff", duration: payoffDuration, text: tiktok.payoff, zoomStep: 0.0012 },
+  { name: "03-response", duration: responseDuration, text: tiktok.response_prompt, zoomStep: 0.0021 }
+];
+const tiktokSegments = [];
+for (const phase of tiktokPhaseData) {
+  const titleFile = await textFile(`${phase.name}.txt`, wrapText(phase.text, 24));
+  const phaseOut = path.join(tiktokSegmentDir, `${phase.name}.mp4`);
+  renderTikTokPhase({
+    input: images[tiktokStoryIndex],
+    out: phaseOut,
+    duration: phase.duration,
+    titleFile,
+    labelFile: tiktokLabel,
+    zoomStep: phase.zoomStep
+  });
+  tiktokSegments.push(phaseOut);
+}
+const tiktokConcat = path.join(OUT, "video", "tiktok-concat.txt");
+await fs.writeFile(tiktokConcat, tiktokSegments.map((file) => `file '${file.replaceAll("'", "'\\''")}'`).join("\n") + "\n", "utf8");
+const tiktokSilent = path.join(OUT, "video", "clearforge-tiktok-silent.mp4");
+run(["-f", "concat", "-safe", "0", "-i", tiktokConcat, "-c", "copy", tiktokSilent]);
+const tiktokVideoOut = path.join(OUT, "video", "clearforge-tiktok.mp4");
+run(["-i", tiktokSilent, "-i", tiktokNarration, "-c:v", "copy", "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", tiktokVideoOut]);
+
 const manifest = {
-  type: "clearforge_ai_news_video_v3",
+  type: "clearforge_ai_news_video_v4",
   date: DATE,
   source_repo: "Clearforge",
   article_url: bundle.article?.url || "",
@@ -196,7 +254,16 @@ const manifest = {
   },
   pinterest: { image: rel(pinOut), title: pinTitle, caption: pinCaption },
   facebook: { images: fbImages, post_caption: fbCaption, first_comment: fbComment },
-  youtube: { video: rel(videoOut), title: ytTitle, caption: ytCaption, script: bundle.youtube?.script || "", narration_seconds: audioDuration }
+  youtube: { video: rel(videoOut), title: ytTitle, caption: ytCaption, script: bundle.youtube?.script || "", narration_seconds: audioDuration },
+  tiktok: {
+    video: rel(tiktokVideoOut),
+    caption: tiktokCaption,
+    script: tiktok.narration_text,
+    hook: tiktok.hook,
+    story_index: tiktokStoryIndex,
+    narration_seconds: tiktokAudioDuration,
+    format: tiktok.format
+  }
 };
 await fs.writeFile(path.join(OUT, "manifest.json"), JSON.stringify(manifest, null, 2) + "\n", "utf8");
 console.log(`Built AI-led Clearforge news assets for ${DATE} with link-free blog and podcast CTA`);
