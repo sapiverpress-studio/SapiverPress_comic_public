@@ -53,10 +53,6 @@ jobs:
         if: steps.gate.outputs.run == 'true'
         uses: actions/checkout@v4
 
-      - name: Install publishing storage dependency
-        if: steps.gate.outputs.run == 'true'
-        run: npm install
-
       - name: Set run options
         if: steps.gate.outputs.run == 'true'
         shell: bash
@@ -156,18 +152,6 @@ jobs:
             social/clearforge/${{ env.DATE_OVERRIDE }}/**/*
           if-no-files-found: error
 
-      - name: Upload password-protected publishing pack
-        if: steps.gate.outputs.run == 'true'
-        env:
-          NETLIFY_SITE_ID: "8e72a4fc-5ad6-4377-8f4a-399d4c936060"
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-        run: |
-          if [ -z "${NETLIFY_AUTH_TOKEN:-}" ]; then
-            echo "::error::Missing NETLIFY_AUTH_TOKEN repository secret."
-            exit 1
-          fi
-          npm run clearforge:publishing:upload
-
       - name: Post prepare or verify Clearforge social content
         if: steps.gate.outputs.run == 'true'
         run: node scripts/post-clearforge-social.mjs
@@ -212,10 +196,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          RESULT_FILE="social/clearforge/${DATE_OVERRIDE}/post-result.json"
-          if [ -f "${RESULT_FILE}" ]; then
-            git add "${RESULT_FILE}"
-          fi
+          git add social/clearforge
           if git diff --cached --quiet; then
             echo "No Clearforge social changes to commit."
           else

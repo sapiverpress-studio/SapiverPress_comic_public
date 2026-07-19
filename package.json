@@ -26,14 +26,12 @@
     "ftpe:pin-carousel": "node scripts/build-ftpe-pin-and-fb-carousel.mjs && node scripts/post-ftpe-pin-and-fb-carousel.mjs",
     "ftpe:pin-carousel:build": "node scripts/build-ftpe-pin-and-fb-carousel.mjs",
     "ftpe:pin-carousel:post": "node scripts/post-ftpe-pin-and-fb-carousel.mjs",
-    "preview:build": "node -e \"console.log('Preview build disabled; use GitHub Actions artifacts or social/ folder downloads')\"",
-    "clearforge:publishing:upload": "node scripts/upload-clearforge-publishing.mjs"
+    "preview:build": "node -e \"console.log('Preview build disabled; use GitHub Actions artifacts or social/ folder downloads')\""
   },
   "dependencies": {
     "@octokit/rest": "^21.0.0",
     "openai": "^6.0.0",
     "playwright": "^1.53.0",
-    "sharp": "^0.34.2",
-    "@netlify/blobs": "latest"
+    "sharp": "^0.34.2"
   }
 }
