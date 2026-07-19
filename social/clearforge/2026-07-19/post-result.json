@@ -1,0 +1,113 @@
+{
+  "date": "2026-07-19",
+  "mode": "live",
+  "type": "clearforge_ai_news_video_v3",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122134133757198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AGkzNDU5OPtjm2upYAhS5N_\"}}"
+  },
+  "pinterest": {
+    "description": "Use one weekly task and compare time saved, retries, and human edits instead of counting prompts. This practical checklist helps creators, freelancers, and small teams judge AI by finished work. Save this for your next workflow test, or comment with the task you would measure first.",
+    "is_product": false,
+    "link": "https://clearforge-daily-brief.netlify.app/posts/2026-07-19.html",
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/62/63/fa/6263fae8fb0995a9ee34f7489790f95c.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/62/63/fa/6263fae8fb0995a9ee34f7489790f95c.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 846,
+          "url": "https://i.pinimg.com/564x/62/63/fa/6263fae8fb0995a9ee34f7489790f95c.jpg"
+        },
+        "1200x": {
+          "width": 1000,
+          "height": 1500,
+          "url": "https://i.pinimg.com/1200x/62/63/fa/6263fae8fb0995a9ee34f7489790f95c.jpg"
+        }
+      }
+    },
+    "id": "1038924207809722916",
+    "board_id": "1038924276479917183",
+    "has_been_promoted": false,
+    "is_standard": true,
+    "dominant_color": null,
+    "pin_metrics": null,
+    "alt_text": null,
+    "created_at": "2026-07-19T05:14:11",
+    "title": "How to test whether AI actually saves time",
+    "board_section_id": null,
+    "is_owner": true,
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "parent_pin_id": null,
+    "creative_type": "REGULAR",
+    "is_removable": false,
+    "product_tags": [],
+    "board_name": "Clearforge",
+    "resolved_from": "board_name"
+  },
+  "youtube": {
+    "kind": "youtube#video",
+    "etag": "7AjLg8xEH7eg2s4IHS31IDkk7Rw",
+    "id": "Vzr_TR9V4KI",
+    "snippet": {
+      "publishedAt": "2026-07-19T05:14:12Z",
+      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
+      "title": "Sunday reset: AI is being measured, gated and embedded into real workflows",
+      "description": "Pick one weekly task and measure whether AI finishes it with fewer edits, less time and fewer retries — not just whether it produces a draft.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/Vzr_TR9V4KI/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/Vzr_TR9V4KI/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/Vzr_TR9V4KI/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Sapiver Press",
+      "tags": [
+        "AI news",
+        "Clearforge",
+        "practical AI"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "Sunday reset: AI is being measured, gated and embedded into real workflows",
+        "description": "Pick one weekly task and measure whether AI finishes it with fewer edits, less time and fewer retries — not just whether it produces a draft.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider."
+      }
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": true
+    },
+    "youtube_url": "https://www.youtube.com/watch?v=Vzr_TR9V4KI"
+  }
+}
