@@ -203,8 +203,10 @@ const tiktokNarration = bundle.ai_media?.tiktok_narration ? src(bundle.ai_media.
 if (!tiktok || !tiktokNarration) throw new Error("TikTok-specific narration and scene metadata are required.");
 must(tiktokNarration);
 const tiktokAudioDuration = probeDuration(tiktokNarration);
-if (tiktokAudioDuration < 9 || tiktokAudioDuration > 22) {
-  throw new Error(`TikTok narration must render close to 12–18 seconds; received ${tiktokAudioDuration.toFixed(1)} seconds.`);
+// TTS duration varies slightly between renders. Accept a short-form-safe buffer
+// so an approved script near the target does not fail for a fractional overrun.
+if (tiktokAudioDuration < 9 || tiktokAudioDuration > 24) {
+  throw new Error(`TikTok narration must render between 9 and 24 seconds (target: 12–18); received ${tiktokAudioDuration.toFixed(1)} seconds.`);
 }
 const tiktokStoryIndex = Math.min(2, Math.max(0, Number(tiktok.story_index) || 0));
 const responseDuration = Math.min(3.8, Math.max(2.5, tiktokAudioDuration * 0.24));
