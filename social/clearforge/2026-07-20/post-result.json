@@ -4,25 +4,16 @@
   "type": "clearforge_ai_news_video_v4",
   "existing_result_detected": false,
   "facebook": {
-    "id": "997877693401171_122134269699198448",
+    "id": "997877693401171_122134317381198448",
     "posting_format": "text_link_fallback",
     "resolved_page_token": true,
-    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"ADxoAYRLbCeJRVV4M2UOvKb\"}}"
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"ABdgwNdzMj93SuSD-d0eTTx\"}}"
   },
   "pinterest": {
-    "has_been_promoted": false,
-    "is_owner": true,
-    "id": "1038924207809757657",
-    "dominant_color": null,
     "parent_pin_id": null,
     "description": "Use this practical checklist to test AI where it reduces manual entry, while keeping a human review step before anything is posted. Comment with the workflow you'd test first: invoices, cash flow, or meeting notes.",
     "is_standard": true,
-    "title": "Can AI Help With Bookkeeping and Workflow Automation?",
-    "is_removable": false,
-    "alt_text": null,
-    "product_tags": [],
-    "creative_type": "REGULAR",
-    "is_product": false,
+    "pin_metrics": null,
     "media": {
       "media_type": "image",
       "images": {
@@ -48,39 +39,48 @@
         }
       }
     },
-    "link": "https://clearforge-daily-brief.netlify.app/posts/2026-07-20.html",
+    "product_tags": [],
+    "created_at": "2026-07-20T15:52:07",
+    "has_been_promoted": false,
+    "alt_text": null,
+    "is_product": false,
     "board_id": "1038924276479917183",
+    "id": "1038924207809768869",
     "board_section_id": null,
+    "title": "Can AI Help With Bookkeeping and Workflow Automation?",
+    "creative_type": "REGULAR",
+    "link": "https://clearforge-daily-brief.netlify.app/posts/2026-07-20.html",
+    "is_removable": false,
+    "dominant_color": "#111821",
     "board_owner": {
       "username": "sapiver"
     },
-    "created_at": "2026-07-20T06:54:30",
-    "pin_metrics": null,
+    "is_owner": true,
     "board_name": "Clearforge",
     "resolved_from": "board_name"
   },
   "youtube": {
     "kind": "youtube#video",
-    "etag": "i2rqdf7qBbonnVN8eYZWxIjDXaI",
-    "id": "YLC82Zvk2h0",
+    "etag": "zWUB9fBKZFuO90SqmNK9V3s5AOs",
+    "id": "kWBD5GceUT0",
     "snippet": {
-      "publishedAt": "2026-07-20T06:54:31Z",
+      "publishedAt": "2026-07-20T15:52:08Z",
       "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
       "title": "AI at work is moving from drafts to delegated tasks",
       "description": "Pick one repetitive workflow this week — meeting notes, invoice capture or support triage — and test an AI feature only if you can name the human review step before output leaves the system.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/YLC82Zvk2h0/default.jpg",
+          "url": "https://i.ytimg.com/vi/kWBD5GceUT0/default.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/YLC82Zvk2h0/mqdefault.jpg",
+          "url": "https://i.ytimg.com/vi/kWBD5GceUT0/mqdefault.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/YLC82Zvk2h0/hqdefault.jpg",
+          "url": "https://i.ytimg.com/vi/kWBD5GceUT0/hqdefault.jpg",
           "width": 480,
           "height": 360
         }
@@ -108,6 +108,6 @@
       "selfDeclaredMadeForKids": false,
       "containsSyntheticMedia": true
     },
-    "youtube_url": "https://www.youtube.com/watch?v=YLC82Zvk2h0"
+    "youtube_url": "https://www.youtube.com/watch?v=kWBD5GceUT0"
   }
 }
