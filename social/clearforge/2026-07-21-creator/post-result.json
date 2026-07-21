@@ -1,0 +1,113 @@
+{
+  "date": "2026-07-21-creator",
+  "mode": "live",
+  "type": "clearforge_ai_news_video_v4",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122134447149198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AAj2lLFKU4lCN4m8oDtO39B\"}}"
+  },
+  "pinterest": {
+    "pin_metrics": null,
+    "is_owner": true,
+    "title": "How to turn research notes into a repeatable plan",
+    "alt_text": null,
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "product_tags": [],
+    "has_been_promoted": false,
+    "board_section_id": null,
+    "dominant_color": null,
+    "board_id": "1038924276479917183",
+    "is_standard": true,
+    "parent_pin_id": null,
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/0b/02/a7/0b02a7566b6865869ba985c8496dcead.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/0b/02/a7/0b02a7566b6865869ba985c8496dcead.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 846,
+          "url": "https://i.pinimg.com/564x/0b/02/a7/0b02a7566b6865869ba985c8496dcead.jpg"
+        },
+        "1200x": {
+          "width": 1000,
+          "height": 1500,
+          "url": "https://i.pinimg.com/1200x/0b/02/a7/0b02a7566b6865869ba985c8496dcead.jpg"
+        }
+      }
+    },
+    "created_at": "2026-07-21T19:00:11",
+    "is_product": false,
+    "creative_type": "REGULAR",
+    "link": "https://clearforge-daily-brief.netlify.app/posts/2026-07-21-creator.html",
+    "description": "Use Gemini Notebook to keep research, source links and rough ideas together so you can move from reading to outlining without rebuilding context. Save this and try one notebook with your next batch of notes.",
+    "id": "1038924207809806776",
+    "is_removable": false,
+    "board_name": "Clearforge",
+    "resolved_from": "board_name"
+  },
+  "youtube": {
+    "kind": "youtube#video",
+    "etag": "fi3Ik_e5VhuscaAe2clvJixXG3U",
+    "id": "FNr0UFNF_QM",
+    "snippet": {
+      "publishedAt": "2026-07-21T19:00:12Z",
+      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
+      "title": "For creators, AI is most useful when it finds old work and finishes small tasks",
+      "description": "Pick one recurring creator task this week and test whether an AI tool can organize the source material and point to the next step before it writes anything.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/FNr0UFNF_QM/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/FNr0UFNF_QM/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/FNr0UFNF_QM/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Sapiver Press",
+      "tags": [
+        "AI news",
+        "Clearforge",
+        "practical AI"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "For creators, AI is most useful when it finds old work and finishes small tasks",
+        "description": "Pick one recurring creator task this week and test whether an AI tool can organize the source material and point to the next step before it writes anything.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider."
+      }
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": true
+    },
+    "youtube_url": "https://www.youtube.com/watch?v=FNr0UFNF_QM"
+  }
+}
