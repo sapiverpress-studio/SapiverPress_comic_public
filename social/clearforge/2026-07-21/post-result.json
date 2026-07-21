@@ -1,0 +1,113 @@
+{
+  "date": "2026-07-21",
+  "mode": "live",
+  "type": "clearforge_ai_news_video_v4",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122134384581198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"Aj54qCTzwxhGzWmKu2MjKHp\"}}"
+  },
+  "pinterest": {
+    "board_section_id": null,
+    "is_product": false,
+    "dominant_color": null,
+    "created_at": "2026-07-21T06:23:03",
+    "is_standard": true,
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "pin_metrics": null,
+    "is_owner": true,
+    "id": "1038924207809789677",
+    "description": "Use AI to turn scattered notes into quizzes, bite-sized lessons and a next-step checklist. Best for students, parents and self-learners who want less re-copying and clearer revision. Save this idea, then comment with the kind of notes you’d test first.",
+    "has_been_promoted": false,
+    "link": "https://clearforge-daily-brief.netlify.app/posts/2026-07-21.html",
+    "alt_text": null,
+    "board_id": "1038924276479917183",
+    "creative_type": "REGULAR",
+    "is_removable": false,
+    "product_tags": [],
+    "title": "How to Turn Messy Notes into a Clear Study Plan",
+    "parent_pin_id": null,
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/8d/90/8b/8d908b0cab29f4f037c37e0677cc1a84.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/8d/90/8b/8d908b0cab29f4f037c37e0677cc1a84.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 846,
+          "url": "https://i.pinimg.com/564x/8d/90/8b/8d908b0cab29f4f037c37e0677cc1a84.jpg"
+        },
+        "1200x": {
+          "width": 1000,
+          "height": 1500,
+          "url": "https://i.pinimg.com/1200x/8d/90/8b/8d908b0cab29f4f037c37e0677cc1a84.jpg"
+        }
+      }
+    },
+    "board_name": "Clearforge",
+    "resolved_from": "board_name"
+  },
+  "youtube": {
+    "kind": "youtube#video",
+    "etag": "pVNsFA-SYTuAg6UJ_4L0Ci18HzE",
+    "id": "9OtNbGx0PPA",
+    "snippet": {
+      "publishedAt": "2026-07-21T06:23:04Z",
+      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
+      "title": "AI is becoming a personal organisation layer for notes, study and browser admin",
+      "description": "Pick one recurring life-admin task this week and test whether an AI tool can organise the material and show the next step, not just draft text.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/9OtNbGx0PPA/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/9OtNbGx0PPA/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/9OtNbGx0PPA/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Sapiver Press",
+      "tags": [
+        "AI news",
+        "Clearforge",
+        "practical AI"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "AI is becoming a personal organisation layer for notes, study and browser admin",
+        "description": "Pick one recurring life-admin task this week and test whether an AI tool can organise the material and show the next step, not just draft text.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider."
+      }
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": true
+    },
+    "youtube_url": "https://www.youtube.com/watch?v=9OtNbGx0PPA"
+  }
+}
