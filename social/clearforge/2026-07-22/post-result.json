@@ -1,0 +1,113 @@
+{
+  "date": "2026-07-22",
+  "mode": "live",
+  "type": "clearforge_ai_news_video_v4",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122134505493198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"ApItWhLvGKzt6Gnm1xPjsAt\"}}"
+  },
+  "pinterest": {
+    "pin_metrics": null,
+    "created_at": "2026-07-22T07:33:47",
+    "board_id": "1038924276479917183",
+    "is_owner": true,
+    "description": "A practical checklist for using AI in PCB and packaging design without losing control. See where planning, analysis, and sign-off still need human review, then save this and comment with the workflow you want to map next.",
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/ca/83/0e/ca830ef0b0f7a8eb30233fa64ae16122.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/ca/83/0e/ca830ef0b0f7a8eb30233fa64ae16122.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 846,
+          "url": "https://i.pinimg.com/564x/ca/83/0e/ca830ef0b0f7a8eb30233fa64ae16122.jpg"
+        },
+        "1200x": {
+          "width": 1000,
+          "height": 1500,
+          "url": "https://i.pinimg.com/1200x/ca/83/0e/ca830ef0b0f7a8eb30233fa64ae16122.jpg"
+        }
+      }
+    },
+    "id": "1038924207809822581",
+    "is_standard": true,
+    "link": "https://clearforge-daily-brief.netlify.app/posts/2026-07-22.html",
+    "is_product": false,
+    "product_tags": [],
+    "alt_text": null,
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "has_been_promoted": false,
+    "title": "Where Should Human Review Stay in an AI Design Workflow?",
+    "parent_pin_id": null,
+    "board_section_id": null,
+    "is_removable": false,
+    "dominant_color": null,
+    "creative_type": "REGULAR",
+    "board_name": "Clearforge",
+    "resolved_from": "board_name"
+  },
+  "youtube": {
+    "kind": "youtube#video",
+    "etag": "mRj3Uow5AKp4WJklkTpFsFzKwpc",
+    "id": "bIUZDQWCkVY",
+    "snippet": {
+      "publishedAt": "2026-07-22T07:33:48Z",
+      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
+      "title": "AI is moving into controlled systems: the winners are adding logs, gates and specialist compute",
+      "description": "Automate the repetitive steps, but keep human approval at the points that change cost, compliance, quality or customer trust.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/bIUZDQWCkVY/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/bIUZDQWCkVY/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/bIUZDQWCkVY/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Sapiver Press",
+      "tags": [
+        "AI news",
+        "Clearforge",
+        "practical AI"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "AI is moving into controlled systems: the winners are adding logs, gates and specialist compute",
+        "description": "Automate the repetitive steps, but keep human approval at the points that change cost, compliance, quality or customer trust.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider."
+      }
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": true
+    },
+    "youtube_url": "https://www.youtube.com/watch?v=bIUZDQWCkVY"
+  }
+}
