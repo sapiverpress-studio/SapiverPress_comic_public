@@ -1,0 +1,113 @@
+{
+  "date": "2026-07-23",
+  "mode": "live",
+  "type": "clearforge_ai_news_video_v4",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122134640235198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AE4dD8xEbrfwN1ccKJIcBwz\"}}"
+  },
+  "pinterest": {
+    "parent_pin_id": null,
+    "is_owner": true,
+    "link": "https://clearforge-daily-brief.netlify.app/posts/2026-07-23.html",
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/4c/51/2a/4c512ae38ae8075394e39e9c608c9d4b.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/4c/51/2a/4c512ae38ae8075394e39e9c608c9d4b.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 846,
+          "url": "https://i.pinimg.com/564x/4c/51/2a/4c512ae38ae8075394e39e9c608c9d4b.jpg"
+        },
+        "1200x": {
+          "width": 1000,
+          "height": 1500,
+          "url": "https://i.pinimg.com/1200x/4c/51/2a/4c512ae38ae8075394e39e9c608c9d4b.jpg"
+        }
+      }
+    },
+    "dominant_color": null,
+    "is_removable": false,
+    "alt_text": null,
+    "board_section_id": null,
+    "board_id": "1038924276479917183",
+    "creative_type": "REGULAR",
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "description": "Google says AI Mode can connect apps like Instacart, Canva and YouTube Music, so one prompt can move from planning to action without extra app hops. Save this guide and comment with the weekly task you'd streamline first.",
+    "is_standard": true,
+    "title": "How Search Hands Tasks to Apps: AI Workflow Guide",
+    "product_tags": [],
+    "created_at": "2026-07-23T11:41:29",
+    "id": "1038924207809860627",
+    "is_product": false,
+    "has_been_promoted": false,
+    "pin_metrics": null,
+    "board_name": "Clearforge",
+    "resolved_from": "board_name"
+  },
+  "youtube": {
+    "kind": "youtube#video",
+    "etag": "lsPt9mLLOmICAcmaoxaGtSyYmDk",
+    "id": "DY9cDDj2q-Y",
+    "snippet": {
+      "publishedAt": "2026-07-23T11:41:30Z",
+      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
+      "title": "AI is becoming a connected workflow layer: search, video, law enforcement and enterprise system",
+      "description": "Map one task you repeat every week, then test where AI can hand work from one tool to the next without losing context or control.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/DY9cDDj2q-Y/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/DY9cDDj2q-Y/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/DY9cDDj2q-Y/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Sapiver Press",
+      "tags": [
+        "AI news",
+        "Clearforge",
+        "practical AI"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "AI is becoming a connected workflow layer: search, video, law enforcement and enterprise system",
+        "description": "Map one task you repeat every week, then test where AI can hand work from one tool to the next without losing context or control.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider."
+      }
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": true
+    },
+    "youtube_url": "https://www.youtube.com/watch?v=DY9cDDj2q-Y"
+  }
+}
