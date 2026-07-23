@@ -185,7 +185,11 @@ const segments = [];
 const hookFile = await textFile("hook.txt", wrapText("Three AI updates that actually matter today", 24));
 const hookSource = await textFile("hook-source.txt", "CLEARFORGE • TODAY IN AI");
 const intro = path.join(segmentDir, "00-intro.mp4");
-renderMotion({ input: images[0], out: intro, duration: introDuration, titleFile: hookFile, sourceFile: hookSource, index: 0 });
+if (USE_ISLA_HOOK) {
+  renderIslaHook({ input: ISLA_HOOK, out: intro, duration: introDuration, titleFile: hookFile, labelFile: hookSource });
+} else {
+  renderMotion({ input: images[0], out: intro, duration: introDuration, titleFile: hookFile, sourceFile: hookSource, index: 0 });
+}
 segments.push(intro);
 
 for (let i = 0; i < 3; i++) {
@@ -283,7 +287,7 @@ const manifest = {
   },
   pinterest: { image: rel(pinOut), title: pinTitle, caption: pinCaption },
   facebook: { images: fbImages, post_caption: fbCaption, first_comment: fbComment },
-  youtube: { video: rel(videoOut), title: ytTitle, caption: ytCaption, script: bundle.youtube?.script || "", narration_seconds: audioDuration },
+  youtube: { video: rel(videoOut), title: ytTitle, caption: ytCaption, script: bundle.youtube?.script || "", narration_seconds: audioDuration, isla_hook: USE_ISLA_HOOK },
   tiktok: {
     video: rel(tiktokVideoOut),
     caption: tiktokCaption,
