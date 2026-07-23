@@ -293,7 +293,7 @@ const manifest = {
     narration_seconds: tiktokAudioDuration,
     format: tiktok.format,
     isla_hook: USE_ISLA_HOOK,
-    isla_hook_mode: USE_ISLA_HOOK ? "alternate-opening-replacement" : "control"
+    isla_hook_mode: USE_ISLA_HOOK ? "opening-replacement" : "control"
   }
 };
 await fs.writeFile(path.join(OUT, "manifest.json"), JSON.stringify(manifest, null, 2) + "\n", "utf8");
