@@ -10,7 +10,7 @@ const DATE = process.env.DATE_OVERRIDE || new Intl.DateTimeFormat("sv-SE", {
 const SOURCE_ROOT = process.env.CLEARFORGE_BUNDLE_ROOT || path.join(ROOT, "vendor", "clearforge", "bridge", "clearforge", DATE);
 const OUT = path.join(ROOT, "social", "clearforge", DATE);
 const ISLA_HOOK = path.join(ROOT, "assets", "clearforge", "isla-hook.mp4");
-const USE_ISLA_HOOK = /^\d{4}-\d{2}-\d{2}-.+/.test(DATE) && fssync.existsSync(ISLA_HOOK);
+const USE_ISLA_HOOK = fssync.existsSync(ISLA_HOOK);
 
 function must(file) { if (!fssync.existsSync(file)) throw new Error(`Missing required Clearforge file: ${file}`); }
 function run(args) { execFileSync("ffmpeg", ["-hide_banner", "-loglevel", "error", "-y", ...args], { stdio: "inherit" }); }
