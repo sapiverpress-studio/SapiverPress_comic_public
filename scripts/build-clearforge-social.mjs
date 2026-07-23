@@ -9,6 +9,8 @@ const DATE = process.env.DATE_OVERRIDE || new Intl.DateTimeFormat("sv-SE", {
 }).format(new Date());
 const SOURCE_ROOT = process.env.CLEARFORGE_BUNDLE_ROOT || path.join(ROOT, "vendor", "clearforge", "bridge", "clearforge", DATE);
 const OUT = path.join(ROOT, "social", "clearforge", DATE);
+const ISLA_HOOK = path.join(ROOT, "assets", "clearforge", "isla-hook.mp4");
+const USE_ISLA_HOOK = /^\d{4}-\d{2}-\d{2}-.+/.test(DATE) && fssync.existsSync(ISLA_HOOK);
 
 function must(file) { if (!fssync.existsSync(file)) throw new Error(`Missing required Clearforge file: ${file}`); }
 function run(args) { execFileSync("ffmpeg", ["-hide_banner", "-loglevel", "error", "-y", ...args], { stdio: "inherit" }); }
@@ -91,6 +93,21 @@ function renderTikTokPhase({ input, out, duration, titleFile, labelFile, zoomSte
     "format=yuv420p"
   ].join(",");
   run(["-loop", "1", "-i", input, "-t", duration.toFixed(3), "-vf", vf, "-frames:v", String(frames), "-c:v", "libx264", "-pix_fmt", "yuv420p", out]);
+}
+
+function renderIslaHook({ input, out, duration, titleFile, labelFile }) {
+  const frames = Math.max(1, Math.round(duration * 30));
+  const vf = [
+    "scale=-2:1920",
+    "crop=1080:1920:(iw-1080)/2:0",
+    "drawbox=x=0:y=1130:w=1080:h=790:color=black@0.62:t=fill",
+    `drawtext=fontcolor=#E9C46A:fontsize=28:textfile='${esc(labelFile)}':x=58:y=1190`,
+    `drawtext=fontcolor=white:fontsize=60:textfile='${esc(titleFile)}':x=58:y=1300:line_spacing=20`,
+    "fade=t=in:st=0:d=0.12",
+    `fade=t=out:st=${Math.max(0.12, duration-0.12).toFixed(2)}:d=0.12`,
+    "format=yuv420p"
+  ].join(",");
+  run(["-i", input, "-t", duration.toFixed(3), "-an", "-vf", vf, "-frames:v", String(frames), "-r", "30", "-c:v", "libx264", "-pix_fmt", "yuv420p", out]);
 }
 
 function renderCta({ input, out, duration, titleFile, sourceFile }) {
@@ -224,14 +241,24 @@ const tiktokSegments = [];
 for (const phase of tiktokPhaseData) {
   const titleFile = await textFile(`${phase.name}.txt`, wrapText(phase.text, 24));
   const phaseOut = path.join(tiktokSegmentDir, `${phase.name}.mp4`);
-  renderTikTokPhase({
-    input: images[tiktokStoryIndex],
-    out: phaseOut,
-    duration: phase.duration,
-    titleFile,
-    labelFile: tiktokLabel,
-    zoomStep: phase.zoomStep
-  });
+  if (USE_ISLA_HOOK && phase.name === "01-hook") {
+    renderIslaHook({
+      input: ISLA_HOOK,
+      out: phaseOut,
+      duration: phase.duration,
+      titleFile,
+      labelFile: tiktokLabel
+    });
+  } else {
+    renderTikTokPhase({
+      input: images[tiktokStoryIndex],
+      out: phaseOut,
+      duration: phase.duration,
+      titleFile,
+      labelFile: tiktokLabel,
+      zoomStep: phase.zoomStep
+    });
+  }
   tiktokSegments.push(phaseOut);
 }
 const tiktokConcat = path.join(OUT, "video", "tiktok-concat.txt");
@@ -264,7 +291,9 @@ const manifest = {
     hook: tiktok.hook,
     story_index: tiktokStoryIndex,
     narration_seconds: tiktokAudioDuration,
-    format: tiktok.format
+    format: tiktok.format,
+    isla_hook: USE_ISLA_HOOK,
+    isla_hook_mode: USE_ISLA_HOOK ? "alternate-opening-replacement" : "control"
   }
 };
 await fs.writeFile(path.join(OUT, "manifest.json"), JSON.stringify(manifest, null, 2) + "\n", "utf8");
