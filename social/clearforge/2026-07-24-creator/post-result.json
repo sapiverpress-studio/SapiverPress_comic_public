@@ -1,0 +1,113 @@
+{
+  "date": "2026-07-24-creator",
+  "mode": "live",
+  "type": "clearforge_ai_news_video_v4",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122134804527198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"A3va39YyaMYvyZ7nZ6E0Gke\"}}"
+  },
+  "pinterest": {
+    "is_removable": false,
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/50/e3/b7/50e3b75a0864350b85c21f676c25dd35.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/50/e3/b7/50e3b75a0864350b85c21f676c25dd35.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 846,
+          "url": "https://i.pinimg.com/564x/50/e3/b7/50e3b75a0864350b85c21f676c25dd35.jpg"
+        },
+        "1200x": {
+          "width": 1000,
+          "height": 1500,
+          "url": "https://i.pinimg.com/1200x/50/e3/b7/50e3b75a0864350b85c21f676c25dd35.jpg"
+        }
+      }
+    },
+    "link": "https://clearforge-daily-brief.netlify.app/posts/2026-07-24-creator.html",
+    "pin_metrics": null,
+    "board_section_id": null,
+    "id": "1038924207809905852",
+    "is_product": false,
+    "has_been_promoted": false,
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "board_id": "1038924276479917183",
+    "is_standard": true,
+    "description": "Save this if you make social posts, client graphics, or landing pages. Canva says AI 2.0 is a research preview with conversational design, iterative editing, and workflow tools. Try it on one real project, then tell us which asset you would test first: a social graphic, client one-pager, or landing-page mockup.",
+    "created_at": "2026-07-24T19:51:09",
+    "title": "What to Test First in Canva AI 2.0",
+    "is_owner": true,
+    "creative_type": "REGULAR",
+    "dominant_color": null,
+    "alt_text": null,
+    "parent_pin_id": null,
+    "product_tags": [],
+    "board_name": "Clearforge",
+    "resolved_from": "board_name"
+  },
+  "youtube": {
+    "kind": "youtube#video",
+    "etag": "A8m6dLdI3LW5Efv8X0uIhgCHQqw",
+    "id": "23vIcRWxkAI",
+    "snippet": {
+      "publishedAt": "2026-07-24T19:51:10Z",
+      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
+      "title": "Friday watchlist: the AI tools worth testing are the ones that fit a workflow",
+      "description": "Choose one tool this week that fits into a real workflow, not a demo. Test Canva for creation, Google’s ad panel for review, or Claude Reflect for self-audit, and keep the scope small enough that you can tell whether it actually saved time.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/23vIcRWxkAI/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/23vIcRWxkAI/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/23vIcRWxkAI/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Sapiver Press",
+      "tags": [
+        "AI news",
+        "Clearforge",
+        "practical AI"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "Friday watchlist: the AI tools worth testing are the ones that fit a workflow",
+        "description": "Choose one tool this week that fits into a real workflow, not a demo. Test Canva for creation, Google’s ad panel for review, or Claude Reflect for self-audit, and keep the scope small enough that you can tell whether it actually saved time.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider."
+      }
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": true
+    },
+    "youtube_url": "https://www.youtube.com/watch?v=23vIcRWxkAI"
+  }
+}
