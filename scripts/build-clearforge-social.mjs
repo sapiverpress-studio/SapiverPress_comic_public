@@ -175,7 +175,10 @@ const pinOut = path.join(OUT, "pinterest", "pin.png"); await fs.mkdir(path.dirna
 renderStill({ input: images[0], out: pinOut, size: "1000x1500", titleFile: pinTitleFile, sourceFile: pinSourceFile, fontSize: 52 });
 
 const audioDuration = probeDuration(narration);
-const introDuration = 2.6;
+// Use the complete approved Isla action clip for the longer briefing. The
+// narration still begins immediately, so this replaces the opening visuals
+// rather than adding a silent pre-roll.
+const introDuration = USE_ISLA_HOOK ? Math.min(8.0, probeDuration(ISLA_HOOK)) : 2.6;
 const outroDuration = 3.4;
 const ctaDuration = 5.2;
 const storyDuration = Math.max(4.5, (audioDuration - introDuration - outroDuration - ctaDuration) / 3);
@@ -231,7 +234,9 @@ if (tiktokAudioDuration < 9 || tiktokAudioDuration > 24) {
 }
 const tiktokStoryIndex = Math.min(2, Math.max(0, Number(tiktok.story_index) || 0));
 const responseDuration = Math.min(3.8, Math.max(2.5, tiktokAudioDuration * 0.24));
-const hookDuration = Math.min(3.4, Math.max(2.2, tiktokAudioDuration * 0.2));
+// TikTok viewers currently decide within roughly three seconds. Keep Isla as
+// the visual anchor, but move to the story imagery after two seconds.
+const hookDuration = USE_ISLA_HOOK ? 2.0 : Math.min(3.4, Math.max(2.2, tiktokAudioDuration * 0.2));
 const payoffDuration = Math.max(3.5, tiktokAudioDuration - hookDuration - responseDuration);
 const tiktokSegmentDir = path.join(OUT, "video", "tiktok-segments");
 await fs.mkdir(tiktokSegmentDir, { recursive: true });
