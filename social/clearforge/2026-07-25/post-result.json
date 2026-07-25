@@ -1,0 +1,113 @@
+{
+  "date": "2026-07-25",
+  "mode": "live",
+  "type": "clearforge_ai_news_video_v4",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122134850073198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"A8WiaFccYB44Phh6BAOjDGJ\"}}"
+  },
+  "pinterest": {
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/d4/7d/7b/d47d7b88b9ed6b566841e13608713e89.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/d4/7d/7b/d47d7b88b9ed6b566841e13608713e89.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 846,
+          "url": "https://i.pinimg.com/564x/d4/7d/7b/d47d7b88b9ed6b566841e13608713e89.jpg"
+        },
+        "1200x": {
+          "width": 1000,
+          "height": 1500,
+          "url": "https://i.pinimg.com/1200x/d4/7d/7b/d47d7b88b9ed6b566841e13608713e89.jpg"
+        }
+      }
+    },
+    "description": "Google says ATLAS is built from 15 million aggregated and de-identified human-AI interactions across more than 150 countries, 140 languages, 800 occupations and 4,000 tasks. Use that as a simple checklist: tie one AI tool to one repeated task, then test whether it reduces time or rework. Save this if you want a practical way to judge your next AI tool, and comment with the task you'd measure first.",
+    "board_section_id": null,
+    "has_been_promoted": false,
+    "title": "How do you tell if AI actually saves time?",
+    "pin_metrics": null,
+    "parent_pin_id": null,
+    "dominant_color": null,
+    "created_at": "2026-07-25T05:49:40",
+    "id": "1038924207809919649",
+    "is_removable": false,
+    "link": "https://clearforge-daily-brief.netlify.app/posts/2026-07-25.html",
+    "board_id": "1038924276479917183",
+    "is_standard": true,
+    "is_owner": true,
+    "creative_type": "REGULAR",
+    "is_product": false,
+    "product_tags": [],
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "alt_text": null,
+    "board_name": "Clearforge",
+    "resolved_from": "board_name"
+  },
+  "youtube": {
+    "kind": "youtube#video",
+    "etag": "2ElBrHg1u0pvxlUw01OQYNXVhBw",
+    "id": "YJ9nTK_H498",
+    "snippet": {
+      "publishedAt": "2026-07-25T05:49:40Z",
+      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
+      "title": "Saturday forecast: open models, production agents and AI measurement are the next things to wat",
+      "description": "Pick one repeated task — inbox triage, customer replies, research notes or quote drafting — and test the tool on that exact workflow, with a human review step and a clear time-saving target.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/YJ9nTK_H498/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/YJ9nTK_H498/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/YJ9nTK_H498/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Sapiver Press",
+      "tags": [
+        "AI news",
+        "Clearforge",
+        "practical AI"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "Saturday forecast: open models, production agents and AI measurement are the next things to wat",
+        "description": "Pick one repeated task — inbox triage, customer replies, research notes or quote drafting — and test the tool on that exact workflow, with a human review step and a clear time-saving target.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider."
+      }
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": true
+    },
+    "youtube_url": "https://www.youtube.com/watch?v=YJ9nTK_H498"
+  }
+}
