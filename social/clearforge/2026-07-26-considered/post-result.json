@@ -1,0 +1,113 @@
+{
+  "date": "2026-07-26-considered",
+  "mode": "live",
+  "type": "clearforge_ai_news_video_v4",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122135040405198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"A2SbWm13-rsOHvTBG_o0g_X\"}}"
+  },
+  "pinterest": {
+    "title": "Where should AI disclosure live in your workflow?",
+    "board_id": "1038924276479917183",
+    "is_owner": true,
+    "pin_metrics": null,
+    "id": "1038924207809975330",
+    "board_section_id": null,
+    "dominant_color": null,
+    "parent_pin_id": null,
+    "is_product": false,
+    "is_removable": false,
+    "description": "Use this checklist to map where AI labels, deepfake notices, or human review belong before publish. Save it, then reply with image, video, or chat.",
+    "has_been_promoted": false,
+    "product_tags": [],
+    "creative_type": "REGULAR",
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/c6/80/4c/c6804c98d5cf7870db3ded543ad7a56c.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/c6/80/4c/c6804c98d5cf7870db3ded543ad7a56c.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 846,
+          "url": "https://i.pinimg.com/564x/c6/80/4c/c6804c98d5cf7870db3ded543ad7a56c.jpg"
+        },
+        "1200x": {
+          "width": 1000,
+          "height": 1500,
+          "url": "https://i.pinimg.com/1200x/c6/80/4c/c6804c98d5cf7870db3ded543ad7a56c.jpg"
+        }
+      }
+    },
+    "is_standard": true,
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "created_at": "2026-07-26T19:35:24",
+    "alt_text": null,
+    "link": "https://clearforge-daily-brief.netlify.app/posts/2026-07-26-considered.html",
+    "board_name": "Clearforge",
+    "resolved_from": "board_name"
+  },
+  "youtube": {
+    "kind": "youtube#video",
+    "etag": "92neZg7dJShwqk-wfHP5bf-HhTg",
+    "id": "oE1StFPqR68",
+    "snippet": {
+      "publishedAt": "2026-07-26T19:35:24Z",
+      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
+      "title": "Could AI disclosure become the next product bottleneck?",
+      "description": "Treat AI disclosure as a workflow step, not a last-minute label.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/oE1StFPqR68/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/oE1StFPqR68/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/oE1StFPqR68/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Sapiver Press",
+      "tags": [
+        "AI news",
+        "Clearforge",
+        "practical AI"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "Could AI disclosure become the next product bottleneck?",
+        "description": "Treat AI disclosure as a workflow step, not a last-minute label.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider."
+      }
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": true
+    },
+    "youtube_url": "https://www.youtube.com/watch?v=oE1StFPqR68"
+  }
+}
