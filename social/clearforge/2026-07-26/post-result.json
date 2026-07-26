@@ -1,0 +1,113 @@
+{
+  "date": "2026-07-26",
+  "mode": "live",
+  "type": "clearforge_ai_news_video_v4",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122134976847198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AWQpwohqhIZZ0FmhKk4Mi9u\"}}"
+  },
+  "pinterest": {
+    "creative_type": "REGULAR",
+    "product_tags": [],
+    "is_standard": true,
+    "pin_metrics": null,
+    "dominant_color": null,
+    "parent_pin_id": null,
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "is_product": false,
+    "created_at": "2026-07-26T06:16:55",
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/c4/66/77/c466774a29b03b6ed2ea5806fc4a568a.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/c4/66/77/c466774a29b03b6ed2ea5806fc4a568a.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 846,
+          "url": "https://i.pinimg.com/564x/c4/66/77/c466774a29b03b6ed2ea5806fc4a568a.jpg"
+        },
+        "1200x": {
+          "width": 1000,
+          "height": 1500,
+          "url": "https://i.pinimg.com/1200x/c4/66/77/c466774a29b03b6ed2ea5806fc4a568a.jpg"
+        }
+      }
+    },
+    "board_id": "1038924276479917183",
+    "id": "1038924207809954411",
+    "link": "https://clearforge-daily-brief.netlify.app/posts/2026-07-26.html",
+    "description": "Use this to check disclosure, deepfake handling, and machine-readable marking before 2 August 2026. Save it if your team ships consumer or marketing-facing AI, and comment with the workflow you need to review first.",
+    "has_been_promoted": false,
+    "is_removable": false,
+    "is_owner": true,
+    "title": "EU AI transparency rules checklist for product teams",
+    "alt_text": null,
+    "board_section_id": null,
+    "board_name": "Clearforge",
+    "resolved_from": "board_name"
+  },
+  "youtube": {
+    "kind": "youtube#video",
+    "etag": "QkbADPBP7CwDKJZy_-hSzjkVYw8",
+    "id": "os7ln8Zh_MU",
+    "snippet": {
+      "publishedAt": "2026-07-26T06:16:55Z",
+      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
+      "title": "Sunday reset: AI is moving into real workflows, real rules and real usage data",
+      "description": "Pick one repetitive task you do every week and test whether AI can save time without adding cleanup.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/os7ln8Zh_MU/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/os7ln8Zh_MU/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/os7ln8Zh_MU/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Sapiver Press",
+      "tags": [
+        "AI news",
+        "Clearforge",
+        "practical AI"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "Sunday reset: AI is moving into real workflows, real rules and real usage data",
+        "description": "Pick one repetitive task you do every week and test whether AI can save time without adding cleanup.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider."
+      }
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": true
+    },
+    "youtube_url": "https://www.youtube.com/watch?v=os7ln8Zh_MU"
+  }
+}
