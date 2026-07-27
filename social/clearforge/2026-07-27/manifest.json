@@ -10,6 +10,18 @@
     "youtube": true
   },
   "ai_generated_media": true,
+  "human_approval": {
+    "schema_version": 1,
+    "edition": "2026-07-27",
+    "approved": true,
+    "approved_by": "sapiverpress-studio",
+    "approved_at": "2026-07-27T14:21:45.028Z",
+    "assurance_score_at_approval": 0.75,
+    "automatic_publication": false,
+    "confirmation": "APPROVE 2026-07-27",
+    "disclosure": "Produced with AI assistance and released with human approval by Clearforge."
+  },
+  "disclosure": "Produced with AI assistance and released with human approval by Clearforge.",
   "direct_links_in_social_copy": false,
   "calls_to_action": {
     "spoken": "Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
@@ -39,17 +51,17 @@
     "video": "social/clearforge/2026-07-27/video/clearforge-short.mp4",
     "title": "social/clearforge/2026-07-27/copy/youtube-title.txt",
     "caption": "social/clearforge/2026-07-27/copy/youtube-description.txt",
-    "script": "Which AI task saves time for your team? Gallup says more than half of U.S. workers now use AI in their role, and the most common uses are writing, editing, search, research and problem-solving. But the strongest productivity gains show up when AI is tied to something specific, like coding, automation, analytics or slide creation. So if you are testing AI this week, do not ask people to use it everywhere. Pick one frequent, boring task with an easy human review step and try it there first. Which would you test first: writing, research, or slides? Put your choice in the comments. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
-    "narration_seconds": 46.512,
+    "script": "Meta says its assistant can now work with email, calendar and slides, so this is no longer just a writing tool. Before you use anything like that on client work, check that it stays in draft mode until you approve it. Keep that human yes step this week. Read the full breakdown through the link in our bio, or search Clearforge AI Briefing in your podcast app to listen on the go.",
+    "narration_seconds": 25.92,
     "isla_hook": true
   },
   "tiktok": {
     "video": "social/clearforge/2026-07-27/video/clearforge-tiktok.mp4",
     "caption": "social/clearforge/2026-07-27/copy/tiktok-caption.txt",
-    "script": "Can AI agents run a work task? OpenAI says Presence is available to eligible enterprise customers, with guardrails and human escalation built in, so teams can pilot one workflow safely.",
-    "hook": "Can AI agents run a work task?",
-    "story_index": 0,
-    "narration_seconds": 14.856,
+    "script": "Meta says its assistant can work with email and calendar. If yours can too, keep it drafting only. One human check before anything sends can stop a bad send.",
+    "hook": "Meta says its assistant can work with email and calendar.",
+    "story_index": 2,
+    "narration_seconds": 11.616,
     "format": "single_discovery_micro_explainer",
     "isla_hook": true,
     "isla_hook_mode": "opening-replacement"

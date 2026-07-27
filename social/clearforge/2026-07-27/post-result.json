@@ -4,83 +4,83 @@
   "type": "clearforge_ai_news_video_v4",
   "existing_result_detected": false,
   "facebook": {
-    "id": "997877693401171_122135080785198448",
+    "id": "997877693401171_122135134833198448",
     "posting_format": "text_link_fallback",
     "resolved_page_token": true,
-    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AEiH7AO9D1oH18Higuf6xEd\"}}"
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AZ9n6gWl-xmmafWAT8CwtyK\"}}"
   },
   "pinterest": {
-    "link": "https://clearforge-daily-brief.netlify.app/posts/2026-07-27.html",
-    "board_id": "1038924276479917183",
-    "is_product": false,
-    "product_tags": [],
-    "creative_type": "REGULAR",
-    "dominant_color": null,
-    "created_at": "2026-07-27T04:28:36",
-    "description": "Use the UK SKAI direction to build a simple internal AI policy, choose approved tools, and run a short training session around one real workflow. Save this guide if you are setting workplace AI rules, and comment with the workflow you would train first.",
-    "id": "1038924207809987757",
-    "is_removable": false,
-    "board_owner": {
-      "username": "sapiver"
-    },
-    "board_section_id": null,
-    "is_standard": true,
-    "title": "AI Upkilling at Work: A Simple Training Checklist for Employers",
-    "pin_metrics": null,
+    "is_owner": true,
+    "parent_pin_id": null,
+    "has_been_promoted": false,
+    "title": "How to check if an AI label stays on after export",
     "media": {
       "media_type": "image",
       "images": {
         "150x150": {
           "width": 150,
           "height": 150,
-          "url": "https://i.pinimg.com/150x150/c0/2b/d8/c02bd846210d602c28e0d5070272b510.jpg"
+          "url": "https://i.pinimg.com/150x150/4f/08/7c/4f087c6bdb9cd9f57876dc8e9bcb1df0.jpg"
         },
         "400x300": {
           "width": 400,
           "height": 300,
-          "url": "https://i.pinimg.com/400x300/c0/2b/d8/c02bd846210d602c28e0d5070272b510.jpg"
+          "url": "https://i.pinimg.com/400x300/4f/08/7c/4f087c6bdb9cd9f57876dc8e9bcb1df0.jpg"
         },
         "600x": {
           "width": 564,
           "height": 846,
-          "url": "https://i.pinimg.com/564x/c0/2b/d8/c02bd846210d602c28e0d5070272b510.jpg"
+          "url": "https://i.pinimg.com/564x/4f/08/7c/4f087c6bdb9cd9f57876dc8e9bcb1df0.jpg"
         },
         "1200x": {
           "width": 1000,
           "height": 1500,
-          "url": "https://i.pinimg.com/1200x/c0/2b/d8/c02bd846210d602c28e0d5070272b510.jpg"
+          "url": "https://i.pinimg.com/1200x/4f/08/7c/4f087c6bdb9cd9f57876dc8e9bcb1df0.jpg"
         }
       }
     },
-    "parent_pin_id": null,
-    "is_owner": true,
-    "has_been_promoted": false,
+    "is_product": false,
     "alt_text": null,
+    "board_id": "1038924276479917183",
+    "created_at": "2026-07-27T14:27:08",
+    "dominant_color": null,
+    "is_standard": true,
+    "product_tags": [],
+    "description": "If you publish client work with AI help, ask one thing before you send it: does the label still show after export? If it disappears, don’t assume the file explains itself. Save this check for later.Produced with AI assistance and released with human approval by Clearforge.",
+    "link": "https://clearforge-daily-brief.netlify.app/posts/2026-07-27.html",
+    "pin_metrics": null,
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "creative_type": "REGULAR",
+    "is_removable": false,
+    "id": "1038924207809999012",
+    "board_section_id": null,
     "board_name": "Clearforge",
     "resolved_from": "board_name"
   },
   "youtube": {
     "kind": "youtube#video",
-    "etag": "u92eUUjMck-EKeBG8raaDu11xeA",
-    "id": "isX5fE2Yy9U",
+    "etag": "MbNGFwovODTH7O6MvNfnNMb6yJo",
+    "id": "aM3Q1RvSJ5c",
     "snippet": {
-      "publishedAt": "2026-07-27T04:28:36Z",
+      "publishedAt": "2026-07-27T14:27:09Z",
       "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
-      "title": "AI at work is shifting from chat to governed workflows",
-      "description": "Pick one repeatable work task that already has a clear human reviewer, then test AI on just that step for one week.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.",
+      "title": "Weekend roundup: AI is moving from chat to action, while Europe loosens the compliance clock",
+      "description": "Before you use any AI feature that can send, publish or schedule work, require one human check for source, claim and final wording.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.Produced with AI assistance and released with human approval by Clearforge.",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/isX5fE2Yy9U/default.jpg",
+          "url": "https://i.ytimg.com/vi/aM3Q1RvSJ5c/default.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/isX5fE2Yy9U/mqdefault.jpg",
+          "url": "https://i.ytimg.com/vi/aM3Q1RvSJ5c/mqdefault.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/isX5fE2Yy9U/hqdefault.jpg",
+          "url": "https://i.ytimg.com/vi/aM3Q1RvSJ5c/hqdefault.jpg",
           "width": 480,
           "height": 360
         }
@@ -95,8 +95,8 @@
       "liveBroadcastContent": "none",
       "defaultLanguage": "en-GB",
       "localized": {
-        "title": "AI at work is shifting from chat to governed workflows",
-        "description": "Pick one repeatable work task that already has a clear human reviewer, then test AI on just that step for one week.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider."
+        "title": "Weekend roundup: AI is moving from chat to action, while Europe loosens the compliance clock",
+        "description": "Before you use any AI feature that can send, publish or schedule work, require one human check for source, claim and final wording.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.Produced with AI assistance and released with human approval by Clearforge."
       }
     },
     "status": {
@@ -108,6 +108,6 @@
       "selfDeclaredMadeForKids": false,
       "containsSyntheticMedia": true
     },
-    "youtube_url": "https://www.youtube.com/watch?v=isX5fE2Yy9U"
+    "youtube_url": "https://www.youtube.com/watch?v=aM3Q1RvSJ5c"
   }
 }
