@@ -20,9 +20,6 @@ on:
   repository_dispatch:
     types:
       - clearforge_publish
-  schedule:
-    - cron: "0 5 * * *"
-    - cron: "0 6 * * *"
 
 permissions:
   contents: write
@@ -58,6 +55,10 @@ jobs:
         shell: bash
         run: |
           if [ "${{ github.event_name }}" = "repository_dispatch" ]; then
+            if [ "${{ github.event.client_payload.human_approved }}" != "true" ]; then
+              echo "::error::Repository dispatch is missing human approval."
+              exit 1
+            fi
             DATE_VALUE="${{ github.event.client_payload.date }}"
             MODE="live"
           elif [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ github.event.inputs.date_override }}" ]; then
