@@ -1,0 +1,113 @@
+{
+  "date": "2026-07-27",
+  "mode": "live",
+  "type": "clearforge_ai_news_video_v4",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122135080785198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AEiH7AO9D1oH18Higuf6xEd\"}}"
+  },
+  "pinterest": {
+    "link": "https://clearforge-daily-brief.netlify.app/posts/2026-07-27.html",
+    "board_id": "1038924276479917183",
+    "is_product": false,
+    "product_tags": [],
+    "creative_type": "REGULAR",
+    "dominant_color": null,
+    "created_at": "2026-07-27T04:28:36",
+    "description": "Use the UK SKAI direction to build a simple internal AI policy, choose approved tools, and run a short training session around one real workflow. Save this guide if you are setting workplace AI rules, and comment with the workflow you would train first.",
+    "id": "1038924207809987757",
+    "is_removable": false,
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "board_section_id": null,
+    "is_standard": true,
+    "title": "AI Upkilling at Work: A Simple Training Checklist for Employers",
+    "pin_metrics": null,
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/c0/2b/d8/c02bd846210d602c28e0d5070272b510.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/c0/2b/d8/c02bd846210d602c28e0d5070272b510.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 846,
+          "url": "https://i.pinimg.com/564x/c0/2b/d8/c02bd846210d602c28e0d5070272b510.jpg"
+        },
+        "1200x": {
+          "width": 1000,
+          "height": 1500,
+          "url": "https://i.pinimg.com/1200x/c0/2b/d8/c02bd846210d602c28e0d5070272b510.jpg"
+        }
+      }
+    },
+    "parent_pin_id": null,
+    "is_owner": true,
+    "has_been_promoted": false,
+    "alt_text": null,
+    "board_name": "Clearforge",
+    "resolved_from": "board_name"
+  },
+  "youtube": {
+    "kind": "youtube#video",
+    "etag": "u92eUUjMck-EKeBG8raaDu11xeA",
+    "id": "isX5fE2Yy9U",
+    "snippet": {
+      "publishedAt": "2026-07-27T04:28:36Z",
+      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
+      "title": "AI at work is shifting from chat to governed workflows",
+      "description": "Pick one repeatable work task that already has a clear human reviewer, then test AI on just that step for one week.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/isX5fE2Yy9U/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/isX5fE2Yy9U/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/isX5fE2Yy9U/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Sapiver Press",
+      "tags": [
+        "AI news",
+        "Clearforge",
+        "practical AI"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "AI at work is shifting from chat to governed workflows",
+        "description": "Pick one repeatable work task that already has a clear human reviewer, then test AI on just that step for one week.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider."
+      }
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": true
+    },
+    "youtube_url": "https://www.youtube.com/watch?v=isX5fE2Yy9U"
+  }
+}
