@@ -160,7 +160,7 @@ const fbComment = await write("copy/facebook-first-comment.txt", "Full Clearforg
 const ytTitle = await write("copy/youtube-title.txt", bundle.youtube?.title || bundle.article?.headline);
 const ytBase = stripDirectLinks(bundle.youtube?.description || "");
 const ytCaption = await write("copy/youtube-description.txt", `${ytBase}\n\n${captionCta}\n\n${DISCLOSURE}`);
-const tiktokCaption = await write("copy/tiktok-caption.txt", `${clean(bundle.ai_media?.tiktok?.response_prompt || bundle.ai_media?.tiktok?.hook || "", 180)}\n\n${DISCLOSURE}\n\n#AIWorkflow #PracticalAI #Clearforge`);
+const tiktokCaption = await write("copy/tiktok-caption.txt", `${clean(bundle.ai_media?.tiktok?.response_prompt || bundle.ai_media?.tiktok?.hook || "", 180)}\n\n${DISCLOSURE}\n\n#FreelanceTips #AIForFreelancers #ClientWork #AIChecklist`);
 
 const fbImages = [];
 for (let i = 0; i < 3; i++) {
@@ -177,18 +177,23 @@ const pinOut = path.join(OUT, "pinterest", "pin.png"); await fs.mkdir(path.dirna
 renderStill({ input: images[0], out: pinOut, size: "1000x1500", titleFile: pinTitleFile, sourceFile: pinSourceFile, fontSize: 52 });
 
 const audioDuration = probeDuration(narration);
+const primaryStoryIndex = Math.min(2, Math.max(0, Number(bundle.media_metadata?.main_story_index) || 0));
 // Use the complete approved Isla action clip for the longer briefing. The
 // narration still begins immediately, so this replaces the opening visuals
 // rather than adding a silent pre-roll.
-const introDuration = USE_ISLA_HOOK ? Math.min(8.0, probeDuration(ISLA_HOOK)) : 2.6;
-const outroDuration = 3.4;
-const ctaDuration = 5.2;
-const storyDuration = Math.max(4.5, (audioDuration - introDuration - outroDuration - ctaDuration) / 3);
+const introDuration = USE_ISLA_HOOK ? Math.min(2.0, probeDuration(ISLA_HOOK)) : 2.0;
+const outroDuration = 2.5;
+const ctaDuration = 2.5;
+const storyDuration = Math.max(4.5, audioDuration - introDuration - outroDuration - ctaDuration);
 const segmentDir = path.join(OUT, "video", "segments"); await fs.mkdir(segmentDir, { recursive: true });
 const segments = [];
 
-const hookFile = await textFile("hook.txt", wrapText("Three AI updates that actually matter today", 24));
-const hookSource = await textFile("hook-source.txt", "CLEARFORGE • TODAY IN AI");
+const primaryHook = clean(bundle.media_metadata?.hook || bundle.ai_media?.tiktok?.hook || bundle.article?.headline, 180);
+if (/three ai updates|today in ai|latest ai news|ai updates? that (?:actually )?matter/i.test(primaryHook)) {
+  throw new Error("Primary video hook repeats the failed generic AI-update format.");
+}
+const hookFile = await textFile("hook.txt", wrapText(primaryHook, 24));
+const hookSource = await textFile("hook-source.txt", "CLEARFORGE • AI CLIENT-WORK CHECK");
 const intro = path.join(segmentDir, "00-intro.mp4");
 if (USE_ISLA_HOOK) {
   renderIslaHook({ input: ISLA_HOOK, out: intro, duration: introDuration, titleFile: hookFile, labelFile: hookSource });
@@ -197,13 +202,12 @@ if (USE_ISLA_HOOK) {
 }
 segments.push(intro);
 
-for (let i = 0; i < 3; i++) {
-  const title = await textFile(`video-story-${i+1}.txt`, wrapText(stories[i].title, 25));
-  const source = await textFile(`video-source-${i+1}.txt`, clean(stories[i].source_name || bundle.sources?.[i]?.source_name || "Source", 80));
-  const seg = path.join(segmentDir, `0${i+1}-story.mp4`);
-  renderMotion({ input: images[i], out: seg, duration: storyDuration, titleFile: title, sourceFile: source, index: i+1 });
-  segments.push(seg);
-}
+const primaryStory = stories[primaryStoryIndex];
+const primaryTitle = await textFile("video-story.txt", wrapText(primaryStory.title, 25));
+const primarySource = await textFile("video-source.txt", clean(primaryStory.source_name || bundle.sources?.[primaryStoryIndex]?.source_name || "Source", 80));
+const primarySegment = path.join(segmentDir, "01-story.mp4");
+renderMotion({ input: images[primaryStoryIndex], out: primarySegment, duration: storyDuration, titleFile: primaryTitle, sourceFile: primarySource, index: 1 });
+segments.push(primarySegment);
 
 const takeawayFile = await textFile("takeaway.txt", wrapText(bundle.media_metadata?.practical_takeaway || "Focus on what changes your workflow, not what creates the most hype.", 27));
 const takeawaySource = await textFile("takeaway-source.txt", "PRACTICAL TAKEAWAY");
@@ -221,7 +225,7 @@ const concatFile = path.join(OUT, "video", "concat.txt");
 await fs.writeFile(concatFile, segments.map((file) => `file '${file.replaceAll("'", "'\\''")}'`).join("\n") + "\n", "utf8");
 const silentVideo = path.join(OUT, "video", "clearforge-short-silent.mp4");
 run(["-f", "concat", "-safe", "0", "-i", concatFile, "-c", "copy", silentVideo]);
-const videoOut = path.join(OUT, "video", "clearforge-short.mp4");
+const videoOut = path.join(OUT, "video", "clearforge-youtube-short.mp4");
 run(["-i", silentVideo, "-i", narration, "-c:v", "copy", "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", videoOut]);
 
 const tiktok = bundle.ai_media?.tiktok;
@@ -231,8 +235,8 @@ must(tiktokNarration);
 const tiktokAudioDuration = probeDuration(tiktokNarration);
 // TTS duration varies slightly between renders. Accept a short-form-safe buffer
 // so an approved script near the target does not fail for a fractional overrun.
-if (tiktokAudioDuration < 9 || tiktokAudioDuration > 30) {
-  throw new Error(`TikTok narration must render between 9 and 30 seconds (target: 12–18); received ${tiktokAudioDuration.toFixed(1)} seconds.`);
+if (tiktokAudioDuration < 8 || tiktokAudioDuration > 18) {
+  throw new Error(`TikTok narration must render between 8 and 18 seconds; received ${tiktokAudioDuration.toFixed(1)} seconds.`);
 }
 const tiktokStoryIndex = Math.min(2, Math.max(0, Number(tiktok.story_index) || 0));
 const responseDuration = Math.min(3.8, Math.max(2.5, tiktokAudioDuration * 0.24));
@@ -242,7 +246,7 @@ const hookDuration = USE_ISLA_HOOK ? 2.0 : Math.min(3.4, Math.max(2.2, tiktokAud
 const payoffDuration = Math.max(3.5, tiktokAudioDuration - hookDuration - responseDuration);
 const tiktokSegmentDir = path.join(OUT, "video", "tiktok-segments");
 await fs.mkdir(tiktokSegmentDir, { recursive: true });
-const tiktokLabel = await textFile("tiktok-label.txt", "CLEARFORGE • AI-ASSISTED • HUMAN-APPROVED");
+const tiktokLabel = await textFile("tiktok-label.txt", "CLEARFORGE • AI CLIENT-WORK CHECK");
 const tiktokPhaseData = [
   { name: "01-hook", duration: hookDuration, text: tiktok.hook, zoomStep: 0.0018 },
   { name: "02-payoff", duration: payoffDuration, text: tiktok.payoff, zoomStep: 0.0012 },
@@ -276,7 +280,7 @@ const tiktokConcat = path.join(OUT, "video", "tiktok-concat.txt");
 await fs.writeFile(tiktokConcat, tiktokSegments.map((file) => `file '${file.replaceAll("'", "'\\''")}'`).join("\n") + "\n", "utf8");
 const tiktokSilent = path.join(OUT, "video", "clearforge-tiktok-silent.mp4");
 run(["-f", "concat", "-safe", "0", "-i", tiktokConcat, "-c", "copy", tiktokSilent]);
-const tiktokVideoOut = path.join(OUT, "video", "clearforge-tiktok.mp4");
+const tiktokVideoOut = path.join(OUT, "video", "UPLOAD-THIS-TO-TIKTOK.mp4");
 run(["-i", tiktokSilent, "-i", tiktokNarration, "-c:v", "copy", "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", tiktokVideoOut]);
 
 const manifest = {
