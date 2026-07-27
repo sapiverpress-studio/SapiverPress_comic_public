@@ -11,6 +11,7 @@ const SOURCE_ROOT = process.env.CLEARFORGE_BUNDLE_ROOT || path.join(ROOT, "vendo
 const OUT = path.join(ROOT, "social", "clearforge", DATE);
 const ISLA_HOOK = path.join(ROOT, "assets", "clearforge", "isla-hook.mp4");
 const USE_ISLA_HOOK = fssync.existsSync(ISLA_HOOK);
+const DISCLOSURE = "Produced with AI assistance and released with human approval by Clearforge.";
 
 function must(file) { if (!fssync.existsSync(file)) throw new Error(`Missing required Clearforge file: ${file}`); }
 function run(args) { execFileSync("ffmpeg", ["-hide_banner", "-loglevel", "error", "-y", ...args], { stdio: "inherit" }); }
@@ -129,6 +130,7 @@ function renderCta({ input, out, duration, titleFile, sourceFile }) {
 must(path.join(SOURCE_ROOT, "manifest.json"));
 const bundle = JSON.parse(await fs.readFile(path.join(SOURCE_ROOT, "manifest.json"), "utf8"));
 if (bundle.approved?.article !== true) throw new Error("Clearforge article is not approved.");
+if (bundle.human_approval?.approved !== true || bundle.human_approval?.edition !== DATE) throw new Error("This exact Clearforge edition does not have recorded human approval.");
 if (bundle.ai_media?.generated !== true) throw new Error("AI media is missing. Run Clearforge 'Generate Clearforge AI Media' before distribution.");
 
 const defaultCaptionCta = "Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.";
@@ -151,14 +153,14 @@ await fs.rm(OUT, { recursive: true, force: true });
 await fs.mkdir(OUT, { recursive: true });
 
 const pinTitle = await write("copy/pinterest-title.txt", bundle.pinterest?.title || bundle.article?.headline);
-const pinCaption = await write("copy/pinterest-caption.txt", bundle.pinterest?.description || bundle.article?.dek);
+const pinCaption = await write("copy/pinterest-caption.txt", `${bundle.pinterest?.description || bundle.article?.dek}\n\n${DISCLOSURE}`);
 const fbBase = stripDirectLinks(bundle.facebook?.post || "");
-const fbCaption = await write("copy/facebook-post.txt", `${fbBase}\n\n${captionCta}`);
+const fbCaption = await write("copy/facebook-post.txt", `${fbBase}\n\n${captionCta}\n\n${DISCLOSURE}`);
 const fbComment = await write("copy/facebook-first-comment.txt", "Full Clearforge breakdown: use the link in our bio. Listen on the go by searching ‘Clearforge AI Briefing’ in your podcast app.");
 const ytTitle = await write("copy/youtube-title.txt", bundle.youtube?.title || bundle.article?.headline);
 const ytBase = stripDirectLinks(bundle.youtube?.description || "");
-const ytCaption = await write("copy/youtube-description.txt", `${ytBase}\n\n${captionCta}`);
-const tiktokCaption = await write("copy/tiktok-caption.txt", `${clean(bundle.ai_media?.tiktok?.response_prompt || bundle.ai_media?.tiktok?.hook || "", 180)}\n\n#AIWorkflow #PracticalAI #Clearforge`);
+const ytCaption = await write("copy/youtube-description.txt", `${ytBase}\n\n${captionCta}\n\n${DISCLOSURE}`);
+const tiktokCaption = await write("copy/tiktok-caption.txt", `${clean(bundle.ai_media?.tiktok?.response_prompt || bundle.ai_media?.tiktok?.hook || "", 180)}\n\n${DISCLOSURE}\n\n#AIWorkflow #PracticalAI #Clearforge`);
 
 const fbImages = [];
 for (let i = 0; i < 3; i++) {
@@ -240,7 +242,7 @@ const hookDuration = USE_ISLA_HOOK ? 2.0 : Math.min(3.4, Math.max(2.2, tiktokAud
 const payoffDuration = Math.max(3.5, tiktokAudioDuration - hookDuration - responseDuration);
 const tiktokSegmentDir = path.join(OUT, "video", "tiktok-segments");
 await fs.mkdir(tiktokSegmentDir, { recursive: true });
-const tiktokLabel = await textFile("tiktok-label.txt", "CLEARFORGE • PRACTICAL AI");
+const tiktokLabel = await textFile("tiktok-label.txt", "CLEARFORGE • AI-ASSISTED • HUMAN-APPROVED");
 const tiktokPhaseData = [
   { name: "01-hook", duration: hookDuration, text: tiktok.hook, zoomStep: 0.0018 },
   { name: "02-payoff", duration: payoffDuration, text: tiktok.payoff, zoomStep: 0.0012 },
@@ -284,6 +286,8 @@ const manifest = {
   article_url: bundle.article?.url || "",
   approved: bundle.approved,
   ai_generated_media: true,
+  human_approval: bundle.human_approval,
+  disclosure: DISCLOSURE,
   direct_links_in_social_copy: false,
   calls_to_action: {
     spoken: bundle.calls_to_action?.spoken || "",
