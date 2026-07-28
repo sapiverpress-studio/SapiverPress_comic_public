@@ -50,6 +50,11 @@ async function textFile(name, content) {
 function src(rel) { return path.isAbsolute(rel) ? rel : path.join(SOURCE_ROOT, rel); }
 function rel(file) { return path.relative(ROOT, file).replaceAll("\\", "/"); }
 function esc(file) { return file.replaceAll("'", "\\'"); }
+function htmlEsc(value) {
+  return String(value ?? "").replace(/[&<>"']/g, (char) => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+  })[char]);
+}
 
 function renderStill({ input, out, size, titleFile, sourceFile, fontSize = 54 }) {
   const [w, h] = size.split("x").map(Number);
@@ -160,7 +165,8 @@ const fbComment = await write("copy/facebook-first-comment.txt", "Full Clearforg
 const ytTitle = await write("copy/youtube-title.txt", bundle.youtube?.title || bundle.article?.headline);
 const ytBase = stripDirectLinks(bundle.youtube?.description || "");
 const ytCaption = await write("copy/youtube-description.txt", `${ytBase}\n\n${captionCta}\n\n${DISCLOSURE}`);
-const tiktokCaption = await write("copy/tiktok-caption.txt", `${clean(bundle.ai_media?.tiktok?.response_prompt || bundle.ai_media?.tiktok?.hook || "", 180)}\n\n${DISCLOSURE}\n\n#FreelanceTips #AIForFreelancers #ClientWork #AIChecklist`);
+const tiktokCaptionText = `${clean(bundle.ai_media?.tiktok?.response_prompt || bundle.ai_media?.tiktok?.hook || "", 180)}\n\n${DISCLOSURE}\n\n#FreelanceTips #AIForFreelancers #ClientWork #AIChecklist`;
+const tiktokCaption = await write("copy/tiktok-caption.txt", tiktokCaptionText);
 
 const fbImages = [];
 for (let i = 0; i < 3; i++) {
@@ -282,6 +288,54 @@ const tiktokSilent = path.join(OUT, "video", "clearforge-tiktok-silent.mp4");
 run(["-f", "concat", "-safe", "0", "-i", tiktokConcat, "-c", "copy", tiktokSilent]);
 const tiktokVideoOut = path.join(OUT, "video", "UPLOAD-THIS-TO-TIKTOK.mp4");
 run(["-i", tiktokSilent, "-i", tiktokNarration, "-c:v", "copy", "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", tiktokVideoOut]);
+
+const postingDeskHtml = `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clearforge TikTok Posting Desk — ${htmlEsc(DATE)}</title>
+<style>
+:root{color-scheme:dark;--navy:#071827;--panel:#10283a;--gold:#e9c46a;--text:#f5f7f8;--muted:#b8c5cf}
+*{box-sizing:border-box}body{margin:0;background:var(--navy);color:var(--text);font:16px/1.5 system-ui,sans-serif}
+main{max-width:720px;margin:auto;padding:20px}h1{font-size:1.55rem;margin:.2rem 0}p{color:var(--muted)}
+.card{background:var(--panel);border:1px solid #29465b;border-radius:16px;padding:16px;margin:16px 0}
+video{display:block;width:100%;max-height:70vh;background:#000;border-radius:12px}
+textarea{width:100%;min-height:180px;padding:12px;border-radius:10px;border:1px solid #49677a;background:#071827;color:var(--text);font:inherit}
+.actions{display:grid;gap:10px;margin-top:12px}.button,button{display:block;width:100%;border:0;border-radius:10px;padding:13px 16px;background:var(--gold);color:#17202a;font-weight:800;text-align:center;text-decoration:none;cursor:pointer}
+.secondary{background:#dce7ed}small{color:var(--muted)}
+</style>
+</head>
+<body><main>
+<h1>Clearforge TikTok Posting Desk</h1>
+<p>${htmlEsc(DATE)} · Approved social package</p>
+<section class="card">
+<video controls playsinline preload="metadata" src="video/UPLOAD-THIS-TO-TIKTOK.mp4"></video>
+<div class="actions"><a class="button" href="video/UPLOAD-THIS-TO-TIKTOK.mp4" download>Download TikTok video</a></div>
+</section>
+<section class="card">
+<h2>Caption</h2>
+<textarea id="caption" readonly>${htmlEsc(tiktokCaptionText)}</textarea>
+<div class="actions">
+<button id="copy-caption" type="button">Copy caption</button>
+<a class="button secondary" href="copy/tiktok-caption.txt" download>Download caption</a>
+</div>
+<p id="copy-status" role="status" aria-live="polite"></p>
+</section>
+<p><small>${htmlEsc(DISCLOSURE)}</small></p>
+</main>
+<script>
+const button=document.getElementById("copy-caption");
+const caption=document.getElementById("caption");
+const status=document.getElementById("copy-status");
+button.addEventListener("click",async()=>{
+  try{await navigator.clipboard.writeText(caption.value);status.textContent="Caption copied.";}
+  catch{caption.focus();caption.select();status.textContent="Caption selected — choose Copy.";}
+});
+</script>
+</body>
+</html>`;
+await write("OPEN-TIKTOK-POSTING-DESK.html", postingDeskHtml);
 
 const manifest = {
   type: "clearforge_ai_news_video_v4",
