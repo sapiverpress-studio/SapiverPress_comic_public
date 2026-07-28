@@ -1,0 +1,113 @@
+{
+  "date": "2026-07-28",
+  "mode": "live",
+  "type": "clearforge_ai_news_video_v4",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122135230737198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"A03PXwHHYdse7s21RJJdv4k\"}}"
+  },
+  "pinterest": {
+    "product_tags": [],
+    "id": "1038924207810026998",
+    "creative_type": "REGULAR",
+    "description": "If AI helps with client emails, posts, or notes, check the handoff: what it drafted, what you verified, and whether a human should review it before it goes out. A simple check for freelancers and solo operators.Produced with AI assistance and released with human approval by Clearforge.",
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/fc/a2/ca/fca2ca03d29593d9885a9ff3843e9f1d.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/fc/a2/ca/fca2ca03d29593d9885a9ff3843e9f1d.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 846,
+          "url": "https://i.pinimg.com/564x/fc/a2/ca/fca2ca03d29593d9885a9ff3843e9f1d.jpg"
+        },
+        "1200x": {
+          "width": 1000,
+          "height": 1500,
+          "url": "https://i.pinimg.com/1200x/fc/a2/ca/fca2ca03d29593d9885a9ff3843e9f1d.jpg"
+        }
+      }
+    },
+    "link": "https://clearforge-daily-brief.netlify.app/posts/2026-07-28.html",
+    "has_been_promoted": false,
+    "board_section_id": null,
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "is_product": false,
+    "alt_text": null,
+    "dominant_color": null,
+    "is_standard": true,
+    "parent_pin_id": null,
+    "board_id": "1038924276479917183",
+    "pin_metrics": null,
+    "title": "AI Client Work Check: What to Verify Before You Send",
+    "is_owner": true,
+    "is_removable": false,
+    "created_at": "2026-07-28T07:38:28",
+    "board_name": "Clearforge",
+    "resolved_from": "board_name"
+  },
+  "youtube": {
+    "kind": "youtube#video",
+    "etag": "ky4irh2deBvYiSygLMlBUTKtLiU",
+    "id": "CdbKu8hhVPY",
+    "snippet": {
+      "publishedAt": "2026-07-28T07:38:28Z",
+      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
+      "title": "AI at work is becoming a handoff problem",
+      "description": "Before you let AI into a real work process this week, decide in writing what it can draft, what it can send, and what a human must check first.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.Produced with AI assistance and released with human approval by Clearforge.",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/CdbKu8hhVPY/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/CdbKu8hhVPY/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/CdbKu8hhVPY/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Sapiver Press",
+      "tags": [
+        "AI news",
+        "Clearforge",
+        "practical AI"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "AI at work is becoming a handoff problem",
+        "description": "Before you let AI into a real work process this week, decide in writing what it can draft, what it can send, and what a human must check first.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.Produced with AI assistance and released with human approval by Clearforge."
+      }
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": true
+    },
+    "youtube_url": "https://www.youtube.com/watch?v=CdbKu8hhVPY"
+  }
+}
