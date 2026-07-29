@@ -102,7 +102,7 @@ function renderTikTokPhase({ input, out, duration, titleFile, labelFile, zoomSte
   run(["-loop", "1", "-i", input, "-t", duration.toFixed(3), "-vf", vf, "-frames:v", String(frames), "-c:v", "libx264", "-pix_fmt", "yuv420p", out]);
 }
 
-function renderIslaHook({ input, out, duration, titleFile, labelFile }) {
+function renderIslaHook({ input, out, duration, titleFile, labelFile, start = 0 }) {
   const frames = Math.max(1, Math.round(duration * 30));
   const vf = [
     "scale=-2:1920",
@@ -114,7 +114,7 @@ function renderIslaHook({ input, out, duration, titleFile, labelFile }) {
     `fade=t=out:st=${Math.max(0.12, duration-0.12).toFixed(2)}:d=0.12`,
     "format=yuv420p"
   ].join(",");
-  run(["-i", input, "-t", duration.toFixed(3), "-an", "-vf", vf, "-frames:v", String(frames), "-r", "30", "-c:v", "libx264", "-pix_fmt", "yuv420p", out]);
+  run(["-ss", start.toFixed(3), "-i", input, "-t", duration.toFixed(3), "-an", "-vf", vf, "-frames:v", String(frames), "-r", "30", "-c:v", "libx264", "-pix_fmt", "yuv420p", out]);
 }
 
 function renderCta({ input, out, duration, titleFile, sourceFile }) {
@@ -165,7 +165,20 @@ const fbComment = await write("copy/facebook-first-comment.txt", "Full Clearforg
 const ytTitle = await write("copy/youtube-title.txt", bundle.youtube?.title || bundle.article?.headline);
 const ytBase = stripDirectLinks(bundle.youtube?.description || "");
 const ytCaption = await write("copy/youtube-description.txt", `${ytBase}\n\n${captionCta}\n\n${DISCLOSURE}`);
-const tiktokCaptionText = `${clean(bundle.ai_media?.tiktok?.response_prompt || bundle.ai_media?.tiktok?.hook || "", 180)}\n\n${DISCLOSURE}\n\n#FreelanceTips #AIForFreelancers #ClientWork #AIChecklist`;
+const tiktokHookCopy = clean(bundle.ai_media?.tiktok?.hook || "", 220);
+const tiktokQuestionCopy = clean(bundle.ai_media?.tiktok?.response_prompt || "", 220);
+const tiktokPayoffCopy = clean(bundle.ai_media?.tiktok?.payoff || "", 620)
+  .replace(/[^.!?]*\?\s*$/u, "")
+  .trim();
+const tiktokCaptionText = [
+  tiktokHookCopy,
+  tiktokPayoffCopy,
+  "Before you send AI-assisted work, check what changed, what supports it and who approved the final version.",
+  tiktokQuestionCopy,
+  "Use the Clearforge AI Output Release Gate through the link in our bio.",
+  DISCLOSURE,
+  "#AIForFreelancers #ClientWork #AIChecklist #Clearforge"
+].filter(Boolean).join("\n\n");
 const tiktokCaption = await write("copy/tiktok-caption.txt", tiktokCaptionText);
 
 const fbImages = [];
@@ -211,9 +224,31 @@ segments.push(intro);
 const primaryStory = stories[primaryStoryIndex];
 const primaryTitle = await textFile("video-story.txt", wrapText(primaryStory.title, 25));
 const primarySource = await textFile("video-source.txt", clean(primaryStory.source_name || bundle.sources?.[primaryStoryIndex]?.source_name || "Source", 80));
-const primarySegment = path.join(segmentDir, "01-story.mp4");
-renderMotion({ input: images[primaryStoryIndex], out: primarySegment, duration: storyDuration, titleFile: primaryTitle, sourceFile: primarySource, index: 1 });
-segments.push(primarySegment);
+if (USE_ISLA_HOOK && storyDuration >= 9) {
+  const cutawayDuration = Math.min(1.5, probeDuration(ISLA_HOOK) - 5.5);
+  const imageDuration = (storyDuration - (cutawayDuration * 2)) / 3;
+  for (let index = 0; index < 3; index += 1) {
+    const primarySegment = path.join(segmentDir, `01-story-${index + 1}.mp4`);
+    renderMotion({ input: images[primaryStoryIndex], out: primarySegment, duration: imageDuration, titleFile: primaryTitle, sourceFile: primarySource, index: 1 });
+    segments.push(primarySegment);
+    if (index < 2) {
+      const cutaway = path.join(segmentDir, `01-isla-cutaway-${index + 1}.mp4`);
+      renderIslaHook({
+        input: ISLA_HOOK,
+        out: cutaway,
+        duration: cutawayDuration,
+        titleFile: primaryTitle,
+        labelFile: primarySource,
+        start: index === 0 ? 3.0 : 5.5
+      });
+      segments.push(cutaway);
+    }
+  }
+} else {
+  const primarySegment = path.join(segmentDir, "01-story.mp4");
+  renderMotion({ input: images[primaryStoryIndex], out: primarySegment, duration: storyDuration, titleFile: primaryTitle, sourceFile: primarySource, index: 1 });
+  segments.push(primarySegment);
+}
 
 const takeawayFile = await textFile("takeaway.txt", wrapText(bundle.media_metadata?.practical_takeaway || "Focus on what changes your workflow, not what creates the most hype.", 27));
 const takeawaySource = await textFile("takeaway-source.txt", "PRACTICAL TAKEAWAY");
@@ -253,22 +288,30 @@ const payoffDuration = Math.max(3.5, tiktokAudioDuration + TIKTOK_END_PAD_SECOND
 const tiktokSegmentDir = path.join(OUT, "video", "tiktok-segments");
 await fs.mkdir(tiktokSegmentDir, { recursive: true });
 const tiktokLabel = await textFile("tiktok-label.txt", "CLEARFORGE • AI CLIENT-WORK CHECK");
+const visualPayoff = clean(tiktok.payoff, 700).replace(/[^.!?]*\?\s*$/u, "").trim();
+const payoffSentences = visualPayoff.match(/[^.!?]+[.!?]+|[^.!?]+$/g)?.map((part) => part.trim()).filter(Boolean) || [];
+const payoffSplit = Math.max(1, Math.ceil(payoffSentences.length / 2));
+const payoffFirst = payoffSentences.slice(0, payoffSplit).join(" ") || clean(tiktok.payoff, 330);
+const payoffSecond = payoffSentences.slice(payoffSplit).join(" ") || payoffFirst;
 const tiktokPhaseData = [
   { name: "01-hook", duration: hookDuration, text: tiktok.hook, zoomStep: 0.0018 },
-  { name: "02-payoff", duration: payoffDuration, text: tiktok.payoff, zoomStep: 0.0012 },
+  { name: "02-payoff-a", duration: USE_ISLA_HOOK ? (payoffDuration - 1.4) / 2 : payoffDuration, text: payoffFirst, zoomStep: 0.0012 },
+  ...(USE_ISLA_HOOK ? [{ name: "02-isla-cutaway", duration: 1.4, text: "AI still needs a clear human check.", zoomStep: 0 }] : []),
+  ...(USE_ISLA_HOOK ? [{ name: "02-payoff-b", duration: (payoffDuration - 1.4) / 2, text: payoffSecond, zoomStep: 0.0012 }] : []),
   { name: "03-response", duration: responseDuration, text: tiktok.response_prompt, zoomStep: 0.0021 }
 ];
 const tiktokSegments = [];
 for (const phase of tiktokPhaseData) {
   const titleFile = await textFile(`${phase.name}.txt`, wrapText(phase.text, 24));
   const phaseOut = path.join(tiktokSegmentDir, `${phase.name}.mp4`);
-  if (USE_ISLA_HOOK && phase.name === "01-hook") {
+  if (USE_ISLA_HOOK && (phase.name === "01-hook" || phase.name === "02-isla-cutaway")) {
     renderIslaHook({
       input: ISLA_HOOK,
       out: phaseOut,
       duration: phase.duration,
       titleFile,
-      labelFile: tiktokLabel
+      labelFile: tiktokLabel,
+      start: phase.name === "01-hook" ? 0 : 3.5
     });
   } else {
     renderTikTokPhase({
@@ -375,7 +418,7 @@ const manifest = {
     video_seconds: probeDuration(tiktokVideoOut),
     format: tiktok.format,
     isla_hook: USE_ISLA_HOOK,
-    isla_hook_mode: USE_ISLA_HOOK ? "opening-replacement" : "control"
+    isla_hook_mode: USE_ISLA_HOOK ? "opening-and-mid-video-cutaway" : "control"
   }
 };
 await fs.writeFile(path.join(OUT, "manifest.json"), JSON.stringify(manifest, null, 2) + "\n", "utf8");
