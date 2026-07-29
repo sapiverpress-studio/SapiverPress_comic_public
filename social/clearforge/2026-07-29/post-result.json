@@ -1,0 +1,113 @@
+{
+  "date": "2026-07-29",
+  "mode": "live",
+  "type": "clearforge_ai_news_video_v4",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122135359905198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AAJa59IPziiKsk4H523jgp9\"}}"
+  },
+  "pinterest": {
+    "pin_metrics": null,
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/79/39/3c/79393ce830dc9176c6ac9f27a3ff688a.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/79/39/3c/79393ce830dc9176c6ac9f27a3ff688a.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 846,
+          "url": "https://i.pinimg.com/564x/79/39/3c/79393ce830dc9176c6ac9f27a3ff688a.jpg"
+        },
+        "1200x": {
+          "width": 1000,
+          "height": 1500,
+          "url": "https://i.pinimg.com/1200x/79/39/3c/79393ce830dc9176c6ac9f27a3ff688a.jpg"
+        }
+      }
+    },
+    "alt_text": null,
+    "board_section_id": null,
+    "product_tags": [],
+    "is_standard": true,
+    "dominant_color": null,
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "has_been_promoted": false,
+    "created_at": "2026-07-29T10:56:37",
+    "link": "https://clearforge-daily-brief.netlify.app/posts/2026-07-29.html",
+    "parent_pin_id": null,
+    "id": "1038924207810065739",
+    "is_product": false,
+    "is_removable": false,
+    "title": "How to Build a Reliable AI Coding Harness",
+    "creative_type": "REGULAR",
+    "is_owner": true,
+    "board_id": "1038924276479917183",
+    "description": "Stop relying on secret prompt tricks. Learn how to build a reliable AI coding harness using repository instructions, execution boundaries, and human review gates. Perfect for solo developers. Read more: https://payhip.com/b/vGks8Produced with AI assistance and released with human approval by Clearforge.",
+    "board_name": "Clearforge",
+    "resolved_from": "board_name"
+  },
+  "youtube": {
+    "kind": "youtube#video",
+    "etag": "lk8hBDQrtql3Q_U7JzRpHuv0bDA",
+    "id": "Q7A_R80LdlA",
+    "snippet": {
+      "publishedAt": "2026-07-29T10:56:38Z",
+      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
+      "title": "Beyond the Prompt: Why AI Automation Depends on Protocols, Harnesses, and Human Review",
+      "description": "Shift your focus from prompt tweaking to workflow containment. Establish explicit repository instructions, enforce terminal command limits, and implement mandatory human review checkpoints for every AI-generated output before it reaches production or customer communications.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.Produced with AI assistance and released with human approval by Clearforge.",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/Q7A_R80LdlA/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/Q7A_R80LdlA/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/Q7A_R80LdlA/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Sapiver Press",
+      "tags": [
+        "AI news",
+        "Clearforge",
+        "practical AI"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "Beyond the Prompt: Why AI Automation Depends on Protocols, Harnesses, and Human Review",
+        "description": "Shift your focus from prompt tweaking to workflow containment. Establish explicit repository instructions, enforce terminal command limits, and implement mandatory human review checkpoints for every AI-generated output before it reaches production or customer communications.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.Produced with AI assistance and released with human approval by Clearforge."
+      }
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": true
+    },
+    "youtube_url": "https://www.youtube.com/watch?v=Q7A_R80LdlA"
+  }
+}

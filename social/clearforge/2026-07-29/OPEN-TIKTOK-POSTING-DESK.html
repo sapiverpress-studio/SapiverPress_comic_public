@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clearforge TikTok Posting Desk — 2026-07-29</title>
+<style>
+:root{color-scheme:dark;--navy:#071827;--panel:#10283a;--gold:#e9c46a;--text:#f5f7f8;--muted:#b8c5cf}
+*{box-sizing:border-box}body{margin:0;background:var(--navy);color:var(--text);font:16px/1.5 system-ui,sans-serif}
+main{max-width:720px;margin:auto;padding:20px}h1{font-size:1.55rem;margin:.2rem 0}p{color:var(--muted)}
+.card{background:var(--panel);border:1px solid #29465b;border-radius:16px;padding:16px;margin:16px 0}
+video{display:block;width:100%;max-height:70vh;background:#000;border-radius:12px}
+textarea{width:100%;min-height:180px;padding:12px;border-radius:10px;border:1px solid #49677a;background:#071827;color:var(--text);font:inherit}
+.actions{display:grid;gap:10px;margin-top:12px}.button,button{display:block;width:100%;border:0;border-radius:10px;padding:13px 16px;background:var(--gold);color:#17202a;font-weight:800;text-align:center;text-decoration:none;cursor:pointer}
+.secondary{background:#dce7ed}small{color:var(--muted)}
+</style>
+</head>
+<body><main>
+<h1>Clearforge TikTok Posting Desk</h1>
+<p>2026-07-29 · Approved social package</p>
+<section class="card">
+<video controls playsinline preload="metadata" src="video/UPLOAD-THIS-TO-TIKTOK.mp4"></video>
+<div class="actions"><a class="button" href="video/UPLOAD-THIS-TO-TIKTOK.mp4" download>Download TikTok video</a></div>
+</section>
+<section class="card">
+<h2>Caption</h2>
+<textarea id="caption" readonly>Do you use a checklist or a custom instruction file before sending client work? Clearforge AI Output Release Gate — link in bio.
+
+Produced with AI assistance and released with human approval by Clearforge.
+
+#FreelanceTips #AIForFreelancers #ClientWork #AIChecklist</textarea>
+<div class="actions">
+<button id="copy-caption" type="button">Copy caption</button>
+<a class="button secondary" href="copy/tiktok-caption.txt" download>Download caption</a>
+</div>
+<p id="copy-status" role="status" aria-live="polite"></p>
+</section>
+<p><small>Produced with AI assistance and released with human approval by Clearforge.</small></p>
+</main>
+<script>
+const button=document.getElementById("copy-caption");
+const caption=document.getElementById("caption");
+const status=document.getElementById("copy-status");
+button.addEventListener("click",async()=>{
+  try{await navigator.clipboard.writeText(caption.value);status.textContent="Caption copied.";}
+  catch{caption.focus();caption.select();status.textContent="Caption selected — choose Copy.";}
+});
+</script>
+</body>
+</html>
