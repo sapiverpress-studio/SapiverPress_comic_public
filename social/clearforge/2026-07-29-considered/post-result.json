@@ -1,0 +1,113 @@
+{
+  "date": "2026-07-29-considered",
+  "mode": "live",
+  "type": "clearforge_ai_news_video_v4",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122135397819198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"A8NQNSmMYLNymafexnHygon\"}}"
+  },
+  "pinterest": {
+    "dominant_color": null,
+    "has_been_promoted": false,
+    "alt_text": null,
+    "pin_metrics": null,
+    "title": "The AI Remediation Bottleneck",
+    "creative_type": "REGULAR",
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/79/ab/f0/79abf0c1d8dcec8f068e5bb8a63879ce.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/79/ab/f0/79abf0c1d8dcec8f068e5bb8a63879ce.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 846,
+          "url": "https://i.pinimg.com/564x/79/ab/f0/79abf0c1d8dcec8f068e5bb8a63879ce.jpg"
+        },
+        "1200x": {
+          "width": 1000,
+          "height": 1500,
+          "url": "https://i.pinimg.com/1200x/79/ab/f0/79abf0c1d8dcec8f068e5bb8a63879ce.jpg"
+        }
+      }
+    },
+    "is_removable": false,
+    "created_at": "2026-07-29T17:15:11",
+    "link": "https://clearforge-daily-brief.netlify.app/posts/2026-07-29-considered.html",
+    "is_owner": true,
+    "description": "Are you automating your way into a crisis? Learn why AI discovery needs a human triage gate to prevent operational bottlenecks. Read more: https://payhip.com/b/vGks8Produced with AI assistance and released with human approval by Clearforge.",
+    "product_tags": [],
+    "is_standard": true,
+    "board_section_id": null,
+    "is_product": false,
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "parent_pin_id": null,
+    "board_id": "1038924276479917183",
+    "id": "1038924207810075281",
+    "board_name": "Clearforge",
+    "resolved_from": "board_name"
+  },
+  "youtube": {
+    "kind": "youtube#video",
+    "etag": "4Mv0Wl6npdWYmMFwcaj59kglhTc",
+    "id": "4lQlMvwW_dI",
+    "snippet": {
+      "publishedAt": "2026-07-29T17:15:12Z",
+      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
+      "title": "When AI Discovery Outpaces Human Remediation: The Hidden Bottleneck",
+      "description": "Do not automate the discovery of issues (bugs, contract errors, data anomalies) unless you have a pre-built, automated triage system that prioritizes findings for human review. If your discovery speed exceeds your remediation speed, you are creating a bottleneck, not a solution.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.Produced with AI assistance and released with human approval by Clearforge.",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/4lQlMvwW_dI/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/4lQlMvwW_dI/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/4lQlMvwW_dI/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Sapiver Press",
+      "tags": [
+        "AI news",
+        "Clearforge",
+        "practical AI"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "When AI Discovery Outpaces Human Remediation: The Hidden Bottleneck",
+        "description": "Do not automate the discovery of issues (bugs, contract errors, data anomalies) unless you have a pre-built, automated triage system that prioritizes findings for human review. If your discovery speed exceeds your remediation speed, you are creating a bottleneck, not a solution.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.Produced with AI assistance and released with human approval by Clearforge."
+      }
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": true
+    },
+    "youtube_url": "https://www.youtube.com/watch?v=4lQlMvwW_dI"
+  }
+}

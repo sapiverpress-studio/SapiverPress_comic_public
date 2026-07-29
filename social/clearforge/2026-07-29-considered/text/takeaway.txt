@@ -1,0 +1,12 @@
+Do not automate the
+discovery of issues (bugs,
+contract errors, data
+anomalies) unless you have
+a pre-built, automated
+triage system that
+prioritizes findings for
+human review. If your
+discovery speed exceeds
+your remediation speed, you
+are creating a bottleneck,
+not a solution.
