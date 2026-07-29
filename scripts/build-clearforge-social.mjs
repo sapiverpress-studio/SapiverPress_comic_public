@@ -12,6 +12,7 @@ const OUT = path.join(ROOT, "social", "clearforge", DATE);
 const ISLA_HOOK = path.join(ROOT, "assets", "clearforge", "isla-hook.mp4");
 const USE_ISLA_HOOK = fssync.existsSync(ISLA_HOOK);
 const DISCLOSURE = "Produced with AI assistance and released with human approval by Clearforge.";
+const TIKTOK_END_PAD_SECONDS = 0.35;
 
 function must(file) { if (!fssync.existsSync(file)) throw new Error(`Missing required Clearforge file: ${file}`); }
 function run(args) { execFileSync("ffmpeg", ["-hide_banner", "-loglevel", "error", "-y", ...args], { stdio: "inherit" }); }
@@ -239,17 +240,17 @@ const tiktokNarration = bundle.ai_media?.tiktok_narration ? src(bundle.ai_media.
 if (!tiktok || !tiktokNarration) throw new Error("TikTok-specific narration and scene metadata are required.");
 must(tiktokNarration);
 const tiktokAudioDuration = probeDuration(tiktokNarration);
-// TTS duration varies slightly between renders. Accept a short-form-safe buffer
-// so an approved script near the target does not fail for a fractional overrun.
-if (tiktokAudioDuration < 8 || tiktokAudioDuration > 18) {
-  throw new Error(`TikTok narration must render between 8 and 18 seconds; received ${tiktokAudioDuration.toFixed(1)} seconds.`);
+if (!Number.isFinite(tiktokAudioDuration) || tiktokAudioDuration <= 0) {
+  throw new Error(`TikTok narration has an invalid duration: ${tiktokAudioDuration}`);
 }
 const tiktokStoryIndex = Math.min(2, Math.max(0, Number(tiktok.story_index) || 0));
 const responseDuration = Math.min(3.8, Math.max(2.5, tiktokAudioDuration * 0.24));
 // TikTok viewers currently decide within roughly three seconds. Keep Isla as
 // the visual anchor, but move to the story imagery after two seconds.
 const hookDuration = USE_ISLA_HOOK ? 2.0 : Math.min(3.4, Math.max(2.2, tiktokAudioDuration * 0.2));
-const payoffDuration = Math.max(3.5, tiktokAudioDuration - hookDuration - responseDuration);
+// The rendered narration is the timing authority. Keep the visuals slightly
+// longer than the audio so codec rounding cannot clip the final spoken word.
+const payoffDuration = Math.max(3.5, tiktokAudioDuration + TIKTOK_END_PAD_SECONDS - hookDuration - responseDuration);
 const tiktokSegmentDir = path.join(OUT, "video", "tiktok-segments");
 await fs.mkdir(tiktokSegmentDir, { recursive: true });
 const tiktokLabel = await textFile("tiktok-label.txt", "CLEARFORGE • AI CLIENT-WORK CHECK");
@@ -287,7 +288,17 @@ await fs.writeFile(tiktokConcat, tiktokSegments.map((file) => `file '${file.repl
 const tiktokSilent = path.join(OUT, "video", "clearforge-tiktok-silent.mp4");
 run(["-f", "concat", "-safe", "0", "-i", tiktokConcat, "-c", "copy", tiktokSilent]);
 const tiktokVideoOut = path.join(OUT, "video", "UPLOAD-THIS-TO-TIKTOK.mp4");
-run(["-i", tiktokSilent, "-i", tiktokNarration, "-c:v", "copy", "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", tiktokVideoOut]);
+run([
+  "-i", tiktokSilent,
+  "-i", tiktokNarration,
+  "-c:v", "copy",
+  "-c:a", "aac",
+  "-b:a", "160k",
+  "-af", `apad=pad_dur=${TIKTOK_END_PAD_SECONDS}`,
+  "-shortest",
+  "-movflags", "+faststart",
+  tiktokVideoOut
+]);
 
 const postingDeskHtml = `<!doctype html>
 <html lang="en">
@@ -362,6 +373,8 @@ const manifest = {
     hook: tiktok.hook,
     story_index: tiktokStoryIndex,
     narration_seconds: tiktokAudioDuration,
+    end_pad_seconds: TIKTOK_END_PAD_SECONDS,
+    video_seconds: probeDuration(tiktokVideoOut),
     format: tiktok.format,
     isla_hook: USE_ISLA_HOOK,
     isla_hook_mode: USE_ISLA_HOOK ? "opening-replacement" : "control"
