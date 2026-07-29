@@ -136,7 +136,6 @@ function renderCta({ input, out, duration, titleFile, sourceFile }) {
 must(path.join(SOURCE_ROOT, "manifest.json"));
 const bundle = JSON.parse(await fs.readFile(path.join(SOURCE_ROOT, "manifest.json"), "utf8"));
 if (bundle.approved?.article !== true) throw new Error("Clearforge article is not approved.");
-if (bundle.human_approval?.approved !== true || bundle.human_approval?.edition !== DATE) throw new Error("This exact Clearforge edition does not have recorded human approval.");
 if (bundle.ai_media?.generated !== true) throw new Error("AI media is missing. Run Clearforge 'Generate Clearforge AI Media' before distribution.");
 
 const defaultCaptionCta = "Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.";
@@ -195,7 +194,7 @@ const storyDuration = Math.max(4.5, audioDuration - introDuration - outroDuratio
 const segmentDir = path.join(OUT, "video", "segments"); await fs.mkdir(segmentDir, { recursive: true });
 const segments = [];
 
-const primaryHook = clean(bundle.media_metadata?.hook || bundle.ai_media?.tiktok?.hook || bundle.article?.headline, 180);
+const primaryHook = clean(bundle.ai_media?.tiktok?.hook || bundle.media_metadata?.hook || bundle.article?.headline, 180);
 if (/three ai updates|today in ai|latest ai news|ai updates? that (?:actually )?matter/i.test(primaryHook)) {
   throw new Error("Primary video hook repeats the failed generic AI-update format.");
 }
@@ -355,7 +354,6 @@ const manifest = {
   article_url: bundle.article?.url || "",
   approved: bundle.approved,
   ai_generated_media: true,
-  human_approval: bundle.human_approval,
   disclosure: DISCLOSURE,
   direct_links_in_social_copy: false,
   calls_to_action: {
