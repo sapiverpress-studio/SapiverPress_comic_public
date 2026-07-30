@@ -4,20 +4,18 @@
   "type": "clearforge_ai_news_video_v4",
   "existing_result_detected": false,
   "facebook": {
-    "id": "997877693401171_122135479197198448",
+    "id": "997877693401171_122135543547198448",
     "posting_format": "text_link_fallback",
     "resolved_page_token": true,
-    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"A5TLANdkwUGD7C32LTrL715\"}}"
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"Avwer4SrrERuu4rrgbpX8f9\"}}"
   },
   "pinterest": {
-    "board_section_id": null,
-    "dominant_color": null,
-    "has_been_promoted": false,
-    "parent_pin_id": null,
-    "pin_metrics": null,
-    "id": "1038924207810096956",
-    "is_product": false,
     "is_standard": true,
+    "creative_type": "REGULAR",
+    "dominant_color": "#2b2620",
+    "is_removable": false,
+    "created_at": "2026-07-30T21:41:58",
+    "is_owner": true,
     "media": {
       "media_type": "image",
       "images": {
@@ -43,44 +41,46 @@
         }
       }
     },
-    "board_id": "1038924276479917183",
-    "alt_text": null,
-    "creative_type": "REGULAR",
-    "is_removable": false,
-    "product_tags": [],
     "link": "https://clearforge-daily-brief.netlify.app/posts/2026-07-30.html",
+    "has_been_promoted": false,
+    "parent_pin_id": null,
+    "id": "1038924207810118592",
+    "description": "Stop downloading files to review them. Learn how to use integrated document tools to speed up client sign-offs while keeping your workflow secure. Get the guide here: https://payhip.com/b/vGks8Produced with AI assistance and released with human approval by Clearforge.",
     "board_owner": {
       "username": "sapiver"
     },
-    "is_owner": true,
+    "product_tags": [],
+    "board_id": "1038924276479917183",
+    "board_section_id": null,
+    "pin_metrics": null,
+    "is_product": false,
     "title": "How to Streamline Client Reviews with Integrated AI Tools",
-    "description": "Stop downloading files to review them. Learn how to use integrated document tools to speed up client sign-offs while keeping your workflow secure. Get the guide here: https://payhip.com/b/vGks8Produced with AI assistance and released with human approval by Clearforge.",
-    "created_at": "2026-07-30T08:12:31",
+    "alt_text": null,
     "board_name": "Clearforge",
     "resolved_from": "board_name"
   },
   "youtube": {
     "kind": "youtube#video",
-    "etag": "JSqyCSaVaSSsVpB6nF3_KAHv5oY",
-    "id": "tpnCSlU2A5s",
+    "etag": "4-TBW5EJO3m_oo-pO5jkf2eqtXc",
+    "id": "R-XVup9upUk",
     "snippet": {
-      "publishedAt": "2026-07-30T08:12:31Z",
+      "publishedAt": "2026-07-30T21:41:58Z",
       "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
       "title": "Beyond the Prompt: Why Connected Software Stacks Are Replacing Isolated AI Tools",
       "description": "Audit your team’s weekly workflows to pinpoint where manual copy-pasting occurs between apps. If staff regularly move internal text into external browser windows to complete tasks, set up an enterprise-managed workspace or API integration that keeps data inside your company's security perimeter.Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.Produced with AI assistance and released with human approval by Clearforge.",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/tpnCSlU2A5s/default.jpg",
+          "url": "https://i.ytimg.com/vi/R-XVup9upUk/default.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/tpnCSlU2A5s/mqdefault.jpg",
+          "url": "https://i.ytimg.com/vi/R-XVup9upUk/mqdefault.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/tpnCSlU2A5s/hqdefault.jpg",
+          "url": "https://i.ytimg.com/vi/R-XVup9upUk/hqdefault.jpg",
           "width": 480,
           "height": 360
         }
@@ -108,6 +108,6 @@
       "selfDeclaredMadeForKids": false,
       "containsSyntheticMedia": true
     },
-    "youtube_url": "https://www.youtube.com/watch?v=tpnCSlU2A5s"
+    "youtube_url": "https://www.youtube.com/watch?v=R-XVup9upUk"
   }
 }
