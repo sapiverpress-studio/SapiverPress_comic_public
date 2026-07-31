@@ -1,0 +1,113 @@
+{
+  "date": "2026-07-31",
+  "mode": "live",
+  "type": "clearforge_ai_news_video_v4",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122135649621198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AlwGaP_GcEjG54aH1zmOW-L\"}}"
+  },
+  "pinterest": {
+    "dominant_color": null,
+    "id": "1038924207810144457",
+    "board_id": "1038924276479917183",
+    "has_been_promoted": false,
+    "pin_metrics": null,
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/21/97/44/219744bb41244d2731aa70074f791b5e.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/21/97/44/219744bb41244d2731aa70074f791b5e.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 846,
+          "url": "https://i.pinimg.com/564x/21/97/44/219744bb41244d2731aa70074f791b5e.jpg"
+        },
+        "1200x": {
+          "width": 1000,
+          "height": 1500,
+          "url": "https://i.pinimg.com/1200x/21/97/44/219744bb41244d2731aa70074f791b5e.jpg"
+        }
+      }
+    },
+    "product_tags": [],
+    "description": "Stop overpaying for AI. Learn how to use low-cost models for routine tasks and save your budget for high-value work. Reading AI work twice is not the same as knowing what to check. Get the guide at.Get the Sapiver Forge Notion Workspace free by email: https://sapiver-press.kit.com/5147ce2817Buy it directly: https://payhip.com/b/o8iQAProduced with AI assistance and released with human approval by Clearforge.",
+    "title": "How to Cut AI API Costs by 80% with Multi-Tier Model Routing",
+    "link": "https://sapiverforge-daily-brief.netlify.app/posts/2026-07-31.html",
+    "creative_type": "REGULAR",
+    "created_at": "2026-07-31T17:11:54",
+    "board_section_id": null,
+    "is_standard": true,
+    "alt_text": null,
+    "is_product": false,
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "is_owner": true,
+    "parent_pin_id": null,
+    "is_removable": false,
+    "board_name": "Clearforge",
+    "resolved_from": "board_name"
+  },
+  "youtube": {
+    "kind": "youtube#video",
+    "etag": "y2tJXOK3n2zpNmhLuE6tIohzZQ8",
+    "id": "I9JrMHfz08E",
+    "snippet": {
+      "publishedAt": "2026-07-31T17:11:55Z",
+      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
+      "title": "Friday Watchlist: Model Price Cuts, Agent Escapes, and the Real Drivers of AI Productivity",
+      "description": "Review your organization's software workflows to separate routine data parsing from complex decision-making, and re-route continuous background processing tasks to lower-cost model tiers like GPT-5.6 Luna to reduce operating expenses while preserving budget for human verification.Read the full Sapiver Forge breakdown through the link in our bio. Prefer to listen? Search ‘Sapiver Forge AI Briefing’ on your podcast provider.Produced with AI assistance and released with human approval by Clearforge.",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/I9JrMHfz08E/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/I9JrMHfz08E/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/I9JrMHfz08E/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Sapiver Press",
+      "tags": [
+        "AI news",
+        "Clearforge",
+        "practical AI"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "Friday Watchlist: Model Price Cuts, Agent Escapes, and the Real Drivers of AI Productivity",
+        "description": "Review your organization's software workflows to separate routine data parsing from complex decision-making, and re-route continuous background processing tasks to lower-cost model tiers like GPT-5.6 Luna to reduce operating expenses while preserving budget for human verification.Read the full Sapiver Forge breakdown through the link in our bio. Prefer to listen? Search ‘Sapiver Forge AI Briefing’ on your podcast provider.Produced with AI assistance and released with human approval by Clearforge."
+      }
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": true
+    },
+    "youtube_url": "https://www.youtube.com/watch?v=I9JrMHfz08E"
+  }
+}
