@@ -1,0 +1,113 @@
+{
+  "date": "2026-08-01",
+  "mode": "live",
+  "type": "clearforge_ai_news_video_v4",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122135741895198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AGlEd0bmbegk7LRK6gPgzMj\"}}"
+  },
+  "pinterest": {
+    "dominant_color": null,
+    "link": "https://sapiverforge-daily-brief.netlify.app/posts/2026-08-01.html",
+    "description": "Is your AI-assisted work compliant with new EU standards? Ensure your client deliverables meet emerging transparency and safety requirements before you hit send. Reading AI work twice is not the same as knowing what to check. Click to learn how to audit your AI output.Get the Sapiver Forge Notion Workspace free by email: https://sapiver-press.kit.com/5147ce2817Buy it directly: https://payhip.com/b/o8iQAProduced with AI assistance and released with human approval by Clearforge",
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/5d/4c/7a/5d4c7aa6464aaf8bff6fe321137c07b2.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/5d/4c/7a/5d4c7aa6464aaf8bff6fe321137c07b2.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 846,
+          "url": "https://i.pinimg.com/564x/5d/4c/7a/5d4c7aa6464aaf8bff6fe321137c07b2.jpg"
+        },
+        "1200x": {
+          "width": 1000,
+          "height": 1500,
+          "url": "https://i.pinimg.com/1200x/5d/4c/7a/5d4c7aa6464aaf8bff6fe321137c07b2.jpg"
+        }
+      }
+    },
+    "title": "AI Compliance Checklist for Freelancers",
+    "is_standard": true,
+    "has_been_promoted": false,
+    "is_removable": false,
+    "is_product": false,
+    "product_tags": [],
+    "board_id": "1038924276479917183",
+    "alt_text": null,
+    "id": "1038924207810169577",
+    "created_at": "2026-08-01T11:12:55",
+    "pin_metrics": null,
+    "board_section_id": null,
+    "creative_type": "REGULAR",
+    "is_owner": true,
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "parent_pin_id": null,
+    "board_name": "Clearforge",
+    "resolved_from": "board_name"
+  },
+  "youtube": {
+    "kind": "youtube#video",
+    "etag": "cRTnl0RVJum9KeS33HXo5ESYNeM",
+    "id": "XICKjV3laNg",
+    "snippet": {
+      "publishedAt": "2026-08-01T11:12:55Z",
+      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
+      "title": "Saturday Forecast: Open Models, EU Compliance, and the Rise of Governed Workflows",
+      "description": "Audit your team's top three AI workflows today to verify that inputs do not expose confidential customer data and that outputs follow documented quality control standards before reaching clients.Read the full Sapiver Forge breakdown through the link in our bio. Prefer to listen? Search ‘Sapiver Forge AI Briefing’ on your podcast provider.Produced with AI assistance and released with human approval by Clearforge.",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/XICKjV3laNg/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/XICKjV3laNg/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/XICKjV3laNg/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Sapiver Press",
+      "tags": [
+        "AI news",
+        "Clearforge",
+        "practical AI"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "Saturday Forecast: Open Models, EU Compliance, and the Rise of Governed Workflows",
+        "description": "Audit your team's top three AI workflows today to verify that inputs do not expose confidential customer data and that outputs follow documented quality control standards before reaching clients.Read the full Sapiver Forge breakdown through the link in our bio. Prefer to listen? Search ‘Sapiver Forge AI Briefing’ on your podcast provider.Produced with AI assistance and released with human approval by Clearforge."
+      }
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": true
+    },
+    "youtube_url": "https://www.youtube.com/watch?v=XICKjV3laNg"
+  }
+}
