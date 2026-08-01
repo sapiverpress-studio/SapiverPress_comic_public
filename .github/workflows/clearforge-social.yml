@@ -140,6 +140,10 @@ jobs:
         if: steps.gate.outputs.run == 'true'
         run: node scripts/build-clearforge-social.mjs
 
+      - name: Finalise Sapiver Forge TikTok hashtag
+        if: steps.gate.outputs.run == 'true'
+        run: node scripts/fix-sapiver-forge-hashtag.mjs
+
       - name: Upload Clearforge social artifact
         if: steps.gate.outputs.run == 'true'
         uses: actions/upload-artifact@v4
