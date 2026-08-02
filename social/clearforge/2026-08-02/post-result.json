@@ -1,0 +1,113 @@
+{
+  "date": "2026-08-02",
+  "mode": "live",
+  "type": "clearforge_ai_news_video_v4",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122135924829198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AY45pv72o8gZkYRjgRpe56s\"}}"
+  },
+  "pinterest": {
+    "description": "Ensure your AI-assisted client work meets the new EU transparency requirements with this essential pre-send checklist. Reading AI work twice is not the same as knowing what to check. Visit to learn more.Get the Sapiver Forge Notion Workspace free by email: https://sapiver-press.kit.com/5147ce2817Buy it directly: https://payhip.com/b/o8iQAProduced with AI assistance and released with human approval by Clearforge.",
+    "alt_text": null,
+    "parent_pin_id": null,
+    "has_been_promoted": false,
+    "dominant_color": null,
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/1a/e3/f1/1ae3f1cc9cd5f710ba1c0378b223cc9f.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/1a/e3/f1/1ae3f1cc9cd5f710ba1c0378b223cc9f.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 846,
+          "url": "https://i.pinimg.com/564x/1a/e3/f1/1ae3f1cc9cd5f710ba1c0378b223cc9f.jpg"
+        },
+        "1200x": {
+          "width": 1000,
+          "height": 1500,
+          "url": "https://i.pinimg.com/1200x/1a/e3/f1/1ae3f1cc9cd5f710ba1c0378b223cc9f.jpg"
+        }
+      }
+    },
+    "id": "1038924207810220949",
+    "title": "EU AI Act Compliance Checklist for Freelancers",
+    "is_owner": true,
+    "is_standard": true,
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "created_at": "2026-08-02T21:57:16",
+    "link": "https://sapiverforge-daily-brief.netlify.app/posts/2026-08-02.html",
+    "pin_metrics": null,
+    "board_id": "1038924276479929523",
+    "creative_type": "REGULAR",
+    "product_tags": [],
+    "is_removable": false,
+    "is_product": false,
+    "board_section_id": null,
+    "board_name": "Clearforge",
+    "resolved_from": "created_board"
+  },
+  "youtube": {
+    "kind": "youtube#video",
+    "etag": "3mUxtzfrdyXxccinZk2g8_wMUWU",
+    "id": "TFU4mHCTzOo",
+    "snippet": {
+      "publishedAt": "2026-08-02T21:57:17Z",
+      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
+      "title": "The Compliance-Cost Pivot: AI Regulation Meets Economic Efficiency",
+      "description": "Audit your customer-facing AI interfaces for mandatory EU transparency disclaimers and evaluate your current API usage to determine if Claude Opus 5 can replace higher-cost models for your autonomous agent workflows.Read the full Sapiver Forge breakdown through the link in our bio. Prefer to listen? Search ‘Sapiver Forge AI Briefing’ on your podcast provider.Produced with AI assistance and released with human approval by Clearforge.",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/TFU4mHCTzOo/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/TFU4mHCTzOo/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/TFU4mHCTzOo/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Sapiver Press",
+      "tags": [
+        "AI news",
+        "Clearforge",
+        "practical AI"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "The Compliance-Cost Pivot: AI Regulation Meets Economic Efficiency",
+        "description": "Audit your customer-facing AI interfaces for mandatory EU transparency disclaimers and evaluate your current API usage to determine if Claude Opus 5 can replace higher-cost models for your autonomous agent workflows.Read the full Sapiver Forge breakdown through the link in our bio. Prefer to listen? Search ‘Sapiver Forge AI Briefing’ on your podcast provider.Produced with AI assistance and released with human approval by Clearforge."
+      }
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": true
+    },
+    "youtube_url": "https://www.youtube.com/watch?v=TFU4mHCTzOo"
+  }
+}
