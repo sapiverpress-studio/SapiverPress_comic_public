@@ -10,13 +10,13 @@ const DATE = process.env.DATE_OVERRIDE || new Intl.DateTimeFormat("sv-SE", {
 }).format(new Date());
 
 const targets = [
-  path.join(ROOT, "social", "clearforge", DATE, "copy", "tiktok-caption.txt"),
-  path.join(ROOT, "social", "clearforge", DATE, "OPEN-TIKTOK-POSTING-DESK.html")
+  path.join(ROOT, "social", "sapiver-forge", DATE, "copy", "tiktok-caption.txt"),
+  path.join(ROOT, "social", "sapiver-forge", DATE, "OPEN-TIKTOK-POSTING-DESK.html")
 ];
 
 for (const file of targets) {
   const text = await fs.readFile(file, "utf8");
-  const updated = text.replace(/#Clearforge\b/gi, "#SapiverForge");
+  const updated = text.replace(/#(?:Sapiver\s*Forge|Clear\s*Forge)\b/gi, "#SapiverForge");
   if (updated !== text) {
     await fs.writeFile(file, updated, "utf8");
     console.log(`Updated TikTok hashtag in ${path.relative(ROOT, file)}`);

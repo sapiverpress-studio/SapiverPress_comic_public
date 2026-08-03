@@ -6,11 +6,11 @@ const ROOT = process.cwd();
 const DATE = process.env.DATE_OVERRIDE || new Intl.DateTimeFormat("sv-SE", {
   timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit"
 }).format(new Date());
-const MODE = (process.env.CLEARFORGE_POST_MODE || "dry_run").toLowerCase();
-const OUT = path.join(ROOT, "social", "clearforge", DATE);
+const MODE = (process.env.SAPIVER_FORGE_POST_MODE || "dry_run").toLowerCase();
+const OUT = path.join(ROOT, "social", "sapiver-forge", DATE);
 const MANIFEST = path.join(OUT, "manifest.json");
 const RESULT = path.join(OUT, "post-result.json");
-const DEFAULT_PINTEREST_BOARD_NAME = "Clearforge";
+const DEFAULT_PINTEREST_BOARD_NAME = "Sapiver Forge";
 
 let pinterestAccessTokenCache = "";
 
@@ -96,7 +96,7 @@ async function createPinterestBoard(token, name) {
   return jsonFetch("https://api.pinterest.com/v5/boards", {
     method: "POST",
     headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ name, description: "Daily Clearforge AI briefing pins." })
+    body: JSON.stringify({ name, description: "Daily Sapiver Forge AI briefing pins." })
   });
 }
 
@@ -226,7 +226,7 @@ async function postYouTube(manifest) {
   const title = clean(await readRoot(manifest.youtube.title), 95);
   const description = clean(await readRoot(manifest.youtube.caption), 4500);
   const metadata = {
-    snippet: { title, description, tags: ["AI news", "practical AI", "Clearforge"], categoryId: process.env.YOUTUBE_CATEGORY_ID || "27", defaultLanguage: "en-GB" },
+    snippet: { title, description, tags: ["AI news", "practical AI", "Sapiver Forge"], categoryId: process.env.YOUTUBE_CATEGORY_ID || "27", defaultLanguage: "en-GB" },
     status: { privacyStatus: process.env.YOUTUBE_PRIVACY_STATUS || "public", selfDeclaredMadeForKids: false, containsSyntheticMedia: true }
   };
   const initRes = await fetch("https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status", {
@@ -246,7 +246,7 @@ async function postYouTube(manifest) {
 
 const manifest = JSON.parse(await fs.readFile(MANIFEST, "utf8"));
 const existing = await readExisting();
-const force = truthy(process.env.FORCE_CLEARFORGE_POST || "");
+const force = truthy(process.env.FORCE_SAPIVER_FORGE_POST || "");
 const result = { date: DATE, mode: MODE, type: manifest.type, existing_result_detected: Boolean(existing?.facebook || existing?.pinterest || existing?.youtube) };
 
 if (MODE === "verify") {
@@ -268,4 +268,4 @@ if (MODE === "verify") {
 }
 
 await fs.writeFile(RESULT, JSON.stringify(result, null, 2) + "\n", "utf8");
-console.log(`${MODE === "live" ? "Processed live" : MODE === "verify" ? "Verified credentials for" : "Prepared dry run for"} Clearforge social posting ${DATE}`);
+console.log(`${MODE === "live" ? "Processed live" : MODE === "verify" ? "Verified credentials for" : "Prepared dry run for"} Sapiver Forge social posting ${DATE}`);
