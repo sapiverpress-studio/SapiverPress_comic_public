@@ -2,6 +2,7 @@ import fs from "fs/promises";
 import fssync from "fs";
 import path from "path";
 import { execFileSync } from "child_process";
+import { assertSocialContentUsable } from "./lib/social-content-safety.mjs";
 
 const ROOT = process.cwd();
 const DATE = process.env.DATE_OVERRIDE || new Intl.DateTimeFormat("sv-SE", {
@@ -137,6 +138,7 @@ must(path.join(SOURCE_ROOT, "manifest.json"));
 const bundle = JSON.parse(await fs.readFile(path.join(SOURCE_ROOT, "manifest.json"), "utf8"));
 if (bundle.approved?.article !== true) throw new Error("Sapiver Forge article is not approved.");
 if (bundle.ai_media?.generated !== true) throw new Error("AI media is missing. Run Sapiver Forge 'Generate Sapiver Forge AI Media' before distribution.");
+assertSocialContentUsable(bundle);
 
 const defaultCaptionCta = "Read the full Sapiver Forge breakdown through the link in our bio. Prefer to listen? Search ‘Sapiver Forge AI Briefing’ on your podcast provider.";
 const captionCta = stripDirectLinks(bundle.calls_to_action?.caption || defaultCaptionCta);
@@ -147,10 +149,10 @@ const screenLines = bundle.calls_to_action?.screen_lines || [
   "Search: Sapiver Forge AI Briefing"
 ];
 
-const availableImages = (bundle.ai_media.story_images || []).map(src);
+const availableImages = (bundle.ai_media.story_images || []).map(src).filter((file) => fssync.existsSync(file));
 const narration = src(bundle.ai_media.narration);
 if (availableImages.length < 1) throw new Error("At least one verified-story image is required.");
-availableImages.forEach(must); must(narration);
+must(narration);
 const availableStories = (bundle.stories || []).slice(0, 3);
 if (availableStories.length < 1) throw new Error("At least one verified story record is required in the Sapiver Forge bundle.");
 const images = Array.from({ length: 3 }, (_, index) => availableImages[index % availableImages.length]);

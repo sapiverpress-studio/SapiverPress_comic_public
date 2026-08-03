@@ -14,7 +14,10 @@ assert.match(builder, /social", "sapiver-forge"/);
 assert.match(poster, /social", "sapiver-forge"/);
 assert.match(builder, /availableStories\.length < 1/);
 assert.match(builder, /availableImages\.length < 1/);
+assert.match(builder, /assertSocialContentUsable\(bundle\)/);
+assert.match(builder, /story_images \|\| \[\]\)\.map\(src\)\.filter\(\(file\) => fssync\.existsSync\(file\)\)/);
 assert.doesNotMatch(builder, /Three story records are required|Three AI-generated story images are required/);
+assert.match(workflow, /No Sapiver Forge social directory was produced; nothing to commit/);
 assert.doesNotMatch(`${builder}\n${poster}`, /Clear\s*Forge|Clearforge/i);
 
 console.log("Sapiver Forge distribution contract passed.");
