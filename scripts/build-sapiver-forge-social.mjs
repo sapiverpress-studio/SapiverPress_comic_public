@@ -7,14 +7,14 @@ const ROOT = process.cwd();
 const DATE = process.env.DATE_OVERRIDE || new Intl.DateTimeFormat("sv-SE", {
   timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit"
 }).format(new Date());
-const SOURCE_ROOT = process.env.CLEARFORGE_BUNDLE_ROOT || path.join(ROOT, "vendor", "clearforge", "bridge", "clearforge", DATE);
-const OUT = path.join(ROOT, "social", "clearforge", DATE);
-const ISLA_HOOK = path.join(ROOT, "assets", "clearforge", "isla-hook.mp4");
+const SOURCE_ROOT = process.env.SAPIVER_FORGE_BUNDLE_ROOT || path.join(ROOT, "vendor", "sapiver-forge", "bridge", "sapiver-forge", DATE);
+const OUT = path.join(ROOT, "social", "sapiver-forge", DATE);
+const ISLA_HOOK = path.join(ROOT, "assets", "sapiver-forge", "isla-hook.mp4");
 const USE_ISLA_HOOK = fssync.existsSync(ISLA_HOOK);
-const DISCLOSURE = "Produced with AI assistance and released with human approval by Clearforge.";
+const DISCLOSURE = "Produced with AI assistance and released with human approval by Sapiver Forge.";
 const TIKTOK_END_PAD_SECONDS = 0.35;
 
-function must(file) { if (!fssync.existsSync(file)) throw new Error(`Missing required Clearforge file: ${file}`); }
+function must(file) { if (!fssync.existsSync(file)) throw new Error(`Missing required Sapiver Forge file: ${file}`); }
 function run(args) { execFileSync("ffmpeg", ["-hide_banner", "-loglevel", "error", "-y", ...args], { stdio: "inherit" }); }
 function probeDuration(file) {
   return Number(execFileSync("ffprobe", ["-v", "error", "-show_entries", "format=duration", "-of", "default=nw=1:nk=1", file], { encoding: "utf8" }).trim());
@@ -135,24 +135,26 @@ function renderCta({ input, out, duration, titleFile, sourceFile }) {
 
 must(path.join(SOURCE_ROOT, "manifest.json"));
 const bundle = JSON.parse(await fs.readFile(path.join(SOURCE_ROOT, "manifest.json"), "utf8"));
-if (bundle.approved?.article !== true) throw new Error("Clearforge article is not approved.");
-if (bundle.ai_media?.generated !== true) throw new Error("AI media is missing. Run Clearforge 'Generate Clearforge AI Media' before distribution.");
+if (bundle.approved?.article !== true) throw new Error("Sapiver Forge article is not approved.");
+if (bundle.ai_media?.generated !== true) throw new Error("AI media is missing. Run Sapiver Forge 'Generate Sapiver Forge AI Media' before distribution.");
 
-const defaultCaptionCta = "Read the full Clearforge breakdown through the link in our bio. Prefer to listen? Search ‘Clearforge AI Briefing’ on your podcast provider.";
+const defaultCaptionCta = "Read the full Sapiver Forge breakdown through the link in our bio. Prefer to listen? Search ‘Sapiver Forge AI Briefing’ on your podcast provider.";
 const captionCta = stripDirectLinks(bundle.calls_to_action?.caption || defaultCaptionCta);
 const screenLines = bundle.calls_to_action?.screen_lines || [
   "READ THE FULL BREAKDOWN",
   "Link in bio",
   "LISTEN ON THE GO",
-  "Search: Clearforge AI Briefing"
+  "Search: Sapiver Forge AI Briefing"
 ];
 
-const images = (bundle.ai_media.story_images || []).map(src);
+const availableImages = (bundle.ai_media.story_images || []).map(src);
 const narration = src(bundle.ai_media.narration);
-if (images.length < 3) throw new Error("Three AI-generated story images are required.");
-images.forEach(must); must(narration);
-const stories = (bundle.stories || []).slice(0, 3);
-if (stories.length < 3) throw new Error("Three story records are required in the Clearforge bundle.");
+if (availableImages.length < 1) throw new Error("At least one verified-story image is required.");
+availableImages.forEach(must); must(narration);
+const availableStories = (bundle.stories || []).slice(0, 3);
+if (availableStories.length < 1) throw new Error("At least one verified story record is required in the Sapiver Forge bundle.");
+const images = Array.from({ length: 3 }, (_, index) => availableImages[index % availableImages.length]);
+const stories = Array.from({ length: 3 }, (_, index) => availableStories[index % availableStories.length]);
 
 await fs.rm(OUT, { recursive: true, force: true });
 await fs.mkdir(OUT, { recursive: true });
@@ -161,7 +163,7 @@ const pinTitle = await write("copy/pinterest-title.txt", bundle.pinterest?.title
 const pinCaption = await write("copy/pinterest-caption.txt", `${bundle.pinterest?.description || bundle.article?.dek}\n\n${DISCLOSURE}`);
 const fbBase = stripDirectLinks(bundle.facebook?.post || "");
 const fbCaption = await write("copy/facebook-post.txt", `${fbBase}\n\n${captionCta}\n\n${DISCLOSURE}`);
-const fbComment = await write("copy/facebook-first-comment.txt", "Full Clearforge breakdown: use the link in our bio. Listen on the go by searching ‘Clearforge AI Briefing’ in your podcast app.");
+const fbComment = await write("copy/facebook-first-comment.txt", "Full Sapiver Forge breakdown: use the link in our bio. Listen on the go by searching ‘Sapiver Forge AI Briefing’ in your podcast app.");
 const ytTitle = await write("copy/youtube-title.txt", bundle.youtube?.title || bundle.article?.headline);
 const ytBase = stripDirectLinks(bundle.youtube?.description || "");
 const ytCaption = await write("copy/youtube-description.txt", `${ytBase}\n\n${captionCta}\n\n${DISCLOSURE}`);
@@ -175,9 +177,9 @@ const tiktokCaptionText = [
   tiktokPayoffCopy,
   "Before you send AI-assisted work, check what changed, what supports it and who approved the final version.",
   tiktokQuestionCopy,
-  "Use the Clearforge AI Output Release Gate through the link in our bio.",
+  "Use the Sapiver Forge AI Output Release Gate through the link in our bio.",
   DISCLOSURE,
-  "#AIForFreelancers #ClientWork #AIChecklist #Clearforge"
+  "#AIForFreelancers #ClientWork #AIChecklist #SapiverForge"
 ].filter(Boolean).join("\n\n");
 const tiktokCaption = await write("copy/tiktok-caption.txt", tiktokCaptionText);
 
@@ -191,7 +193,7 @@ for (let i = 0; i < 3; i++) {
 }
 
 const pinTitleFile = await textFile("pin-title.txt", wrapText(bundle.pinterest?.title || bundle.article?.headline, 25));
-const pinSourceFile = await textFile("pin-source.txt", "TODAY IN AI • CLEARFORGE");
+const pinSourceFile = await textFile("pin-source.txt", "TODAY IN AI • SAPIVER FORGE");
 const pinOut = path.join(OUT, "pinterest", "pin.png"); await fs.mkdir(path.dirname(pinOut), { recursive: true });
 renderStill({ input: images[0], out: pinOut, size: "1000x1500", titleFile: pinTitleFile, sourceFile: pinSourceFile, fontSize: 52 });
 
@@ -212,7 +214,7 @@ if (/three ai updates|today in ai|latest ai news|ai updates? that (?:actually )?
   throw new Error("Primary video hook repeats the failed generic AI-update format.");
 }
 const hookFile = await textFile("hook.txt", wrapText(primaryHook, 24));
-const hookSource = await textFile("hook-source.txt", "CLEARFORGE • AI CLIENT-WORK CHECK");
+const hookSource = await textFile("hook-source.txt", "SAPIVER FORGE • AI CLIENT-WORK CHECK");
 const intro = path.join(segmentDir, "00-intro.mp4");
 if (USE_ISLA_HOOK) {
   renderIslaHook({ input: ISLA_HOOK, out: intro, duration: introDuration, titleFile: hookFile, labelFile: hookSource });
@@ -257,16 +259,16 @@ renderMotion({ input: images[2], out: outro, duration: outroDuration, titleFile:
 segments.push(outro);
 
 const ctaTitle = await textFile("cta-title.txt", screenLines.join("\n"));
-const ctaSource = await textFile("cta-source.txt", "CLEARFORGE • HUMAN-LED. AI-EMPOWERED.");
+const ctaSource = await textFile("cta-source.txt", "SAPIVER FORGE • HUMAN-LED. AI-EMPOWERED.");
 const ctaOut = path.join(segmentDir, "05-cta.mp4");
 renderCta({ input: images[0], out: ctaOut, duration: ctaDuration, titleFile: ctaTitle, sourceFile: ctaSource });
 segments.push(ctaOut);
 
 const concatFile = path.join(OUT, "video", "concat.txt");
 await fs.writeFile(concatFile, segments.map((file) => `file '${file.replaceAll("'", "'\\''")}'`).join("\n") + "\n", "utf8");
-const silentVideo = path.join(OUT, "video", "clearforge-short-silent.mp4");
+const silentVideo = path.join(OUT, "video", "sapiver-forge-short-silent.mp4");
 run(["-f", "concat", "-safe", "0", "-i", concatFile, "-c", "copy", silentVideo]);
-const videoOut = path.join(OUT, "video", "clearforge-youtube-short.mp4");
+const videoOut = path.join(OUT, "video", "sapiver-forge-youtube-short.mp4");
 run(["-i", silentVideo, "-i", narration, "-c:v", "copy", "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", videoOut]);
 
 const tiktok = bundle.ai_media?.tiktok;
@@ -287,7 +289,7 @@ const hookDuration = USE_ISLA_HOOK ? 2.0 : Math.min(3.4, Math.max(2.2, tiktokAud
 const payoffDuration = Math.max(3.5, tiktokAudioDuration + TIKTOK_END_PAD_SECONDS - hookDuration - responseDuration);
 const tiktokSegmentDir = path.join(OUT, "video", "tiktok-segments");
 await fs.mkdir(tiktokSegmentDir, { recursive: true });
-const tiktokLabel = await textFile("tiktok-label.txt", "CLEARFORGE • AI CLIENT-WORK CHECK");
+const tiktokLabel = await textFile("tiktok-label.txt", "SAPIVER FORGE • AI CLIENT-WORK CHECK");
 const visualPayoff = clean(tiktok.payoff, 700).replace(/[^.!?]*\?\s*$/u, "").trim();
 const payoffSentences = visualPayoff.match(/[^.!?]+[.!?]+|[^.!?]+$/g)?.map((part) => part.trim()).filter(Boolean) || [];
 const payoffSplit = Math.max(1, Math.ceil(payoffSentences.length / 2));
@@ -327,7 +329,7 @@ for (const phase of tiktokPhaseData) {
 }
 const tiktokConcat = path.join(OUT, "video", "tiktok-concat.txt");
 await fs.writeFile(tiktokConcat, tiktokSegments.map((file) => `file '${file.replaceAll("'", "'\\''")}'`).join("\n") + "\n", "utf8");
-const tiktokSilent = path.join(OUT, "video", "clearforge-tiktok-silent.mp4");
+const tiktokSilent = path.join(OUT, "video", "sapiver-forge-tiktok-silent.mp4");
 run(["-f", "concat", "-safe", "0", "-i", tiktokConcat, "-c", "copy", tiktokSilent]);
 const tiktokVideoOut = path.join(OUT, "video", "UPLOAD-THIS-TO-TIKTOK.mp4");
 run([
@@ -347,7 +349,7 @@ const postingDeskHtml = `<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Clearforge TikTok Posting Desk — ${htmlEsc(DATE)}</title>
+<title>Sapiver Forge TikTok Posting Desk — ${htmlEsc(DATE)}</title>
 <style>
 :root{color-scheme:dark;--navy:#071827;--panel:#10283a;--gold:#e9c46a;--text:#f5f7f8;--muted:#b8c5cf}
 *{box-sizing:border-box}body{margin:0;background:var(--navy);color:var(--text);font:16px/1.5 system-ui,sans-serif}
@@ -360,7 +362,7 @@ textarea{width:100%;min-height:180px;padding:12px;border-radius:10px;border:1px 
 </style>
 </head>
 <body><main>
-<h1>Clearforge TikTok Posting Desk</h1>
+<h1>Sapiver Forge TikTok Posting Desk</h1>
 <p>${htmlEsc(DATE)} · Approved social package</p>
 <section class="card">
 <video controls playsinline preload="metadata" src="video/UPLOAD-THIS-TO-TIKTOK.mp4"></video>
@@ -391,9 +393,9 @@ button.addEventListener("click",async()=>{
 await write("OPEN-TIKTOK-POSTING-DESK.html", postingDeskHtml);
 
 const manifest = {
-  type: "clearforge_ai_news_video_v4",
+  type: "sapiver-forge_ai_news_video_v4",
   date: DATE,
-  source_repo: "Clearforge",
+  source_repo: "Sapiver Forge",
   article_url: bundle.article?.url || "",
   approved: bundle.approved,
   ai_generated_media: true,
@@ -422,5 +424,5 @@ const manifest = {
   }
 };
 await fs.writeFile(path.join(OUT, "manifest.json"), JSON.stringify(manifest, null, 2) + "\n", "utf8");
-await fs.writeFile(path.join(ROOT, "social", "clearforge", "latest.json"), JSON.stringify(manifest, null, 2) + "\n", "utf8");
-console.log(`Built AI-led Clearforge news assets for ${DATE} with public TikTok and YouTube publishing pack`);
+await fs.writeFile(path.join(ROOT, "social", "sapiver-forge", "latest.json"), JSON.stringify(manifest, null, 2) + "\n", "utf8");
+console.log(`Built AI-led Sapiver Forge news assets for ${DATE} with public TikTok and YouTube publishing pack`);
