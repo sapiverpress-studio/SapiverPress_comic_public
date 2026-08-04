@@ -1,0 +1,66 @@
+{
+  "date": "2026-08-04",
+  "mode": "live",
+  "type": "sapiver_forge_weekly_promo",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122136136137198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AxRulYFf5L2cP19hRTMfzFM\"}}"
+  },
+  "pinterest": {
+    "board_section_id": null,
+    "link": "https://payhip.com/b/pkSEY",
+    "is_removable": false,
+    "created_at": "2026-08-04T16:26:17",
+    "description": "Five checks before AI-assisted work leaves your business. Check the material facts, confidential information, ownership, intended recipient and the person responsible for approval. A quick reread is not the same as a recorded release decision. See the Sapiver Forge AI Output Release Gate.Sapiver Forge AI Output Release Gate: https://payhip.com/b/pkSEY",
+    "pin_metrics": null,
+    "title": "Five checks before AI-assisted work leaves your business",
+    "board_id": "1038924276479917183",
+    "creative_type": "REGULAR",
+    "parent_pin_id": null,
+    "dominant_color": null,
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "has_been_promoted": false,
+    "product_tags": [],
+    "is_standard": true,
+    "id": "1038924207810277499",
+    "is_product": false,
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/25/39/ad/2539ad27ccf537ba5ce95ad828f0f913.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/25/39/ad/2539ad27ccf537ba5ce95ad828f0f913.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 1002,
+          "url": "https://i.pinimg.com/564x/25/39/ad/2539ad27ccf537ba5ce95ad828f0f913.jpg"
+        },
+        "1200x": {
+          "width": 1080,
+          "height": 1920,
+          "url": "https://i.pinimg.com/1200x/25/39/ad/2539ad27ccf537ba5ce95ad828f0f913.jpg"
+        }
+      }
+    },
+    "is_owner": true,
+    "alt_text": null,
+    "board_name": "Sapiver forge",
+    "resolved_from": "board_name"
+  },
+  "youtube": {
+    "skipped": true,
+    "reason": "youtube_not_approved"
+  }
+}
