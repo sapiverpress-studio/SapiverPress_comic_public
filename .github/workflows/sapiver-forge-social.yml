@@ -75,6 +75,7 @@ jobs:
           const item=bridge.posts.find(p=>p.index===day);
           if(!item) throw new Error(`Approved bridge has no day ${day}.`);
           if(!item.video||!item.youtube_title||!item.youtube_description) throw new Error('Approved bridge does not yet contain YouTube video metadata. Re-run the Sapiver Forge approval workflow after the bridge update.');
+          if(!item.social_comment||/https?:\/\//i.test(item.social_comment)) throw new Error('Approved social comment must use link-in-bio wording and contain no direct URL.');
           const out=path.join('social','sapiver-forge',date);
           fs.mkdirSync(out,{recursive:true});
           const write=(name,text)=>{const p=path.join(out,name);fs.writeFileSync(p,String(text).trim()+'\n');return p;};
@@ -90,7 +91,7 @@ jobs:
             day_number:day,
             article_url:item.product_url,
             approved:{facebook:true,pinterest:true,youtube:true},
-            facebook:{post_caption:write('facebook-post.txt',item.facebook_post),first_comment:write('facebook-first-comment.txt',item.product_url),images:[image]},
+            facebook:{post_caption:write('facebook-post.txt',item.facebook_post),first_comment:write('facebook-first-comment.txt',item.social_comment),images:[image]},
             pinterest:{title:write('pinterest-title.txt',item.pinterest_title),caption:write('pinterest-caption.txt',item.pinterest_description),image},
             youtube:{video,title:write('youtube-title.txt',item.youtube_title),caption:write('youtube-description.txt',item.youtube_description)}
           };
