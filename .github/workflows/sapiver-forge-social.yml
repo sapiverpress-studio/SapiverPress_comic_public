@@ -2,7 +2,7 @@ name: Sapiver Forge Facebook and Pinterest Distribution
 
 on:
   schedule:
-    - cron: '30 17 * * *'
+    - cron: '0 6 * * *'
   workflow_dispatch:
     inputs:
       day_number:
