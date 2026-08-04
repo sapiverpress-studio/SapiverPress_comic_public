@@ -1,4 +1,4 @@
-name: Sapiver Forge Facebook and Pinterest Distribution
+name: Sapiver Forge Facebook, Pinterest and YouTube Distribution
 
 on:
   schedule:
@@ -23,7 +23,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: sapiver-forge-facebook-pinterest-daily
+  group: sapiver-forge-social-daily
   cancel-in-progress: false
 
 jobs:
@@ -62,7 +62,7 @@ jobs:
           echo "BRIDGE_AVAILABLE=true" >> "$GITHUB_ENV"
           echo "BRIDGE_ROOT=$BRIDGE" >> "$GITHUB_ENV"
 
-      - name: Build today's Facebook and Pinterest package
+      - name: Build today's approved social package
         if: env.BRIDGE_AVAILABLE == 'true'
         shell: bash
         run: |
@@ -74,27 +74,31 @@ jobs:
           if(bridge.approved!==true) throw new Error('Weekly bridge is not approved.');
           const item=bridge.posts.find(p=>p.index===day);
           if(!item) throw new Error(`Approved bridge has no day ${day}.`);
+          if(!item.video||!item.youtube_title||!item.youtube_description) throw new Error('Approved bridge does not yet contain YouTube video metadata. Re-run the Sapiver Forge approval workflow after the bridge update.');
           const out=path.join('social','sapiver-forge',date);
           fs.mkdirSync(out,{recursive:true});
           const write=(name,text)=>{const p=path.join(out,name);fs.writeFileSync(p,String(text).trim()+'\n');return p;};
           const image=path.join(out,'approved-social.png');
+          const video=path.join(out,'approved-short.mp4');
           fs.copyFileSync(path.join(root,item.image),image);
+          fs.copyFileSync(path.join(root,item.video),video);
+          if(!fs.statSync(video).size) throw new Error('Approved YouTube video is empty.');
           const manifest={
             type:'sapiver_forge_weekly_promo',
             candidate_id:bridge.candidate_id,
             week:bridge.week,
             day_number:day,
             article_url:item.product_url,
-            approved:{facebook:true,pinterest:true,youtube:false},
+            approved:{facebook:true,pinterest:true,youtube:true},
             facebook:{post_caption:write('facebook-post.txt',item.facebook_post),first_comment:write('facebook-first-comment.txt',item.product_url),images:[image]},
             pinterest:{title:write('pinterest-title.txt',item.pinterest_title),caption:write('pinterest-caption.txt',item.pinterest_description),image},
-            youtube:{video:'',title:'',caption:''}
+            youtube:{video,title:write('youtube-title.txt',item.youtube_title),caption:write('youtube-description.txt',item.youtube_description)}
           };
           fs.writeFileSync(path.join(out,'manifest.json'),JSON.stringify(manifest,null,2)+'\n');
           console.log(`Prepared approved day ${day}: ${item.day}`);
           NODE
 
-      - name: Post approved Facebook and Pinterest content
+      - name: Post approved Facebook, Pinterest and YouTube content
         if: env.BRIDGE_AVAILABLE == 'true'
         run: node scripts/post-sapiver-forge-social.mjs
         env:
@@ -115,6 +119,10 @@ jobs:
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
           FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
           FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          YOUTUBE_PRIVACY_STATUS: public
           FORCE_SAPIVER_FORGE_POST: ${{ secrets.FORCE_SAPIVER_FORGE_POST || secrets.FORCE_CLEARFORGE_POST }}
 
       - name: Show posting result
@@ -133,7 +141,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add "social/sapiver-forge/${DATE_OVERRIDE}"
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Post approved Sapiver Forge Facebook and Pinterest content for ${DATE_OVERRIDE}"
+          git commit -m "Post approved Sapiver Forge social content for ${DATE_OVERRIDE}"
           for attempt in 1 2 3; do
             if git push; then exit 0; fi
             git pull --rebase origin main
