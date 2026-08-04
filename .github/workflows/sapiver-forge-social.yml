@@ -1,166 +1,104 @@
-name: Sapiver Forge Social Distribution
+name: Sapiver Forge Facebook and Pinterest Distribution
 
 on:
+  schedule:
+    - cron: '30 17 * * *'
   workflow_dispatch:
     inputs:
-      date_override:
-        description: "Optional Sapiver Forge date YYYY-MM-DD"
+      day_number:
+        description: "Optional day override 1-7"
         required: false
         default: ""
         type: string
       post_mode:
-        description: "Choose whether to build, verify credentials, or publish"
+        description: "Build only or publish live"
         required: true
         default: "dry_run"
         type: choice
         options:
           - dry_run
-          - verify
           - live
-  repository_dispatch:
-    types:
-      - sapiver_forge_publish
 
 permissions:
   contents: write
 
+concurrency:
+  group: sapiver-forge-facebook-pinterest-daily
+  cancel-in-progress: false
+
 jobs:
-  sapiver-forge-social:
+  distribute:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Decide whether this run should execute
-        id: gate
+      - uses: actions/checkout@v4
+
+      - name: Select day and mode
         shell: bash
         run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "${{ github.event_name }}" = "repository_dispatch" ]; then
-            echo "run=true" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
+          set -euo pipefail
+          DAY="${{ inputs.day_number }}"
+          if [ -z "$DAY" ]; then DAY="$(TZ=Europe/London date +%u)"; fi
+          echo "$DAY" | grep -Eq '^[1-7]$'
+          MODE="${{ inputs.post_mode }}"
+          if [ "${{ github.event_name }}" = "schedule" ]; then MODE="live"; fi
+          echo "DAY_NUMBER=$DAY" >> "$GITHUB_ENV"
+          echo "DATE_OVERRIDE=$(TZ=Europe/London date +%F)" >> "$GITHUB_ENV"
+          echo "SAPIVER_FORGE_POST_MODE=$MODE" >> "$GITHUB_ENV"
 
-          LOCAL_TIME="$(TZ=Europe/London date +%H:%M)"
-          echo "Europe/London local time: ${LOCAL_TIME}"
-          if [ "${LOCAL_TIME}" = "06:00" ]; then
-            echo "run=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "run=false" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Checkout distribution repo
-        if: steps.gate.outputs.run == 'true'
-        uses: actions/checkout@v4
-
-      - name: Set run options
-        if: steps.gate.outputs.run == 'true'
-        shell: bash
-        run: |
-          if [ "${{ github.event_name }}" = "repository_dispatch" ]; then
-            DATE_VALUE="${{ github.event.client_payload.date }}"
-            MODE="live"
-          elif [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ github.event.inputs.date_override }}" ]; then
-            DATE_VALUE="${{ github.event.inputs.date_override }}"
-            MODE="${{ github.event.inputs.post_mode }}"
-          else
-            DATE_VALUE="$(TZ=Europe/London date +%F)"
-            if [ "${{ github.event_name }}" = "schedule" ]; then
-              MODE="live"
-            else
-              MODE="${{ github.event.inputs.post_mode }}"
-            fi
-          fi
-
-          if [ -z "${DATE_VALUE}" ]; then
-            DATE_VALUE="$(TZ=Europe/London date +%F)"
-          fi
-
-          echo "DATE_OVERRIDE=${DATE_VALUE}" >> "$GITHUB_ENV"
-          echo "SAPIVER_FORGE_POST_MODE=${MODE}" >> "$GITHUB_ENV"
-          echo "SAPIVER_FORGE_EVENT_NAME=${{ github.event_name }}" >> "$GITHUB_ENV"
-
-      - name: Ensure FFmpeg is available
-        if: steps.gate.outputs.run == 'true'
-        shell: bash
-        run: |
-          if ! command -v ffmpeg >/dev/null 2>&1; then
-            sudo apt-get update
-            sudo apt-get install -y ffmpeg
-          fi
-          ffmpeg -version | head -n 1
-
-      - name: Pull approved Sapiver Forge bundle
-        if: steps.gate.outputs.run == 'true'
+      - name: Pull latest human-approved weekly bridge
         shell: bash
         run: |
           set -euo pipefail
           rm -rf vendor/sapiver-forge
-          git clone --depth 1 "https://github.com/sapiverpress-studio/SapiverForge.git" vendor/sapiver-forge
-
-          DATE_DIR="vendor/sapiver-forge/bridge/sapiver-forge/${DATE_OVERRIDE}"
-          LATEST_DIR="vendor/sapiver-forge/bridge/sapiver-forge/latest"
-          LEGACY_DATE_DIR="vendor/sapiver-forge/bridge/clearforge/${DATE_OVERRIDE}"
-
-          if [ -f "${DATE_DIR}/manifest.json" ]; then
-            echo "SAPIVER_FORGE_BUNDLE_ROOT=${DATE_DIR}" >> "$GITHUB_ENV"
-          elif [ -f "${LEGACY_DATE_DIR}/manifest.json" ]; then
-            echo "::warning::Recovering a historical approved package from its immutable legacy bridge path."
-            echo "SAPIVER_FORGE_BUNDLE_ROOT=${LEGACY_DATE_DIR}" >> "$GITHUB_ENV"
-          elif [ "${SAPIVER_FORGE_EVENT_NAME}" = "workflow_dispatch" ] && [ -f "${LATEST_DIR}/manifest.json" ]; then
-            echo "::warning::No approved bundle for ${DATE_OVERRIDE}; manual run is using latest approved Sapiver Forge bundle."
-            echo "SAPIVER_FORGE_BUNDLE_ROOT=${LATEST_DIR}" >> "$GITHUB_ENV"
-          else
-            echo "::error::No approved Sapiver Forge bundle for ${DATE_OVERRIDE}. Automated runs refuse to reuse stale content."
-            exit 1
+          git clone --depth 1 https://github.com/sapiverpress-studio/SapiverForge.git vendor/sapiver-forge
+          BRIDGE="vendor/sapiver-forge/bridge/sapiver-forge-weekly/latest"
+          if [ ! -f "$BRIDGE/approved-manifest.json" ]; then
+            echo "No approved Sapiver Forge weekly bridge is available. Nothing will be posted."
+            echo "BRIDGE_AVAILABLE=false" >> "$GITHUB_ENV"
+            exit 0
           fi
+          (cd "$BRIDGE" && sha256sum -c file-hashes.sha256)
+          test "$(cat "$BRIDGE/candidate-id.txt" | tr -d '\n')" = "$(node -p "require('./$BRIDGE/approved-manifest.json').candidate_id")"
+          echo "BRIDGE_AVAILABLE=true" >> "$GITHUB_ENV"
+          echo "BRIDGE_ROOT=$BRIDGE" >> "$GITHUB_ENV"
 
-      - name: Sync latest Sapiver Forge approval flags
-        if: steps.gate.outputs.run == 'true'
+      - name: Build today's Facebook and Pinterest package
+        if: env.BRIDGE_AVAILABLE == 'true'
         shell: bash
         run: |
           set -euo pipefail
-          APPROVAL_FILE="vendor/sapiver-forge/drafts/${DATE_OVERRIDE}/approval.json"
-          MANIFEST_FILE="${SAPIVER_FORGE_BUNDLE_ROOT}/manifest.json"
-
-          if [ ! -f "${APPROVAL_FILE}" ]; then
-            echo "::error::Missing latest approval file: ${APPROVAL_FILE}"
-            exit 1
-          fi
-
-          node - "${APPROVAL_FILE}" "${MANIFEST_FILE}" <<'NODE'
-          const fs = require('fs');
-          const [approvalPath, manifestPath] = process.argv.slice(2);
-          const approval = JSON.parse(fs.readFileSync(approvalPath, 'utf8'));
-          const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
-          manifest.approved = {
-            article: approval.article_approved === true,
-            facebook: approval.facebook_approved === true,
-            pinterest: approval.pinterest_approved === true,
-            youtube: approval.youtube_approved === true
+          node <<'NODE'
+          const fs=require('fs'),path=require('path');
+          const root=process.env.BRIDGE_ROOT,date=process.env.DATE_OVERRIDE,day=Number(process.env.DAY_NUMBER);
+          const bridge=JSON.parse(fs.readFileSync(path.join(root,'approved-manifest.json'),'utf8'));
+          if(bridge.approved!==true) throw new Error('Weekly bridge is not approved.');
+          const item=bridge.posts.find(p=>p.index===day);
+          if(!item) throw new Error(`Approved bridge has no day ${day}.`);
+          const out=path.join('social','sapiver-forge',date);
+          fs.mkdirSync(out,{recursive:true});
+          const write=(name,text)=>{const p=path.join(out,name);fs.writeFileSync(p,String(text).trim()+'\n');return p;};
+          const image=path.join(out,'approved-social.png');
+          fs.copyFileSync(path.join(root,item.image),image);
+          const manifest={
+            type:'sapiver_forge_weekly_promo',
+            candidate_id:bridge.candidate_id,
+            week:bridge.week,
+            day_number:day,
+            article_url:item.product_url,
+            approved:{facebook:true,pinterest:true,youtube:false},
+            facebook:{post_caption:write('facebook-post.txt',item.facebook_post),first_comment:write('facebook-first-comment.txt',item.product_url),images:[image]},
+            pinterest:{title:write('pinterest-title.txt',item.pinterest_title),caption:write('pinterest-caption.txt',item.pinterest_description),image},
+            youtube:{video:'',title:'',caption:''}
           };
-          fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + '\n');
-          console.log('Synced approvals:', manifest.approved);
+          fs.writeFileSync(path.join(out,'manifest.json'),JSON.stringify(manifest,null,2)+'\n');
+          console.log(`Prepared approved day ${day}: ${item.day}`);
           NODE
 
-      - name: Build Sapiver Forge Facebook Pinterest and YouTube assets
-        if: steps.gate.outputs.run == 'true'
-        run: node scripts/build-sapiver-forge-social.mjs
-
-      - name: Finalise Sapiver Forge TikTok hashtag
-        if: steps.gate.outputs.run == 'true'
-        run: node scripts/fix-sapiver-forge-hashtag.mjs
-
-      - name: Upload Sapiver Forge social artifact
-        if: steps.gate.outputs.run == 'true'
-        uses: actions/upload-artifact@v4
-        with:
-          name: sapiver-forge-social-${{ env.DATE_OVERRIDE }}
-          path: |
-            social/sapiver-forge/${{ env.DATE_OVERRIDE }}/**/*
-          if-no-files-found: error
-
-      - name: Post prepare or verify Sapiver Forge social content
-        if: steps.gate.outputs.run == 'true'
+      - name: Post approved Facebook and Pinterest content
+        if: env.BRIDGE_AVAILABLE == 'true'
         run: node scripts/post-sapiver-forge-social.mjs
         env:
+          DATE_OVERRIDE: ${{ env.DATE_OVERRIDE }}
           SAPIVER_FORGE_POST_MODE: ${{ env.SAPIVER_FORGE_POST_MODE }}
           PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
           PINTEREST_TOKEN: ${{ secrets.PINTEREST_TOKEN }}
@@ -177,44 +115,27 @@ jobs:
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
           FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
           FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
-          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
-          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
-          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
-          YOUTUBE_PRIVACY_STATUS: ${{ secrets.YOUTUBE_PRIVACY_STATUS }}
-          YOUTUBE_CATEGORY_ID: ${{ secrets.YOUTUBE_CATEGORY_ID }}
           FORCE_SAPIVER_FORGE_POST: ${{ secrets.FORCE_SAPIVER_FORGE_POST || secrets.FORCE_CLEARFORGE_POST }}
 
-      - name: Show Sapiver Forge posting result
-        if: steps.gate.outputs.run == 'true' && always()
+      - name: Show posting result
+        if: env.BRIDGE_AVAILABLE == 'true' && always()
         shell: bash
         run: |
-          RESULT_FILE="social/sapiver-forge/${DATE_OVERRIDE}/post-result.json"
-          if [ -f "$RESULT_FILE" ]; then
-            cat "$RESULT_FILE"
-          else
-            echo "::warning::No post-result.json was produced."
-          fi
+          RESULT="social/sapiver-forge/${DATE_OVERRIDE}/post-result.json"
+          if [ -f "$RESULT" ]; then cat "$RESULT"; else echo "No posting result was produced."; fi
 
-      - name: Commit Sapiver Forge assets and posting records
-        if: steps.gate.outputs.run == 'true' && always()
+      - name: Commit daily assets and posting record
+        if: env.BRIDGE_AVAILABLE == 'true' && always()
         shell: bash
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if [ ! -d social/sapiver-forge ]; then
-            echo "No Sapiver Forge social directory was produced; nothing to commit."
-            exit 0
-          fi
-          git add social/sapiver-forge
-          if git diff --cached --quiet; then
-            echo "No Sapiver Forge social changes to commit."
-          else
-            git commit -m "Build Sapiver Forge social assets for ${DATE_OVERRIDE}"
-            for attempt in 1 2 3; do
-              if git push; then
-                exit 0
-              fi
-              git pull --rebase origin main
-            done
-            git push
-          fi
+          git add "social/sapiver-forge/${DATE_OVERRIDE}"
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Post approved Sapiver Forge Facebook and Pinterest content for ${DATE_OVERRIDE}"
+          for attempt in 1 2 3; do
+            if git push; then exit 0; fi
+            git pull --rebase origin main
+          done
+          git push
