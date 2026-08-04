@@ -7,7 +7,7 @@
   "approved": {
     "facebook": true,
     "pinterest": true,
-    "youtube": false
+    "youtube": true
   },
   "facebook": {
     "post_caption": "social/sapiver-forge/2026-08-04/facebook-post.txt",
@@ -22,8 +22,8 @@
     "image": "social/sapiver-forge/2026-08-04/approved-social.png"
   },
   "youtube": {
-    "video": "",
-    "title": "",
-    "caption": ""
+    "video": "social/sapiver-forge/2026-08-04/approved-short.mp4",
+    "title": "social/sapiver-forge/2026-08-04/youtube-title.txt",
+    "caption": "social/sapiver-forge/2026-08-04/youtube-description.txt"
   }
 }
