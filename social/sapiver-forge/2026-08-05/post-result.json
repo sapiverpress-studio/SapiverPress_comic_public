@@ -1,0 +1,113 @@
+{
+  "date": "2026-08-05",
+  "mode": "live",
+  "type": "sapiver_forge_weekly_promo",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122136238401198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AA3m6DOpLUjxflD0AN0au2Z\"}}"
+  },
+  "pinterest": {
+    "is_removable": false,
+    "product_tags": [],
+    "parent_pin_id": null,
+    "is_standard": true,
+    "description": "What does a human verification gate actually do? It pauses an automated workflow at a defined point, presents the evidence and requires a named person to decide whether the workflow may continue. The AI does not approve its own work. See the Sapiver Forge AI Workflow Control Gate.Link in bio.#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI",
+    "id": "1038924207810306581",
+    "title": "What does a human verification gate actually do",
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/42/73/6f/42736f27576f406aad445928e06e18bf.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/42/73/6f/42736f27576f406aad445928e06e18bf.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 1002,
+          "url": "https://i.pinimg.com/564x/42/73/6f/42736f27576f406aad445928e06e18bf.jpg"
+        },
+        "1200x": {
+          "width": 1080,
+          "height": 1920,
+          "url": "https://i.pinimg.com/1200x/42/73/6f/42736f27576f406aad445928e06e18bf.jpg"
+        }
+      }
+    },
+    "pin_metrics": null,
+    "is_product": false,
+    "creative_type": "REGULAR",
+    "created_at": "2026-08-05T13:28:52",
+    "dominant_color": null,
+    "board_section_id": null,
+    "is_owner": true,
+    "board_id": "1038924276479917183",
+    "has_been_promoted": false,
+    "alt_text": null,
+    "link": "https://payhip.com/b/qBPip",
+    "board_name": "Sapiver forge",
+    "resolved_from": "board_name"
+  },
+  "youtube": {
+    "kind": "youtube#video",
+    "etag": "859UeXuzgbefGZZFdA0B9SF1E9k",
+    "id": "PGOK8N-WCB0",
+    "snippet": {
+      "publishedAt": "2026-08-05T13:28:52Z",
+      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
+      "title": "What does a human verification gate actually do | Sapiver Forge #Shorts",
+      "description": "It pauses an automated workflow at a defined point, presents the evidence and requires a named person to decide whether the workflow may continue. The AI does not approve its own work.Sapiver Forge AI Workflow Control Gate:#SapiverForge #HumanInTheLoop #AIGovernanceLink in bio.#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI #Shorts",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/PGOK8N-WCB0/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/PGOK8N-WCB0/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/PGOK8N-WCB0/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Sapiver Press",
+      "tags": [
+        "AI news",
+        "Sapiver Forge",
+        "practical AI"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "What does a human verification gate actually do | Sapiver Forge #Shorts",
+        "description": "It pauses an automated workflow at a defined point, presents the evidence and requires a named person to decide whether the workflow may continue. The AI does not approve its own work.Sapiver Forge AI Workflow Control Gate:#SapiverForge #HumanInTheLoop #AIGovernanceLink in bio.#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI #Shorts"
+      }
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": true
+    },
+    "youtube_url": "https://www.youtube.com/watch?v=PGOK8N-WCB0"
+  }
+}
