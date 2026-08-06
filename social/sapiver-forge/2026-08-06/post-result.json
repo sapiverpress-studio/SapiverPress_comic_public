@@ -1,0 +1,113 @@
+{
+  "date": "2026-08-06",
+  "mode": "live",
+  "type": "sapiver_forge_weekly_promo",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122136327231198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"Af3Usoshn9GTokw0lwx3OJz\"}}"
+  },
+  "pinterest": {
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/98/5e/1c/985e1ca48d3def202da27303fab7e6b4.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/98/5e/1c/985e1ca48d3def202da27303fab7e6b4.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 1002,
+          "url": "https://i.pinimg.com/564x/98/5e/1c/985e1ca48d3def202da27303fab7e6b4.jpg"
+        },
+        "1200x": {
+          "width": 1080,
+          "height": 1920,
+          "url": "https://i.pinimg.com/1200x/98/5e/1c/985e1ca48d3def202da27303fab7e6b4.jpg"
+        }
+      }
+    },
+    "is_product": false,
+    "board_id": "1038924276479917183",
+    "pin_metrics": null,
+    "dominant_color": null,
+    "description": "Using AI because the tool is available is not a business case. Before building an AI workflow, compare it with the current method and the best non-AI alternative. The Opportunity Gate helps decide whether AI belongs in the task at all. See the Sapiver Forge AI Opportunity Gate.Link in bio.#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI",
+    "id": "1038924207810332684",
+    "is_standard": true,
+    "created_at": "2026-08-06T07:04:56",
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "has_been_promoted": false,
+    "creative_type": "REGULAR",
+    "product_tags": [],
+    "alt_text": null,
+    "parent_pin_id": null,
+    "is_owner": true,
+    "title": "Using AI because the tool is available is not a business case",
+    "link": "https://payhip.com/b/4rcSt",
+    "board_section_id": null,
+    "is_removable": false,
+    "board_name": "Sapiver forge",
+    "resolved_from": "board_name"
+  },
+  "youtube": {
+    "kind": "youtube#video",
+    "etag": "AGUX2Gj9DOmVTj5QPQs8i0Iqk6Q",
+    "id": "-jS8wy16eAY",
+    "snippet": {
+      "publishedAt": "2026-08-06T07:04:57Z",
+      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
+      "title": "Using AI because the tool is available is not a business case | Sapiver Forge #Shorts",
+      "description": "Before building an AI workflow, compare it with the current method and the best non-AI alternative. The Opportunity Gate helps decide whether AI belongs in the task at all.Sapiver Forge AI Opportunity Gate:#SapiverForge #HumanInTheLoop #AIGovernanceLink in bio.#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI #Shorts",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/-jS8wy16eAY/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/-jS8wy16eAY/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/-jS8wy16eAY/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Sapiver Press",
+      "tags": [
+        "AI news",
+        "Sapiver Forge",
+        "practical AI"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "Using AI because the tool is available is not a business case | Sapiver Forge #Shorts",
+        "description": "Before building an AI workflow, compare it with the current method and the best non-AI alternative. The Opportunity Gate helps decide whether AI belongs in the task at all.Sapiver Forge AI Opportunity Gate:#SapiverForge #HumanInTheLoop #AIGovernanceLink in bio.#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI #Shorts"
+      }
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": true
+    },
+    "youtube_url": "https://www.youtube.com/watch?v=-jS8wy16eAY"
+  }
+}
