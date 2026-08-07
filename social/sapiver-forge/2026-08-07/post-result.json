@@ -1,0 +1,113 @@
+{
+  "date": "2026-08-07",
+  "mode": "live",
+  "type": "sapiver_forge_weekly_promo",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122136437253198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"A5T_MFiyeLFUA6Y5MYe6uPD\"}}"
+  },
+  "pinterest": {
+    "id": "1038924207810363972",
+    "pin_metrics": null,
+    "dominant_color": null,
+    "board_id": "1038924276479917183",
+    "link": "https://payhip.com/b/pkSEY",
+    "is_removable": false,
+    "created_at": "2026-08-07T04:21:40",
+    "creative_type": "REGULAR",
+    "board_section_id": null,
+    "is_owner": true,
+    "parent_pin_id": null,
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/33/b8/6b/33b86bf4b849a5718b39b75ab1e83fb3.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/33/b8/6b/33b86bf4b849a5718b39b75ab1e83fb3.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 1002,
+          "url": "https://i.pinimg.com/564x/33/b8/6b/33b86bf4b849a5718b39b75ab1e83fb3.jpg"
+        },
+        "1200x": {
+          "width": 1080,
+          "height": 1920,
+          "url": "https://i.pinimg.com/1200x/33/b8/6b/33b86bf4b849a5718b39b75ab1e83fb3.jpg"
+        }
+      }
+    },
+    "alt_text": null,
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "description": "Client-facing AI work needs a release decision. The Sapiver Forge AI Output Release Gate helps freelancers, creators and small teams review accuracy, privacy, ownership, destination and approval before work is sent or published. See the Sapiver Forge AI Output Release Gate.Link in bio.#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI",
+    "has_been_promoted": false,
+    "product_tags": [],
+    "title": "Client-facing AI work needs a release decision",
+    "is_standard": true,
+    "is_product": false,
+    "board_name": "Sapiver forge",
+    "resolved_from": "board_name"
+  },
+  "youtube": {
+    "kind": "youtube#video",
+    "etag": "RT88A1nP_b0y9W4P3LYx4XamnJs",
+    "id": "EzOaUh8IR7A",
+    "snippet": {
+      "publishedAt": "2026-08-07T04:21:40Z",
+      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
+      "title": "Client-facing AI work needs a release decision | Sapiver Forge #Shorts",
+      "description": "The Sapiver Forge AI Output Release Gate helps freelancers, creators and small teams review accuracy, privacy, ownership, destination and approval before work is sent or published.Sapiver Forge AI Output Release Gate:#SapiverForge #HumanInTheLoop #AIGovernanceLink in bio.#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI #Shorts",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/EzOaUh8IR7A/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/EzOaUh8IR7A/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/EzOaUh8IR7A/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Sapiver Press",
+      "tags": [
+        "AI news",
+        "Sapiver Forge",
+        "practical AI"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "Client-facing AI work needs a release decision | Sapiver Forge #Shorts",
+        "description": "The Sapiver Forge AI Output Release Gate helps freelancers, creators and small teams review accuracy, privacy, ownership, destination and approval before work is sent or published.Sapiver Forge AI Output Release Gate:#SapiverForge #HumanInTheLoop #AIGovernanceLink in bio.#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI #Shorts"
+      }
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": true
+    },
+    "youtube_url": "https://www.youtube.com/watch?v=EzOaUh8IR7A"
+  }
+}
