@@ -1,0 +1,80 @@
+{
+  "date": "2026-08-08",
+  "mode": "live",
+  "type": "book_content_os_social_manual_run_v1",
+  "cta_text": "link in bio",
+  "pinterest_board_id": "1038924276479876865",
+  "pinterest_board_name": "Sapiver Press Comic",
+  "facebook": {
+    "failed": true,
+    "channel": "Facebook",
+    "error": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"ACWDkS2sWgjhO4hWHKtMZ5T\"}}",
+    "note": "Facebook live posting failed. Check token permissions/settings for this channel."
+  },
+  "pinterest": {
+    "board_id": "1038924276479876865",
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/e4/3d/14/e43d14f7c2c611e2c88a980498bfbddf.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/e4/3d/14/e43d14f7c2c611e2c88a980498bfbddf.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 564,
+          "url": "https://i.pinimg.com/564x/e4/3d/14/e43d14f7c2c611e2c88a980498bfbddf.jpg"
+        },
+        "1200x": {
+          "width": 1200,
+          "height": 1200,
+          "url": "https://i.pinimg.com/1200x/e4/3d/14/e43d14f7c2c611e2c88a980498bfbddf.jpg"
+        }
+      }
+    },
+    "creative_type": "REGULAR",
+    "created_at": "2026-08-08T17:48:16",
+    "id": "1038924207810416048",
+    "parent_pin_id": null,
+    "dominant_color": "#faefe1",
+    "has_been_promoted": false,
+    "board_section_id": null,
+    "is_standard": true,
+    "is_owner": true,
+    "alt_text": null,
+    "product_tags": [],
+    "is_product": false,
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "is_removable": false,
+    "link": null,
+    "description": "Keep private notes, review wording, links, ARC details and post ideas in one tidy workflow so useful reading thoughts can become usable content. Save this if you plan book reviews, ARC notes, BookTok ideas or book-content posts. link in bio",
+    "pin_metrics": null,
+    "title": "How To Turn Book Notes Into Content Ideas"
+  },
+  "pinterest_video": {
+    "prepared": true,
+    "posted": false,
+    "note": "Pinterest-ready MP4 generated from the same five images used in the Facebook carousel. Automatic video-pin upload runs in the Pinterest video workflow.",
+    "board_id": "1038924276479876865",
+    "board_name": "Sapiver Press Comic",
+    "video": "social/book-content-os/2026-08-08/pinterest_video/book_content_os_video.mp4",
+    "source_images": [
+      "social/book-content-os/2026-08-08/pinterest_video/01_03_33476.png",
+      "social/book-content-os/2026-08-08/pinterest_video/02_04_33475.png",
+      "social/book-content-os/2026-08-08/pinterest_video/03_05_33474.png",
+      "social/book-content-os/2026-08-08/pinterest_video/04_06_33473.png",
+      "social/book-content-os/2026-08-08/pinterest_video/05_07_33472.png"
+    ],
+    "title": "How To Turn Book Notes Into Content Ideas\n",
+    "caption": "Keep private notes, review wording, links, ARC details and post ideas in one tidy workflow so useful reading thoughts can become usable content.Book Content OS helps organise book notes, review wording, ARC details and content ideas.link in bio#Shorts #BookTok #BookReviewers",
+    "first_comment": "link in bio\n\n#BookReviewers #ARCReaders #BookTok #Bookstagram\n"
+  }
+}
