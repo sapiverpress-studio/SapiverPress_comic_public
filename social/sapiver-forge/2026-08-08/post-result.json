@@ -2,112 +2,17 @@
   "date": "2026-08-08",
   "mode": "live",
   "type": "sapiver_forge_weekly_promo",
-  "existing_result_detected": false,
+  "existing_result_detected": true,
   "facebook": {
-    "id": "997877693401171_122136562167198448",
-    "posting_format": "text_link_fallback",
-    "resolved_page_token": true,
-    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AQ9AGaohewQQHeO7V25gYxO\"}}"
+    "skipped": true,
+    "reason": "already_posted"
   },
   "pinterest": {
-    "creative_type": "REGULAR",
-    "is_removable": false,
-    "board_section_id": null,
-    "has_been_promoted": false,
-    "alt_text": null,
-    "board_owner": {
-      "username": "sapiver"
-    },
-    "media": {
-      "media_type": "image",
-      "images": {
-        "150x150": {
-          "width": 150,
-          "height": 150,
-          "url": "https://i.pinimg.com/150x150/3f/56/43/3f5643bc3beb99dff16f9a1ed9c68b9d.jpg"
-        },
-        "400x300": {
-          "width": 400,
-          "height": 300,
-          "url": "https://i.pinimg.com/400x300/3f/56/43/3f5643bc3beb99dff16f9a1ed9c68b9d.jpg"
-        },
-        "600x": {
-          "width": 564,
-          "height": 1002,
-          "url": "https://i.pinimg.com/564x/3f/56/43/3f5643bc3beb99dff16f9a1ed9c68b9d.jpg"
-        },
-        "1200x": {
-          "width": 1080,
-          "height": 1920,
-          "url": "https://i.pinimg.com/1200x/3f/56/43/3f5643bc3beb99dff16f9a1ed9c68b9d.jpg"
-        }
-      }
-    },
-    "is_owner": true,
-    "pin_metrics": null,
-    "created_at": "2026-08-08T06:43:14",
-    "is_product": false,
-    "title": "When did you last check whether your AI workflow still helps",
-    "is_standard": true,
-    "product_tags": [],
-    "id": "1038924207810400517",
-    "parent_pin_id": null,
-    "link": "https://payhip.com/b/rgFXP",
-    "board_id": "1038924276479917183",
-    "dominant_color": null,
-    "description": "When did you last check whether your AI workflow still helps? A workflow can remain active long after its costs, errors or risks outweigh the benefit. The Outcome Review Gate records whether to continue, change, pause or retire it. See the Sapiver Forge AI Outcome Review Gate.Link in bio.#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI",
-    "board_name": "Sapiver forge",
-    "resolved_from": "board_name"
+    "skipped": true,
+    "reason": "already_posted"
   },
   "youtube": {
-    "kind": "youtube#video",
-    "etag": "KcmRQ-vxbT6f5bK-sGLZ-ChRr48",
-    "id": "5XZQmmPMMI0",
-    "snippet": {
-      "publishedAt": "2026-08-08T06:43:15Z",
-      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
-      "title": "When did you last check whether your AI workflow still helps | Sapiver Forge #Shorts",
-      "description": "A workflow can remain active long after its costs, errors or risks outweigh the benefit. The Outcome Review Gate records whether to continue, change, pause or retire it.Sapiver Forge AI Outcome Review Gate:#SapiverForge #HumanInTheLoop #AIGovernanceLink in bio.#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI #Shorts",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/5XZQmmPMMI0/default.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/5XZQmmPMMI0/mqdefault.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/5XZQmmPMMI0/hqdefault.jpg",
-          "width": 480,
-          "height": 360
-        }
-      },
-      "channelTitle": "Sapiver Press",
-      "tags": [
-        "AI news",
-        "Sapiver Forge",
-        "practical AI"
-      ],
-      "categoryId": "27",
-      "liveBroadcastContent": "none",
-      "defaultLanguage": "en-GB",
-      "localized": {
-        "title": "When did you last check whether your AI workflow still helps | Sapiver Forge #Shorts",
-        "description": "A workflow can remain active long after its costs, errors or risks outweigh the benefit. The Outcome Review Gate records whether to continue, change, pause or retire it.Sapiver Forge AI Outcome Review Gate:#SapiverForge #HumanInTheLoop #AIGovernanceLink in bio.#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI #Shorts"
-      }
-    },
-    "status": {
-      "uploadStatus": "uploaded",
-      "privacyStatus": "public",
-      "license": "youtube",
-      "embeddable": true,
-      "publicStatsViewable": true,
-      "selfDeclaredMadeForKids": false,
-      "containsSyntheticMedia": true
-    },
-    "youtube_url": "https://www.youtube.com/watch?v=5XZQmmPMMI0"
+    "skipped": true,
+    "reason": "already_posted"
   }
 }
