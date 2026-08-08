@@ -4,7 +4,7 @@
     "images": {
       "cycle": 8,
       "pool_size": 48,
-      "used_count": 18,
+      "used_count": 24,
       "used": [
         "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images/02_links_and_disclosures.png",
         "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images/03_no_login_no_cloud_clutter.png",
@@ -23,75 +23,40 @@
         "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/06_33498.png",
         "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/07_33497.png",
         "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/08_33496.png",
-        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/09_33495.png"
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/09_33495.png",
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_square_social_images/02_33477.png",
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_square_social_images/03_33476.png",
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_square_social_images/04_33475.png",
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_square_social_images/05_33474.png",
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_square_social_images/06_33473.png",
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_square_social_images/07_33472.png"
       ],
       "exhausted_this_run": false,
       "last_selected": [
-        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/04_33500.png",
-        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/05_33499.png",
-        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/06_33498.png",
-        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/07_33497.png",
-        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/08_33496.png",
-        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/09_33495.png"
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_square_social_images/02_33477.png",
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_square_social_images/03_33476.png",
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_square_social_images/04_33475.png",
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_square_social_images/05_33474.png",
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_square_social_images/06_33473.png",
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_square_social_images/07_33472.png"
       ],
-      "updated_at": "2026-08-07T18:01:37.185Z"
+      "updated_at": "2026-08-08T17:47:52.312Z"
     },
     "copy": {
-      "cycle": 2,
+      "cycle": 3,
       "pool_size": 30,
-      "used_count": 30,
+      "used_count": 1,
       "used": [
-        "bcos_001",
-        "bcos_002",
-        "bcos_003",
-        "bcos_004",
-        "bcos_005",
-        "bcos_006",
-        "bcos_007",
-        "bcos_008",
-        "bcos_009",
-        "bcos_010",
-        "bcos_011",
-        "bcos_012",
-        "bcos_013",
-        "bcos_014",
-        "bcos_015",
-        "bcos_016",
-        "bcos_017",
-        "bcos_018",
-        "bcos_019",
-        "bcos_020",
-        "bcos_021",
-        "bcos_022",
-        "bcos_023",
-        "bcos_024",
-        "bcos_025",
-        "bcos_026",
-        "bcos_027",
-        "bcos_028",
-        "bcos_029",
-        "bcos_030"
+        "bcos_004"
       ],
-      "exhausted_this_run": false,
+      "exhausted_this_run": true,
       "last_selected": [
-        "bcos_002"
+        "bcos_004"
       ],
-      "updated_at": "2026-08-07T18:01:37.190Z"
+      "updated_at": "2026-08-08T17:47:52.313Z"
     }
   },
   "history": [
-    {
-      "date": "2026-07-17",
-      "images": [
-        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/01_33503.png",
-        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/02_33502.png",
-        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/03_33501.png",
-        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/04_33500.png",
-        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/05_33499.png",
-        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/06_33498.png"
-      ],
-      "copy": "bcos_012"
-    },
     {
       "date": "2026-07-18",
       "images": [
@@ -331,19 +296,31 @@
         "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/09_33495.png"
       ],
       "copy": "bcos_002"
+    },
+    {
+      "date": "2026-08-08",
+      "images": [
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_square_social_images/02_33477.png",
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_square_social_images/03_33476.png",
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_square_social_images/04_33475.png",
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_square_social_images/05_33474.png",
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_square_social_images/06_33473.png",
+        "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_square_social_images/07_33472.png"
+      ],
+      "copy": "bcos_004"
     }
   ],
-  "updated_at": "2026-08-07T18:01:37.191Z",
+  "updated_at": "2026-08-08T17:47:52.313Z",
   "last_run": {
-    "date": "2026-08-07",
+    "date": "2026-08-08",
     "images": [
-      "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/04_33500.png",
-      "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/05_33499.png",
-      "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/06_33498.png",
-      "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/07_33497.png",
-      "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/08_33496.png",
-      "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_social_images_set_3/09_33495.png"
+      "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_square_social_images/02_33477.png",
+      "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_square_social_images/03_33476.png",
+      "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_square_social_images/04_33475.png",
+      "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_square_social_images/05_33474.png",
+      "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_square_social_images/06_33473.png",
+      "assets/book-content-os/social_sets/_extracted/sapiver_book_content_os_square_social_images/07_33472.png"
     ],
-    "copy": "bcos_002"
+    "copy": "bcos_004"
   }
 }
