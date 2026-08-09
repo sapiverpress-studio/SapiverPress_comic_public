@@ -1,0 +1,370 @@
+{
+  "date": "2026-08-09",
+  "mode": "live",
+  "type": "book_content_os_pinterest_image_pins_and_video_post_v1",
+  "cta_text": "link in bio",
+  "board_id": "1038924276479876865",
+  "board_name": "Sapiver Press Comic",
+  "video": "social/book-content-os/2026-08-09/pinterest_video/book_content_os_video.mp4",
+  "source_images": [
+    "social/book-content-os/2026-08-09/pinterest_video/01_10_33469.png",
+    "social/book-content-os/2026-08-09/pinterest_video/02_01_33462.png",
+    "social/book-content-os/2026-08-09/pinterest_video/03_02_33463.png",
+    "social/book-content-os/2026-08-09/pinterest_video/04_03_33464.png",
+    "social/book-content-os/2026-08-09/pinterest_video/05_04_33465.png"
+  ],
+  "image_pin_sources": [
+    "social/book-content-os/2026-08-09/facebook_carousel/01_10_33469.png",
+    "social/book-content-os/2026-08-09/facebook_carousel/02_01_33462.png",
+    "social/book-content-os/2026-08-09/facebook_carousel/03_02_33463.png",
+    "social/book-content-os/2026-08-09/facebook_carousel/04_03_33464.png",
+    "social/book-content-os/2026-08-09/facebook_carousel/05_04_33465.png"
+  ],
+  "title": "How To Turn Book Notes Into Content Ideas\n",
+  "caption": "Keep private notes, review wording, links, ARC details and post ideas in one tidy workflow so useful reading thoughts can become usable content.Book Content OS helps organise book notes, review wording, ARC details and content ideas.link in bio#Shorts #BookTok #BookReviewers",
+  "first_comment": "link in bio\n\n#BookReviewers #ARCReaders #BookTok #Bookstagram\n",
+  "dry_run": false,
+  "image_pins": {
+    "dry_run": false,
+    "skipped": false,
+    "limit": 5,
+    "pins": [
+      {
+        "source_image": "social/book-content-os/2026-08-09/facebook_carousel/01_10_33469.png",
+        "title": "Book Content OS image 1/5 | 10 33469",
+        "pin": {
+          "product_tags": [],
+          "board_id": "1038924276479876865",
+          "alt_text": null,
+          "is_removable": false,
+          "link": null,
+          "is_product": false,
+          "parent_pin_id": null,
+          "created_at": "2026-08-09T17:47:53",
+          "has_been_promoted": false,
+          "pin_metrics": null,
+          "board_section_id": null,
+          "dominant_color": "#fcf2e4",
+          "creative_type": "REGULAR",
+          "description": "Keep private notes, review wording, links, ARC details and post ideas in one tidy workflow so useful reading thoughts can become usable content.Book Content OS helps organise book notes, review wording, ARC details and content ideas.link in bio#Shorts #BookTok #BookReviewers",
+          "title": "Book Content OS image 1/5 | 10 33469",
+          "board_owner": {
+            "username": "sapiver"
+          },
+          "media": {
+            "media_type": "image",
+            "images": {
+              "150x150": {
+                "width": 150,
+                "height": 150,
+                "url": "https://i.pinimg.com/150x150/bb/51/68/bb51683e74501e5e21200dc98c75a611.jpg"
+              },
+              "400x300": {
+                "width": 400,
+                "height": 300,
+                "url": "https://i.pinimg.com/400x300/bb/51/68/bb51683e74501e5e21200dc98c75a611.jpg"
+              },
+              "600x": {
+                "width": 564,
+                "height": 564,
+                "url": "https://i.pinimg.com/564x/bb/51/68/bb51683e74501e5e21200dc98c75a611.jpg"
+              },
+              "1200x": {
+                "width": 1200,
+                "height": 1200,
+                "url": "https://i.pinimg.com/1200x/bb/51/68/bb51683e74501e5e21200dc98c75a611.jpg"
+              }
+            }
+          },
+          "is_owner": true,
+          "is_standard": true,
+          "id": "1038924207810448638"
+        }
+      },
+      {
+        "source_image": "social/book-content-os/2026-08-09/facebook_carousel/02_01_33462.png",
+        "title": "Book Content OS image 2/5 | 01 33462",
+        "pin": {
+          "board_owner": {
+            "username": "sapiver"
+          },
+          "board_id": "1038924276479876865",
+          "created_at": "2026-08-09T17:47:54",
+          "alt_text": null,
+          "is_product": false,
+          "is_standard": true,
+          "parent_pin_id": null,
+          "is_removable": false,
+          "title": "Book Content OS image 2/5 | 01 33462",
+          "is_owner": true,
+          "media": {
+            "media_type": "image",
+            "images": {
+              "150x150": {
+                "width": 150,
+                "height": 150,
+                "url": "https://i.pinimg.com/150x150/90/05/0c/90050cc0043183feee0882b0cc3a008b.jpg"
+              },
+              "400x300": {
+                "width": 400,
+                "height": 300,
+                "url": "https://i.pinimg.com/400x300/90/05/0c/90050cc0043183feee0882b0cc3a008b.jpg"
+              },
+              "600x": {
+                "width": 564,
+                "height": 564,
+                "url": "https://i.pinimg.com/564x/90/05/0c/90050cc0043183feee0882b0cc3a008b.jpg"
+              },
+              "1200x": {
+                "width": 1200,
+                "height": 1200,
+                "url": "https://i.pinimg.com/1200x/90/05/0c/90050cc0043183feee0882b0cc3a008b.jpg"
+              }
+            }
+          },
+          "pin_metrics": null,
+          "dominant_color": "#fbf1e3",
+          "id": "1038924207810448640",
+          "board_section_id": null,
+          "creative_type": "REGULAR",
+          "has_been_promoted": false,
+          "product_tags": [],
+          "description": "Keep private notes, review wording, links, ARC details and post ideas in one tidy workflow so useful reading thoughts can become usable content.Book Content OS helps organise book notes, review wording, ARC details and content ideas.link in bio#Shorts #BookTok #BookReviewers",
+          "link": null
+        }
+      },
+      {
+        "source_image": "social/book-content-os/2026-08-09/facebook_carousel/03_02_33463.png",
+        "title": "Book Content OS image 3/5 | 02 33463",
+        "pin": {
+          "alt_text": null,
+          "is_owner": true,
+          "board_section_id": null,
+          "created_at": "2026-08-09T17:47:56",
+          "is_product": false,
+          "is_standard": true,
+          "link": null,
+          "parent_pin_id": null,
+          "is_removable": false,
+          "title": "Book Content OS image 3/5 | 02 33463",
+          "product_tags": [],
+          "dominant_color": "#fbf1e4",
+          "has_been_promoted": false,
+          "board_id": "1038924276479876865",
+          "pin_metrics": null,
+          "media": {
+            "media_type": "image",
+            "images": {
+              "150x150": {
+                "width": 150,
+                "height": 150,
+                "url": "https://i.pinimg.com/150x150/17/26/be/1726bec5eb793fdb540927dc4784950c.jpg"
+              },
+              "400x300": {
+                "width": 400,
+                "height": 300,
+                "url": "https://i.pinimg.com/400x300/17/26/be/1726bec5eb793fdb540927dc4784950c.jpg"
+              },
+              "600x": {
+                "width": 564,
+                "height": 564,
+                "url": "https://i.pinimg.com/564x/17/26/be/1726bec5eb793fdb540927dc4784950c.jpg"
+              },
+              "1200x": {
+                "width": 1200,
+                "height": 1200,
+                "url": "https://i.pinimg.com/1200x/17/26/be/1726bec5eb793fdb540927dc4784950c.jpg"
+              }
+            }
+          },
+          "creative_type": "REGULAR",
+          "id": "1038924207810448642",
+          "board_owner": {
+            "username": "sapiver"
+          },
+          "description": "Keep private notes, review wording, links, ARC details and post ideas in one tidy workflow so useful reading thoughts can become usable content.Book Content OS helps organise book notes, review wording, ARC details and content ideas.link in bio#Shorts #BookTok #BookReviewers"
+        }
+      },
+      {
+        "source_image": "social/book-content-os/2026-08-09/facebook_carousel/04_03_33464.png",
+        "title": "Book Content OS image 4/5 | 03 33464",
+        "pin": {
+          "dominant_color": "#fcf3e5",
+          "is_product": false,
+          "product_tags": [],
+          "board_id": "1038924276479876865",
+          "description": "Keep private notes, review wording, links, ARC details and post ideas in one tidy workflow so useful reading thoughts can become usable content.Book Content OS helps organise book notes, review wording, ARC details and content ideas.link in bio#Shorts #BookTok #BookReviewers",
+          "pin_metrics": null,
+          "has_been_promoted": false,
+          "parent_pin_id": null,
+          "board_owner": {
+            "username": "sapiver"
+          },
+          "is_removable": false,
+          "board_section_id": null,
+          "created_at": "2026-08-09T17:47:56",
+          "alt_text": null,
+          "is_owner": true,
+          "id": "1038924207810448645",
+          "title": "Book Content OS image 4/5 | 03 33464",
+          "creative_type": "REGULAR",
+          "media": {
+            "media_type": "image",
+            "images": {
+              "150x150": {
+                "width": 150,
+                "height": 150,
+                "url": "https://i.pinimg.com/150x150/12/f9/b9/12f9b9faf42448c6205ad32c43a11f37.jpg"
+              },
+              "400x300": {
+                "width": 400,
+                "height": 300,
+                "url": "https://i.pinimg.com/400x300/12/f9/b9/12f9b9faf42448c6205ad32c43a11f37.jpg"
+              },
+              "600x": {
+                "width": 564,
+                "height": 564,
+                "url": "https://i.pinimg.com/564x/12/f9/b9/12f9b9faf42448c6205ad32c43a11f37.jpg"
+              },
+              "1200x": {
+                "width": 1200,
+                "height": 1200,
+                "url": "https://i.pinimg.com/1200x/12/f9/b9/12f9b9faf42448c6205ad32c43a11f37.jpg"
+              }
+            }
+          },
+          "link": null,
+          "is_standard": true
+        }
+      },
+      {
+        "source_image": "social/book-content-os/2026-08-09/facebook_carousel/05_04_33465.png",
+        "title": "Book Content OS image 5/5 | 04 33465",
+        "pin": {
+          "media": {
+            "media_type": "image",
+            "images": {
+              "150x150": {
+                "width": 150,
+                "height": 150,
+                "url": "https://i.pinimg.com/150x150/14/87/34/148734a47db78403d5d2c47484483396.jpg"
+              },
+              "400x300": {
+                "width": 400,
+                "height": 300,
+                "url": "https://i.pinimg.com/400x300/14/87/34/148734a47db78403d5d2c47484483396.jpg"
+              },
+              "600x": {
+                "width": 564,
+                "height": 564,
+                "url": "https://i.pinimg.com/564x/14/87/34/148734a47db78403d5d2c47484483396.jpg"
+              },
+              "1200x": {
+                "width": 1200,
+                "height": 1200,
+                "url": "https://i.pinimg.com/1200x/14/87/34/148734a47db78403d5d2c47484483396.jpg"
+              }
+            }
+          },
+          "pin_metrics": null,
+          "title": "Book Content OS image 5/5 | 04 33465",
+          "parent_pin_id": null,
+          "board_owner": {
+            "username": "sapiver"
+          },
+          "product_tags": [],
+          "is_owner": true,
+          "is_removable": false,
+          "is_product": false,
+          "alt_text": null,
+          "is_standard": true,
+          "board_id": "1038924276479876865",
+          "dominant_color": "#f9efe2",
+          "link": null,
+          "created_at": "2026-08-09T17:47:59",
+          "id": "1038924207810448648",
+          "creative_type": "REGULAR",
+          "has_been_promoted": false,
+          "board_section_id": null,
+          "description": "Keep private notes, review wording, links, ARC details and post ideas in one tidy workflow so useful reading thoughts can become usable content.Book Content OS helps organise book notes, review wording, ARC details and content ideas.link in bio#Shorts #BookTok #BookReviewers"
+        }
+      }
+    ]
+  },
+  "pinterest": {
+    "media": {
+      "media_id": "3753589356150446208",
+      "media_type": "video",
+      "upload_url": "https://pinterest-media-upload.s3-accelerate.amazonaws.com/",
+      "upload_parameters": {
+        "x-amz-date": "20260809T174800Z",
+        "x-amz-signature": "cbec47b0b89a94de557cb3a72099ec8e44063637dc992ce4373cfcc6caeadcf7",
+        "x-amz-security-token": "IQoJb3JpZ2luX2VjEML//////////wEaCXVzLWVhc3QtMSJIMEYCIQD+XPjCshLwzlR8GMmDY+2bt8f9AqAy1/D3tWtW9eI86QIhAJiyhd0sc4X5cSYiyqgQH1sE9x6dB1bPIr5MEDOVMFwGKrsFCIr//////////wEQABoMOTk4MTMxMDMyOTkwIgxkAmbrSebl4HjowicqjwUvwScvUd4M9tvr1q4+kktrK7S/eAiq9VdFXtdY0kiTGhDXBBSsTczpdhY+siEjsfK987Do6tn0jXLmrXn06A4rSK+oOQfX8RFk8IypX5xKOo89ieMFY2VHnW/AI3lojnyzlZ8w6A91d2ABX/b5atYdhztpCHZjMTNrQ96debCPcJaTSpfgkoyzQxUJ678tt+NZYGGi8z++vZnXKtQC4RUgClUpbCl/AiqJ7yOHR3Tvva3DACh0l8NMTS3NvStJq7gl2AQASeopKdpZeAt1InxUDQTfFP6wZlaeZW6I/LCllh4FD3OUZAhJCx50Lha+f7Z6YhPT8Mzh5w7FPd5eW/MjNx5WCxjhKk3OuNvT5K36aDbtUqyarsFpfqsPn6SRjE0WdBgXemIknCeECh0pNcRAL7+BtuNhm7ynnpj1yJVOXmtZKkHErwSWfycIzKjMqUn+m8Rg2QbbCBeSiIyzrO/8JolYWGOioRDPCDjRBrJLmPoCHKCW3IdbIgctIIuffKMa1AIj/hwOsnQhLPXgkxlGDqzCYJQsRWYCxVSy/gt3iXo9yj9MSojX6u98ky114AY4r9TzZMb3416+kY7ktKub3/uIy/O3bxra1ZW6jfsHQYRXrcreqAUEBxgIBK3pCf3MstPmgVoz0CXl/0x97PfjMpJGGdT3vXXf4pYc2Xqnb2OLIcdEvIoaCQGtgyrv7fuFpl3IZ5STW+0VIhiXY2TBrAS/qcKe3bLrJZyH2EChYFSUZEWEHOUr7tjRBX8eaj3085sGzoJdq9J2GgwC0v2r7cigKF/MxAUGGKcZUEZv46GTvkjsNjRsxnay5T6H/jjqyqg+Xc8P/ycn9jqYfKNDnhgYyIa/2rIBjRDSflhDMNHr4tMGOrABovGsjHyRQ4SqqJL/1Z2DwCN44HFR6Wf/dCxS873BstU1t/KXT+q1RWgQ29gQPK6rmiDqO4SGtMjtSGeYy+vYQk1waSlJ4IrxMrncLVSSqfv0NfD6SLTzhMo3VZRGD6qw9XFHBHF/VObSdx5ufG+INMNxDUzuUv5hWDwnaeF8CjxXSzF4DXJ1fd34tqHm3dHzfQlYzT07k5OP8A6F554+kI2PX6bzwMk9GQtQX73t23A=",
+        "x-amz-algorithm": "AWS4-HMAC-SHA256",
+        "key": "uploads/38/8c/12/2:video:1038924345197779616:3753589356150446208:vipsuKkM5pTHK4PhLwjZoe",
+        "policy": "eyJleHBpcmF0aW9uIjoiMjAyNi0wOC0xMVQxNzo0ODowMC4wMDBaIiwiY29uZGl0aW9ucyI6W3siYnVja2V0IjoicGludGVyZXN0LW1lZGlhLXVwbG9hZCJ9LFsic3RhcnRzLXdpdGgiLCIka2V5IiwidXBsb2Fkcy8zOC84Yy8xMiJdLHsieC1hbXotY3JlZGVudGlhbCI6IkFTSUE2UVpKNjRPUElHTVJVTldXLzIwMjYwODA5L3VzLWVhc3QtMS9zMy9hd3M0X3JlcXVlc3QifSx7IngtYW16LWFsZ29yaXRobSI6IkFXUzQtSE1BQy1TSEEyNTYifSx7IngtYW16LWRhdGUiOiIyMDI2MDgwOVQxNzQ4MDBaIn0sWyJjb250ZW50LWxlbmd0aC1yYW5nZSIsMCw1MzY4NzA5MTIwXSxbImVxIiwiJENvbnRlbnQtVHlwZSIsIm11bHRpcGFydC9mb3JtLWRhdGEiXSx7IngtYW16LXNlY3VyaXR5LXRva2VuIjoiSVFvSmIzSnBaMmx1WDJWakVNTC8vLy8vLy8vLy93RWFDWFZ6TFdWaGMzUXRNU0pJTUVZQ0lRRCtYUGpDc2hMd3psUjhHTW1EWSsyYnQ4ZjlBcUF5MS9EM3RXdFc5ZUk4NlFJaEFKaXloZDBzYzRYNWNTWWl5cWdRSDFzRTl4NmRCMWJQSXI1TUVET1ZNRndHS3JzRkNJci8vLy8vLy8vLy93RVFBQm9NT1RrNE1UTXhNRE15T1Rrd0lneGtBbWJyU2VibDRIam93aWNxandVdndTY3ZVZDRNOXR2cjFxNCtra3RySzdTL2VBaXE5VmRGWHRkWTBraVRHaERYQkJTc1RjenBkaFkrc2lFanNmSzk4N0RvNnRuMGpYTG1yWG4wNkE0clNLK29PUWZYOFJGazhJeXBYNXhLT284OWllTUZZMlZIblcvQUkzbG9qbnl6bFo4dzZBOTFkMkFCWC9iNWF0WWRoenRwQ0haak1UTnJROTZkZWJDUGNKYVRTcGZna295elF4VUo2Nzh0dCtOWllHR2k4eisrdlpuWEt0UUM0UlVnQ2xVcGJDbC9BaXFKN3lPSFIzVHZ2YTNEQUNoMGw4Tk1UUzNOdlN0SnE3Z2wyQVFBU2VvcEtkcFplQXQxSW54VURRVGZGUDZ3WmxhZVpXNkkvTENsbGg0RkQzT1VaQWhKQ3g1MExoYStmN1o2WWhQVDhNemg1dzdGUGQ1ZVcvTWpOeDVXQ3hqaEtrM091TnZUNUszNmFEYnRVcXlhcnNGcGZxc1BuNlNSakUwV2RCZ1hlbUlrbkNlRUNoMHBOY1JBTDcrQnR1TmhtN3lubnBqMXlKVk9YbXRaS2tIRXJ3U1dmeWNJektqTXFVbittOFJnMlFiYkNCZVNpSXl6ck8vOEpvbFlXR09pb1JEUENEalJCckpMbVBvQ0hLQ1czSWRiSWdjdElJdWZmS01hMUFJai9od09zblFoTFBYZ2t4bEdEcXpDWUpRc1JXWUN4VlN5L2d0M2lYbzl5ajlNU29qWDZ1OThreTExNEFZNHI5VHpaTWIzNDE2K2tZN2t0S3ViMy91SXkvTzNieHJhMVpXNmpmc0hRWVJYcmNyZXFBVUVCeGdJQkszcENmM01zdFBtZ1ZvejBDWGwvMHg5N1Bmak1wSkdHZFQzdlhYZjRwWWMyWHFuYjJPTEljZEV2SW9hQ1FHdGd5cnY3ZnVGcGwzSVo1U1RXKzBWSWhpWFkyVEJyQVMvcWNLZTNiTHJKWnlIMkVDaFlGU1VaRVdFSE9Vcjd0alJCWDhlYWozMDg1c0d6b0pkcTlKMkdnd0MwdjJyN2NpZ0tGL014QVVHR0tjWlVFWnY0NkdUdmtqc05qUnN4bmF5NVQ2SC9qanF5cWcrWGM4UC95Y245anFZZktORG5oZ1l5SWEvMnJJQmpSRFNmbGhETU5IcjR0TUdPckFCb3ZHc2pIeVJRNFNxcUpMLzFaMkR3Q040NEhGUjZXZi9kQ3hTODczQnN0VTF0L0tYVCtxMVJXZ1EyOWdRUEs2cm1pRHFPNFNHdE1qdFNHZVl5K3ZZUWsxd2FTbEo0SXJ4TXJuY0xWU1NxZnYwTmZENlNMVHpoTW8zVlpSR0Q2cXc5WEZIQkhGL1ZPYlNkeDV1ZkcrSU5NTnhEVXp1VXY1aFdEd25hZUY4Q2p4WFN6RjREWEoxZmQzNHRxSG0zZEh6ZlFsWXpUMDdrNU9QOEE2RjU1NCtrSTJQWDZiendNazlHUXRRWDczdDIzQT0ifV19",
+        "x-amz-credential": "ASIA6QZJ64OPIGMRUNWW/20260809/us-east-1/s3/aws4_request",
+        "Content-Type": "multipart/form-data"
+      }
+    },
+    "last_status": {
+      "media_id": "3753589356150446208",
+      "media_type": "video",
+      "status": "succeeded"
+    },
+    "pin": {
+      "pin_metrics": null,
+      "board_owner": {
+        "username": "sapiver"
+      },
+      "has_been_promoted": false,
+      "is_removable": false,
+      "product_tags": [],
+      "alt_text": null,
+      "board_section_id": null,
+      "is_owner": true,
+      "board_id": "1038924276479876865",
+      "creative_type": "VIDEO",
+      "is_standard": true,
+      "parent_pin_id": null,
+      "id": "1038924207810448664",
+      "is_product": false,
+      "media": {
+        "media_type": "video",
+        "cover_image_url": "https://i.pinimg.com/1200x/8e/eb/04/8eeb0440933622cfa9225a90aa5ce58c.jpg",
+        "video_url": null,
+        "video_url_hls": null,
+        "duration": null,
+        "height": null,
+        "width": null,
+        "images": {
+          "150x150": {
+            "width": 150,
+            "height": 150,
+            "url": "https://i.pinimg.com/150x150/8e/eb/04/8eeb0440933622cfa9225a90aa5ce58c.jpg"
+          },
+          "400x300": {
+            "width": 400,
+            "height": 300,
+            "url": "https://i.pinimg.com/400x300/8e/eb/04/8eeb0440933622cfa9225a90aa5ce58c.jpg"
+          },
+          "600x": {
+            "width": 564,
+            "height": 1002,
+            "url": "https://i.pinimg.com/564x/8e/eb/04/8eeb0440933622cfa9225a90aa5ce58c.jpg"
+          },
+          "1200x": {
+            "width": 1080,
+            "height": 1920,
+            "url": "https://i.pinimg.com/1200x/8e/eb/04/8eeb0440933622cfa9225a90aa5ce58c.jpg"
+          }
+        }
+      },
+      "link": null,
+      "title": "How To Turn Book Notes Into Content Ideas",
+      "description": "Keep private notes, review wording, links, ARC details and post ideas in one tidy workflow so useful reading thoughts can become usable content.Book Content OS helps organise book notes, review wording, ARC details and content ideas.link in bio#Shorts #BookTok #BookReviewers",
+      "created_at": "2026-08-09T17:48:11",
+      "dominant_color": null
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "date": "2026-08-09",
+  "mode": "live",
+  "type": "book_content_os_youtube_short_upload_v1",
+  "cta_text": "link in bio",
+  "video": "social/book-content-os/2026-08-09/pinterest_video/book_content_os_video.mp4",
+  "title": "How To Turn Book Notes Into Content Ideas",
+  "description": "Keep private notes, review wording, links, ARC details and post ideas in one tidy workflow so useful reading thoughts can become usable content.Book Content OS helps organise book notes, review wording, ARC details and content ideas.link in bio#Shorts #BookTok #BookReviewersSapiver Presslink in bioLocal-first browser app. Manual backup/import. Not cloud sync.#Shorts #BookReviewers #ARCReaders #BookContent #BookTok #SapiverPress",
+  "privacy_status": "public",
+  "dry_run": false,
+  "youtube": {
+    "kind": "youtube#video",
+    "etag": "sSKjBKbSgv1oMxgUX0AnCophntY",
+    "id": "TPWRrAelm_Q",
+    "snippet": {
+      "publishedAt": "2026-08-09T17:48:12Z",
+      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
+      "title": "How To Turn Book Notes Into Content Ideas",
+      "description": "Keep private notes, review wording, links, ARC details and post ideas in one tidy workflow so useful reading thoughts can become usable content.Book Content OS helps organise book notes, review wording, ARC details and content ideas.link in bio#Shorts #BookTok #BookReviewersSapiver Presslink in bioLocal-first browser app. Manual backup/import. Not cloud sync.#Shorts #BookReviewers #ARCReaders #BookContent #BookTok #SapiverPress",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/TPWRrAelm_Q/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/TPWRrAelm_Q/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/TPWRrAelm_Q/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Sapiver Press",
+      "tags": [
+        "ARC readers",
+        "BookTok",
+        "Sapiver Press",
+        "book content",
+        "book reviewers"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "How To Turn Book Notes Into Content Ideas",
+        "description": "Keep private notes, review wording, links, ARC details and post ideas in one tidy workflow so useful reading thoughts can become usable content.Book Content OS helps organise book notes, review wording, ARC details and content ideas.link in bio#Shorts #BookTok #BookReviewersSapiver Presslink in bioLocal-first browser app. Manual backup/import. Not cloud sync.#Shorts #BookReviewers #ARCReaders #BookContent #BookTok #SapiverPress"
+      }
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": false
+    }
+  },
+  "youtube_url": "https://www.youtube.com/watch?v=TPWRrAelm_Q"
+}
