@@ -1,0 +1,113 @@
+{
+  "date": "2026-08-09",
+  "mode": "live",
+  "type": "sapiver_forge_weekly_promo",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122136692133198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"Ab0GrHdhw-s3qlQgc8U5l7w\"}}"
+  },
+  "pinterest": {
+    "is_owner": true,
+    "is_product": false,
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "board_id": "1038924276479917183",
+    "id": "1038924207810433602",
+    "description": "Human control should cover the whole AI workflow. Sapiver Forge structures four decisions: whether AI should be used, how the workflow is controlled, whether an output is ready to leave and whether the workflow remains worthwhile. Each decision stays with a named human. Explore the complete Sapiver Forge gate system.Link in bio.#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI",
+    "link": "https://payhip.com/b/cmklU",
+    "dominant_color": null,
+    "parent_pin_id": null,
+    "pin_metrics": null,
+    "creative_type": "REGULAR",
+    "product_tags": [],
+    "is_standard": true,
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/47/fa/95/47fa95eb63536fc2e9840af7f68bb20c.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/47/fa/95/47fa95eb63536fc2e9840af7f68bb20c.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 1002,
+          "url": "https://i.pinimg.com/564x/47/fa/95/47fa95eb63536fc2e9840af7f68bb20c.jpg"
+        },
+        "1200x": {
+          "width": 1080,
+          "height": 1920,
+          "url": "https://i.pinimg.com/1200x/47/fa/95/47fa95eb63536fc2e9840af7f68bb20c.jpg"
+        }
+      }
+    },
+    "alt_text": null,
+    "created_at": "2026-08-09T06:30:04",
+    "has_been_promoted": false,
+    "board_section_id": null,
+    "title": "Human control should cover the whole AI workflow",
+    "is_removable": false,
+    "board_name": "Sapiver forge",
+    "resolved_from": "board_name"
+  },
+  "youtube": {
+    "kind": "youtube#video",
+    "etag": "Ol14ICraHX-xCknBh6HertjfRLA",
+    "id": "tU8AGYvIOm0",
+    "snippet": {
+      "publishedAt": "2026-08-09T06:30:05Z",
+      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
+      "title": "Human control should cover the whole AI workflow | Sapiver Forge #Shorts",
+      "description": "Sapiver Forge structures four decisions: whether AI should be used, how the workflow is controlled, whether an output is ready to leave and whether the workflow remains worthwhile. Each decision stays with a named human.Sapiver Forge Applied AI Gate System Bundle:#SapiverForge #HumanInTheLoop #AIGovernanceLink in bio.#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI #Shorts",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/tU8AGYvIOm0/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/tU8AGYvIOm0/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/tU8AGYvIOm0/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Sapiver Press",
+      "tags": [
+        "AI news",
+        "Sapiver Forge",
+        "practical AI"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "Human control should cover the whole AI workflow | Sapiver Forge #Shorts",
+        "description": "Sapiver Forge structures four decisions: whether AI should be used, how the workflow is controlled, whether an output is ready to leave and whether the workflow remains worthwhile. Each decision stays with a named human.Sapiver Forge Applied AI Gate System Bundle:#SapiverForge #HumanInTheLoop #AIGovernanceLink in bio.#SapiverForge #HumanInTheLoop #AIGovernance #ResponsibleAI #Shorts"
+      }
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": true
+    },
+    "youtube_url": "https://www.youtube.com/watch?v=tU8AGYvIOm0"
+  }
+}
