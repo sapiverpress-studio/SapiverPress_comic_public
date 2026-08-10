@@ -2,112 +2,17 @@
   "date": "2026-08-10",
   "mode": "live",
   "type": "sapiver_forge_weekly_promo",
-  "existing_result_detected": false,
+  "existing_result_detected": true,
   "facebook": {
-    "id": "997877693401171_122136805575198448",
-    "posting_format": "text_link_fallback",
-    "resolved_page_token": true,
-    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"ACfNNBhm3KIdh7Taehd5PmP\"}}"
+    "skipped": true,
+    "reason": "already_posted"
   },
   "pinterest": {
-    "dominant_color": null,
-    "pin_metrics": null,
-    "product_tags": [],
-    "link": "https://payhip.com/b/qBPip",
-    "created_at": "2026-08-10T06:00:47",
-    "is_owner": true,
-    "is_standard": true,
-    "creative_type": "REGULAR",
-    "board_owner": {
-      "username": "sapiver"
-    },
-    "board_section_id": null,
-    "has_been_promoted": false,
-    "title": "If you are fitting AI work around family life, wasted automation time matters",
-    "is_product": false,
-    "is_removable": false,
-    "media": {
-      "media_type": "image",
-      "images": {
-        "150x150": {
-          "width": 150,
-          "height": 150,
-          "url": "https://i.pinimg.com/150x150/93/5b/a5/935ba540eab29569fcd6dde9faf62d5f.jpg"
-        },
-        "400x300": {
-          "width": 400,
-          "height": 300,
-          "url": "https://i.pinimg.com/400x300/93/5b/a5/935ba540eab29569fcd6dde9faf62d5f.jpg"
-        },
-        "600x": {
-          "width": 564,
-          "height": 1002,
-          "url": "https://i.pinimg.com/564x/93/5b/a5/935ba540eab29569fcd6dde9faf62d5f.jpg"
-        },
-        "1200x": {
-          "width": 1080,
-          "height": 1920,
-          "url": "https://i.pinimg.com/1200x/93/5b/a5/935ba540eab29569fcd6dde9faf62d5f.jpg"
-        }
-      }
-    },
-    "description": "If you are fitting AI work around family life, wasted automation time matters. Without clear boundaries, you end up watching the whole workflow because you do not trust any of it. That matters even more when the rest of the evening belongs to your family. A content workflow can gather material automatically while publication still requires review. Define the allowed actions, the evidence shown, the approval point and the person who owns the decision. That is the role of the S",
-    "alt_text": null,
-    "parent_pin_id": null,
-    "id": "1038924207810465601",
-    "board_id": "1038924276479917183",
-    "board_name": "Sapiver forge",
-    "resolved_from": "board_name"
+    "skipped": true,
+    "reason": "already_posted"
   },
   "youtube": {
-    "kind": "youtube#video",
-    "etag": "uYT99YhHnFQAI1CuCPI3Z-jK5jk",
-    "id": "mDENB30tUVg",
-    "snippet": {
-      "publishedAt": "2026-08-10T06:00:47Z",
-      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
-      "title": "If you are fitting AI work around family life, wasted automation time matters | Sapiver Forge #",
-      "description": "Without clear boundaries, you end up watching the whole workflow because you do not trust any of it. That matters even more when the rest of the evening belongs to your family. A content workflow can gather material automatically while publication still requires review. Define the allowed actions, the evidence shown, the approval point and the person who owns the decision. That is the role of the Sapiver Forge AI Workflow Control Gate. A clear decision now is cheaper than uncertainty later.Link in bio.#SapiverForge #AIWorkflow #HumanInTheLoop #ResponsibleAI #Shorts",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/mDENB30tUVg/default.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/mDENB30tUVg/mqdefault.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/mDENB30tUVg/hqdefault.jpg",
-          "width": 480,
-          "height": 360
-        }
-      },
-      "channelTitle": "Sapiver Press",
-      "tags": [
-        "AI news",
-        "Sapiver Forge",
-        "practical AI"
-      ],
-      "categoryId": "27",
-      "liveBroadcastContent": "none",
-      "defaultLanguage": "en-GB",
-      "localized": {
-        "title": "If you are fitting AI work around family life, wasted automation time matters | Sapiver Forge #",
-        "description": "Without clear boundaries, you end up watching the whole workflow because you do not trust any of it. That matters even more when the rest of the evening belongs to your family. A content workflow can gather material automatically while publication still requires review. Define the allowed actions, the evidence shown, the approval point and the person who owns the decision. That is the role of the Sapiver Forge AI Workflow Control Gate. A clear decision now is cheaper than uncertainty later.Link in bio.#SapiverForge #AIWorkflow #HumanInTheLoop #ResponsibleAI #Shorts"
-      }
-    },
-    "status": {
-      "uploadStatus": "uploaded",
-      "privacyStatus": "public",
-      "license": "youtube",
-      "embeddable": true,
-      "publicStatsViewable": true,
-      "selfDeclaredMadeForKids": false,
-      "containsSyntheticMedia": true
-    },
-    "youtube_url": "https://www.youtube.com/watch?v=mDENB30tUVg"
+    "skipped": true,
+    "reason": "already_posted"
   }
 }
