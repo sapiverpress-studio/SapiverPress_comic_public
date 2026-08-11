@@ -2,112 +2,17 @@
   "date": "2026-08-11",
   "mode": "live",
   "type": "sapiver_forge_weekly_promo",
-  "existing_result_detected": false,
+  "existing_result_detected": true,
   "facebook": {
-    "id": "997877693401171_122136927489198448",
-    "posting_format": "text_link_fallback",
-    "resolved_page_token": true,
-    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AHQUYaRjJNroXJo5xBR7V29\"}}"
+    "skipped": true,
+    "reason": "already_posted"
   },
   "pinterest": {
-    "media": {
-      "media_type": "image",
-      "images": {
-        "150x150": {
-          "width": 150,
-          "height": 150,
-          "url": "https://i.pinimg.com/150x150/fa/eb/91/faeb91af21b2965dc165f2fe7de84807.jpg"
-        },
-        "400x300": {
-          "width": 400,
-          "height": 300,
-          "url": "https://i.pinimg.com/400x300/fa/eb/91/faeb91af21b2965dc165f2fe7de84807.jpg"
-        },
-        "600x": {
-          "width": 564,
-          "height": 1002,
-          "url": "https://i.pinimg.com/564x/fa/eb/91/faeb91af21b2965dc165f2fe7de84807.jpg"
-        },
-        "1200x": {
-          "width": 1080,
-          "height": 1920,
-          "url": "https://i.pinimg.com/1200x/fa/eb/91/faeb91af21b2965dc165f2fe7de84807.jpg"
-        }
-      }
-    },
-    "id": "1038924207810499826",
-    "link": "https://payhip.com/b/pkSEY",
-    "is_standard": true,
-    "is_removable": false,
-    "is_product": false,
-    "board_section_id": null,
-    "board_id": "1038924276479917183",
-    "pin_metrics": null,
-    "product_tags": [],
-    "created_at": "2026-08-11T06:00:44",
-    "is_owner": true,
-    "alt_text": null,
-    "title": "You should not need to keep the whole AI workflow in your head just to trust it",
-    "description": "You should not need to keep the whole AI workflow in your head just to trust it. Fluent wording can hide weak facts, private information or missing permissions. Time saved at generation can disappear in supervision and correction. An AI-assisted email still needs the facts, recipient and approval checked once before sending. Use one release point for material facts, privacy, ownership, destination and named human approval. That is the role of the Sapiver Forge AI Output Relea",
-    "has_been_promoted": false,
-    "creative_type": "REGULAR",
-    "parent_pin_id": null,
-    "dominant_color": null,
-    "board_owner": {
-      "username": "sapiver"
-    },
-    "board_name": "Sapiver forge",
-    "resolved_from": "board_name"
+    "skipped": true,
+    "reason": "already_posted"
   },
   "youtube": {
-    "kind": "youtube#video",
-    "etag": "BrOYNhHAPl9JYMitsEUNVD6Ccps",
-    "id": "oB38m3NvOi4",
-    "snippet": {
-      "publishedAt": "2026-08-11T06:00:45Z",
-      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
-      "title": "You should not need to keep the whole AI workflow in your head just to trust it | Sapiver Forge",
-      "description": "Fluent wording can hide weak facts, private information or missing permissions. Time saved at generation can disappear in supervision and correction. An AI-assisted email still needs the facts, recipient and approval checked once before sending. Use one release point for material facts, privacy, ownership, destination and named human approval. That is the role of the Sapiver Forge AI Output Release Gate. Protect the time the automation was supposed to save.Link in bio.#SapiverForge #AIQuality #HumanInTheLoop #ResponsibleAI #Shorts",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/oB38m3NvOi4/default.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/oB38m3NvOi4/mqdefault.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/oB38m3NvOi4/hqdefault.jpg",
-          "width": 480,
-          "height": 360
-        }
-      },
-      "channelTitle": "Sapiver Press",
-      "tags": [
-        "AI news",
-        "Sapiver Forge",
-        "practical AI"
-      ],
-      "categoryId": "27",
-      "liveBroadcastContent": "none",
-      "defaultLanguage": "en-GB",
-      "localized": {
-        "title": "You should not need to keep the whole AI workflow in your head just to trust it | Sapiver Forge",
-        "description": "Fluent wording can hide weak facts, private information or missing permissions. Time saved at generation can disappear in supervision and correction. An AI-assisted email still needs the facts, recipient and approval checked once before sending. Use one release point for material facts, privacy, ownership, destination and named human approval. That is the role of the Sapiver Forge AI Output Release Gate. Protect the time the automation was supposed to save.Link in bio.#SapiverForge #AIQuality #HumanInTheLoop #ResponsibleAI #Shorts"
-      }
-    },
-    "status": {
-      "uploadStatus": "uploaded",
-      "privacyStatus": "public",
-      "license": "youtube",
-      "embeddable": true,
-      "publicStatsViewable": true,
-      "selfDeclaredMadeForKids": false,
-      "containsSyntheticMedia": true
-    },
-    "youtube_url": "https://www.youtube.com/watch?v=oB38m3NvOi4"
+    "skipped": true,
+    "reason": "already_posted"
   }
 }
