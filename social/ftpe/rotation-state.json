@@ -4,7 +4,7 @@
     "images": {
       "cycle": 4,
       "pool_size": 145,
-      "used_count": 27,
+      "used_count": 33,
       "used": [
         "assets/ftpe/social_master/_extracted/ftpe_etsy_master_images/ftpe_etsy_master_images/02_whats_included.png",
         "assets/ftpe/social_master/_extracted/ftpe_etsy_master_images/ftpe_etsy_master_images/03_how_your_download_works.png",
@@ -24,6 +24,12 @@
         "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/04_real_guides_real_workflow.png",
         "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/05_easy_medium_hard_included.png",
         "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/06_covers_and_specs_included.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/08_metadata_without_guesswork.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/09_ai_guidance_practical_use.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/10_limited_volume_fresh_replacement.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_03_official_logo_pngs/ftpe_batch_03_official_logo/ai_content_guidance_for_first_time_publishers.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_03_official_logo_pngs/ftpe_batch_03_official_logo/cover_spec_sheet_starter_pack.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_03_official_logo_pngs/ftpe_batch_03_official_logo/elegant_kdp_interior_pdf_promotion.png",
         "assets/ftpe/social_sets/_extracted/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_set_13_first_upload_checks_10_pngs_with_txt/preview_check_and_publish_with_confidence.png",
         "assets/ftpe/social_sets/_extracted/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_set_13_first_upload_checks_10_pngs_with_txt/product_mockup_for_kdp_upload_guide.png",
         "assets/ftpe/social_sets/_extracted/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_set_13_first_upload_checks_10_pngs_with_txt/sapiver_press_product_and_planner_layout.png",
@@ -36,38 +42,32 @@
       ],
       "exhausted_this_run": false,
       "last_selected": [
-        "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/01_google_drive_files_organized.png",
-        "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/02_first_goal_kdp_previewer.png",
-        "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/03_from_etsy_zip_to_drive_folder.png",
-        "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/04_real_guides_real_workflow.png",
-        "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/05_easy_medium_hard_included.png",
-        "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/06_covers_and_specs_included.png"
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/08_metadata_without_guesswork.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/09_ai_guidance_practical_use.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/10_limited_volume_fresh_replacement.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_03_official_logo_pngs/ftpe_batch_03_official_logo/ai_content_guidance_for_first_time_publishers.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_03_official_logo_pngs/ftpe_batch_03_official_logo/cover_spec_sheet_starter_pack.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_03_official_logo_pngs/ftpe_batch_03_official_logo/elegant_kdp_interior_pdf_promotion.png"
       ],
-      "updated_at": "2026-08-10T09:51:35.972Z"
+      "updated_at": "2026-08-11T09:17:28.557Z"
     },
     "about": {
-      "cycle": 11,
+      "cycle": 12,
       "pool_size": 7,
-      "used_count": 7,
+      "used_count": 1,
       "used": [
-        "accessible_approach",
-        "direct_practical_pitch",
-        "efficiency_angle",
-        "print_ready_focus",
-        "ready_to_use_vibe",
-        "studio_identity",
-        "system_first_philosophy"
+        "direct_practical_pitch"
       ],
-      "exhausted_this_run": false,
+      "exhausted_this_run": true,
       "last_selected": [
-        "system_first_philosophy"
+        "direct_practical_pitch"
       ],
-      "updated_at": "2026-08-10T09:51:35.977Z"
+      "updated_at": "2026-08-11T09:17:28.626Z"
     },
     "facts": {
       "cycle": 1,
       "pool_size": 365,
-      "used_count": 77,
+      "used_count": 78,
       "used": [
         "182",
         "183",
@@ -145,30 +145,17 @@
         "255",
         "256",
         "257",
-        "258"
+        "258",
+        "259"
       ],
       "exhausted_this_run": false,
       "last_selected": [
-        "258"
+        "259"
       ],
-      "updated_at": "2026-08-10T09:51:35.977Z"
+      "updated_at": "2026-08-11T09:17:28.626Z"
     }
   },
   "history": [
-    {
-      "date": "2026-07-21",
-      "images": [
-        "assets/ftpe/social_sets/_extracted/FTPE_Batch_02_GitHub_GoogleDrive_campaign_PNGs/FTPE_Batch_02_GitHub_GoogleDrive/06_covers_and_specs_included.png",
-        "assets/ftpe/social_sets/_extracted/FTPE_Batch_02_GitHub_GoogleDrive_campaign_PNGs/FTPE_Batch_02_GitHub_GoogleDrive/07_beginner_mistakes_flagged.png",
-        "assets/ftpe/social_sets/_extracted/FTPE_Batch_02_GitHub_GoogleDrive_campaign_PNGs/FTPE_Batch_02_GitHub_GoogleDrive/08_metadata_without_guesswork.png",
-        "assets/ftpe/social_sets/_extracted/FTPE_Batch_02_GitHub_GoogleDrive_campaign_PNGs/FTPE_Batch_02_GitHub_GoogleDrive/09_ai_guidance_practical_use.png",
-        "assets/ftpe/social_sets/_extracted/FTPE_Batch_02_GitHub_GoogleDrive_campaign_PNGs/FTPE_Batch_02_GitHub_GoogleDrive/10_limited_volume_fresh_replacement.png",
-        "assets/ftpe/social_sets/_extracted/FTPE_Batch_03_official_logo_PNGs/FTPE_Batch_03_official_logo/ai_content_guidance_for_first_time_publishers.png"
-      ],
-      "about": "direct_practical_pitch",
-      "fact": "238",
-      "anecdote": null
-    },
     {
       "date": "2026-07-22",
       "images": [
@@ -448,21 +435,35 @@
       "about": "system_first_philosophy",
       "fact": "258",
       "anecdote": null
+    },
+    {
+      "date": "2026-08-11",
+      "images": [
+        "assets/ftpe/social_sets/_extracted/FTPE_Batch_02_GitHub_GoogleDrive_campaign_PNGs/FTPE_Batch_02_GitHub_GoogleDrive/08_metadata_without_guesswork.png",
+        "assets/ftpe/social_sets/_extracted/FTPE_Batch_02_GitHub_GoogleDrive_campaign_PNGs/FTPE_Batch_02_GitHub_GoogleDrive/09_ai_guidance_practical_use.png",
+        "assets/ftpe/social_sets/_extracted/FTPE_Batch_02_GitHub_GoogleDrive_campaign_PNGs/FTPE_Batch_02_GitHub_GoogleDrive/10_limited_volume_fresh_replacement.png",
+        "assets/ftpe/social_sets/_extracted/FTPE_Batch_03_official_logo_PNGs/FTPE_Batch_03_official_logo/ai_content_guidance_for_first_time_publishers.png",
+        "assets/ftpe/social_sets/_extracted/FTPE_Batch_03_official_logo_PNGs/FTPE_Batch_03_official_logo/cover_spec_sheet_starter_pack.png",
+        "assets/ftpe/social_sets/_extracted/FTPE_Batch_03_official_logo_PNGs/FTPE_Batch_03_official_logo/elegant_kdp_interior_pdf_promotion.png"
+      ],
+      "about": "direct_practical_pitch",
+      "fact": "259",
+      "anecdote": null
     }
   ],
-  "updated_at": "2026-08-10T09:51:35.977Z",
+  "updated_at": "2026-08-11T09:17:28.626Z",
   "last_run": {
-    "date": "2026-08-10",
+    "date": "2026-08-11",
     "images": [
-      "assets/ftpe/social_sets/_extracted/FTPE_Batch_02_GitHub_GoogleDrive_campaign_PNGs/FTPE_Batch_02_GitHub_GoogleDrive/01_google_drive_files_organized.png",
-      "assets/ftpe/social_sets/_extracted/FTPE_Batch_02_GitHub_GoogleDrive_campaign_PNGs/FTPE_Batch_02_GitHub_GoogleDrive/02_first_goal_kdp_previewer.png",
-      "assets/ftpe/social_sets/_extracted/FTPE_Batch_02_GitHub_GoogleDrive_campaign_PNGs/FTPE_Batch_02_GitHub_GoogleDrive/03_from_etsy_zip_to_drive_folder.png",
-      "assets/ftpe/social_sets/_extracted/FTPE_Batch_02_GitHub_GoogleDrive_campaign_PNGs/FTPE_Batch_02_GitHub_GoogleDrive/04_real_guides_real_workflow.png",
-      "assets/ftpe/social_sets/_extracted/FTPE_Batch_02_GitHub_GoogleDrive_campaign_PNGs/FTPE_Batch_02_GitHub_GoogleDrive/05_easy_medium_hard_included.png",
-      "assets/ftpe/social_sets/_extracted/FTPE_Batch_02_GitHub_GoogleDrive_campaign_PNGs/FTPE_Batch_02_GitHub_GoogleDrive/06_covers_and_specs_included.png"
+      "assets/ftpe/social_sets/_extracted/FTPE_Batch_02_GitHub_GoogleDrive_campaign_PNGs/FTPE_Batch_02_GitHub_GoogleDrive/08_metadata_without_guesswork.png",
+      "assets/ftpe/social_sets/_extracted/FTPE_Batch_02_GitHub_GoogleDrive_campaign_PNGs/FTPE_Batch_02_GitHub_GoogleDrive/09_ai_guidance_practical_use.png",
+      "assets/ftpe/social_sets/_extracted/FTPE_Batch_02_GitHub_GoogleDrive_campaign_PNGs/FTPE_Batch_02_GitHub_GoogleDrive/10_limited_volume_fresh_replacement.png",
+      "assets/ftpe/social_sets/_extracted/FTPE_Batch_03_official_logo_PNGs/FTPE_Batch_03_official_logo/ai_content_guidance_for_first_time_publishers.png",
+      "assets/ftpe/social_sets/_extracted/FTPE_Batch_03_official_logo_PNGs/FTPE_Batch_03_official_logo/cover_spec_sheet_starter_pack.png",
+      "assets/ftpe/social_sets/_extracted/FTPE_Batch_03_official_logo_PNGs/FTPE_Batch_03_official_logo/elegant_kdp_interior_pdf_promotion.png"
     ],
-    "about": "system_first_philosophy",
-    "fact": "258",
+    "about": "direct_practical_pitch",
+    "fact": "259",
     "anecdote": null
   }
 }
