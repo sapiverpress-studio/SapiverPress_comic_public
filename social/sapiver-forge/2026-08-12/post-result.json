@@ -1,0 +1,113 @@
+{
+  "date": "2026-08-12",
+  "mode": "live",
+  "type": "sapiver_forge_weekly_promo",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122137059417198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AZ7QH2bZtmd1UNz1ze_Q2lY\"}}"
+  },
+  "pinterest": {
+    "link": "https://payhip.com/b/rgFXP",
+    "creative_type": "REGULAR",
+    "is_product": false,
+    "alt_text": null,
+    "board_id": "1038924276479917183",
+    "board_section_id": null,
+    "description": "If the automation needs constant supervision, count that as part of the work. A workflow that made sense six months ago may be a poor fit today. That is where a clear human decision becomes useful rather than bureaucratic. Something built to save an hour a week can quietly start consuming that hour in maintenance. Review time saved, correction work, costs, failures and ongoing effort, then continue, change, pause or retire. That is the role of the Sapiver Forge AI Outcome Rev",
+    "parent_pin_id": null,
+    "is_removable": false,
+    "title": "If the automation needs constant supervision, count that as part of the work",
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/a1/47/46/a1474683a6592658db2090d0c7967987.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/a1/47/46/a1474683a6592658db2090d0c7967987.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 1002,
+          "url": "https://i.pinimg.com/564x/a1/47/46/a1474683a6592658db2090d0c7967987.jpg"
+        },
+        "1200x": {
+          "width": 1080,
+          "height": 1920,
+          "url": "https://i.pinimg.com/1200x/a1/47/46/a1474683a6592658db2090d0c7967987.jpg"
+        }
+      }
+    },
+    "dominant_color": null,
+    "created_at": "2026-08-12T06:31:37",
+    "has_been_promoted": false,
+    "is_owner": true,
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "id": "1038924207810533251",
+    "pin_metrics": null,
+    "product_tags": [],
+    "is_standard": true,
+    "board_name": "Sapiver forge",
+    "resolved_from": "board_name"
+  },
+  "youtube": {
+    "kind": "youtube#video",
+    "etag": "xNa0ERBrmJ9d6ylTOAFZHvavMco",
+    "id": "k7wvSMPfFnA",
+    "snippet": {
+      "publishedAt": "2026-08-12T06:31:38Z",
+      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
+      "title": "If the automation needs constant supervision, count that as part of the work | Sapiver Forge #S",
+      "description": "A workflow that made sense six months ago may be a poor fit today. That is where a clear human decision becomes useful rather than bureaucratic. Something built to save an hour a week can quietly start consuming that hour in maintenance. Review time saved, correction work, costs, failures and ongoing effort, then continue, change, pause or retire. That is the role of the Sapiver Forge AI Outcome Review Gate. Make the decision when it matters, then move on.Link in bio.#SapiverForge #AIReview #SmallBusinessAI #ResponsibleAI #Shorts",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/k7wvSMPfFnA/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/k7wvSMPfFnA/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/k7wvSMPfFnA/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Sapiver Press",
+      "tags": [
+        "AI news",
+        "Sapiver Forge",
+        "practical AI"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "If the automation needs constant supervision, count that as part of the work | Sapiver Forge #S",
+        "description": "A workflow that made sense six months ago may be a poor fit today. That is where a clear human decision becomes useful rather than bureaucratic. Something built to save an hour a week can quietly start consuming that hour in maintenance. Review time saved, correction work, costs, failures and ongoing effort, then continue, change, pause or retire. That is the role of the Sapiver Forge AI Outcome Review Gate. Make the decision when it matters, then move on.Link in bio.#SapiverForge #AIReview #SmallBusinessAI #ResponsibleAI #Shorts"
+      }
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": true
+    },
+    "youtube_url": "https://www.youtube.com/watch?v=k7wvSMPfFnA"
+  }
+}
