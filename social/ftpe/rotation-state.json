@@ -4,7 +4,7 @@
     "images": {
       "cycle": 4,
       "pool_size": 145,
-      "used_count": 33,
+      "used_count": 39,
       "used": [
         "assets/ftpe/social_master/_extracted/ftpe_etsy_master_images/ftpe_etsy_master_images/02_whats_included.png",
         "assets/ftpe/social_master/_extracted/ftpe_etsy_master_images/ftpe_etsy_master_images/03_how_your_download_works.png",
@@ -30,6 +30,12 @@
         "assets/ftpe/social_sets/_extracted/ftpe_batch_03_official_logo_pngs/ftpe_batch_03_official_logo/ai_content_guidance_for_first_time_publishers.png",
         "assets/ftpe/social_sets/_extracted/ftpe_batch_03_official_logo_pngs/ftpe_batch_03_official_logo/cover_spec_sheet_starter_pack.png",
         "assets/ftpe/social_sets/_extracted/ftpe_batch_03_official_logo_pngs/ftpe_batch_03_official_logo/elegant_kdp_interior_pdf_promotion.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_03_official_logo_pngs/ftpe_batch_03_official_logo/engage_with_your_first_sudoku_pack.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_03_official_logo_pngs/ftpe_batch_03_official_logo/final_checklist_for_first_time_publishers.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_03_official_logo_pngs/ftpe_batch_03_official_logo/first_time_sudoku_publishing_guide.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_03_official_logo_pngs/ftpe_batch_03_official_logo/metadata_profiles_publish_with_confidence.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_03_official_logo_pngs/ftpe_batch_03_official_logo/promotional_sudoku_book_collection_flyer.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_03_official_logo_pngs/ftpe_batch_03_official_logo/sudoku_publisher_edition_planning_tools.png",
         "assets/ftpe/social_sets/_extracted/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_set_13_first_upload_checks_10_pngs_with_txt/preview_check_and_publish_with_confidence.png",
         "assets/ftpe/social_sets/_extracted/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_set_13_first_upload_checks_10_pngs_with_txt/product_mockup_for_kdp_upload_guide.png",
         "assets/ftpe/social_sets/_extracted/ftpe_set_13_first_upload_checks_10_pngs_with_txt/ftpe_set_13_first_upload_checks_10_pngs_with_txt/sapiver_press_product_and_planner_layout.png",
@@ -42,32 +48,33 @@
       ],
       "exhausted_this_run": false,
       "last_selected": [
-        "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/08_metadata_without_guesswork.png",
-        "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/09_ai_guidance_practical_use.png",
-        "assets/ftpe/social_sets/_extracted/ftpe_batch_02_github_googledrive_campaign_pngs/ftpe_batch_02_github_googledrive/10_limited_volume_fresh_replacement.png",
-        "assets/ftpe/social_sets/_extracted/ftpe_batch_03_official_logo_pngs/ftpe_batch_03_official_logo/ai_content_guidance_for_first_time_publishers.png",
-        "assets/ftpe/social_sets/_extracted/ftpe_batch_03_official_logo_pngs/ftpe_batch_03_official_logo/cover_spec_sheet_starter_pack.png",
-        "assets/ftpe/social_sets/_extracted/ftpe_batch_03_official_logo_pngs/ftpe_batch_03_official_logo/elegant_kdp_interior_pdf_promotion.png"
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_03_official_logo_pngs/ftpe_batch_03_official_logo/engage_with_your_first_sudoku_pack.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_03_official_logo_pngs/ftpe_batch_03_official_logo/final_checklist_for_first_time_publishers.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_03_official_logo_pngs/ftpe_batch_03_official_logo/first_time_sudoku_publishing_guide.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_03_official_logo_pngs/ftpe_batch_03_official_logo/metadata_profiles_publish_with_confidence.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_03_official_logo_pngs/ftpe_batch_03_official_logo/promotional_sudoku_book_collection_flyer.png",
+        "assets/ftpe/social_sets/_extracted/ftpe_batch_03_official_logo_pngs/ftpe_batch_03_official_logo/sudoku_publisher_edition_planning_tools.png"
       ],
-      "updated_at": "2026-08-11T09:17:28.557Z"
+      "updated_at": "2026-08-12T09:34:32.772Z"
     },
     "about": {
       "cycle": 12,
       "pool_size": 7,
-      "used_count": 1,
+      "used_count": 2,
       "used": [
-        "direct_practical_pitch"
+        "direct_practical_pitch",
+        "studio_identity"
       ],
-      "exhausted_this_run": true,
+      "exhausted_this_run": false,
       "last_selected": [
-        "direct_practical_pitch"
+        "studio_identity"
       ],
-      "updated_at": "2026-08-11T09:17:28.626Z"
+      "updated_at": "2026-08-12T09:34:32.788Z"
     },
     "facts": {
       "cycle": 1,
       "pool_size": 365,
-      "used_count": 78,
+      "used_count": 79,
       "used": [
         "182",
         "183",
@@ -146,30 +153,17 @@
         "256",
         "257",
         "258",
-        "259"
+        "259",
+        "260"
       ],
       "exhausted_this_run": false,
       "last_selected": [
-        "259"
+        "260"
       ],
-      "updated_at": "2026-08-11T09:17:28.626Z"
+      "updated_at": "2026-08-12T09:34:32.788Z"
     }
   },
   "history": [
-    {
-      "date": "2026-07-22",
-      "images": [
-        "assets/ftpe/social_sets/_extracted/FTPE_Batch_03_official_logo_PNGs/FTPE_Batch_03_official_logo/elegant_kdp_interior_pdf_promotion.png",
-        "assets/ftpe/social_sets/_extracted/FTPE_Batch_03_official_logo_PNGs/FTPE_Batch_03_official_logo/elegant_sudoku_book_design_mockup.png",
-        "assets/ftpe/social_sets/_extracted/FTPE_Batch_03_official_logo_PNGs/FTPE_Batch_03_official_logo/engage_with_your_first_sudoku_pack.png",
-        "assets/ftpe/social_sets/_extracted/FTPE_Batch_03_official_logo_PNGs/FTPE_Batch_03_official_logo/final_checklist_for_first_time_publishers.png",
-        "assets/ftpe/social_sets/_extracted/FTPE_Batch_03_official_logo_PNGs/FTPE_Batch_03_official_logo/first_time_sudoku_publishing_guide.png",
-        "assets/ftpe/social_sets/_extracted/FTPE_Batch_03_official_logo_PNGs/FTPE_Batch_03_official_logo/metadata_profiles_publish_with_confidence.png"
-      ],
-      "about": "studio_identity",
-      "fact": "239",
-      "anecdote": null
-    },
     {
       "date": "2026-07-23",
       "images": [
@@ -449,21 +443,35 @@
       "about": "direct_practical_pitch",
       "fact": "259",
       "anecdote": null
+    },
+    {
+      "date": "2026-08-12",
+      "images": [
+        "assets/ftpe/social_sets/_extracted/FTPE_Batch_03_official_logo_PNGs/FTPE_Batch_03_official_logo/engage_with_your_first_sudoku_pack.png",
+        "assets/ftpe/social_sets/_extracted/FTPE_Batch_03_official_logo_PNGs/FTPE_Batch_03_official_logo/final_checklist_for_first_time_publishers.png",
+        "assets/ftpe/social_sets/_extracted/FTPE_Batch_03_official_logo_PNGs/FTPE_Batch_03_official_logo/first_time_sudoku_publishing_guide.png",
+        "assets/ftpe/social_sets/_extracted/FTPE_Batch_03_official_logo_PNGs/FTPE_Batch_03_official_logo/metadata_profiles_publish_with_confidence.png",
+        "assets/ftpe/social_sets/_extracted/FTPE_Batch_03_official_logo_PNGs/FTPE_Batch_03_official_logo/promotional_sudoku_book_collection_flyer.png",
+        "assets/ftpe/social_sets/_extracted/FTPE_Batch_03_official_logo_PNGs/FTPE_Batch_03_official_logo/sudoku_publisher_edition_planning_tools.png"
+      ],
+      "about": "studio_identity",
+      "fact": "260",
+      "anecdote": null
     }
   ],
-  "updated_at": "2026-08-11T09:17:28.626Z",
+  "updated_at": "2026-08-12T09:34:32.788Z",
   "last_run": {
-    "date": "2026-08-11",
+    "date": "2026-08-12",
     "images": [
-      "assets/ftpe/social_sets/_extracted/FTPE_Batch_02_GitHub_GoogleDrive_campaign_PNGs/FTPE_Batch_02_GitHub_GoogleDrive/08_metadata_without_guesswork.png",
-      "assets/ftpe/social_sets/_extracted/FTPE_Batch_02_GitHub_GoogleDrive_campaign_PNGs/FTPE_Batch_02_GitHub_GoogleDrive/09_ai_guidance_practical_use.png",
-      "assets/ftpe/social_sets/_extracted/FTPE_Batch_02_GitHub_GoogleDrive_campaign_PNGs/FTPE_Batch_02_GitHub_GoogleDrive/10_limited_volume_fresh_replacement.png",
-      "assets/ftpe/social_sets/_extracted/FTPE_Batch_03_official_logo_PNGs/FTPE_Batch_03_official_logo/ai_content_guidance_for_first_time_publishers.png",
-      "assets/ftpe/social_sets/_extracted/FTPE_Batch_03_official_logo_PNGs/FTPE_Batch_03_official_logo/cover_spec_sheet_starter_pack.png",
-      "assets/ftpe/social_sets/_extracted/FTPE_Batch_03_official_logo_PNGs/FTPE_Batch_03_official_logo/elegant_kdp_interior_pdf_promotion.png"
+      "assets/ftpe/social_sets/_extracted/FTPE_Batch_03_official_logo_PNGs/FTPE_Batch_03_official_logo/engage_with_your_first_sudoku_pack.png",
+      "assets/ftpe/social_sets/_extracted/FTPE_Batch_03_official_logo_PNGs/FTPE_Batch_03_official_logo/final_checklist_for_first_time_publishers.png",
+      "assets/ftpe/social_sets/_extracted/FTPE_Batch_03_official_logo_PNGs/FTPE_Batch_03_official_logo/first_time_sudoku_publishing_guide.png",
+      "assets/ftpe/social_sets/_extracted/FTPE_Batch_03_official_logo_PNGs/FTPE_Batch_03_official_logo/metadata_profiles_publish_with_confidence.png",
+      "assets/ftpe/social_sets/_extracted/FTPE_Batch_03_official_logo_PNGs/FTPE_Batch_03_official_logo/promotional_sudoku_book_collection_flyer.png",
+      "assets/ftpe/social_sets/_extracted/FTPE_Batch_03_official_logo_PNGs/FTPE_Batch_03_official_logo/sudoku_publisher_edition_planning_tools.png"
     ],
-    "about": "direct_practical_pitch",
-    "fact": "259",
+    "about": "studio_identity",
+    "fact": "260",
     "anecdote": null
   }
 }
