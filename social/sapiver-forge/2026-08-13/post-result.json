@@ -1,0 +1,113 @@
+{
+  "date": "2026-08-13",
+  "mode": "live",
+  "type": "sapiver_forge_weekly_promo",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122137176153198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AH1liIJWnjXjTXtXpsuhQ06\"}}"
+  },
+  "pinterest": {
+    "description": "Parents using AI at work do not have spare evenings for avoidable rework. Automating the wrong task can cost more time than doing it manually. A workflow should reduce the number of decisions you have to carry around in your head. If you only have an hour after bedtime, configuring AI for a trivial task is a poor trade. Compare the current method, the best non-AI alternative and the realistic AI benefit before you build. That is the role of the Sapiver Forge AI Opportunity Ga",
+    "creative_type": "REGULAR",
+    "link": "https://payhip.com/b/4rcSt",
+    "pin_metrics": null,
+    "is_removable": false,
+    "is_product": false,
+    "parent_pin_id": null,
+    "title": "Parents using AI at work do not have spare evenings for avoidable rework",
+    "is_owner": true,
+    "created_at": "2026-08-13T06:36:21",
+    "board_id": "1038924276479917183",
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/6b/23/c3/6b23c3cd190fc5142c5c4df56ab22217.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/6b/23/c3/6b23c3cd190fc5142c5c4df56ab22217.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 1002,
+          "url": "https://i.pinimg.com/564x/6b/23/c3/6b23c3cd190fc5142c5c4df56ab22217.jpg"
+        },
+        "1200x": {
+          "width": 1080,
+          "height": 1920,
+          "url": "https://i.pinimg.com/1200x/6b/23/c3/6b23c3cd190fc5142c5c4df56ab22217.jpg"
+        }
+      }
+    },
+    "is_standard": true,
+    "id": "1038924207810565707",
+    "product_tags": [],
+    "has_been_promoted": false,
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "board_section_id": null,
+    "alt_text": null,
+    "dominant_color": null,
+    "board_name": "Sapiver forge",
+    "resolved_from": "board_name"
+  },
+  "youtube": {
+    "kind": "youtube#video",
+    "etag": "YjS7xu3wgvUdVb9CdQnPS8UzyTo",
+    "id": "SUoFjhEb3yU",
+    "snippet": {
+      "publishedAt": "2026-08-13T06:36:22Z",
+      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
+      "title": "Parents using AI at work do not have spare evenings for avoidable rework | Sapiver Forge #Short",
+      "description": "Automating the wrong task can cost more time than doing it manually. A workflow should reduce the number of decisions you have to carry around in your head. If you only have an hour after bedtime, configuring AI for a trivial task is a poor trade. Compare the current method, the best non-AI alternative and the realistic AI benefit before you build. That is the role of the Sapiver Forge AI Opportunity Gate. Good control should reduce mental load as well as risk.Link in bio.#SapiverForge #AIStrategy #SmallBusinessAI #ResponsibleAI #Shorts",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/SUoFjhEb3yU/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/SUoFjhEb3yU/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/SUoFjhEb3yU/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Sapiver Press",
+      "tags": [
+        "AI news",
+        "Sapiver Forge",
+        "practical AI"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "en-GB",
+      "localized": {
+        "title": "Parents using AI at work do not have spare evenings for avoidable rework | Sapiver Forge #Short",
+        "description": "Automating the wrong task can cost more time than doing it manually. A workflow should reduce the number of decisions you have to carry around in your head. If you only have an hour after bedtime, configuring AI for a trivial task is a poor trade. Compare the current method, the best non-AI alternative and the realistic AI benefit before you build. That is the role of the Sapiver Forge AI Opportunity Gate. Good control should reduce mental load as well as risk.Link in bio.#SapiverForge #AIStrategy #SmallBusinessAI #ResponsibleAI #Shorts"
+      }
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": true
+    },
+    "youtube_url": "https://www.youtube.com/watch?v=SUoFjhEb3yU"
+  }
+}
