@@ -1,14 +1,12 @@
-name: Sapiver Forge Facebook, Pinterest and YouTube Distribution
+name: Sapiver Forge Facebook and Pinterest Distribution
 
 on:
-  schedule:
-    - cron: '0 6 * * *'
   workflow_dispatch:
     inputs:
       day_number:
-        description: "Optional day override 1-7"
-        required: false
-        default: ""
+        description: "Day override 1-7"
+        required: true
+        default: "1"
         type: string
       post_mode:
         description: "Build only or publish live"
@@ -23,7 +21,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: sapiver-forge-social-daily
+  group: sapiver-forge-social-manual
   cancel-in-progress: false
 
 jobs:
@@ -37,13 +35,10 @@ jobs:
         run: |
           set -euo pipefail
           DAY="${{ inputs.day_number }}"
-          if [ -z "$DAY" ]; then DAY="$(TZ=Europe/London date +%u)"; fi
           echo "$DAY" | grep -Eq '^[1-7]$'
-          MODE="${{ inputs.post_mode }}"
-          if [ "${{ github.event_name }}" = "schedule" ]; then MODE="live"; fi
           echo "DAY_NUMBER=$DAY" >> "$GITHUB_ENV"
           echo "DATE_OVERRIDE=$(TZ=Europe/London date +%F)" >> "$GITHUB_ENV"
-          echo "SAPIVER_FORGE_POST_MODE=$MODE" >> "$GITHUB_ENV"
+          echo "SAPIVER_FORGE_POST_MODE=${{ inputs.post_mode }}" >> "$GITHUB_ENV"
 
       - name: Pull latest human-approved weekly bridge
         shell: bash
@@ -58,11 +53,11 @@ jobs:
             exit 0
           fi
           (cd "$BRIDGE" && sha256sum -c file-hashes.sha256)
-          test "$(cat "$BRIDGE/candidate-id.txt" | tr -d '\n')" = "$(node -p "require('./$BRIDGE/approved-manifest.json').candidate_id")"
+          test "$(tr -d '\n' < "$BRIDGE/candidate-id.txt")" = "$(node -p "require('./$BRIDGE/approved-manifest.json').candidate_id")"
           echo "BRIDGE_AVAILABLE=true" >> "$GITHUB_ENV"
           echo "BRIDGE_ROOT=$BRIDGE" >> "$GITHUB_ENV"
 
-      - name: Build today's approved social package
+      - name: Build today's approved static social package
         if: env.BRIDGE_AVAILABLE == 'true'
         shell: bash
         run: |
@@ -74,32 +69,28 @@ jobs:
           if(bridge.approved!==true) throw new Error('Weekly bridge is not approved.');
           const item=bridge.posts.find(p=>p.index===day);
           if(!item) throw new Error(`Approved bridge has no day ${day}.`);
-          if(!item.video||!item.youtube_title||!item.youtube_description) throw new Error('Approved bridge does not yet contain YouTube video metadata. Re-run the Sapiver Forge approval workflow after the bridge update.');
+          if(!item.image) throw new Error('Approved bridge has no static image for this day.');
           if(!item.social_comment||/https?:\/\//i.test(item.social_comment)) throw new Error('Approved social comment must use link-in-bio wording and contain no direct URL.');
           const out=path.join('social','sapiver-forge',date);
           fs.mkdirSync(out,{recursive:true});
-          const write=(name,text)=>{const p=path.join(out,name);fs.writeFileSync(p,String(text).trim()+'\n');return p;};
+          const write=(name,text)=>{const p=path.join(out,name);fs.writeFileSync(p,String(text||'').trim()+'\n');return p;};
           const image=path.join(out,'approved-social.png');
-          const video=path.join(out,'approved-short.mp4');
           fs.copyFileSync(path.join(root,item.image),image);
-          fs.copyFileSync(path.join(root,item.video),video);
-          if(!fs.statSync(video).size) throw new Error('Approved YouTube video is empty.');
           const manifest={
-            type:'sapiver_forge_weekly_promo',
+            type:'sapiver_forge_weekly_promo_static_only',
             candidate_id:bridge.candidate_id,
             week:bridge.week,
             day_number:day,
             article_url:item.product_url,
-            approved:{facebook:true,pinterest:true,youtube:true},
+            approved:{facebook:true,pinterest:true,youtube:false},
             facebook:{post_caption:write('facebook-post.txt',item.facebook_post),first_comment:write('facebook-first-comment.txt',item.social_comment),images:[image]},
-            pinterest:{title:write('pinterest-title.txt',item.pinterest_title),caption:write('pinterest-caption.txt',item.pinterest_description),image},
-            youtube:{video,title:write('youtube-title.txt',item.youtube_title),caption:write('youtube-description.txt',item.youtube_description)}
+            pinterest:{title:write('pinterest-title.txt',item.pinterest_title),caption:write('pinterest-caption.txt',item.pinterest_description),image}
           };
           fs.writeFileSync(path.join(out,'manifest.json'),JSON.stringify(manifest,null,2)+'\n');
-          console.log(`Prepared approved day ${day}: ${item.day}`);
+          console.log(`Prepared static-only approved day ${day}: ${item.day}. No video copied or published.`);
           NODE
 
-      - name: Post approved Facebook, Pinterest and YouTube content
+      - name: Post approved Facebook and Pinterest content
         if: env.BRIDGE_AVAILABLE == 'true'
         run: node scripts/post-sapiver-forge-social.mjs
         env:
@@ -120,10 +111,6 @@ jobs:
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
           FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
           FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
-          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
-          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
-          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
-          YOUTUBE_PRIVACY_STATUS: public
           FORCE_SAPIVER_FORGE_POST: ${{ secrets.FORCE_SAPIVER_FORGE_POST || secrets.FORCE_CLEARFORGE_POST }}
 
       - name: Show posting result
@@ -133,7 +120,7 @@ jobs:
           RESULT="social/sapiver-forge/${DATE_OVERRIDE}/post-result.json"
           if [ -f "$RESULT" ]; then cat "$RESULT"; else echo "No posting result was produced."; fi
 
-      - name: Commit daily assets and posting record
+      - name: Commit daily static assets and posting record
         if: env.BRIDGE_AVAILABLE == 'true' && always()
         shell: bash
         run: |
@@ -142,7 +129,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add "social/sapiver-forge/${DATE_OVERRIDE}"
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Post approved Sapiver Forge social content for ${DATE_OVERRIDE}"
+          git commit -m "Post approved static Sapiver Forge social content for ${DATE_OVERRIDE}"
           for attempt in 1 2 3; do
             if git push; then exit 0; fi
             git pull --rebase origin main
