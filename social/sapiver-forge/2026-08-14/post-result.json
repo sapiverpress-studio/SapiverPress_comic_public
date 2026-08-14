@@ -2,112 +2,17 @@
   "date": "2026-08-14",
   "mode": "live",
   "type": "sapiver_forge_weekly_promo",
-  "existing_result_detected": false,
+  "existing_result_detected": true,
   "facebook": {
-    "id": "997877693401171_122137311507198448",
-    "posting_format": "text_link_fallback",
-    "resolved_page_token": true,
-    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"Az8GGdFt_iNYahnDBF9ki1B\"}}"
+    "skipped": true,
+    "reason": "already_posted"
   },
   "pinterest": {
-    "is_standard": true,
-    "dominant_color": null,
-    "board_owner": {
-      "username": "sapiver"
-    },
-    "board_id": "1038924276479917183",
-    "media": {
-      "media_type": "image",
-      "images": {
-        "150x150": {
-          "width": 150,
-          "height": 150,
-          "url": "https://i.pinimg.com/150x150/b0/f9/24/b0f92477aa38f2e1f142924854786fa0.jpg"
-        },
-        "400x300": {
-          "width": 400,
-          "height": 300,
-          "url": "https://i.pinimg.com/400x300/b0/f9/24/b0f92477aa38f2e1f142924854786fa0.jpg"
-        },
-        "600x": {
-          "width": 564,
-          "height": 1002,
-          "url": "https://i.pinimg.com/564x/b0/f9/24/b0f92477aa38f2e1f142924854786fa0.jpg"
-        },
-        "1200x": {
-          "width": 1080,
-          "height": 1920,
-          "url": "https://i.pinimg.com/1200x/b0/f9/24/b0f92477aa38f2e1f142924854786fa0.jpg"
-        }
-      }
-    },
-    "product_tags": [],
-    "description": "AI is useful when it shortens the job and the uncertainty around it. Fluent wording can hide weak facts, private information or missing permissions. A good system should still work when you are busy, interrupted or tired. Instead of reopening the same document after the kids are in bed, review it once against fixed criteria. Use one release point for material facts, privacy, ownership, destination and named human approval. That is the role of the Sapiver Forge AI Output Relea",
-    "is_product": false,
-    "id": "1038924207810595133",
-    "is_removable": false,
-    "has_been_promoted": false,
-    "alt_text": null,
-    "board_section_id": null,
-    "link": "https://payhip.com/b/pkSEY",
-    "is_owner": true,
-    "pin_metrics": null,
-    "parent_pin_id": null,
-    "created_at": "2026-08-14T05:27:44",
-    "creative_type": "REGULAR",
-    "title": "AI is useful when it shortens the job and the uncertainty around it",
-    "board_name": "Sapiver forge",
-    "resolved_from": "board_name"
+    "skipped": true,
+    "reason": "already_posted"
   },
   "youtube": {
-    "kind": "youtube#video",
-    "etag": "dgkAkn-PR9FU-d6wwou4xoL5v5U",
-    "id": "1FPjlC7ncTw",
-    "snippet": {
-      "publishedAt": "2026-08-14T05:27:45Z",
-      "channelId": "UCeNL_HfBioRpq6N0rUhdhlQ",
-      "title": "AI is useful when it shortens the job and the uncertainty around it | Sapiver Forge #Shorts",
-      "description": "Fluent wording can hide weak facts, private information or missing permissions. A good system should still work when you are busy, interrupted or tired. Instead of reopening the same document after the kids are in bed, review it once against fixed criteria. Use one release point for material facts, privacy, ownership, destination and named human approval. That is the role of the Sapiver Forge AI Output Release Gate. The system should help you finish the task, not keep thinking about it.Link in bio.#SapiverForge #AIQuality #HumanInTheLoop #ResponsibleAI #Shorts",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/1FPjlC7ncTw/default.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/1FPjlC7ncTw/mqdefault.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/1FPjlC7ncTw/hqdefault.jpg",
-          "width": 480,
-          "height": 360
-        }
-      },
-      "channelTitle": "Sapiver Press",
-      "tags": [
-        "AI news",
-        "Sapiver Forge",
-        "practical AI"
-      ],
-      "categoryId": "27",
-      "liveBroadcastContent": "none",
-      "defaultLanguage": "en-GB",
-      "localized": {
-        "title": "AI is useful when it shortens the job and the uncertainty around it | Sapiver Forge #Shorts",
-        "description": "Fluent wording can hide weak facts, private information or missing permissions. A good system should still work when you are busy, interrupted or tired. Instead of reopening the same document after the kids are in bed, review it once against fixed criteria. Use one release point for material facts, privacy, ownership, destination and named human approval. That is the role of the Sapiver Forge AI Output Release Gate. The system should help you finish the task, not keep thinking about it.Link in bio.#SapiverForge #AIQuality #HumanInTheLoop #ResponsibleAI #Shorts"
-      }
-    },
-    "status": {
-      "uploadStatus": "uploaded",
-      "privacyStatus": "public",
-      "license": "youtube",
-      "embeddable": true,
-      "publicStatsViewable": true,
-      "selfDeclaredMadeForKids": false,
-      "containsSyntheticMedia": true
-    },
-    "youtube_url": "https://www.youtube.com/watch?v=1FPjlC7ncTw"
+    "skipped": true,
+    "reason": "already_posted"
   }
 }
