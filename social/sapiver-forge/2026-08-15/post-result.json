@@ -1,0 +1,66 @@
+{
+  "date": "2026-08-15",
+  "mode": "live",
+  "type": "sapiver_forge_weekly_promo_static_only",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122137447233198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AnttXVJaaVHT3ZGECAE87pa\"}}"
+  },
+  "pinterest": {
+    "board_id": "1038924276479917183",
+    "description": "Saving five minutes with AI means nothing if you spend twenty minutes checking it. Losing ten minutes rebuilding yesterday’s context is exactly the friction AI was meant to reduce. When your working window is short, that difference matters. Record the responsible person and decision alongside the evidence instead of relying on memory. Use one connected workspace as the record of the assessment and human decision. That is what the Sapiver Forge Applied AI Gate System — Notion ",
+    "pin_metrics": null,
+    "created_at": "2026-08-15T07:26:20",
+    "alt_text": null,
+    "product_tags": [],
+    "creative_type": "REGULAR",
+    "id": "1038924207810630456",
+    "is_product": false,
+    "board_section_id": null,
+    "has_been_promoted": false,
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/ff/47/06/ff47062111bbefe70bf883f8c6d5b615.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/ff/47/06/ff47062111bbefe70bf883f8c6d5b615.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 1002,
+          "url": "https://i.pinimg.com/564x/ff/47/06/ff47062111bbefe70bf883f8c6d5b615.jpg"
+        },
+        "1200x": {
+          "width": 1080,
+          "height": 1920,
+          "url": "https://i.pinimg.com/1200x/ff/47/06/ff47062111bbefe70bf883f8c6d5b615.jpg"
+        }
+      }
+    },
+    "link": "https://payhip.com/b/gq89f",
+    "dominant_color": null,
+    "is_removable": false,
+    "is_standard": true,
+    "parent_pin_id": null,
+    "is_owner": true,
+    "title": "Saving five minutes with AI means nothing if you spend twenty minutes checking it",
+    "board_name": "Sapiver forge",
+    "resolved_from": "board_name"
+  },
+  "youtube": {
+    "skipped": true,
+    "reason": "youtube_not_approved"
+  }
+}

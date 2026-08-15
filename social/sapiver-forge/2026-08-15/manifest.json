@@ -1,0 +1,24 @@
+{
+  "type": "sapiver_forge_weekly_promo_static_only",
+  "candidate_id": "3f28a46e92950254eea8c955750b6c28967fc8a9a698fb97f6bf167d281e152a",
+  "week": "2026-08-10",
+  "day_number": 6,
+  "article_url": "https://payhip.com/b/gq89f",
+  "approved": {
+    "facebook": true,
+    "pinterest": true,
+    "youtube": false
+  },
+  "facebook": {
+    "post_caption": "social/sapiver-forge/2026-08-15/facebook-post.txt",
+    "first_comment": "social/sapiver-forge/2026-08-15/facebook-first-comment.txt",
+    "images": [
+      "social/sapiver-forge/2026-08-15/approved-social.png"
+    ]
+  },
+  "pinterest": {
+    "title": "social/sapiver-forge/2026-08-15/pinterest-title.txt",
+    "caption": "social/sapiver-forge/2026-08-15/pinterest-caption.txt",
+    "image": "social/sapiver-forge/2026-08-15/approved-social.png"
+  }
+}
