@@ -1,0 +1,18 @@
+{
+  "date": "2026-08-17",
+  "mode": "dry_run",
+  "type": "sapiver_forge_12_month_content_static",
+  "existing_result_detected": false,
+  "facebook": {
+    "dry_run": true,
+    "approved": true
+  },
+  "pinterest": {
+    "dry_run": true,
+    "approved": true
+  },
+  "youtube": {
+    "dry_run": true,
+    "approved": false
+  }
+}
