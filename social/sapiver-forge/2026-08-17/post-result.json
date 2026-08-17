@@ -1,18 +1,66 @@
 {
   "date": "2026-08-17",
-  "mode": "dry_run",
+  "mode": "live",
   "type": "sapiver_forge_12_month_content_static",
   "existing_result_detected": true,
   "facebook": {
-    "dry_run": true,
-    "approved": true
+    "id": "997877693401171_122137706553198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AA_3VDsgQ_H5vtkKC4EZkgA\"}}"
   },
   "pinterest": {
-    "dry_run": true,
-    "approved": true
+    "created_at": "2026-08-17T12:08:58",
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 564,
+          "url": "https://i.pinimg.com/564x/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        },
+        "1200x": {
+          "width": 1200,
+          "height": 1200,
+          "url": "https://i.pinimg.com/1200x/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        }
+      }
+    },
+    "id": "1038924207810698815",
+    "board_section_id": null,
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "dominant_color": null,
+    "description": "The best workflow is not the cleverest one. It is the one that reliably reduces work and uncertainty.The free Sapiver Forge Notion workspace helps you record these decisions. Link in bio.#SapiverForge #SmallBusinessAI #HumanInTheLoop #ResponsibleAI",
+    "is_standard": true,
+    "alt_text": null,
+    "is_product": false,
+    "has_been_promoted": false,
+    "creative_type": "REGULAR",
+    "board_id": "1038924276479917183",
+    "link": "https://sapiver-press.kit.com/5147ce2817",
+    "parent_pin_id": null,
+    "product_tags": [],
+    "pin_metrics": null,
+    "is_removable": false,
+    "is_owner": true,
+    "title": "Generation time is not the same as job time",
+    "board_name": "Sapiver forge",
+    "resolved_from": "board_name"
   },
   "youtube": {
-    "dry_run": true,
-    "approved": false
+    "skipped": true,
+    "reason": "youtube_not_approved"
   }
 }
