@@ -152,10 +152,8 @@ jobs:
         env:
           DATE_OVERRIDE: ${{ env.DATE_OVERRIDE }}
           SAPIVER_FORGE_POST_MODE: ${{ env.SAPIVER_FORGE_POST_MODE }}
-          PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
-          PINTEREST_TOKEN: ${{ secrets.PINTEREST_TOKEN }}
-          PINTEREST_API_TOKEN: ${{ secrets.PINTEREST_API_TOKEN }}
-          PINTEREST_OAUTH_TOKEN: ${{ secrets.PINTEREST_OAUTH_TOKEN }}
+          # Deliberately do not pass the stale static Pinterest access token.
+          # The publisher will refresh a current token from the refresh token + app credentials.
           PINTEREST_REFRESH_TOKEN: ${{ secrets.PINTEREST_REFRESH_TOKEN }}
           PINTEREST_CLIENT_ID: ${{ secrets.PINTEREST_CLIENT_ID }}
           PINTEREST_CLIENT_SECRET: ${{ secrets.PINTEREST_CLIENT_SECRET }}
