@@ -1,63 +1,97 @@
-name: Sapiver Forge Facebook and Pinterest Distribution
+name: Sapiver Forge Daily Content Distribution
 
 on:
   workflow_dispatch:
     inputs:
       day_number:
-        description: "Day override 1-7"
-        required: true
-        default: "1"
+        description: "Optional day override 1-7; leave blank for today's weekday"
+        required: false
+        default: ""
         type: string
       post_mode:
-        description: "Build only or publish live"
+        description: "Build only, verify credentials, or publish live"
         required: true
         default: "dry_run"
         type: choice
         options:
           - dry_run
+          - verify
           - live
+  schedule:
+    - cron: '5 7 * * *'
 
 permissions:
   contents: write
 
 concurrency:
-  group: sapiver-forge-social-manual
+  group: sapiver-forge-social-daily
   cancel-in-progress: false
 
 jobs:
   distribute:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
 
-      - name: Select day and mode
+      - name: Select day and publishing mode
         shell: bash
+        env:
+          REQUESTED_DAY: ${{ inputs.day_number }}
+          REQUESTED_MODE: ${{ inputs.post_mode }}
+          EVENT_NAME: ${{ github.event_name }}
         run: |
           set -euo pipefail
-          DAY="${{ inputs.day_number }}"
+          if [ -n "${REQUESTED_DAY:-}" ]; then
+            DAY="$REQUESTED_DAY"
+          else
+            DAY="$(TZ=Europe/London date +%u)"
+          fi
           echo "$DAY" | grep -Eq '^[1-7]$'
+          if [ "$EVENT_NAME" = "schedule" ]; then
+            MODE="live"
+          else
+            MODE="${REQUESTED_MODE:-dry_run}"
+          fi
           echo "DAY_NUMBER=$DAY" >> "$GITHUB_ENV"
           echo "DATE_OVERRIDE=$(TZ=Europe/London date +%F)" >> "$GITHUB_ENV"
-          echo "SAPIVER_FORGE_POST_MODE=${{ inputs.post_mode }}" >> "$GITHUB_ENV"
+          echo "SAPIVER_FORGE_POST_MODE=$MODE" >> "$GITHUB_ENV"
+          echo "Selected day $DAY in $MODE mode"
 
-      - name: Pull latest human-approved weekly bridge
+      - name: Pull latest Sapiver Forge weekly content bridge
         shell: bash
         run: |
           set -euo pipefail
           rm -rf vendor/sapiver-forge
           git clone --depth 1 https://github.com/sapiverpress-studio/SapiverForge.git vendor/sapiver-forge
           BRIDGE="vendor/sapiver-forge/bridge/sapiver-forge-weekly/latest"
-          if [ ! -f "$BRIDGE/approved-manifest.json" ]; then
-            echo "No approved Sapiver Forge weekly bridge is available. Nothing will be posted."
+          if [ ! -f "$BRIDGE/distribution-manifest.json" ]; then
+            echo "No current Sapiver Forge distribution bridge is available. Nothing will be posted."
             echo "BRIDGE_AVAILABLE=false" >> "$GITHUB_ENV"
             exit 0
           fi
           (cd "$BRIDGE" && sha256sum -c file-hashes.sha256)
-          test "$(tr -d '\n' < "$BRIDGE/candidate-id.txt")" = "$(node -p "require('./$BRIDGE/approved-manifest.json').candidate_id")"
+          node <<'NODE'
+          const fs=require('fs');
+          const p=JSON.parse(fs.readFileSync('vendor/sapiver-forge/bridge/sapiver-forge-weekly/latest/distribution-manifest.json','utf8'));
+          if(p.schema_version!==4) throw new Error(`Unsupported bridge schema ${p.schema_version}`);
+          if(p.approved_for_automatic_distribution!==true) throw new Error('Bridge is not approved for automatic distribution.');
+          if(!Array.isArray(p.posts)||p.posts.length!==7) throw new Error('Bridge must contain exactly seven posts.');
+          if(p.generation?.automated_audio||p.generation?.automated_video) throw new Error('Automatic media generation must remain disabled.');
+          if(p.generation?.paid_media_calls!==0) throw new Error('Paid media calls must remain zero.');
+          NODE
           echo "BRIDGE_AVAILABLE=true" >> "$GITHUB_ENV"
           echo "BRIDGE_ROOT=$BRIDGE" >> "$GITHUB_ENV"
 
-      - name: Build today's approved static social package
+      - name: Install static image converter
+        if: env.BRIDGE_AVAILABLE == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update >/dev/null
+          sudo apt-get install -y ffmpeg >/dev/null
+
+      - name: Build today's static social package
         if: env.BRIDGE_AVAILABLE == 'true'
         shell: bash
         run: |
@@ -65,32 +99,49 @@ jobs:
           node <<'NODE'
           const fs=require('fs'),path=require('path');
           const root=process.env.BRIDGE_ROOT,date=process.env.DATE_OVERRIDE,day=Number(process.env.DAY_NUMBER);
-          const bridge=JSON.parse(fs.readFileSync(path.join(root,'approved-manifest.json'),'utf8'));
-          if(bridge.approved!==true) throw new Error('Weekly bridge is not approved.');
+          const bridge=JSON.parse(fs.readFileSync(path.join(root,'distribution-manifest.json'),'utf8'));
           const item=bridge.posts.find(p=>p.index===day);
-          if(!item) throw new Error(`Approved bridge has no day ${day}.`);
-          if(!item.image) throw new Error('Approved bridge has no static image for this day.');
-          if(!item.social_comment||/https?:\/\//i.test(item.social_comment)) throw new Error('Approved social comment must use link-in-bio wording and contain no direct URL.');
+          if(!item) throw new Error(`Distribution bridge has no day ${day}.`);
+          if(!item.static_image) throw new Error('Distribution item has no static image.');
+          if(!item.facebook_post||!item.social_comment) throw new Error('Distribution item is missing social copy.');
+          if(/https?:\/\//i.test(item.social_comment)) throw new Error('First comment must contain no direct URL.');
+          const sourceImage=path.join('vendor','sapiver-forge',item.static_image);
+          if(!fs.existsSync(sourceImage)) throw new Error(`Static source image not found: ${sourceImage}`);
           const out=path.join('social','sapiver-forge',date);
           fs.mkdirSync(out,{recursive:true});
           const write=(name,text)=>{const p=path.join(out,name);fs.writeFileSync(p,String(text||'').trim()+'\n');return p;};
-          const image=path.join(out,'approved-social.png');
-          fs.copyFileSync(path.join(root,item.image),image);
-          const manifest={
-            type:'sapiver_forge_weekly_promo_static_only',
+          const meta={out,sourceImage,item,bridge};
+          fs.writeFileSync(path.join(out,'build-input.json'),JSON.stringify(meta,null,2)+'\n');
+          write('facebook-post.txt',item.facebook_post);
+          write('facebook-first-comment.txt',item.social_comment);
+          write('pinterest-title.txt',item.pinterest_title);
+          write('pinterest-caption.txt',item.pinterest_description);
+          write('youtube-title.txt',item.youtube_title||'');
+          write('youtube-description.txt',item.youtube_description||'');
+          write('tiktok-caption.txt',item.tiktok_caption||'');
+          write('spoken-script.txt',item.spoken_script||'');
+          fs.writeFileSync(path.join(out,'manifest.pending.json'),JSON.stringify({
+            type:'sapiver_forge_12_month_content_static',
             candidate_id:bridge.candidate_id,
             week:bridge.week,
             day_number:day,
-            article_url:item.product_url,
+            article_url:item.publish_url,
+            source_image:sourceImage,
             approved:{facebook:true,pinterest:true,youtube:false},
-            facebook:{post_caption:write('facebook-post.txt',item.facebook_post),first_comment:write('facebook-first-comment.txt',item.social_comment),images:[image]},
-            pinterest:{title:write('pinterest-title.txt',item.pinterest_title),caption:write('pinterest-caption.txt',item.pinterest_description),image}
-          };
-          fs.writeFileSync(path.join(out,'manifest.json'),JSON.stringify(manifest,null,2)+'\n');
-          console.log(`Prepared static-only approved day ${day}: ${item.day}. No video copied or published.`);
+            facebook:{post_caption:path.join(out,'facebook-post.txt'),first_comment:path.join(out,'facebook-first-comment.txt'),images:[path.join(out,'approved-social.png')]},
+            pinterest:{title:path.join(out,'pinterest-title.txt'),caption:path.join(out,'pinterest-caption.txt'),image:path.join(out,'approved-social.png')},
+            retained_manual:{tiktok_caption:path.join(out,'tiktok-caption.txt'),spoken_script:path.join(out,'spoken-script.txt'),youtube_title:path.join(out,'youtube-title.txt'),youtube_description:path.join(out,'youtube-description.txt')}
+          },null,2)+'\n');
+          console.log(`Prepared day ${day}: ${item.day} — ${item.purpose}`);
           NODE
+          OUT="social/sapiver-forge/${DATE_OVERRIDE}"
+          SOURCE="$(node -p "require('./$OUT/build-input.json').sourceImage")"
+          ffmpeg -nostdin -hide_banner -loglevel error -y -i "$SOURCE" "$OUT/approved-social.png"
+          test -s "$OUT/approved-social.png"
+          mv "$OUT/manifest.pending.json" "$OUT/manifest.json"
+          rm "$OUT/build-input.json"
 
-      - name: Post approved Facebook and Pinterest content
+      - name: Post Facebook and Pinterest content
         if: env.BRIDGE_AVAILABLE == 'true'
         run: node scripts/post-sapiver-forge-social.mjs
         env:
@@ -120,7 +171,7 @@ jobs:
           RESULT="social/sapiver-forge/${DATE_OVERRIDE}/post-result.json"
           if [ -f "$RESULT" ]; then cat "$RESULT"; else echo "No posting result was produced."; fi
 
-      - name: Commit daily static assets and posting record
+      - name: Commit daily content and posting record
         if: env.BRIDGE_AVAILABLE == 'true' && always()
         shell: bash
         run: |
@@ -129,7 +180,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add "social/sapiver-forge/${DATE_OVERRIDE}"
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Post approved static Sapiver Forge social content for ${DATE_OVERRIDE}"
+          git commit -m "Publish Sapiver Forge daily content for ${DATE_OVERRIDE}"
           for attempt in 1 2 3; do
             if git push; then exit 0; fi
             git pull --rebase origin main
