@@ -1,21 +1,18 @@
 {
   "date": "2026-08-17",
-  "mode": "live",
+  "mode": "dry_run",
   "type": "sapiver_forge_12_month_content_static",
   "existing_result_detected": true,
   "facebook": {
-    "id": "997877693401171_122137703001198448",
-    "posting_format": "text_link_fallback",
-    "resolved_page_token": true,
-    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AUUGwjw-YnaJN5woSTpzUba\"}}"
+    "dry_run": true,
+    "approved": true
   },
   "pinterest": {
-    "failed": true,
-    "channel": "pinterest",
-    "error": "401 Unauthorized: {\"code\":2,\"message\":\"Authentication failed.\",\"status\":\"failure\"}"
+    "dry_run": true,
+    "approved": true
   },
   "youtube": {
-    "skipped": true,
-    "reason": "youtube_not_approved"
+    "dry_run": true,
+    "approved": false
   }
 }
