@@ -19,6 +19,11 @@ on:
           - live
   schedule:
     - cron: '5 7 * * *'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/sapiver-forge-social.yml'
+      - 'scripts/post-sapiver-forge-social.mjs'
 
 permissions:
   contents: write
