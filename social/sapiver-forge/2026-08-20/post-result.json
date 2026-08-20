@@ -1,0 +1,66 @@
+{
+  "date": "2026-08-20",
+  "mode": "live",
+  "type": "sapiver_forge_12_month_content_static",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122138061009198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AX7Y8w79C_IiOB0sjPJ6Uly\"}}"
+  },
+  "pinterest": {
+    "is_product": false,
+    "board_section_id": null,
+    "is_owner": true,
+    "id": "1038924207810789353",
+    "dominant_color": "#070a0d",
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "has_been_promoted": false,
+    "is_standard": true,
+    "product_tags": [],
+    "created_at": "2026-08-20T07:55:17",
+    "creative_type": "REGULAR",
+    "link": "https://sapiver-press.kit.com/5147ce2817",
+    "board_id": "1038924276479917183",
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 564,
+          "url": "https://i.pinimg.com/564x/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        },
+        "1200x": {
+          "width": 1200,
+          "height": 1200,
+          "url": "https://i.pinimg.com/1200x/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        }
+      }
+    },
+    "alt_text": null,
+    "title": "A decision you cannot find later has to be made twice",
+    "parent_pin_id": null,
+    "is_removable": false,
+    "description": "The free Sapiver Forge workspace is designed to make the decision visible before buying more software.The free Sapiver Forge Notion workspace helps you record these decisions. Link in bio.#SapiverForge #SmallBusinessAI #HumanInTheLoop #ResponsibleAI",
+    "pin_metrics": null,
+    "board_name": "Sapiver forge",
+    "resolved_from": "board_name"
+  },
+  "youtube": {
+    "skipped": true,
+    "reason": "youtube_not_approved"
+  }
+}
