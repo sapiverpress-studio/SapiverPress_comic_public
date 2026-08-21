@@ -1,0 +1,31 @@
+{
+  "type": "sapiver_forge_12_month_content_static",
+  "candidate_id": "6ca7d71db9f0fb25599d09b3a3099ef251daff50cfbef69c346390a5e7168e48",
+  "week": "2026-08-17",
+  "day_number": 5,
+  "article_url": "https://payhip.com/b/cmklU",
+  "source_image": "vendor/sapiver-forge/public/products/gate-system/complete-bundle/01_Cover.webp",
+  "approved": {
+    "facebook": true,
+    "pinterest": true,
+    "youtube": false
+  },
+  "facebook": {
+    "post_caption": "social/sapiver-forge/2026-08-21/facebook-post.txt",
+    "first_comment": "social/sapiver-forge/2026-08-21/facebook-first-comment.txt",
+    "images": [
+      "social/sapiver-forge/2026-08-21/approved-social.png"
+    ]
+  },
+  "pinterest": {
+    "title": "social/sapiver-forge/2026-08-21/pinterest-title.txt",
+    "caption": "social/sapiver-forge/2026-08-21/pinterest-caption.txt",
+    "image": "social/sapiver-forge/2026-08-21/approved-social.png"
+  },
+  "retained_manual": {
+    "tiktok_caption": "social/sapiver-forge/2026-08-21/tiktok-caption.txt",
+    "spoken_script": "social/sapiver-forge/2026-08-21/spoken-script.txt",
+    "youtube_title": "social/sapiver-forge/2026-08-21/youtube-title.txt",
+    "youtube_description": "social/sapiver-forge/2026-08-21/youtube-description.txt"
+  }
+}
