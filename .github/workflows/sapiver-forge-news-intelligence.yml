@@ -61,7 +61,7 @@ jobs:
           echo "DATE_OVERRIDE=$DATE" >> "$GITHUB_ENV"
           echo "date=$DATE" >> "$GITHUB_OUTPUT"
 
-      - name: Pull latest Sapiver Forge news intelligence bridge
+      - name: Pull latest verification-ready Sapiver Forge news bridge
         id: bridge
         if: github.event_name != 'push'
         shell: bash
@@ -82,6 +82,9 @@ jobs:
           const expected=process.env.DATE_OVERRIDE;
           if(manifest.date!==expected){
             console.log(`Bridge date ${manifest.date} does not match ${expected}; skipping stale output.`);
+            process.exitCode=12;
+          } else if(manifest.newsletter_ready_for_human_approval!==true || Number(manifest.overall_confidence||0)<0.78){
+            console.log(`Bridge ${expected} is not verification-ready; no social package will be built.`);
             process.exitCode=12;
           }
           NODE
