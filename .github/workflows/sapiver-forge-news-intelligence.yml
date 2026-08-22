@@ -45,6 +45,7 @@ jobs:
         run: echo "Feature-branch syntax test complete; live bridge consumption is intentionally skipped."
 
       - name: Resolve target date
+        id: edition
         if: github.event_name != 'push'
         shell: bash
         env:
@@ -58,8 +59,10 @@ jobs:
           fi
           echo "$DATE" | grep -Eq '^[0-9]{4}-[0-9]{2}-[0-9]{2}$'
           echo "DATE_OVERRIDE=$DATE" >> "$GITHUB_ENV"
+          echo "date=$DATE" >> "$GITHUB_OUTPUT"
 
       - name: Pull latest Sapiver Forge news intelligence bridge
+        id: bridge
         if: github.event_name != 'push'
         shell: bash
         run: |
@@ -69,7 +72,7 @@ jobs:
           BRIDGE="vendor/sapiver-forge/bridge/news-intelligence/latest"
           if [ ! -f "$BRIDGE/manifest.json" ]; then
             echo "No Sapiver Forge news intelligence bridge is available."
-            echo "BRIDGE_CURRENT=false" >> "$GITHUB_ENV"
+            echo "current=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           set +e
@@ -85,22 +88,20 @@ jobs:
           status=$?
           set -e
           if [ "$status" -eq 12 ]; then
-            echo "BRIDGE_CURRENT=false" >> "$GITHUB_ENV"
+            echo "current=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           [ "$status" -eq 0 ] || exit "$status"
-          echo "BRIDGE_CURRENT=true" >> "$GITHUB_ENV"
           echo "NEWS_BRIDGE_ROOT=$BRIDGE" >> "$GITHUB_ENV"
+          echo "current=true" >> "$GITHUB_OUTPUT"
+          echo "root=$BRIDGE" >> "$GITHUB_OUTPUT"
 
       - name: Build secondary daily social package
-        if: github.event_name != 'push' && env.BRIDGE_CURRENT == 'true'
-        env:
-          NEWS_BRIDGE_ROOT: ${{ env.NEWS_BRIDGE_ROOT }}
-          DATE_OVERRIDE: ${{ env.DATE_OVERRIDE }}
+        if: github.event_name != 'push' && steps.bridge.outputs.current == 'true'
         run: node scripts/build-news-intelligence-social.mjs
 
       - name: Verify news remains human-gated
-        if: github.event_name != 'push' && env.BRIDGE_CURRENT == 'true'
+        if: github.event_name != 'push' && steps.bridge.outputs.current == 'true'
         run: |
           node <<'NODE'
           const fs=require('fs');
@@ -112,7 +113,7 @@ jobs:
           NODE
 
       - name: Commit secondary output
-        if: github.event_name != 'push' && env.BRIDGE_CURRENT == 'true'
+        if: github.event_name != 'push' && steps.bridge.outputs.current == 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -128,10 +129,10 @@ jobs:
           git push
 
       - name: Upload secondary output
-        if: github.event_name != 'push' && env.BRIDGE_CURRENT == 'true'
+        if: github.event_name != 'push' && steps.bridge.outputs.current == 'true'
         uses: actions/upload-artifact@v4
         with:
-          name: sapiver-forge-news-social-${{ env.DATE_OVERRIDE }}-${{ github.run_number }}
-          path: social/news-intelligence/${{ env.DATE_OVERRIDE }}/
+          name: sapiver-forge-news-social-${{ steps.edition.outputs.date }}-${{ github.run_number }}
+          path: social/news-intelligence/${{ steps.edition.outputs.date }}/
           retention-days: 14
           if-no-files-found: error
