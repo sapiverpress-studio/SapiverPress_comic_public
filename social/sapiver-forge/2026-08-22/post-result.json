@@ -1,0 +1,66 @@
+{
+  "date": "2026-08-22",
+  "mode": "live",
+  "type": "sapiver_forge_12_month_content_static",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122138286993198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AqHpG1w3gdYH1g-fnGACroy\"}}"
+  },
+  "pinterest": {
+    "dominant_color": "#070a0d",
+    "product_tags": [],
+    "is_removable": false,
+    "is_owner": true,
+    "created_at": "2026-08-22T07:42:43",
+    "id": "1038924207810849829",
+    "creative_type": "REGULAR",
+    "board_section_id": null,
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 564,
+          "url": "https://i.pinimg.com/564x/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        },
+        "1200x": {
+          "width": 1200,
+          "height": 1200,
+          "url": "https://i.pinimg.com/1200x/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        }
+      }
+    },
+    "pin_metrics": null,
+    "title": "The first AI decision is whether the task needs AI at all",
+    "board_id": "1038924276479917183",
+    "link": "https://sapiver-press.kit.com/5147ce2817",
+    "is_product": false,
+    "description": "Extra tools create extra checking, setup and renewal decisions. Count those costs before calling something automation.The free Sapiver Forge Notion workspace helps you record these decisions. Link in bio.#SapiverForge #SmallBusinessAI #HumanInTheLoop #ResponsibleAI",
+    "alt_text": null,
+    "has_been_promoted": false,
+    "is_standard": true,
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "parent_pin_id": null,
+    "board_name": "Sapiver forge",
+    "resolved_from": "board_name"
+  },
+  "youtube": {
+    "skipped": true,
+    "reason": "youtube_not_approved"
+  }
+}
