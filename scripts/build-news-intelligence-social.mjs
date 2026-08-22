@@ -15,6 +15,7 @@ if (manifest.schema_version !== 1 || manifest.type !== "sapiver_forge_news_intel
 if (!/^\d{4}-\d{2}-\d{2}$/.test(manifest.date || "")) throw new Error("Bridge date is invalid.");
 if (expectedDate && manifest.date !== expectedDate) throw new Error(`Bridge is stale: expected ${expectedDate}, found ${manifest.date}.`);
 if (manifest.approved_for_automatic_distribution !== false) throw new Error("Current-news bridge approval contract changed unexpectedly.");
+if (manifest.newsletter_ready_for_human_approval !== true || Number(manifest.overall_confidence || 0) < 0.78) throw new Error("News bridge is not verification-ready for secondary output.");
 if (!Array.isArray(manifest.stories) || !manifest.stories.length) throw new Error("Bridge contains no stories.");
 
 if (fs.existsSync(hashesPath)) {
@@ -56,7 +57,7 @@ function wrapHeadline(value, max = 27, maxLines = 5) {
 
 const lines = wrapHeadline(lead.headline || social.lead_headline);
 const lineSvg = lines.map((line, index) => `<text x="84" y="${420 + index * 92}" font-size="70" font-weight="750" fill="#f5f7f8">${xml(line)}</text>`).join("\n");
-const sourceLabel = `${lead.source || "Verified source"} · ${Math.round(Number(lead.confidence || 0) * 100)}% editorial confidence`;
+const sourceLabel = `${lead.source || "Verified source"} · verification-ready draft`;
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
 <rect width="1080" height="1350" fill="#071827"/>
 <rect x="0" y="0" width="18" height="1350" fill="#e2b85b"/>
