@@ -34,8 +34,8 @@ jobs:
         with:
           node-version: '24'
 
-      - name: Install project dependencies
-        run: npm ci
+      - name: Install only the image dependency used by this workflow
+        run: npm install --no-save --package-lock=false --no-audit --no-fund sharp@0.34.2
 
       - name: Syntax check
         run: node --check scripts/build-news-intelligence-social.mjs
