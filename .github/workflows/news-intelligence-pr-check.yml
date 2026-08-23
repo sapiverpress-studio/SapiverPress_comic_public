@@ -1,0 +1,69 @@
+name: News Intelligence Secondary PR Check
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/sapiver-forge-news-intelligence.yml'
+      - '.github/workflows/news-intelligence-pr-check.yml'
+      - 'scripts/build-news-intelligence-social.mjs'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Install only the image dependency under test
+        run: npm install --no-save --package-lock=false --no-audit --no-fund sharp@0.34.2
+      - name: Syntax check
+        run: node --check scripts/build-news-intelligence-social.mjs
+      - name: Exercise real social-card output
+        shell: bash
+        run: |
+          set -euo pipefail
+          TEST_DATE=2099-01-01
+          BRIDGE="$RUNNER_TEMP/news-bridge"
+          mkdir -p "$BRIDGE"
+          cat > "$BRIDGE/manifest.json" <<'JSON'
+          {
+            "schema_version": 1,
+            "type": "sapiver_forge_news_intelligence",
+            "date": "2099-01-01",
+            "candidate_id": "comic-pr-check",
+            "overall_confidence": 0.91,
+            "newsletter_ready_for_human_approval": true,
+            "approved_for_automatic_distribution": false,
+            "stories": [{
+              "category": "technology",
+              "headline": "Test verified intelligence story for social output",
+              "confirmed_fact": "CI fixture.",
+              "why_it_matters": "It verifies the PNG and copy packaging path.",
+              "interpretation": "Our read: the secondary output path is structurally intact.",
+              "source": "CI fixture",
+              "confidence": 0.91,
+              "url": "https://example.com/source"
+            }],
+            "social": {
+              "lead_headline": "Test verified intelligence story for social output",
+              "facebook_post": "Test Facebook copy",
+              "pinterest_title": "Test Pinterest title",
+              "pinterest_description": "Test Pinterest description",
+              "tiktok_caption": "Test TikTok caption",
+              "spoken_script": "Test spoken script"
+            }
+          }
+          JSON
+          NEWS_BRIDGE_ROOT="$BRIDGE" DATE_OVERRIDE="$TEST_DATE" node scripts/build-news-intelligence-social.mjs
+          test -s "social/news-intelligence/$TEST_DATE/daily-brief-card.png"
+          node <<'NODE'
+          const fs=require('fs');
+          const p=JSON.parse(fs.readFileSync('social/news-intelligence/2099-01-01/manifest.json','utf8'));
+          if(p.posting_allowed!==false) throw new Error('Current-news output must remain human-gated.');
+          if(p.human_approval_required!==true) throw new Error('Human approval contract missing.');
+          NODE

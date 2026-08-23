@@ -1,0 +1,141 @@
+name: Sapiver Forge News Intelligence Secondary Output
+
+on:
+  workflow_dispatch:
+    inputs:
+      edition_date:
+        description: Optional date override (YYYY-MM-DD). Leave blank for today in Europe/London.
+        required: false
+        type: string
+  schedule:
+    - cron: '10 7 * * 1-5'
+  push:
+    branches:
+      - feature/news-intelligence-secondary-output
+    paths:
+      - '.github/workflows/sapiver-forge-news-intelligence.yml'
+      - 'scripts/build-news-intelligence-social.mjs'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sapiver-forge-news-intelligence-secondary
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Install only the image dependency used by this workflow
+        run: npm install --no-save --package-lock=false --no-audit --no-fund sharp@0.34.2
+
+      - name: Syntax check
+        run: node --check scripts/build-news-intelligence-social.mjs
+
+      - name: Stop after branch test
+        if: github.event_name == 'push'
+        run: echo "Feature-branch syntax test complete; live bridge consumption is intentionally skipped."
+
+      - name: Resolve target date
+        id: edition
+        if: github.event_name != 'push'
+        shell: bash
+        env:
+          REQUESTED_DATE: ${{ inputs.edition_date }}
+        run: |
+          set -euo pipefail
+          if [ -n "${REQUESTED_DATE:-}" ]; then
+            DATE="$REQUESTED_DATE"
+          else
+            DATE="$(TZ=Europe/London date +%F)"
+          fi
+          echo "$DATE" | grep -Eq '^[0-9]{4}-[0-9]{2}-[0-9]{2}$'
+          echo "DATE_OVERRIDE=$DATE" >> "$GITHUB_ENV"
+          echo "date=$DATE" >> "$GITHUB_OUTPUT"
+
+      - name: Pull latest verification-ready Sapiver Forge news bridge
+        id: bridge
+        if: github.event_name != 'push'
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf vendor/sapiver-forge
+          git clone --depth 1 https://github.com/sapiverpress-studio/SapiverForge.git vendor/sapiver-forge
+          BRIDGE="vendor/sapiver-forge/bridge/news-intelligence/latest"
+          if [ ! -f "$BRIDGE/manifest.json" ]; then
+            echo "No Sapiver Forge news intelligence bridge is available."
+            echo "current=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          set +e
+          node <<'NODE'
+          const fs=require('fs');
+          const manifest=JSON.parse(fs.readFileSync('vendor/sapiver-forge/bridge/news-intelligence/latest/manifest.json','utf8'));
+          const expected=process.env.DATE_OVERRIDE;
+          if(manifest.date!==expected){
+            console.log(`Bridge date ${manifest.date} does not match ${expected}; skipping stale output.`);
+            process.exitCode=12;
+          } else if(manifest.newsletter_ready_for_human_approval!==true || Number(manifest.overall_confidence||0)<0.78){
+            console.log(`Bridge ${expected} is not verification-ready; no social package will be built.`);
+            process.exitCode=12;
+          }
+          NODE
+          status=$?
+          set -e
+          if [ "$status" -eq 12 ]; then
+            echo "current=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          [ "$status" -eq 0 ] || exit "$status"
+          echo "NEWS_BRIDGE_ROOT=$BRIDGE" >> "$GITHUB_ENV"
+          echo "current=true" >> "$GITHUB_OUTPUT"
+          echo "root=$BRIDGE" >> "$GITHUB_OUTPUT"
+
+      - name: Build secondary daily social package
+        if: github.event_name != 'push' && steps.bridge.outputs.current == 'true'
+        run: node scripts/build-news-intelligence-social.mjs
+
+      - name: Verify news remains human-gated
+        if: github.event_name != 'push' && steps.bridge.outputs.current == 'true'
+        run: |
+          node <<'NODE'
+          const fs=require('fs');
+          const date=process.env.DATE_OVERRIDE;
+          const p=JSON.parse(fs.readFileSync(`social/news-intelligence/${date}/manifest.json`,'utf8'));
+          if(p.posting_allowed!==false) throw new Error('News social output must remain human-gated.');
+          if(p.human_approval_required!==true) throw new Error('Human approval contract missing.');
+          if(!fs.existsSync(`social/news-intelligence/${date}/daily-brief-card.png`)) throw new Error('Daily brief card missing.');
+          NODE
+
+      - name: Commit secondary output
+        if: github.event_name != 'push' && steps.bridge.outputs.current == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "sapiver-news-social-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add "social/news-intelligence/${DATE_OVERRIDE}"
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Build Sapiver Forge news social package ${DATE_OVERRIDE} [skip ci]"
+          for attempt in 1 2 3; do
+            if git push; then exit 0; fi
+            git pull --rebase origin main
+          done
+          git push
+
+      - name: Upload secondary output
+        if: github.event_name != 'push' && steps.bridge.outputs.current == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: sapiver-forge-news-social-${{ steps.edition.outputs.date }}-${{ github.run_number }}
+          path: social/news-intelligence/${{ steps.edition.outputs.date }}/
+          retention-days: 14
+          if-no-files-found: error
