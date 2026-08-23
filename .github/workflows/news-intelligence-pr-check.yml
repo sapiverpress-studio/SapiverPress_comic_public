@@ -19,8 +19,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - name: Install dependencies
-        run: npm ci
+      - name: Install only the image dependency under test
+        run: npm install --no-save --package-lock=false --no-audit --no-fund sharp@0.34.2
       - name: Syntax check
         run: node --check scripts/build-news-intelligence-social.mjs
       - name: Exercise real social-card output
@@ -37,6 +37,7 @@ jobs:
             "date": "2099-01-01",
             "candidate_id": "comic-pr-check",
             "overall_confidence": 0.91,
+            "newsletter_ready_for_human_approval": true,
             "approved_for_automatic_distribution": false,
             "stories": [{
               "category": "technology",
