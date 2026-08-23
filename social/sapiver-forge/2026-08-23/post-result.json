@@ -1,0 +1,66 @@
+{
+  "date": "2026-08-23",
+  "mode": "live",
+  "type": "sapiver_forge_12_month_content_static",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122138394165198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AFW-PpVKmEZw_es2OuNdHdE\"}}"
+  },
+  "pinterest": {
+    "pin_metrics": null,
+    "is_removable": false,
+    "is_owner": true,
+    "is_product": false,
+    "board_section_id": null,
+    "board_id": "1038924276479917183",
+    "dominant_color": "#070a0d",
+    "creative_type": "REGULAR",
+    "parent_pin_id": null,
+    "is_standard": true,
+    "title": "Put the human decision before the point of no return",
+    "id": "1038924207810881850",
+    "has_been_promoted": false,
+    "created_at": "2026-08-23T07:45:16",
+    "alt_text": null,
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 564,
+          "url": "https://i.pinimg.com/564x/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        },
+        "1200x": {
+          "width": 1200,
+          "height": 1200,
+          "url": "https://i.pinimg.com/1200x/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        }
+      }
+    },
+    "description": "Define what AI may do, what evidence the reviewer sees and who is allowed to approve the result.Use the free Sapiver Forge Notion workspace to record the decision and review what actually worked. Link in bio.#SapiverForge #SmallBusinessAI #HumanInTheLoop #ResponsibleAI",
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "product_tags": [],
+    "link": "https://sapiver-press.kit.com/5147ce2817",
+    "board_name": "Sapiver forge",
+    "resolved_from": "board_name"
+  },
+  "youtube": {
+    "skipped": true,
+    "reason": "youtube_not_approved"
+  }
+}
