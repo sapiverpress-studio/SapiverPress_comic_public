@@ -1,0 +1,18 @@
+{
+  "type": "sapiver_forge_news_intelligence_social",
+  "schema_version": 1,
+  "date": "2026-08-24",
+  "source_candidate_id": "f75effc841fa79501d3f46e87d9d2ba064dfbf7f86b030eae7c1f3b86d84e6ff",
+  "source_confidence": 0.88,
+  "posting_allowed": false,
+  "human_approval_required": true,
+  "reason": "Current news is generated as a secondary social package but is not auto-posted without human approval.",
+  "image": "social/news-intelligence/2026-08-24/daily-brief-card.png",
+  "files": {
+    "facebook": "social/news-intelligence/2026-08-24/facebook-post.txt",
+    "pinterest_title": "social/news-intelligence/2026-08-24/pinterest-title.txt",
+    "pinterest_caption": "social/news-intelligence/2026-08-24/pinterest-caption.txt",
+    "tiktok_caption": "social/news-intelligence/2026-08-24/tiktok-caption.txt",
+    "spoken_script": "social/news-intelligence/2026-08-24/spoken-script.txt"
+  }
+}
