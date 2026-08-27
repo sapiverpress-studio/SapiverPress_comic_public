@@ -1,0 +1,31 @@
+{
+  "type": "sapiver_forge_12_month_content_static",
+  "candidate_id": "cc05ec42f9a3af797cc98bcbe18ffe8fe4ae3ae390a5a7be146d701e337e984c",
+  "week": "2026-08-24",
+  "day_number": 4,
+  "article_url": "https://sapiver-press.kit.com/5147ce2817",
+  "source_image": "vendor/sapiver-forge/public/products/notion-workspace/01_Cover.webp",
+  "approved": {
+    "facebook": true,
+    "pinterest": true,
+    "youtube": false
+  },
+  "facebook": {
+    "post_caption": "social/sapiver-forge/2026-08-27/facebook-post.txt",
+    "first_comment": "social/sapiver-forge/2026-08-27/facebook-first-comment.txt",
+    "images": [
+      "social/sapiver-forge/2026-08-27/approved-social.png"
+    ]
+  },
+  "pinterest": {
+    "title": "social/sapiver-forge/2026-08-27/pinterest-title.txt",
+    "caption": "social/sapiver-forge/2026-08-27/pinterest-caption.txt",
+    "image": "social/sapiver-forge/2026-08-27/approved-social.png"
+  },
+  "retained_manual": {
+    "tiktok_caption": "social/sapiver-forge/2026-08-27/tiktok-caption.txt",
+    "spoken_script": "social/sapiver-forge/2026-08-27/spoken-script.txt",
+    "youtube_title": "social/sapiver-forge/2026-08-27/youtube-title.txt",
+    "youtube_description": "social/sapiver-forge/2026-08-27/youtube-description.txt"
+  }
+}
