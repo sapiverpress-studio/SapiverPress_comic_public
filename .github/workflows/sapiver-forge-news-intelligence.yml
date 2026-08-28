@@ -7,8 +7,6 @@ on:
         description: Optional date override (YYYY-MM-DD). Leave blank for today in Europe/London.
         required: false
         type: string
-  schedule:
-    - cron: '10 7 * * 1-5'
   push:
     branches:
       - feature/news-intelligence-secondary-output
