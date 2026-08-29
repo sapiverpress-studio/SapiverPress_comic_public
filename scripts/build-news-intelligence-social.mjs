@@ -31,7 +31,6 @@ const subtitle=wrap(project.social_subtitle||`Build a ${project.title} with AI`,
 const hookSvg=hook.map((line,i)=>`<text x="70" y="${150+i*78}" font-size="65" font-weight="800" fill="${i===hook.length-1?"#e4c476":"#ffffff"}">${xml(line)}</text>`).join("");
 const subtitleSvg=subtitle.map((line,i)=>`<text x="70" y="${1575+i*64}" font-size="50" font-weight="800" fill="#173c35">${xml(line)}</text>`).join("");
 const frame=`<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920">
-<rect width="1080" height="1920" fill="#fff8e9"/>
 <rect width="1080" height="430" fill="#123b33"/>
 <text x="70" y="72" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700" fill="#e4c476" letter-spacing="4">AI INQUISITIVE PARENTS · DAY ${String(project.day).padStart(3,"0")}</text>
 <g font-family="Arial,Helvetica,sans-serif">${hookSvg}</g>
