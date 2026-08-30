@@ -2,62 +2,14 @@
   "date": "2026-08-30",
   "mode": "live",
   "type": "sapiver_forge_12_month_content_static",
-  "existing_result_detected": false,
+  "existing_result_detected": true,
   "facebook": {
-    "id": "997877693401171_122139139287198448",
-    "posting_format": "text_link_fallback",
-    "resolved_page_token": true,
-    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AM8Rc2W8XbI2D3H2edbQK3e\"}}"
+    "skipped": true,
+    "reason": "already_posted"
   },
   "pinterest": {
-    "is_removable": false,
-    "has_been_promoted": false,
-    "board_owner": {
-      "username": "sapiver"
-    },
-    "alt_text": null,
-    "id": "1038924207811108007",
-    "is_owner": true,
-    "media": {
-      "media_type": "image",
-      "images": {
-        "150x150": {
-          "width": 150,
-          "height": 150,
-          "url": "https://i.pinimg.com/150x150/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
-        },
-        "400x300": {
-          "width": 400,
-          "height": 300,
-          "url": "https://i.pinimg.com/400x300/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
-        },
-        "600x": {
-          "width": 564,
-          "height": 564,
-          "url": "https://i.pinimg.com/564x/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
-        },
-        "1200x": {
-          "width": 1200,
-          "height": 1200,
-          "url": "https://i.pinimg.com/1200x/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
-        }
-      }
-    },
-    "creative_type": "REGULAR",
-    "created_at": "2026-08-30T06:12:07",
-    "is_standard": true,
-    "pin_metrics": null,
-    "product_tags": [],
-    "dominant_color": "#070a0d",
-    "title": "You do not need more AI policy; you need clearer decision points",
-    "board_section_id": null,
-    "board_id": "1038924276479917183",
-    "link": "https://sapiver-press.kit.com/5147ce2817",
-    "is_product": false,
-    "description": "The Sapiver Forge Gate System covers whether AI belongs in the task, how the workflow is controlled, whether output can leave and whether the workflow should continue.Use the free Sapiver Forge Notion workspace to record the decision and review what actually worked. Link in bio.#SapiverForge #SmallBusinessAI #HumanInTheLoop #ResponsibleAI",
-    "parent_pin_id": null,
-    "board_name": "Sapiver forge",
-    "resolved_from": "board_name"
+    "skipped": true,
+    "reason": "already_posted"
   },
   "youtube": {
     "skipped": true,
