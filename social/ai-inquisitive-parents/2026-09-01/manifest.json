@@ -1,0 +1,18 @@
+{
+  "type": "ai_inquisitive_parents_social",
+  "schema_version": 1,
+  "date": "2026-09-01",
+  "day": 4,
+  "slug": "make-it-yours-planner",
+  "title": "Make-It-Yours Planner",
+  "source_repository": "sapiverpress-studio/SapiverForge",
+  "posting_allowed": false,
+  "human_approval_required": true,
+  "reason": "The package is prepared for manual review and posting.",
+  "files": {
+    "poster": "tiktok-poster.png",
+    "caption": "tiktok-caption.txt",
+    "app_link": "app-link.txt",
+    "details": "project-details.txt"
+  }
+}
