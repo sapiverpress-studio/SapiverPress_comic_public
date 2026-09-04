@@ -1,0 +1,66 @@
+{
+  "date": "2026-09-04",
+  "mode": "live",
+  "type": "sapiver_forge_12_month_content_static",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122139730557198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AM_HvMabwON38Y-r1qECePN\"}}"
+  },
+  "pinterest": {
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/4e/f3/f0/4ef3f074f575f98bdba4dc50c7ef3930.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/4e/f3/f0/4ef3f074f575f98bdba4dc50c7ef3930.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 564,
+          "url": "https://i.pinimg.com/564x/4e/f3/f0/4ef3f074f575f98bdba4dc50c7ef3930.jpg"
+        },
+        "1200x": {
+          "width": 1200,
+          "height": 1200,
+          "url": "https://i.pinimg.com/1200x/4e/f3/f0/4ef3f074f575f98bdba4dc50c7ef3930.jpg"
+        }
+      }
+    },
+    "description": "A workflow that saved time six months ago can become a burden after the task, client or subscription changes.If you need the complete four-gate process, the Applied AI Gate System bundle is in the link in bio.#SapiverForge #SmallBusinessAI #HumanInTheLoop #ResponsibleAI",
+    "alt_text": null,
+    "id": "1038924207811270190",
+    "is_standard": true,
+    "parent_pin_id": null,
+    "is_product": false,
+    "is_removable": false,
+    "product_tags": [],
+    "pin_metrics": null,
+    "dominant_color": "#020b13",
+    "board_id": "1038924276479917183",
+    "is_owner": true,
+    "title": "Review the automation after it has met real work, not just the demo",
+    "link": "https://payhip.com/b/cmklU",
+    "board_section_id": null,
+    "creative_type": "REGULAR",
+    "has_been_promoted": false,
+    "created_at": "2026-09-04T12:07:56",
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "board_name": "Sapiver forge",
+    "resolved_from": "board_name"
+  },
+  "youtube": {
+    "skipped": true,
+    "reason": "youtube_not_approved"
+  }
+}
