@@ -1,0 +1,66 @@
+{
+  "date": "2026-09-06",
+  "mode": "live",
+  "type": "sapiver_forge_12_month_content_static",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122139955437198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AwBs0rxcpLLnSsq6634ega1\"}}"
+  },
+  "pinterest": {
+    "alt_text": null,
+    "parent_pin_id": null,
+    "board_section_id": null,
+    "has_been_promoted": false,
+    "is_product": false,
+    "creative_type": "REGULAR",
+    "is_standard": true,
+    "dominant_color": "#070a0d",
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "description": "The Sapiver Forge Gate System covers whether AI belongs in the task, how the workflow is controlled, whether output can leave and whether the workflow should continue.Use the free Sapiver Forge Notion workspace to record the decision and review what actually worked. Link in bio.#SapiverForge #SmallBusinessAI #HumanInTheLoop #ResponsibleAI",
+    "id": "1038924207811337559",
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 564,
+          "url": "https://i.pinimg.com/564x/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        },
+        "1200x": {
+          "width": 1200,
+          "height": 1200,
+          "url": "https://i.pinimg.com/1200x/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        }
+      }
+    },
+    "link": "https://sapiver-press.kit.com/5147ce2817",
+    "is_owner": true,
+    "title": "You do not need more AI policy; you need clearer decision points",
+    "is_removable": false,
+    "product_tags": [],
+    "board_id": "1038924276479917183",
+    "created_at": "2026-09-06T11:39:30",
+    "pin_metrics": null,
+    "board_name": "Sapiver forge",
+    "resolved_from": "board_name"
+  },
+  "youtube": {
+    "skipped": true,
+    "reason": "youtube_not_approved"
+  }
+}
