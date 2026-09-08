@@ -1,0 +1,66 @@
+{
+  "date": "2026-09-08",
+  "mode": "live",
+  "type": "sapiver_forge_12_month_content_static",
+  "existing_result_detected": false,
+  "facebook": {
+    "id": "997877693401171_122140213569198448",
+    "posting_format": "text_link_fallback",
+    "resolved_page_token": true,
+    "fallback_reason": "403 Forbidden: {\"error\":{\"message\":\"(#200) You do not have sufficient permissions to perform this action\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"Ay-ZCFLRVR8XBEY4TD3WirF\"}}"
+  },
+  "pinterest": {
+    "parent_pin_id": null,
+    "is_standard": true,
+    "board_section_id": null,
+    "is_product": false,
+    "creative_type": "REGULAR",
+    "is_owner": true,
+    "is_removable": false,
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "title": "If nobody owns the final decision, the workflow is not controlled",
+    "created_at": "2026-09-08T12:08:25",
+    "link": "https://sapiver-press.kit.com/5147ce2817",
+    "board_id": "1038924276479917183",
+    "dominant_color": "#070a0d",
+    "has_been_promoted": false,
+    "product_tags": [],
+    "id": "1038924207811405371",
+    "description": "Good control is not watching every step. It is putting one clear human decision at the point that matters.The free Sapiver Forge Notion workspace helps you record these decisions. Link in bio.#SapiverForge #SmallBusinessAI #HumanInTheLoop #ResponsibleAI",
+    "alt_text": null,
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 564,
+          "url": "https://i.pinimg.com/564x/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        },
+        "1200x": {
+          "width": 1200,
+          "height": 1200,
+          "url": "https://i.pinimg.com/1200x/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        }
+      }
+    },
+    "pin_metrics": null,
+    "board_name": "Sapiver forge",
+    "resolved_from": "board_name"
+  },
+  "youtube": {
+    "skipped": true,
+    "reason": "youtube_not_approved"
+  }
+}
