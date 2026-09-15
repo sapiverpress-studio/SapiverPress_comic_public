@@ -50,6 +50,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
+      - name: Check Instagram publisher syntax
+        run: node --check scripts/post-daily-brief-instagram.mjs
       - name: Read exact released source commit
         uses: actions/checkout@v4
         with:
@@ -78,8 +80,19 @@ jobs:
           YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
         run: node scripts/run-daily-social-bridge.mjs
-      - name: Persist individual posting receipts
+      - name: Publish Instagram Reel
+        id: instagram
         if: always() && steps.socials.outcome != 'skipped'
+        continue-on-error: true
+        env:
+          SOURCE_ROOT: ${{ github.workspace }}/vendor/sapiver-forge
+          BRIDGE_RECEIPT_DIR: ${{ github.workspace }}/social/daily-brief/${{ inputs.edition_date }}
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
+          INSTAGRAM_BUSINESS_ACCOUNT_ID: ${{ secrets.INSTAGRAM_BUSINESS_ACCOUNT_ID }}
+        run: node scripts/post-daily-brief-instagram.mjs
+      - name: Persist individual posting receipts
+        if: always() && (steps.socials.outcome != 'skipped' || steps.instagram.outcome != 'skipped')
         run: |
           set -euo pipefail
           RECEIPTS="social/daily-brief/$EDITION_DATE"
@@ -102,7 +115,7 @@ jobs:
           path: social/daily-brief/${{ inputs.edition_date }}/
           if-no-files-found: warn
       - name: Fail visibly when a channel did not publish
-        if: always() && steps.socials.outcome != 'success'
+        if: always() && (steps.socials.outcome != 'success' || steps.instagram.outcome != 'success')
         run: |
           echo '::error::Social release incomplete. Read channel receipts before retrying.'
           exit 1
