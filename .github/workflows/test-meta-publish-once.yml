@@ -1,0 +1,95 @@
+name: Test Meta Publish Once
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/test-meta-publish-once.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  test-meta:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      EDITION_DATE: '2026-09-15'
+      SOURCE_SHA: '3353dbe888435352f283fb597245eac4f79a53ed'
+      CANDIDATE_ID: '2539680f931c71a6c38950cbfd1174205e45141c4688e9efd035e047eeccadea'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Check Instagram publisher syntax
+        run: node --check scripts/post-daily-brief-instagram.mjs
+      - name: Read exact released source commit
+        uses: actions/checkout@v4
+        with:
+          repository: sapiverpress-studio/SapiverForge
+          ref: 3353dbe888435352f283fb597245eac4f79a53ed
+          path: vendor/sapiver-forge
+          persist-credentials: false
+      - name: Validate released candidate
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const root = 'vendor/sapiver-forge/news-intelligence/2026-09-15';
+          const manifest = JSON.parse(fs.readFileSync(`${root}/manifest.json`, 'utf8'));
+          const release = JSON.parse(fs.readFileSync(`${root}/site-release.json`, 'utf8'));
+          const expected = '2539680f931c71a6c38950cbfd1174205e45141c4688e9efd035e047eeccadea';
+          if (manifest.date !== '2026-09-15' || manifest.candidate_id !== expected || release.candidate_id !== expected || manifest.newsletter_ready_for_human_approval !== true) process.exit(1);
+          NODE
+      - name: Retry Facebook publisher
+        id: facebook
+        continue-on-error: true
+        env:
+          DAILY_BRIEF_MANIFEST: ${{ github.workspace }}/vendor/sapiver-forge/news-intelligence/2026-09-15/manifest.json
+          DISTRIBUTION_RECEIPT_PATH: ${{ github.workspace }}/social/daily-brief/2026-09-15/social-distribution.json
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
+          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+          PINTEREST_REFRESH_TOKEN: ${{ secrets.PINTEREST_REFRESH_TOKEN }}
+          PINTEREST_CLIENT_ID: ${{ secrets.PINTEREST_CLIENT_ID }}
+          PINTEREST_CLIENT_SECRET: ${{ secrets.PINTEREST_CLIENT_SECRET }}
+          PINTEREST_APP_ID: ${{ secrets.PINTEREST_APP_ID }}
+          PINTEREST_APP_SECRET: ${{ secrets.PINTEREST_APP_SECRET }}
+          PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
+          PINTEREST_BOARD_NAME: ${{ secrets.PINTEREST_BOARD_NAME }}
+        run: node vendor/sapiver-forge/scripts/post-daily-brief-social.mjs
+      - name: Publish Instagram Reel
+        id: instagram
+        continue-on-error: true
+        env:
+          SOURCE_ROOT: ${{ github.workspace }}/vendor/sapiver-forge
+          BRIDGE_RECEIPT_DIR: ${{ github.workspace }}/social/daily-brief/2026-09-15
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
+          INSTAGRAM_BUSINESS_ACCOUNT_ID: ${{ secrets.INSTAGRAM_BUSINESS_ACCOUNT_ID }}
+        run: node scripts/post-daily-brief-instagram.mjs
+      - name: Persist receipts
+        if: always()
+        run: |
+          set -euo pipefail
+          git config user.name 'sapiver-social-bridge-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add social/daily-brief/2026-09-15
+          if ! git diff --cached --quiet; then
+            git commit -m 'Record Meta publish test 2026-09-15 [skip ci]'
+            git push origin HEAD:main
+          fi
+      - name: Verify Facebook and Instagram
+        if: always()
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const social = JSON.parse(fs.readFileSync('social/daily-brief/2026-09-15/social-distribution.json','utf8'));
+          const igPath = 'social/daily-brief/2026-09-15/instagram-reel.json';
+          const ig = fs.existsSync(igPath) ? JSON.parse(fs.readFileSync(igPath,'utf8')) : {};
+          console.log(JSON.stringify({ facebook: social.facebook || null, facebook_error: social.facebook_error || null, instagram: ig.media_id || null, instagram_status: ig.status || null }, null, 2));
+          if (!social.facebook?.id || !ig.media_id) process.exit(1);
+          NODE
