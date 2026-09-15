@@ -33,9 +33,9 @@ jobs:
           FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
         run: |
-          node - <<'NODE'
-          const fs = require('fs');
-          const path = require('path');
+          node --input-type=module - <<'NODE'
+          import fs from 'node:fs';
+          import path from 'node:path';
           const token = process.env.FB_PAGE_TOKEN || '';
           const pageId = process.env.FB_PAGE_ID || '';
           if (!token || !pageId) throw new Error('Missing FB_PAGE_TOKEN or FB_PAGE_ID.');
