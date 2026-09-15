@@ -1,0 +1,108 @@
+name: Publish Approved Daily Brief Socials
+
+on:
+  workflow_dispatch:
+    inputs:
+      edition_date:
+        description: Released edition date (YYYY-MM-DD)
+        required: true
+        type: string
+      source_sha:
+        description: Exact released SapiverForge commit (40 characters)
+        required: true
+        type: string
+      candidate_id:
+        description: Approved Daily Brief candidate ID
+        required: true
+        type: string
+      confirm:
+        description: Type SEND to publish this released edition
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sapiver-daily-brief-social-bridge
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      EDITION_DATE: ${{ inputs.edition_date }}
+      SOURCE_SHA: ${{ inputs.source_sha }}
+      CANDIDATE_ID: ${{ inputs.candidate_id }}
+      CONFIRM: ${{ inputs.confirm }}
+    steps:
+      - name: Validate release inputs
+        run: |
+          set -euo pipefail
+          [ "$CONFIRM" = SEND ]
+          [[ "$EDITION_DATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]
+          [[ "$SOURCE_SHA" =~ ^[a-f0-9]{40}$ ]]
+          [[ "$CANDIDATE_ID" =~ ^[a-f0-9]{64}$ ]]
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Read exact released source commit
+        uses: actions/checkout@v4
+        with:
+          repository: sapiverpress-studio/SapiverForge
+          ref: ${{ inputs.source_sha }}
+          path: vendor/sapiver-forge
+          persist-credentials: false
+      - name: Publish with this repository's credentials
+        id: socials
+        continue-on-error: true
+        working-directory: vendor/sapiver-forge
+        env:
+          BRIDGE_RECEIPT_DIR: ${{ github.workspace }}/social/daily-brief/${{ inputs.edition_date }}
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
+          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+          PINTEREST_REFRESH_TOKEN: ${{ secrets.PINTEREST_REFRESH_TOKEN }}
+          PINTEREST_CLIENT_ID: ${{ secrets.PINTEREST_CLIENT_ID }}
+          PINTEREST_CLIENT_SECRET: ${{ secrets.PINTEREST_CLIENT_SECRET }}
+          PINTEREST_APP_ID: ${{ secrets.PINTEREST_APP_ID }}
+          PINTEREST_APP_SECRET: ${{ secrets.PINTEREST_APP_SECRET }}
+          PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
+          PINTEREST_BOARD_NAME: ${{ secrets.PINTEREST_BOARD_NAME }}
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+        run: node scripts/run-daily-social-bridge.mjs
+      - name: Persist individual posting receipts
+        if: always() && steps.socials.outcome != 'skipped'
+        run: |
+          set -euo pipefail
+          RECEIPTS="social/daily-brief/$EDITION_DATE"
+          test -d "$RECEIPTS" || exit 0
+          git config user.name 'sapiver-social-bridge-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add "$RECEIPTS"
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Record Daily Brief social results $EDITION_DATE [skip ci]"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then exit 0; fi
+            git pull --rebase origin main
+          done
+          exit 1
+      - name: Retain recovery receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-brief-social-receipts-${{ inputs.edition_date }}-${{ github.run_id }}
+          path: social/daily-brief/${{ inputs.edition_date }}/
+          if-no-files-found: warn
+      - name: Fail visibly when a channel did not publish
+        if: always() && steps.socials.outcome != 'success'
+        run: |
+          echo '::error::Social release incomplete. Read channel receipts before retrying.'
+          exit 1
