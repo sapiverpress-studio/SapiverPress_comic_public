@@ -1,6 +1,9 @@
 {
   "date": "2026-09-15",
-  "facebook_error": "403: {\"error\":{\"message\":\"(#200) If posting to a group, requires app being installed in the group, and \\\\\\n          either publish_to_groups permission with user token, or both pages_read_engagement \\\\\\n          and pages_manage_posts permission with page token; If posting to a page, \\\\\\n          requires both pages_read_engagement and pages_manage_posts as an admin with \\\\\\n          sufficient administrative permission\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"ASjPsI61k3U026dsiu0BUCQ\"}}",
   "pinterest_error": "401: {\"code\":28,\"message\":\"Refresh token is expired.\"}",
-  "updated_at": "2026-09-15T15:48:32.794Z"
+  "updated_at": "2026-09-15T22:27:08.451Z",
+  "facebook": {
+    "id": "997877693401171_122140996827198448",
+    "published_at": "2026-09-15T22:27:08.116Z"
+  }
 }
