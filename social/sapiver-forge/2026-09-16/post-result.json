@@ -1,18 +1,65 @@
 {
   "date": "2026-09-16",
-  "mode": "dry_run",
+  "mode": "live",
   "type": "sapiver_forge_12_month_content_static",
-  "existing_result_detected": false,
+  "existing_result_detected": true,
   "facebook": {
-    "dry_run": true,
-    "approved": true
+    "failed": true,
+    "channel": "facebook",
+    "error": "400 Bad Request: {\"error\":{\"message\":\"Error validating access token: Session has expired on Tuesday, 15-Sep-26 17:00:00 PDT. The current time is Wednesday, 16-Sep-26 05:36:30 PDT.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":463,\"fbtrace_id\":\"AdEE5LB34vBYKPtWM4oT9oA\"}}"
   },
   "pinterest": {
-    "dry_run": true,
-    "approved": true
+    "id": "1038924207811651102",
+    "pin_metrics": null,
+    "creative_type": "REGULAR",
+    "is_standard": true,
+    "board_id": "1038924276479917183",
+    "board_section_id": null,
+    "alt_text": null,
+    "product_tags": [],
+    "created_at": "2026-09-16T12:36:32",
+    "is_removable": false,
+    "is_owner": true,
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "description": "The best workflow is not the cleverest one. It is the one that reliably reduces work and uncertainty.The free Sapiver Forge Notion workspace helps you record these decisions. Link in bio.#SapiverForge #SmallBusinessAI #HumanInTheLoop #ResponsibleAI",
+    "has_been_promoted": false,
+    "parent_pin_id": null,
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 564,
+          "url": "https://i.pinimg.com/564x/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        },
+        "1200x": {
+          "width": 1200,
+          "height": 1200,
+          "url": "https://i.pinimg.com/1200x/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        }
+      }
+    },
+    "link": "https://sapiver-press.kit.com/5147ce2817",
+    "title": "Generation time is not the same as job time",
+    "dominant_color": "#070a0d",
+    "is_product": false,
+    "board_name": "Sapiver forge",
+    "resolved_from": "board_name"
   },
   "youtube": {
-    "dry_run": true,
-    "approved": false
+    "skipped": true,
+    "reason": "youtube_not_approved"
   }
 }
