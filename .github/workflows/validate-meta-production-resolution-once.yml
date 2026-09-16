@@ -1,0 +1,91 @@
+name: Validate Production Meta Token Resolution Once
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/validate-meta-production-resolution-once.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Resolve Meta Page token
+        env:
+          META_SYSTEM_USER_TOKEN: ${{ secrets.META_SYSTEM_USER_TOKEN || secrets.META_SYSTEM_USER_TOKEN_TEST }}
+          FB_PAGE_TOKEN_FALLBACK: ${{ secrets.FB_PAGE_TOKEN }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          INSTAGRAM_BUSINESS_ACCOUNT_ID: ${{ secrets.INSTAGRAM_BUSINESS_ACCOUNT_ID }}
+        run: |
+          node --input-type=module - <<'NODE'
+          import fs from 'node:fs';
+
+          const apiVersion = process.env.META_GRAPH_API_VERSION || 'v24.0';
+          const systemToken = String(process.env.META_SYSTEM_USER_TOKEN || '').trim();
+          const fallbackToken = String(process.env.FB_PAGE_TOKEN_FALLBACK || '').trim();
+          const pageId = String(process.env.FB_PAGE_ID || '').trim();
+          const igId = String(process.env.INSTAGRAM_BUSINESS_ACCOUNT_ID || '').trim();
+          if (!pageId) throw new Error('FB_PAGE_ID is required.');
+
+          async function get(url, token) {
+            const r = await fetch(url, { headers: { Authorization: `Bearer ${token}` } });
+            const text = await r.text();
+            let data; try { data = text ? JSON.parse(text) : {}; } catch { data = { raw: text }; }
+            if (!r.ok) throw new Error(`${r.status}: ${JSON.stringify(data).slice(0, 800)}`);
+            return data;
+          }
+
+          let pageToken = fallbackToken;
+          let source = 'legacy-page-token';
+
+          if (systemToken) {
+            const page = await get(`https://graph.facebook.com/${apiVersion}/${encodeURIComponent(pageId)}?fields=id,name,access_token,instagram_business_account`, systemToken);
+            if (String(page.id) !== pageId) throw new Error(`Page ID mismatch: got ${page.id}`);
+            if (!page.access_token) throw new Error('System-user token could not derive a Page access token.');
+            if (igId && String(page.instagram_business_account?.id || '') !== igId) {
+              throw new Error(`Linked Instagram account mismatch: got ${page.instagram_business_account?.id || 'none'}`);
+            }
+            pageToken = String(page.access_token);
+            source = 'meta-system-user';
+          }
+
+          if (!pageToken) throw new Error('No usable Meta Page token is available.');
+          const me = await get(`https://graph.facebook.com/${apiVersion}/me?fields=id,name`, pageToken);
+          if (String(me.id) !== pageId) throw new Error(`Resolved token identity ${me.id} does not match Page ${pageId}.`);
+
+          console.log(`::add-mask::${pageToken}`);
+          fs.appendFileSync(process.env.GITHUB_ENV, `FB_PAGE_TOKEN=${pageToken}\nFACEBOOK_PAGE_ACCESS_TOKEN=${pageToken}\nMETA_TOKEN_SOURCE=${source}\n`);
+          console.log(`Meta Page token source: ${source}`);
+          NODE
+      - name: Verify propagated Page token and Instagram access without publishing
+        env:
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          INSTAGRAM_BUSINESS_ACCOUNT_ID: ${{ secrets.INSTAGRAM_BUSINESS_ACCOUNT_ID }}
+        run: |
+          node --input-type=module - <<'NODE'
+          const apiVersion = 'v24.0';
+          const token = String(process.env.FB_PAGE_TOKEN || '').trim();
+          const pageId = String(process.env.FB_PAGE_ID || '').trim();
+          const igId = String(process.env.INSTAGRAM_BUSINESS_ACCOUNT_ID || '').trim();
+          if (!token) throw new Error('Resolved FB_PAGE_TOKEN did not propagate to the next step.');
+          async function get(url) {
+            const r = await fetch(url, { headers: { Authorization: `Bearer ${token}` } });
+            const text = await r.text();
+            let data; try { data = text ? JSON.parse(text) : {}; } catch { data = { raw: text }; }
+            if (!r.ok) throw new Error(`${r.status}: ${JSON.stringify(data).slice(0,800)}`);
+            return data;
+          }
+          const me = await get(`https://graph.facebook.com/${apiVersion}/me?fields=id,name`);
+          if (String(me.id) !== pageId) throw new Error(`Page identity mismatch: ${me.id}`);
+          const ig = await get(`https://graph.facebook.com/${apiVersion}/${encodeURIComponent(igId)}?fields=id,username`);
+          if (String(ig.id) !== igId) throw new Error(`Instagram identity mismatch: ${ig.id}`);
+          if (process.env.META_TOKEN_SOURCE !== 'meta-system-user') throw new Error(`Expected meta-system-user, got ${process.env.META_TOKEN_SOURCE || 'unset'}`);
+          console.log(`PRODUCTION_META_RESOLUTION=ok`);
+          console.log(`PAGE_IDENTITY=ok`);
+          console.log(`INSTAGRAM_ACCESS=ok`);
+          console.log(`NO_CONTENT_WAS_PUBLISHED=true`);
+          NODE
