@@ -115,6 +115,7 @@ jobs:
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
           FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
           PINTEREST_REFRESH_TOKEN: ${{ secrets.PINTEREST_REFRESH_TOKEN }}
+          PINTEREST_REFRESH_TOKEN_OUT: ${{ runner.temp }}/pinterest-refresh-token.txt
           PINTEREST_CLIENT_ID: ${{ secrets.PINTEREST_CLIENT_ID }}
           PINTEREST_CLIENT_SECRET: ${{ secrets.PINTEREST_CLIENT_SECRET }}
           PINTEREST_APP_ID: ${{ secrets.PINTEREST_APP_ID }}
@@ -125,6 +126,27 @@ jobs:
           YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
         run: node scripts/run-daily-social-bridge.mjs
+      - name: Persist rotated Pinterest refresh token
+        id: pinterest_rotation
+        if: always() && steps.socials.outcome != 'skipped'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.COMIC_GITHUB_TOKEN }}
+          ROTATED_TOKEN_FILE: ${{ runner.temp }}/pinterest-refresh-token.txt
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ ! -s "$ROTATED_TOKEN_FILE" ]; then
+            echo 'No Pinterest refresh-token rotation occurred in this run.'
+            exit 0
+          fi
+          test -n "${GH_TOKEN:-}" || { echo 'COMIC_GITHUB_TOKEN is unavailable for Pinterest token rotation.' >&2; exit 1; }
+          token="$(tr -d '\r\n' < "$ROTATED_TOKEN_FILE")"
+          [[ "$token" == pinr* ]] || { echo 'Pinterest returned an unexpected refresh-token format.' >&2; exit 1; }
+          printf '%s' "$token" | gh secret set PINTEREST_REFRESH_TOKEN --repo "$GITHUB_REPOSITORY"
+          unset token
+          rm -f "$ROTATED_TOKEN_FILE"
+          echo 'Pinterest continuous refresh token rotated in GitHub Actions secrets.'
       - name: Publish Instagram Reel
         id: instagram
         if: always() && steps.socials.outcome != 'skipped'
@@ -157,8 +179,8 @@ jobs:
           name: daily-brief-social-receipts-${{ inputs.edition_date }}-${{ github.run_id }}
           path: social/daily-brief/${{ inputs.edition_date }}/
           if-no-files-found: warn
-      - name: Fail visibly when a channel did not publish
-        if: always() && (steps.socials.outcome != 'success' || steps.instagram.outcome != 'success')
+      - name: Fail visibly when a channel did not publish or Pinterest rotation failed
+        if: always() && (steps.socials.outcome != 'success' || steps.instagram.outcome != 'success' || steps.pinterest_rotation.outcome == 'failure')
         run: |
-          echo '::error::Social release incomplete. Read channel receipts before retrying.'
+          echo '::error::Social release incomplete. Read channel receipts and Pinterest token-rotation status before retrying.'
           exit 1
