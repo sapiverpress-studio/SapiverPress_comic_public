@@ -37,6 +37,7 @@ async function pinterestToken() {
   const refreshToken = firstEnv("PINTEREST_REFRESH_TOKEN");
   const clientId = firstEnv("PINTEREST_CLIENT_ID", "PINTEREST_APP_ID");
   const clientSecret = firstEnv("PINTEREST_CLIENT_SECRET", "PINTEREST_APP_SECRET");
+  const refreshOut = firstEnv("PINTEREST_REFRESH_TOKEN_OUT");
   if (!refreshToken || !clientId || !clientSecret) return "";
 
   const basic = Buffer.from(`${clientId}:${clientSecret}`).toString("base64");
@@ -47,6 +48,10 @@ async function pinterestToken() {
     body
   });
   if (!data.access_token) throw new Error("Pinterest refresh token flow returned no access_token.");
+  if (refreshOut) {
+    if (!data.refresh_token) throw new Error("Pinterest continuous refresh returned no replacement refresh_token; refusing to continue without safe rotation.");
+    await fs.writeFile(refreshOut, `${data.refresh_token}\n`, { mode: 0o600 });
+  }
   pinterestAccessTokenCache = data.access_token;
   return pinterestAccessTokenCache;
 }
