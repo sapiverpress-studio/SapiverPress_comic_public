@@ -1,0 +1,102 @@
+name: Pinterest Read-Only Production Check Once
+
+on:
+  push:
+    paths:
+      - '.github/workflows/pinterest-readonly-check-once.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Refresh Pinterest token and verify production board without publishing
+        env:
+          PINTEREST_REFRESH_TOKEN: ${{ secrets.PINTEREST_REFRESH_TOKEN }}
+          PINTEREST_CLIENT_ID: ${{ secrets.PINTEREST_CLIENT_ID }}
+          PINTEREST_CLIENT_SECRET: ${{ secrets.PINTEREST_CLIENT_SECRET }}
+          PINTEREST_APP_ID: ${{ secrets.PINTEREST_APP_ID }}
+          PINTEREST_APP_SECRET: ${{ secrets.PINTEREST_APP_SECRET }}
+          PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
+          PINTEREST_BOARD_NAME: ${{ secrets.PINTEREST_BOARD_NAME }}
+          ROTATED_TOKEN_FILE: ${{ runner.temp }}/pinterest-refresh-token.txt
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --input-type=module - <<'NODE'
+          import fs from 'node:fs';
+
+          const refresh = String(process.env.PINTEREST_REFRESH_TOKEN || '').trim();
+          const clientId = String(process.env.PINTEREST_CLIENT_ID || process.env.PINTEREST_APP_ID || '').trim();
+          const clientSecret = String(process.env.PINTEREST_CLIENT_SECRET || process.env.PINTEREST_APP_SECRET || '').trim();
+          const explicitBoardId = String(process.env.PINTEREST_BOARD_ID || '').trim();
+          const wantedName = String(process.env.PINTEREST_BOARD_NAME || 'Sapiver Forge').trim();
+          if (!refresh || !clientId || !clientSecret) throw new Error('Pinterest production credentials are incomplete.');
+
+          const basic = Buffer.from(`${clientId}:${clientSecret}`).toString('base64');
+          const tokenResponse = await fetch('https://api.pinterest.com/v5/oauth/token', {
+            method: 'POST',
+            headers: { Authorization: `Basic ${basic}`, 'content-type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({ grant_type: 'refresh_token', refresh_token: refresh })
+          });
+          const tokenText = await tokenResponse.text();
+          let tokenData; try { tokenData = tokenText ? JSON.parse(tokenText) : {}; } catch { tokenData = { raw: tokenText }; }
+          if (!tokenResponse.ok) throw new Error(`Pinterest refresh failed (${tokenResponse.status}): ${JSON.stringify(tokenData).slice(0, 600)}`);
+          if (!tokenData.access_token) throw new Error('Pinterest refresh returned no access_token.');
+          if (!tokenData.refresh_token) throw new Error('Pinterest continuous refresh returned no replacement refresh_token; production would not be safe to run.');
+
+          console.log(`::add-mask::${tokenData.access_token}`);
+          console.log(`::add-mask::${tokenData.refresh_token}`);
+          fs.writeFileSync(process.env.ROTATED_TOKEN_FILE, `${tokenData.refresh_token}\n`, { mode: 0o600 });
+          const access = tokenData.access_token;
+
+          async function pinterestGet(url) {
+            const response = await fetch(url, { headers: { Authorization: `Bearer ${access}` } });
+            const text = await response.text();
+            let data; try { data = text ? JSON.parse(text) : {}; } catch { data = { raw: text }; }
+            if (!response.ok) throw new Error(`Pinterest read-only API check failed (${response.status}): ${JSON.stringify(data).slice(0, 600)}`);
+            return data;
+          }
+
+          let board;
+          if (explicitBoardId) {
+            board = await pinterestGet(`https://api.pinterest.com/v5/boards/${encodeURIComponent(explicitBoardId)}`);
+            if (String(board.id || '') !== explicitBoardId) throw new Error('Pinterest board ID verification mismatch.');
+          } else {
+            const matches = [];
+            let bookmark = '';
+            do {
+              const url = new URL('https://api.pinterest.com/v5/boards');
+              url.searchParams.set('page_size', '100');
+              if (bookmark) url.searchParams.set('bookmark', bookmark);
+              const data = await pinterestGet(url);
+              matches.push(...(data.items || []).filter((b) => String(b.name || '').trim().toLowerCase() === wantedName.toLowerCase()));
+              bookmark = data.bookmark || '';
+            } while (bookmark);
+            if (matches.length !== 1) throw new Error(`Expected exactly one existing Pinterest board named "${wantedName}", found ${matches.length}.`);
+            board = matches[0];
+          }
+
+          console.log('PINTEREST_REFRESH=verified');
+          console.log('PINTEREST_READ_ONLY_API=verified');
+          console.log(`PINTEREST_BOARD=verified:${board.name || wantedName}:${board.id || explicitBoardId}`);
+          console.log('NO_PIN_WAS_PUBLISHED=true');
+          NODE
+      - name: Persist rotated Pinterest refresh token
+        env:
+          GH_TOKEN: ${{ secrets.COMIC_GITHUB_TOKEN }}
+          ROTATED_TOKEN_FILE: ${{ runner.temp }}/pinterest-refresh-token.txt
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "${GH_TOKEN:-}" || { echo 'COMIC_GITHUB_TOKEN is unavailable.' >&2; exit 1; }
+          test -s "$ROTATED_TOKEN_FILE"
+          token="$(tr -d '\r\n' < "$ROTATED_TOKEN_FILE")"
+          [[ "$token" == pinr* ]] || { echo 'Pinterest returned an unexpected refresh-token format.' >&2; exit 1; }
+          printf '%s' "$token" | gh secret set PINTEREST_REFRESH_TOKEN --repo "$GITHUB_REPOSITORY"
+          unset token
+          rm -f "$ROTATED_TOKEN_FILE"
+          echo 'PINTEREST_REFRESH_TOKEN=rotated_and_saved'
