@@ -153,8 +153,9 @@ jobs:
           DATE_OVERRIDE: ${{ env.DATE_OVERRIDE }}
           SAPIVER_FORGE_POST_MODE: ${{ env.SAPIVER_FORGE_POST_MODE }}
           # Deliberately do not pass the stale static Pinterest access token.
-          # The publisher will refresh a current token from the refresh token + app credentials.
+          # The publisher refreshes a current token and writes its replacement refresh token for secure rotation below.
           PINTEREST_REFRESH_TOKEN: ${{ secrets.PINTEREST_REFRESH_TOKEN }}
+          PINTEREST_REFRESH_TOKEN_OUT: ${{ runner.temp }}/pinterest-refresh-token.txt
           PINTEREST_CLIENT_ID: ${{ secrets.PINTEREST_CLIENT_ID }}
           PINTEREST_CLIENT_SECRET: ${{ secrets.PINTEREST_CLIENT_SECRET }}
           PINTEREST_APP_ID: ${{ secrets.PINTEREST_APP_ID }}
@@ -166,6 +167,26 @@ jobs:
           FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
           FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
           FORCE_SAPIVER_FORGE_POST: ${{ secrets.FORCE_SAPIVER_FORGE_POST || secrets.FORCE_CLEARFORGE_POST }}
+
+      - name: Persist rotated Pinterest refresh token
+        if: env.BRIDGE_AVAILABLE == 'true' && always()
+        env:
+          GH_TOKEN: ${{ secrets.COMIC_GITHUB_TOKEN }}
+          ROTATED_TOKEN_FILE: ${{ runner.temp }}/pinterest-refresh-token.txt
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ ! -s "$ROTATED_TOKEN_FILE" ]; then
+            echo 'No Pinterest refresh-token rotation occurred in this run.'
+            exit 0
+          fi
+          test -n "${GH_TOKEN:-}" || { echo 'COMIC_GITHUB_TOKEN is unavailable for Pinterest token rotation.' >&2; exit 1; }
+          token="$(tr -d '\r\n' < "$ROTATED_TOKEN_FILE")"
+          [[ "$token" == pinr* ]] || { echo 'Pinterest returned an unexpected refresh-token format.' >&2; exit 1; }
+          printf '%s' "$token" | gh secret set PINTEREST_REFRESH_TOKEN --repo "$GITHUB_REPOSITORY"
+          unset token
+          rm -f "$ROTATED_TOKEN_FILE"
+          echo 'Pinterest continuous refresh token rotated in GitHub Actions secrets.'
 
       - name: Show posting result
         if: env.BRIDGE_AVAILABLE == 'true' && always()
