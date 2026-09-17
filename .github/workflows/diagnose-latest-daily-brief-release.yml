@@ -1,0 +1,84 @@
+name: Diagnose Daily Brief Release Resolver
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/diagnose-latest-daily-brief-release.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout SapiverForge
+        uses: actions/checkout@v4
+        with:
+          repository: sapiverpress-studio/SapiverForge
+          ref: main
+          path: sapiver-forge
+          persist-credentials: false
+      - name: Diagnose newest release candidates
+        working-directory: sapiver-forge
+        shell: bash
+        run: |
+          set -euo pipefail
+          node <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+          const crypto = require('crypto');
+          const base = 'news-intelligence';
+          const dates = fs.readdirSync(base, { withFileTypes: true })
+            .filter(e => e.isDirectory() && /^\d{4}-\d{2}-\d{2}$/.test(e.name))
+            .map(e => e.name).sort().reverse().slice(0, 10);
+
+          for (const date of dates) {
+            const reasons = [];
+            const root = path.join(base, date);
+            const required = ['manifest.json','site-release.json','netlify-release.json'];
+            for (const name of required) if (!fs.existsSync(path.join(root,name))) reasons.push(`missing ${name}`);
+            if (reasons.length) { console.log(`${date}: REJECT — ${reasons.join('; ')}`); continue; }
+            const manifest = JSON.parse(fs.readFileSync(path.join(root,'manifest.json'),'utf8'));
+            const site = JSON.parse(fs.readFileSync(path.join(root,'site-release.json'),'utf8'));
+            const netlify = JSON.parse(fs.readFileSync(path.join(root,'netlify-release.json'),'utf8'));
+            const candidate = String(manifest.candidate_id || '');
+            if (!/^[a-f0-9]{64}$/.test(candidate)) reasons.push('invalid newsletter candidate id');
+            if (manifest.date !== date) reasons.push(`manifest date ${manifest.date}`);
+            if (manifest.newsletter_ready_for_human_approval !== true) reasons.push('newsletter not approval-ready');
+            if (site.date !== date) reasons.push(`site date ${site.date}`);
+            if (site.candidate_id !== candidate) reasons.push('site candidate mismatch');
+            if (netlify.date !== date) reasons.push(`netlify date ${netlify.date}`);
+            if (netlify.candidate_id !== candidate) reasons.push('netlify candidate mismatch');
+            if (netlify.status !== 'deployed') reasons.push(`netlify status ${netlify.status}`);
+
+            const daily = path.join('reports/daily-intelligence',date);
+            const contractPath = path.join(daily,'candidate-manifest.json');
+            if (!fs.existsSync(contractPath)) reasons.push('missing daily candidate-manifest.json');
+            else {
+              const contract = JSON.parse(fs.readFileSync(contractPath,'utf8'));
+              if (contract.date !== date) reasons.push(`daily contract date ${contract.date}`);
+              if (contract.type !== 'sapiver_forge_daily_detailed_story') reasons.push(`daily contract type ${contract.type}`);
+              for (const [name, expected] of Object.entries(contract.file_hashes || {})) {
+                const file = path.join(daily,name);
+                if (path.basename(name) !== name) { reasons.push(`unsafe hash path ${name}`); continue; }
+                if (!fs.existsSync(file)) { reasons.push(`missing daily file ${name}`); continue; }
+                const actual = crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
+                if (actual !== expected) reasons.push(`hash mismatch ${name}: expected ${expected.slice(0,12)} got ${actual.slice(0,12)}`);
+              }
+              const metaPath = path.join(daily,'episode-metadata.json');
+              if (!fs.existsSync(metaPath)) reasons.push('missing episode-metadata.json');
+              else {
+                const episode = JSON.parse(fs.readFileSync(metaPath,'utf8'));
+                if (!/^[a-z0-9][a-z0-9-]*$/i.test(episode.slug || '')) reasons.push(`unsafe episode slug ${episode.slug}`);
+                else {
+                  const short = path.join('public/podcast/episodes',`${episode.slug}-short.mp4`);
+                  if (!fs.existsSync(short)) reasons.push(`missing short ${short}`);
+                  else if (fs.statSync(short).size < 1000) reasons.push(`short too small: ${fs.statSync(short).size} bytes`);
+                }
+              }
+            }
+            console.log(`${date}: ${reasons.length ? 'REJECT — ' + reasons.join('; ') : 'ACCEPT'}`);
+          }
+          NODE
