@@ -3,20 +3,8 @@ name: Publish Approved Daily Brief Socials
 on:
   workflow_dispatch:
     inputs:
-      edition_date:
-        description: Released edition date (YYYY-MM-DD)
-        required: true
-        type: string
-      source_sha:
-        description: Exact released SapiverForge commit (40 characters)
-        required: true
-        type: string
-      candidate_id:
-        description: Approved Daily Brief candidate ID
-        required: true
-        type: string
       confirm:
-        description: Type SEND to publish this released edition
+        description: Type SEND to publish the newest fully released SapiverForge edition
         required: true
         type: string
 
@@ -32,18 +20,12 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     env:
-      EDITION_DATE: ${{ inputs.edition_date }}
-      SOURCE_SHA: ${{ inputs.source_sha }}
-      CANDIDATE_ID: ${{ inputs.candidate_id }}
       CONFIRM: ${{ inputs.confirm }}
     steps:
-      - name: Validate release inputs
+      - name: Validate human confirmation
         run: |
           set -euo pipefail
-          [ "$CONFIRM" = SEND ]
-          [[ "$EDITION_DATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]
-          [[ "$SOURCE_SHA" =~ ^[a-f0-9]{40}$ ]]
-          [[ "$CANDIDATE_ID" =~ ^[a-f0-9]{64}$ ]]
+          [ "$CONFIRM" = SEND ] || { echo 'Confirmation must be exactly SEND.' >&2; exit 1; }
       - uses: actions/checkout@v4
         with:
           ref: main
@@ -99,19 +81,84 @@ jobs:
           fs.appendFileSync(process.env.GITHUB_ENV, `FB_PAGE_TOKEN=${pageToken}\nFACEBOOK_PAGE_ACCESS_TOKEN=${pageToken}\n`);
           console.log(`Meta Page token source: ${source}`);
           NODE
-      - name: Read exact released source commit
+      - name: Read current SapiverForge release history
         uses: actions/checkout@v4
         with:
           repository: sapiverpress-studio/SapiverForge
-          ref: ${{ inputs.source_sha }}
+          ref: main
           path: vendor/sapiver-forge
+          token: ${{ secrets.COMIC_GITHUB_TOKEN || github.token }}
           persist-credentials: false
+      - name: Resolve newest fully released edition
+        id: release
+        working-directory: vendor/sapiver-forge
+        shell: bash
+        run: |
+          set -euo pipefail
+          node <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+          const crypto = require('crypto');
+
+          const base = 'news-intelligence';
+          const dates = fs.readdirSync(base, { withFileTypes: true })
+            .filter(entry => entry.isDirectory() && /^\\d{4}-\\d{2}-\\d{2}$/.test(entry.name))
+            .map(entry => entry.name)
+            .sort()
+            .reverse();
+
+          let selected;
+          for (const date of dates) {
+            const root = path.join(base, date);
+            const required = ['manifest.json', 'site-release.json', 'netlify-release.json'];
+            if (!required.every(name => fs.existsSync(path.join(root, name)))) continue;
+            const manifest = JSON.parse(fs.readFileSync(path.join(root, 'manifest.json'), 'utf8'));
+            const site = JSON.parse(fs.readFileSync(path.join(root, 'site-release.json'), 'utf8'));
+            const netlify = JSON.parse(fs.readFileSync(path.join(root, 'netlify-release.json'), 'utf8'));
+            const candidate = String(manifest.candidate_id || '');
+            if (!/^[a-f0-9]{64}$/.test(candidate)) continue;
+            if (manifest.date !== date || manifest.newsletter_ready_for_human_approval !== true) continue;
+            if (site.date !== date || site.candidate_id !== candidate) continue;
+            if (netlify.date !== date || netlify.candidate_id !== candidate || netlify.status !== 'deployed') continue;
+
+            const daily = path.join('reports/daily-intelligence', date);
+            const contractPath = path.join(daily, 'candidate-manifest.json');
+            if (!fs.existsSync(contractPath)) continue;
+            const contract = JSON.parse(fs.readFileSync(contractPath, 'utf8'));
+            if (contract.date !== date || contract.type !== 'sapiver_forge_daily_detailed_story') continue;
+            let hashesValid = true;
+            for (const [name, expected] of Object.entries(contract.file_hashes || {})) {
+              const file = path.join(daily, name);
+              if (path.basename(name) !== name || !fs.existsSync(file)) { hashesValid = false; break; }
+              const actual = crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
+              if (actual !== expected) { hashesValid = false; break; }
+            }
+            if (!hashesValid) continue;
+
+            const episode = JSON.parse(fs.readFileSync(path.join(daily, 'episode-metadata.json'), 'utf8'));
+            const short = path.join('public/podcast/episodes', `${episode.slug}-short.mp4`);
+            if (!/^[a-z0-9][a-z0-9-]*$/i.test(episode.slug || '') || !fs.existsSync(short) || fs.statSync(short).size < 1000) continue;
+            selected = { date, candidate };
+            break;
+          }
+
+          if (!selected) throw new Error('No fully released SapiverForge edition with matching website, Netlify, media and candidate receipts was found.');
+          const sourceSha = require('child_process').execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
+          fs.appendFileSync(process.env.GITHUB_ENV, `EDITION_DATE=${selected.date}\\nCANDIDATE_ID=${selected.candidate}\\nSOURCE_SHA=${sourceSha}\\n`);
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, `edition_date=${selected.date}\\ncandidate_id=${selected.candidate}\\nsource_sha=${sourceSha}\\n`);
+          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, `Newest fully released edition: ${selected.date} (${selected.candidate.slice(0, 12)}…)\\n`);
+          console.log(`Selected released edition ${selected.date} from SapiverForge ${sourceSha.slice(0, 12)}…`);
+          NODE
       - name: Publish with this repository's credentials
         id: socials
         continue-on-error: true
         working-directory: vendor/sapiver-forge
         env:
-          BRIDGE_RECEIPT_DIR: ${{ github.workspace }}/social/daily-brief/${{ inputs.edition_date }}
+          EDITION_DATE: ${{ env.EDITION_DATE }}
+          SOURCE_SHA: ${{ env.SOURCE_SHA }}
+          CANDIDATE_ID: ${{ env.CANDIDATE_ID }}
+          CONFIRM: ${{ env.CONFIRM }}
+          BRIDGE_RECEIPT_DIR: ${{ github.workspace }}/social/daily-brief/${{ env.EDITION_DATE }}
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
           FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
           PINTEREST_REFRESH_TOKEN: ${{ secrets.PINTEREST_REFRESH_TOKEN }}
@@ -153,7 +200,7 @@ jobs:
         continue-on-error: true
         env:
           SOURCE_ROOT: ${{ github.workspace }}/vendor/sapiver-forge
-          BRIDGE_RECEIPT_DIR: ${{ github.workspace }}/social/daily-brief/${{ inputs.edition_date }}
+          BRIDGE_RECEIPT_DIR: ${{ github.workspace }}/social/daily-brief/${{ env.EDITION_DATE }}
           INSTAGRAM_BUSINESS_ACCOUNT_ID: ${{ secrets.INSTAGRAM_BUSINESS_ACCOUNT_ID }}
         run: node scripts/post-daily-brief-instagram.mjs
       - name: Persist individual posting receipts
@@ -176,8 +223,8 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: daily-brief-social-receipts-${{ inputs.edition_date }}-${{ github.run_id }}
-          path: social/daily-brief/${{ inputs.edition_date }}/
+          name: daily-brief-social-receipts-${{ env.EDITION_DATE }}-${{ github.run_id }}
+          path: social/daily-brief/${{ env.EDITION_DATE }}/
           if-no-files-found: warn
       - name: Fail visibly when a channel did not publish or Pinterest rotation failed
         if: always() && (steps.socials.outcome != 'success' || steps.instagram.outcome != 'success' || steps.pinterest_rotation.outcome == 'failure')
