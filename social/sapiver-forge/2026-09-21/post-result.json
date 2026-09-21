@@ -1,0 +1,65 @@
+{
+  "date": "2026-09-21",
+  "mode": "live",
+  "type": "sapiver_forge_12_month_content_static",
+  "existing_result_detected": false,
+  "facebook": {
+    "failed": true,
+    "channel": "facebook",
+    "error": "400 Bad Request: {\"error\":{\"message\":\"Error validating access token: Session has expired on Tuesday, 15-Sep-26 17:00:00 PDT. The current time is Monday, 21-Sep-26 07:01:58 PDT.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":463,\"fbtrace_id\":\"AUlvdDIMJNWHx9ONJgZ24yA\"}}"
+  },
+  "pinterest": {
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 564,
+          "url": "https://i.pinimg.com/564x/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        },
+        "1200x": {
+          "width": 1200,
+          "height": 1200,
+          "url": "https://i.pinimg.com/1200x/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        }
+      }
+    },
+    "has_been_promoted": false,
+    "title": "Before paying for another AI tool, ask what problem it actually removes",
+    "is_owner": true,
+    "alt_text": null,
+    "pin_metrics": null,
+    "creative_type": "REGULAR",
+    "is_standard": true,
+    "created_at": "2026-09-21T14:02:03",
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "board_section_id": null,
+    "parent_pin_id": null,
+    "product_tags": [],
+    "link": "https://sapiver-press.kit.com/5147ce2817",
+    "board_id": "1038924276479917183",
+    "is_removable": false,
+    "dominant_color": "#070a0d",
+    "is_product": false,
+    "description": "Small businesses rarely need three overlapping AI subscriptions. Compare the current method, a simple non-AI option and the real benefit first.The free Sapiver Forge Notion workspace helps you record these decisions. Link in bio.#SapiverForge #SmallBusinessAI #HumanInTheLoop #ResponsibleAI",
+    "id": "1038924207811807539",
+    "board_name": "Sapiver forge",
+    "resolved_from": "board_name"
+  },
+  "youtube": {
+    "skipped": true,
+    "reason": "youtube_not_approved"
+  }
+}
