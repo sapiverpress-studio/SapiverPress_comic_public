@@ -1,0 +1,65 @@
+{
+  "date": "2026-09-23",
+  "mode": "live",
+  "type": "sapiver_forge_12_month_content_static",
+  "existing_result_detected": false,
+  "facebook": {
+    "failed": true,
+    "channel": "facebook",
+    "error": "400 Bad Request: {\"error\":{\"message\":\"Error validating access token: Session has expired on Tuesday, 15-Sep-26 17:00:00 PDT. The current time is Wednesday, 23-Sep-26 05:45:57 PDT.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":463,\"fbtrace_id\":\"AOydzJ_mBnNqVg5QZmy3DQX\"}}"
+  },
+  "pinterest": {
+    "alt_text": null,
+    "is_standard": true,
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "board_id": "1038924276479917183",
+    "board_section_id": null,
+    "is_product": false,
+    "pin_metrics": null,
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 564,
+          "url": "https://i.pinimg.com/564x/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        },
+        "1200x": {
+          "width": 1200,
+          "height": 1200,
+          "url": "https://i.pinimg.com/1200x/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        }
+      }
+    },
+    "parent_pin_id": null,
+    "created_at": "2026-09-23T12:45:58",
+    "product_tags": [],
+    "link": "https://sapiver-press.kit.com/5147ce2817",
+    "is_owner": true,
+    "is_removable": false,
+    "id": "1038924207811864390",
+    "has_been_promoted": false,
+    "creative_type": "REGULAR",
+    "dominant_color": "#070a0d",
+    "title": "Generation time is not the same as job time",
+    "description": "The best workflow is not the cleverest one. It is the one that reliably reduces work and uncertainty.The free Sapiver Forge Notion workspace helps you record these decisions. Link in bio.#SapiverForge #SmallBusinessAI #HumanInTheLoop #ResponsibleAI",
+    "board_name": "Sapiver forge",
+    "resolved_from": "board_name"
+  },
+  "youtube": {
+    "skipped": true,
+    "reason": "youtube_not_approved"
+  }
+}
