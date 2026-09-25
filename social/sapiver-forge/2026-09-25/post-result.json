@@ -1,0 +1,65 @@
+{
+  "date": "2026-09-25",
+  "mode": "live",
+  "type": "sapiver_forge_12_month_content_static",
+  "existing_result_detected": false,
+  "facebook": {
+    "failed": true,
+    "channel": "facebook",
+    "error": "400 Bad Request: {\"error\":{\"message\":\"Error validating access token: Session has expired on Tuesday, 15-Sep-26 17:00:00 PDT. The current time is Friday, 25-Sep-26 05:45:40 PDT.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":463,\"fbtrace_id\":\"AALE4c4PHNs3DToXhnE3PUZ\"}}"
+  },
+  "pinterest": {
+    "parent_pin_id": null,
+    "title": "Review the automation after it has met real work, not just the demo",
+    "id": "1038924207811921135",
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "is_standard": true,
+    "product_tags": [],
+    "created_at": "2026-09-25T12:45:41",
+    "creative_type": "REGULAR",
+    "dominant_color": "#020b13",
+    "is_product": false,
+    "is_removable": false,
+    "is_owner": true,
+    "has_been_promoted": false,
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/4e/f3/f0/4ef3f074f575f98bdba4dc50c7ef3930.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/4e/f3/f0/4ef3f074f575f98bdba4dc50c7ef3930.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 564,
+          "url": "https://i.pinimg.com/564x/4e/f3/f0/4ef3f074f575f98bdba4dc50c7ef3930.jpg"
+        },
+        "1200x": {
+          "width": 1200,
+          "height": 1200,
+          "url": "https://i.pinimg.com/1200x/4e/f3/f0/4ef3f074f575f98bdba4dc50c7ef3930.jpg"
+        }
+      }
+    },
+    "board_id": "1038924276479917183",
+    "description": "A workflow that saved time six months ago can become a burden after the task, client or subscription changes.If you need the complete four-gate process, the Applied AI Gate System bundle is in the link in bio.#SapiverForge #SmallBusinessAI #HumanInTheLoop #ResponsibleAI",
+    "link": "https://payhip.com/b/cmklU",
+    "board_section_id": null,
+    "pin_metrics": null,
+    "alt_text": null,
+    "board_name": "Sapiver forge",
+    "resolved_from": "board_name"
+  },
+  "youtube": {
+    "skipped": true,
+    "reason": "youtube_not_approved"
+  }
+}
