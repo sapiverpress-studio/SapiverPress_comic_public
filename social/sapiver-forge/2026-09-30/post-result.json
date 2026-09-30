@@ -1,0 +1,65 @@
+{
+  "date": "2026-09-30",
+  "mode": "live",
+  "type": "sapiver_forge_12_month_content_static",
+  "existing_result_detected": false,
+  "facebook": {
+    "failed": true,
+    "channel": "facebook",
+    "error": "400 Bad Request: {\"error\":{\"message\":\"Error validating access token: Session has expired on Tuesday, 15-Sep-26 17:00:00 PDT. The current time is Wednesday, 30-Sep-26 06:40:06 PDT.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":463,\"fbtrace_id\":\"A0ADQJ0o87RnNRzdcoU00Uq\"}}"
+  },
+  "pinterest": {
+    "description": "The best workflow is not the cleverest one. It is the one that reliably reduces work and uncertainty.The free Sapiver Forge Notion workspace helps you record these decisions. Link in bio.#SapiverForge #SmallBusinessAI #HumanInTheLoop #ResponsibleAI",
+    "created_at": "2026-09-30T13:40:07",
+    "board_owner": {
+      "username": "sapiver"
+    },
+    "pin_metrics": null,
+    "creative_type": "REGULAR",
+    "dominant_color": "#070a0d",
+    "title": "Generation time is not the same as job time",
+    "alt_text": null,
+    "id": "1038924207812080709",
+    "is_owner": true,
+    "parent_pin_id": null,
+    "link": "https://sapiver-press.kit.com/5147ce2817",
+    "has_been_promoted": false,
+    "board_section_id": null,
+    "board_id": "1038924276479917183",
+    "is_standard": true,
+    "media": {
+      "media_type": "image",
+      "images": {
+        "150x150": {
+          "width": 150,
+          "height": 150,
+          "url": "https://i.pinimg.com/150x150/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        },
+        "400x300": {
+          "width": 400,
+          "height": 300,
+          "url": "https://i.pinimg.com/400x300/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        },
+        "600x": {
+          "width": 564,
+          "height": 564,
+          "url": "https://i.pinimg.com/564x/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        },
+        "1200x": {
+          "width": 1200,
+          "height": 1200,
+          "url": "https://i.pinimg.com/1200x/55/66/3e/55663e04c7ce0cc7f5a834723ae63bf3.jpg"
+        }
+      }
+    },
+    "is_product": false,
+    "product_tags": [],
+    "is_removable": false,
+    "board_name": "Sapiver forge",
+    "resolved_from": "board_name"
+  },
+  "youtube": {
+    "skipped": true,
+    "reason": "youtube_not_approved"
+  }
+}
