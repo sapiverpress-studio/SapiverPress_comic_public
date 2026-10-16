@@ -1,29 +1,9 @@
-name: Sapiver Forge Daily Content Distribution
+name: PAUSED — Applied AI Gate System social distribution
 
+# The Applied AI Gate System promotional campaign is parked.
+# Deliberately no schedule or push triggers; the publishing job is disabled.
 on:
   workflow_dispatch:
-    inputs:
-      day_number:
-        description: "Optional day override 1-7; leave blank for today's weekday"
-        required: false
-        default: ""
-        type: string
-      post_mode:
-        description: "Build only, verify credentials, or publish live"
-        required: true
-        default: "dry_run"
-        type: choice
-        options:
-          - dry_run
-          - verify
-          - live
-  schedule:
-    - cron: '5 7 * * *'
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/sapiver-forge-social.yml'
-      - 'scripts/post-sapiver-forge-social.mjs'
 
 permissions:
   contents: write
@@ -34,6 +14,8 @@ concurrency:
 
 jobs:
   distribute:
+    # Explicitly prevent manual dispatches from publishing old campaign posts.
+    if: false
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
