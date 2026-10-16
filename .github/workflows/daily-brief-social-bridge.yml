@@ -12,7 +12,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: sapiver-daily-brief-social-bridge
+  group: sapiver-pinterest-token-rotation
   cancel-in-progress: false
 
 jobs:
