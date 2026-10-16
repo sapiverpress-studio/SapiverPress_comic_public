@@ -103,3 +103,5 @@ jobs:
         run: |
           echo '::error::Sapiver Prints Pinterest posting needs checking.'
           exit 1
+
+# One-off authorised run request: 2026-10-16, publish next pending Etsy poster.
