@@ -108,3 +108,36 @@ test('a Pinterest posting error does not create a false receipt',async()=>{
   await assert.rejects(fs.readFile(stateFile,'utf8'),{code:'ENOENT'});
  }finally{await fs.rm(tmp,{recursive:true,force:true});}
 });
+
+test('backlog mode publishes all unpublished Etsy posters once, with spacing and persisted receipts',async()=>{
+  const tmp=await fs.mkdtemp(path.join(os.tmpdir(),'sp-batch-'));
+  try{
+    const products=Array.from({length:20},(_,i)=>item(100+i));
+    const stateFile=path.join(tmp,'state.json');
+    await fs.writeFile(stateFile,JSON.stringify({schemaVersion:1,boardName:BOARD_NAME,byListingId:{
+      '100':{pinId:'old-100',boardId:'555',link:'https://www.etsy.com/listing/100'},
+      '101':{pinId:'old-101',boardId:'555',link:'https://www.etsy.com/listing/101'}
+    }}));
+    const mock=mockApi({products});
+    const pauses=[];
+    const result=await runPublisher({
+      fetchImpl:mock.fetch,env:env(path.join(tmp,'rotation')),now,stateFile,
+      maxNewPins:25,interPinDelayMs:30000,sleep:async ms=>{pauses.push(ms);}
+    });
+    assert.equal(result.created,18);
+    assert.equal(result.pending,0);
+    assert.equal(mock.created.length,18);
+    assert.equal(new Set(mock.created.map(pin=>pin.link)).size,18);
+    assert.equal(pauses.length,17);
+    assert.ok(pauses.every(ms=>ms===30000));
+    const saved=JSON.parse(await fs.readFile(stateFile,'utf8'));
+    assert.equal(Object.keys(saved.byListingId).length,20);
+    assert.deepEqual(mock.created.map(pin=>pin.link),products.slice(2).map(x=>x.url));
+    const again=await runPublisher({fetchImpl:mock.fetch,env:{},now,stateFile,maxNewPins:25});
+    assert.equal(again.status,'up_to_date');
+    assert.equal(again.created,0);
+  }finally{await fs.rm(tmp,{recursive:true,force:true});}
+});
+test('backlog limit is bounded to 25 Pins per run',async()=>{
+  await assert.rejects(runPublisher({maxNewPins:26}),/per-run Pin limit/);
+});
