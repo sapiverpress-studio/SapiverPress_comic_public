@@ -133,8 +133,9 @@ async function readReceipts(file) {
   }
 }
 
-export async function runPublisher({fetchImpl=fetch,env=process.env,now=Date.now(),stateFile=STATE_PATH,maxNewPins=1}={}) {
-  if(!Number.isInteger(maxNewPins)||maxNewPins<0||maxNewPins>2)throw Error('Unexpected per-run Pin limit');
+export async function runPublisher({fetchImpl=fetch,env=process.env,now=Date.now(),stateFile=STATE_PATH,maxNewPins=1,interPinDelayMs=maxNewPins>2?30000:0,sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms))}={}) {
+  if(!Number.isInteger(maxNewPins)||maxNewPins<0||maxNewPins>25)throw Error('Unexpected per-run Pin limit');
+  if(!Number.isInteger(interPinDelayMs)||interPinDelayMs<0||interPinDelayMs>120000)throw Error('Invalid Pinterest batch spacing');
   const response=await fetchImpl(FEED_URL,{headers:{Accept:'application/json'},signal:AbortSignal.timeout(18000)});
   if(!response.ok)throw Error('Public Etsy catalogue fetch HTTP '+response.status);
   const feed=validateFeed(await response.json(),now);
@@ -158,6 +159,8 @@ export async function runPublisher({fetchImpl=fetch,env=process.env,now=Date.now
   }
   const pending=pendingItems(feed.items,state,remote);
   for(const item of pending.slice(0,maxNewPins)){
+    // Batch backlogs gradually; individual Pins have no duplicated listing destinations.
+    if(created>0 && interPinDelayMs>0)await sleep(interPinDelayMs);
     const payload=pinPayload(item,board.id);
     const made=await apiFetch(fetchImpl,'/pins',token,{method:'POST',body:JSON.stringify(payload)});
     if(!made?.id|| (made.board_id&&String(made.board_id)!==board.id))throw Error('Pinterest did not verify Pin and board; no success receipt written');
