@@ -26,6 +26,11 @@ jobs:
         with:
           ref: main
           persist-credentials: true
+          sparse-checkout: |
+            scripts/post-sapiver-prints.mjs
+            test/sapiverprints-pinterest.test.mjs
+            social/sapiver-prints/pinterest-receipts.json
+          sparse-checkout-cone-mode: false
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
