@@ -29,7 +29,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: sapiver-forge-social-daily
+  group: sapiver-pinterest-token-rotation
   cancel-in-progress: false
 
 jobs:

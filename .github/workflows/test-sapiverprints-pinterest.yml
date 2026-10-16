@@ -1,0 +1,31 @@
+name: Test Sapiver Prints Pinterest publisher
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/post-sapiver-prints.mjs'
+      - 'test/sapiverprints-pinterest.test.mjs'
+      - '.github/workflows/sapiverprints-pinterest.yml'
+      - '.github/workflows/test-sapiverprints-pinterest.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            scripts/post-sapiver-prints.mjs
+            test/sapiverprints-pinterest.test.mjs
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate publisher syntax and failure-safe mocks
+        run: |
+          node --check scripts/post-sapiver-prints.mjs
+          node --test test/sapiverprints-pinterest.test.mjs
