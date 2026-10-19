@@ -8,6 +8,7 @@ import { createHash } from 'node:crypto';
 import { pinterestToken, boardForPrints } from './post-sapiver-prints.mjs';
 
 import { publishYouTube } from './sapiverprints-youtube.mjs';
+import { publishPinterestVideo } from './sapiverprints-pinterest-video.mjs';
 
 const exec=promisify(execFile);
 const ROOT='https://sapiver-poster-gen-auth.netlify.app';
@@ -60,30 +61,11 @@ async function publishPinterest(video,job){
  const token=await pinterestToken(fetch,{...process.env,GH_TOKEN:process.env.GH_TOKEN});
  const board=await boardForPrints(fetch,token);
  if(!board.id)throw Error('Sapiver Prints Pinterest board not found');
- const registration=await pinterestApi('/media',token,{method:'POST',body:JSON.stringify({media_type:'video'})});
- if(!registration.media_id||!registration.upload_url||!registration.upload_url.startsWith('https://'))throw Error('Pinterest did not accept video registration');
- const form=new FormData();
- for(const [k,v] of Object.entries(registration.upload_parameters||{}))form.append(k,v);
- form.append('file',new Blob([video],{type:'video/mp4'}),'sapiverprints-promo.mp4');
- const uploaded=await request(registration.upload_url,{method:'POST',body:form,signal:AbortSignal.timeout(120000)});
- await uploaded.arrayBuffer();
- let ready=false;
- for(let n=0;n<30;n++){
-  await sleep(10000);
-  const result=await pinterestApi('/media/'+registration.media_id,token);
-  const status=String(result.status||result.upload_status||'').toLowerCase();
-  if(['succeeded','success','available','ready'].includes(status)){ready=true;break;}
-  if(['failed','failure','rejected'].includes(status))throw Error('Pinterest media processing failed');
- }
- if(!ready)throw Error('Pinterest media processing timed out; inspect before reposting');
- const payload={
-  board_id:board.id,title:job.title.slice(0,100),description:(job.description+'\n\nFind Sapiver Prints on Etsy: '+job.link).slice(0,480),
-  link:job.link,media_source:{source_type:'video_id',media_id:registration.media_id,cover_image_key_frame_time:0}
- };
- const pin=await pinterestApi('/pins',token,{method:'POST',body:JSON.stringify(payload)});
- if(!/^\d+$/.test(String(pin.id||''))||(pin.board_id&&String(pin.board_id)!==String(board.id)))throw Error('Pinterest Pin not confirmed; inspect before retrying');
- await ownerReport('pinterest',String(pin.id));
- return String(pin.id);
+ return publishPinterestVideo(video,job,{
+  boardId:board.id,
+  pinterestApi:(route,opts={})=>pinterestApi(route,token,opts),
+  request,ownerReport,sleep
+ });
 }
 async function main(){
  const job=await (await ownerGet('job')).json();
