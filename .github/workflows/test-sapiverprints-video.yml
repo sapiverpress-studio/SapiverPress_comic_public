@@ -6,6 +6,8 @@ on:
       - '.github/workflows/sapiverprints-video.yml'
       - '.github/workflows/test-sapiverprints-video.yml'
       - 'scripts/post-sapiverprints-video.mjs'
+      - 'scripts/sapiverprints-youtube.mjs'
+      - 'test/sapiverprints-youtube.test.mjs'
       - 'scripts/ensure-video-probe.sh'
       - 'scripts/post-sapiver-prints.mjs'
 
@@ -28,4 +30,4 @@ jobs:
         run: |
           node --check scripts/post-sapiverprints-video.mjs
           node --check scripts/post-sapiver-prints.mjs
-          node --test test/sapiverprints-pinterest.test.mjs
+          node --test test/sapiverprints-pinterest.test.mjs test/sapiverprints-youtube.test.mjs
