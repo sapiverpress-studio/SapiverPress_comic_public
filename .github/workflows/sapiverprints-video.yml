@@ -32,6 +32,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Verify FFprobe before private video transfer
+        run: bash scripts/ensure-video-probe.sh
       - name: Publish video and report both platform IDs to private uploader
         env:
           SAPIVER_VIDEO_ID: ${{ inputs.video_id }}
