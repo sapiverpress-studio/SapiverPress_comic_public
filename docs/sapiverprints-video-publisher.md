@@ -1,5 +1,12 @@
 # Sapiver Prints — owner-uploaded video promotion (staged)
 
+## 2026-10-19 18:34 BST — Live Pinterest recovery media processing timeout (FIX STAGED)
+- VERIFIED: Run 39294243767 returned failure after ~7 min. GitHub job 118202511628 logged "YouTube already confirmed; skipping" and "Pinterest media processing timed out; inspect before reposting." Netlify recorded /recover 202 at 17:27:13Z and /fail 200 at 17:34:19Z. No /pins call was reached by the production script, so no Pin ID/receipt was created by this run. Raw media registration/upload appeared successful; the media ID and intermediate status were not recorded. The old media may still be processing remotely; do not claim provider rejection.
+- FIX STAGED: New helper scripts/sapiverprints-pinterest-video.mjs records the media ID in the private uploader immediately after confirmed S3 transfer, logs only safe media ID/status, and retries that same media ID after bounded processing timeout rather than registering/uploading another copy. Only status succeeded leads to /pins; failed/unknown statuses stop. Logs Pin ID before receipt submission. Unit tests cover processed->succeeded, resumable processing, timeout, failed/unknown, checkpoint errors and S3 acknowledgement. Workflow verification CI updated.
+- DEPENDENCY: Poster_gen also needs a synchronized owner-side checkpoint change before using this code in production. Deploy Comic first, then one Poster_gen production release. An old run's media ID cannot be recovered retroactively from these logs; do not blindly rerun the failed GitHub job. Prior to fresh owner-confirmed Pinterest-only recovery, check for an existing Pin and verify the user's previously published YouTube ID.
+- STATUS: source staged on isolated branch only; CI / live API validation / private source deletion not yet verified. Existing scheduled Pins, Etsy, PrintShrimp, videos and other workflows unchanged.
+
+
 ## Scope
 This is an isolated manual publisher for 10-second vertical MP4 videos, not part of the daily Comic, Sapiver Forge, Etsy listing, or PrintShrimp ordering pipelines.
 
