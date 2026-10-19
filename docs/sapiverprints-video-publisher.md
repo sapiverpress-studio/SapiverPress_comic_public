@@ -51,3 +51,10 @@ This is an isolated manual publisher for 10-second vertical MP4 videos, not part
 - PR #41 merged as 1111b20a76d84948f5bc3c61e2a09c4de2eff3f3; corrected helper read back on main.
 - GitHub job 118159907461 completed all 17 tests with zero failures (logs at 16:06:49 UTC). This supersedes the pending CI/release note above.
 - End-to-end publication and private source deletion remain unverified. Existing failed upload needs its YouTube URL checked before recovery; do not submit another copy blindly.
+
+
+## 2026-10-19 18:49 BST — Pinterest media checkpoint release (VERIFIED CODE, UNVERIFIED VIDEO PIN)
+- Comic PR #42 merged to main as 36d5cabe88f16f3d832aec0b35f08ff91d4edc01. GitHub PR CI run 39296934429 completed SUCCESS, 26/26 tests passed.
+- Paired Poster_gen PR #52 merged to active Netlify production branch feature/canva-oauth-callback as 55de0232e5449eca006d522c5bf7f19b26dec8ac. One production Netlify deploy 6ad65809677aa503cbde2a81 reported READY, exact commit, published 2026-10-19T17:49:16.803Z, video-publisher function present with /poster/video/* route. Poster PR suite 346/346 passed.
+- The previous failed Pinterest media upload has no saved media ID because old code lacked that checkpoint. No production Pinterest video Pin ID or post was confirmed by release. User must revisit the SAME saved upload, confirm already-published YouTube link and choose Pinterest-only recovery. On new transfer, save Pinterest media ID; if media later times out, subsequent owner recovery resumes same media ID. Do not click GitHub Re-run or reupload to YouTube.
+- Existing Etsy listings/Pins, poster uploader, PrintShrimp, schedules and owner password unchanged. This documentation-only commit uses [skip netlify] and does not cause a second production deploy.
