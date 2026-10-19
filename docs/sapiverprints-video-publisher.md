@@ -39,3 +39,8 @@ This is an isolated manual publisher for 10-second vertical MP4 videos, not part
 - This also confirms that at least one dispatch from the protected uploader succeeded using current token configuration. A screenshot showing dispatch HTTP 404 could reflect a separate attempt; avoid assuming the whole permission setup is invalid or rotating tokens unnecessarily.
 - On `fix/sapiverprints-video-ffprobe-20261019`, added `scripts/ensure-video-probe.sh` and runs it before video publication. It installs distribution `ffmpeg` only when `ffprobe` is missing, failing before social calls if unavailable. PR CI now checks and provisions `ffprobe` on the actual GitHub Ubuntu runner.
 - Staged fix only; no scheduled workflows changed, no real social posts or website deployments triggered by this change. CI status to be recorded after checks. A fresh owner-approved upload will be needed because the original 45-minute media ticket and fail-closed state should not be blindly retried.
+
+### Release verification
+- PR #41 merged as 1111b20a76d84948f5bc3c61e2a09c4de2eff3f3; corrected helper read back on main.
+- GitHub job 118159907461 completed all 17 tests with zero failures (logs at 16:06:49 UTC). This supersedes the pending CI/release note above.
+- End-to-end publication and private source deletion remain unverified. Existing failed upload needs its YouTube URL checked before recovery; do not submit another copy blindly.
