@@ -1,0 +1,40 @@
+name: Diagnose video YouTube permission
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/diagnose-video-youtube.yml'
+permissions:
+  contents: read
+jobs:
+  diagnose:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'fix/video-youtube-403'
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Read existing OAuth scope only
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+        run: |
+          node --input-type=module <<'JS'
+          const body = new URLSearchParams({
+            client_id: process.env.YOUTUBE_CLIENT_ID,
+            client_secret: process.env.YOUTUBE_CLIENT_SECRET,
+            refresh_token: process.env.YOUTUBE_REFRESH_TOKEN,
+            grant_type: 'refresh_token'
+          });
+          const res = await fetch('https://oauth2.googleapis.com/token', {method:'POST',body});
+          const data = await res.json();
+          if(!res.ok || !data.access_token) throw Error('OAuth refresh HTTP '+res.status);
+          console.log('::add-mask::'+data.access_token);
+          const scopes=String(data.scope||'').split(' ').filter(s=>/^https:\/\/www.googleapis.com\/auth\/[a-zA-Z0-9._-]+$/.test(s));
+          console.log('Granted scopes: '+scopes.join(' '));
+          const check=await fetch('https://www.googleapis.com/youtube/v3/videos?part=status&id=invalid',{headers:{Authorization:'Bearer '+data.access_token}});
+          const result=await check.json();
+          console.log('Video status read HTTP '+check.status);
+          console.log('Reasons: '+(result.error?.errors||[]).map(e=>String(e.reason||'').replace(/[^A-Za-z0-9_-]/g,'')).join(','));
+          JS
