@@ -100,7 +100,14 @@ async function main(){
  const job=await (await ownerGet('job')).json();
  if(job.id!==id||job.link!=='https://sapiverprints.etsy.com'||!job.sha256||!job.bytes)throw Error('Unexpected publisher metadata');
  if(job.platforms?.youtube?.id&&job.platforms?.pinterest?.id){console.log('Both platform receipts already recorded');return;}
- const video=Buffer.from(await (await ownerGet('source')).arrayBuffer());
+ const segments=[];
+ for(let i=0;i<Math.ceil(job.bytes/2000000);i++){
+  const received=Buffer.from(await (await ownerGet('source/'+i)).arrayBuffer());
+  const expected=Math.min(2000000,job.bytes-i*2000000);
+  if(received.length!==expected)throw Error('Video media segment incomplete');
+  segments.push(received);
+ }
+ const video=Buffer.concat(segments);
  if(video.length!==job.bytes||sha(video)!==job.sha256||video.subarray(4,8).toString('ascii')!=='ftyp')throw Error('Video content mismatch');
  const temp=await mkdtemp(path.join(tmpdir(),'sapiverprints-video-'));
  try{
