@@ -58,7 +58,7 @@ async function apiFetch(fetchImpl,route,token,options={}){
   return response.json();
 }
 
-async function pinterestToken(fetchImpl,env) {
+export async function pinterestToken(fetchImpl,env) {
   const refresh=env.PINTEREST_REFRESH_TOKEN||'';
   const clientId=env.PINTEREST_CLIENT_ID||env.PINTEREST_APP_ID||'';
   const clientSecret=env.PINTEREST_CLIENT_SECRET||env.PINTEREST_APP_SECRET||'';
@@ -78,7 +78,7 @@ async function pinterestToken(fetchImpl,env) {
   return data.access_token;
 }
 
-async function boardForPrints(fetchImpl,token){
+export async function boardForPrints(fetchImpl,token){
   let bookmark='',all=[];
   for(let page=0;page<20;page++){
     const qs=new URLSearchParams({page_size:'100'});
