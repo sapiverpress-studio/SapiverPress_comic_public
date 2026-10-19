@@ -19,7 +19,16 @@ This is an isolated manual publisher for 10-second vertical MP4 videos, not part
 5. Check neither existing daily social publisher nor the 52/month product cap was changed.
 
 ## Live status
-**Staged only as of 2026-10-19. No video has been published through this workflow.** No new OAuth connection or service subscription has been requested. No deployment is implied by this document.
+**Released via PRs #39/#40. Second live attempt failed at YouTube status read-back; an upload may already exist. Pinterest and temporary-media deletion remain unverified.** No new OAuth connection or service subscription has been requested.
+
+## 2026-10-19 — YouTube upload-only permission regression
+- VERIFIED: job 118156008412 / run 39281324315 provisions ffprobe, then fails with Google HTTP 403 before Pinterest. Runs/jobs metadata returned stale queued state; completed job logs are the evidence.
+- VERIFIED: read-only diagnostic run 39282383974 returns only youtube.upload scope and reproduces videos.list HTTP 403 / insufficientPermissions. No media posted or Pinterest token rotation performed by diagnostic.
+- FIX: scripts/sapiverprints-youtube.mjs validates the ID and returned public privacy plus uploaded/processed status from videos.insert. No new OAuth grant or videos.list permission required. Accepted upload does not guarantee completed processing or eventual playback. Private, unlisted, missing and rejected status fail closed.
+- Log accepted video ID before validation/receipt errors for recovery. HTTP failures expose path and machine-readable reasons only. Mask the scoped media ticket before the step using it.
+- TESTED locally: 9 YouTube regression cases and all 8 existing Pinterest cases pass; publisher syntax passes. PR CI/release pending.
+- Old failed attempt did not retain its video ID before read-back failed. Check existing Neo-Deco upload before reposting. Its uploader state needs_attention and expiring ticket prevent blind retry.
+- No uploader, Netlify, schedule, Etsy, supplier or monthly-cap changes. Remove temporary diagnostic workflow from final changes.
 
 ## CI checkpoint, 2026-10-19
 - Verified: video syntax/Pinterest test workflow 39254486345 SUCCESS; existing Pinterest test 39254486328 SUCCESS on draft PR #39.

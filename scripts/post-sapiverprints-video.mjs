@@ -7,6 +7,8 @@ import { promisify } from 'node:util';
 import { createHash } from 'node:crypto';
 import { pinterestToken, boardForPrints } from './post-sapiver-prints.mjs';
 
+import { publishYouTube } from './sapiverprints-youtube.mjs';
+
 const exec=promisify(execFile);
 const ROOT='https://sapiver-poster-gen-auth.netlify.app';
 const API='https://api.pinterest.com/v5';
@@ -18,7 +20,13 @@ const sha=data=>createHash('sha256').update(data).digest('hex');
 const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 async function request(url,opts={}){
  const response=await fetch(url,{redirect:'error',signal:AbortSignal.timeout(30000),...opts});
- if(!response.ok)throw Error('HTTP '+response.status+' from '+new URL(url).hostname);
+ if(!response.ok){
+  // Only expose machine-readable reasons, never raw API bodies, tokens or upload URLs.
+  let reasons=[];
+  try{const data=await response.json();reasons=(data.error?.errors||[]).map(e=>e.reason).filter(r=>typeof r==='string'&&/^[A-Za-z0-9_-]{1,80}$/.test(r));}catch{}
+  const target=new URL(url);
+  throw Error('HTTP '+response.status+' from '+target.hostname+' '+target.pathname+(reasons.length?' ('+reasons.join(',')+')':''));
+ }
  return response;
 }
 async function ownerGet(route){
@@ -43,30 +51,6 @@ async function oauth(){
  const data=await response.json();
  if(!data.access_token)throw Error('YouTube authentication did not return access token');
  return data.access_token;
-}
-async function publishYouTube(video,job){
- const token=await oauth();
- const description=[job.description,'','Browse Sapiver Prints:',job.link,'','#Shorts #SapiverPrints #WallArt'].join('\n').slice(0,4600);
- const meta={snippet:{title:job.title.slice(0,100),description,categoryId:'10',defaultLanguage:'en-GB'},status:{privacyStatus:'public',selfDeclaredMadeForKids:false}};
- const init=await request('https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status',{
-  method:'POST',headers:{Authorization:'Bearer '+token,'Content-Type':'application/json; charset=UTF-8','X-Upload-Content-Type':'video/mp4','X-Upload-Content-Length':String(video.byteLength)},body:JSON.stringify(meta)
- });
- const uploadUrl=init.headers.get('location');
- if(!uploadUrl||!uploadUrl.startsWith('https://'))throw Error('YouTube resumable upload URL unavailable');
- const result=await request(uploadUrl,{method:'PUT',headers:{'Content-Type':'video/mp4','Content-Length':String(video.byteLength)},body:video});
- const data=await result.json();
- if(!/^[A-Za-z0-9_-]{11}$/.test(String(data.id||'')))throw Error('YouTube did not return a video ID; inspect upload');
- // Do not treat an unverified upload response as a confirmed published video.
- let confirmed=false;
- for(let attempt=0;attempt<8;attempt++){
-  const check=await request('https://www.googleapis.com/youtube/v3/videos?part=status&id='+encodeURIComponent(data.id),{headers:{Authorization:'Bearer '+token}});
-  const verified=await check.json();
-  if(verified.items?.some(v=>v.id===data.id&&v.status?.privacyStatus==='public')){confirmed=true;break;}
-  await sleep(3000);
- }
- if(!confirmed)throw Error('YouTube visibility not confirmed after read-back; inspect before reposting');
- await ownerReport('youtube',data.id);
- return data.id;
 }
 async function pinterestApi(route,token,opts={}){
  const result=await request(API+route,{...opts,headers:{Authorization:'Bearer '+token,'Content-Type':'application/json',...opts.headers}});
@@ -122,7 +106,7 @@ async function main(){
   const duration=Number(info.format?.duration),v=info.streams?.find(s=>s.codec_type==='video');
   if(!v||!Number.isFinite(duration)||duration<8||duration>12||v.width>=v.height)throw Error('Video must be vertical and 8–12 seconds');
   if(!job.platforms?.youtube?.id){
-   const yt=await publishYouTube(video,job);console.log('Confirmed YouTube video '+yt);
+   const yt=await publishYouTube(video,job,{token:await oauth(),request,ownerReport});console.log('Confirmed YouTube video '+yt);
   }else console.log('YouTube already confirmed; skipping');
   if(!job.platforms?.pinterest?.id){
    const pin=await publishPinterest(video,job);console.log('Confirmed Pinterest video '+pin);
