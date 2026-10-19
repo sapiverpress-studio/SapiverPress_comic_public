@@ -1,0 +1,26 @@
+name: Verify Sapiver Prints video publisher
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/sapiverprints-video.yml'
+      - '.github/workflows/test-sapiverprints-video.yml'
+      - 'scripts/post-sapiverprints-video.mjs'
+      - 'scripts/post-sapiver-prints.mjs'
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate publisher JavaScript and existing Pinterest tests
+        run: |
+          node --check scripts/post-sapiverprints-video.mjs
+          node --check scripts/post-sapiver-prints.mjs
+          node --test test/sapiverprints-pinterest.test.mjs
