@@ -57,9 +57,14 @@ async function publishYouTube(video,job){
  const data=await result.json();
  if(!/^[A-Za-z0-9_-]{11}$/.test(String(data.id||'')))throw Error('YouTube did not return a video ID; inspect upload');
  // Do not treat an unverified upload response as a confirmed published video.
- const check=await request('https://www.googleapis.com/youtube/v3/videos?part=status&id='+encodeURIComponent(data.id),{headers:{Authorization:'Bearer '+token}});
- const verified=await check.json();
- if(!verified.items?.some(v=>v.id===data.id&&v.status?.privacyStatus==='public'))throw Error('YouTube upload visibility not confirmed; inspect before reposting');
+ let confirmed=false;
+ for(let attempt=0;attempt<8;attempt++){
+  const check=await request('https://www.googleapis.com/youtube/v3/videos?part=status&id='+encodeURIComponent(data.id),{headers:{Authorization:'Bearer '+token}});
+  const verified=await check.json();
+  if(verified.items?.some(v=>v.id===data.id&&v.status?.privacyStatus==='public')){confirmed=true;break;}
+  await sleep(3000);
+ }
+ if(!confirmed)throw Error('YouTube visibility not confirmed after read-back; inspect before reposting');
  await ownerReport('youtube',data.id);
  return data.id;
 }
