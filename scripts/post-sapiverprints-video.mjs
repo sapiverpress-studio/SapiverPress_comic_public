@@ -117,4 +117,4 @@ async function main(){
   }else console.log('Pinterest already confirmed; skipping');
  }finally{await fs.rm(temp,{recursive:true,force:true});}
 }
-main().catch(e=>{console.error('Sapiver Prints video needs attention: '+String(e.message||e).slice(0,250));process.exitCode=1;});
+main().catch(async e=>{console.error('Sapiver Prints video needs attention: '+String(e.message||e).slice(0,250));try{await request(endpoint+'fail',{method:'POST',headers:{Authorization:'Bearer '+ticket,'Content-Type':'application/json'},body:'{}'});}catch{console.error('Could not report failed job; inspect private uploader');}process.exitCode=1;});
