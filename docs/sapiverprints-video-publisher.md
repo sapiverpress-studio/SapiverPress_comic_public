@@ -24,3 +24,9 @@ This is an isolated manual publisher for 10-second vertical MP4 videos, not part
 ## CI checkpoint, 2026-10-19
 - Verified: video syntax/Pinterest test workflow 39254486345 SUCCESS; existing Pinterest test 39254486328 SUCCESS on draft PR #39.
 - Paired uploader draft PR #49 passed CI 39254699127. Neither PR merged or deployed; no live MP4 published. Cross-repo trigger rights and platform APIs are not validated by these unit checks.
+
+## 2026-10-19 16:27 BST — Real video publication failure and tooling fix
+- Confirmed production Comic workflow_dispatch run [39277137372](https://github.com/sapiverpress-studio/SapiverPress_comic_public/actions/runs/39277137372) started at 15:21:16Z (16:21 BST), ended failed at 15:22:47Z. GitHub job log: `spawn ffprobe ENOENT`. The video had been downloaded and passed checksum checks, but the workflow could not inspect its media streams. **No YouTube or Pinterest publishing step was reached in this run.**
+- This also confirms that at least one dispatch from the protected uploader succeeded using current token configuration. A screenshot showing dispatch HTTP 404 could reflect a separate attempt; avoid assuming the whole permission setup is invalid or rotating tokens unnecessarily.
+- On `fix/sapiverprints-video-ffprobe-20261019`, added `scripts/ensure-video-probe.sh` and runs it before video publication. It installs distribution `ffmpeg` only when `ffprobe` is missing, failing before social calls if unavailable. PR CI now checks and provisions `ffprobe` on the actual GitHub Ubuntu runner.
+- Staged fix only; no scheduled workflows changed, no real social posts or website deployments triggered by this change. CI status to be recorded after checks. A fresh owner-approved upload will be needed because the original 45-minute media ticket and fail-closed state should not be blindly retried.
