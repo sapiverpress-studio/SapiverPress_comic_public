@@ -20,3 +20,7 @@ This is an isolated manual publisher for 10-second vertical MP4 videos, not part
 
 ## Live status
 **Staged only as of 2026-10-19. No video has been published through this workflow.** No new OAuth connection or service subscription has been requested. No deployment is implied by this document.
+
+## CI checkpoint, 2026-10-19
+- Verified: video syntax/Pinterest test workflow 39254486345 SUCCESS; existing Pinterest test 39254486328 SUCCESS on draft PR #39.
+- Paired uploader draft PR #49 passed CI 39254699127. Neither PR merged or deployed; no live MP4 published. Cross-repo trigger rights and platform APIs are not validated by these unit checks.
