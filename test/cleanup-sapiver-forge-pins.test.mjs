@@ -52,6 +52,9 @@ test('read-only inventory lists exact IDs and never DELETEs',async()=>{
  assert.ok(report.candidates.every(p=>typeof p.isOwner==='boolean'&&typeof p.adOnly==='boolean'));
  assert.deepEqual(report.candidates.map(x=>x.id),['10001','10002','10005']);
  assert.equal(report.candidateSignature,auditSignature(report.candidates));
+ assert.ok(Array.isArray(report.unrelatedBoardReview));
+ assert.equal(report.unrelatedBoardReview.reduce((n,b)=>n+b.count,0),report.counts.other);
+ assert.ok(Array.isArray(report.aiNewsSample));
  assert.equal(m.requests.filter(x=>x.method==='DELETE').length,0);
 });
 test('a correctly hash-locked audit only deletes exact Forge Pins and preserves 32 Prints receipts',async()=>{

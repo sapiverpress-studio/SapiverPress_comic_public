@@ -72,12 +72,23 @@ export async function inventory({fetchImpl,token,protectedIds=new Set()}){
   else if(verdict.action==='protect')protectedPins.push(short);
   else unrelated.push(short);
  }
+ // Read-only diagnostic of legacy boards. These records are NOT deletion candidates.
+ const perBoard=new Map();
+ for(const p of unrelated){
+  const entry=perBoard.get(p.board)||{board:p.board,boardId:p.boardId,count:0,samples:[]};
+  entry.count++;
+  if(entry.samples.length<25)entry.samples.push({id:p.id,title:p.title,link:p.link,isOwner:p.isOwner});
+  perBoard.set(p.board,entry);
+ }
+ const unrelatedBoardReview=[...perBoard.values()].sort((a,b)=>b.count-a.count);
+ const aiNewsSample=unrelated.filter(p=>/a\\.?i\\.? news feed|social/i.test(p.board)).slice(0,180);
  if(new Set(candidates.map(p=>p.id)).size!==candidates.length)throw Error('Duplicate candidate IDs');
  candidates.sort((a,b)=>a.id.localeCompare(b.id));
  return {
   version:1,mode:'audit',checkedAt:new Date().toISOString(),boards:boards.map(b=>({id:norm(b.id),name:norm(b.name)})),
   counts:{all:pins.length,candidates:candidates.length,protected:protectedPins.length,other:unrelated.length},
   candidateSignature:auditSignature(candidates),candidates,
+  unrelatedBoardReview,aiNewsSample,
   protectedSamples:protectedPins.slice(0,6),
   otherSamples:unrelated.slice(0,6)
  };
