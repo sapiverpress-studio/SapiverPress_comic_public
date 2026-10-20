@@ -5,6 +5,11 @@ on:
     # Hourly fallback when the near-immediate SapiverForge catalogue handoff is unavailable.
     - cron: '15 * * * *'
   workflow_dispatch:
+    inputs:
+      feed_sha:
+        description: Optional exact 40-character SapiverForge feed commit SHA
+        required: false
+        type: string
   repository_dispatch:
     types: [sapiver_prints_new_listing]
   push:
@@ -54,6 +59,8 @@ jobs:
           PINTEREST_APP_SECRET: ${{ secrets.PINTEREST_APP_SECRET }}
           GH_TOKEN: ${{ secrets.COMIC_GITHUB_TOKEN }}
           SAPIVER_PRINTS_MAX_PINS: '20'
+          # The new-listing handoff pins an immutable, freshly committed Etsy snapshot.
+          SAPIVER_ETSY_FEED_SHA: ${{ inputs.feed_sha || github.event.client_payload.feed_sha }}
         run: node scripts/post-sapiver-prints.mjs
 
       - name: Persist Pinterest rotating credential without exposing it
