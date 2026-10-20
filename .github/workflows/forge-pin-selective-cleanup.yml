@@ -80,7 +80,9 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          git add -f social/sapiver-forge/pin-cleanup-audit.json social/sapiver-forge/pin-cleanup-result.json 2>/dev/null || true
+          for report in social/sapiver-forge/pin-cleanup-audit.json social/sapiver-forge/pin-cleanup-result.json; do
+            if [ -f "$report" ]; then git add -f "$report"; fi
+          done
           if git diff --cached --quiet; then
             echo 'No updated cleanup audit/receipts.'
             exit 0
