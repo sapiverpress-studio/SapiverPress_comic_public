@@ -32,6 +32,7 @@ test('all Sapiver Prints listings, Print board, and video shop links protected d
  assert.equal(classifyPin(pins[2],'Sapiver Forge').action,'protect');
  assert.equal(classifyPin(pins[3],'Sapiver Prints').action,'protect');
  assert.equal(classifyPin(pins[6],'Sapiver Forge').action,'protect');
+ assert.equal(classifyPin(makePin('10009',forgeBoard,'Unbranded artwork','https://www.etsy.com/listing/4598484568'),'Sapiver Forge').action,'protect');
 });
 test('Forge-only board and explicitly labelled Forge Pins are selected, never miscellaneous Pins',()=>{
  assert.equal(classifyPin(pins[1],'Sapiver Forge').action,'candidate');
