@@ -1,0 +1,84 @@
+{
+  "mode": "board_cleanup",
+  "startedAt": "2026-10-20T15:41:21.452Z",
+  "protectedBoardNames": [
+    "Sapiver Prints",
+    "Sapiver Press Publishing",
+    "Social"
+  ],
+  "removed": [
+    {
+      "id": "1038924276479911800",
+      "name": "a.i news feed",
+      "pinsPreviouslySaved": 2
+    },
+    {
+      "id": "1038924276479841292",
+      "name": "AntiKing Sudoku",
+      "pinsPreviouslySaved": 1
+    },
+    {
+      "id": "1038924276479929523",
+      "name": "Clearforge",
+      "pinsPreviouslySaved": 0
+    },
+    {
+      "id": "1038924276479851513",
+      "name": "Facebook puzzles",
+      "pinsPreviouslySaved": 0
+    },
+    {
+      "id": "1038924276479879508",
+      "name": "Isla_Comic",
+      "pinsPreviouslySaved": 0
+    },
+    {
+      "id": "1038924276479869758",
+      "name": "Printable Sudoku Puzzles",
+      "pinsPreviouslySaved": 1
+    },
+    {
+      "id": "1038924276479851509",
+      "name": "Projects to try",
+      "pinsPreviouslySaved": 2
+    },
+    {
+      "id": "1038924276479849275",
+      "name": "Quick saves",
+      "pinsPreviouslySaved": 0
+    },
+    {
+      "id": "1038924276479840944",
+      "name": "Sudoku Books by Sapiver Press",
+      "pinsPreviouslySaved": 4
+    }
+  ],
+  "missingBefore": [],
+  "pinCountByBoard": {
+    "1038924276479911800": 2,
+    "1038924276479841292": 1,
+    "1038924276479929523": 0,
+    "1038924276479851513": 0,
+    "1038924276479879508": 0,
+    "1038924276479869758": 1,
+    "1038924276479851509": 2,
+    "1038924276479849275": 0,
+    "1038924276479840944": 4
+  },
+  "complete": true,
+  "verifiedAt": "2026-10-20T15:41:29.787Z",
+  "remainingBoards": [
+    {
+      "id": "1038924276479876865",
+      "name": "Sapiver Press Publishing"
+    },
+    {
+      "id": "1038924276479981121",
+      "name": "Sapiver Prints"
+    },
+    {
+      "id": "1038924276479983705",
+      "name": "Social"
+    }
+  ]
+}
