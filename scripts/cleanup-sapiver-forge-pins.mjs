@@ -14,7 +14,7 @@ const protectedName=/sapiver[\s_-]*prints\b|#sapiverprints\b/i;
 const forgeName=/sapiver[\s_-]*forge\b|#sapiverforge\b|\bclearforge\b/i;
 function protectedLink(link){
  const l=norm(link).toLowerCase();
- return /sapiverprints\.etsy\.com|(?:^|\/)etsy\.com\/listing\/[0-9]+/.test(l)||/sapiver[-_]?prints/.test(l);
+ return /sapiverprints\.etsy\.com|etsy\.com\/listing\/[0-9]+/.test(l)||/sapiver[-_]?prints/.test(l);
 }
 export function classifyPin(pin,boardName,protectedIds=new Set()){
  const id=norm(pin?.id),board=norm(boardName),title=norm(pin?.title),description=norm(pin?.description),link=norm(pin?.link);
