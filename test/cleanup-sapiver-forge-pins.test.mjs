@@ -11,7 +11,7 @@ const pins=[
  makePin('10005','99999','A useful Sapiver Forge AI explainer','https://example.org/info'),
  makePin('10006','99999','Unrelated art','https://example.org/art'),
  makePin('10007',forgeBoard,'Sapiver Forge recent news','https://sapiverprints.etsy.com'),
- makePin('10008',forgeBoard,'Sapiver Forge owned elsewhere','https://example.org',{toString:()=>''})
+ makePin('10008','99999','Unrelated saved artwork','https://example.org',{toString:()=>''})
 ];
 pins[7].is_owner=false;
 const boards=[{id:forgeBoard,name:'Sapiver Forge'},{id:printBoard,name:'Sapiver Prints'},{id:'99999',name:'General'}];
@@ -38,7 +38,10 @@ test('Forge-only board and explicitly labelled Forge Pins are selected, never mi
  assert.equal(classifyPin(pins[1],'Sapiver Forge').action,'candidate');
  assert.equal(classifyPin(pins[4],'General').action,'candidate');
  assert.equal(classifyPin(pins[5],'General').action,'skip');
- assert.equal(classifyPin(pins[7],'Sapiver Forge').action,'skip');
+ assert.equal(classifyPin(pins[7],'General').action,'skip');
+ const ordinary=makePin('10009',forgeBoard,'Normal Forge Pin','https://example.com');ordinary.is_removable=false;
+ assert.equal(classifyPin(ordinary,'Sapiver Forge').action,'candidate');
+ assert.equal(classifyPin(ordinary,'Clearforge').action,'candidate');
 });
 test('read-only inventory lists exact IDs and never DELETEs',async()=>{
  const m=mock();
@@ -46,6 +49,7 @@ test('read-only inventory lists exact IDs and never DELETEs',async()=>{
  assert.equal(report.counts.all,8);
  assert.equal(report.counts.candidates,3);
  assert.equal(report.counts.protected,3);
+ assert.ok(report.candidates.every(p=>typeof p.isOwner==='boolean'&&typeof p.adOnly==='boolean'));
  assert.deepEqual(report.candidates.map(x=>x.id),['10001','10002','10005']);
  assert.equal(report.candidateSignature,auditSignature(report.candidates));
  assert.equal(m.requests.filter(x=>x.method==='DELETE').length,0);
