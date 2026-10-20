@@ -5,6 +5,14 @@ import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 
 export const FEED_URL='https://raw.githubusercontent.com/sapiverpress-studio/SapiverForge/main/data/etsy-public-catalog.json';
+export function feedUrlForEnv(env={}) {
+ const sha=String(env.SAPIVER_ETSY_FEED_SHA||'').trim();
+ if(!sha)return FEED_URL;
+ if(!/^[a-f0-9]{40}$/.test(sha))throw Error('Invalid pinned Etsy public catalogue commit');
+ // Immutable Git commit path avoids raw.githubusercontent.com's stale cached /main response
+ // immediately after Forge publishes a newly active item.
+ return 'https://raw.githubusercontent.com/sapiverpress-studio/SapiverForge/'+sha+'/data/etsy-public-catalog.json';
+}
 export const BOARD_NAME='Sapiver Prints';
 export const STATE_PATH='social/sapiver-prints/pinterest-receipts.json';
 const API='https://api.pinterest.com/v5';
@@ -136,7 +144,7 @@ async function readReceipts(file) {
 export async function runPublisher({fetchImpl=fetch,env=process.env,now=Date.now(),stateFile=STATE_PATH,maxNewPins=1,interPinDelayMs=maxNewPins>2?30000:0,sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms))}={}) {
   if(!Number.isInteger(maxNewPins)||maxNewPins<0||maxNewPins>25)throw Error('Unexpected per-run Pin limit');
   if(!Number.isInteger(interPinDelayMs)||interPinDelayMs<0||interPinDelayMs>120000)throw Error('Invalid Pinterest batch spacing');
-  const response=await fetchImpl(FEED_URL,{headers:{Accept:'application/json'},signal:AbortSignal.timeout(18000)});
+  const response=await fetchImpl(feedUrlForEnv(env),{headers:{Accept:'application/json'},signal:AbortSignal.timeout(18000)});
   if(!response.ok)throw Error('Public Etsy catalogue fetch HTTP '+response.status);
   const feed=validateFeed(await response.json(),now);
   const state=await readReceipts(stateFile);
