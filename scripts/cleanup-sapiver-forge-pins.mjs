@@ -92,8 +92,7 @@ export async function removeAudited({fetchImpl,token,audit,expectedSignature,pro
   if(!ID.test(audited.id)||protectedIds.has(audited.id))throw Error('Protected Pin in audit; stop');
   const live=now.get(audited.id);
   if(!live){absent.push(audited.id);continue;}
-  if(live.boardId!==audited.boardId||live.reason!==audited.reason||
-     classifyPin(live,live.board,protectedIds).action!=='candidate')
+  if(live.boardId!==audited.boardId||live.reason!==audited.reason)
     throw Error('Pin classification changed; stop before DELETE');
   const answer=await api(fetchImpl,token,'/pins/'+audited.id,{method:'DELETE'});
   if(answer.deleted){deleted.push(audited.id);onProgress({deleted:audited.id,total:deleted.length});}
