@@ -34,3 +34,11 @@ This publisher is separate from the Comic puzzle series, Sapiver Forge Daily Bri
 - Verify the created Pin is on the dedicated Sapiver Prints board, matches the artwork and links to the correct Etsy listing.
 - Do not force reruns without reviewing the receipt and remote Pinterest board.
 - To stop automation without modifying working Comic news workflows: disable just the `Auto-post Sapiver Prints Etsy products to Pinterest` scheduled GitHub Action.
+
+## 2026-10-20 — All active Etsy listings get an individual Pin (RELEASE PENDING)
+- Owner request: Pin every ACTIVE SapiverPrints listing, preferably immediately after Etsy publication, not one per day. Continue using Etsy's public primary photo, short listing description, and direct canonical listing URL. Preserve existing Sapiver Prints board and historical Pin IDs.
+- Read-only initial audit: 32 active Etsy listings (feed generated 2026-10-19T21:03:42Z); 26 Pinterest listing receipts. Six pending: Neo-Deco Jazz (Midnight Keys, Golden Voice, Blue Groove, Amber Strings) and Capybara Christmas (Christmas Bath, Festive Slumber).
+- Comic workflow now permits max 20 new Pins per run instead of one; maintains 30-second pacing, increases timeout to 20 minutes. Existing script validates Etsy public feed, scans target board for matching canonical listing links, and persists listing ID / Pin ID receipts. Script cap remains 25.
+- Trigger: workflow_dispatch after SapiverForge detects new ACTIVE Etsy IDs; hourly safety fallback at minute 15 UTC. Paired SapiverForge workflow polls Etsy at :07/:37 UTC and dispatches Comic only after successful catalogue commit using preexisting CROSS_REPO_GITHUB_TOKEN. This is near-real-time (approximately 30 minutes plus GitHub/API latency), NOT guaranteed instantaneous or an Etsy webhook.
+- No new password, Pinterest OAuth, Netlify deploy, Etsy write, PrintShrimp order, video workflow or daily social changes.
+- Status: staged on isolated branch. Unit tests and live Pin receipts pending. Release Comic first, Forge second, and independently verify initial six-Pin backlog before claiming 32/32.
