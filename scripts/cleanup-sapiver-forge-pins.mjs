@@ -22,8 +22,10 @@ export function classifyPin(pin,boardName,protectedIds=new Set()){
  if(protectedIds.has(id))return {action:'protect',reason:'sapiver_prints_receipt'};
  if(/sapiver[\s_-]*prints/i.test(board)||protectedName.test(title+' '+description)||protectedLink(link))
    return {action:'protect',reason:'sapiver_prints_content'};
- if(pin.is_owner===false||pin.is_removable===false)return {action:'skip',reason:'not_removable'};
- if(/^sapiver\s+forge(?:$|\s|[—–-])/i.test(board))return {action:'candidate',reason:'sapiver_forge_board'};
+ // Pinterest is_removable indicates an ad-only Pin; it is NOT an ordinary DELETE permission.
+ // GET /pins returns saved/owned Pins; only clean pins on identified user boards.
+ if(!board && pin.is_owner===false)return {action:'skip',reason:'unknown_board_or_owner'};
+ if(/^(?:sapiver[\s_-]*forge|clearforge)(?:$|\s|[—–-])/i.test(board))return {action:'candidate',reason:'forge_legacy_board'};
  if(forgeName.test(title+' '+description))return {action:'candidate',reason:'sapiver_forge_label'};
  return {action:'skip',reason:'unrelated'};
 }
@@ -65,7 +67,7 @@ export async function inventory({fetchImpl,token,protectedIds=new Set()}){
  for(const p of pins){
   const boardName=boardsById.get(norm(p.board_id))||'';
   const verdict=classifyPin(p,boardName,protectedIds);
-  const short={id:norm(p.id),boardId:norm(p.board_id),board:boardName,title:norm(p.title).slice(0,140),link:norm(p.link).slice(0,250),reason:verdict.reason};
+  const short={id:norm(p.id),boardId:norm(p.board_id),board:boardName,title:norm(p.title).slice(0,140),link:norm(p.link).slice(0,250),reason:verdict.reason,isOwner:p.is_owner===true,adOnly:p.is_removable===true};
   if(verdict.action==='candidate')candidates.push(short);
   else if(verdict.action==='protect')protectedPins.push(short);
   else unrelated.push(short);
