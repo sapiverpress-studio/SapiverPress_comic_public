@@ -1,0 +1,167 @@
+{
+  "version": 1,
+  "mode": "audit",
+  "checkedAt": "2026-10-20T14:11:32.005Z",
+  "boards": [
+    {
+      "id": "1038924276479911800",
+      "name": "a.i news feed"
+    },
+    {
+      "id": "1038924276479841292",
+      "name": "AntiKing Sudoku"
+    },
+    {
+      "id": "1038924276479929523",
+      "name": "Clearforge"
+    },
+    {
+      "id": "1038924276479851513",
+      "name": "Facebook puzzles"
+    },
+    {
+      "id": "1038924276479879508",
+      "name": "Isla_Comic"
+    },
+    {
+      "id": "1038924276479888882",
+      "name": "kdp ready"
+    },
+    {
+      "id": "1038924276479869758",
+      "name": "Printable Sudoku Puzzles"
+    },
+    {
+      "id": "1038924276479851509",
+      "name": "Projects to try"
+    },
+    {
+      "id": "1038924276479849275",
+      "name": "Quick saves"
+    },
+    {
+      "id": "1038924276479917183",
+      "name": "Sapiver forge"
+    },
+    {
+      "id": "1038924276479876865",
+      "name": "Sapiver Press Publishing"
+    },
+    {
+      "id": "1038924276479981121",
+      "name": "Sapiver Prints"
+    },
+    {
+      "id": "1038924276479840944",
+      "name": "Sudoku Books by Sapiver Press"
+    }
+  ],
+  "counts": {
+    "all": 746,
+    "candidates": 0,
+    "protected": 35,
+    "other": 711
+  },
+  "candidateSignature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "candidates": [],
+  "protectedSamples": [
+    {
+      "id": "1038924207812665970",
+      "boardId": "1038924276479981121",
+      "board": "Sapiver Prints",
+      "title": "Christmas Capybara Collection 🎄 | Cosy Festive Wall Art",
+      "link": "https://sapiverprints.etsy.com/",
+      "reason": "sapiver_prints_content"
+    },
+    {
+      "id": "1038924207812656925",
+      "boardId": "1038924276479981121",
+      "board": "Sapiver Prints",
+      "title": "Sleeping Capybara Christmas Art Print",
+      "link": "https://www.etsy.com/listing/4597458802",
+      "reason": "sapiver_prints_receipt"
+    },
+    {
+      "id": "1038924207812656920",
+      "boardId": "1038924276479981121",
+      "board": "Sapiver Prints",
+      "title": "Capybara Christmas Bath Art Print",
+      "link": "https://www.etsy.com/listing/4597459356",
+      "reason": "sapiver_prints_receipt"
+    },
+    {
+      "id": "1038924207812656909",
+      "boardId": "1038924276479981121",
+      "board": "Sapiver Prints",
+      "title": "Double Bass Art Deco Wall Art Print",
+      "link": "https://www.etsy.com/listing/4598461481",
+      "reason": "sapiver_prints_receipt"
+    },
+    {
+      "id": "1038924207812656893",
+      "boardId": "1038924276479981121",
+      "board": "Sapiver Prints",
+      "title": "Vinyl Record Turntable Art Deco Wall Art Print",
+      "link": "https://www.etsy.com/listing/4598484374",
+      "reason": "sapiver_prints_receipt"
+    },
+    {
+      "id": "1038924207812656888",
+      "boardId": "1038924276479981121",
+      "board": "Sapiver Prints",
+      "title": "Vintage Microphone Art Deco Wall Art Print",
+      "link": "https://www.etsy.com/listing/4598484568",
+      "reason": "sapiver_prints_receipt"
+    }
+  ],
+  "otherSamples": [
+    {
+      "id": "1038924207812404575",
+      "boardId": "1038924276479917183",
+      "board": "Sapiver forge",
+      "title": "You do not need more AI policy; you need clearer decision points",
+      "link": "https://sapiver-press.kit.com/5147ce2817",
+      "reason": "not_removable"
+    },
+    {
+      "id": "1038924207812374847",
+      "boardId": "1038924276479917183",
+      "board": "Sapiver forge",
+      "title": "A decision you cannot find later has to be made twice",
+      "link": "https://sapiver-press.kit.com/5147ce2817",
+      "reason": "not_removable"
+    },
+    {
+      "id": "1038924207812366197",
+      "boardId": "1038924276479917183",
+      "board": "Sapiver forge",
+      "title": "Anthropic's AI agents go rogue on government websites",
+      "link": "https://suite.sapiverpress.co.uk/daily-brief/intelligence/2026-10-10/",
+      "reason": "not_removable"
+    },
+    {
+      "id": "1038924207812346479",
+      "boardId": "1038924276479917183",
+      "board": "Sapiver forge",
+      "title": "Review the automation after it has met real work, not just the demo",
+      "link": "https://payhip.com/b/cmklU",
+      "reason": "not_removable"
+    },
+    {
+      "id": "1038924207812317662",
+      "boardId": "1038924276479917183",
+      "board": "Sapiver forge",
+      "title": "Looks finished and safe to release are two different things",
+      "link": "https://sapiver-press.kit.com/5147ce2817",
+      "reason": "not_removable"
+    },
+    {
+      "id": "1038924207812290047",
+      "boardId": "1038924276479917183",
+      "board": "Sapiver forge",
+      "title": "Generation time is not the same as job time",
+      "link": "https://sapiver-press.kit.com/5147ce2817",
+      "reason": "not_removable"
+    }
+  ]
+}
