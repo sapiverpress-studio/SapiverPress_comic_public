@@ -5,6 +5,8 @@ on:
     # Hourly fallback when the near-immediate SapiverForge catalogue handoff is unavailable.
     - cron: '15 * * * *'
   workflow_dispatch:
+  repository_dispatch:
+    types: [sapiver_prints_new_listing]
   push:
     branches: [main]
     paths:
