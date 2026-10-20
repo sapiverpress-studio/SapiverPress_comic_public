@@ -24,7 +24,7 @@ function mockApi({products=[item(101),item(102)],pins=[],failPost=false,boardPre
     requests,created,
     async fetch(url,opts={}){
       const address=String(url);requests.push({address,method:opts.method||'GET',body:opts.body});
-      if(address===FEED_URL || /^https:\/\/raw\.githubusercontent\.com\/sapiverpress-studio\/SapiverForge\/[a-f0-9]{40}\/data\/etsy-public-catalogue\.json$/.test(address))return {ok:true,status:200,json:async()=>feed(products)};
+      if(address===FEED_URL || /^https:\/\/raw\.githubusercontent\.com\/sapiverpress-studio\/SapiverForge\/[a-f0-9]{40}\/data\/etsy-public-catalog\.json$/.test(address))return {ok:true,status:200,json:async()=>feed(products)};
       if(address.endsWith('/oauth/token'))return {ok:true,status:200,json:async()=>({access_token:'test-access',refresh_token:'pinr-next'})};
       if(address.includes('/boards?'))return {ok:true,status:200,json:async()=>({items:boardPresent?[{id:'555',name:BOARD_NAME}]:[],bookmark:null})};
       if(address.endsWith('/boards')&&opts.method==='POST')return {ok:true,status:201,json:async()=>({id:'555',name:BOARD_NAME})};
