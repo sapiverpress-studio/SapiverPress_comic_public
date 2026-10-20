@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
-import {FEED_URL,BOARD_NAME,validateFeed,pinPayload,runPublisher} from '../scripts/post-sapiver-prints.mjs';
+import {FEED_URL,BOARD_NAME,validateFeed,pinPayload,runPublisher,feedUrlForEnv} from '../scripts/post-sapiver-prints.mjs';
 
 const now=Date.parse('2026-10-16T12:00:00Z');
 const item=(id,title='Velvet Echo — Jazz Singer and Vintage Microphone Art Print')=>({
@@ -24,7 +24,7 @@ function mockApi({products=[item(101),item(102)],pins=[],failPost=false,boardPre
     requests,created,
     async fetch(url,opts={}){
       const address=String(url);requests.push({address,method:opts.method||'GET',body:opts.body});
-      if(address===FEED_URL)return {ok:true,status:200,json:async()=>feed(products)};
+      if(address===FEED_URL || /^https:\/\/raw\.githubusercontent\.com\/sapiverpress-studio\/SapiverForge\/[a-f0-9]{40}\/data\/etsy-public-catalog\.json$/.test(address))return {ok:true,status:200,json:async()=>feed(products)};
       if(address.endsWith('/oauth/token'))return {ok:true,status:200,json:async()=>({access_token:'test-access',refresh_token:'pinr-next'})};
       if(address.includes('/boards?'))return {ok:true,status:200,json:async()=>({items:boardPresent?[{id:'555',name:BOARD_NAME}]:[],bookmark:null})};
       if(address.endsWith('/boards')&&opts.method==='POST')return {ok:true,status:201,json:async()=>({id:'555',name:BOARD_NAME})};
@@ -176,5 +176,27 @@ test('when more than 20 new listings await Pinterest, next run drains the remain
   assert.equal(second.created,6);
   assert.equal(second.pending,0);
   assert.equal(new Set(mock.created.map(x=>x.link)).size,26);
+ }finally{await fs.rm(tmp,{recursive:true,force:true});}
+});
+
+test('pinned Etsy catalogue commit is read instead of stale cached mutable main on new-listing dispatch',async()=>{
+ const sha='a'.repeat(40);
+ const pinned=feedUrlForEnv({SAPIVER_ETSY_FEED_SHA:sha});
+ assert.equal(pinned,'https://raw.githubusercontent.com/sapiverpress-studio/SapiverForge/'+sha+'/data/etsy-public-catalog.json');
+ assert.equal(feedUrlForEnv({}),FEED_URL);
+ assert.throws(()=>feedUrlForEnv({SAPIVER_ETSY_FEED_SHA:'main'}),/Invalid pinned/);
+ const tmp=await fs.mkdtemp(path.join(os.tmpdir(),'sp-pinned-feed-'));
+ try{
+  const mock=mockApi({products:[item(9501)]}),orig=mock.fetch;
+  let used='';
+  const wrapped=async(url,opts)=>{
+    used=String(url);
+    if(used===FEED_URL)return {ok:true,status:200,json:async()=>({...feed([item(9501)]),generatedAt:new Date(now-6*3600000).toISOString()})};
+    return orig(url,opts);
+  };
+  const received=await runPublisher({fetchImpl:wrapped,env:{...env(path.join(tmp,'rotation')),SAPIVER_ETSY_FEED_SHA:sha},now,stateFile:path.join(tmp,'receipts.json')});
+  assert.equal(received.created,1);
+  assert.equal(received.pending,0);
+  assert.ok(mock.created.length===1);
  }finally{await fs.rm(tmp,{recursive:true,force:true});}
 });
