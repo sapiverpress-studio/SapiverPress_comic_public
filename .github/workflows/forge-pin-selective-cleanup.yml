@@ -1,4 +1,4 @@
-name: Safely audit individual Sapiver Forge Pinterest Pins
+name: Safely audit individual Sapiver Forge and legacy Clearforge Pins
 on:
   pull_request:
     paths:
@@ -24,6 +24,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            scripts/cleanup-sapiver-forge-pins.mjs
+            scripts/post-sapiver-prints.mjs
+            test/cleanup-sapiver-forge-pins.test.mjs
+          sparse-checkout-cone-mode: false
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
@@ -41,10 +47,18 @@ jobs:
         with:
           ref: main
           persist-credentials: true
+          sparse-checkout: |
+            scripts/cleanup-sapiver-forge-pins.mjs
+            scripts/post-sapiver-prints.mjs
+            test/cleanup-sapiver-forge-pins.test.mjs
+            social/sapiver-prints/pinterest-receipts.json
+            social/sapiver-forge/pin-cleanup-audit.json
+            social/sapiver-forge/pin-cleanup-result.json
+          sparse-checkout-cone-mode: false
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - name: Read-only inventory; never delete a Pin during audit
+      - name: Read-only inventory of Forge and Clearforge, never delete during audit
         id: pinterest
         env:
           PINTEREST_REFRESH_TOKEN: ${{ secrets.PINTEREST_REFRESH_TOKEN }}
