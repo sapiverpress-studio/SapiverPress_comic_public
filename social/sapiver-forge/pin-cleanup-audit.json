@@ -1,7 +1,7 @@
 {
   "version": 1,
   "mode": "audit",
-  "checkedAt": "2026-10-20T14:22:42.965Z",
+  "checkedAt": "2026-10-20T15:13:37.487Z",
   "boards": [
     {
       "id": "1038924276479911800",
@@ -24,10 +24,6 @@
       "name": "Isla_Comic"
     },
     {
-      "id": "1038924276479888882",
-      "name": "kdp ready"
-    },
-    {
       "id": "1038924276479869758",
       "name": "Printable Sudoku Puzzles"
     },
@@ -38,10 +34,6 @@
     {
       "id": "1038924276479849275",
       "name": "Quick saves"
-    },
-    {
-      "id": "1038924276479917183",
-      "name": "Sapiver forge"
     },
     {
       "id": "1038924276479876865",
@@ -61,13 +53,563 @@
     }
   ],
   "counts": {
-    "all": 636,
-    "candidates": 0,
+    "all": 657,
+    "candidates": 19,
     "protected": 35,
-    "other": 601
+    "other": 603
   },
-  "candidateSignature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "candidates": [],
+  "candidateSignature": "0b1b0a94ea555ef22ec181c2309a1683875ca9e42b2a188e4506a675b4103b23",
+  "candidates": [
+    {
+      "id": "1038924207812666904",
+      "boardId": "1038924276479983705",
+      "board": "Social",
+      "title": "",
+      "link": "https://www.instagram.com/reel/Dd3FDhhCj-O/",
+      "reason": "sapiver_forge_label",
+      "isOwner": true,
+      "adOnly": false
+    },
+    {
+      "id": "1038924207812666913",
+      "boardId": "1038924276479983705",
+      "board": "Social",
+      "title": "",
+      "link": "https://www.instagram.com/reel/DebRwP0gbTz/",
+      "reason": "sapiver_forge_label",
+      "isOwner": true,
+      "adOnly": false
+    },
+    {
+      "id": "1038924207812667017",
+      "boardId": "1038924276479983705",
+      "board": "Social",
+      "title": "",
+      "link": "https://www.instagram.com/reel/DdydkDID7h0/",
+      "reason": "sapiver_forge_label",
+      "isOwner": true,
+      "adOnly": false
+    },
+    {
+      "id": "1038924207812667055",
+      "boardId": "1038924276479983705",
+      "board": "Social",
+      "title": "",
+      "link": "https://www.instagram.com/reel/Dd01MIWgQGQ/",
+      "reason": "sapiver_forge_label",
+      "isOwner": true,
+      "adOnly": false
+    },
+    {
+      "id": "1038924207812667057",
+      "boardId": "1038924276479983705",
+      "board": "Social",
+      "title": "",
+      "link": "https://www.instagram.com/reel/DdUEcKulM2T/",
+      "reason": "sapiver_forge_label",
+      "isOwner": true,
+      "adOnly": false
+    },
+    {
+      "id": "1038924207812667060",
+      "boardId": "1038924276479983705",
+      "board": "Social",
+      "title": "",
+      "link": "https://www.instagram.com/reel/DddoHn_CdPm/",
+      "reason": "sapiver_forge_label",
+      "isOwner": true,
+      "adOnly": false
+    },
+    {
+      "id": "1038924207812667078",
+      "boardId": "1038924276479983705",
+      "board": "Social",
+      "title": "",
+      "link": "https://www.instagram.com/reel/Dd8TsegoG_T/",
+      "reason": "sapiver_forge_label",
+      "isOwner": true,
+      "adOnly": false
+    },
+    {
+      "id": "1038924207812667130",
+      "boardId": "1038924276479983705",
+      "board": "Social",
+      "title": "",
+      "link": "https://www.instagram.com/reel/Dda5AqpACEv/",
+      "reason": "sapiver_forge_label",
+      "isOwner": true,
+      "adOnly": false
+    },
+    {
+      "id": "1038924207812667147",
+      "boardId": "1038924276479983705",
+      "board": "Social",
+      "title": "",
+      "link": "https://www.instagram.com/reel/DeTY-DuHX46/",
+      "reason": "sapiver_forge_label",
+      "isOwner": true,
+      "adOnly": false
+    },
+    {
+      "id": "1038924207812667177",
+      "boardId": "1038924276479983705",
+      "board": "Social",
+      "title": "",
+      "link": "https://www.instagram.com/reel/Ddids5Yj2XX/",
+      "reason": "sapiver_forge_label",
+      "isOwner": true,
+      "adOnly": false
+    },
+    {
+      "id": "1038924207812667223",
+      "boardId": "1038924276479983705",
+      "board": "Social",
+      "title": "",
+      "link": "https://www.instagram.com/reel/Dd6L1hjCdw3/",
+      "reason": "sapiver_forge_label",
+      "isOwner": true,
+      "adOnly": false
+    },
+    {
+      "id": "1038924207812667243",
+      "boardId": "1038924276479983705",
+      "board": "Social",
+      "title": "",
+      "link": "https://www.instagram.com/reel/DdVp-alFKcK/",
+      "reason": "sapiver_forge_label",
+      "isOwner": true,
+      "adOnly": false
+    },
+    {
+      "id": "1038924207812667268",
+      "boardId": "1038924276479983705",
+      "board": "Social",
+      "title": "",
+      "link": "https://www.instagram.com/reel/DdtDfKEkw3d/",
+      "reason": "sapiver_forge_label",
+      "isOwner": true,
+      "adOnly": false
+    },
+    {
+      "id": "1038924207812667313",
+      "boardId": "1038924276479983705",
+      "board": "Social",
+      "title": "",
+      "link": "https://www.instagram.com/reel/DdqMY11DlFY/",
+      "reason": "sapiver_forge_label",
+      "isOwner": true,
+      "adOnly": false
+    },
+    {
+      "id": "1038924207812667359",
+      "boardId": "1038924276479983705",
+      "board": "Social",
+      "title": "",
+      "link": "https://www.instagram.com/reel/Ddf-GDHAIBm/",
+      "reason": "sapiver_forge_label",
+      "isOwner": true,
+      "adOnly": false
+    },
+    {
+      "id": "1038924207812667376",
+      "boardId": "1038924276479983705",
+      "board": "Social",
+      "title": "",
+      "link": "https://www.instagram.com/reel/DeEgxN1EWsI/",
+      "reason": "sapiver_forge_label",
+      "isOwner": true,
+      "adOnly": false
+    },
+    {
+      "id": "1038924207812667377",
+      "boardId": "1038924276479983705",
+      "board": "Social",
+      "title": "",
+      "link": "https://www.instagram.com/reel/DdlJXOxDr_t/",
+      "reason": "sapiver_forge_label",
+      "isOwner": true,
+      "adOnly": false
+    },
+    {
+      "id": "1038924207812667794",
+      "boardId": "1038924276479983705",
+      "board": "Social",
+      "title": "",
+      "link": "https://www.instagram.com/reel/DdnmqgTDX6B/",
+      "reason": "sapiver_forge_label",
+      "isOwner": true,
+      "adOnly": false
+    },
+    {
+      "id": "1038924207812667978",
+      "boardId": "1038924276479983705",
+      "board": "Social",
+      "title": "",
+      "link": "https://www.instagram.com/reel/DdYmO2Gjva2/",
+      "reason": "sapiver_forge_label",
+      "isOwner": true,
+      "adOnly": false
+    }
+  ],
+  "unrelatedBoardReview": [
+    {
+      "board": "Sapiver Press Publishing",
+      "boardId": "1038924276479876865",
+      "count": 587,
+      "samples": [
+        {
+          "id": "1038924207810598883",
+          "title": "Sapiver Press daily image 5/5 | start with the right sudoku tools",
+          "link": "https://sapiverpress.etsy.com/",
+          "isOwner": true
+        },
+        {
+          "id": "1038924207810598882",
+          "title": "Sapiver Press daily image 4/5 | avoid kdp mistakes with confidence",
+          "link": "https://sapiverpress.etsy.com/",
+          "isOwner": true
+        },
+        {
+          "id": "1038924207810598880",
+          "title": "Sapiver Press daily image 3/5 | elegant book starter pack promotion",
+          "link": "https://sapiverpress.etsy.com/",
+          "isOwner": true
+        },
+        {
+          "id": "1038924207810598877",
+          "title": "Sapiver Press daily image 2/5 | begin your first sudoku publish journey",
+          "link": "https://sapiverpress.etsy.com/",
+          "isOwner": true
+        },
+        {
+          "id": "1038924207810598875",
+          "title": "Sapiver Press daily image 1/5 | trusted resources for new publishers",
+          "link": "https://sapiverpress.etsy.com/",
+          "isOwner": true
+        },
+        {
+          "id": "1038924207810580219",
+          "title": "How To Turn Book Notes Into Content Ideas",
+          "link": "",
+          "isOwner": true
+        },
+        {
+          "id": "1038924207810580217",
+          "title": "Book Content OS image 5/5 | 03 33501",
+          "link": "",
+          "isOwner": true
+        },
+        {
+          "id": "1038924207810580216",
+          "title": "Book Content OS image 4/5 | 02 33502",
+          "link": "",
+          "isOwner": true
+        },
+        {
+          "id": "1038924207810580215",
+          "title": "Book Content OS image 3/5 | 01 33503",
+          "link": "",
+          "isOwner": true
+        },
+        {
+          "id": "1038924207810580214",
+          "title": "Book Content OS image 2/5 | 10 33504",
+          "link": "",
+          "isOwner": true
+        },
+        {
+          "id": "1038924207810580213",
+          "title": "Book Content OS image 1/5 | 09 33505",
+          "link": "",
+          "isOwner": true
+        },
+        {
+          "id": "1038924207810580212",
+          "title": "How To Turn Book Notes Into Content Ideas",
+          "link": "",
+          "isOwner": true
+        },
+        {
+          "id": "1038924207810568392",
+          "title": "Sapiver Press daily image 5/5 | premium starter toolkit for kdp beginners",
+          "link": "https://sapiverpress.etsy.com/",
+          "isOwner": true
+        },
+        {
+          "id": "1038924207810568391",
+          "title": "Sapiver Press daily image 4/5 | premium publishing starter pack advertisement",
+          "link": "https://sapiverpress.etsy.com/",
+          "isOwner": true
+        },
+        {
+          "id": "1038924207810568390",
+          "title": "Sapiver Press daily image 3/5 | organised starter pack for publishers",
+          "link": "https://sapiverpress.etsy.com/",
+          "isOwner": true
+        },
+        {
+          "id": "1038924207810568389",
+          "title": "Sapiver Press daily image 2/5 | limited edition starter pack design",
+          "link": "https://sapiverpress.etsy.com/",
+          "isOwner": true
+        },
+        {
+          "id": "1038924207810568388",
+          "title": "Sapiver Press daily image 1/5 | fresh replacement volume announcement poster",
+          "link": "https://sapiverpress.etsy.com/",
+          "isOwner": true
+        },
+        {
+          "id": "1038924207810547887",
+          "title": "Book Content OS image 5/5 | 05 33461",
+          "link": "",
+          "isOwner": true
+        },
+        {
+          "id": "1038924207810547886",
+          "title": "Book Content OS image 4/5 | 08 33471",
+          "link": "",
+          "isOwner": true
+        },
+        {
+          "id": "1038924207810547883",
+          "title": "Book Content OS image 3/5 | 01 33478",
+          "link": "",
+          "isOwner": true
+        },
+        {
+          "id": "1038924207810547882",
+          "title": "Book Content OS image 2/5 | 03 33501",
+          "link": "",
+          "isOwner": true
+        },
+        {
+          "id": "1038924207810547881",
+          "title": "Book Content OS image 1/5 | 02 33502",
+          "link": "",
+          "isOwner": true
+        },
+        {
+          "id": "1038924207810547880",
+          "title": "How To Turn Book Notes Into Content Ideas",
+          "link": "",
+          "isOwner": true
+        },
+        {
+          "id": "1038924207810536609",
+          "title": "How To Prepare Your First KDP Sudoku Upload",
+          "link": "https://sapiverpress.etsy.com/",
+          "isOwner": true
+        },
+        {
+          "id": "1038924207810536607",
+          "title": "Sapiver Press daily image 5/5 | sudoku publisher edition planning tools",
+          "link": "https://sapiverpress.etsy.com/",
+          "isOwner": true
+        }
+      ]
+    },
+    {
+      "board": "Social",
+      "boardId": "1038924276479983705",
+      "count": 6,
+      "samples": [
+        {
+          "id": "1038924207812667281",
+          "title": "",
+          "link": "https://www.instagram.com/reel/DeqiS41jCjR/",
+          "isOwner": true
+        },
+        {
+          "id": "1038924207812666854",
+          "title": "",
+          "link": "https://www.instagram.com/p/DdgANMTtTO5/",
+          "isOwner": true
+        },
+        {
+          "id": "1038924207812666853",
+          "title": "",
+          "link": "https://www.instagram.com/p/DdKhWkst9rH/",
+          "isOwner": true
+        },
+        {
+          "id": "1038924207812666852",
+          "title": "",
+          "link": "https://www.instagram.com/p/DdJm4D-tUDC/",
+          "isOwner": true
+        },
+        {
+          "id": "1038924207812666851",
+          "title": "",
+          "link": "https://www.instagram.com/p/DdHf0emtyoC/",
+          "isOwner": true
+        },
+        {
+          "id": "1038924207812666850",
+          "title": "",
+          "link": "https://www.instagram.com/p/DdGDugSNMWK/",
+          "isOwner": true
+        }
+      ]
+    },
+    {
+      "board": "Sudoku Books by Sapiver Press",
+      "boardId": "1038924276479840944",
+      "count": 4,
+      "samples": [
+        {
+          "id": "1038924207806697972",
+          "title": "Classic Sudoku - 100 Hard Puzzles - VOL1",
+          "link": "https://www.amazon.co.uk/dp/B0GVJRCDCY",
+          "isOwner": true
+        },
+        {
+          "id": "1038924207806697351",
+          "title": "Classic Sudoku - 100 Easy Puzzles - VOL1 5x8",
+          "link": "https://amzn.to/48l1fCO",
+          "isOwner": true
+        },
+        {
+          "id": "1038924207806697339",
+          "title": "Classic Sudoku - 100 Easy Puzzles - VOL1 5x8",
+          "link": "https://amzn.to/48l1fCO",
+          "isOwner": true
+        },
+        {
+          "id": "1038924207806349806",
+          "title": "Easy AntiKing Sudoku",
+          "link": "https://sapiver-press-catalogue.netlify.app/",
+          "isOwner": true
+        }
+      ]
+    },
+    {
+      "board": "a.i news feed",
+      "boardId": "1038924276479911800",
+      "count": 2,
+      "samples": [
+        {
+          "id": "1038924207809663438",
+          "title": "Sapiver Press — Workflow Tools & Product Shelf",
+          "link": "https://sapiverpress-hub.netlify.app/",
+          "isOwner": true
+        },
+        {
+          "id": "1038924207809395156",
+          "title": "Sapiver Press — Workflow Tools & Product Shelf",
+          "link": "https://sapiverpress-hub.netlify.app/",
+          "isOwner": true
+        }
+      ]
+    },
+    {
+      "board": "Projects to try",
+      "boardId": "1038924276479851509",
+      "count": 2,
+      "samples": [
+        {
+          "id": "1038924207806784063",
+          "title": "",
+          "link": "https://www.facebook.com/share/p/1McZAHZvXe/",
+          "isOwner": true
+        },
+        {
+          "id": "1038924207806784014",
+          "title": "",
+          "link": "https://www.facebook.com/share/p/1McZAHZvXe/",
+          "isOwner": true
+        }
+      ]
+    },
+    {
+      "board": "Printable Sudoku Puzzles",
+      "boardId": "1038924276479869758",
+      "count": 1,
+      "samples": [
+        {
+          "id": "1038924207807633759",
+          "title": "",
+          "link": "",
+          "isOwner": true
+        }
+      ]
+    },
+    {
+      "board": "AntiKing Sudoku",
+      "boardId": "1038924276479841292",
+      "count": 1,
+      "samples": [
+        {
+          "id": "1038924207806349830",
+          "title": "Easy AntiKing Sudoku",
+          "link": "https://sapiver-press-catalogue.netlify.app/",
+          "isOwner": true
+        }
+      ]
+    }
+  ],
+  "aiNewsSample": [
+    {
+      "id": "1038924207812667281",
+      "boardId": "1038924276479983705",
+      "board": "Social",
+      "title": "",
+      "link": "https://www.instagram.com/reel/DeqiS41jCjR/",
+      "reason": "unrelated",
+      "isOwner": true,
+      "adOnly": false
+    },
+    {
+      "id": "1038924207812666854",
+      "boardId": "1038924276479983705",
+      "board": "Social",
+      "title": "",
+      "link": "https://www.instagram.com/p/DdgANMTtTO5/",
+      "reason": "unrelated",
+      "isOwner": true,
+      "adOnly": false
+    },
+    {
+      "id": "1038924207812666853",
+      "boardId": "1038924276479983705",
+      "board": "Social",
+      "title": "",
+      "link": "https://www.instagram.com/p/DdKhWkst9rH/",
+      "reason": "unrelated",
+      "isOwner": true,
+      "adOnly": false
+    },
+    {
+      "id": "1038924207812666852",
+      "boardId": "1038924276479983705",
+      "board": "Social",
+      "title": "",
+      "link": "https://www.instagram.com/p/DdJm4D-tUDC/",
+      "reason": "unrelated",
+      "isOwner": true,
+      "adOnly": false
+    },
+    {
+      "id": "1038924207812666851",
+      "boardId": "1038924276479983705",
+      "board": "Social",
+      "title": "",
+      "link": "https://www.instagram.com/p/DdHf0emtyoC/",
+      "reason": "unrelated",
+      "isOwner": true,
+      "adOnly": false
+    },
+    {
+      "id": "1038924207812666850",
+      "boardId": "1038924276479983705",
+      "board": "Social",
+      "title": "",
+      "link": "https://www.instagram.com/p/DdGDugSNMWK/",
+      "reason": "unrelated",
+      "isOwner": true,
+      "adOnly": false
+    }
+  ],
   "protectedSamples": [
     {
       "id": "1038924207812665970",
@@ -132,61 +674,61 @@
   ],
   "otherSamples": [
     {
-      "id": "1038924207810598883",
-      "boardId": "1038924276479876865",
-      "board": "Sapiver Press Publishing",
-      "title": "Sapiver Press daily image 5/5 | start with the right sudoku tools",
-      "link": "https://sapiverpress.etsy.com/",
+      "id": "1038924207812667281",
+      "boardId": "1038924276479983705",
+      "board": "Social",
+      "title": "",
+      "link": "https://www.instagram.com/reel/DeqiS41jCjR/",
       "reason": "unrelated",
       "isOwner": true,
       "adOnly": false
     },
     {
-      "id": "1038924207810598882",
-      "boardId": "1038924276479876865",
-      "board": "Sapiver Press Publishing",
-      "title": "Sapiver Press daily image 4/5 | avoid kdp mistakes with confidence",
-      "link": "https://sapiverpress.etsy.com/",
+      "id": "1038924207812666854",
+      "boardId": "1038924276479983705",
+      "board": "Social",
+      "title": "",
+      "link": "https://www.instagram.com/p/DdgANMTtTO5/",
       "reason": "unrelated",
       "isOwner": true,
       "adOnly": false
     },
     {
-      "id": "1038924207810598880",
-      "boardId": "1038924276479876865",
-      "board": "Sapiver Press Publishing",
-      "title": "Sapiver Press daily image 3/5 | elegant book starter pack promotion",
-      "link": "https://sapiverpress.etsy.com/",
+      "id": "1038924207812666853",
+      "boardId": "1038924276479983705",
+      "board": "Social",
+      "title": "",
+      "link": "https://www.instagram.com/p/DdKhWkst9rH/",
       "reason": "unrelated",
       "isOwner": true,
       "adOnly": false
     },
     {
-      "id": "1038924207810598877",
-      "boardId": "1038924276479876865",
-      "board": "Sapiver Press Publishing",
-      "title": "Sapiver Press daily image 2/5 | begin your first sudoku publish journey",
-      "link": "https://sapiverpress.etsy.com/",
+      "id": "1038924207812666852",
+      "boardId": "1038924276479983705",
+      "board": "Social",
+      "title": "",
+      "link": "https://www.instagram.com/p/DdJm4D-tUDC/",
       "reason": "unrelated",
       "isOwner": true,
       "adOnly": false
     },
     {
-      "id": "1038924207810598875",
-      "boardId": "1038924276479876865",
-      "board": "Sapiver Press Publishing",
-      "title": "Sapiver Press daily image 1/5 | trusted resources for new publishers",
-      "link": "https://sapiverpress.etsy.com/",
+      "id": "1038924207812666851",
+      "boardId": "1038924276479983705",
+      "board": "Social",
+      "title": "",
+      "link": "https://www.instagram.com/p/DdHf0emtyoC/",
       "reason": "unrelated",
       "isOwner": true,
       "adOnly": false
     },
     {
-      "id": "1038924207810580219",
-      "boardId": "1038924276479876865",
-      "board": "Sapiver Press Publishing",
-      "title": "How To Turn Book Notes Into Content Ideas",
-      "link": "",
+      "id": "1038924207812666850",
+      "boardId": "1038924276479983705",
+      "board": "Social",
+      "title": "",
+      "link": "https://www.instagram.com/p/DdGDugSNMWK/",
       "reason": "unrelated",
       "isOwner": true,
       "adOnly": false
