@@ -1,0 +1,112 @@
+name: One-time remove nine unwanted Pinterest boards
+on:
+  pull_request:
+    paths:
+      - 'scripts/remove-nine-pinterest-boards.mjs'
+      - 'test/remove-nine-pinterest-boards.test.mjs'
+      - '.github/workflows/one-time-pinterest-board-cleanup.yml'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/one-time-pinterest-board-cleanup.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sapiver-pinterest-token-rotation
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            scripts/remove-nine-pinterest-boards.mjs
+            scripts/cleanup-sapiver-forge-pins.mjs
+            scripts/post-sapiver-prints.mjs
+            test/remove-nine-pinterest-boards.test.mjs
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate exact board allowlist and protected Pins
+        run: |
+          node --check scripts/remove-nine-pinterest-boards.mjs
+          node --test test/remove-nine-pinterest-boards.test.mjs
+  apply:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+          sparse-checkout: |
+            scripts/remove-nine-pinterest-boards.mjs
+            scripts/cleanup-sapiver-forge-pins.mjs
+            scripts/post-sapiver-prints.mjs
+            social/sapiver-prints/pinterest-receipts.json
+            social/sapiver-forge/board-cleanup-results.json
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Remove approved individual unwanted Pinterest boards, preserving three named boards
+        id: cleanup
+        env:
+          PINTEREST_REFRESH_TOKEN: ${{ secrets.PINTEREST_REFRESH_TOKEN }}
+          PINTEREST_REFRESH_TOKEN_OUT: ${{ runner.temp }}/pinterest-board-rotation.txt
+          PINTEREST_CLIENT_ID: ${{ secrets.PINTEREST_CLIENT_ID }}
+          PINTEREST_CLIENT_SECRET: ${{ secrets.PINTEREST_CLIENT_SECRET }}
+          PINTEREST_APP_ID: ${{ secrets.PINTEREST_APP_ID }}
+          PINTEREST_APP_SECRET: ${{ secrets.PINTEREST_APP_SECRET }}
+          GH_TOKEN: ${{ secrets.COMIC_GITHUB_TOKEN }}
+          PINTEREST_BOARD_CLEANUP_APPROVED: retain-three-delete-nine
+        run: node scripts/remove-nine-pinterest-boards.mjs
+      - name: Preserve updated Pinterest refresh credential
+        if: always()
+        id: rotate
+        shell: bash
+        env:
+          ROTATED_FILE: ${{ runner.temp }}/pinterest-board-rotation.txt
+          GH_TOKEN: ${{ secrets.COMIC_GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [ ! -s "$ROTATED_FILE" ]; then exit 0; fi
+          test -n "$GH_TOKEN"
+          token="$(tr -d '\r\n' < "$ROTATED_FILE")"
+          [[ "$token" == pinr* ]] || { echo 'Pinterest refresh token unexpected'; exit 1; }
+          printf '%s' "$token" | gh secret set PINTEREST_REFRESH_TOKEN --repo "$GITHUB_REPOSITORY"
+          unset token
+          rm -f "$ROTATED_FILE"
+      - name: Save verified and partial results
+        if: always()
+        id: save
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ ! -f social/sapiver-forge/board-cleanup-results.json ]; then
+            echo 'No deletion receipts to record.'
+            exit 0
+          fi
+          git add -f social/sapiver-forge/board-cleanup-results.json
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name "sapiver-pinterest-cleanup"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "docs(pinterest): record nine-board cleanup results [skip ci]"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then exit 0; fi
+            git pull --rebase origin main
+          done
+          exit 1
+      - name: Fail visibly on incomplete board cleanup or secret rotation
+        if: always() && (steps.cleanup.outcome != 'success' || steps.rotate.outcome != 'success' || steps.save.outcome != 'success')
+        run: |
+          echo '::error::Pinterest board cleanup incomplete; inspect safe deletion receipts.'
+          exit 1
