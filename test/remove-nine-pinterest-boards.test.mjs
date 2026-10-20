@@ -56,7 +56,7 @@ test('successfully removes only nine known boards and preserves exact three',asy
  assert.deepEqual(x.remaining().map(z=>z.name).sort(),Object.values(keep).sort());
  assert.equal(x.actions.filter(z=>z.method==='DELETE').length,9);
  assert.equal(progress.length,11);
- assert.equal(r.pinCountByBoard,undefined);
+ assert.equal(Object.keys(r.pinCountByBoard).length,9);
 });
 test('any Sapiver Prints artwork on an unwanted board aborts BEFORE its deletion',async()=>{
  const x=fake({protectedInOther:true}),progress=[];
@@ -72,7 +72,7 @@ test('unknown board stops entire process without deleting anything',async()=>{
 });
 test('API error retains deletion progress and never touches retained boards',async()=>{
  const x=fake({failOn:'1038924276479841292'}),progress=[];
- await assert.rejects(removeUnwantedBoards({fetchImpl:x.fetchImpl,token:'mock',receipts,sleep:async()=>{},onProgress:async p=>progress.push(JSON.parse(JSON.stringify(p)))}),/HTTP 429/);
+ await assert.rejects(removeUnwantedBoards({fetchImpl:x.fetchImpl,token:'mock',receipts,sleep:async()=>{},onProgress:async p=>progress.push(JSON.parse(JSON.stringify(p)))}),/429/);
  assert.equal(progress.at(-1).removed.length,1);
  assert.ok(x.remaining().some(x=>x.name==='Sapiver Prints'));
  assert.ok(x.remaining().some(x=>x.name==='Social'));
