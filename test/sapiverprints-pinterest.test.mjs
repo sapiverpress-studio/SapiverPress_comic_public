@@ -141,3 +141,40 @@ test('backlog mode publishes all unpublished Etsy posters once, with spacing and
 test('backlog limit is bounded to 25 Pins per run',async()=>{
   await assert.rejects(runPublisher({maxNewPins:26}),/per-run Pin limit/);
 });
+
+test('paced batch reconciles six missing Pins from 32 Etsy listings without repinning existing products',async()=>{
+ const tmp=await fs.mkdtemp(path.join(os.tmpdir(),'sp-all-etsy-'));
+ try{
+  const products=Array.from({length:32},(_,n)=>item(5000+n));
+  const existing=Object.fromEntries(products.slice(0,26).map((x,n)=>[String(x.id),{pinId:String(10000+n),boardId:'555',link:x.url}]));
+  const stateFile=path.join(tmp,'receipts.json');
+  await fs.writeFile(stateFile,JSON.stringify({schemaVersion:1,boardName:BOARD_NAME,byListingId:existing}));
+  const mock=mockApi({products});
+  const pauses=[];
+  const published=await runPublisher({fetchImpl:mock.fetch,env:env(path.join(tmp,'refresh')),now,stateFile,maxNewPins:20,sleep:async ms=>pauses.push(ms)});
+  assert.equal(published.created,6);
+  assert.equal(published.pending,0);
+  assert.equal(pauses.length,5);
+  assert.deepEqual(mock.created.map(p=>p.link),products.slice(26).map(p=>p.url));
+  const receipts=JSON.parse(await fs.readFile(stateFile,'utf8'));
+  assert.equal(Object.keys(receipts.byListingId).length,32);
+  const repeat=await runPublisher({fetchImpl:mock.fetch,env:{},now,stateFile,maxNewPins:20});
+  assert.equal(repeat.created,0);
+  assert.equal(repeat.status,'up_to_date');
+  assert.equal(mock.created.length,6);
+ }finally{await fs.rm(tmp,{recursive:true,force:true});}
+});
+test('when more than 20 new listings await Pinterest, next run drains the remainder without duplicates',async()=>{
+ const tmp=await fs.mkdtemp(path.join(os.tmpdir(),'sp-new-many-'));
+ try{
+  const products=Array.from({length:26},(_,n)=>item(7000+n));
+  const stateFile=path.join(tmp,'state.json'),mock=mockApi({products});
+  const first=await runPublisher({fetchImpl:mock.fetch,env:env(path.join(tmp,'refresh')),now,stateFile,maxNewPins:20,sleep:async()=>{}});
+  assert.equal(first.created,20);
+  assert.equal(first.pending,6);
+  const second=await runPublisher({fetchImpl:mock.fetch,env:env(path.join(tmp,'refresh')),now,stateFile,maxNewPins:20,sleep:async()=>{}});
+  assert.equal(second.created,6);
+  assert.equal(second.pending,0);
+  assert.equal(new Set(mock.created.map(x=>x.link)).size,26);
+ }finally{await fs.rm(tmp,{recursive:true,force:true});}
+});
