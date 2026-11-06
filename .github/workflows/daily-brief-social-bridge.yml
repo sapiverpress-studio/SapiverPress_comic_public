@@ -199,11 +199,13 @@ jobs:
           PINTEREST_CLIENT_SECRET: ${{ secrets.PINTEREST_CLIENT_SECRET }}
           PINTEREST_APP_ID: ${{ secrets.PINTEREST_APP_ID }}
           PINTEREST_APP_SECRET: ${{ secrets.PINTEREST_APP_SECRET }}
-          PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
-          PINTEREST_BOARD_NAME: ${{ secrets.PINTEREST_BOARD_NAME }}
-          # The owner deleted Forge/Clearforge Pinterest boards. Never republish news Pins there.
-          # Sapiver Prints listing/video publishing is separate and remains enabled.
-          FORGE_PINTEREST_DISABLED: 'true'
+          # Daily Intelligence uses the owner's existing Pinterest board named Social.
+          # Do NOT inherit PINTEREST_BOARD_ID: it may point to a Sapiver Prints board.
+          # The publisher lists Pinterest boards and requires exactly one named Social.
+          # Missing/duplicate boards fail closed without publishing to another board.
+          PINTEREST_BOARD_ID: ''
+          PINTEREST_BOARD_NAME: 'Social'
+          FORGE_PINTEREST_DISABLED: 'false'
           YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
           YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
