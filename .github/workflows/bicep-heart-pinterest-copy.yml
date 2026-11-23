@@ -6,6 +6,11 @@ on:
     paths:
       - '.github/workflows/bicep-heart-pinterest-copy.yml'
   workflow_dispatch:
+  pull_request:
+    paths:
+      - '.github/workflows/bicep-heart-pinterest-copy.yml'
+      - 'scripts/update-bicep-heart-pin-copy.mjs'
+      - 'test/update-bicep-heart-pin-copy.test.mjs'
 
 permissions:
   contents: read
@@ -17,7 +22,20 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  verify-on-pr:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Check no-new-Pin and exact Etsy URL update contracts
+        run: |
+          node --check scripts/update-bicep-heart-pin-copy.mjs
+          node --test test/update-bicep-heart-pin-copy.test.mjs
   update-exact-three-pins:
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
